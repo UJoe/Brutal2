@@ -32,10 +32,10 @@ window.chars = [
   {
     num: 3,
     name: "Sanyi, a kemény",
-    ero: 90,
+    ero: 80,
     ugy: 50,
     esz: 20,
-    lel: 50,
+    lel: 40,
     hat: 50,
     pic: "sanyi",
   },

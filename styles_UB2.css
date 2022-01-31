@@ -8,7 +8,7 @@ body {
   background: #1f1e4d;
   outline: none;
   font-size: 1.2em;
-  margin: 0;
+  margin: 0 10px;;
   padding: 0;
   box-sizing: border-box;
 }
@@ -88,7 +88,7 @@ td {
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: '-';
 }
 
 #topMenu {
@@ -97,9 +97,11 @@ ul {
   justify-content: flex-end;
   background-image: linear-gradient(to right, #1f1e4d, purple);
   height: 35px;
+  position: sticky;
+  top: 0;
 }
 
-.navBtn, #soundBtn {
+.navBtn, #soundBtn, #stats {
   margin: 3px;
   height: 29px;
 }
@@ -112,17 +114,57 @@ ul {
   outline: none;
 }
 
+.navBtn:disabled {
+  color: lightgrey;
+  background-color: darkgrey;
+}
+
+.thumb {
+  display: inline-block;
+  height: 25px;
+  margin-top: 5px; 
+  margin-right: 5px;
+  border-radius: 3px; 
+}
+
+#stats {
+  color: whitesmoke;
+  line-height: 1.7;
+  max-width: 90vw;
+}
+
+.stat {
+  color: greenyellow;
+  transition: all 1s;
+  filter: brightness(1);
+  font-size: .9em;
+}
+
+.increase {
+  background-color: lime;
+  filter: brightness(1.4);
+  color: darkblue;
+}
+
+.decrease {
+  background-color: red;
+  filter: brightness(1.4);
+  color: blue;
+}
+
 #message {
   position: relative;
-  height: 40px;
+  height: 30px;
   opacity: 1;
-  background-image: radial-gradient(circle, rgba(192, 242, 227, 0.5), rgba(255, 255, 0, 0));
+  background-image: radial-gradient(circle, rgba(192, 242, 227, 0.6), rgba(255, 255, 0, 0.1));
   color:cyan;
-  padding: 2px;
-  font-size: 30px;
+  padding: 3px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
   overflow: hidden;
+  z-index: 2;
+  margin: 2px auto;
 }
 
 .pear {
@@ -145,10 +187,10 @@ ul {
 
 #roomPic {
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
   border: outset 5px turquoise;
   border-radius: 40px;
-  height: 200px;
+  height: 240px;
   max-width: 90vw;
 }
 
@@ -162,22 +204,28 @@ h2 {
 }
 
 #btns {
-  margin-top: 20px;
+  margin: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
 }
 
 .btn {
-  transform: scale(1.7);
-  margin: 20px 30px 20px 50px;
+  transform: scale(1.4);
+  margin: 20px 40px;
+  padding: 10px;
   color: orangered;
-  background-color: black;
+  background-color: darkblue;
   border: solid 1px turquoise;
+  border-radius: 10px;
   opacity: 1;
   transition: all 0.5s;
-  display: inline-block;
+  width: 80%
 }
 
 .btn:hover {
-  transform: scale(1.9);
+  transform: scale(1.5);
   border: outset 5px turquoise;
   color: red;
   transition: all 0.3s;
@@ -198,4 +246,57 @@ h2 {
 
 .btn:focus {
   outline: none;
+}
+
+#countCont {
+  color: yellow;
+  background-color: black;
+  border: 3px double red;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+#countNo {
+  display: inline-block;
+  color: blue;
+  background-color: green;
+  width: 90%;
+  text-align: left;
+  transition: width 1s linear;
+  border-radius: 0 25px 25px 0;
+}
+
+#runnerCont {
+  width: 90vw;
+}
+
+.runners {
+  position: relative;
+  height: 50px;
+  border-radius: 5px;
+  transition: all 1s;
+}
+
+#charRunner {
+  left: 5vw;
+}
+
+#nmeRunner {
+  left: 85vw;
+}
+
+#question {
+  width: 50vw;
+  background-color: purple;
+  color: yellow;
+  margin: 20px;
+  padding: 10px;
+  border: 2s solid lime;
+  border-radius: 5px;
+}
+
+#footer {
+  margin-left: 20px;
 }
