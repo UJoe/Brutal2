@@ -17,6 +17,24 @@ p, #main {
   color:greenyellow;
 }
 
+#main {
+  margin-top: 75px;
+}
+
+.center {
+  text-align: center;
+}
+
+.darken {
+  transition: filter 3s;
+  filter: brightness(.1) opacity(.1) blur(10px);
+}
+
+.brighten {
+  transition: filter 1s;
+  filter: brightness(1) opacity(1) blur(0);
+}
+
 h1 {
   text-align: center;
   color: red;
@@ -93,17 +111,23 @@ ul {
 
 #topMenu {
   display: flex;
-  flex-wrap: wrap;
+  width: 100vw;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   background-image: linear-gradient(to right, #1f1e4d, purple);
   height: 35px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 2;
 }
 
 .navBtn, #soundBtn, #stats {
   margin: 3px;
   height: 29px;
+}
+
+#soundBtn {
+  margin-right: 2vw;
 }
 
 .navBtn {
@@ -153,18 +177,21 @@ ul {
 }
 
 #message {
-  position: relative;
+  position: fixed;
+  top: 35px;
   height: 30px;
+  width: 100%;
   opacity: 1;
-  background-image: radial-gradient(circle, rgba(192, 242, 227, 0.6), rgba(255, 255, 0, 0.1));
-  color:cyan;
+  background-image: radial-gradient(circle, rgba(0, 255, 255, 0.9), rgba(200, 200, 200, 0.1));
+  color: darkblue;
+  text-shadow: 1px 1px 1px black;
   padding: 3px;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
   overflow: hidden;
   z-index: 2;
-  margin: 2px auto;
+  margin: 0 auto;
 }
 
 .pear {
@@ -192,6 +219,7 @@ ul {
   border-radius: 40px;
   height: 240px;
   max-width: 90vw;
+  cursor: crosshair;
 }
 
 h2 {
@@ -248,6 +276,11 @@ h2 {
   outline: none;
 }
 
+#footer {
+  margin-left: 20px;
+}
+
+/* pursuit */
 #countCont {
   color: yellow;
   background-color: black;
@@ -288,7 +321,7 @@ h2 {
 }
 
 #question {
-  width: 50vw;
+  width: fit-content;
   background-color: purple;
   color: yellow;
   margin: 20px;
@@ -297,6 +330,189 @@ h2 {
   border-radius: 5px;
 }
 
-#footer {
-  margin-left: 20px;
+/* mine + fight*/
+#subHeader {
+  padding: 10px;
+  height: fit-content;
+  width: 90vw;
+  margin: 5px auto;
+  background-color: purple;
+  color: yellow;
+  border: solid 2px black;
+  border-radius: 10px;
 }
+
+.score {
+  margin-left: 25px;
+}
+
+#exitBtn {
+  float: right;
+  padding: 4px 20px;
+  margin-right: 25px;
+  background-color: yellow;
+  color: black;
+  outline: none;
+  border: solid 2px darkblue;
+  border-radius: 5px;
+}
+
+#exitBtn:active {
+  filter: invert(1);
+}
+
+#exitBtn:disabled {
+  filter: grayscale(80%);
+}
+
+#garden {
+  width: fit-content;
+  margin: 15px auto;
+}
+
+.minefield {
+  width: 52px;
+  height: 52px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.minefieldCard {
+  width: 54px;
+  height: 54px;
+  padding: 1px;
+  border: solid 1px white;
+  border-radius: 5px;
+  background-color: green;
+}
+
+.near {
+  font-size: 16px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  color: ghostwhite;
+}
+
+.aknaHits {
+  color: red;
+}
+
+.kincsHits {
+  color: cyan;
+}
+
+.runners {
+  position: relative;
+  height: 50px;
+  border-radius: 5px;
+  transition: all 1s;
+}
+
+#charRunner {
+  left: 5vw;
+}
+
+#nmeRunner {
+  left: 85vw;
+}
+
+#fightOp {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#scores {
+  width: 400px;
+  max-width: 70vw;
+  margin: 0 30px 30px;
+  background-image: linear-gradient(to right, black, purple, red, purple, black);
+}
+
+.leftScore {
+  margin-left: 25px;
+  color: lime;
+  padding-top: 10px;
+}
+
+.rightScore {
+  margin-right: 25px;
+  color: yellow;
+  padding-top: 10px;
+}
+
+
+#fighterCont {
+  display: flex;
+  align-items: center;
+  margin: 30px auto;
+  width: 600px;
+  background-image: radial-gradient(circle, red, #1F1E4D, purple, blue );
+  border: 5px double red;
+  border-radius: 10px;
+}
+
+.fighters {
+  position: relative;
+  height: 100px;
+  border-radius: 5px;
+  transition: all .5s;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.seb {
+  background-color: black;
+  color: red;
+  font-size: 20px;
+}
+
+#charFighter {
+  left: 100px;
+}
+
+#nmeFighter {
+  left: 300px;
+}
+
+#fightBtn {
+  display: inline-block;
+  position: relative;
+  left: 2vw;
+  height: 45px;
+  padding: 4px 20px;
+  background-color: blue;
+  color: lime;
+  outline: none;
+  border: solid 3px red;
+  border-radius: 5px;
+  transform: scale(1);
+  opacity: 1;
+  transition: all .3s;
+}
+
+#fightBtn:disabled {
+  transform: scale(0.1);
+  opacity: 0;
+}
+
+.weapon {
+  display: inline-block;
+  height: 50px;
+  margin: 10px;
+  border-radius: 5px; 
+}
+
+.used {
+  border: 5px solid red;
+  filter: opacity(1) brightness(1.1);
+}
+
+.unused {
+  border: 5px solid transparent;
+  filter: opacity(.5) brightness(0.5);
+}
+
+

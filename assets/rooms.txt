@@ -1,0 +1,52 @@
+1 - Trial (leigáz)
+2 - A hatalomszerzés kezdete"
+3 - A hatalomátvétel kezdeti nehézségei
+4 - Trial (tényleg leigáz)
+5 - Inkább nem igázod le őket
+6 - A csirkefogó üldözése
+7 - A töketlen nép
+8 - Bitang Botond színre lép
+9 - Meglógott a csirkefogó
+10 - Elkaptad a csirkefogót
+11 - Trial (a töketlen nép)
+12 - A jelöltség bejelentése
+13 - XTrial (a puccs bejelentése)
+14 - A nép kezd engedelmeskedni
+15 - Béna Boldi meglógott
+16 - Béna Boldi kivégzése
+17 - Harc a csirkefogóval
+18 - Béna Boldi elzárása
+19 - Ügyes Frigyes rejtekhelye
+20 - Bitang Boti emberei megölnek
+21 - Trial (1. politikai beszéd)
+22 - A csirkefogó vallatása?
+23 - Trial (az 1. toborzás)
+24 - Tanácskozás Oshinokoval
+25 - Párbaj Béna Boldival
+26 - A csirkefogó legyőzése
+27 - A sötétedő utcán (modi)
+28 - Béna Boldi legyőzése párbajban
+29 - Párbajvereség Béna Bolditól
+30 - Béna Boldi kirablása
+31 - Béna Boldi elfogyasztása
+32 - A nép a puccs mellé áll
+33 - Bitang Botond megijed
+34 - A felsőbbrendű bot megszerzése
+35 - A zsibbasztó náspáng megszerzése
+36 - Harc a böszmedvével
+37 - Tanácskozás Ügyes Frigyessel
+38 - Menekülés a vadonba
+39 - A nép hisz neked
+40 - A nép csalódik benned
+41 - Összeáll a NAME gárda
+42 - A katana megszerzése
+43 - Gyakorlás Oshinokoval
+44 - Oshinoko dühbe gurul
+45 - A Kutya Veres Kasza kocsma
+46 - Éjjel otthon
+47 - Bolyongás az utcákon (dungeon)
+48 - Utcai támadás (dungeon-fight)
+
+
+
+
