@@ -34,14 +34,14 @@ let templates = [
     title: "A",
     type: "normal",
     music: "basicmusic",
-    pic: "starttown.jpg",
+    pic: "forest,6",
     desc: `
       <p id="extra"></p>  
       <p>
        A <span id="fullName"></span>
       </p>
       <p>
-       B <span id="name"></span>
+       B <span class="name"></span>
       </p>
     `,
     obj: ["X_Béna Boldizsár", "M_Oshinoko", "W_FEGYVER"],
@@ -66,6 +66,7 @@ let templates = [
         txt: "Kettő",
         new: 2,
         modi: 2,
+        cond: "M_Oshinoko, !J_Gárda, =_name_Sanyi",
       },
     ],
   },
@@ -73,16 +74,23 @@ let templates = [
   //trial
 
   {
-    num: 2,
+    num: 1,
     type: "trial",
     value: "Hatalom",
     pass: 2,
     fail: 3,
   },
   {
-    num: 2,
+    num: 1,
     type: "Xtrial",
     value: "com",
+    pass: 2,
+    fail: 3,
+  },
+  {
+    num: 1,
+    type: "Ytrial",
+    value: "M_Oshinoko, !X_Béna Boldizsár",
     pass: 2,
     fail: 3,
   },
@@ -122,6 +130,7 @@ let templates = [
     num: 111,
     title: "Mari néni kertje",
     type: "mine",
+    size: 7,
     akna: 3,
     kincs: 10,
     music: "lightmonkey",
@@ -171,6 +180,7 @@ let templates = [
     pass: 112,
     fail: 113,
   },
+
   {
     num: 48,
     title: "Utcai támadás",
@@ -216,14 +226,24 @@ let templates = [
     type: "dungeon",
     pic: "darkstreet.jpg",
     music: "darkbackground",
-    desc: "Bolyongsz a sötét utcákon...",
-    exit: {
+    desc: "<p>Bolyongsz a sötét utcákon, hátha találsz valamit...<p>",
+    contBtn: "Tovább bolyongsz",
+    exitBtn: {
       txt: "Inkább hazamész",
       new: 46,
     },
+    exitDesc: "<p>Eleget bolyongtál, elfáradtál.</p>",
     fight: 48,
-    end: 10,
-    find: ["W_FELSŐBBRENDŰ BOT", "W_KIS ERŐITAL"],
-    findmany: 1,
+    end: 12,
+    find: [
+      "W_SZEGECSES BŐRDZSEKI",
+      "W_CSÚZLI",
+      "W_ROZSDÁS BÖKŐ",
+      "W_KÉZIGRÁNÁT",
+      "W_KIS ERŐITAL",
+      "W_NAGY ERŐITAL",
+      "W_DIABOLIKUS SZTEROID",
+    ],
+    findmany: 3,
   },
 ];

@@ -1,0 +1,26 @@
+M - találkozott (meet)
+  Oshinoko
+  Ügyes Frigyes
+  Hidan (Oshinoko gyilkos bátyja)
+
+
+X - megölte
+  Béna Boldizsár
+  Oshinoko
+
+J - szövetséges (join)
+  Gárda
+  Párt
+  Oshinoko
+  Ügyes Frigyes
+
+S - képesség (skill)
+  Micuki
+
+D - döntés (decision)
+  puccs
+  választás
+
+E - egyéb események (events)
+  Boldi elzárása
+  Boldi kivégzése

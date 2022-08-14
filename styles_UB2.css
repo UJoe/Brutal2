@@ -9,7 +9,7 @@ body {
   outline: none;
   font-size: 1.2em;
   margin: 0 10px;;
-  padding: 0;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -127,7 +127,7 @@ ul {
 }
 
 #soundBtn {
-  margin-right: 2vw;
+  margin-right: 45px;
 }
 
 .navBtn {
@@ -217,7 +217,7 @@ ul {
   margin: 10px auto;
   border: outset 5px turquoise;
   border-radius: 40px;
-  height: 240px;
+  height: 200px;
   max-width: 90vw;
   cursor: crosshair;
 }
@@ -237,6 +237,7 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
+  padding-left: 20px;
 }
 
 .btn {
@@ -249,7 +250,19 @@ h2 {
   border-radius: 10px;
   opacity: 1;
   transition: all 0.5s;
-  width: 80%
+  width: 80%;
+  max-width: 240px;
+}
+
+select {
+  transform: scale(1.2);
+  margin: 30px;
+  padding: 5px;
+  color: turquoise;
+  background-color: darkslategrey;
+  border: solid 1px lime;
+  border-radius: 10px;
+  width: 160px;
 }
 
 .btn:hover {
@@ -349,7 +362,7 @@ h2 {
 #exitBtn {
   float: right;
   padding: 4px 20px;
-  margin-right: 25px;
+  margin-right: 10px;
   background-color: yellow;
   color: black;
   outline: none;
@@ -427,40 +440,41 @@ h2 {
 #scores {
   width: 400px;
   max-width: 70vw;
-  margin: 0 30px 30px;
+  margin: 0 30px 20px;
+  font-size: 1em;
   background-image: linear-gradient(to right, black, purple, red, purple, black);
 }
 
 .leftScore {
   margin-left: 25px;
   color: lime;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .rightScore {
   margin-right: 25px;
   color: yellow;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 
 #fighterCont {
   display: flex;
   align-items: center;
-  margin: 30px auto;
-  width: 600px;
+  margin: 20px auto;
+  width: 400px;
   background-image: radial-gradient(circle, red, #1F1E4D, purple, blue );
   border: 5px double red;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .fighters {
   position: relative;
-  height: 100px;
+  height: 70px;
   border-radius: 5px;
   transition: all .5s;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .seb {
@@ -470,11 +484,11 @@ h2 {
 }
 
 #charFighter {
-  left: 100px;
+  left: 50px;
 }
 
 #nmeFighter {
-  left: 300px;
+  left: 210px;
 }
 
 #fightBtn {

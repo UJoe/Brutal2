@@ -105,10 +105,6 @@ window.weapons = [
         val: "ellenség sebesség",
         ch: "-2",
       },
-      {
-        val: "erő",
-        ch: "-1",
-      },
     ],
   },
   {
@@ -155,11 +151,135 @@ window.weapons = [
     effect: [
       {
         val: "támadás",
+        ch: "+30",
+      },
+      {
+        val: "védelem",
+        ch: "+5",
+      },
+    ],
+  },
+  {
+    name: "KONYHAKÉS",
+    desc: "Levág minden kolbászt",
+    pic: "kés.JPG",
+    sound: "stabcry",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+10",
+      },
+    ],
+  },
+  {
+    name: "BŰZBOMBA",
+    desc: "Mindenki ájuldozik tőle",
+    pic: "bűz.JPG",
+    sound: "undor",
+    effect: [
+      {
+        val: "támadás",
+        ch: "-5",
+      },
+      {
+        val: "ellenség támadás",
+        ch: "-10",
+      },
+      {
+        val: "sebesség",
+        ch: "-1",
+      },
+      {
+        val: "ellenség sebesség",
+        ch: "-3",
+      },
+      {
+        val: "ellenség erő",
+        ch: "-1",
+      },
+    ],
+  },
+  {
+    name: "PÁLINKÁS FLASKA",
+    desc: "Házi baracknak tűnik a tartalma",
+    pic: "pálesz.jpg",
+    sound: "whistle",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+20",
+      },
+      {
+        val: "erő",
+        ch: "+10",
+      },
+      {
+        val: "védelem",
+        ch: "-5",
+      },
+      {
+        val: "sebesség",
+        ch: "-4",
+      },
+    ],
+  },
+  {
+    name: "FÜTYKÖS",
+    desc: "Egy hosszú, kemény fa...",
+    pic: "fütykös.jpeg",
+    sound: "bot",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+3",
+      },
+      {
+        val: "védelem",
+        ch: "+1",
+      },
+    ],
+  },
+  {
+    name: "GUMIBOGYÓ",
+    desc: "Pattogsz tőle, mint a gumilabda.",
+    pic: "gumibogyó.gif",
+    sound: "bounce",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "+5",
+      },
+      {
+        val: "támadás",
         ch: "+40",
       },
       {
         val: "védelem",
-        ch: "+10",
+        ch: "+40",
+      },
+      {
+        val: "erő",
+        ch: "+20",
+      },
+    ],
+  },
+  {
+    name: "KATANA",
+    desc: "Oshinoko családjának legendás kardja",
+    pic: "katana.jpg",
+    sound: "suhint",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "+6",
+      },
+      {
+        val: "támadás",
+        ch: "+75",
+      },
+      {
+        val: "védelem",
+        ch: "+50",
       },
     ],
   },

@@ -34,18 +34,71 @@
 34 - A felsőbbrendű bot megszerzése
 35 - A zsibbasztó náspáng megszerzése
 36 - Harc a böszmedvével
-37 - Tanácskozás Ügyes Frigyessel
+37 - A Betyármobil
 38 - Menekülés a vadonba
 39 - A nép hisz neked
 40 - A nép csalódik benned
-41 - Összeáll a NAME gárda
-42 - A katana megszerzése
+41 - Összeáll a NAME Gárda (btn: M_Oshinoko: O+Gárda tanácskozás)
+42 - A katana megszerzésének próbája
 43 - Gyakorlás Oshinokoval
 44 - Oshinoko dühbe gurul
 45 - A Kutya Veres Kasza kocsma
 46 - Éjjel otthon
 47 - Bolyongás az utcákon (dungeon)
 48 - Utcai támadás (dungeon-fight)
+49 - Kinyírod Boldit
+50 - Ytrial (X_Béna Boldizsár - a városháza elé vonulva várnak-e vagy nem)
+51 - Összeáll a kemény csapat
+52 - Oshinoko halála
+53 - Menekülés Oshinokotól
+54 - Tanácskozás Ügyes Frigyessel
+55 - Bolyongás az erdőben (1)
+56 - Bolyongás az erdőben (2)
+57 - Bolyongás az erdőben (dungeon)
+58 - Tanácskozás a NAME Gárdával
+59 - Tanácskozás a NAME Gárdával és Oshinokoval (J_Oshinoko)
+60 - XTrial (katana)
+61 - A katana megszerzése
+62 - A vanepuca próba elbukása
+63 - Oshinokonak közbejött valaki
+64 - Xtrial (párt recruit)
+65 - A Párt megalakulása
+66 - Reggel Oshinokonál (J_Oshinoko, xtra)
+67 - A pultnál (modi)
+68 - Távozásra kérnek a kocsmából
+69 - A kocsmatöltelékek
+70 - XTrial: ha nem nyírtad ki titokban vagy zártad el Boldit, rádtámadnak, egyébként sleep
+71 - XTrial: szerencse: kinyírnak álmodban vagy fight
+72 - Death: Kinyírnak álmodban
+73 - Fight: Éjszakai támadó
+74 - Sleep: Steptől függően nyersz vissza életerőt
+75 - Egy új nap kezdete (cond gombok)
+76 - Már várnak a városházán
+77 - Tüntetés a városháza előtt
+78 - Nem sikerül elmenekülni Oshinokotól (death)
+79 - A földalatti behatolás terve (D)
+80 - Az utcai rajtaütés terve - Frigyessel (D, Ész -1)
+81 - Boldi nem tud egyszerűen belógni
+82 - Ytrial - Találkozás ismét(?) Ügyes Frigyessel
+83 - Találkozás az erdei emberekkel (Zsolt és manói)
+84 - Bolyongás az erődben - dungeon-fight
+85 - Találkozás Ügyes Frigyessel (ismét)
+86 - Találkozás Ügyes Frigyessel (először)
+87 - A városháza támadásának terve - a Gárdával (+Oshinokoval) (D)
+88 - Az utcai támadás terve - a Gárdával (D)
+89 - Oshinoko tervének elfogadása (D)
+90 - A <Párt> programja
+91 - Nem alakul meg a Párt (40-hez hasonló csak más szöveg)
+92 - Erődemonstráció Hidannak (D)
+93 - Oshinoko haditerve Hidan nélkül (D)
+94 - Beszéd Hidannal (Katana?)
+95 - Csevegés a kocsmárossal (félbeszakítja Bogi Bogi)
+96 - Bunyó a kocsma kidobóemberével ("Ez rossz húzás volt!", ha nyersz, jön Bogi)
+97 - Bogi műsora
+
+
+
+
 
 
 
