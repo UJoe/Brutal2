@@ -65,7 +65,7 @@ function _load() {
   function chooseChar(x) {
     let numera = Number(x.target.id.split("-")[1]);
     char = { ...chars[numera] };
-    char.room = 1111; //startr
+    char.room = 0; //startr
     char.objs = [];
     steps = 0;
     music.play();
@@ -685,10 +685,43 @@ function _load() {
           changeVal("esz", crease);
           break;
 
+        case "night":
+          if (
+            checkCond("E_Boldi elzárása") ||
+            checkCond("X_Béna Boldizsár, !E_Boldi kivégzése")
+          ) {
+            char.room = room.pass;
+            music.volume = 0.75;
+            result = "Sikeresen kiiktattad ma a fő veszélyforrást.";
+          } else {
+            if (char.lel + Math.random() * 100 > 80) {
+              char.room = room.mid;
+              music.volume = 0.5;
+              result =
+                "Nem sikerült kiiktatnod ma a fő veszélyforrást, de szerencséd van.";
+            } else {
+              char.room = room.fail;
+              music.volume = 0.25;
+              result =
+                "Nem sikerült a nap során kiiktatnod a fő veszélyforrást.";
+            }
+          }
+          message(result);
+          document.getElementById("message").style.color =
+            char.room == room.pass
+              ? "green"
+              : char.room == room.mid
+              ? "blue"
+              : "red";
+          break;
+
         default:
           break;
       }
       setTimeout(() => {
+        if (room.mid) {
+          document.getElementById("message").style.color = "darkblue";
+        }
         newRoom();
       }, 6000);
     } else {
@@ -837,6 +870,19 @@ function _load() {
             chby += xtra;
           }
           changeVal(ch.id, chby);
+        }
+      }
+      if (room.Xchange && loaded == false) {
+        switch (room.Xchange) {
+          case "sleep":
+            let relax = Math.round(30 - steps);
+            relax = relax < 1 ? 1 : relax;
+            changeVal("ero", relax * 2);
+            message("Sikerült " + relax + " órát aludnod.");
+            break;
+
+          default:
+            break;
         }
       }
       if (loaded) loaded = false;

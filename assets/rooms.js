@@ -1005,7 +1005,7 @@ window.rooms = [
     pic: "darkstreet.jpg",
     desc: `
       <p>
-        Valami ősi barbár ösztönnek engedelmeskedve elkezded enni legyőzött ellenfled, hogy az ereje beléd szálljon. Közben találsz egy kést is a zsebében, azzal még gyorsabban haladsz, mint foggal és körömmel. Valamennyit talán hatott rád a civilizáció, akármiylen brutális a világ.
+        Valami ősi barbár ösztönnek engedelmeskedve elkezded enni legyőzött ellenfeled, hogy az ereje beléd szálljon. Közben találsz egy kést is a zsebében, azzal még gyorsabban haladsz, mint foggal és körömmel. Valamennyit talán hatott rád a civilizáció, akármiylen brutális a világ.
       </p>
       <p>
         Egy pálinkás flaskát is találsz nála, de rögtön meg is iszod. Végül megtörlöd a kést és a szádat Boldi letépett ruhájában és tovább állsz.
@@ -1409,7 +1409,7 @@ window.rooms = [
         Mivel hulla fáradt vagy, megköszönöd a felajánlást. Sakura - akit először géshának néztél, de kiderült, hogy Oshinoko felesége - elkészíti a fekhelyedet, ahol mély, békés álomra szenderülsz...
       </p>
       `,
-    obj: ["S_micuki"],
+    obj: ["S_micuki", "J_Oshinoko"],
     change: [
       {
         id: "ero",
@@ -1617,7 +1617,7 @@ window.rooms = [
   {
     num: 50,
     type: "Ytrial",
-    value: "X_Béna Boldizsár",
+    value: ">_sup_30 >_hat_70",
     pass: 77,
     fail: 76,
   },
@@ -2000,7 +2000,7 @@ window.rooms = [
         Pár órával hajnal előtt hagyjátok csak abba kimerülten a mulatozást. Elvezetnek a vendégszobába, ahol fáradtan az ágyra rogysz és azonnal elnyom az álom.
       </p>
     `,
-    obj: ["W_KATANA"],
+    obj: ["W_KATANA", "J_Oshinoko"],
     buttons: [
       {
         txt: "Felébredsz",
@@ -2059,7 +2059,7 @@ window.rooms = [
         Kezded megszokni a stílusukat, így csak némán bólintasz. Oshinoko megmutatja, hova kell állnod, hogy elhagyd a kertet, mivel kapu nincs, csak a felismerhetetlen forgófal. Miközben odamész, elhaladsz a másik alak előtt. Az arca tényleg hasonlít Oshinokoéra - bár ezeknél az ázsiaiaknál mást jelent a különbözőség - de van egy sebhely a jobb arcán. Egy inyencfalatra talált pszichopata gyilkos tekintetével mér végig téged. Ezt látva Oshinoko ráförmed két szótagot, mire az alak unottan elfordítja a tekintetét rólad. Ezek szerint legalább Oshinoko a főnök. Megvonod a vállad és beállsz a fal mellé. Az azonnal kifordul veled. Kikerültél ismét az utcára. Igyekszel megjegegyezni a helyet, hogy másnap visszatalálj, és útnak indulsz.
       </p>
     `,
-    obj: ["J_Oshinoko", "M_Hidan"],
+    obj: ["J_Oshinoko"],
     buttons: [
       {
         txt: "Na, menjünk valamerre!",
@@ -2184,7 +2184,6 @@ window.rooms = [
         - Azt, hogy szerinte esélytelenek vagyunk Boti ellen. Tudja ő is, hogy leginkább ő tudná növelni az esélyeinket, de nem akar vesztesek mellé állni.
       </p>
     `,
-    obj: ["J_Oshinoko"],
     change: [
       {
         id: "lel",
@@ -2255,7 +2254,7 @@ window.rooms = [
   },
   {
     num: 68,
-    title: "A pultnál",
+    title: "Megkérnek, hogy távozz a kocsmából",
     type: "normal",
     music: "pubmusic",
     pic: "kidobo.jpg",
@@ -2277,6 +2276,270 @@ window.rooms = [
         new: 96,
       },
     ],
+  },
+  {
+    num: 69,
+    title: "A kocsmatöltelékek",
+    type: "normal",
+    music: "pubmusic",
+    pic: "kocsmatöltelékek.jpg",
+    desc: `
+      <p>
+       Ahogy közeledsz feléjük, elhallgatnak és növekvő áhitattal követik lépteidet. Megállsz felettük. Egy ideig némán nézitek egymást, aztán a legidősebbnek tűnő lecsúszott alak - biztos az alfa hím - borízű hangon megszólal:
+      </p>
+      <p>
+       - Te vagy á hős, ki legyőszte Bedől... Betlit?
+      </p>
+      <p>
+       - Ha Battle Beatle-re gondolsz, akkor igen - feleled kapásból. Felesleges lenne titkolni. A legkisebb gnóm rögtön kikerekedett szemmel elkiáltja magát, miközben úgy oldalba löki a harmadik tagot, hogy az kilöttyinti a sörét. De láthatóan nem foglalkozik vele.
+      </p>
+      <p>
+        - Hű, Mátyus! Asztakutya! Látod, megmontam! Húha, most micsinájunk? Rendeljünk neki a legjob sörbű! BODRIII!!! - Ez utóbbit dobhártyátszaggatóan ordítja. Először azt hiszed, a kutyája kapta el közben a tökét az asztal alatt, de nem! A pultos rögtön visszaordít neki.
+      </p>
+      <p>
+       - Mi van, Pitypang?!
+      </p>
+      <p>
+       - Ászok ászát a hős úrnak! Itt van Bedő Billy legyőzője!
+      </p>
+      <p>
+        Rögtön elcsendesedik a kocsma és minden szem rád szegeződik. Igen, a hírneved sokszor megelőz. Ezt pedig előnyödre tudod fordítani. Mit teszel?
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Megkérdezed, ki akar neked segíteni Bitang Botond legyőzésében.",
+        new: 71,
+      },
+      {
+        txt: "Alázattal elfogadod az ingyen sört és letelepszel az asztalukhoz",
+        new: 98,
+      },
+    ],
+  },
+  {
+    num: 70,
+    type: "Xtrial",
+    value: "night",
+    fail: 72,
+    mid: 73,
+    pass: 74,
+  },
+  {
+    num: 71,
+    type: "Xtrial",
+    value: "recruit",
+    pass: 99,
+    fail: 100,
+  },
+  {
+    num: 72,
+    title: "Álmodban kivégeznek",
+    type: "death",
+    music: "suhint",
+    stopmusic: true,
+    pic: "deadbed.JPG",
+    desc: `
+      <p>
+       Éjjel, amikor mélyen alszol, Bitang Boti legjobb orvgyilkosa belopózik az otthonodba. Nesztelenül az ágyadhoz lép és leszúr. Belédnyilall a fájdalom, de már nem tudsz az elvérzés ellen semmit tenni, így inkább tovább alszol - örökké...
+      </p>
+      <p>
+       Kalandod itt véget ért, de most már tudod, hogy csendben ki kellett volna iktatnod a polgármester besúgóját.
+      </p>
+    `,
+  },
+  {
+    num: 73,
+    title: "Harc Bitang Boti orvgyilkosával",
+    type: "fight",
+    pic: "orvgyilkos.gif",
+    nmepic: "orvgyilkos.gif",
+    att: 75,
+    def: 45,
+    speed: 7,
+    hp: 50,
+    desc: `
+      <p>
+       Éjjel, amikor mélyen alszol, Bitang Boti legjobb orvgyilkosa belopózik az otthonodba. Nesztelenül az ágyad mellé lép, de ekkor valahogy megérzed a jelenlétét. Kinyitod a szemed és a homályban meglátod a vörösen izzó szemű sötét, nőies alakot. Azonnal kiugrasz az ágy másik oldalára. Épp időben, mert a beszűrődő holdfényben megvillan a tőre pengéje, amivel épp lesújtott rád - de már nem talált el.
+      </p>
+      <p>
+       - Ki vagy te és mit keresel itt?! - ordítasz rá.
+      </p>
+      <p>
+       - Nem nyilvánvaló mindkettő? - felel hűvős alt hangján. - Gondoltad nem jut el Botond mesterhez a terved híre, hogy meg akarod dönteni a hatalmát? Azt hitted, hagyni fogja? Alábecsülted!
+      </p>
+      <p>
+       - Nem becsültem alá, ha maga helyett mást küld elvégezni a mocskos melót! Ez egy gyáva féreg! - vonod le a következtetést a kapott információk alapján.
+      </p>
+      <p>
+       - Az lehet, én viszont elvégzem a munkát, amiért megfizet - felel a nő, azzal feléd ugrik.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Gyere csak!",
+      },
+    ],
+    pass: 101,
+    fail: 102,
+  },
+  {
+    num: 74,
+    title: "A 2. nap reggele",
+    type: "normal",
+    music: "calmusic",
+    pic: "nappali.jpg",
+    desc: `
+      <p>
+        Napsütéses reggel és az utca zaja ébreszt fel. Összekapod magad, eszel valamit és mivel még korán van ahhoz, hogy bárhová elindulj, egy kis időt eltölthetsz otthon is. Mit teszel?
+      </p>
+      `,
+    Xchange: "sleep",
+    buttons: [
+      {
+        txt: "Edzel",
+        new: 103,
+      },
+      {
+        txt: "Imádkozol",
+        new: 104,
+      },
+      {
+        txt: "Rejtvényeket fejtesz",
+        new: 105,
+      },
+      {
+        txt: "Nyomkodod a telefonodat",
+        new: 106,
+      },
+    ],
+  },
+  {
+    num: 75,
+    title: "Merre mész tovább a 2. napon?",
+    type: "normal",
+    music: "calmusic",
+    pic: "nappali.jpg",
+    desc: `
+      <p>
+        Miután végeztél, átgondolod, hogy mik történtek veled tegnap és ezek fényében merre menj tovább. Hová mész?
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Oshinokohoz",
+        new: 66,
+        cond: "J_Oshinoko, !J_Gárda",
+        modi: "Viszonylag kevés bolyongással sikerül visszatalálnod Oshinoko házának falához. Mivel jobb ötleted nincs, beállsz oda, ahonnan befordult a fal és vársz. Semmi nem történik. Kicsit arrébb állsz, mert hátha nem jól emlékeztél. Megint semmi. Ezt még háromszor megismétled, mire végre befordul veled a fal. Hurrá!",
+      },
+      {
+        txt: "A Gárdához",
+        new: 107,
+        cond: "J_Gárda, !J_Oshinoko",
+      },
+      {
+        txt: "A Garázsba",
+        new: 108,
+        cond: "J_Gárda, J_Oshinoko",
+      },
+      {
+        txt: "Ügyes Frigyes kunyhójához",
+        new: 109,
+        cond: "J_Ügyes Frigyes",
+      },
+      {
+        txt: "A pártgyűlésre",
+        new: 110,
+        cond: "J_Párt",
+      },
+      {
+        txt: "Erdeiékhez",
+        new: 111,
+        cond: "J_Erdeiék",
+      },
+      {
+        txt: "A kocsmába",
+        new: 112,
+        cond: "M_Bogi",
+      },
+      {
+        txt: "A piacra",
+        new: 113,
+        cond: "!J_Gárda, !J_Párt, !J_Erdeiék, !J_Oshinoko, !J_Ügyes Frigyes",
+      },
+    ],
+  },
+  {
+    num: 76,
+    title: "A tüntetők szétoszlatása",
+    type: "normal",
+    music: "darkmystic",
+    pic: "szekus.jpg",
+    desc: `
+      <p>
+        Amikor megérkezel lelkes kis csapatod botcsinálta vezéreként a Városháza elé, ott az őrök fitymálva nézegetnek titeket. Hátranézel, és valóban túl kicsinek tűnik követőid száma. Kezdesz elbizonytalanodni, talán túl korán vonultál ide. De igyekszel nem mutatni csalódottságodat.
+      </p>
+      <p>
+        Az egyik őr, láthatóan a vezetőjük, gallérmikrofonján keresztül beszél pár szót valakivel, aztán feléd fordul.
+      </p>
+      <p>
+        - A polgármester úr üzeni, hogy nincs most kedve a játszadozáshoz. 1 percet kaptok, hogy békésen elvonuljatok, és akkor kegyesen elfelejti ezt az incidenst. Ha nem mentek el, az nem lesz jó nektek.
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Hallgatsz rá",
+        new: 114,
+      },
+      {
+        txt: "Megrohamozzátok a Városházát",
+        new: 115,
+        modi: "Amint megmozdulnak az emberek a Városháza kerítése felé, a biztonsági őrök harci alakzatba rendeződnek , a vezetőjük pedig kiadja a tűzparancsot ellenetek.",
+      },
+    ],
+  },
+  {
+    num: 77,
+    title: "Sikertelen tüntetés a városháza előtt",
+    type: "pursuit",
+    music: "longmixed",
+    level: 8,
+    pic: "exit.png",
+    desc: `
+      <p>
+        A lelkes nép már útközben elkezd különféle szlogeneket kezd ordibálni.
+      </p>
+      <ul>
+        <li>Monnyon le!</li>
+        <li>Hülye vagy, ezt ki kell nyírni!</li>
+        <li><span id="fullName"></span> a mi vezérünk!</li>
+        <li>Ingyen kakasnyalókát!</li>
+        <li>Elég az agymosó diktatúrából!</li>
+        <li>Reklámmentes internet!</li>
+        <li>Törpehörcsög, hóbagoly, öld a köcsög Bitangot!</li>
+      </ul>
+      <p>
+        Leginkább ezt az utolsó, a költészet szabályaival elég laza kapcsolatban álló alkotást kapta fel a nép. Ennek skandálásával érkeztek meg a Városházára. 
+      </p>
+      <p>
+        A biztonsági őrök vezetője beszél pár mondatot a gallérmikrofonjába - de nem érted, mert elnyomja az ordító tömeg, majd bólint egyet, mire harci alakzatba rendeződnek az őrök.
+      </p>
+      <p>
+        - Tünjetek el innen! - mondja hűvösen és minden őr a tömegre szegezi a gépfegyverét. A nép nagyrésze megszeppen, de egy idősödő, sebhelyes képű hulligán méltatlannak találja ezt a bánásmódot és ezt el is ordítja a biztonsági főnöknek, nyomatékul pedig letép egy utcai kukát a helyéről és hozzávágja. Úgy tűnik, ezt a a biztonsági vezér szintén zokon veszi, mert kiadja a tűzparancsot.
+      </p>
+      <p>
+        Szerencsére van akkora kritikus tömeg, hogy esélyed legyen elmenekülni, de vajon okosan választod-e meg az útvonalat és bírod-e erővel. Ezt úgy derítjük most ki, hogy minél gyorsabban beírod a megjelenő matematikai műveletek eredményét a szökéshez.
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Bakker, ezek tényleg lőnek!",
+        new: 114,
+      },
+    ],
+    pass: 27,
+    modi: "Utcáról utcára rohanva, lehetőleg takarásban futva sikerül végül a város szegényebb negyedébe eljutnod, ahova már nem követnek.",
+    fail: 115,
   },
 
   //*
@@ -2333,4 +2596,4 @@ window.rooms = [
   },
 ];
 
-//KOcsma: Bogi énekel, rákérdezés a kocsmáros nevére (Bodri)
+//Kocsma: Bogi énekel, rákérdezés a kocsmáros nevére (Bodri)

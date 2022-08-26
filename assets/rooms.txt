@@ -65,15 +65,15 @@
 65 - A Párt megalakulása
 66 - Reggel Oshinokonál (J_Oshinoko, xtra)
 67 - A pultnál (modi)
-68 - Távozásra kérnek a kocsmából
+68 - Megkérnek, hogy távozz a kocsmából
 69 - A kocsmatöltelékek
 70 - XTrial: ha nem nyírtad ki titokban vagy zártad el Boldit, rádtámadnak, egyébként sleep
-71 - XTrial: szerencse: kinyírnak álmodban vagy fight
+71 - Xtrial: recruit (kocsmatöltelékek)
 72 - Death: Kinyírnak álmodban
 73 - Fight: Éjszakai támadó
 74 - Sleep: Steptől függően nyersz vissza életerőt
-75 - Egy új nap kezdete (cond gombok)
-76 - Már várnak a városházán
+75 - Merre mész tovább a 2. napon? (cond gombok)
+76 - A tüntetők szétoszlatása
 77 - Tüntetés a városháza előtt
 78 - Nem sikerül elmenekülni Oshinokotól (death)
 79 - A földalatti behatolás terve (D)
@@ -95,6 +95,27 @@
 95 - Csevegés a kocsmárossal (félbeszakítja Bogi Bogi)
 96 - Bunyó a kocsma kidobóemberével ("Ez rossz húzás volt!", ha nyersz, jön Bogi)
 97 - Bogi műsora
+98 - Beszélgetés a kocsmatöltelékekkel (utána csak 97)
+99 - Csatlakoznak a kocsmatöltelékek (nincs plusz valchange, -> 97)
+100 - Nem győzted meg a kocsmatöltelékeket (nincs plusz valchange, -> 97)
+101 - Az orvgyilkos legyőzésében
+102 - Menekülés az orvgyilkos elől
+103 - Edzés otthon (ero + ugy. 103-106: 75-re megy tovább!)
+104 - Imádkozás otthon (lel + hat)
+105 - Rejtvényfejtés otthon (esz)
+106 - Telózás otthon (leépülés)
+107 - Újra a <name> Gárdával
+108 - Ismét a Garászban (Oshinoko + Gárda + fegyverek)
+109 - Újra Fricinél
+110 - Akcióban a <Párt>
+111 - Akcióban Erdeiék
+112 - Már megint a kocsmában (Bogi és/vagy Kocsmatöltetlékek vonala)
+113 - A piacon (új szál, ha nem sikerült szövetségest szerezni az 1. napon)
+114 - Szétoszlik a nép (hasonló 40-hez, de más szöveg, -sup és nincs Oshinoko)
+115 - A tüntetők megölése (hasonló 20-hoz, de modi: 76-77)
+
+
+
 
 
 

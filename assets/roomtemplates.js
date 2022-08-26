@@ -56,6 +56,7 @@ let templates = [
         crease: 5,
       },
     ],
+    Xchange: "sleep",
     buttons: [
       {
         txt: "Egy",
