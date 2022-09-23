@@ -618,6 +618,7 @@ function _load() {
             crease = 1;
             music.volume = 0.75;
             result = "lenyűgöző volt!";
+            if (room.modi) modi = room.modi;
           } else {
             char.room = room.fail;
             crease = -1;
@@ -766,6 +767,12 @@ function _load() {
         document.getElementById("extra").innerHTML = modi;
         modi = false;
       }
+      if (document.getElementById("add") && room.add) {
+        if (checkCond(room.add.split("::")[0])) {
+          document.getElementById("add").innerHTML = room.add.split("::")[1];
+        }
+      }
+
       if (document.getElementById("akna"))
         document.getElementById("akna").innerHTML = room.akna;
       if (document.getElementById("kincs"))
@@ -952,7 +959,7 @@ function _load() {
           </div>
           <div id="runnerCont">
             <img class="runners" id="charRunner" src="./img/chars/${char.pic}.jpg">
-            <img class="runners" id="nmeRunner" src="./img/rooms/${room.pic}">
+            <img class="runners" id="nmeRunner" src="./img/rooms/${room.goalpic}">
           </div>
           <div id="question"></div>
         `;
@@ -988,7 +995,7 @@ function _load() {
                 modi = false;
               }
             }
-            document.getElementById("question").innerHTML = "Elkaptad!";
+            document.getElementById("question").innerHTML = "Siker!";
             clearInterval(timo);
             setTimeout(() => {
               newRoom();
@@ -1037,18 +1044,18 @@ function _load() {
           let ia = document.getElementById("answer");
           ia.focus();
           ia.addEventListener("change", function (event) {
-            let reaction = Math.round((new Date().getTime() - startTime) / 100);
+            let reaction = Math.round((new Date().getTime() - startTime) / 140);
             let answer = Number(event.target.value);
             let x = 0;
             if (answer == e) {
-              x =
-                Math.round((char.esz + char.ugy - reaction) / 3) -
-                room.level * modi;
+              x = Math.round(
+                char.esz / 2 + char.ugy / 2 - reaction - room.level * modi
+              );
               y = x > 0 ? "Jó válasz!" : "Jó, csak lassú.";
             } else {
-              x -=
-                Math.round((counter / 3 + reaction / 5) / 2) +
-                room.level * modi;
+              x -= Math.round(
+                (counter / 3 + reaction / 5) / 2 + room.level * modi
+              );
               y = "Rossz válasz!";
             }
             pos += x;

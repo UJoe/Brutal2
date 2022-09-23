@@ -1,8 +1,9 @@
 M - találkozás (meet)
   Oshinoko
   Ügyes Frigyes
-  Hidan (Oshinoko gyilkos bátyja)
+  Szenyamuki
   Bogi
+  Kocsmatöltelékek
 
 
 X - megölve
@@ -14,7 +15,8 @@ J - szövetséges (join)
   Párt
   Oshinoko
   Ügyes Frigyes
-  Erdeiék  
+  Erdeiék
+  Szenyamuki  
 
 S - képesség (skill)
   Micuki
@@ -22,6 +24,10 @@ S - képesség (skill)
 D - döntés (decision)
   puccs
   választás
+  földalatt
+  utca-Frici
+  utca-Gárda
+  ostrom
 
 E - egyéb események (events)
   Boldi elzárása

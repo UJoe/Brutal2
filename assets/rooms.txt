@@ -78,27 +78,27 @@
 78 - Nem sikerül elmenekülni Oshinokotól (death)
 79 - A földalatti behatolás terve (D)
 80 - Az utcai rajtaütés terve - Frigyessel (D, Ész -1)
-81 - Boldi nem tud egyszerűen belógni
+81 - Nem érdemes belógni
 82 - Ytrial - Találkozás ismét(?) Ügyes Frigyessel
-83 - Találkozás az erdei emberekkel (Zsolt és manói)
+83 - Találkozás az erdei lényekkel (Zsolt és manói)
 84 - Bolyongás az erődben - dungeon-fight
 85 - Találkozás Ügyes Frigyessel (ismét)
 86 - Találkozás Ügyes Frigyessel (először)
 87 - A városháza támadásának terve - a Gárdával (+Oshinokoval) (D)
-88 - Az utcai támadás terve - a Gárdával (D)
-89 - Oshinoko tervének elfogadása (D)
+88 - Az utcai támadás terve - a Gárdával (+Oshinokoval) (D)
+89 - Erdei Zsolt leápol (a bübük sípolnak, majd valaki 55-57-re visszavág)
 90 - A <Párt> programja
 91 - Nem alakul meg a Párt (40-hez hasonló csak más szöveg)
-92 - Erődemonstráció Hidannak (D)
-93 - Oshinoko haditerve Hidan nélkül (D)
-94 - Beszéd Hidannal (Katana?)
-95 - Csevegés a kocsmárossal (félbeszakítja Bogi Bogi)
+92 - Erődemonstráció Szenyamukinak (D)
+93 - Oshinoko haditerve Szenyamuki nélkül (D)
+94 - Beszéd Szenyamukival (Katana?)
+95 - Csevegés a kocsmárossal (félbeszakítja Bogi)
 96 - Bunyó a kocsma kidobóemberével ("Ez rossz húzás volt!", ha nyersz, jön Bogi)
 97 - Bogi műsora
 98 - Beszélgetés a kocsmatöltelékekkel (utána csak 97)
 99 - Csatlakoznak a kocsmatöltelékek (nincs plusz valchange, -> 97)
 100 - Nem győzted meg a kocsmatöltelékeket (nincs plusz valchange, -> 97)
-101 - Az orvgyilkos legyőzésében
+101 - Az orvgyilkos legyőzése
 102 - Menekülés az orvgyilkos elől
 103 - Edzés otthon (ero + ugy. 103-106: 75-re megy tovább!)
 104 - Imádkozás otthon (lel + hat)
@@ -109,10 +109,16 @@
 109 - Újra Fricinél
 110 - Akcióban a <Párt>
 111 - Akcióban Erdeiék
-112 - Már megint a kocsmában (Bogi és/vagy Kocsmatöltetlékek vonala)
+112 - A régi fagyigyárban (Bogi vonala)
 113 - A piacon (új szál, ha nem sikerült szövetségest szerezni az 1. napon)
 114 - Szétoszlik a nép (hasonló 40-hez, de más szöveg, -sup és nincs Oshinoko)
 115 - A tüntetők megölése (hasonló 20-hoz, de modi: 76-77)
+116 - Az erdei embereknél
+117 - Xtrial - com (válasz a csalódott Fricinek. modi!)
+118 - Jó válasz Fricinek (jó kifogás, hat+, modi! (86,118), aztán 37 végétől)
+119 - Rossz válasz Fricinek (hazaküld)
+120 - Beszélgetés Fricivel (hazamész vagy szövetkeztek)
+
 
 
 

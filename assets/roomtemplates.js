@@ -43,7 +43,12 @@ let templates = [
       <p>
        B <span class="name"></span>
       </p>
+      <p>
+       C <span id="add"></span>
+      </p>
+
     `,
+    add: "=_name_Q::- Meghackelem!",
     obj: ["X_Béna Boldizsár", "M_Oshinoko", "W_FEGYVER"],
     change: [
       {
@@ -62,12 +67,17 @@ let templates = [
         txt: "Egy",
         new: 1,
         cond: "W_FELSŐBBRENDŰ BOT",
+        modi: "Elnáspágollak!",
       },
       {
         txt: "Kettő",
         new: 2,
         modi: 2,
-        cond: "M_Oshinoko, !J_Gárda, =_name_Sanyi",
+        cond: ">_ero_70, !J_Gárda, =_name_Sanyi",
+      },
+      {
+        txt: "Három",
+        new: 3,
       },
     ],
   },
@@ -105,6 +115,7 @@ let templates = [
     level: 2,
     music: "longmixed",
     pic: "runner.gif",
+    goalpic: "runner.gif",
     desc: `
       <p>
         Desc
