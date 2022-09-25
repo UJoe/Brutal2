@@ -17,6 +17,8 @@ function _load() {
   window.isDying = false;
   window.loaded = false;
   window.part = " ";
+  window.prg = 0;
+  window.progi = " ";
   var timo;
   var timo1;
   var timo2;
@@ -38,6 +40,8 @@ function _load() {
     localStorage.setItem("charSup", char.sup);
     localStorage.setItem("steps", steps);
     localStorage.setItem("part", part);
+    localStorage.setItem("prg", prg);
+    localStorage.setItem("progi", progi);
     if (isDying) {
       localStorage.setItem("isDying", "1");
     } else {
@@ -60,6 +64,8 @@ function _load() {
     steps = Number(localStorage.getItem("steps"));
     isDying = Boolean(localStorage.getItem("isDying"));
     part = localStorage.getItem("part");
+    prg = Number(localStorage.getItem("prg"));
+    progi = localStorage.getItem("progi");
   }
 
   function chooseChar(x) {
@@ -68,6 +74,10 @@ function _load() {
     char.room = 0; //startr
     char.objs = [];
     steps = 0;
+    isDying = false;
+    part = " ";
+    window.prg = 0;
+    window.progi = " ";
     music.play();
     newRoom();
   }
@@ -763,6 +773,9 @@ function _load() {
           .querySelectorAll(".name")
           .forEach((n) => (n.innerHTML = char.name.split(",")[0]));
       }
+      if (document.querySelector(".part")) {
+        document.querySelectorAll(".part").forEach((p) => (p.innerHTML = part));
+      }
       if (document.getElementById("extra") && modi) {
         document.getElementById("extra").innerHTML = modi;
         modi = false;
@@ -816,8 +829,10 @@ function _load() {
         for (let i = 0; i < list; i++) {
           selString += `<select id="col${i}">`;
           for (let opt of sels[i]) {
-            if (opt == "name") opt = char.name.split(",")[0];
-            selString += `<option value="${opt}">${opt}</option>`;
+            let name = opt.name;
+            let val = opt.val;
+            if (name == "name") name = char.name.split(",")[0];
+            selString += `<option value="${val}">${name}</option>`;
           }
           selString += "</select>";
         }
@@ -831,10 +846,16 @@ function _load() {
           .getElementById("submit")
           .addEventListener("click", function (event) {
             event.preventDefault();
-            part = "";
+            let txt = "";
+            let varc = 0;
             for (let l = 0; l < list; l++) {
-              part += document.getElementById("col" + l).value + " ";
+              let o = document.getElementById("col" + l);
+              let t = o.options[o.selectedIndex].text;
+              txt += t + (l < list - 1 ? room.sep : "");
+              if (room.cvar) varc += Number(o.value);
             }
+            window[room.wvar] = txt;
+            if (room.cvar) changeVal(room.cvar, varc);
             let num = rooms.findIndex((r) => r.num === sub.new);
             if (num === -1) {
               message("Ez még nincs kész.");
@@ -842,7 +863,14 @@ function _load() {
             } else {
               char.room = sub.new;
             }
-            newRoom();
+            if (room.cvar) {
+              if (room.wc) prg = varc;
+              message("Választásod pontértéke: " + varc);
+              document.getElementById("submit").disabled = true;
+              setTimeout(() => {
+                newRoom();
+              }, 4500);
+            } else newRoom();
           });
       }
 

@@ -118,6 +118,7 @@
 118 - Jó válasz Fricinek (jó kifogás, hat+, modi! (86,118), aztán 37 végétől)
 119 - Rossz válasz Fricinek (hazaküld)
 120 - Beszélgetés Fricivel (hazamész vagy szövetkeztek)
+121 - A Párt programjának elfogadása
 
 
 

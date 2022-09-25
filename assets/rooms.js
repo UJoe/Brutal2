@@ -1251,7 +1251,7 @@ window.rooms = [
     pic: "lelkesnép.gif",
     desc: `
       <p>
-        A népet lázba hozza az ingyen kakasnyalóka, a reklámmentes internet, a járványok szétmorzsolása, a "Minden háztartásba törpehörcsög, hóbagoly vagy takarító robotnő!" program az önkormányzat által finanszírozott szuperképesség-fejlesztő tanfolyam valamint az agymosással való végső leszámolás. Perpill ezek jutottak eszedbe, de érzed, hogy ez még csak a kezdet.
+        A népet lázba hozza az ingyen kakasnyalóka, a reklámmentes internet, a járványok szétmorzsolása, a "Minden háztartásba törpehörcsög, hóbagoly vagy takarító robotnő!" program, az önkormányzat által finanszírozott szuperképesség-fejlesztő tanfolyam valamint az agymosással való végső leszámolás. Perpill ezek jutottak eszedbe, de érzed, hogy ez még csak a kezdet.
       </p>
       <p>
         Mit teszel ezután?
@@ -2112,46 +2112,49 @@ window.rooms = [
     ],
     select: [
       [
-        "Független",
-        "Függő",
-        "Hatalmas",
-        "Egyetlen",
-        "Magyar",
-        "Globális",
-        "Kozmikus",
-        "Misztikus",
-        "Örök",
-        "Titkos",
-        "Becsületes",
+        { name: "Független", val: 3 },
+        { name: "Függő", val: -3 },
+        { name: "Hatalmas", val: 5 },
+        { name: "Egyetlen", val: 2 },
+        { name: "Magyar", val: 0 },
+        { name: "Globális", val: -2 },
+        { name: "Kozmikus", val: 3 },
+        { name: "Misztikus", val: 4 },
+        { name: "Örök", val: 2 },
+        { name: "Titkos", val: -1 },
+        { name: "Becsületes", val: 3 },
       ],
       [
-        "Brutál",
-        "Böszme",
-        "Zöld",
-        "Vörös",
-        "Antidemokratikus",
-        "Kemény",
-        "Hős",
-        "Szelíden Virágzó",
-        "Bitangirtó",
-        "Gyökerű",
-        "Király",
-        "Rendcsináló",
-        "Gitáros",
-        "Tolvaj",
-        "name",
+        { name: "Brutál", val: 5 },
+        { name: "Böszme", val: 4 },
+        { name: "Zöld", val: -5 },
+        { name: "Vörös", val: -4 },
+        { name: "Antidemokratikus", val: -3 },
+        { name: "Kemény", val: 2 },
+        { name: "Hős", val: 5 },
+        { name: "Szelíden Virágzó", val: -5 },
+        { name: "Bitangirtó", val: 5 },
+        { name: "Gyökerű", val: 0 },
+        { name: "Király", val: 1 },
+        { name: "Rendcsináló", val: 3 },
+        { name: "Gitáros", val: 5 },
+        { name: "Tolvaj", val: -2 },
+        { name: "name", val: 1 },
       ],
       [
-        "Párt",
-        "Szövetség",
-        "Banda",
-        "Nagykoalíció",
-        "Emberek",
-        "Dinasztia",
-        "Klán",
-        "Osztag",
+        { name: "Párt", val: -2 },
+        { name: "Szövetség", val: 1 },
+        { name: "Banda", val: 3 },
+        { name: "Nagykoalíció", val: 3 },
+        { name: "Emberek", val: -3 },
+        { name: "Dinasztia", val: 2 },
+        { name: "Klán", val: 5 },
+        { name: "Osztag", val: 4 },
       ],
     ],
+    wvar: "part",
+    sep: " ",
+    cvar: "sup",
     submit: {
       txt: "Ez lesz dicső nevünk!",
       new: 90,
@@ -2850,6 +2853,58 @@ window.rooms = [
         new: 57,
       },
     ],
+  },
+  {
+    num: 90,
+    title: "A <span class='part'></span> programja",
+    type: "normal",
+    music: "lightaction",
+    pic: "gangmeet.jpg",
+    desc: `
+    <p>
+     A tásaság nagyot koccint a <span class='part'></span> név elfogadására. Már kissé ittas állapotban láttok hozzá a program kidolgozásához. Elhangzanak azok is, amiket már a főtéren javasoltál és bedobnak újabb ötleteket is. Végül úgy döntötötök, három fő területen fogtok egy-egy programmal kampányolni. Mik legyenek ezek?
+    </p>
+  `,
+    select: [
+      [
+        { name: "Ingyen kakasnyalóka", val: 10 },
+        { name: "Szuperképesség-fejlesztő tanfolyam", val: 20 },
+        {
+          name: "Törpehörcsög, hóbagoly vagy takarító robotnő",
+          val: 5,
+        },
+        {
+          name: "Ingyen bor, búza, békesség",
+          val: 15,
+        },
+        {
+          name: "Minden nap 50 ingyen spam",
+          val: -30,
+        },
+      ],
+      [
+        { name: "Reklámmentes internet", val: 30 },
+        { name: "A járványok szétmorzsolása", val: 25 },
+        { name: "Az agymosással való leszámolás", val: 10 },
+        { name: "Világbéke", val: -10 },
+        { name: "Örök emlék a halottaknak", val: -25 },
+      ],
+      [
+        { name: "Szociális otthon a városházából", val: 30 },
+        { name: "Bitang Botond és emberei lógni fognak", val: 25 },
+        { name: "Gizikének mosómedvét", val: 10 },
+        { name: "Mi a szar legyen még?", val: 40 },
+        { name: "Aggyá mék sört, Menyus!", val: -20 },
+      ],
+    ],
+    wvar: "progi",
+    sep: " - ",
+    cvar: "sup",
+    wc: true,
+    submit: {
+      txt: "Ez a nyerő program!",
+      new: 21,
+    },
   },
 
   //*

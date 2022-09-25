@@ -46,6 +46,9 @@ let templates = [
       <p>
        C <span id="add"></span>
       </p>
+      <p>
+       D <span class='part'></span> 
+      </p>
 
     `,
     add: "=_name_Q::- Meghackelem!",
@@ -80,6 +83,57 @@ let templates = [
         new: 3,
       },
     ],
+  },
+
+  //normal + select
+  {
+    num: 65,
+    title: "Megalakul a Párt",
+    type: "normal",
+    music: "lightaction",
+    pic: "gangmeet.jpg",
+    desc: `
+      <p>
+        Szavaid lángra lobbantanak pár ifjú szívet, akik gazdái készek melléd állni.
+      </p>
+        Valaki bedobja rögtön, hogy tartsatok egy alakuló gyűlést nála. El is vonul a lelkes csapat. Útközben több névjavaslat is elhangzik, így amikor megérkeztek és helyet foglaltok egy nagy étkezőasztal körül, elsőkörben a párt nevéről indítotok szavazást. 
+      <p>
+        A javaslatokra kattintva válaszd ki, melyik név tetszik a legjobban!
+      </p>
+      `,
+    obj: ["J_Párt"],
+    change: [
+      {
+        id: "sup",
+        crease: 10,
+        rnd: 5,
+      },
+    ],
+    select: [
+      [
+        { name: "Független", val: 3 },
+        { name: "Függő", val: -3 },
+        { name: "Hatalmas", val: 5 },
+      ],
+      [
+        { name: "Brutál", val: 5 },
+        { name: "Böszme", val: 4 },
+        { name: "Zöld", val: -5 },
+      ],
+      [
+        { name: "Párt", val: -2 },
+        { name: "Szövetség", val: 1 },
+        { name: "Banda", val: 3 },
+      ],
+    ],
+    wvar: "part",
+    sep: " ",
+    cvar: "sup",
+    //wc: true,
+    submit: {
+      txt: "Ez lesz dicső nevünk!",
+      new: 90,
+    },
   },
 
   //trial
