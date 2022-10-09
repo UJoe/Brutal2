@@ -72,7 +72,7 @@ function _load() {
   function chooseChar(x) {
     let numera = Number(x.target.id.split("-")[1]);
     char = { ...chars[numera] };
-    char.room = 69; //startr
+    char.room = 0; //startr
     char.objs = [];
     steps = 0;
     isDying = false;
