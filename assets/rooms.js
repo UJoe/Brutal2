@@ -2199,15 +2199,11 @@ window.rooms = [
     ],
     buttons: [
       {
-        txt: "Mi lenne, ha bebizonyítanánk neki, hogy erősek vagyunk?",
-        new: 92,
-      },
-      {
         txt: "Boldogulunk mi nélküle is.",
         new: 93,
       },
       {
-        txt: "Beszélnék én is ezzel a Szenyamukival.",
+        txt: "Majd én beszélek ezzel Szenyamukival.",
         new: 94,
       },
     ],
@@ -2221,7 +2217,7 @@ window.rooms = [
     desc: `
       <p id="extra"></p>
       <p>
-       Felhörpinted az italodat. Ettől kicsit jobban érzed magad. Erősebbnek. Bár egy kicsit lalassulsz. De az önbizalmad megnő. Remélem, tudtad követni a pontváltozást.
+       Felhörpinted az italodat. Ettől kicsit jobban érzed magad. Erősebbnek. Bár egy kicsit lalassulsz. De az önbizalmad megnő. Remélem, tudtad követni a pontváltozásokat.
       </p>
       <p>
        Most mit teszel?
@@ -2374,13 +2370,13 @@ window.rooms = [
        - Ki vagy te és mit keresel itt?! - ordítasz rá.
       </p>
       <p>
-       - Nem nyilvánvaló mindkettő? - felel hűvős alt hangján. - Gondoltad nem jut el Botond mesterhez a terved híre, hogy meg akarod dönteni a hatalmát? Azt hitted, hagyni fogja? Alábecsülted!
+       - Nem nyilvánvaló mindkettő? - felel hűvős alt hangján. - Azt gondoltad, nem jut el Botond mesterhez a terved híre, hogy meg akarod dönteni a hatalmát? Azt hitted, hagyni fogja? Alábecsülted!
       </p>
       <p>
-       - Nem becsültem alá, ha maga helyett mást küld elvégezni a mocskos melót! Ez egy gyáva féreg! - vonod le a következtetést a kapott információk alapján.
+       - Nem becsültem alá, ha maga helyett mást küld elvégezni a mocskos melót! Ez egy gyáva féreg! - vonod le a bölcs következtetést a kapott információk alapján.
       </p>
       <p>
-       - Az lehet, én viszont elvégzem a munkát, amiért megfizet - felel a nő, azzal feléd ugrik.
+       - Az lehet, én viszont elvégzem a munkát, amiért megfizet - felel a nő gyakorlatias kötelességtudattal, azzal feléd ugrik.
       </p>
     `,
     buttons: [
@@ -2861,40 +2857,40 @@ window.rooms = [
     music: "lightaction",
     pic: "gangmeet.jpg",
     desc: `
-    <p>
-     A tásaság nagyot koccint a <span class='part'></span> név elfogadására. Már kissé ittas állapotban láttok hozzá a program kidolgozásához. Elhangzanak azok is, amiket már a főtéren javasoltál és bedobnak újabb ötleteket is. Végül úgy döntötötök, három fő területen fogtok egy-egy programmal kampányolni. Mik legyenek ezek?
-    </p>
-  `,
+      <p>
+      A tásaság nagyot koccint a <span class='part'></span> név elfogadására. Már kissé ittas állapotban láttok hozzá a program kidolgozásához. Elhangzanak azok is, amiket már a főtéren javasoltál és bedobnak újabb ötleteket is. Végül úgy döntötök, három fő területen fogtok egy-egy programmal kampányolni. Mik legyenek ezek?
+      </p>
+    `,
     select: [
       [
         { name: "Ingyen kakasnyalóka", val: 10 },
-        { name: "Szuperképesség-fejlesztő tanfolyam", val: 20 },
+        { name: "Szuperképesség-fejlesztő tanfolyam", val: 15 },
         {
           name: "Törpehörcsög, hóbagoly vagy takarító robotnő",
           val: 5,
         },
         {
           name: "Ingyen bor, búza, békesség",
-          val: 15,
+          val: 0,
         },
         {
           name: "Minden nap 50 ingyen spam",
-          val: -30,
+          val: -20,
         },
       ],
       [
-        { name: "Reklámmentes internet", val: 30 },
-        { name: "A járványok szétmorzsolása", val: 25 },
-        { name: "Az agymosással való leszámolás", val: 10 },
-        { name: "Világbéke", val: -10 },
-        { name: "Örök emlék a halottaknak", val: -25 },
+        { name: "Reklámmentes internet", val: 20 },
+        { name: "A járványok szétmorzsolása", val: 15 },
+        { name: "Az agymosással való leszámolás", val: -5 },
+        { name: "Világbéke", val: -15 },
+        { name: "Örök emlék a halottaknak", val: -10 },
       ],
       [
-        { name: "Szociális otthon a városházából", val: 30 },
-        { name: "Bitang Botond és emberei lógni fognak", val: 25 },
-        { name: "Gizikének mosómedvét", val: 10 },
-        { name: "Mi a szar legyen még?", val: 40 },
-        { name: "Aggyá mék sört, Menyus!", val: -20 },
+        { name: "Szociális otthon a városházából", val: 10 },
+        { name: "Bitang Botond és emberei lógni fognak", val: 20 },
+        { name: "Gizikének mosómedvét", val: 5 },
+        { name: "Mi a szar legyen még?", val: 25 },
+        { name: "Aggyá mék sört, Menyus!", val: -15 },
       ],
     ],
     wvar: "progi",
@@ -2903,8 +2899,355 @@ window.rooms = [
     wc: true,
     submit: {
       txt: "Ez a nyerő program!",
-      new: 21,
+      new: 92,
     },
+  },
+  {
+    num: 91,
+    title: "A nép csalódik benned",
+    type: "normal",
+    music: "slowguitar",
+    pic: "booing.gif",
+    desc: `
+      <p>
+        Nem sikerült kellőképpen lelkessé tenned a népet, ahhoz, hogy pártot tudjál alapítani. Elkezdenek elszállingózni és nemsokára üres lesz a tér.
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Te is távozol, de a városban maradsz",
+        new: 27,
+        modi: "Szomorkáson járkálni kezdesz a városban...",
+      },
+      {
+        txt: "Meg sem állsz az erdőig",
+        new: 55,
+      },
+    ],
+  },
+  {
+    num: 92,
+    title: "A <span class='part'></span> programjának elfogadása",
+    type: "normal",
+    music: "masslaugh",
+    pic: "gangmeet.jpg",
+    desc: `
+      <p>
+       Nem volt éppen rövid menet véglegesíteni a programot a sok javaslat közepette, de végül sikerült elfogadnotok a <span class='part'></span> három pontját:
+      </p>
+      <ol id="pp"></ol>
+      <p> 
+       Örömmel koccintotok ismét egy nagyot majd még egy jó órán át isztok és röhögtök. Mire végre abbahagyjátok, már későre jár. Megegyeztek abban, hogy holnap ugyanitt pártgyűlést tartotok, és aztán hozzáláttok a kampányhoz.
+      </p>
+    `,
+    change: [
+      {
+        id: "hat",
+        crease: 2,
+        rnd: 3,
+      },
+      {
+        id: "ugy",
+        crease: -1,
+      },
+      {
+        id: "esz",
+        crease: -1,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Hazamész",
+        new: 46,
+      },
+    ],
+  },
+  {
+    num: 93,
+    title: "Oshinoko haditerve Szenyamuki nélkül",
+    type: "normal",
+    music: "oshinoko",
+    pic: "oshinoko-face.JPG",
+    desc: `
+    <p>
+      Oshinoko elgondolkodik. Közben Sakura észrevétlenül elvonul.
+    <p>
+      - Nem lesz könnyű, de megpróbáljuk. Ma Bitang Botond beszédet mond a Branyiszkó-téren. Ott könnyebb letámadni, mint a Városháza erődjében. Az emberei a modern fegyvereket könnyen kiszúrják, a legjobb lesz fúvócsővel végezni vele, miután elvegyültünk a tömegben. De számítani kell rá, hogy utána az egész bandája ellenünk fog támadni. Azzal nyerhetünk némi időt, hogy egyszerre öljük meg Botit és a korrupt rendőrfőnököt. A rendőrfőnök gyakran álruhában van, de én jól ismerem, mert már régóta megfigyelem. Én eintézem őt, te pedig intézd el Botit. Viszonylag közel kell menni hozzá, hogy biztos legyen a találat. Utána le fogják zárni a teret és egyenként engednek ki mindenkit. Ha rohannánk, nem jutnánk ki, csak magunkra vonnánk a figyelmet így amint végeztünk velük, ha nem vettek észre, eldobjuk a fúvócsövet és úgy viselkedünk, mint mindenki más a tömegben. Ha viszont észrevesznek, akkor menekülünk és minél több álrendőrt leszedünk. Ha eleget leszedünk, akár be is jelentheted a hatalomátvételt, ezt rád bízom. Téged szeret a nép. De ha sokan maradtak, biztosabb ha egyelőre csak élve kijutunk, aztán meglátjuk a folytatást. Ha Boti és a rendőrfőnők nincs többé, nagy előnyhöz jutunk. Viszont minden fegyveredet itt kell hagynod, ha nem akarod, hogy már az elején lebukjál, csak a fúvócsövet vihetjük.
+    </p>
+    <p>
+      - Jó tervnek tűnik, de sokminden múlik azon, hogy észreveszik-e az elején a fúvócső használatát. Ennek esélyét mivel csökkenthetjük?
+    </p>
+    <p>
+      - Azzal, hogy a fúvőcső így néz ki - mosolyodik el kissé esetlenül Oshinoko, és átnyújt neked egy doboz cigit. Kinyitod, de még mindig csak cigarettaszálakat látsz bennük. Kiveszed az egyiket. Oshinoko elveszi tőled, elővesz egy öngyújtót és a cigi végéhez érinti. Amikor lenyomja az öngyújtó gombját, abból egy kis tüske jön ki, és akkor veszed ászre, hogy a cigi belül üreges, amikor a tüskét egy gyakorlott mozdulattal belejuttatja. - Hagyomőnyos fegyver modern köntösben. Van még időnk, hogy gyakoroljuk a "cigigyújtás" mozdulatát. De vigyázz, mert a tüske tényleg mérgezett, nehogy hozzáérj a végéhez!
+    </p>
+    <p>
+      Egy ideig gyakoroltok még és megbeszéltek néhány további részletet. Aztán eljön az idő az indulásra. A tárgyaidnál kicsit hezitálsz, hogy nem lenne-e jobb mégis magaddal vinni valamilyen fegyvert, hátha mégsem buksz le. Hogy döntesz?
+    </p>
+    `,
+    obj: ["D_utca-Oshinoko"],
+    buttons: [
+      {
+        txt: "Magaddal viszed a tárgyaidat",
+        new: 121,
+        modi: "Oshinoko csak egy átfutó grimasszal fejezi ki nemtetszését, hogy nem hagyod itt a tárgyaidat, de nem az a vitatkozós fajta, így nem szól többet.",
+      },
+      {
+        txt: "Inkább itt hagysz Oshinokonál mindent",
+        new: 122,
+      },
+    ],
+  },
+  {
+    num: 94,
+    title: "Találkozás Szenyamukival",
+    type: "normal",
+    music: "oshinoko",
+    pic: "szenyamuki-face.JPG",
+    desc: `
+    <p>
+      Oshinoko bólint, azzal szó nélkül a ház oldalához megy, ahol megrángat háromszor egy lelógó vezetéket. Pár percig néz a ház falán túl valamit, majd megint bólint és hozzád fordul.
+    <p>
+      - Szenyamuki vár minket - mondja, aztán vált még pár szót Sakurával, akin látszik, hogy továbbra is aggódik, de próbál erősnek látszani. Végül int neked, hogy induljatok.
+    </p>
+    <p>
+      Kifordultok a falon keresztül, aztán mentek össze-vissza az utcákon át, míg végül egy titkos ajtón át egy elhagyatott raktárépületbe értek. Itt egy sötét sarokban van egy alak. Oshinoko mond neki pár mondatot japánul, mire előrelép. A beszűrődő fényben megpillantod az arcát. Hasonlít Oshinokora, de gonoszabb és sötétebb, és egy sebhely is még visszataszítóbbá teszi. Megszólít.
+    </p>
+    <p>
+      - Battle Beatle legyőzője... Ugyan miért kellene azt hinnem, hogy veled együtt le tudnánk győzni Bitang Botondot?
+    </p>
+    <p>
+      - Ha mi hárman összefogunk, mindenkinél erősebbek vagyunk! Miért gondolod, hogy nem?
+    </p>
+    <p>
+      Szenyamuki megvető pillantást vet rád.
+    </p>
+    <p>
+      - A fivérem tud egyetsmást a harc terén. Bár nem annyit, mint én. De rólad semmit nem tudok. Ezen pedig csak egyféleképpen segíthetünk - szól, és hirtelen harci állásba vágja magát. Meg kell vele küzdened.
+    </p>
+    `,
+    buttons: [
+      {
+        txt: "Előrántod a katanát",
+        cond: "W_KATANA",
+        modi: `Amint előrántod a katanát, Szenyamuki szeme elkerekedik.</p>
+          <p> - Dédapánk katanája! HOgy került ez hozzád?</p>
+          <p> - Te is tudod, hogy csak egyféleképpen kerülhetett ez hozzá! - szól közbe Oshinoko.</p>
+          <p> - Igen, kiálltam a Vanepuca próbát! Még mindig harcolni akarsz ellenem? - mondod keményen.</p>
+          <p>Szenyamuki pár pillanatig hezitál, aztán flegmán megvonja a vállát.</p>
+          <p> - Dédapánk szelleme ellen nem harcolok.</p>
+        `,
+        new: 123,
+      },
+      {
+        txt: "Több tiszteletet versz ebbe a Szenyába",
+        new: 124,
+      },
+    ],
+  },
+  {
+    num: 95,
+    title: "Csevegés a kocsmárossal",
+    type: "normal",
+    music: "pubmusic",
+    pic: "bodripapa.jpg",
+    desc: `
+      <p>
+       Odafordulsz a nagydarab kocsmároshoz és elkezdtek társalogni.
+      </p>
+      <ul>
+        <li>Jó ez a hely, hangulatos.</li>
+        <li>Köszönjük a pozitív visszajelzést. Gyere máskor is, ha tetszik! Bodri papa szívesen lát mindig.</li>
+        <li>Van törzsvásárlói kedvezmény is?</li>
+        <li>Aki sokszor jár ide, azt megszeretjük és nehezebb szívvel verjük péppé, ha problémázna. Megfelel ez a kedvezményes konstrukció?</li>
+        <li>Attól tartok, az én esetemben ez nem túl nagy érezhető előny. Engem egyébként is igen nehéz péppé verni, bármilyen hangulattal is csinálják.</li>
+        <li>Ó, elnézést, ezt nem tudtam. Ez esetben a kidobófiú állást tudnám felajánlani, és akkor minden nap itt lehetnél.</li>
+        <li>Hmmm, ezt az ajánlatot még meg kell beszélnem az ügynökömmel. Bár igazából ennél ambíciózusabb karrierterveim vannak.</li>
+        <li>Sajnos nincs más üres pozíciónk jelenleg. Ettől függetlenül szívesen meghallgatom elképzeléseidet, hátha a jövőben tudunk segíteni.</li>
+        <li>Én akarom uralni ezt a várost.</li>
+        <li>Hmm, ez valóban ambíciózus! Elismerem, hogy ehhez a tervhez kissé hosszú út vezetne a kocsmai kidobófiúi állástól, bármennyire is jónevű a Kutya Veres Kasza. Ha gyorsabban akarsz haladni céljaid felé, javaslom, inkább Bitang Botit távolítsd el az útból. Jelenleg ugyanis övé ez a pozíció.</li>
+        <li>Pontosan ez a tervem!</li>
+        <li>Látom a szemeden, hogy nem viccelsz. Sokaknak tele van a tökük vele, jó lenne ha valaki tényleg félre tudná állítani! Ha komolyan gondolod, van is itt valaki, aki tudna ebben neked segíteni.</li>
+      </ul>
+      <p>
+        Azzal a hátad mögé mutat.
+      </p>
+    `,
+    change: [
+      {
+        id: "sup",
+        crease: 2,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Megfordulsz",
+        new: 97,
+      },
+    ],
+  },
+  {
+    num: 96,
+    title: "Bunyó a kidobóemberrel",
+    type: "fight",
+    pic: "barfight.gif",
+    nmepic: "kidobo.jpg",
+    att: 60,
+    def: 50,
+    speed: 4,
+    hp: 70,
+    desc: `
+      <p>
+        - Ez rossz húzás volt! - szól rád komoran a kocsma kidobóembere és megindul, hogy kihajítson a kocsmából. Amikor elindul a bunyó, a háttérben mások is elkezdik verni egymást. Ragadós a hangulat.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Úgyse tudsz kidobni!",
+      },
+    ],
+    pass: 97,
+    fail: 47,
+  },
+  {
+    num: 97,
+    title: "A kocsmai énekesnő",
+    type: "normal",
+    music: "pubsong",
+    pic: "bogi.JPG",
+    desc: `
+      <p>
+       Hirtelen felcsendül egy ének a kocsma oldalából. Mindenki varázsütésre abbahagy mindent, amit eddig csinált, ellhallgat és odanéz. Egy gyönyörű nő áll egy kis színpadon, mikrofonnal a kezében, mellette egy színesbörű fickó fehér frakkban, szintetizátorral. Te sem tudod kivonni magadat a furcsa varázs alól és elkezded hallgatni az éneket.
+      </p>
+      <p>
+       Amikor az ének véget ér, mindenki lelkesen tapsol. Ellenállhatatlan kényszert érzel arra, hogy odamenj a nőhöz.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Elkezdesz neki udvarolni",
+        new: 125,
+        cond: "férfi",
+      },
+      {
+        txt: "Beszédbe elegyedsz vele",
+        new: 126,
+        cond: "nő",
+      },
+    ],
+  },
+  {
+    num: 98,
+    title: "Beszélgetés a kocsmatöltelékekkel",
+    type: "normal",
+    music: "pubmusic",
+    pic: "kocsmatöltelékek.jpg",
+    desc: `
+      <p>
+        Letelepszel az asztalukhoz és már hozzák is az aranylóan habzó sört. Koccintanak veled, majd Pitypang vidáman elkiáltja magát, hogy "Fenékig!" Mindenki ledönti a meglévő sörét és te is így teszel. Ekkor hirtelen megfordul veled a világ és pár pillanatig fogalmad sincs, hol vagy, minden érzéked eltompul... Aztán lassan ismét hallod a hangokat, látod asztaltársaságod vigyorgó képeit, fokozatosan felfogod, hogy hozzád beszélnek. Kicsit hülyének érzed magad, mégis magabiztosnak.
+      </p>
+      <p>
+        - Na, milyen volt az Ászok Ásza? - kérdezi valamelyik a három közül.
+      </p>
+      <p>
+        - Bazibrutál... - szalad ki a szádon kedvenc szavad. Jót röhögnek ezen, és te is elkezdesz velük röhögni. Úgy érzed, nagyon megszertetted ezeket a gnómokat, mintha a legjobb barátaid lennének. El is mondod nekik rögtön, annyira túláradnak az érzelmeid:
+      </p>
+      <p>
+        - Úgy szeretlek titeket! - és ők a füstös homályon át is látják a szemed sarkában megcsillanó örömkönnyeket. Már hajolsz is át az asztalon és a kebledre öleled mindhárom gnómot, akik meghatottan szipognak...
+      </p>
+      <p>
+        Amikor már kezd a derekad sajogni a kissé természetellenes póztól, felegyenesedsz, de rögtön vissza is esel a helyedre. Látod, hogy mindhárom alak könnyekkel küszküdik. Talán soha életükben nem ölelte meg őket olyan nagy ember, mint te. Haverkodóan leveszed Pitypang sapkáját és megpaskolod kopaszodó fejét, amitől kislányos zavarba jön. Lesüti a szemét, pislog jobbra-balra, végül a legidősebbhez fordul:
+      </p>
+      <p>
+        - Mátyus! Te mit szósz ehöz?
+      </p>
+      <p>
+        - Mit szóljak, Pitypang? - feleli, mire bátorítóan meghúzgálod őszülő bajszát. Ez láthatóan jól esik neki, de nem segít azon, hogy szavakba is öntse érzelmeit. Ezért inkább oldalra fordul: - Szóljon Frédi, még meg sem szólalt!
+      </p>
+      <p>
+        A harmadik fickó fúj egy nagyot, ijedten körbenéz és csapkod párat, mint kezdő matróz a süllyedő hajón, aztán egy szarvasbőgéshez hasonló hangot ad ki hosszan elnyújtva. Láthatóan nem a szavak embere, de azért várod, hogy hátha sikerül átalakítania artikulált emberi beszéddé, de akkor hirtelen történik valami.
+      </p>
+    `,
+    change: [
+      {
+        id: "ero",
+        crease: 5,
+        rnd: 5,
+      },
+      {
+        id: "ugy",
+        crease: -5,
+        rnd: 5,
+      },
+      {
+        id: "esz",
+        crease: -5,
+        rnd: 5,
+      },
+      {
+        id: "hat",
+        crease: 5,
+        rnd: 5,
+      },
+      {
+        id: "sup",
+        crease: 5,
+        rnd: 5,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Mi?",
+        new: 97,
+      },
+    ],
+  },
+  {
+    num: 99,
+    title: "Csatlakoznak a kocsmatöltelékek",
+    type: "normal",
+    music: "pubmusic",
+    pic: "vidámpub.jpg",
+    desc: `
+      <p>
+        A kocsma népe melléd áll, élükön Mátyussal, Pitypanggal és Frédivel, akik először ismertek fel. Remek lázadó hangulat lett úrrá az egész Kutya Veres Kaszán, mindenki lelkesen iszik, káromkodik, ordibál, dicsér téged és szídja Botit, ám egyszer csak történik valami.
+      </p>
+    `,
+    obj: ["J_Kocsmatöltelékek"],
+    buttons: [
+      {
+        txt: "Micsoda?",
+        new: 97,
+      },
+    ],
+  },
+  {
+    num: 100,
+    title: "Nem győzted meg a kocsmatöltelékeket",
+    type: "normal",
+    music: "pubmusic",
+    pic: "szomorúpub.jpg",
+    desc: `
+      <p>
+        Nem sikerül lázba hoznod a kocsma népét, akármit mondasz, unottan elfordulnak tőled az italuk felé. Vagy gyávák, vagy már csak laza kapcsolatuk van a valósággal, de te mindenképp csalódott vagy.
+      </p>
+    `,
+    change: [
+      {
+        id: "lel",
+        crease: -1,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Elhagyod a kocsmát",
+        new: 47,
+      },
+      {
+        txt: "Vársz még egy kicsit, hátha történik valami",
+        new: 97,
+      },
+    ],
   },
 
   //*
@@ -2941,3 +3284,4 @@ window.rooms = [
 ];
 
 //Kocsma: Bogi énekel, rákérdezés a kocsmáros nevére (Bodri)
+//Erdeiéknél próbatételek után Bübüszimat képessége

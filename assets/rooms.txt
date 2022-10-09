@@ -89,12 +89,12 @@
 89 - Erdei Zsolt leápol (a bübük sípolnak, majd valaki 55-57-re visszavág)
 90 - A <Párt> programja
 91 - Nem alakul meg a Párt (40-hez hasonló csak más szöveg)
-92 - Erődemonstráció Szenyamukinak (D)
+92 - A Párt programjának elfogadása
 93 - Oshinoko haditerve Szenyamuki nélkül (D)
-94 - Beszéd Szenyamukival (Katana?)
+94 - Találkozás Szenyamukival (Katana?)
 95 - Csevegés a kocsmárossal (félbeszakítja Bogi)
-96 - Bunyó a kocsma kidobóemberével ("Ez rossz húzás volt!", ha nyersz, jön Bogi)
-97 - Bogi műsora
+96 - Bunyó a kidobóemberrel ("Ez rossz húzás volt!", ha nyersz, jön Bogi)
+97 - A kocsmai énekesnő
 98 - Beszélgetés a kocsmatöltelékekkel (utána csak 97)
 99 - Csatlakoznak a kocsmatöltelékek (nincs plusz valchange, -> 97)
 100 - Nem győzted meg a kocsmatöltelékeket (nincs plusz valchange, -> 97)
@@ -118,7 +118,12 @@
 118 - Jó válasz Fricinek (jó kifogás, hat+, modi! (86,118), aztán 37 végétől)
 119 - Rossz válasz Fricinek (hazaküld)
 120 - Beszélgetés Fricivel (hazamész vagy szövetkeztek)
-121 - A Párt programjának elfogadása
+121 - Fegyverekkel a Branyiszkó téren (extra, micukis gomb)
+122 - Oshinokonál hagyod a fegyvereid (spéci getWeapons save)
+123 - Szenyamuki mellétek áll (extra)
+124 - Harc Szenyamukival
+125 - Udvarlás Boginak (XTRIAL: com)
+126 - Beszélgetés Bogival (Bodri papa neve?)
 
 
 

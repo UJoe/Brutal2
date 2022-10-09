@@ -66,18 +66,20 @@ function _load() {
     part = localStorage.getItem("part");
     prg = Number(localStorage.getItem("prg"));
     progi = localStorage.getItem("progi");
+    modi = false;
   }
 
   function chooseChar(x) {
     let numera = Number(x.target.id.split("-")[1]);
     char = { ...chars[numera] };
-    char.room = 0; //startr
+    char.room = 69; //startr
     char.objs = [];
     steps = 0;
     isDying = false;
     part = " ";
     window.prg = 0;
     window.progi = " ";
+    modi = false;
     music.play();
     newRoom();
   }
@@ -328,6 +330,9 @@ function _load() {
   }
 
   function checkCond(cond) {
+    let sn = char.name.split(",")[0];
+    if (cond == "férfi") return sn == "Brezsnyev" || sn == "Sanyi" || sn == "Q";
+    if (cond == "nő") return sn == "Lilike" || sn == "Gabi";
     let cc = true;
     let conds = cond.split(", ");
     for (let c of conds) {
@@ -336,7 +341,7 @@ function _load() {
         let key = c.split("_")[1];
         let val = c.split("_")[2];
         let ref = char[key];
-        if (key === "name") ref = char.name.split(",")[0];
+        if (key === "name") ref = sn;
         if (
           (op === "=" && ref != val) ||
           (op === "ł" && ref == val) ||
@@ -357,7 +362,7 @@ function _load() {
     if (val === 0) return;
     if (val > 0) {
       klassz = "increase";
-      val = char[id] + val > 100 ? 100 - char[id] : val;
+      if (id !== "sup") val = char[id] + val > 100 ? 100 - char[id] : val;
       char[id] += val;
       val = "+" + val;
     } else {
@@ -670,9 +675,9 @@ function _load() {
 
         case "vanepuca":
           if (
-            char.ero > 30 + Math.random() * 50 &&
-            char.lel / 2 + char.hat > 40 + Math.random() * 80 &&
-            char.esz + char.ugy > 20 + Math.random() * 30
+            char.ero > 30 + Math.random() * 40 &&
+            char.lel / 2 + char.hat > 40 + Math.random() * 60 &&
+            char.esz + char.ugy > 20 + Math.random() * 20
           ) {
             char.room = room.pass;
             crease = 3;
@@ -699,22 +704,23 @@ function _load() {
         case "night":
           if (
             checkCond("E_Boldi elzárása") ||
-            checkCond("X_Béna Boldizsár, !E_Boldi kivégzése")
+            checkCond("X_Béna Boldizsár, !E_Boldi kivégzése") ||
+            checkCond("D_választás")
           ) {
             char.room = room.pass;
             music.volume = 0.75;
-            result = "Sikeresen kiiktattad ma a fő veszélyforrást.";
+            result = "Sikeresen elhárítottad ma a fő veszélyt.";
           } else {
-            if (char.lel + Math.random() * 100 > 80) {
+            let x = char.lel + Math.random() * 100;
+            if (x > 85 || checkCond("S_Bübüszimat")) {
               char.room = room.mid;
               music.volume = 0.5;
               result =
-                "Nem sikerült kiiktatnod ma a fő veszélyforrást, de szerencséd van.";
+                "Nem sikerült elhárítanod ma a fő veszélyt, de szerencséd van.";
             } else {
               char.room = room.fail;
               music.volume = 0.25;
-              result =
-                "Nem sikerült a nap során kiiktatnod a fő veszélyforrást.";
+              result = "Nem sikerült a nap során elhárítanod a fő veszélyt.";
             }
           }
           message(result);
@@ -784,6 +790,14 @@ function _load() {
         if (checkCond(room.add.split("::")[0])) {
           document.getElementById("add").innerHTML = room.add.split("::")[1];
         }
+      }
+      if (document.getElementById("pp") && progi.length > 1) {
+        let prgTxt = "";
+        let prgArr = progi.split(" - ");
+        for (let p of prgArr) {
+          prgTxt += "<li>" + p + "</li>";
+        }
+        document.getElementById("pp").innerHTML = prgTxt;
       }
 
       if (document.getElementById("akna"))
@@ -922,6 +936,9 @@ function _load() {
       }
       if (loaded) loaded = false;
       if (room.type === "death") {
+        document.querySelectorAll("button").forEach((i) => {
+          i.disabled = true;
+        });
         if (room.stopmusic) music.loop = false;
         let agony = Math.floor(char.ero / 4);
         for (let x = 1; x < 5; x++) {
@@ -1385,16 +1402,17 @@ function _load() {
             if (room.dungeon && firstchange) {
               changeVal(
                 "ugy",
-                Math.floor(nmeAtt / 20 + nmeDef / 10 + Math.random() * 5)
+                Math.floor(nmeAtt / 30 + nmeDef / 15 + Math.random() * 3)
               );
               changeVal(
                 "ero",
-                Math.round((Math.random() * (dungeon + room.level)) / 2)
+                Math.round((Math.random() * (dungeon + room.level)) / 3)
               );
               changeVal("lel", -1);
             }
             if (firstchange) {
               firstchange = false;
+              changeVal("ugy", 1);
               setTimeout(() => {
                 newRoom();
               }, 4500);

@@ -16,10 +16,12 @@ J - szövetséges (join)
   Oshinoko
   Ügyes Frigyes
   Erdeiék
-  Szenyamuki  
+  Szenyamuki
+  Kocsmatöltelékek  
 
 S - képesség (skill)
   Micuki
+  Bübüszimat
 
 D - döntés (decision)
   puccs
@@ -27,6 +29,7 @@ D - döntés (decision)
   földalatt
   utca-Frici
   utca-Gárda
+  utca-Oshinoko
   ostrom
 
 E - egyéb események (events)
