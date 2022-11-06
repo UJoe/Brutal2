@@ -3,6 +3,7 @@ function _load() {
   window.sound = document.getElementById("sound");
   music.volume = 1;
   sound.volume = 1;
+  music.loop = true;
   let main = document.getElementById("main");
   main.classList.remove("brighten");
   let footer = document.getElementById("footer");
@@ -238,6 +239,9 @@ function _load() {
           changeVal("ero", -1);
         }, 20000);
       }
+      if (musicOn) music.volume = 1;
+      sound.volume = 1;
+      music.loop = true;
       newRoom();
     }, 4100);
   }
@@ -441,7 +445,7 @@ function _load() {
   }
 
   //Új Helyszín
-  function newRoom() {
+  window.newRoom = () => {
     if (char.room == 46) console.log("HOME STEP: ", steps);
     clearInterval(timo);
     clearTimeout(timo);
@@ -471,13 +475,14 @@ function _load() {
     main.innerHTML = "";
 
     //header
+    let musIcon = musicOn ? "./img/soundOn.png" : "./img/soundOff.png";
     header.innerHTML = `
       <div id="topMenu">
         <img class="thumb" src="./img/chars/${char.pic}.jpg">
         <div id="stats"></div>
         <button class="navBtn" id="saveBtn">SAVE</button>
         <button class="navBtn" id="loadBtn">LOAD</button>
-        <img id='soundBtn' class="topBtns" src='./img/soundOn.png' alt="music">
+        <img id='soundBtn' class="topBtns" src=${musIcon} alt="music">
       </div>
       <div id="message" class="disappear"></div> 
     `;
@@ -865,11 +870,17 @@ function _load() {
             for (let l = 0; l < list; l++) {
               let o = document.getElementById("col" + l);
               let t = o.options[o.selectedIndex].text;
-              txt += t + (l < list - 1 ? room.sep : "");
-              if (room.cvar) varc += Number(o.value);
+              if (room.wvar) txt += t + (l < list - 1 ? room.sep : "");
+              if (room.cvar) {
+                if (room.cvar === "obj") {
+                  char.objs.push(o.value);
+                } else varc += Number(o.value);
+              }
             }
-            window[room.wvar] = txt;
-            if (room.cvar) changeVal(room.cvar, varc);
+            if (room.wvar) window[room.wvar] = txt;
+            if (room.cvar && room.cvar != "obj") {
+              changeVal(room.cvar, varc);
+            }
             let num = rooms.findIndex((r) => r.num === sub.new);
             if (num === -1) {
               message("Ez még nincs kész.");
@@ -877,7 +888,8 @@ function _load() {
             } else {
               char.room = sub.new;
             }
-            if (room.cvar) {
+            if (sub.modi) modi = sub.modi;
+            if (room.cvar && room.cvar != "obj") {
               if (room.wc) prg = varc;
               message("Választásod pontértéke: " + varc);
               document.getElementById("submit").disabled = true;
@@ -956,7 +968,7 @@ function _load() {
         }
       }
     }
-  }
+  };
 
   //ROOM OPERATION
   function pressBtn(e) {
@@ -1491,6 +1503,12 @@ function _load() {
                 if (curSP < 0) curSP = 1;
                 if (curSP > 10) curSP = 10;
                 speed = (10 - curSP) * 500;
+                clearTimeout(timo1);
+                attBtn.disabled = true;
+                timo1 = setTimeout(() => {
+                  attBtn.style.left = 2 + Math.round(Math.random() * 80) + "vw";
+                  attBtn.disabled = false;
+                }, speed);
                 break;
               case "ellenség sebesség":
                 let nmeSP =

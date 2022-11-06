@@ -104,9 +104,9 @@
 104 - Imádkozás otthon (lel + hat)
 105 - Rejtvényfejtés otthon (esz)
 106 - Telózás otthon (leépülés)
-107 - Újra a <name> Gárdával
-108 - Ismét a Garászban (Oshinoko + Gárda + fegyverek)
-109 - Újra Fricinél
+107 - Újra a <name> Gárdával (Fegyverek, Oshinoko is lehet)
+108 - Ismét a Garászban (Oshinoko + Gárda + fúvócsövek)
+109 - Fricivel a városban
 110 - Akcióban a <Párt>
 111 - Akcióban Erdeiék
 112 - A régi fagyigyárban (Bogi vonala)
@@ -118,12 +118,25 @@
 118 - Jó válasz Fricinek (jó kifogás, hat+, modi! (86,118), aztán 37 végétől)
 119 - Rossz válasz Fricinek (hazaküld)
 120 - Beszélgetés Fricivel (hazamész vagy szövetkeztek)
-121 - Fegyverekkel a Branyiszkó téren (extra, micukis gomb)
+121 - Fegyverekkel a Branyiszkó-téren (extra, micukis gomb, üldözés?)
 122 - Oshinokonál hagyod a fegyvereid (spéci getWeapons save)
 123 - Szenyamuki mellétek áll (extra)
 124 - Harc Szenyamukival
 125 - Udvarlás Boginak (XTRIAL: com)
 126 - Beszélgetés Bogival (Bodri papa neve?)
+127 - XTRIAL: orvgyilkos hangjának utánzása
+128 - Az orvgyilkos halálának közlése (D_Boti üldöz)
+129 - A megbízó megtévesztése (D_Boti halottnak hisz)
+130 - Nem sikerül megtéveszteni a megbízót (D_Boti üldöz)
+131 - YTrial: ostrom (136) vagy utca (137)
+132 - Újra Fricinél (alagútásás)
+133 - Újra Fricinél (mesterlövész puska)
+134 - A Városháza megtámadása a föld alól (új pálya)
+135 - Oshinokoval (és a Gárdával?) a Branyiszkó-téren
+136 - A városháza megostromlása a Gárdával (Oshinoko lehet vagy nem)
+137 - A Gárdával a Branyiszkó-téren (Oshinoko nincs, de fegyverek vannak)
+
+
 
 
 

@@ -22,16 +22,20 @@ J - szövetséges (join)
 S - képesség (skill)
   Micuki
   Bübüszimat
+  Belépőkártya
+  Hit
 
 D - döntés (decision)
   puccs
   választás
   földalatt
   utca-Frici
-  utca-Gárda
+  utca-Gárda (Oshinoko is lehet)
   utca-Oshinoko
   ostrom
 
 E - egyéb események (events)
   Boldi elzárása
   Boldi kivégzése
+  Boti üldöz
+  Boti halottnak hisz

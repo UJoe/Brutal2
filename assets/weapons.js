@@ -151,11 +151,27 @@ window.weapons = [
     effect: [
       {
         val: "támadás",
-        ch: "+30",
+        ch: "+25",
       },
       {
         val: "védelem",
         ch: "+5",
+      },
+    ],
+  },
+  {
+    name: "GYILOK",
+    desc: "Orvgyilkosok csendes kése",
+    pic: "gyilok.jpg",
+    sound: "suhint",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+50",
+      },
+      {
+        val: "sebesség",
+        ch: "+2",
       },
     ],
   },
@@ -280,6 +296,142 @@ window.weapons = [
       {
         val: "védelem",
         ch: "+50",
+      },
+    ],
+  },
+  {
+    name: "GÉPFEGYVER",
+    desc: "Szitává lő mindenkit",
+    pic: "gépfegyver.jpg",
+    sound: "machinegun",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "+4",
+      },
+      {
+        val: "támadás",
+        ch: "+70",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-50",
+      },
+    ],
+  },
+  {
+    name: "VADÁSZPUSKA",
+    desc: "Lassú de precíz vadító vadirtó",
+    pic: "vadászpuska.jpg",
+    sound: "rifleshot",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-4",
+      },
+      {
+        val: "támadás",
+        ch: "+50",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-25",
+      },
+    ],
+  },
+  {
+    name: "PÁNCÉLÖKÖL",
+    desc: "Vállról indítható rakéták",
+    pic: "rakéta.jpg",
+    sound: "missile",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-6",
+      },
+      {
+        val: "támadás",
+        ch: "+100",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-50",
+      },
+    ],
+  },
+  {
+    name: "CSATABÁRD",
+    desc: "Az.",
+    pic: "axe.jpg",
+    sound: "suhint-nagy",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-1",
+      },
+      {
+        val: "támadás",
+        ch: "+30",
+      },
+      {
+        val: "védelem",
+        ch: "+15",
+      },
+    ],
+  },
+  {
+    name: "LÁNGSZÓRÓ",
+    desc: "Burn, baby, burn!",
+    pic: "lángszóró.jpg",
+    sound: "flammenwerfer",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-1",
+      },
+      {
+        val: "támadás",
+        ch: "+40",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-60",
+      },
+    ],
+  },
+  {
+    name: "OSTOR",
+    desc: "Nincs több engedetlenség!",
+    pic: "ostor.jpg",
+    sound: "ostor",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+20",
+      },
+      {
+        val: "ellenség támadás",
+        ch: "-20",
+      },
+    ],
+  },
+  {
+    name: "PETÁRDA",
+    desc: "Az.",
+    pic: "axe.jpg",
+    sound: "suhint-nagy",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-1",
+      },
+      {
+        val: "támadás",
+        ch: "+30",
+      },
+      {
+        val: "védelem",
+        ch: "+15",
       },
     ],
   },

@@ -138,11 +138,11 @@ window.rooms = [
     buttons: [
       {
         txt: "Továbbra is segíted őket, ha gondjuk van",
-        new: 100,
+        new: 1000,
       },
       {
         txt: "Felkészíted őket az űrlények támadására",
-        new: 200,
+        new: 2000,
       },
     ],
   },
@@ -221,7 +221,7 @@ window.rooms = [
        Hosszú perceken át farkasszemet nézel a tömeggel. Ők nem tudják, mi lesz most velük, te meg még nem igazán találtad ki, hogy hogyan vedd át a hatalmat. Amikor végre eszedbe jut valami és szólnál, közeledő szirénázás üti meg a füledet.
       </p>
       <p>
-       Mindenki az erősödő hangok irányába néz. Nemsokára egy rendőrautó-konvoly közepén megjelenik maga a város polgármestere: Bitang Botond. Megállnak a tér közepén és Bitang Botond állig felfegyverzett testőrei gyűrűjében kiszáll a kocsiból. Először végigmér téged. Neház megállapítani, mit gondol rólad. Aztán így szól:
+       Mindenki az erősödő hangok irányába néz. Nemsokára egy rendőrautó-konvoly közepén megjelenik maga a város polgármestere: Bitang Botond. Megállnak a tér közepén és Bitang Botond állig felfegyverzett testőrei gyűrűjében kiszáll a kocsiból. Először végigmér téged. Nehéz megállapítani, mit gondol rólad. Aztán így szól:
       </p>
       <p>
         - Te vagy az, <span id="fullName"></span>? Hallottam, hogy te mentetted meg a várost Battle Beetle-től és bandájától. Csak azért tetted, hogy te vedd át a hatalmat a békés polgárok felett? Ha ez a terved, lebeszélnélek róla téged én és városunk rendjének őrei.
@@ -234,6 +234,12 @@ window.rooms = [
       {
         txt: "Küzdjünk meg mint férfi a férfival!",
         new: 33,
+        cond: "férfi",
+      },
+      {
+        txt: "Küzdjünk meg mint nő a férfival!",
+        new: 33,
+        cond: "nő",
       },
       {
         txt: "Eltaposlak a talpnyalóiddal együtt téged is, te gyáva féreg!",
@@ -341,7 +347,7 @@ window.rooms = [
       },
       {
         txt: "Megkérdezed, miben tudnál nekik segíteni",
-        new: 100,
+        new: 1000,
       },
     ],
   },
@@ -1491,7 +1497,7 @@ window.rooms = [
     pic: "kocsma.jpg",
     desc: `
       <p>
-        Belépsz a legközelebbi zajos, füstös kocsmába, ami a "Kutya veres kasza" nevet viseli büszkén. A társadalom szélére csúszott büdös, koszos alakok próbálnak - többnyire sikeresen - eljutni itt az öntudatlanság mámoros ködjébe. A sok üres tekintet között néha látsz egy-két fenyegető vagy kíváncsi tekintetet, de értelmet nem sokat. Igen... ez szülővárosod kellemes, otthonos milliője. Mosolyogva mély lélegzetet veszel, hogy minél jobban magaddba szívd.
+        Belépsz a legközelebbi zajos, füstös kocsmába, ami a "Kutya Veres Kasza" nevet viseli büszkén. A társadalom szélére csúszott büdös, koszos alakok próbálnak - többnyire sikeresen - eljutni itt az öntudatlanság mámoros ködjébe. A sok üres tekintet között néha látsz egy-két fenyegető vagy kíváncsi tekintetet, de értelmet nem sokat. Igen... ez szülővárosod kellemes, otthonos milliője. Mosolyogva mély lélegzetet veszel, hogy minél jobban magaddba szívd.
       </p>
       <p>
         Ahogy körüljáratod tekintetedet, egy sarokban lévő asztalnál észreveszel három gnómszerű alakot, akik feléd mutogatnak és láthatóan rólad beszélnek. De mielőtt jobban megfigyelnéd őket, oldalról rádförmed egy búgó basszus hang:
@@ -1598,7 +1604,7 @@ window.rooms = [
     pic: "darkstreet.jpg",
     desc: `
       <p>
-        Valami azt súgja, hogy jobb, ha nem hagyod életben, így inkább hidegvérrel elvágod a a védekezésképtelen fickó nyakát a frissen szerzett konyhakéssel. Szétnézel: nem látot meg senbki, vagy ha mégis, nem érdekli, mit csinálsz.
+        Valami azt súgja, hogy jobb, ha nem hagyod életben, így inkább hidegvérrel elvágod a a védekezésképtelen fickó nyakát a frissen szerzett konyhakéssel. Szétnézel: nem látot meg senki, vagy ha mégis, nem érdekli, mit csinálsz.
       </p>
       `,
     obj: ["X_Béna Boldizsár"],
@@ -1932,7 +1938,7 @@ window.rooms = [
         <li>Persze, bármit, ami csak kell!</li>
         <li>Ha van elég fegyverünk, akkor eléggé ütőképes csapat vagyunk! Azt kellene eldönteni, hogy a városházán támadjuk meg vagy az utcán?</li>
         <li>
-        Bármelyiket is választjuk, egy dolog fontos - szól végül Oshinoko. Úgy tűnik, a szavának olyan tekintélye van, hogy rögtön mindenki elhallgat és rá szegeződik minden tekintet. - Ha nyíltan támadunk, még fegyverekkel is rosszak az esélyeink. Láttam az embereit, ha könnyen félre lehetne őket állítani, már megtettem volna én is egymagam. Az én javaslatom a következő. Nemsokára indulnak az önkormányzati választások. Sok helyen fog emiatt kampányolni. Egy olyan helyszínen kell rajta ütnünk, ahol nagyobb civil tömeggel érintkezik, de kevésbé védhető a helyszín. El kell vegyülnünk a tömegben annyian, amennyi őrt egyszerre semlegesíteni tudunk. Nem lőfegyverrel, mert azzal könnyen lebukhatunk, hanem hagyományos fegyverekkel, például fúvőcsővel. Aztán végezni kell Botival is meg a rendőrfőnökkel, Böszme Bélával is. Hiába nyírjuk ki őt, a Béla vezette álrendőrökkel meggyűlhet a bajunk. De ha Béla feje is hull, akkor még törvényesen is felszámoltathatjuk azt a bűnszervezetet, amit létrehozott.
+        Bármelyiket is választjuk, egy dolog fontos - szól végül Oshinoko. Úgy tűnik, a szavának olyan tekintélye van, hogy rögtön mindenki elhallgat és rá szegeződik minden tekintet. - Ha nyíltan támadunk, még fegyverekkel is rosszak az esélyeink. Láttam az embereit, ha könnyen félre lehetne őket állítani, már megtettem volna én is egymagam. Az én javaslatom a következő. Nemsokára indulnak az önkormányzati választások. Sok helyen fog emiatt kampányolni. Egy olyan helyszínen kell rajta ütnünk, ahol nagyobb civil tömeggel érintkezik, de kevésbé védhető a helyszín. El kell vegyülnünk a tömegben annyian, amennyi őrt egyszerre semlegesíteni tudunk. Nem lőfegyverrel, mert azzal könnyen lebukhatunk, hanem hagyományos fegyverekkel, például fúvócsővel. Aztán végezni kell Botival is meg a rendőrfőnökkel, Böszme Bélával is. Hiába nyírjuk ki őt, a Béla vezette álrendőrökkel meggyűlhet a bajunk. De ha Béla feje is hull, akkor még törvényesen is felszámoltathatjuk azt a bűnszervezetet, amit létrehozott.
         </li>
       </ul>
       <p>
@@ -2059,7 +2065,7 @@ window.rooms = [
         - El kell intéznem valamit. Jobb, ha hazamész és másnap visszajösz. Akkor tudunk beszélni.
       </p>
       <p>
-        Kezded megszokni a stílusukat, így csak némán bólintasz. Oshinoko megmutatja, hova kell állnod, hogy elhagyd a kertet, mivel kapu nincs, csak a felismerhetetlen forgófal. Miközben odamész, elhaladsz a másik alak előtt. Az arca tényleg hasonlít Oshinokoéra - bár ezeknél az ázsiaiaknál mást jelent a különbözőség - de van egy sebhely a jobb arcán. Egy inyencfalatra talált pszichopata gyilkos tekintetével mér végig téged. Ezt látva Oshinoko ráförmed két szótagot, mire az alak unottan elfordítja a tekintetét rólad. Ezek szerint legalább Oshinoko a főnök. Megvonod a vállad és beállsz a fal mellé. Az azonnal kifordul veled. Kikerültél ismét az utcára. Igyekszel megjegegyezni a helyet, hogy másnap visszatalálj, és útnak indulsz.
+        Kezded megszokni a stílusukat, így csak némán bólintasz. Oshinoko megmutatja, hova kell állnod, hogy elhagyd a kertet, mivel kapu nincs, csak a felismerhetetlen forgófal. Miközben odamész, elhaladsz a másik alak előtt. Az arca tényleg hasonlít Oshinokoéra - bár ezeknél az ázsiaiaknál mást jelent a különbözőség - de van egy sebhely a bal arcán. Egy inyencfalatra talált pszichopata gyilkos tekintetével mér végig téged. Ezt látva Oshinoko ráförmed két szótagot, mire az alak unottan elfordítja a tekintetét rólad. Ezek szerint legalább Oshinoko a főnök. Megvonod a vállad és beállsz a fal mellé. Az azonnal kifordul veled. Kikerültél ismét az utcára. Igyekszel megjegegyezni a helyet, hogy másnap visszatalálj, és útnak indulsz.
       </p>
     `,
     obj: ["J_Oshinoko"],
@@ -2114,24 +2120,24 @@ window.rooms = [
       [
         { name: "Független", val: 3 },
         { name: "Függő", val: -3 },
-        { name: "Hatalmas", val: 5 },
+        { name: "Hatalmas", val: 4 },
         { name: "Egyetlen", val: 2 },
         { name: "Magyar", val: 0 },
         { name: "Globális", val: -2 },
-        { name: "Kozmikus", val: 3 },
+        { name: "Kozmikus", val: 5 },
         { name: "Misztikus", val: 4 },
         { name: "Örök", val: 2 },
         { name: "Titkos", val: -1 },
         { name: "Becsületes", val: 3 },
       ],
       [
-        { name: "Brutál", val: 5 },
+        { name: "Brutalista", val: 5 },
         { name: "Böszme", val: 4 },
         { name: "Zöld", val: -5 },
         { name: "Vörös", val: -4 },
         { name: "Antidemokratikus", val: -3 },
         { name: "Kemény", val: 2 },
-        { name: "Hős", val: 5 },
+        { name: "Hős", val: 4 },
         { name: "Szelíden Virágzó", val: -5 },
         { name: "Bitangirtó", val: 5 },
         { name: "Gyökerű", val: 0 },
@@ -2297,7 +2303,7 @@ window.rooms = [
        - Ha Battle Beatle-re gondolsz, akkor igen - feleled kapásból. Felesleges lenne titkolni. A legkisebb gnóm rögtön kikerekedett szemmel elkiáltja magát, miközben úgy oldalba löki a harmadik tagot, hogy az kilöttyinti a sörét. De láthatóan nem foglalkozik vele.
       </p>
       <p>
-        - Hű, Mátyus! Asztakutya! Látod, megmontam! Húha, most micsinájunk? Rendeljünk neki a legjob sörbű! BODRIII!!! - Ez utóbbit dobhártyátszaggatóan ordítja. Először azt hiszed, a kutyája kapta el közben a tökét az asztal alatt, de nem! A pultos rögtön visszaordít neki.
+        - Hű, Frédi! Asztakutya! Látod, megmontam! Húha, most micsinájunk? Rendeljünk neki a legjob sörbű! BODRIII!!! - Ez utóbbit dobhártyátszaggatóan ordítja. Először azt hiszed, a kutyája kapta el közben a tökét az asztal alatt, de nem! A pultos rögtön visszaordít neki.
       </p>
       <p>
        - Mi van, Pitypang?!
@@ -2359,7 +2365,7 @@ window.rooms = [
     pic: "orvgyilkos.gif",
     nmepic: "orvgyilkos.gif",
     att: 75,
-    def: 45,
+    def: 40,
     speed: 7,
     hp: 50,
     desc: `
@@ -2394,6 +2400,7 @@ window.rooms = [
     music: "calmusic",
     pic: "nappali.jpg",
     desc: `
+      <p id="extra"></p>
       <p>
         Napsütéses reggel és az utca zaja ébreszt fel. Összekapod magad, eszel valamit és mivel még korán van ahhoz, hogy bárhová elindulj, egy kis időt eltölthetsz otthon is. Mit teszel?
       </p>
@@ -2439,17 +2446,27 @@ window.rooms = [
       {
         txt: "A Gárdához",
         new: 107,
-        cond: "J_Gárda, !J_Oshinoko",
+        cond: "J_Gárda, D_ostrom",
       },
       {
-        txt: "A Garázsba",
+        txt: "A Gárdához",
+        new: 107,
+        cond: "J_Gárda, D_utca-Gárda, !J_Oshinoko",
+      },
+      {
+        txt: "A Gárdához",
         new: 108,
-        cond: "J_Gárda, J_Oshinoko",
+        cond: "J_Gárda, D_utca-Gárda, J_Oshinoko",
       },
       {
         txt: "Ügyes Frigyes kunyhójához",
-        new: 109,
-        cond: "J_Ügyes Frigyes",
+        new: 132,
+        cond: "J_Ügyes Frigyes, D_földalatt",
+      },
+      {
+        txt: "Ügyes Frigyes kunyhójához",
+        new: 133,
+        cond: "J_Ügyes Frigyes, D_utca-Frici",
       },
       {
         txt: "A pártgyűlésre",
@@ -2633,7 +2650,7 @@ window.rooms = [
     pic: "frici.JPG",
     desc: `
       <p>
-       - Áh! Egyrészt már nincs belépőm, másrészt meg nem mennénk azzal sem semmire, ha lenne. Akár nekem, akár neked. A kártyával rendelkezőket sem engedik be Boti rezidenciájára. Tele van őrökkel az egész létesítmény és mindenkit ismernek. Ez nem egy felhőkarcoló, ahol mindenki ki-be járkál. Hidd el, csak az a két lehetőség van, amit mondtam.
+       - Dehogy van! Azt egyből visszaveszik, amint lejár a szerződés. Hidd el, csak az a két lehetőség van, amit mondtam.
       </p>
     `,
     buttons: [
@@ -2807,7 +2824,7 @@ window.rooms = [
     pic: "gangmeet.jpg",
     desc: `
     <p>
-      Elfogadjátok az utcai támadás tervét. Penge Menyhért szerint a polgármester holnap délután beszédet fog mondani a Branyiszkó-téren, már ott letámadhatjátok. Szita Kálmán megígéri, hogy szerez megfelelő fegyvereket és másnap délben ismét találkoztok a Garázsban. Mindenki lelkesen indul haza. Holnapra véget ér a zsarnokság!
+      Elfogadjátok az utcai támadás tervét. Penge Menyhért szerint a polgármester holnap délután beszédet fog mondani a Branyiszkó-téren, már ott letámadhatjátok. Megbeszélitek, ki szerez megfelelő fegyvereket és másnap délben ismét találkoztok a Garázsban. Mindenki lelkesen indul haza. Holnapra véget ér a zsarnokság!
     </p>
     `,
     change: [
@@ -2984,6 +3001,13 @@ window.rooms = [
       Egy ideig gyakoroltok még és megbeszéltek néhány további részletet. Aztán eljön az idő az indulásra. A tárgyaidnál kicsit hezitálsz, hogy nem lenne-e jobb mégis magaddal vinni valamilyen fegyvert, hátha mégsem buksz le. Hogy döntesz?
     </p>
     `,
+    change: [
+      {
+        id: "ugy",
+        crease: 5,
+        rnd: 2,
+      },
+    ],
     obj: ["D_utca-Oshinoko"],
     buttons: [
       {
@@ -3132,7 +3156,6 @@ window.rooms = [
       {
         txt: "Beszédbe elegyedsz vele",
         new: 126,
-        cond: "nő",
       },
     ],
   },
@@ -3165,7 +3188,7 @@ window.rooms = [
         - Mit szóljak, Pitypang? - feleli, mire bátorítóan meghúzgálod őszülő bajszát. Ez láthatóan jól esik neki, de nem segít azon, hogy szavakba is öntse érzelmeit. Ezért inkább oldalra fordul: - Szóljon Frédi, még meg sem szólalt!
       </p>
       <p>
-        A harmadik fickó fúj egy nagyot, ijedten körbenéz és csapkod párat, mint kezdő matróz a süllyedő hajón, aztán egy szarvasbőgéshez hasonló hangot ad ki hosszan elnyújtva. Láthatóan nem a szavak embere, de azért várod, hogy hátha sikerül átalakítania artikulált emberi beszéddé, de akkor hirtelen történik valami.
+        A harmadik fickó fúj egy nagyot, ijedten körbenéz és csapkod párat, mint kezdő matróz a süllyedő hajón, aztán egy szarvasbőgéshez hasonló hangot ad ki hosszan elnyújtva. Láthatóan nem a szavak embere, de azért várod, hogy hátha sikerül átalakítania artikulált emberi beszéddé azt, ami a torkán kijön, ám akkor hirtelen történik valami.
       </p>
     `,
     change: [
@@ -3182,6 +3205,11 @@ window.rooms = [
       {
         id: "esz",
         crease: -5,
+        rnd: 5,
+      },
+      {
+        id: "lel",
+        crease: 5,
         rnd: 5,
       },
       {
@@ -3249,8 +3277,389 @@ window.rooms = [
       },
     ],
   },
+  {
+    num: 101,
+    title: "Az orvgyilkos legyőzése",
+    type: "normal",
+    music: "darkbackground",
+    pic: "home.jpg",
+    desc: `
+      <p>
+        Sikerül legyőznöd az orvgyilkost. Kifújod magad és átkutatod. Találsz nála egy fejlett katonai kést, egy kézigránátot és két flaskát, valamint egy belépőkártyát. Nem tudod hova jó, de elteszed azt is a többivel együtt. Ahogy a feje felé hajolsz, egy nagyon halk hangot hallasz a síri csendben. Amikor közelebb hajolsz, észreveszed a nő füle mögé rejtett apró kommunikációs eszközt. A saját füledhez tartod, hogy jobban halld. Valaki azt kérdezi, hogy mi történt, mivel csökkentek az életfunkciói a nőnek. Mit teszel?
+      </p>
+    `,
+    change: [
+      {
+        id: "ugy",
+        crease: 5,
+        rnd: 3,
+      },
+      {
+        id: "lel",
+        crease: -1,
+        rnd: 1,
+      },
+    ],
+    obj: [
+      "W_GYILOK",
+      "W_KÉZIGRÁNÁT",
+      "W_DIABOLIKUS SZTEROID",
+      "W_NAGY ERŐITAL",
+      "S_Belépőkártya",
+    ],
+    buttons: [
+      {
+        txt: "Megpróbálsz a nő hangját utánozva válaszolni, hogy minden rendben, elintézted magad",
+        new: 127,
+        cond: "nő",
+      },
+      {
+        txt: "A saját hangodon válaszolsz, hogy kinyírtad az orvgyilkost és mindenki így jár, aki az utadba áll",
+        new: 128,
+      },
+      {
+        txt: "Kidobod az eszközt a hullával együtt",
+        new: 74,
+        modi: "Csendben becsomagolod a hullát egy nagy kukazsákba és leviszed a központi konténerbe. Senki nem látott meg a vaksötét éj közepén. Visszamész és próbálsz még aludni reggelig.",
+      },
+    ],
+  },
+  {
+    num: 102,
+    title: "Menekülés a halálba",
+    type: "death",
+    music: "bomb",
+    stopmusic: true,
+    pic: "explosion.gif",
+    desc: `
+      <p>
+        Hiába menekülsz, az orvgyilkos azonnal utánad dob egy gránátot és az egész otthonoddal együtt küld át a másvilágra.
+      </p>
+      <p>Kalandod itt véget ért, de most már tudod, hogy meg kell védened az otthonodat a betolakodókkal szemben.</p>
+    `,
+  },
+  {
+    num: 103,
+    title: "Edzés otthon",
+    type: "normal",
+    music: "calmusic",
+    pic: "nappali.jpg",
+    desc: `
+      <p>
+        Csinálsz jó pár erősítő és küzdő gyakorlatot, hogy felkészültebb fizikummal tudd végrehajtani terveidet.
+      </p>
+      `,
+    change: [
+      {
+        id: "ugy",
+        crease: 5,
+        rnd: 15,
+      },
+      {
+        id: "ero",
+        crease: 5,
+        rnd: 15,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Most már harcra kész vagy",
+        new: 75,
+      },
+    ],
+  },
+  {
+    num: 104,
+    title: "Imádkozás otthon",
+    type: "normal",
+    music: "calmusic",
+    pic: "nappali.jpg",
+    desc: `
+      <p>
+        Eltöltesz egy teljes órát a Teremtő Atyával. A végén érzed, hogy megtisztult a lelked és az értelmed, biztonságban vagy, nem rendíthet meg a világ, megerősödött a hited. A hitednek a rád váró feladatokban is hasznát veheted majd.
+      </p>
+      `,
+    change: [
+      {
+        id: "lel",
+        crease: 10,
+        rnd: 15,
+      },
+      {
+        id: "hat",
+        crease: 10,
+        rnd: 10,
+      },
+      {
+        id: "esz",
+        crease: 5,
+        rnd: 5,
+      },
+    ],
+    obj: ["S_Hit"],
+    buttons: [
+      {
+        txt: "Most már harcra kész vagy",
+        new: 75,
+      },
+    ],
+  },
+  {
+    num: 105,
+    title: "Rejtvényfejtés otthon",
+    type: "normal",
+    music: "calmusic",
+    pic: "nappali.jpg",
+    desc: `
+      <p>
+        Megcsinálsz pár gondolkodásfejlesztő feladványt, amitől okosabbnak és magabiztosabbnak érzed magad.
+      </p>
+      `,
+    change: [
+      {
+        id: "esz",
+        crease: 10,
+        rnd: 10,
+      },
+      {
+        id: "hat",
+        crease: 5,
+        rnd: 5,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Most már harcra kész vagy",
+        new: 75,
+      },
+    ],
+  },
+  {
+    num: 106,
+    title: "Telónyomkodás otthon",
+    type: "normal",
+    music: "calmusic",
+    pic: "nappali.jpg",
+    desc: `
+      <p>
+        Eltöltesz egy órát a neten lévő instant szennyben szörfözve és agyrohasztó szerencsén alapuló játékokkal játszva. Még csak számodra hasznos híreket sem olvastál, viszont sikeresen leépítetted magad.
+      </p>
+      `,
+    change: [
+      {
+        id: "ugy",
+        crease: -2,
+        rnd: 3,
+      },
+      {
+        id: "ero",
+        crease: -2,
+        rnd: 3,
+      },
+      {
+        id: "lel",
+        crease: -2,
+        rnd: 3,
+      },
+      {
+        id: "esz",
+        crease: -2,
+        rnd: 3,
+      },
+      {
+        id: "hat",
+        crease: -2,
+        rnd: 3,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Most már harcra kész vagy",
+        new: 75,
+      },
+    ],
+  },
+  {
+    num: 107,
+    title: "Ismét a <span class='name'></span> Gárdával",
+    type: "normal",
+    music: "lightaction",
+    pic: "gangmeet.jpg",
+    desc: `
+      <p>
+        Ismét összeültök a megbeszélt időpontban a Garázsban. Lelkesen üdvözlitek egymást. <span id="add"></span> Kérdezgetik egymástól, hogy hol van Szita Kálmán a fegyverekkel. Amint idáig juttok, egy teherautó áll meg a Garázs előtt. Kinéztek.
+      </p>
+      <p>
+        Szita az, büszkén vigyorogva megy hátra és nyitja a csomagtartót. Közben int valakinek, hogy zárja be az udvar nagy kapuját. Mint a társaság vezetője, felmész vele a raktérbe és szétnézel. Van itt mindenféle fegyver ládákban vagy azok nélkül: gépfegyver, vadászpuska, konyhakés, csúzli, gyufa, kézigránát, bűzbomba, boxer, ostor, lángszóró, flex, harapófogó, petárda, csatabárd, de még pácélököl (bazooka) is, több rakétával. Szita nagyon büszke magára. Mivel nem ismered még annyira az embereidet, a legjobbnak azt tartod, ha rájuk bízod, hogy mindenki olyan fegyvert válasszon, amihez ért is.
+      </p>
+      <p>De előtte te választasz 2 fegyvert azok közül, ami tetszik:</p>
+      `,
+    add: "J_Oshinoko::Oshinoko is megjelent, de ezúttal csak csendesen meghúzódik egy sarokban.",
+    select: [
+      [
+        { name: "Gépfegyver", val: "W_GÉPFEGYVER" },
+        { name: "Vadászpuska", val: "W_VADÁSZPUSKA" },
+        { name: "Páncélököl", val: "W_PÁNCÉLÖKÖL" },
+        { name: "Csatabárd", val: "W_CSATABÁRD" },
+        { name: "Lángszóró", val: "W_LÁNGSZÓRÓ" },
+      ],
+      [
+        { name: "Kézigránát", val: "W_KÉZIGRÁNÁT" },
+        { name: "Konyhakés", val: "W_KONYHAKÉS" },
+        { name: "Csúzli", val: "W_CSÚZLI" },
+        { name: "Ostor", val: "W_OSTOR" },
+        { name: "Bűzbomba", val: "W_BŰZBOMBA" },
+      ],
+    ],
+    cvar: "obj",
+    submit: {
+      txt: "Válasszatok ti is!",
+      new: 131,
+    },
+  },
+  {
+    num: 108,
+    title: "Ismét a Garázsban",
+    type: "normal",
+    music: "lightaction",
+    pic: "gangmeet.jpg",
+    desc: `
+      <p>
+        Ismét összeültök a megbeszélt időpontban a Garázsban. Lelkesen üdvözlitek egymást. Oshinoko elővesz egy karton cigit. Egy páran rögtön kérnek is tőle, de ő leinti őket, hogy várjanak. Kivesz egy szálat az egyik dobozból, egy másikból egy öngyújtót. A cigit a szájába veszi és az öngyújtót a végéhez közelíti. Abból azonban nem láng jön ki, hanem egy apró tüske csúszik bele az üreges cigibe. Ebben a pillanatban lép be a szobába Döme, a patkány. Aki tényleg patkány. Egy pillanatra megáll és szaglászni kezd, majd villámgyorsan nyargalni kezd a hűtő felé. Oshinoko felé irányítja a cigit, fúj egyet, mire a tüske láthatatlan gyorsasággal belerepül a cigiből Dömébe. Ő összerándul, lép még kettőt, aztán megmerevedik és felfordul.
+      </p>
+      <p>
+        A társaság döbbent némaságban figyeli az eseményeket. Végül Oshinoko töri meg a csendet:
+      </p>
+      <p>
+        - A hagyományos fegyvereket hamar kiszúrnák az őrök, és a tér körül mesterlövészek is vannak. A ciginek álcázott fúvőcsövet viszont nem szúrják ki. Én leszedem a rendőrfőnököt, mert gyakran álruhában van, de én megismerem, <span class="name"></span> sanra bíznám a polgármestert. De nagyon fontos, hogy ha ezzel a kettővel végeztünk és nem vette észre senki, hogy ki fújt rájuk a csőből, akkor viselkedjünk teljesen természetesen, mint a tömeg többi tagja. Ha szerencsénk van, verekedés nélkül megússzuk. De ha mégis lebuknánk, mindenki üsse-vágja a rendőröket, ahogy tudja! Minél jobban elkeveredünk a tömegben, annál kisebb esély van arra, hogy a mesterlövészek leszednek. De még az is lehet, hogy a nép mellénk áll a két főgonosz halálát látván és <span class="name"></span> san bejelentheti, hogy átveszi a hatalmat. Meglátjuk majd, hogy alakul. A lényeg, hogy addig senki ne csináljon semmit, amíg mi ketten nem szedjük le a két főgonoszt. Most pedig megtanítom <span class="name"></span> sannak meg annak, aki még akarja, hogyan kell a legfeltünésmentesebben és leghatásosabban használni a fúvőcsövet.
+      </p>
+      <p>
+        Jó pár ember jelentkezik, hogy ők is akarnak fúvócsövet használni, néhányan pedig bíznak saját erejükben. Egy órán át gyakoroltok, aztán már ideje indulni a Branyiszkó-térre.
+      </p>
+      `,
+    change: [
+      {
+        id: "ugy",
+        crease: 5,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Vesszen a zsarnok!",
+        new: 135,
+      },
+    ],
+  },
 
   //*
+
+  {
+    num: 131,
+    type: "Ytrial",
+    value: "D_ostrom",
+    pass: 136,
+    fail: 137,
+  },
+  {
+    num: 132,
+    title: "Újra Fricinél",
+    type: "normal",
+    music: "forest",
+    pic: "kunyho.jpg",
+    desc: `
+      <p>
+        A sárga kikericseket követve visszajutsz Ügyes Frigyes rejtekhelyére. Sok földtúrást látsz a kunyhó körül, Frici pedig éppen Betyárt kalapálgatja. Amint meglát, lelkesen üdvözöl:
+      </p>
+      <p>
+        - Szevasz <span class="name"></span>! Na, készen állsz a nagy akcióra? Betyárt elláttam földalatti ásó szerkókkal, meg ha valami értékes ásványi anyagot talál, abból készít is nekünk valamit. Nagyon szuper lett! A páncélját is megerősítettem, mert kemény földbe is áshatunk, de szerintem alkalmas lesz a feladat elvégzésére. Előtte viszont együnk egyet!
+      </p>
+      <p>
+        Azzal megint előhozza az asztalt, székeket és némi ennivalót. Megint fasírt-szerű étel a fő fogás, de világosabb színű, mint múltkor.
+      </p>
+      <p>
+        - Ez miből van? - kérdezed gyanakodva.
+      </p>
+      <p>
+        - Eh, egy nyápic volt ez a Béna Boldizsár! Ma reggel holtan találtam. Legalább ennyi haszna legyen!
+      </p>
+      <p>
+        Kissé meghökkensz, de aztán vállat vonsz és tovább eszel, mert kell az energia.
+      </p>
+      <p>
+        Amikor végeztetek, Frici elpakol, ellenőriz még pár dolgot Betyáron, aztán beszálltok, hogy megtámadjátok a föld alól a városházát.
+      </p>
+      `,
+    change: [
+      {
+        id: "ero",
+        crease: 7,
+        rnd: 5,
+      },
+      {
+        id: "lel",
+        crease: -3,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Rohamra!",
+        new: 134,
+      },
+    ],
+  },
+  {
+    num: 133,
+    title: "Újra Fricinél",
+    type: "normal",
+    music: "forest",
+    pic: "kunyho.jpg",
+    desc: `
+      <p>
+        A sárga kikericseket követve visszajutsz Ügyes Frigyes rejtekhelyére. Ő  éppen egy hosszúcsövű, távcsöves puskát csiszolgat. Amint meglát, lelkesen üdvözöl:
+      </p>
+      <p>
+        - Szevasz <span class="name"></span>! Na, készen állsz a nagy akcióra? Nézd meg, milyen mesterlövész puskát csináltam! Hugónak neveztem el! - Pár percig átszellemült képpel nézi, majd hirtelen felkapja, belenéz a távcsőbe, körbenéz vele, majd elsüti. Csak egy nagyon halk kattanás hallatszik. Frici nagyon büszkének tűnik, de te értetlenül nézel rá.
+      </p>
+      <p>
+        - Haha! Várd meg, amíg bemegyünk a városba! Előtte viszont együnk egyet!
+      </p>  
+      <p>
+        Azzal megint előhozza az asztalt, székeket és némi ennivalót. Megint fasírt-szerű étel a fő fogás, de világosabb színű, mint múltkor.
+      </p>
+      <p>
+        - Ez miből van? - kérdezed gyanakodva.
+      </p>
+      <p>
+        - Eh, egy nyápic volt ez a Béna Boldizsár! Ma reggel holtan találtam. Legalább ennyi haszna legyen!
+      </p>
+      <p>
+        Kissé meghökkensz, de aztán vállat vonsz és tovább eszel, mert kell az energia.
+      </p>
+      <p>
+        Amikor végeztetek, Frici elpakol, ellenőriz még pár dolgot Hugón, aztán beszálltok a Betyármobilba és elindultok a város felé, ahol Boti ma délután  beszédet mond a Branyiszkó-téren.
+      </p>
+      `,
+    change: [
+      {
+        id: "ero",
+        crease: 7,
+        rnd: 5,
+      },
+      {
+        id: "lel",
+        crease: -3,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Vesszen a zsarnok!",
+        new: 109,
+      },
+    ],
+  },
 
   {
     num: 1111,
@@ -3283,5 +3692,7 @@ window.rooms = [
   },
 ];
 
-//Kocsma: Bogi énekel, rákérdezés a kocsmáros nevére (Bodri)
-//Erdeiéknél próbatételek után Bübüszimat képessége
+//Erdeiéknél próbatételek után Bübüszimat! képessége
+//Fegyveres utcai támadás: jelt adnak, vársz: mesterlövész leszed, nem: harc
+//135 Akkor is, ha Gárda nélkül mész Oshinoko házából a térre!
+//136-7: "Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. (Oshinoko?) Készen álltok a harcra."
