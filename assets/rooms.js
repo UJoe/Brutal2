@@ -2481,7 +2481,7 @@ window.rooms = [
       {
         txt: "A régi fagyigyárba Bogihoz",
         new: 112,
-        cond: "M_Bogi",
+        cond: "J_Bogi",
       },
       {
         txt: "A piacra",
@@ -2586,7 +2586,16 @@ window.rooms = [
         - Remek! Ez a jobb terv! - csap az asztalra Frici, amitől lerepülnek az evőeszközök, de nem törődik vele, sőt, inkább még kevesli is az eredményt, mert a következő mozdulatával mindent leseper az asztalról. Aztán lelkes izgalommal előkap egy papírt a mellényéből, szétteríti az asztalon és villámssebességgel elkezd rá rajzolni egy tervet.
       </p>
       <p>
-        - Ez a városháza tervrajza. Itt, a server-szoba melletti üres raktárban fogjuk kiásni magunkat, mert azzal a helységgel a kutya sem törődik.<span id="add"></span> Amíg eljutunk oda, addig is gyűjthetünk a földből pár hasznos anyagot, amiből fegyvereket tud készíteni Betyár. Ásványkicsekben gazdag hely felé építették a Városházát, mindenre gondoltak. A server-szobából nyílik egy vészhelyzeti alagút a biztonsági központba. Ott felmászunk, meglepetésszerűen megjelenünk és kiiktatjuk az őröket. Itt számítok harci képességeidre. Ezután ezen a titkos menekülő-folyosón keresztül tudunk eljutni Boti rezidenciájára. Ott már nem lesz más, csak ő. Ha jól csináljuk, észre sem vesz senki. Miután elintéztük Botit, ugyanitt visszamegyünk Betyárhoz és hazajövünk ünnepelni. Régóta agyalok már ezen a terven, csak eddig még nem találtam olyan útvonalat, ahol nem találkozunk őrökkel. De ezen az útvonalon van a legkevesebb. Csak én egy ezermester-feltaláló vagyok, nem harcos. De ketten meg tudjuk csinálni! Mit szólsz?
+        - Ez a városháza tervrajza. Itt, a server-szoba melletti üres raktárban fogjuk kiásni magunkat, mert azzal a helységgel a kutya sem törődik.
+      </p>  
+      <p class="cond" data-cond="=_name_Q">
+        - Az jó, mert akkor le tudom vágni a biztonsági rendszert! Viszem a laptomomat! - vágod rá egyből. Frici szeme elismerően csillog.
+      </p>
+      <p>
+        Ekkor megjelenik a ház mellett egy kóborkutya és unottan de helyeslően  vakkant egyet. Frici rá vigyorog, mire az eb rémülten nagyot ugrik és vinnyogva eliszkol. Frici folytatja:
+      </p>
+      <p>
+        -Amíg eljutunk oda, addig is gyűjthetünk a földből pár hasznos anyagot, amiből fegyvereket tud készíteni Betyár. Ásványkicsekben gazdag hely felé építették a Városházát, mindenre gondoltak. A server-szobából nyílik egy vészhelyzeti alagút a biztonsági központba. Ott felmászunk, meglepetésszerűen megjelenünk és kiiktatjuk az őröket. Itt számítok harci képességeidre. Ezután ezen a titkos menekülő-folyosón keresztül tudunk eljutni Boti rezidenciájára. Ott már nem lesz más, csak ő. Ha jól csináljuk, észre sem vesz senki. Miután elintéztük Botit, ugyanitt visszamegyünk Betyárhoz és hazajövünk ünnepelni. Régóta agyalok már ezen a terven, csak eddig még nem találtam olyan útvonalat, ahol nem találkozunk őrökkel. De ezen az útvonalon van a legkevesebb. Csak én egy ezermester-feltaláló vagyok, nem harcos. De ketten meg tudjuk csinálni! Mit szólsz?
       </p>
       <p>
         - Tetszik a terv! - mondod lelkesen. 
@@ -2599,7 +2608,6 @@ window.rooms = [
       </p>
     `,
     obj: ["D_földalatt"],
-    add: "=_name_Q::<p>- Az jó, mert akkor le tudom vágni a biztonsági rendszert! Viszem a laptomomat! - vágod rá lelkesen. Frici szeme is még jobban felragyog. Aztán folytatja.</p>-",
     change: [
       {
         id: "lel",
@@ -2954,7 +2962,7 @@ window.rooms = [
       </p>
       <ol id="pp"></ol>
       <p> 
-       Örömmel koccintotok ismét egy nagyot majd még egy jó órán át isztok és röhögtök. Mire végre abbahagyjátok, már későre jár. Megegyeztek abban, hogy holnap ugyanitt pártgyűlést tartotok, és aztán hozzáláttok a kampányhoz.
+       Örömmel koccintotok ismét egy nagyot majd még egy jó órán át isztok és röhögtök. Mire végre abbahagyjátok, már későre jár. Megegyeztek abban, hogy holnap ugyanitt pártgyűlést tartotok, addig Nyomdász Lajos kinyomtat egy csomó röplapot a pártprogrammal, aztán hozzáláttok a kampányhoz.
       </p>
     `,
     change: [
@@ -3147,6 +3155,7 @@ window.rooms = [
        Amikor az ének véget ér, mindenki lelkesen tapsol. Ellenállhatatlan kényszert érzel arra, hogy odamenj a nőhöz.
       </p>
     `,
+    obj: ["M_Bogi"],
     buttons: [
       {
         txt: "Elkezdesz neki udvarolni",
@@ -3487,14 +3496,13 @@ window.rooms = [
     pic: "gangmeet.jpg",
     desc: `
       <p>
-        Ismét összeültök a megbeszélt időpontban a Garázsban. Lelkesen üdvözlitek egymást. <span id="add"></span> Kérdezgetik egymástól, hogy hol van Szita Kálmán a fegyverekkel. Amint idáig juttok, egy teherautó áll meg a Garázs előtt. Kinéztek.
+        Ismét összeültök a megbeszélt időpontban a Garázsban. Lelkesen üdvözlitek egymást. <span class="cond" data-cond="J_Oshinoko">Oshinoko is megjelent, de ezúttal csak csendesen meghúzódik egy sarokban.</span> Kérdezgetik egymástól, hogy hol van Szita Kálmán a fegyverekkel. Amint idáig juttok, egy teherautó áll meg a Garázs előtt. Kinéztek.
       </p>
       <p>
         Szita az, büszkén vigyorogva megy hátra és nyitja a csomagtartót. Közben int valakinek, hogy zárja be az udvar nagy kapuját. Mint a társaság vezetője, felmész vele a raktérbe és szétnézel. Van itt mindenféle fegyver ládákban vagy azok nélkül: gépfegyver, vadászpuska, konyhakés, csúzli, gyufa, kézigránát, bűzbomba, boxer, ostor, lángszóró, flex, harapófogó, petárda, csatabárd, de még pácélököl (bazooka) is, több rakétával. Szita nagyon büszke magára. Mivel nem ismered még annyira az embereidet, a legjobbnak azt tartod, ha rájuk bízod, hogy mindenki olyan fegyvert válasszon, amihez ért is.
       </p>
       <p>De előtte te választasz 2 fegyvert azok közül, ami tetszik:</p>
       `,
-    add: "J_Oshinoko::Oshinoko is megjelent, de ezúttal csak csendesen meghúzódik egy sarokban.",
     select: [
       [
         { name: "Gépfegyver", val: "W_GÉPFEGYVER" },
@@ -3548,6 +3556,101 @@ window.rooms = [
       {
         txt: "Vesszen a zsarnok!",
         new: 135,
+      },
+    ],
+  },
+  {
+    num: 109,
+    title: "Fricivel a városban",
+    type: "normal",
+    music: "epicsearch",
+    pic: "movingtown.gif",
+    desc: `
+      <p>
+        Frici a város szélén leparkol, aztán összehajtja Hugót (nagyon nem lepődsz már meg) és elteszi a zsebébe.
+      </p>
+      <p>
+        - Innen gyalog megyünk, mert most mindenhol ott vannak Boti emberei, nem akarok gondot a Betyármobil miatt - szól Frici, azzal leszálltok és elindultok a Branyiszkó-tér felé.
+      </p>
+      <p>
+        Ahogy sétáltok, egyszer csak találkoztok egy kisebb izgatott tömeggel. Egy kövér, borostás fazon atlétatrikóban és mackóalsóban magyaráz izgatottan az embereknek.
+      </p>
+      <p>
+        - Higgyétek el, ez égi jel volt! Tíz éve már nem ittam, de az asszony miatt most megint a kezembe vettem a poharat! És amikor a számhoz emeltem, egyszerűen magától összetört! Egy angyal törhette össze! Nem térek vissza a piához, leteszem örökre! Az asszonynak is megbocsátok!
+      </p>
+      <p>
+        - Ha angyal volt, akkor kicsi lehetett és az ablakon át repült be! - jegyzi meg valaki némi cinizmussal a tömegből, és a férfi mögötti ház ablakára mutat, amelyen egy kis lyuk van. Frici huncut mosollyal rádkacsint és halkan odasúgja neked:
+      </p>
+      <p>
+        - Az angyalt Hugónak hívták és az erdőből repült ide... Na, de menjünk, mert dolgunk van! Nem is kell ennél beljebb mennünk.
+      </p>
+      <p>
+        Elképedsz, hogy képes volt ilyen távolságból eltalálni egy poharat, ez a mesterlövész puska tényleg nem semmi! 
+      </p>
+      <p>
+        Beléptek egy emeletes házba és felmentek a lépcsőn. A tetőre vezető vasajtó zárva van, de Frici elővesz egy tolvajkulcsot, kicsit babrál vele, mire kattan a zár. Lenyomja a kilincset, de továbbra sem mozdul az ajtó.
+      </p>
+      <p>
+        - Nem nagyon használhatták ezt, biztos berozsdásodott! Lökjük be! - mondja, azzal nekiugrotok az ajtónak. Hatalmasat döng, de sikerül kinyitni. A zajra viszont megjelenik a lépcsőn egy füstszagú, bajszos, vastag keretes szemüveget viselő fickó és rátok kiált:
+      </p>
+      <p>
+        - Mi az anyátok úristenit csináltok itt?!
+      </p>
+      <p>
+        Mit teszel?
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Kidumálod magad a helyzetből",
+        new: 138,
+      },
+      {
+        txt: "Jól megvered",
+        new: 139,
+      },
+    ],
+  },
+  {
+    num: 110,
+    title: "Akcióban a <span class='part'></span>",
+    type: "normal",
+    music: "lightaction",
+    pic: "gangmeet.jpg",
+    desc: `
+      <p>
+        Ismét összejön a társaság a szokott helyen. Nyomdász Lajos megérkezett több láda röplappal, plakáttal. Szétosztjátok és mindenki körberagasztja velük az egész várost.
+      </p>
+        A nap végén megnézitek, mennyire változott a támogatásotok. Ez volt az az érték, ami az oldal tetején megjelent futószövegben, remélem, nem maradtál le róla. De a mai nap során Bitang Botond sem tétlenkedett: lelkesítő beszédet mondott a Branyiszkó-téren, amiben titeket is ócsárolt. Úgy tűnik, a jelen támogatottságotok még mindig túl kevés ahhoz, hogy a nép átálljon hozzátok. Valami konkrétabb dolgot is kellene tenni a népért.
+      <p>
+        Mi legyen az?
+      </p>
+      `,
+    Xchange: "kampány",
+    buttons: [
+      {
+        txt: "Elárasztjátok az internetes médiát is a pártprogrammal",
+        new: 142,
+      },
+      {
+        txt: "Nyilvános beszédeket mondasz te is",
+        new: 143,
+      },
+      {
+        txt: "Elkapsz egy hírhedt bűnözőt",
+        new: 146,
+      },
+      {
+        txt: "Kincseket ásol a népnek",
+        new: 148,
+      },
+      {
+        txt: "Megkeresed az elveszett tárgyaikat",
+        new: 151,
+      },
+      {
+        txt: "Imádkozol a sikerért",
+        new: 153,
       },
     ],
   },

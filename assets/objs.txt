@@ -3,7 +3,7 @@ M - találkozás (meet)
   Ügyes Frigyes
   Szenyamuki
   Bogi
-  Kocsmatöltelékek
+  Kocsmatöltelékek (akik meghívtak)
 
 
 X - megölve
@@ -17,7 +17,8 @@ J - szövetséges (join)
   Ügyes Frigyes
   Erdeiék
   Szenyamuki
-  Kocsmatöltelékek  
+  Kocsmatöltelékek (akik csatlakoztak)
+  Bogi  
 
 S - képesség (skill)
   Micuki

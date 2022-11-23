@@ -43,15 +43,14 @@ let templates = [
       <p>
        B <span class="name"></span>
       </p>
-      <p>
-       C <span id="add"></span>
+      <p class="cond" data-cond="=_name_Q">
+       C
       </p>
       <p>
        D <span class='part'></span> 
       </p>
 
     `,
-    add: "=_name_Q::- Meghackelem!",
     obj: ["X_Béna Boldizsár", "M_Oshinoko", "W_FEGYVER"],
     change: [
       {

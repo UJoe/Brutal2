@@ -135,6 +135,26 @@
 135 - Oshinokoval (és a Gárdával?) a Branyiszkó-téren
 136 - A városháza megostromlása a Gárdával (Oshinoko lehet vagy nem)
 137 - A Gárdával a Branyiszkó-téren (Oshinoko nincs, de fegyverek vannak)
+138 - XTrial (com) - Kidumálás a házmesterrel (140-141)
+139 - Fight a házmesterrel
+140 - A házmester visszamegy
+141 - A házmester nem tágít
+142 - A pártprogram meghódítja a médiát (Xchange kampány)
+143 - Beszédeket mondasz - Xtrial: recruit (144-145)
+144 - Sikeres beszédeket tartasz (+sup)
+145 - Boti beszédei hatásosabbak (-sup)
+146 - Büdös Berci elkapása (pursuit)
+147 - Harc Büdös Bercivel (fight)
+148 - Jótékony kincsásás (mine - 149-150)
+149 - Sikeres kincsásás
+150 - Sikertelen kincsásás
+151 - Elveszett tárgyak keresése (dungeon)
+152 - Elveszett tárgyak keresése (dungeon-fight)
+153 - XTrial (ima - 154-155)
+154 - A hited növelte a támogatást
+155 - Nem tudsz hinni a sikerben
+
+
 
 
 

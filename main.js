@@ -381,6 +381,11 @@ function _load() {
     let v = document.getElementById("val_" + id);
     v.innerHTML = val;
     v.classList.add(klassz);
+    if (char.lel === 100 && !getObj("S_Hit")) {
+      char.objs.push("S_Hit");
+      message("Erős hited lett.");
+    }
+
     if (char.ero < 1) {
       clearInterval(dying);
       clearInterval(timo);
@@ -737,6 +742,26 @@ function _load() {
               : "red";
           break;
 
+        case "ima":
+          let hit = char.lel + getObj("S_Hit") * 50;
+
+          if (Math.random() * 125 < hit) {
+            char.room = room.pass;
+            crease = 1 + Math.round((100 - char.lel) / 15 + Math.random() * 3);
+            music.volume = 0.75;
+            result = "Az imád meghallgatásra talált.";
+          } else {
+            char.room = room.fail;
+            crease = -1 - Math.round((100 - char.lel) / 20 + Math.random() * 2);
+            music.volume = 0.25;
+            result = "Nem tudsz hinni az imád meghallgatásában.";
+          }
+          message("<span id='result'>" + result + "</span>");
+          document.getElementById("result").style.color =
+            result === "Az imád meghallgatásra talált." ? "green" : "red";
+          changeVal("lel", crease);
+          break;
+
         default:
           break;
       }
@@ -791,10 +816,11 @@ function _load() {
         document.getElementById("extra").innerHTML = modi;
         modi = false;
       }
-      if (document.getElementById("add") && room.add) {
-        if (checkCond(room.add.split("::")[0])) {
-          document.getElementById("add").innerHTML = room.add.split("::")[1];
-        }
+      if (document.querySelector(".cond")) {
+        document.querySelectorAll(".cond").forEach((c) => {
+          let condi = c.getAttribute("data-cond");
+          if (!checkCond(condi)) c.remove();
+        });
       }
       if (document.getElementById("pp") && progi.length > 1) {
         let prgTxt = "";
@@ -940,6 +966,22 @@ function _load() {
             relax = relax < 1 ? 1 : relax;
             changeVal("ero", relax * 2);
             message("Sikerült " + relax + " órát aludnod.");
+            break;
+
+          case "kampány":
+            let baseline =
+              char.lel / 60 +
+              char.esz / 50 +
+              char.hat / 40 +
+              char.sup / 30 +
+              prg / 10 +
+              0.5 * Math.random();
+            console.log("BASE: ", baseline);
+            changeVal("hat", Math.floor(baseline));
+            changeVal("sup", Math.round(baseline * 10));
+            message(
+              "A támogatásod " + Math.round(baseline * 10) + " ponttal nőtt."
+            );
             break;
 
           default:
