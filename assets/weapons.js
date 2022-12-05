@@ -417,21 +417,113 @@ window.weapons = [
   },
   {
     name: "PETÁRDA",
-    desc: "Az.",
-    pic: "axe.jpg",
-    sound: "suhint-nagy",
+    desc: "Piromániás hülyegyerekek játéka.",
+    pic: "petárda.jpg",
+    sound: "petárda",
     effect: [
       {
         val: "sebesség",
-        ch: "-1",
+        ch: "-3",
       },
       {
-        val: "támadás",
+        val: "ellenség erő",
+        ch: "-5",
+      },
+    ],
+  },
+  {
+    name: "SÁRKÁNYVÉR",
+    desc: "Iszonyatos harcossá tesz",
+    pic: "dragonblood.JPG",
+    sound: "dragon",
+    effect: [
+      {
+        val: "erő",
         ch: "+30",
       },
       {
+        val: "sebesség",
+        ch: "+3",
+      },
+      {
+        val: "támadás",
+        ch: "+40",
+      },
+      {
         val: "védelem",
-        ch: "+15",
+        ch: "+25",
+      },
+      {
+        val: "ellenség sebesség",
+        ch: "-2",
+      },
+      {
+        val: "ellenség támadás",
+        ch: "-25",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-20",
+      },
+    ],
+  },
+  {
+    name: "PÁNCÉL",
+    desc: "Lassabban mozogsz benne, de szilárd védelmet ad.",
+    pic: "armor.jpg",
+    sound: "pancel",
+    effect: [
+      {
+        val: "védelem",
+        ch: "+50",
+      },
+      {
+        val: "ellenség támadás",
+        ch: "-30",
+      },
+      {
+        val: "sebesség",
+        ch: "-3",
+      },
+    ],
+  },
+  {
+    name: "VARÁZSPOR",
+    desc: "Megbűvöli az ellenfelet.",
+    pic: "varázspor.gif",
+    sound: "spell",
+    effect: [
+      {
+        val: "ellenség támadás",
+        ch: "-99",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-55",
+      },
+      {
+        val: "ellenség sebesség",
+        ch: "-8",
+      },
+      {
+        val: "ellenség erő",
+        ch: "-33",
+      },
+    ],
+  },
+  {
+    name: "LÁNGPALLOS",
+    desc: "A harcos angyalok fegyvere.",
+    pic: "lángpallos.jpg",
+    sound: "langpallos",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+100",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-50",
       },
     ],
   },

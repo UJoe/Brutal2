@@ -282,6 +282,7 @@ function _load() {
           <p id="tárgyak"></p>
           <p id="haverok"></p>
           <p id="hullák"></p>
+          <p id="segítség"></p>
           <p>De ha mégsem vagy elégedett az eredménnyel, az F5 tartogat egy időutazó varázslatot számodra.</p>
         `;
         if (localStorage.getItem("charName").length > 0) {
@@ -315,6 +316,16 @@ function _load() {
           }
           hullákStr += "</ul>";
           document.getElementById("hullák").innerHTML = hullákStr;
+        }
+        let segítettek = getObj("H");
+        if (segítség.length > 0) {
+          let segítségStr =
+            "A következő egyszerű embereknek segítettél (vagy próbáltál segíteni):<br><ul>";
+          for (let segg of segítség) {
+            segítségStr += "<li> " + segg + "</li>";
+          }
+          segítségStr += "</ul>";
+          document.getElementById("segítség").innerHTML = segítségStr;
         }
         main.classList.add("brighten");
       }, 4500);
@@ -451,7 +462,6 @@ function _load() {
 
   //Új Helyszín
   window.newRoom = () => {
-    if (char.room == 46) console.log("HOME STEP: ", steps);
     clearInterval(timo);
     clearTimeout(timo);
     clearTimeout(timo1);
@@ -499,32 +509,44 @@ function _load() {
       localStorage.getItem("charName") == null;
     document.getElementById("saveBtn").disabled = false;
 
+    if (room.help && !getObj(room.help)) char.objs.push(room.help);
+
     //dungeon
     let nobject = false;
     if (room.type === "dungeon") {
       dungeon++;
       document.getElementById("saveBtn").disabled = true;
-      console.log("Dungeon: ", dungeon);
-      console.log("Step: ", steps);
+      if (room.help) modi = room.help.split("_")[1];
 
       if (
         dungeon >= room.end * (0.5 + Math.random()) ||
         (room.num === 57 && steps > 50)
       ) {
-        room.desc = room.exitDesc;
-        room.buttons = [room.exitBtn];
+        room.desc = room.passDesc;
+        room.buttons = [room.passBtn];
         nobject = " ";
         dungeon = 0;
+        if (room.help) {
+          let fi = rooms.findIndex((r) => r.num === room.fight);
+          let bonus =
+            10 +
+            Math.round(dungeon * 2 + rooms[fi].level * 8 + Math.random() * 10);
+          changeVal("sup", bonus);
+          changeVal("hat", 1 + Math.round(bonus / 15));
+          changeVal("ugy", 1 + Math.round(bonus / 15));
+          changeVal("lel", 1 + Math.round(bonus / 10));
+          modi = room.help.split("_")[1];
+        }
       } else {
         room.buttons = [
           {
             txt: room.contBtn,
             new: room.num,
           },
-          room.exitBtn,
+          room.failBtn,
         ];
         let event = Math.random();
-        if (event < 0.4) {
+        if (event < 0.4 || dungeon == 1) {
           nobject = "<p>Semmi említésre méltó nem történik.</p>";
         } else if (event < 0.6) {
           let x = Math.floor(Math.random() * room.find.length);
@@ -715,7 +737,8 @@ function _load() {
           if (
             checkCond("E_Boldi elzárása") ||
             checkCond("X_Béna Boldizsár, !E_Boldi kivégzése") ||
-            checkCond("D_választás")
+            checkCond("D_választás") ||
+            checkCond("E_help")
           ) {
             char.room = room.pass;
             music.volume = 0.75;
@@ -788,7 +811,7 @@ function _load() {
 
       let pp = room.pic.split(",");
       if (pp.length > 1) {
-        let r = Math.floor(1 + Math.random() * pp[1]);
+        let r = Math.floor(1 + Math.random() * Number(pp[1]));
         room.pic = pp[0] + r + ".jpg";
       }
       main.innerHTML = `
@@ -1073,6 +1096,7 @@ function _load() {
             clearInterval(timo);
             modi = false;
             char.room = room.fail;
+            if (room.help) modi = room.help.split("_")[1];
             document.querySelector("input").disabled = true;
             newRoom();
           }
@@ -1085,6 +1109,7 @@ function _load() {
               char.room = room.fail;
               document.querySelector("input").disabled = true;
               modi = false;
+              if (room.help) modi = room.help.split("_")[1];
             } else {
               char.room = room.pass;
               changeVal("esz", room.level);
@@ -1092,6 +1117,15 @@ function _load() {
                 modi = room.modi;
               } else {
                 modi = false;
+              }
+              if (room.help) {
+                let bonus =
+                  10 +
+                  Math.round(room.level * 5 + Math.random() * 5 + counter / 5);
+                changeVal("sup", bonus);
+                changeVal("hat", 1);
+                changeVal("lel", 1 + Math.round(bonus / 10));
+                modi = room.help.split("_")[1];
               }
             }
             document.getElementById("question").innerHTML = "Siker!";
@@ -1106,10 +1140,12 @@ function _load() {
 
         function newQuestion() {
           let a = parseInt(
-            1 + (Math.random() * (100 + room.level * modi * 6 - counter)) / 2
+            room.level * 2 +
+              (Math.random() * (100 + room.level * modi * 5 - counter)) / 2
           );
           let b = parseInt(
-            1 + (Math.random() * (100 + room.level * modi * 3 - counter)) / 2
+            room.level +
+              (Math.random() * (100 + room.level * modi * 3 - counter)) / 2
           );
           let c = parseInt(Math.random() * 3);
           let d = ["+", "-", "*"][c];
@@ -1143,13 +1179,15 @@ function _load() {
           let ia = document.getElementById("answer");
           ia.focus();
           ia.addEventListener("change", function (event) {
-            let reaction = Math.round((new Date().getTime() - startTime) / 140);
+            let reaction = Math.round((new Date().getTime() - startTime) / 200);
             let answer = Number(event.target.value);
             let x = 0;
             if (answer == e) {
-              x = Math.round(
-                char.esz / 2 + char.ugy / 2 - reaction - room.level * modi
-              );
+              x =
+                10 +
+                Math.round(
+                  char.esz / 3 + char.ugy / 4 - reaction - room.level * modi
+                );
               y = x > 0 ? "Jó válasz!" : "Jó, csak lassú.";
             } else {
               x -= Math.round(
@@ -1208,6 +1246,7 @@ function _load() {
         //let pic = ["gyep.jpg", "pearl.png", "akna.png"]; pic[field[col][row][1]]
         let kincsHit = 0;
         let aknaHit = 0;
+        let firstEnd = true;
 
         function updateMScore() {
           document.getElementById("scoresM").innerHTML = `
@@ -1215,12 +1254,64 @@ function _load() {
             <span class="score">Kincs: ${kincsHit}/${room.kincs}</span> 
             <span class="score">Akna: ${aknaHit}/${room.akna}</span>
           `;
-          //Ezeket még dolgozd ki!!!
-          if (kincsHit == room.kincs) {
-            message("Minden kincset megtaláltál!");
-          } else if (digs < 1) {
-            message("Kidöglöttél!");
+          let finish = false;
+
+          if (firstEnd) {
+            if (kincsHit == room.kincs) {
+              message("Minden kincset megtaláltál!");
+              finish = true;
+              let bonus =
+                5 +
+                Math.round(
+                  room.size * 2 +
+                    room.akna * 2.5 -
+                    room.kincs / 2 +
+                    Math.random() * 5 +
+                    (room.size * (room.size - 1) - digs) / 2 +
+                    kincsHit / 1.5 -
+                    aknaHit
+                );
+              changeVal("sup", bonus);
+              changeVal("hat", 1);
+              char.room = room.pass;
+              if (room.help) {
+                changeVal("lel", 1 + Math.round(bonus / 3));
+              }
+            } else if (digs < 1) {
+              message("Nem bírod tovább, kidöglöttél!");
+              finish = true;
+              let bonus = Math.round(
+                room.size * 1.5 +
+                  room.akna * 2 -
+                  room.kincs -
+                  Math.random() * 5 +
+                  Math.random() * 5 -
+                  (room.kincs - kincsHit) * 2 +
+                  kincsHit -
+                  aknaHit
+              );
+              changeVal("sup", bonus);
+              changeVal("hat", -1);
+              char.room = room.med;
+            }
+            if (finish) {
+              modi = room.help.split("_")[1];
+              firstEnd = false;
+              document
+                .querySelectorAll(".minefield")
+                .forEach((i) => i.removeEventListener("click", pressMine));
+              document.getElementById("exitBtn").disabled = true;
+              setTimeout(() => {
+                newRoom();
+              }, 4500);
+            }
           }
+        }
+
+        function fleeM() {
+          modi = room.help.split("_")[1];
+          char.room = room.fail;
+          newRoom();
         }
 
         document.getElementById("subMain").innerHTML = `
@@ -1252,6 +1343,7 @@ function _load() {
         document
           .querySelectorAll(".minefield")
           .forEach((i) => i.addEventListener("click", pressMine));
+        document.getElementById("exitBtn").addEventListener("click", fleeM);
 
         function pressMine(e) {
           let mineX = Number(e.target.id.split("-")[1]);
@@ -1371,7 +1463,10 @@ function _load() {
           var nmeSpeed =
             5000 -
             Math.round(
-              room.level * 1000 + steps + dungeon * 50 - Math.random() * 500
+              room.level * 750 +
+                steps / 1.5 +
+                dungeon * 45 -
+                Math.random() * 300
             );
           nmeSpeed = nmeSpeed < 1000 ? 1000 : nmeSpeed > 5000 ? 5000 : nmeSpeed;
           room.speed = Math.round((5000 - nmeSpeed) / 500);
@@ -1467,6 +1562,19 @@ function _load() {
             if (firstchange) {
               firstchange = false;
               changeVal("ugy", 1);
+              if (room.help) {
+                let bonus =
+                  10 +
+                  Math.round(
+                    room.att / 10 +
+                      room.def / 7 +
+                      room.speed +
+                      Math.random() * 5
+                  );
+                changeVal("sup", bonus);
+                changeVal("lel", 1 + Math.round(bonus / 10));
+                modi = room.help.split("_")[1];
+              }
               setTimeout(() => {
                 newRoom();
               }, 4500);
@@ -1741,15 +1849,29 @@ function _load() {
           moan(-1);
           message("Menekülés közben az ellenfél megsebzett.");
           changeVal("ero", -seb);
-          char.room = room.fail;
-          if (room.modi) modi = room.modi;
           clearTimeout(timo1);
           clearInterval(timo2);
           attBtn.disabled = true;
           xitBtn.disabled = true;
           end = true;
           if (char.ero > 0) {
+            char.room = room.fail;
+            if (room.modi) modi = room.modi;
             setTimeout(() => {
+              if (room.help) {
+                let bonus =
+                  15 -
+                  Math.round(
+                    room.att / 20 +
+                      room.def / 20 +
+                      room.speed / 2 +
+                      Math.random() * 2
+                  );
+                if (bonus < 1) bonus = 1;
+                changeVal("sup", -bonus);
+                changeVal("lel", -1 - Math.round(bonus / 5));
+                modi = room.help.split("_")[1];
+              }
               newRoom();
             }, 4500);
           }

@@ -40,3 +40,14 @@ E - egyéb események (events)
   Boldi kivégzése
   Boti üldöz
   Boti halottnak hisz
+  help (segített)
+
+H - segítés (help)
+  Pirike
+  Mari néni
+  Jóska bá
+  Lóri papa
+  Az Öveges család
+  Brünhilda
+  Csongika
+  Yendela hercegnő

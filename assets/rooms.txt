@@ -108,7 +108,7 @@
 108 - Ismét a Garászban (Oshinoko + Gárda + fúvócsövek)
 109 - Fricivel a városban
 110 - Akcióban a <Párt>
-111 - Akcióban Erdeiék
+111 - Ytrial: bübüszimat: visszatalálsz vagy pursuit
 112 - A régi fagyigyárban (Bogi vonala)
 113 - A piacon (új szál, ha nem sikerült szövetségest szerezni az 1. napon)
 114 - Szétoszlik a nép (hasonló 40-hez, de más szöveg, -sup és nincs Oshinoko)
@@ -153,6 +153,36 @@
 153 - XTrial (ima - 154-155)
 154 - A hited növelte a támogatást
 155 - Nem tudsz hinni a sikerben
+156 - (cond: Bübüszimattal) visszatalálsz Erdeiékhez
+157 - Pursuit: Erdeiék keresése: 156, 158
+158 - Nem találsz vissza erdeiékhez => Piac
+159 - Megtámadnak a fagyigyárban
+160 - Bogi haditerve
+161 - Bogi letámadása
+162 - Piaci támadás (dungeon fight)
+163 - Ytrial - Boti üldöz: piacról kifelé Boti kap el vagy más
+164 - YTrial - találkozás Zsolttal: férfi-nő
+165 - Nő: XTrial: recruit
+166 - Siker: Zsolt egyből beléd zúg
+167 - Találkozás Erdei Zsolttal (Férfi vagy nem nagy hatású nő. Nem ismer.)
+168 - Felajánlod a segítséged az embereknek (alaproom)
+169 - Pirike kertjében (aknakereső 1)
+170 - Mari néni kertjében (aknakereső 2)
+171 - Bodri kutya keresése (pursuit 1)
+172 - Lóri papa adóbevallása (pursuit 2)
+173 - Övegesék tyúkjai (fight 1)
+174 - Brünhilda szadista fiúja (fight 2)
+175 - Séta Csongikával (dungeon 1 - feladás: fail)
+176 - Yendela hercegnő kísérése a Bazizord-rónán át (dungeon 2 - feladás: fail)
+177 - A segítségnyújtás után (H_alap)
+178 - Sikeres segítségnyújtás (megvendégel a házigazda, neve: modi, +erő)
+179 - Nem sikerült, de megpróbáltad (kevesebb +ero, xtra)
+180 - Sikertelen segítségnyújtás (-sup, xtra)
+181 - Pártot szervezel segítés után (D_választás, beszéd => 65)
+182 - Bandát szervezel segítés után (D_puccs, beszéd => 41 (nincs Oshinoko))
+183 - Csongi dungeon fight
+184 - Yendela dungeon fight
+
 
 
 

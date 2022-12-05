@@ -26,11 +26,7 @@ window.rooms = [
       },
       {
         txt: "Megkérdezed, miben tudnál még nekik segíteni",
-        new: 1000,
-      },
-      {
-        txt: "Felkészíted őket az űrlények támadására",
-        new: 2000,
+        new: 168,
       },
     ],
   },
@@ -132,17 +128,13 @@ window.rooms = [
        - Nemrég szabadultunk fel neked köszönhetően Battle Beetle zsarnokságától, és nem akarunk ismét egy zsarnok alatt élni. A mostani polgármesterünk, olyan, amilyen, de azt tudjuk, hogy te jó ember vagy. Inkább éljünk békésen és segítsük egymást.
       </p>
       <p>
-       A nép helyeslően bólogat. Meggondoltad magad. Valami mást fogsz velük kezdeni. Mi legyen ez?
+       A nép helyeslően bólogat. Meggondoltad magad. Inkább...
       </p>
     `,
     buttons: [
       {
-        txt: "Továbbra is segíted őket, ha gondjuk van",
-        new: 1000,
-      },
-      {
-        txt: "Felkészíted őket az űrlények támadására",
-        new: 2000,
+        txt: "...megkérdezed miben segíthetsz nekik",
+        new: 168,
       },
     ],
   },
@@ -347,7 +339,7 @@ window.rooms = [
       },
       {
         txt: "Megkérdezed, miben tudnál nekik segíteni",
-        new: 1000,
+        new: 168,
       },
     ],
   },
@@ -857,7 +849,6 @@ window.rooms = [
     music: "nightstalker",
     pic: "darkstreet.jpg",
     desc: `
-
         <p id="extra"></p>
         <p>
          Az egyre sötétedő város utcáján álldogálsz. Merre veszed az utadat?
@@ -1062,13 +1053,13 @@ window.rooms = [
     change: [
       {
         id: "sup",
-        crease: 15,
-        rnd: 10,
+        crease: 12,
+        rnd: 12,
       },
       {
         id: "hat",
-        crease: 5,
-        rnd: 2,
+        crease: 4,
+        rnd: 3,
       },
     ],
     obj: ["D_puccs"],
@@ -1545,7 +1536,6 @@ window.rooms = [
       {
         txt: "Zzzz...",
         new: 70,
-        cond: "",
       },
     ],
   },
@@ -1557,11 +1547,15 @@ window.rooms = [
     music: "darkbackground",
     desc: "<p>Bolyongsz a sötét utcákon, hátha találsz valamit...<p>",
     contBtn: "Tovább bolyongsz",
-    exitBtn: {
+    failBtn: {
       txt: "Inkább hazamész",
       new: 46,
     },
-    exitDesc: "<p>Eleget bolyongtál, elfáradtál.</p>",
+    passBtn: {
+      txt: "Most már tényleg hazamész",
+      new: 46,
+    },
+    passDesc: "<p>Eleget bolyongtál, elfáradtál.</p>",
     fight: 48,
     end: 12,
     find: [
@@ -1625,7 +1619,7 @@ window.rooms = [
   {
     num: 50,
     type: "Ytrial",
-    value: ">_sup_30 >_hat_70",
+    value: ">_sup_34, >_hat_70",
     pass: 77,
     fail: 76,
   },
@@ -1854,11 +1848,15 @@ window.rooms = [
     music: "forest",
     desc: "Bolyongsz a sűrű erdőben...",
     contBtn: "Még beljebb mész",
-    exitBtn: {
+    failBtn: {
       txt: "Megpróbálsz kijutni",
       new: 56,
     },
-    exitDesc: "<p>Elfáradtál és unod már ezt a rohadt erdőt.</p>",
+    passBtn: {
+      txt: "Megpróbálsz kijutni",
+      new: 56,
+    },
+    passDesc: "<p>Elfáradtál és unod már ezt a rohadt erdőt.</p>",
     fight: 84,
     end: 5,
     find: [
@@ -2318,7 +2316,7 @@ window.rooms = [
     obj: ["M_Kocsmatöltelékek"],
     buttons: [
       {
-        txt: "Megkérdezed, ki akar neked segíteni Bitang Botond legyőzésében.",
+        txt: "Megkérdezed, ki akar neked segíteni Bitang Botond polgármester legyőzésében",
         new: 71,
       },
       {
@@ -2515,7 +2513,7 @@ window.rooms = [
       {
         txt: "Megrohamozzátok a Városházát",
         new: 115,
-        modi: "Amint megmozdulnak az emberek a Városháza kerítése felé, a biztonsági őrök harci alakzatba rendeződnek , a vezetőjük pedig kiadja a tűzparancsot ellenetek.",
+        modi: "Amint megmozdulnak az emberek a Városháza kerítése felé, a biztonsági őrök harci alakzatba rendeződnek, a vezetőjük pedig kiadja a tűzparancsot ellenetek.",
       },
     ],
   },
@@ -2556,7 +2554,6 @@ window.rooms = [
     buttons: [
       {
         txt: "Bakker, ezek tényleg lőnek!",
-        new: 114,
       },
     ],
     pass: 27,
@@ -2714,7 +2711,7 @@ window.rooms = [
     pic: "beastBG.JPG",
     nmepic: "beast.JPG",
     dungeon: true,
-    level: 3,
+    level: 2,
     desc: `
       <p>
        Hirtelen vészjósló morgást hallasz a fák közül. Egy vadállat készül elfogyasztani téged!
@@ -2788,12 +2785,12 @@ window.rooms = [
         new: 120,
       },
       {
-        txt: "Veled akartam beszélni Bitang Boti kinyírásáról.",
+        txt: "Veled akartam beszélni a polgármester kinyírásáról.",
         new: 118,
         modi: `Ügyes Frigyes szeme elkerekedik, megpödri a bajszát, aztán nagy hangon így szól:
         </p>
         <p>
-          - Te tényleg nem vagy semmi! Egyből a lényegre térsz. És tudtad is, hogy én is el akarom tenni láb alól azt a férget! A gondolataimban olvasol, te igazi hős! Ugye, Betyár? - azzal megpaskolja a furcsa munkagépet, aki erre helyeslően pöfög kettőt.
+          - Te tényleg nem vagy semmi! Egyből a lényegre térsz. És tudtad is, hogy én is el akarom tenni láb alól azt a féreg Bitang Botit! A gondolataimban olvasol, te igazi hős! Ugye, Betyár? - azzal megpaskolja a furcsa munkagépet, aki erre helyeslően pöfög kettőt.
         `,
       },
     ],
@@ -3517,6 +3514,7 @@ window.rooms = [
         { name: "Csúzli", val: "W_CSÚZLI" },
         { name: "Ostor", val: "W_OSTOR" },
         { name: "Bűzbomba", val: "W_BŰZBOMBA" },
+        { name: "Petárda", val: "W_PETÁRDA" },
       ],
     ],
     cvar: "obj",
@@ -3563,7 +3561,7 @@ window.rooms = [
     num: 109,
     title: "Fricivel a városban",
     type: "normal",
-    music: "epicsearch",
+    music: "basicfun",
     pic: "movingtown.gif",
     desc: `
       <p>
@@ -3606,7 +3604,7 @@ window.rooms = [
         new: 138,
       },
       {
-        txt: "Jól megvered",
+        txt: "Leápolod a fickót",
         new: 139,
       },
     ],
@@ -3621,7 +3619,9 @@ window.rooms = [
       <p>
         Ismét összejön a társaság a szokott helyen. Nyomdász Lajos megérkezett több láda röplappal, plakáttal. Szétosztjátok és mindenki körberagasztja velük az egész várost.
       </p>
+      <p>
         A nap végén megnézitek, mennyire változott a támogatásotok. Ez volt az az érték, ami az oldal tetején megjelent futószövegben, remélem, nem maradtál le róla. De a mai nap során Bitang Botond sem tétlenkedett: lelkesítő beszédet mondott a Branyiszkó-téren, amiben titeket is ócsárolt. Úgy tűnik, a jelen támogatottságotok még mindig túl kevés ahhoz, hogy a nép átálljon hozzátok. Valami konkrétabb dolgot is kellene tenni a népért.
+      </p>
       <p>
         Mi legyen az?
       </p>
@@ -3651,6 +3651,151 @@ window.rooms = [
       {
         txt: "Imádkozol a sikerért",
         new: 153,
+      },
+    ],
+  },
+  {
+    num: 111,
+    type: "Ytrial",
+    value: "S_Bübüszimat",
+    pass: 156,
+    fail: 157,
+  },
+  {
+    num: 112,
+    title: "A régi fagyigyárban",
+    type: "normal",
+    music: "darkbackground",
+    pic: "darkbogi.jpg",
+    desc: `
+      <p>
+        A megbeszéltek szerint vársz naplementéig, aztán elindulsz a régi fagyigyárhoz. Ez egy elhagyatott egyszintes ipari épület a város külterületén. Mire odaérsz, már beesteledett, csak a telihold meg néhány utolsó napjaival küszködő lámpa halovány fénye világítja meg utadat, Amikor belépsz az üresen tátongó épületbe, szétnézel, de senkit sem látsz. Fülelni kezdesz. Valahol halkan csepeg a víz tompa visszhanggal. Lehet bármi egy ilyen épületben. Aztán hirtelen lassan, nyikorogva kinyílik egy ajtó. Mögötte felvillan egy reflektor, de annak is elég gyenge a fénye. Az ajtón egy női alak lép be, de nem látod az arcát, mert mögüle jön a fény.
+      </p>
+      <p>
+        Mit teszel?
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Megvárod, mit csinál",
+        new: 159,
+      },
+      {
+        txt: "Üdvözlöd, mert ki más lehetne, mint Bogi",
+        new: 160,
+      },
+      {
+        txt: "Letepered",
+        new: 161,
+      },
+    ],
+  },
+  {
+    num: 113,
+    title: "Piacolás",
+    type: "dungeon",
+    pic: "piac,10",
+    music: "piac",
+    desc: "<p>Sétálgatsz, bámészkodsz, vásárolgatsz a piacon...<p>",
+    contBtn: "Tovább piacolsz",
+    failBtn: {
+      txt: "Inkább hazamész",
+      new: 163,
+    },
+    passBtn: {
+      txt: "Hazamész",
+      new: 163,
+    },
+    passDesc: "<p>Eleget vásároltál.</p>",
+    fight: 162,
+    end: 15,
+    find: [
+      "W_SZEGECSES BŐRDZSEKI",
+      "W_CSÚZLI",
+      "W_ROZSDÁS BÖKŐ",
+      "W_KONYHAKÉS",
+      "W_FÜTYKÖS",
+      "W_VADÁSZPUSKA",
+      "W_OSTOR",
+      "W_BŰZBOMBA",
+      "W_PÁLINKÁS FLASKA",
+      "W_PETÁRDA",
+      "W_DIABOLIKUS SZTEROID",
+      "W_KIS ERŐITAL",
+      "W_NAGY ERŐITAL",
+      "W_SÁRKÁNYVÉR",
+      "W_KÉZIGRÁNÁT",
+    ],
+    findmany: 7,
+  },
+  {
+    num: 114,
+    title: "Szétoszlik a nép",
+    type: "normal",
+    music: "slowguitar",
+    pic: "booing.gif",
+    desc: `
+      <p>
+        Belátod, hogy elhamarkodott volt rögtön ide vezetned a népet, így megszégyenülten visszafordulsz. A nép csodálkozva néz rád. Próbálsz nekik valamit mondani, hogy ezzel őket is véded, de hiteledet vesztetted. Nemsokára üres lesz a városháza előtti tér.
+      </p>
+      `,
+    change: [
+      {
+        id: "sup",
+        crease: -10,
+        rnd: 10,
+      },
+      {
+        id: "hat",
+        crease: -7,
+        rnd: 8,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Távozol, de a városban maradsz",
+        new: 27,
+        modi: "Szomorkáson járkálni kezdesz a városban...",
+      },
+      {
+        txt: "Kirohansz inkább az egész városból",
+        new: 55,
+      },
+    ],
+  },
+  {
+    num: 115,
+    title: "Bitang Boti emberei megölnek",
+    type: "death",
+    music: "difshots",
+    stopmusic: true,
+    pic: "shot.jpg",
+    desc: `
+      <p id="extra"></p>
+      <p>
+        Rémülten rohanva próbálod menteni az életedet, de a szemed sarkából látod, hogy esnek el körülötted az agyonlőtt emberek. Hirtelen te is éles fájdalmat érzel a bal lapockádban... Majd a jobban... Elsőtétül a világ...
+      </p>
+      <p>Kalandod itt véget ért, de most már tudod, hogy többet kellett volna készülnöd a Botival való csatára, mert ő nem egy egyszerű polgármester.</p>
+    `,
+  },
+  {
+    num: 116,
+    title: "Az erdei lények befogadnak",
+    type: "normal",
+    music: "bübük",
+    pic: "bübük.jpg",
+    desc: `
+      <p>
+       Barátságos közeledésedet a kis lények is barátságosan fogadják. Egymásra néznek, majd lassan melléd lépkednek és kissé félénken megtapogatnak. Ettől láthatóan megnyugodnbak, és élénken elkezdenek beszélgetni sajátos babanyelvükön. Ezután ismét rádnéznek és integetnek, hogy kövesd őket.
+      </p>
+      <p>
+        Elindulsz utánuk. Keresztül-kasul mentek egy ideig a sűrű aljnövényzeten, majd egyszer csak egy tisztásra értek. Ott több hasonló falény ül körül egy náluk kb. hétszer nagyobb - azaz normál méretű - férfit. Rendkívül erős testalkatú, de jóképű és barátságos. Ő tűnik a lények bölcs vezérének. Mindnyájan felétek fordulnak.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Te jó ég, tudom, ki a vezetőjük!",
+        new: 164,
       },
     ],
   },
@@ -3765,7 +3910,148 @@ window.rooms = [
   },
 
   {
-    num: 1111,
+    num: 162,
+    title: "Piaci bunyó",
+    type: "fight",
+    pic: "solofight.gif",
+    nmepic: "cigus.jpg",
+    dungeon: true,
+    level: 1,
+    desc: `
+      <p>
+       Ahogy sétálgatsz a piacon, egyszer csak egy indoeurópai csávó elkezd veled kötekedni.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Elmész te a jó durva halálba!",
+      },
+    ],
+    pass: 113,
+    fail: 113,
+  },
+
+  {
+    num: 168,
+    title: "Felajánlod a segítséged az embereknek",
+    type: "normal",
+    music: "happyGuitar",
+    pic: "happymass.jpg",
+    desc: `
+      <p>
+       Felajánlod, hogy továbbra is segítesz nekik, ha elmondják, mi a konkrét problémájuk. 
+      </p>
+      <p class="cond" data-cond="!H_Pirike">
+       Egy Pirike nevű öregasszony azt szeretné, ha megkeresnéd az olvasószemüvegét.
+      </p>
+      <p class="cond" data-cond="H_Pirike, !H_Mari néni">
+       Mari néni nagyon sír a kertben szétgurult láncszemei miatt.
+      </p>
+      <p class="cond" data-cond="!H_Jóska bá">
+       Jóska bának a Bodri kutyája kóborolt el.
+      </p>
+      <p class="cond" data-cond="H_Jóska bá, !H_Lóri papa">
+       Lóri papának az adóbevallását kellene elkészíteni.
+      </p>
+      <p class="cond" data-cond="!H_Az Öveges család">
+       Övegeséknek lopják a tyúkjait.
+      </p>
+      <p class="cond" data-cond="H_Az Öveges család, !H_Brünhilda">
+       Brünhildát a részeges fiújától kellene megszabadítani.
+      </p>
+      <p class="cond" data-cond="!H_Csongika">
+       Csongikát - a szomszédaid gyerekét - el kellene hozni az óvodából.
+      </p>
+      <p class="cond" data-cond="H_Csongika, !H_Yendela hercegnő">
+       Yendela hercegnőt el kellene kísérni a Bazizord-rónán át a Csillám-ligetbe.
+      </p>
+      <p class="cond" data-cond="H_Mari néni, H_Lóri papa, H_Brünhilda, H_Yendela hercegnő">
+       Úgy tűnik, már mindenkin segítettél, akinek ma gondja volt. 
+      </p>
+      <p>
+       Kinek segítesz?
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Pirikének",
+        new: 169,
+        cond: "!H_Pirike",
+      },
+      {
+        txt: "Mari néninek",
+        new: 170,
+        cond: "H_Pirike, !H_Mari néni",
+      },
+      {
+        txt: "Jóska bának",
+        new: 171,
+        cond: "!H_Jóska bá",
+      },
+      {
+        txt: "Lóri papának",
+        new: 172,
+        cond: "H_Jóska bá, !H_Lóri papa",
+      },
+      {
+        txt: "Az Öveges családnak",
+        new: 173,
+        cond: "!H_Az Öveges család",
+      },
+      {
+        txt: "Brünhildának",
+        new: 174,
+        cond: "H_Az Öveges család, !H_Brünhilda",
+      },
+      {
+        txt: "Csongikának",
+        new: 175,
+        cond: "!H_Csongika",
+      },
+      {
+        txt: "Yendela hercegnőnek",
+        new: 176,
+        cond: "H_Csongika, !H_Yendela hercegnő",
+      },
+      {
+        txt: "Senkinek, ennyi volt mára.",
+        new: 177,
+      },
+    ],
+  },
+  {
+    num: 169,
+    title: "Pirike kertjében",
+    type: "mine",
+    size: 4,
+    akna: 2,
+    kincs: 1,
+    music: "lightmonkey",
+    pic: "pirike.png",
+    treasure: "glasses.jpg",
+    desc: `
+      <p>
+        - Köszönöm szépen, aranyom, maga nagyon rendes ember! - mondja meghatottan Pirike. Olyan hangja van, mint egy kotkodáló tyúknak. Beléd karol és elvisz a házához. Útközben elmeséli, hogy milyen nagy rajongója a szerelmes regényeknek és mennyit sír mindig rajtuk, de mióta elvesztette az olvasó szemüvegét, depressziós lett, mert nem tud sírni rajtuk. Pedig az volt az egyetlen öröme, hogy lucskossá sírta a párnáját.
+      </p>
+      <p>
+        Megesik rajta a szíved. Amikor megérkeztek, megmutatja a kertjét. Olyan kicsi, hogy még egy vagány óvodásnak is nehezére esne triciklivel megfordulni benne. Gondolod, ez gyerekjáték lesz. Gondolod. Mert aztán kotkodáló hangján Pirike elmondja, hogy az az égetnivaló kisunokája, a Bence két bombát is elásott a szemüveggel együtt a kertben a múlt hétvégén, Pityuka keresztelője után. Azóta nem mer kimenni Pirike a kertbe. De az ásót szívesen neked adja. Nagyon szeretne még sokat sírni a romantikus regényeken, ezért inkább a szemüveget ásd ki, mint a bombákat, ha lehet. Vegyes érzelmekkel veszed át az ásót. De mégis te vagy a helység hőse, ki más tudna Pirikén segíteni?
+      </p>
+      <p><i>
+        Addig áshatsz, amennyi erőd van. A kertben egy szemüveg és <span id="akna"></span> bomba van. Ha bombát ásol ki, az ügyességedtől függ, hogy mennyit sebesülsz. Ha üres mezőn ásol, az első szám megmutatja, van-e a szomszédos mezőkön szemüveg (1), a második a bombák számát mutatja meg. Próbáld meg megtalálni a szemüveget, de ha már nincs merszed tovább keresni a bombák miatt, fel is adhatod.
+      </i></p>
+    `,
+    help: "H_Pirike",
+    buttons: [
+      {
+        txt: "Hát jó...",
+      },
+    ],
+    pass: 178,
+    med: 179,
+    fail: 180,
+  },
+  {
+    num: 170,
     title: "Mari néni kertje",
     type: "mine",
     size: 6,
@@ -3781,21 +4067,397 @@ window.rooms = [
       <p>
         - Na, angyalom, abban kérném a segítséged, mert már az én derekam nem bírja, de a te fiatal csontjaid... Hej, ha láttál volna lánykoromban... megnyalta mindenki a szája szélét utánam... Volt az Iván, na az nagy frász volt ám! Na de hol is hagytam abba? Ja igen! Kilencszázötvenhétben találtunk egy bombát a kertben. Hogy hogy került oda, azt senki sem tudja. De levitte a Kálmán fél karját! Azóta olyan furán kapálta a retket... Mintha csugulyázna... Na, de miért is mondtam ezt? Ja, tudom. Szóval. A minap, amikor a macska olyan panaszosan nyávogott, kimentem a kertbe, mert már nem bírtam hallgatni, és ahogy sétáltam, egy dög bögöly megcsípte itt a nyakamat, ni! Hirtelen odakapok, hát nem elszakadt a gyöngysorom, amit még a Menyus adott nekem, eszem a lelkét! Úgy szétgurultak a gyöngyök, a Bodri meg, hallod, fogta magát és elkaparta őket! Azt hitte az a lökött jószág, hogy kutyagumi... az én gyöngyeimre! Az a vén eb már nem is lát! Pedig olyan jó volt az a Menyus...! Mindig olyan szépen kanalazta a dödöllét, hogy öröm volt nézni, már attól jóllakott az ember! Hogy mosolygott közben! Na de a gyöngyök. Hajolgatni már nem tudok, hát előhoztam az ásót. Erre átszól a szomszéd, az a szép szemű Árpi, hogy Marikám, te ne ássál, mert megint beleásol egy bombába, aztán mi lesz velem, ha itt felrobbansz nekem? Rögtön a szívemhez kaptam, el is dobtam az ásót! Bodri felnyekkent - azóta sántít. Én meg csak beszaladtam a szépszobába és sírtam-ríttam, hogy nekem már sosem lesz meg a gyöngysor, amit az én Gézukámtól kaptam. Vagy a Menyustól? Ja, lehet, hogy tőle. Kérlek szépen, keresd meg a gyöngyöket. Adok egy ásót. Csak arra vigyázz, hogy nehogy valami bombába ássál nekem! Na itt van, nesze! Addig én megkopasztom a tikot és főzök egy jó levest.
       </p>
-      <p>
-        Addig áshatsz, amennyi erőd van. A kertben összesen <span id="kincs"></span> gyöngy és <span id="akna"></span> bomba van. Ha bombát ásol ki, az ügyességedtől függ, hogy mennyit sebesülsz. Ha üres mezőn ásol, az első szám a szomszédos mezőkön lévő gyöngyök, a második a bombák számát mutatja meg. Próbálj meg minél több gyöngyöt megtalálni!
-      </p>
+      <p><i>
+        A kertben összesen <span id="kincs"></span> gyöngy és <span id="akna"></span> bomba van. Ha üres mezőn ásol, az első szám a szomszédos mezőkön lévő gyöngyök, a második a bombák számát mutatja meg. Próbálj meg minél több gyöngyöt megtalálni és életben maradni!
+      </i></p>
     `,
+    help: "H_Mari néni",
     buttons: [
       {
         txt: "Nosza!",
       },
     ],
-    pass: 112,
-    fail: 113,
+    pass: 178,
+    med: 179,
+    fail: 180,
+  },
+  {
+    num: 171,
+    title: "Bodri kutya keresése",
+    type: "pursuit",
+    level: 1,
+    music: "epicsearch",
+    pic: "movingtown.gif",
+    goalpic: "bodri.jpg",
+    desc: `
+      <p>
+        A mogorva, füstös szagú Jóska bá odalép hozzád, és mutat egy képet egy felmosórongyról. Miközben élénken magyaráz arról, hogy Bodri volt a mindene öreg napjaira, mennyit hemperegtek együtt a hóban, sárban, díványon, kergették az egereket és éjszakai pillangókat, rájössz, hogy a képen egy pulikutyát látsz. Megesik az öregen a szíved, elkezded kérdezgetni, mikor és hol látta utoljára, és elkezditek követni a nyomokat. Remélhetőleg a szimatod nem hagy cserben téged sem.
+      </p>
+      <p>
+        Írd be a megjelenő matematikai műveletek eredményét!
+      </p>
+      <p><i>
+        Minél gyorsabban válaszolsz, illetve minél több az Eszed és az Ügyességed, annál jobban értelmezed a nyomokat és annál közelebb kerülsz Bodri kutya megtalálásához. De csak annyi időd van megtalálni, amennyi az Erődből telik, mivel közben szaladtok is a kutya nyomában.
+      </i></p>
+    `,
+    help: "H_Jóska bá",
+    buttons: [
+      {
+        txt: "Gyere, Bodri kutyám!",
+      },
+    ],
+    pass: 178,
+    fail: 180,
+  },
+  {
+    num: 172,
+    title: "Lóri papa adóbevallása",
+    type: "pursuit",
+    level: 7,
+    music: "nightstalker",
+    pic: "SZJA.jpg",
+    goalpic: "NAV.png",
+    desc: `
+      <p>
+        Lóri papa egy fontoskodó, de udvarias, magas, szikár, horgas orrú tata. Elvisz az otthonába, felrakja a kávét főni, aztán elmondja, hogy eléggé meggyűlt a baja az adóbevallással, mert nem tudja, mit kezdjen azzal a jövedelemmel, amit saját festményei eladása után készpénzben odaadott több tucat fiatal nőnek, akiknek még egy rendes ruhájuk sem volt, úgy álltak fagyoskodva minden éjjel a sarkokon meg a tereken, de nem arra fordították az összeget legtöbben, hogy meleg ruhát vásároljanak maguknak, hanem  gyógynövényes cigit meg megfázás elleni orrport vettek belőle maguknak, de közben kiderült, hogy más is adott nekik éjjel pénzt, aminek 50%-át visszaadták cserébe Lóri papának, aki a felét különféle jótékony intézményeknek és szektáknak adta, a másik felét szerencsejátékon vesztette el vagy éppen duplázta meg, majd abból... máűr a fene se tudja követni, de nemcsak az SZJA a kérdéses, hanem hogy akkor most ki hogyan mikor miből fizeti meg azt a rohadt ÁFA-t és ebből mennyi a TB meg a rezsielszámolás és a beadási határidő 1 percen belül lejár!
+      </p>
+      <p>
+        Megérted az öreget, ez tényleg nem könnyű. Hozzá is látsz buzgón.
+      </p>
+    `,
+    help: "H_Lóri papa",
+    buttons: [
+      {
+        txt: "Ne aggódjon, összedobok egy NAVszerű bevallást!",
+      },
+    ],
+    pass: 178,
+    fail: 180,
+  },
+  {
+    num: 173,
+    title: "Övegesék tyúkjai",
+    type: "fight",
+    pic: "tyúkok.jpg",
+    nmepic: "fox.gif",
+    att: 30,
+    def: 15,
+    speed: 4,
+    hp: 35,
+    desc: `
+      <p>
+        A hangerőben egymást túllicitáló Öveges házaspár élénken gesztikulálva meséli el, hogy valaki rendszeresen lopja a tyúkjaikat az udvarukból. Csak az a baj, hogy mindig akkor, amikor ők nincsenek otthon vagy alszanak, így nem tudnak mit csinálni. A Kázmér gyerekük meg tök süket, az nem hall semmit sosem.
+      </p>
+      <p>
+        Megesik a szíved a szerencsétleneken, megígéred, hogy segítesz nekik. Elkísérnek az otthonukba, ami egy régimódi parasztház nagy udvarral. Az udvaron vagy egy kutyaól, rögtön megkérdezed, vajon a kutyájuk tudja-e, hogy mi a feladata, de kiderül, hogy szegény Pintyike már rég meghalt. Valószínűleg ilyen névvel nehezére eshetett őrző-védő feladatot ellátnia még akkor is, amikor egyébként tök jól életben volt. Jobb ötlet híján felajánlod, hogy bemászol te a kutyaólba, hogy lesből csapj le a tolvajra. Ők addig elmehetnek otthonról, hogy azt higgye a gazfickó, nincsenek itthon. Mielőtt elmennek, Öveges bácsi neked adja a régi vadászpuskáját. Használhatta volna ő is, de hát mikor, amikor nincs itt a bűncselekmény elkövetésének idejében?
+      </p>
+      <p>
+        Miután elmentek, bemászol a kutyaólba a puskával és csendesen vársz. Nem kell sokat várni. Nemsokára kaparászásra leszel figyelmes a kerítés aljában. Aztán meglátod a ravasz - rókát! Ő tehát a tolvaj!
+      </p>
+      <p><i>
+        A harcban mindenki a sebessége ritmusában támad a másikra, de nekedkülön rá kell nyomni a mindig máshol megjelenő Támadás gombra! A sebzés a támadó Támadás értékétől és a védő Védelem értékétől függ (nálad ezek az értékek az általános jellemzőidből vannak átszámítva). Túl nagy különbség esetén kritikus sebzést is be lehet vinni, ami csökkenti az ellenfél képességeit vagy a te esetedben elveszítheted az éppen használt fegyvert. Csak egy fegyvert használhatsz egyszerre, és erre külön rá kell kattintani. Ha nem használsz, akkor puszta kézzel küzdesz (de nem is veszítheted el a fegyveredet). Fegyvert lehet lerakni vagy másra is váltani, de egy harc alatt csak korlátozott mértékben. Ha nem akarsz tovább harcolni, fel is adhatod és elmenekülhetsz, de akkor az ellenfél búcsúzóul még ejt rajtad egy nagyobb sebzést. Sok sikert!
+      </i></p>
+    `,
+    obj: ["W_VADÁSZPUSKA"],
+    help: "H_Az Öveges család",
+    buttons: [
+      {
+        txt: "Na gyere, te tolvaj állat!",
+      },
+    ],
+    pass: 178,
+    fail: 180,
+  },
+  {
+    num: 174,
+    title: "Brünhilda agresszív fiúja",
+    type: "fight",
+    pic: "dualfight_real.gif",
+    nmepic: "kidobo.jpg",
+    att: 80,
+    def: 50,
+    speed: 7,
+    hp: 70,
+    desc: `
+      <p>
+        A tépett vörös hajú, szeplős, zöld szemű Brünhilda szívfacsaró zokogás közepette meséli el, hogy van egy fiúja, aki kidobófiú egy kocsmában, és a sok munkahelyi stresszt mindig rajta vezeti le otthon. Hol a kirángatja a ruháit a szekrényből, leteperi őket és kihajítja az ajtón, hol az anyjától kapott vázát kezdi hörögve fojtogatni, ma reggel pedig, amikor hazajött az esti műszakból, nem engedte meg neki, hogy megigya a kakaóját, hanem leverte az asztalról és közölte, hogy "Eleget ittál! Fizess és húzz el innen!" Ő ezt már nem bírja tovább.
+      </p>
+      <p>
+        Ez a szívedbe markol! Pontosan tudod, milyen az, amikor már egy kakaót sem lehet nyugodtan meginni. Az végképp betesz az embernek! Megkéred Brünhildát, hogy azonnal vezessen a lakására. Amikor megérkeztek, ott horkol hangosan az ágyon. Megfogod és kidobod az utcára. Hadd tudja meg a kidobófiú, miylen , amikor akasztják a hóhért. Meglepetten tápászkodik fel, de szakmai rutinjának köszönhetően azonnal harcképes lesz.
+      </p>
+    `,
+    help: "H_Brünhilda",
+    buttons: [
+      {
+        txt: "Mi volt ez a kakaóval?!",
+      },
+    ],
+    pass: 178,
+    fail: 180,
+  },
+  {
+    num: 175,
+    title: "Csongika hazakísérése",
+    type: "dungeon",
+    pic: "movingtown.gif",
+    music: "toymusic",
+    desc: "<p>Vidáman sétálgattok Csongikával az utcán.<p>",
+    contBtn: "Mentek tovább hazafelé",
+    failBtn: {
+      txt: "Menjen most már egyedül haza Csongika",
+      new: 180,
+    },
+    passBtn: {
+      txt: "Szia Csongika!",
+      new: 178,
+    },
+    passDesc: "<p>Sikerült épségben hazavinned Csongikát.</p>",
+    fight: 183,
+    end: 7,
+    find: ["W_CSÚZLI", "W_CSATABÁRD", "W_BŰZBOMBA", "W_GUMIBOGYÓ", "W_PETÁRDA"],
+    findmany: 5,
+    help: "H_Csongika",
+  },
+  {
+    num: 176,
+    title: "Yendela hercegnő kísérése a Bazizord-rónán át",
+    type: "dungeon",
+    pic: "yendela,6",
+    music: "yendela",
+    desc: "<p>Vándoroltok a zord tájon a csodaszép Yendela hercegnővel. A kietlen tájon a halál lehellete érződik. Néha távoli morgás, vonítás üti meg a fületeket, de egyébként fájdalmas csend vesz körül.<p>",
+    contBtn: "Mentek tovább",
+    failBtn: {
+      txt: "Én ezt már unom, menj tovább egyedül!",
+      new: 180,
+    },
+    passBtn: {
+      txt: "Na végre!",
+      new: 178,
+    },
+    passDesc:
+      "<p>Yendela hercegnő egyszercsak felkiált:</p><p>- Érzem a Csillám-liget illatát! Siessünk, már nincs sok hátra!</p><p>És valóban: egy gyönyörű, csillámló liget, vagy inkább oázis kezd egyre közeledni felétek. Úgy tűnik, utatok a végére ért, épségben elkísérted a hercegnőt.</p>",
+    fight: 184,
+    end: 20,
+    find: [
+      "W_CSATABÁRD",
+      "W_OSTOR",
+      "W_ROZSDÁS BÖKŐ",
+      "W_PÁNCÉL",
+      "W_LÁNGPALLOS",
+      "W_KIS ERŐITAL",
+      "W_NAGY ERŐITAL",
+      "W_SÁRKÁNYVÉR",
+      "W_VARÁZSPOR",
+    ],
+    findmany: 5,
+    help: "H_Yendela hercegnő",
+  },
+  {
+    num: 177,
+    title: "A segítségnyújtás után",
+    type: "normal",
+    music: "basicmusic",
+    pic: "starttown.jpg",
+    desc: `
+      <p class="cond" data-cond=">_sup_30">
+       Jó sok ember van még a téren, és mind arról beszélnek, hogy milyen segítőkész vagy. A megszerzett népszerűséget előnyödre is tudnád fordítani, úgy érzed, hősként te is ennél nagyobb tettekre vagy hivatott.
+      </p>
+      <p class="cond" data-cond="<_sup_31">
+       Sajnos nem nagyon sikerült segíteni a népnek. Csalódott vagy ők is, meg egy kicsit te is.
+      </p>
+      <p>
+       Mit teszel?
+      </p>
+    `,
+    obj: ["E_help"],
+    buttons: [
+      {
+        txt: "Pártot alapítasz és indulsz az önkormányzati választáson",
+        new: 181,
+        cond: ">_sup_50",
+      },
+      {
+        txt: "Szervezel egy bandát, hogy puccsot hajts végre",
+        new: 182,
+        cond: ">_sup_30",
+      },
+      {
+        txt: "Elbúcsúzol és sétálsz egyet a város utcáin",
+        new: 27,
+      },
+      {
+        txt: "Elbúcsúzol és sétálsz egyet a város melletti erdőben",
+        new: 55,
+      },
+    ],
+  },
+  {
+    num: 178,
+    title: "Sikeres segítségnyújtás",
+    type: "normal",
+    music: "midepic",
+    pic: "s-welldone.jpg",
+    desc: `
+      <p>
+        <span id="extra"></span> nagyon boldog, hogy segítettél. Hálája jeléül vendégül lát minden jóval. Azt is megígéri, hogy elterjeszti jó híredet az emberek között. Te is boldog vagy, hogy segítettél.
+      </p>  
+      <p>
+       Végül érzékeny búcsút vesztek és elindulsz vissza a főtérre.
+      </p>
+    `,
+    change: [
+      {
+        id: "ero",
+        crease: 5,
+        rnd: 7,
+      },
+      {
+        id: "lel",
+        crease: 2,
+      },
+      {
+        id: "sup",
+        crease: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Szeretnél még másoknak is segíteni",
+        new: 168,
+      },
+      {
+        txt: "Eleget segítettél már",
+        new: 177,
+      },
+    ],
+  },
+  {
+    num: 179,
+    title: "Nem sikerült, de megpróbáltad",
+    type: "normal",
+    music: "slowguitar",
+    pic: "s-soso.png",
+    desc: `
+      <p>
+        <span id="extra"></span> kissé csalódott, de azért értékeli, hogy legalább megpróbáltál segíteni. Isztok együtt egy italt, aztán elbúcsúztok.
+      </p>  
+      <p>
+       Elindulsz vissza a főtérre.
+      </p>
+    `,
+    change: [
+      {
+        id: "ero",
+        crease: 2,
+        rnd: 3,
+      },
+      {
+        id: "lel",
+        crease: 1,
+      },
+      {
+        id: "sup",
+        crease: 1,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Szeretnél még másoknak is segíteni",
+        new: 168,
+      },
+      {
+        txt: "Eleget segítettél már",
+        new: 177,
+      },
+    ],
+  },
+  {
+    num: 180,
+    title: "Sikertelen segítségnyújtás",
+    type: "normal",
+    music: "slowguitar",
+    pic: "s-bad.png",
+    desc: `
+      <p>
+       <span id="extra"></span> mérges és csalódott, hogy cserben hagytad. Utatok itt elvált és érzed, hogy nem fogja jó híredet kelteni.
+      </p>  
+      <p>
+       Elindulsz vissza a főtérre.
+      </p>
+    `,
+    change: [
+      {
+        id: "lel",
+        crease: -3,
+        rnd: 3,
+      },
+      {
+        id: "sup",
+        crease: -10,
+        rnd: 10,
+      },
+      {
+        id: "hat",
+        crease: -1,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Szeretnél még másoknak segíteni",
+        new: 168,
+      },
+      {
+        txt: "Eleget segítettél már",
+        new: 177,
+      },
+    ],
+  },
+
+  {
+    num: 183,
+    title: "Megjelent egy cukrosbácsi",
+    type: "fight",
+    pic: "cukrosbácsi.jpg",
+    nmepic: "cukrosbácsi.jpg",
+    dungeon: true,
+    level: 1,
+    desc: `
+      <p>
+       Egyszercsak odamegy Csongikához egy idegen és különféle édességekkel próbálja elcsábítani. Egyből felismered: ez egy cukros bácsi!
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Tirhulj innen, te pedofil!",
+      },
+    ],
+    pass: 175,
+    fail: 180,
+  },
+  {
+    num: 184,
+    title: "Támadás ért a Bazizord-rónán",
+    type: "fight",
+    pic: "csontik.JPG",
+    nmepic: "csontik.JPG",
+    dungeon: true,
+    level: 3,
+    desc: `
+      <p>
+       Amint néhány porlepte csontmaradvány mellett haladtok el, a csontok hirtelen megelevenednek, összeforrnak és csontváz-harcosok emelkednek fel, hogy végezzenek veletek.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Megvédem a hercegnőt!",
+      },
+    ],
+    pass: 176,
+    fail: 180,
   },
 ];
 
-//Erdeiéknél próbatételek után Bübüszimat! képessége
 //Fegyveres utcai támadás: jelt adnak, vársz: mesterlövész leszed, nem: harc
 //135 Akkor is, ha Gárda nélkül mész Oshinoko házából a térre!
 //136-7: "Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. (Oshinoko?) Készen álltok a harcra."
+//Erdeiék: ha nő, recruit: szerelmes lesz belé, bübszimat, csont nélkül vége másnap; ha férfi vagy fail recruit, próbák, kiállja: join, Bübüszimat csak opció bármely esetben

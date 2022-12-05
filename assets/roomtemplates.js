@@ -52,6 +52,7 @@ let templates = [
 
     `,
     obj: ["X_Béna Boldizsár", "M_Oshinoko", "W_FEGYVER"],
+    help: "H_Mari",
     change: [
       {
         id: "ero",
@@ -215,7 +216,8 @@ let templates = [
       },
     ],
     pass: 112,
-    fail: 113,
+    med: 113,
+    fail: 114,
   },
 
   //fight
@@ -289,16 +291,21 @@ let templates = [
     num: 47,
     title: "Bolyongás az utcákon",
     type: "dungeon",
-    pic: "darkstreet.jpg",
+    pic: "forest,6",
     music: "darkbackground",
     desc: "<p>Bolyongsz a sötét utcákon, hátha találsz valamit...<p>",
     contBtn: "Tovább bolyongsz",
-    exitBtn: {
+    failBtn: {
       txt: "Inkább hazamész",
-      new: 46,
+      new: 47,
     },
-    exitDesc: "<p>Eleget bolyongtál, elfáradtál.</p>",
-    fight: 48,
+    passBtn: {
+      txt: "Hurrá! / Hazamész",
+      new: 48,
+    },
+    passDesc:
+      "<p>Eleget bolyongtál, elfáradtál. / Teljesítetted a küldetést.</p>",
+    fight: 49,
     end: 12,
     find: [
       "W_SZEGECSES BŐRDZSEKI",
