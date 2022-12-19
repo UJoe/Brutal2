@@ -1186,7 +1186,7 @@ window.rooms = [
         Utolsó támadásodtól lehull a böszmedve szemüvege, ő pedig döngve mellédől és többé nem mozdul. Frici vigyorogva kidugja a fejét:
       </p>
       <p>
-        - Végeztél, <span class="name"></span>? Jól van, én is. Szép munka! Csinálunk belőle egy jó ebédet! Legfalább megmutatom, mi mindenre képes az én Betyármobilom!
+        - Végeztél, <span class="name"></span>? Jól van, én is. Szép munka! Csinálunk belőle egy jó ebédet! Legalább megmutatom, mi mindenre képes az én Betyármobilom!
       </p>
       <p>
         Azzal meghúz egy kart a traktoron - amiről megtudtad, hogy Betyármobilnak hívják -, mire kinyílik egy csapóajtó az egyik oldalán. Frici megfogja a böszmedvét, beledobja a keletkezett résbe, aztán rácsukja a csapóajtót. A betyármobil felbőg és nemsokára megnyílik két másik ajtó, az egyiken egy bundakabát, a másikon pedig több aranybarnára sült húspogácsa jön elő és sorakozik fel egy átlátszó csőben. Frici gyengéd szeretettel megpaskolja a járgányt.
@@ -1844,7 +1844,7 @@ window.rooms = [
     num: 57,
     title: "Bolyongás az erdőben",
     type: "dungeon",
-    pic: "forest,6",
+    pic: "forest,5",
     music: "forest",
     desc: "Bolyongsz a sűrű erdőben...",
     contBtn: "Még beljebb mész",
@@ -2708,7 +2708,7 @@ window.rooms = [
     num: 84,
     title: "Erdei támadás",
     type: "fight",
-    pic: "beastBG.JPG",
+    pic: "beast,4",
     nmepic: "beast.JPG",
     dungeon: true,
     level: 2,
@@ -2781,7 +2781,7 @@ window.rooms = [
     obj: ["M_Ügyes Frigyes"],
     buttons: [
       {
-        txt: "Eltévedtem ebben a rohadt erdőben!",
+        txt: "Eltévedtem ebben a rohadt erdőben, hogy lehet hazajutni?",
         new: 120,
       },
       {
@@ -2959,7 +2959,7 @@ window.rooms = [
       </p>
       <ol id="pp"></ol>
       <p> 
-       Örömmel koccintotok ismét egy nagyot majd még egy jó órán át isztok és röhögtök. Mire végre abbahagyjátok, már későre jár. Megegyeztek abban, hogy holnap ugyanitt pártgyűlést tartotok, addig Nyomdász Lajos kinyomtat egy csomó röplapot a pártprogrammal, aztán hozzáláttok a kampányhoz.
+       Örömmel koccintotok ismét egy nagyot majd még egy jó órán át isztok és röhögtök. Mire végre abbahagyjátok, már későre jár. Megegyeztek abban, hogy holnap ugyanitt pártgyűlést tartotok, addig Nyomdász Lajos kinyomtat egy csomó röplapot a pártprogrammal, Dr. Kotász pedig elkészíti a pártbejegyzés jogi dokumentumait, aztán majd hozzáláttok a kampányhoz.
       </p>
     `,
     change: [
@@ -3799,6 +3799,112 @@ window.rooms = [
       },
     ],
   },
+  {
+    num: 117,
+    type: "Xtrial",
+    value: "com",
+    pass: 118,
+    modi: `- Tudod, hogy van ez - mondod, miközben jelentőségteljesen Frici szemébe nézel, majd végignézel magadon, ismét rá nézel és vágsz egy kétértelmű grimaszt. Arra számítasz, hogy Frici, aki oly nagyra van az eszével, nem fogja azt mondani, hogy nem tudja. Frici fürkészően bámul rád egy ideig, aztán - vagy azért, mert tényleg nem akarta azt mondani, hogy nem tudja, vagy azért, mert tényleg olyan okos, hogy veled ellentétben megértette a célzásodat - végül együttérzően bólint:
+        </p>
+        <p>
+        - Tudom. Én ne tudnám? Haajj... tudnék ám mesélni! Na de most fontosabb dolgunk van. Beszéljük meg akkor hogy tudjuk eltenni láb alól ezt a Bitangot! - amikor pedig ezt kimondja, a traktorja helyeslően pöfög kettőt.
+        `,
+    fail: 119,
+  },
+  {
+    num: 118,
+    title: "A Betyármobil",
+    type: "normal",
+    music: "traktor",
+    pic: "betyármobil.JPG",
+    desc: `
+      <p id="extra"></p>  
+      <p>
+        - Na, először is, <span class="name"></span>, hadd mutassam be, hogy mire is képes hű társam, pontosabban most már a társunk, a Betyármobil! - szól Frici, azzal meghúz egy kart a traktoron, mire kinyílik egy csapóajtó az egyik oldalán. Frici megfog egy mellette heverő döglött bundás állatot (leginkább böszmedvének tűnik), beledobja a keletkezett résbe, aztán rácsukja a csapóajtót. A Betyármobil felbőg és nemsokára megnyílik két másik ajtó, az egyiken egy bundakabát, a másikon pedig több aranybarnára sült húspogácsa jön elő és sorakozik fel egy átlátszó csőben. Frici gyengéd szeretettel megpaskolja a járgányt.
+      </p>
+      <p>
+        - Mindig tudja, miből mit lehet hasznosítani. És ez még nem minden! Most figyelj! - kiált büszkén, azzal felpattan a vezetőfülkébe.
+      </p>
+      <p>
+        A Betyármobil ugrik egyet miközben megprödül a tengelye körül. Ezután Frici odavezeti egy fához, nyomkod pár gombot egy ideig, majd a gépből kijön két kar különféle megmunkáló fejekkel, elkezdik dolgozni a fát, repül a fűrészpor szerteszét, majd a végén megjelenik Dávid király faszobra a fa helyén. A fején még maradt is egy kis levél.
+      </p>
+      <p>
+        Frici büszkén mosolyog, neked az állad is leesett és elismerően bólogatsz.
+      </p>
+      <p>
+        - Ez csak egy kis bemutató volt, valójában még rengeteg mást is tud az én Betyárom, de most inkább együnk, amíg friss a böszmedvehús!
+      </p>
+      `,
+    change: [
+      {
+        id: "esz",
+        crease: 2,
+        rnd: 3,
+      },
+      {
+        id: "hat",
+        crease: 1,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Rendben",
+        new: 54,
+      },
+    ],
+  },
+  {
+    num: 119,
+    title: "Búcsú Fricitől",
+    type: "normal",
+    music: "forest",
+    pic: "forest2.jpg",
+    desc: `
+      <p>
+        Akárhogy magyarázkodsz, Frici csalódott benned. Ha egy böszmedvét se tudsz legyőzni, akkor nem szövetkezik veled Boti ellen, mert kudarcra van itélve a terv. Már csak annyit tehet érted, hogy megmondja, merre van a hazafelé vezető út. Letörten visszabotorkálsz a városba...
+      </p>
+      `,
+    change: [
+      {
+        id: "hat",
+        crease: -3,
+        rnd: 3,
+      },
+      {
+        id: "lel",
+        crease: -1,
+        rnd: 1,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Ez van.",
+        new: 27,
+      },
+    ],
+  },
+  {
+    num: 120,
+    title: "Búcsú Fricitől",
+    type: "normal",
+    music: "forest",
+    pic: "forest2.jpg",
+    desc: `
+      <p>
+        - Valóban könnyen el lehet itt tévedni! De mondok egy tippet: kövesd a sárgfa kikericseket. Azok visszavezetnek a városba - mondja Frici, azzal megpödri a bajszát.
+      </p>
+      <p>
+        Lehet, hogy még akart volna valami mondani, de neked már annyira eleged lett a kóválygásból, hogy azonnal elrohansz a kikericsek irányába. Ahogy követed őket, tényleg egyre ritkább lesz az erdő és végül megpillantod a várost. Észreveszed, hogy nemcsak te, hanem már a nap is jó nagy utat tett meg.
+      </p>
+      `,
+    buttons: [
+      {
+        txt: "Végre megint a városban!",
+        new: 27,
+      },
+    ],
+  },
 
   //*
 
@@ -3828,11 +3934,14 @@ window.rooms = [
       <p>
         - Ez miből van? - kérdezed gyanakodva.
       </p>
-      <p>
+      <p class="cond" data-cond="E_Boldi elzárása">
         - Eh, egy nyápic volt ez a Béna Boldizsár! Ma reggel holtan találtam. Legalább ennyi haszna legyen!
       </p>
+      <p class="cond" data-cond="!E_Boldi elzárása">
+        - Ki tudja? Mivel nem volt időm vadászni, automata feldolgozó üzemmódra állítottam Betyárt este. Az éjjel bármi belekerülhetett a csapdájába...
+      </p>
       <p>
-        Kissé meghökkensz, de aztán vállat vonsz és tovább eszel, mert kell az energia.
+        Kissé meghökkensz, de aztán megvonod a vállad és tovább eszel, mert kell az energia.
       </p>
       <p>
         Amikor végeztetek, Frici elpakol, ellenőriz még pár dolgot Betyáron, aztán beszálltok, hogy megtámadjátok a föld alól a városházát.
@@ -3879,8 +3988,11 @@ window.rooms = [
       <p>
         - Ez miből van? - kérdezed gyanakodva.
       </p>
-      <p>
+      <p class="cond" data-cond="E_Boldi elzárása">
         - Eh, egy nyápic volt ez a Béna Boldizsár! Ma reggel holtan találtam. Legalább ennyi haszna legyen!
+      </p>
+      <p class="cond" data-cond="!E_Boldi elzárása">
+        - Ki tudja? Mivel nem volt időm vadászni, automata feldolgozó üzemmódra állítottam Betyárt este. Az éjjel bármi belekerülhetett a csapdájába...
       </p>
       <p>
         Kissé meghökkensz, de aztán vállat vonsz és tovább eszel, mert kell az energia.
@@ -4259,10 +4371,10 @@ window.rooms = [
     music: "basicmusic",
     pic: "starttown.jpg",
     desc: `
-      <p class="cond" data-cond=">_sup_30">
+      <p class="cond" data-cond=">_sup_50">
        Jó sok ember van még a téren, és mind arról beszélnek, hogy milyen segítőkész vagy. A megszerzett népszerűséget előnyödre is tudnád fordítani, úgy érzed, hősként te is ennél nagyobb tettekre vagy hivatott.
       </p>
-      <p class="cond" data-cond="<_sup_31">
+      <p class="cond" data-cond="<_sup_51">
        Sajnos nem nagyon sikerült segíteni a népnek. Csalódott vagy ők is, meg egy kicsit te is.
       </p>
       <p>
@@ -4274,12 +4386,12 @@ window.rooms = [
       {
         txt: "Pártot alapítasz és indulsz az önkormányzati választáson",
         new: 181,
-        cond: ">_sup_50",
+        cond: ">_sup_100",
       },
       {
         txt: "Szervezel egy bandát, hogy puccsot hajts végre",
         new: 182,
-        cond: ">_sup_30",
+        cond: ">_sup_50",
       },
       {
         txt: "Elbúcsúzol és sétálsz egyet a város utcáin",
@@ -4412,7 +4524,61 @@ window.rooms = [
       },
     ],
   },
-
+  {
+    num: 181,
+    title: "A párt alapításának ötlete",
+    type: "normal",
+    music: "democracy",
+    pic: "lelkesnép.gif",
+    desc: `
+      <p>
+        A sok segítséggel nagy népszerűségre tettél szert, és erzed, hogy ennél jóval többet is tehetnél a népért, így bejelented, hogy indulsz az önkormányzati választáson. Tudod, hogy a jelenlegi polgármestert, Bitang Botondot, sokan nem szeretik, mert zsarnokoskodik a népen és a rendőrségből saját maffia-szervezetet hozott létre.
+      </p>
+      <p>
+        Elkezdesz hát rögtönözni egy beszédet, és ígérgetni nekik mindenfélét: ingyen kakasnyalóka, reklámmentes internet, a járványok szétmorzsolása, "Minden háztartásba törpehörcsög, hóbagoly vagy takarító robotnő!" program, az önkormányzat által finanszírozott szuperképesség-fejlesztő tanfolyam valamint az agymosással való végső leszámolás. Perpill ezek jutottak eszedbe, de érzed, hogy ez még csak a kezdet.
+      </p>
+      `,
+    change: [
+      {
+        id: "hat",
+        crease: 5,
+        rnd: 5,
+      },
+    ],
+    obj: ["D_választás"],
+    buttons: [
+      {
+        txt: "Na, mit szóltok?",
+        new: 65,
+      },
+    ],
+  },
+  {
+    num: 182,
+    title: "A banda alapításának ötlete",
+    type: "normal",
+    music: "lightaction",
+    pic: "lelkesnép.gif",
+    desc: `
+      <p>
+        Úgy érzed, jóval többet is tehetnél a népért és a vezérükké válhatnál. Tudod, hogy a jelenlegi polgármestert, Bitang Botondot, sokan nem szeretik, mert zsarnokoskodik a népen és a rendőrségből saját maffia-szervezetet hozott létre. Felveted a gondolatot, hogy egy másik szervezetet hozol létre, amivel harcolhatnátok Botiék zsarnoksága ellen.
+      </p>
+      `,
+    change: [
+      {
+        id: "hat",
+        crease: 4,
+        rnd: 4,
+      },
+    ],
+    obj: ["D_puccs"],
+    buttons: [
+      {
+        txt: "Na, mit szóltok?",
+        new: 41,
+      },
+    ],
+  },
   {
     num: 183,
     title: "Megjelent egy cukrosbácsi",

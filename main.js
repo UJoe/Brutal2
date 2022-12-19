@@ -317,7 +317,7 @@ function _load() {
           hullákStr += "</ul>";
           document.getElementById("hullák").innerHTML = hullákStr;
         }
-        let segítettek = getObj("H");
+        let segítség = getObj("H");
         if (segítség.length > 0) {
           let segítségStr =
             "A következő egyszerű embereknek segítettél (vagy próbáltál segíteni):<br><ul>";
@@ -864,8 +864,9 @@ function _load() {
       } else if (room.obj) {
         let fegyObj = [];
         for (let o of room.obj) {
-          char.objs.push(o);
+          if (o.charAt(0) !== "W" && !getObj(o)) char.objs.push(o);
           if (o.charAt(0) === "W") {
+            char.objs.push(o);
             fegyObj.push(weapons.find((w) => w.name === o.split("_")[1]));
           }
         }
@@ -999,7 +1000,6 @@ function _load() {
               char.sup / 30 +
               prg / 10 +
               0.5 * Math.random();
-            console.log("BASE: ", baseline);
             changeVal("hat", Math.floor(baseline));
             changeVal("sup", Math.round(baseline * 10));
             message(
