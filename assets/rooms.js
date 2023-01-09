@@ -811,11 +811,6 @@ window.rooms = [
     `,
     change: [
       {
-        id: "ugy",
-        crease: 3,
-        rnd: 2,
-      },
-      {
         id: "lel",
         crease: -3,
         rnd: 2,
@@ -882,11 +877,6 @@ window.rooms = [
     `,
     change: [
       {
-        id: "ugy",
-        crease: 3,
-        rnd: 2,
-      },
-      {
         id: "hat",
         crease: 5,
         rnd: 5,
@@ -929,10 +919,6 @@ window.rooms = [
       </p>
     `,
     change: [
-      {
-        id: "ugy",
-        crease: -1,
-      },
       {
         id: "hat",
         crease: -5,
@@ -1452,7 +1438,7 @@ window.rooms = [
     nmepic: "oshinoko-home.JPG",
     att: 100,
     def: 50,
-    speed: 9,
+    speed: 8,
     hp: 90,
     desc: `
       <p>
@@ -1684,11 +1670,6 @@ window.rooms = [
       </p>
     `,
     change: [
-      {
-        id: "ugy",
-        crease: 7,
-        rnd: 5,
-      },
       {
         id: "lel",
         crease: -7,
@@ -3058,13 +3039,6 @@ window.rooms = [
       {
         txt: "Előrántod a katanát",
         cond: "W_KATANA",
-        modi: `Amint előrántod a katanát, Szenyamuki szeme elkerekedik.</p>
-          <p> - Dédapánk katanája! HOgy került ez hozzád?</p>
-          <p> - Te is tudod, hogy csak egyféleképpen kerülhetett ez hozzá! - szól közbe Oshinoko.</p>
-          <p> - Igen, kiálltam a Vanepuca próbát! Még mindig harcolni akarsz ellenem? - mondod keményen.</p>
-          <p>Szenyamuki pár pillanatig hezitál, aztán flegmán megvonja a vállát.</p>
-          <p> - Dédapánk szelleme ellen nem harcolok.</p>
-        `,
         new: 123,
       },
       {
@@ -3294,18 +3268,6 @@ window.rooms = [
         Sikerül legyőznöd az orvgyilkost. Kifújod magad és átkutatod. Találsz nála egy fejlett katonai kést, egy kézigránátot és két flaskát, valamint egy belépőkártyát. Nem tudod hova jó, de elteszed azt is a többivel együtt. Ahogy a feje felé hajolsz, egy nagyon halk hangot hallasz a síri csendben. Amikor közelebb hajolsz, észreveszed a nő füle mögé rejtett apró kommunikációs eszközt. A saját füledhez tartod, hogy jobban halld. Valaki azt kérdezi, hogy mi történt, mivel csökkentek az életfunkciói a nőnek. Mit teszel?
       </p>
     `,
-    change: [
-      {
-        id: "ugy",
-        crease: 5,
-        rnd: 3,
-      },
-      {
-        id: "lel",
-        crease: -1,
-        rnd: 1,
-      },
-    ],
     obj: [
       "W_GYILOK",
       "W_KÉZIGRÁNÁT",
@@ -3665,11 +3627,11 @@ window.rooms = [
     num: 112,
     title: "A régi fagyigyárban",
     type: "normal",
-    music: "darkbackground",
+    music: "gravenight",
     pic: "darkbogi.jpg",
     desc: `
       <p>
-        A megbeszéltek szerint vársz naplementéig, aztán elindulsz a régi fagyigyárhoz. Ez egy elhagyatott egyszintes ipari épület a város külterületén. Mire odaérsz, már beesteledett, csak a telihold meg néhány utolsó napjaival küszködő lámpa halovány fénye világítja meg utadat, Amikor belépsz az üresen tátongó épületbe, szétnézel, de senkit sem látsz. Fülelni kezdesz. Valahol halkan csepeg a víz tompa visszhanggal. Lehet bármi egy ilyen épületben. Aztán hirtelen lassan, nyikorogva kinyílik egy ajtó. Mögötte felvillan egy reflektor, de annak is elég gyenge a fénye. Az ajtón egy női alak lép be, de nem látod az arcát, mert mögüle jön a fény.
+        A megbeszéltek szerint vársz naplementéig, aztán elindulsz a régi fagyigyárhoz. Ez egy elhagyatott egyszintes ipari épület a város külterületén, az ázsiai negyed mellett. Mire odaérsz, már beesteledett, csak a telihold meg néhány utolsó napjaival küszködő lámpa halovány fénye világítja meg utadat, Amikor belépsz az üresen tátongó épületbe, szétnézel, de senkit sem látsz. Fülelni kezdesz. Valahol halkan csepeg a víz tompa visszhanggal. Lehet bármi egy ilyen épületben. Aztán hirtelen lassan, nyikorogva kinyílik egy ajtó. Mögötte felvillan egy reflektor, de annak is elég gyenge a fénye. Az ajtón egy női alak lép be, de nem látod az arcát, mert mögüle jön a fény.
       </p>
       <p>
         Mit teszel?
@@ -3905,9 +3867,292 @@ window.rooms = [
       },
     ],
   },
-
-  //*
-
+  {
+    num: 121,
+    title: "A Branyiszkó-téren",
+    type: "normal",
+    music: "epicsearch",
+    pic: "kordon.jpg",
+    desc: `
+      <p id="extra"></p>  
+      <p>
+       Elindultok a Branyiszkó-tér felé. Már messziről meglátjátok a tömeget, és azt is, hogy nagy körben körül van zárva és Boti emberei mindenkit ellenőriznek, aki be akar lépni. Úgy látszik, Boti tényleg tart a tömegtől.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Ne baj, akkor is bejutsz",
+        new: 185,
+        cond: "!_S_Micuki",
+      },
+      {
+        txt: "Micuki technikával belopózol a tömegbe",
+        new: 186,
+        cond: "S_Micuki",
+      },
+    ],
+  },
+  {
+    num: 122,
+    title: "Oshinokonál hagyod a fegyvereidet",
+    type: "normal",
+    music: "oshinoko",
+    pic: "oshinoko-face.JPG",
+    desc: `
+      <p>
+        Oshinoko átnézi a tárgyaidat és amit fegyvernek ítél, azt elzárja egy rejtett széfbe. Ezután int, hogy induljatok.
+      </p>
+    `,
+    Xchange: "lefegyverzés",
+    buttons: [
+      {
+        txt: "Menjünk!",
+        new: 121,
+      },
+    ],
+  },
+  {
+    num: 123,
+    title: "Szenyamuki mellétek áll",
+    type: "normal",
+    music: "oshinoko",
+    pic: "szenyamuki-face.JPG",
+    desc: `
+    <p>
+      Amint előrántod a katanát, Szenyamuki szeme elkerekedik.
+    </p>
+    <p> - Dédapánk katanája! Hogy került ez hozzád?</p>
+    <p> - Te is tudod, hogy csak egyféleképpen kerülhetett ez hozzá! - szól közbe Oshinoko.</p>
+    <p> - Igen, kiálltam a Vanepuca próbát! Még mindig harcolni akarsz ellenem? - mondod keményen.</p>
+    <p>
+      Szenyamuki pár pillanatig hezitál, aztán flegmán megvonja a vállát.
+    </p>
+    <p> - Dédapánk szelleme ellen nem harcolok.</p>
+    <p>
+      OshinokovaL összenéztek. Ő bólint egyet. Már kezded érteni ennyiből is, hogy mit akar közölni: Szenyamuki átállt hozzátok!
+    </p>
+    `,
+    buttons: [
+      {
+        txt: "Akkor beszéljük meg, hogy buktassuk meg Botiékat!",
+        new: 189,
+      },
+    ],
+  },
+  {
+    num: 124,
+    title: "Harc Szenyamukival",
+    type: "fight",
+    pic: "dualfight.gif",
+    nmepic: "szenyamuki-face.JPG",
+    att: 120,
+    def: 70,
+    speed: 9,
+    hp: 100,
+    desc: `
+      <p>
+        - Nem muszáj ezt végigjátszanod! - kiált rád egy lehelletnyi aggodalommal a hangjában Oshinoko, de a harc már elkerülhetetlen.
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Védd magad, te ferdeszemű!",
+      },
+    ],
+    pass: 190,
+    fail: 191,
+  },
+  {
+    num: 125,
+    type: "Xtrial",
+    value: "love",
+    pass: 192,
+    fail: 126,
+  },
+  {
+    num: 126,
+    title: "Beszélgetés Bogival",
+    type: "normal",
+    music: "pubmusic",
+    pic: "bogi_face.JPG",
+    desc: `
+      <p>
+        Az énekesnő végigjáratja a szemét rajtad, ahogy közeledsz, majd megszólít:
+      </p>
+        - Ha nem tévedek, <span id="fullName"></span>!
+      <p>
+        - Így van! - vágod rá büszkén. Feléd nyújtja a kezét.
+      </p>
+      <p>
+        - Bogi.
+      </p>
+      <p>
+        Hmmm, valami furcsa ezzel a névvel. Valahogy nem erre számítottál.
+      </p>
+      <p>
+        - Milyen Bogi?
+      </p>
+      <p>
+        - Csak Bogi - válaszol titokzatosan. Aztán mosolyogva hozzáteszi: - Miért, te milyen <span class="name"></span> vagy?
+      </p>
+      <p>
+        Te is elmosolyodsz. Legyen így. 
+      </p>
+        - És mi szél hozott erre? - kérdezi. Sokféle válasz kavarog a fejedben, de ahogy belenézel Bogi szemébe, olyan érzésed van, mintha hipnotizálna. Akaratlanul is feltör benned legbelső vágyad, ami azóta motoszkál benned, hogy felkeltél ma.
+      <p>
+        - Én vagyok a város hőse, itt az ideje, hogy átvegyem az irányítást!
+      </p>
+      <p>
+        Bogi arcán elégedett mosoly suhan át egy pillanatra. Aztán megint titokzatos arckifejezésre vált.
+      </p>
+      <p>
+        - A Kutya Veres Kasza tulajdonosával beszéltél?
+      </p>
+      <p>
+        - Tulajdonképpen váltottunk pár szót...
+      </p>
+      <p>
+        - Hogy hívják? - szegezi neked hirtelen a kérdést. Az arca keményre vált és csak rád összpontosít megint. - Pontosan válaszolj!
+      </p>
+      `,
+    input: {
+      label: "Írd be ide a kocsmáros pontos nevét:",
+      max: 10,
+      key: "Bodri papa",
+    },
+    pass: 193,
+    fail: 194,
+  },
+  {
+    num: 127,
+    type: "Xtrial",
+    value: "hang",
+    pass: 129,
+    fail: 130,
+  },
+  {
+    num: 128,
+    title: "Az orvgyilkos halálának közlése",
+    type: "normal",
+    music: "darkbackground",
+    pic: "home.jpg",
+    desc: `
+      <p>
+        Gondolod, a mikrofon sem lehet messze, így elkiáltod magad:
+      </p>
+      <p>
+        - Hogy mi történt? Kinyírtam ezt az amatőr orvgyilkost! Gondolom, a legjobb embered volt. Nyugodtan küldd a többit is, mindenkivel végezni fogok! Így jár az, aki <span id="fullName"></span> útjába kerül!
+      </p>
+      <p>
+        Hallgatózol, de úgy tűnik, a másik oldalon megszakították a beszélgetést. Mindegy, bárki is volt az, ez nem változtat azon, amit egy téged megöldi küldött bérgyilkos megbízójának mondanál. De minden bizonnyal Boti embere volt. Ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival.
+      </p>
+    `,
+    obj: ["E_Boti üldöz"],
+    change: [
+      {
+        id: "ugy",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "hat",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "ero",
+        crease: 3,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Kidobod a hullát is.",
+        new: 74,
+        modi: "Csendben becsomagolod a hullát egy nagy kukazsákba és leviszed a központi konténerbe. Senki nem látott meg a vaksötét éj közepén. Visszamész és próbálsz még aludni reggelig.",
+      },
+    ],
+  },
+  {
+    num: 129,
+    title: "A megbízó megtévesztése",
+    type: "normal",
+    music: "darkbackground",
+    pic: "home.jpg",
+    desc: `
+      <p>
+        Gondolod, a mikrofon sem lehet messze, így a nő hangját és stílusát utánozva elkezdesz beszélni.
+      </p>  
+      <p>
+        - Volt egy kis verekedés, de már minden rendben. <span id="fullName"></span> halott.
+      </p>
+      <p>
+        - Köszönjük. Fizetés a szokásos módon - jön a válasz a kütyüből. Még csak kódolt nyelvet sem használnak, nagyon magabiztosak. De te is örülsz, hogy sikerült őket átverned. Most azt hiszik, halott vagy. Emellett ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival, és megerősítette az önbizalmad.
+      </p>
+    `,
+    obj: ["E_Boti halottnak hisz"],
+    change: [
+      {
+        id: "ugy",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "hat",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "ero",
+        crease: 3,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Először is kidobod a hullát",
+        new: 74,
+        modi: "Csendben becsomagolod a hullát egy nagy kukazsákba és leviszed a központi konténerbe. Senki nem látott meg a vaksötét éj közepén. Visszamész és próbálsz még aludni reggelig.",
+      },
+    ],
+  },
+  {
+    num: 130,
+    title: "Nem sikerül megtéveszteni a megbízót",
+    type: "normal",
+    music: "darkbackground",
+    pic: "home.jpg",
+    desc: `
+      <p>
+        Amint elkezdesz beszélni, megszólal a hang a kütyüben:
+      </p>
+       - Ki beszél? Mi történt?
+      <p>
+      <p>
+        Rájössz, hogy úgysem tudod megtéveszteni őket, fölösleges tovább erőlködnöd, így a rendes hangodon elkiáltod magad:
+      </p>
+        - Hogy mi történt? Kinyírtam ezt az amatőr orvgyilkost! Gondolom, a legjobb embered volt. Nyugodtan küldd a többit is, mindenkivel végezni fogok! Így jár az, aki <span id="fullName"></span> útjába kerül!
+      </p>
+      <p>
+        Hallgatózol, de úgy tűnik, a másik oldalon megszakították a beszélgetést. Mindegy, bárki is volt az, ez nem változtat azon, amit egy téged megöldi küldött bérgyilkos megbízójának mondanál. De minden bizonnyal Boti embere volt. Ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival.
+      </p>
+    `,
+    obj: ["E_Boti üldöz"],
+    change: [
+      {
+        id: "hat",
+        crease: -2,
+        rnd: 1,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Kidobod a hullát is.",
+        new: 74,
+        modi: "Csendben becsomagolod a hullát egy nagy kukazsákba és leviszed a központi konténerbe. Senki nem látott meg a vaksötét éj közepén. Visszamész és próbálsz még aludni reggelig.",
+      },
+    ],
+  },
   {
     num: 131,
     type: "Ytrial",
@@ -3961,7 +4206,7 @@ window.rooms = [
     ],
     buttons: [
       {
-        txt: "Rohamra!",
+        txt: "Na, ássunk!",
         new: 134,
       },
     ],
@@ -4021,6 +4266,8 @@ window.rooms = [
     ],
   },
 
+  //*
+
   {
     num: 162,
     title: "Piaci bunyó",
@@ -4075,7 +4322,7 @@ window.rooms = [
        Csongikát - a szomszédaid gyerekét - el kellene hozni az óvodából.
       </p>
       <p class="cond" data-cond="H_Csongika, !H_Yendela hercegnő">
-       Yendela hercegnőt el kellene kísérni a Bazizord-rónán át a Csillám-ligetbe.
+       A messzi öreg király kéri, hogy Yendela hercegnőt kísérje el egy hős a Bazizord-rónán át a Csillám-ligetbe. 
       </p>
       <p class="cond" data-cond="H_Mari néni, H_Lóri papa, H_Brünhilda, H_Yendela hercegnő">
        Úgy tűnik, már mindenkin segítettél, akinek ma gondja volt. 
@@ -4084,6 +4331,12 @@ window.rooms = [
        Kinek segítesz?
       </p>
     `,
+    change: [
+      {
+        id: "lel",
+        crease: 1,
+      },
+    ],
     buttons: [
       {
         txt: "Pirikének",
@@ -4198,7 +4451,7 @@ window.rooms = [
     title: "Bodri kutya keresése",
     type: "pursuit",
     level: 1,
-    music: "epicsearch",
+    music: "search",
     pic: "movingtown.gif",
     goalpic: "bodri.jpg",
     desc: `
@@ -4286,8 +4539,8 @@ window.rooms = [
     type: "fight",
     pic: "dualfight_real.gif",
     nmepic: "kidobo.jpg",
-    att: 80,
-    def: 50,
+    att: 70,
+    def: 40,
     speed: 7,
     hp: 70,
     desc: `

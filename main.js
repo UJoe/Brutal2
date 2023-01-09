@@ -20,6 +20,7 @@ function _load() {
   window.part = " ";
   window.prg = 0;
   window.progi = " ";
+  window.fegyverRaktár = [];
   var timo;
   var timo1;
   var timo2;
@@ -43,6 +44,7 @@ function _load() {
     localStorage.setItem("part", part);
     localStorage.setItem("prg", prg);
     localStorage.setItem("progi", progi);
+    localStorage.setItem("fegyveraktar", fegyverRaktár.join());
     if (isDying) {
       localStorage.setItem("isDying", "1");
     } else {
@@ -68,6 +70,7 @@ function _load() {
     prg = Number(localStorage.getItem("prg"));
     progi = localStorage.getItem("progi");
     modi = false;
+    fegyverRaktár = localStorage.getItem("fegyveraktar").split(",");
   }
 
   function chooseChar(x) {
@@ -285,7 +288,7 @@ function _load() {
           <p id="segítség"></p>
           <p>De ha mégsem vagy elégedett az eredménnyel, az F5 tartogat egy időutazó varázslatot számodra.</p>
         `;
-        if (localStorage.getItem("charName").length > 0) {
+        if (localStorage.getItem("charName")) {
           main.innerHTML +=
             "<p>Vagy a LOAD gombbal betöltheted a legutóbb elmentett állást.</p>";
           document.getElementById("loadBtn").disabled = false;
@@ -687,15 +690,17 @@ function _load() {
             char.sup +
             char.lel +
             char.ero / 2 +
-            char.ugy / 3;
-          if (75 + Math.random() * 150 < kisugarzas) {
+            char.ugy / 3 +
+            getObj("S").length +
+            getObj("H").length * 2;
+          if (75 + Math.random() * 155 < kisugarzas) {
             char.room = room.pass;
             crease = 1 + Math.round(kisugarzas / 15 + Math.random() * 10);
             music.volume = 0.75;
             result = "nagy hatást keltett.";
           } else {
             char.room = room.fail;
-            crease = -1 - Math.round(8 - kisugarzas / 61 + Math.random() * 3);
+            crease = -1 - Math.round(10 - kisugarzas / 60 + Math.random() * 3);
             music.volume = 0.25;
             result = "csalódást okozott.";
           }
@@ -766,9 +771,13 @@ function _load() {
           break;
 
         case "ima":
-          let hit = char.lel + getObj("S_Hit") * 50;
+          let hit =
+            char.lel +
+            getObj("S_Hit") * 50 -
+            getObj("X").length * 2 -
+            getObj("W").length;
 
-          if (Math.random() * 125 < hit) {
+          if (Math.random() * 120 < hit) {
             char.room = room.pass;
             crease = 1 + Math.round((100 - char.lel) / 15 + Math.random() * 3);
             music.volume = 0.75;
@@ -783,6 +792,80 @@ function _load() {
           document.getElementById("result").style.color =
             result === "Az imád meghallgatásra talált." ? "green" : "red";
           changeVal("lel", crease);
+          break;
+
+        case "love":
+          let appeal = false;
+          if (checkCond("férfi")) {
+            if (
+              char.esz +
+                char.hat +
+                char.sup / 2 +
+                char.lel / 2 +
+                char.ero +
+                char.ugy / 2 +
+                getObj("H").length +
+                getObj("S").length * 3 -
+                getObj("X").length * 2 >
+              100 + Math.random() * 250
+            ) {
+              appeal = true;
+              result = "Úgy tűnik, Bogi megkedvelt téged.";
+            } else {
+              result = "Bogi teljesen közömbös irántad.";
+            }
+          } else {
+            if (
+              char.esz / 2 +
+                char.hat / 4 +
+                char.sup / 2 +
+                char.lel +
+                char.ero / 4 +
+                char.ugy / 2 +
+                getObj("H").length +
+                getObj("S").length * 3 -
+                getObj("X").length * 2 >
+              75 + Math.random() * 125
+            ) {
+              appeal = true;
+              result =
+                "Úgy tűnik, az erdei manók vezére első látásra fülig szerelmes lett beléd";
+            } else {
+              result =
+                "Az erdei manók vezére teljesen közömbösnek tűnik irántad.";
+            }
+          }
+
+          if (appeal) {
+            char.room = room.pass;
+            music.volume = 0.75;
+            changeVal("hat", 1 + Math.round(Math.random() * 9));
+            changeVal("lel", 1 + Math.round(Math.random() * 5));
+          } else {
+            char.room = room.fail;
+            music.volume = 0.25;
+            changeVal("hat", -1 - Math.round(Math.random() * 5));
+          }
+          message("<span id='result'>" + result + "</span>");
+          document.getElementById("result").style.color =
+            appeal === true ? "green" : "red";
+          break;
+
+        case "hang":
+          let voice = char.ugy + char.esz + char.lel + Math.random() * 50;
+
+          if (Math.random() * 250 < voice) {
+            char.room = room.pass;
+            music.volume = 0.75;
+            result = "sikeres volt";
+          } else {
+            char.room = room.fail;
+            music.volume = 0.25;
+            result = "elég gyatrára sikeredett";
+          }
+          message("Hangutánzásod <span id='result'>" + result + "</span>.");
+          document.getElementById("result").style.color =
+            result === "sikeres volt" ? "green" : "red";
           break;
 
         default:
@@ -950,6 +1033,36 @@ function _load() {
           });
       }
 
+      if (room.input) {
+        let rip = room.input;
+        let leng = 0;
+        document.getElementById("sels").innerHTML = `
+          <div id="inputDiv">
+            <span id="iplab"><i>${rip.label} </i></span>
+            <input type="text" id="tip" maxlength="${rip.max}">
+            <div>A helyes válaszhoz szükséges hossz: <span id="len">${leng}</span> / <span>${rip.max}</span></div> 
+          </div>
+        `;
+        let dip = document.getElementById("tip");
+        dip.focus();
+        dip.style.width = rip.max * 0.9 + "em";
+
+        dip.addEventListener("change", function (event) {
+          let answer = event.target.value;
+          if (answer === rip.key) {
+            char.room = room.pass;
+          } else {
+            char.room = room.fail;
+          }
+          newRoom();
+        });
+        dip.addEventListener("input", function (event) {
+          let answer = event.target.value;
+          leng = answer.length;
+          document.getElementById("len").innerHTML = leng;
+        });
+      }
+
       if (room.buttons) {
         let btnString = "";
         let btns = room.buttons;
@@ -1005,6 +1118,32 @@ function _load() {
             message(
               "A támogatásod " + Math.round(baseline * 10) + " ponttal nőtt."
             );
+            break;
+
+          case "lefegyverzés":
+            let messi = "Nem volt fegyvered.";
+            for (let ii = 0; ii < char.objs.length; ii++) {
+              let coco = char.objs[ii];
+              if (coco.charAt(0) === "W") {
+                messi = "Leraktad, ami fegyvered volt.";
+                fegyverRaktár.push(coco);
+                char.objs.splice(ii, 1);
+                ii--;
+              }
+            }
+            message(messi);
+            break;
+
+          case "felfegyverzés":
+            let messzi = "Nem volt lerakva fegyvered.";
+            if (fegyverRaktár.length > 0) {
+              messzi = "Felvetted a korábban lerakott fegyvereidet.";
+              for (let fr of fegyverRaktár) {
+                char.objs.push(fr);
+              }
+              fegyverRaktár = [];
+            }
+            message(messzi);
             break;
 
           default:
@@ -1482,6 +1621,7 @@ function _load() {
         }
 
         let start = true;
+        let orgNMEHP = room.hp;
         chrHit = "";
         nmeHit = "";
         let end = false;
@@ -1550,18 +1690,19 @@ function _load() {
             document.getElementById("exitBtn").disabled = true;
             if (room.dungeon && firstchange) {
               changeVal(
-                "ugy",
-                Math.floor(nmeAtt / 30 + nmeDef / 15 + Math.random() * 3)
-              );
-              changeVal(
                 "ero",
                 Math.round((Math.random() * (dungeon + room.level)) / 3)
               );
-              changeVal("lel", -1);
             }
             if (firstchange) {
               firstchange = false;
-              changeVal("ugy", 1);
+              changeVal(
+                "ugy",
+                Math.floor(
+                  nmeAtt / 30 + nmeDef / 20 + orgNMEHP / 25 + Math.random() * 3
+                )
+              );
+              changeVal("lel", -1);
               if (room.help) {
                 let bonus =
                   10 +

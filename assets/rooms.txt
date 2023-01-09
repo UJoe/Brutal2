@@ -118,11 +118,11 @@
 118 - Jó válasz Fricinek (jó kifogás, hat+, modi! (86,118), aztán 37 végétől)
 119 - Rossz válasz Fricinek (hazaküld)
 120 - Beszélgetés Fricivel (hazamész vagy szövetkeztek)
-121 - Fegyverekkel a Branyiszkó-téren (extra, micukis gomb, üldözés?)
-122 - Oshinokonál hagyod a fegyvereid (spéci getWeapons save)
-123 - Szenyamuki mellétek áll (extra)
+121 - (Fegyverekkel) A Branyiszkó-téren (extra, micukis gomb, üldözés?)
+122 - Oshinokonál hagyod a fegyvereidet (spéci getWeapons save)
+123 - Szenyamuki mellétek áll
 124 - Harc Szenyamukival
-125 - Udvarlás Boginak (XTRIAL: com)
+125 - Udvarlás Boginak (XTRIAL: love)
 126 - Beszélgetés Bogival (Bodri papa neve?)
 127 - XTRIAL: orvgyilkos hangjának utánzása
 128 - Az orvgyilkos halálának közlése (D_Boti üldöz)
@@ -162,7 +162,7 @@
 162 - Piaci támadás (dungeon fight)
 163 - Ytrial - Boti üldöz: piacról kifelé Boti kap el vagy más
 164 - YTrial - találkozás Zsolttal: férfi-nő
-165 - Nő: XTrial: recruit
+165 - Nő: XTrial: love
 166 - Siker: Zsolt egyből beléd zúg
 167 - Találkozás Erdei Zsolttal (Férfi vagy nem nagy hatású nő. Nem ismer.)
 168 - Felajánlod a segítséged az embereknek (alaproom)
@@ -182,6 +182,16 @@
 182 - Bandát szervezel segítés után (D_puccs, beszéd => 41 (nincs Oshinoko))
 183 - Csongi dungeon fight
 184 - Yendela dungeon fight
+185 - Új Check: fegyverek vagy Boti üldöz: bejutsz: 186, ha elkapnak: van-e Oshinoko vagy Gárda?
+186 - A Branyiszkó-téri orvgyilkosság (ügyesség-próba jön)
+187 - Elkapnak Oshinokoval (Szenyamuki a ködben)
+188 - Elkapnak a Gárdával: harc / menekülés
+189 - Tanácskozás Szenyamukival (J_Szenyamuki)
+190 - Szenyamuki legyőzése (nem hal meg, hanem mellétek áll: 189)
+191 - Vereség Szenyamukitól
+192 - Bogi megkedvel téged
+193 - Jó válasz Boginak
+194 - Rossz válasz Boginak
 
 
 

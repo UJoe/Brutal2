@@ -238,12 +238,13 @@ h2 {
   justify-content: space-between;
   width: 300px;
   padding-left: 20px;
+  height: fit-content;
 }
 
 .btn {
   font-size: 1rem;
   transform: scale(1.4);
-  margin: 20px 40px;
+  margin: 25px 40px;
   padding: 10px;
   color: orangered;
   background-color: darkblue;
@@ -291,6 +292,36 @@ select {
 
 .btn:focus {
   outline: none;
+}
+
+/* input */
+#inputDiv {
+  margin: 20px;
+  background-color: blue;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 15px;
+  color: yellow;
+}
+
+#inputDiv input {
+  margin: 10px 0 10px 10px;
+  background-color: yellow;
+  color: blueviolet;
+  padding: 3px;
+  font-size: 1.1em;
+}
+
+#inputDiv div {
+  margin-top: 15px;
+  background-color: turquoise;
+  color: darkblue;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#len {
+  color: red;
 }
 
 #footer {

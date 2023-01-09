@@ -49,6 +49,9 @@ let templates = [
       <p>
        D <span class='part'></span> 
       </p>
+      <p><i>
+       Mit teszel?
+      </i></p>
 
     `,
     obj: ["X_Béna Boldizsár", "M_Oshinoko", "W_FEGYVER"],

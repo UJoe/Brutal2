@@ -167,7 +167,7 @@ window.weapons = [
     effect: [
       {
         val: "támadás",
-        ch: "+50",
+        ch: "+40",
       },
       {
         val: "sebesség",
@@ -267,7 +267,7 @@ window.weapons = [
       },
       {
         val: "támadás",
-        ch: "+40",
+        ch: "+30",
       },
       {
         val: "védelem",
@@ -315,7 +315,7 @@ window.weapons = [
       },
       {
         val: "ellenség védelem",
-        ch: "-50",
+        ch: "-45",
       },
     ],
   },
@@ -335,7 +335,7 @@ window.weapons = [
       },
       {
         val: "ellenség védelem",
-        ch: "-25",
+        ch: "-20",
       },
     ],
   },
@@ -351,11 +351,11 @@ window.weapons = [
       },
       {
         val: "támadás",
-        ch: "+100",
+        ch: "+80",
       },
       {
         val: "ellenség védelem",
-        ch: "-50",
+        ch: "-40",
       },
     ],
   },
@@ -519,7 +519,7 @@ window.weapons = [
     effect: [
       {
         val: "támadás",
-        ch: "+100",
+        ch: "+75",
       },
       {
         val: "ellenség védelem",
