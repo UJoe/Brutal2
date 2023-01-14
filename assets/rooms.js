@@ -33,7 +33,7 @@ window.rooms = [
   {
     num: 1,
     type: "trial",
-    value: "Hatalom",
+    value: "hat",
     pass: 2,
     fail: 3,
   },
@@ -110,7 +110,7 @@ window.rooms = [
   {
     num: 4,
     type: "trial",
-    value: "Lélek",
+    value: "lel",
     pass: 5,
     fail: 2,
   },
@@ -183,17 +183,17 @@ window.rooms = [
       {
         txt: "Rájuk ripakodsz",
         new: 11,
-        modi: "Hatalom",
+        modi: "hat",
       },
       {
         txt: "Elkezded őket ütlegelni",
         new: 11,
-        modi: "Erő",
+        modi: "ero",
       },
       {
         txt: "Ravaszan ráveszed őket, hogy engedelmeskedjenek",
         new: 11,
-        modi: "Ész",
+        modi: "esz",
       },
       {
         txt: "Inkább magad eredsz a csirkefogó után",
@@ -310,7 +310,7 @@ window.rooms = [
     music: "democracy",
     pic: "speaker.png",
     desc: `
-        <p id="extra"></p>
+        <p id="modified"></p>
         <p>
          Ünnepélyes arckifejezéssel a néphez fordulsz:
         </p>
@@ -460,7 +460,7 @@ window.rooms = [
     pic: "behead.jpg",
     obj: ["X_Béna Boldizsár", "E_Boldi kivégzése", "M_Oshinoko"],
     desc: `
-      <p id="extra"></p>
+      <p id="modified"></p>
       <p>
         - Végezzétek ki! - adod ki a kegyetlen parancsot. Megfagy a levegő.
       </p>
@@ -844,7 +844,7 @@ window.rooms = [
     music: "nightstalker",
     pic: "darkstreet.jpg",
     desc: `
-        <p id="extra"></p>
+        <p id="modified"></p>
         <p>
          Az egyre sötétedő város utcáján álldogálsz. Merre veszed az utadat?
         </p>
@@ -1383,7 +1383,7 @@ window.rooms = [
     music: "fight7",
     pic: "dualfight.gif",
     desc: `
-      <p id="extra"></p>
+      <p id="modified"></p>
       <p>
         Egész éjjel gyakoroltok. Nemcsak testileg-lelkileg edz meg, hanem megtanítja neked a családja által használt titkos micuki orvgyilkos technikát, amivel képes vagy mások számára alig érzékelhető árnyékká válni, miközben a te érzékeid kiélesednek.
       </p>
@@ -1584,7 +1584,7 @@ window.rooms = [
     pic: "darkstreet.jpg",
     desc: `
       <p>
-        Valami azt súgja, hogy jobb, ha nem hagyod életben, így inkább hidegvérrel elvágod a a védekezésképtelen fickó nyakát a frissen szerzett konyhakéssel. Szétnézel: nem látot meg senki, vagy ha mégis, nem érdekli, mit csinálsz.
+        Valami azt súgja, hogy jobb, ha nem hagyod életben, így inkább hidegvérrel elvágod a a védekezésképtelen fickó nyakát a frissen szerzett konyhakéssel. Szétnézel: nem látott meg senki, vagy ha mégis, nem érdekli, mit csinálsz.
       </p>
       `,
     obj: ["X_Béna Boldizsár"],
@@ -2152,7 +2152,7 @@ window.rooms = [
     music: "japanmorning",
     pic: "oshinoko-morning.jpg",
     desc: `
-      <p id="extra"></p>
+      <p id="modified"></p>
       <p>
        Oshinokora és Sakurára a ház bejáratában ülve találsz rá. Olyan élénken beszélgetnek, hogy észre sem vesznek először. Oshinoko megfontoltan, de keményen beszél, ez nála normális. Sakura szavait nem érted, de aggódónak tűnik, bár ő is próbál kemény maradni. De az egész jelenetből érződik  kettőjük szoros, meghitt kapcsolata.
       </p>
@@ -2200,7 +2200,7 @@ window.rooms = [
     music: "pubmusic",
     pic: "kocsma.jpg",
     desc: `
-      <p id="extra"></p>
+      <p id="modified"></p>
       <p>
        Felhörpinted az italodat. Ettől kicsit jobban érzed magad. Erősebbnek. Bár egy kicsit lalassulsz. De az önbizalmad megnő. Remélem, tudtad követni a pontváltozásokat.
       </p>
@@ -2379,7 +2379,7 @@ window.rooms = [
     music: "calmusic",
     pic: "nappali.jpg",
     desc: `
-      <p id="extra"></p>
+      <p id="modified"></p>
       <p>
         Napsütéses reggel és az utca zaja ébreszt fel. Összekapod magad, eszel valamit és mivel még korán van ahhoz, hogy bárhová elindulj, egy kis időt eltölthetsz otthon is. Mit teszel?
       </p>
@@ -3733,7 +3733,7 @@ window.rooms = [
     stopmusic: true,
     pic: "shot.jpg",
     desc: `
-      <p id="extra"></p>
+      <p id="modified"></p>
       <p>
         Rémülten rohanva próbálod menteni az életedet, de a szemed sarkából látod, hogy esnek el körülötted az agyonlőtt emberek. Hirtelen te is éles fájdalmat érzel a bal lapockádban... Majd a jobban... Elsőtétül a világ...
       </p>
@@ -3780,7 +3780,7 @@ window.rooms = [
     music: "traktor",
     pic: "betyármobil.JPG",
     desc: `
-      <p id="extra"></p>  
+      <p id="modified"></p>  
       <p>
         - Na, először is, <span class="name"></span>, hadd mutassam be, hogy mire is képes hű társam, pontosabban most már a társunk, a Betyármobil! - szól Frici, azzal meghúz egy kart a traktoron, mire kinyílik egy csapóajtó az egyik oldalán. Frici megfog egy mellette heverő döglött bundás állatot (leginkább böszmedvének tűnik), beledobja a keletkezett résbe, aztán rácsukja a csapóajtót. A Betyármobil felbőg és nemsokára megnyílik két másik ajtó, az egyiken egy bundakabát, a másikon pedig több aranybarnára sült húspogácsa jön elő és sorakozik fel egy átlátszó csőben. Frici gyengéd szeretettel megpaskolja a járgányt.
       </p>
@@ -3874,7 +3874,7 @@ window.rooms = [
     music: "epicsearch",
     pic: "kordon.jpg",
     desc: `
-      <p id="extra"></p>  
+      <p id="modified"></p>  
       <p>
        Elindultok a Branyiszkó-tér felé. Már messziről meglátjátok a tömeget, és azt is, hogy nagy körben körül van zárva és Boti emberei mindenkit ellenőriznek, aki be akar lépni. Úgy látszik, Boti tényleg tart a tömegtől.
       </p>
@@ -3979,7 +3979,9 @@ window.rooms = [
       <p>
         Az énekesnő végigjáratja a szemét rajtad, ahogy közeledsz, majd megszólít:
       </p>
-        - Ha nem tévedek, <span id="fullName"></span>!
+      <p>
+      - Ha nem tévedek, <span id="fullName"></span>!
+      </p>
       <p>
         - Így van! - vágod rá büszkén. Feléd nyújtja a kezét.
       </p>
@@ -4664,7 +4666,7 @@ window.rooms = [
     pic: "s-welldone.jpg",
     desc: `
       <p>
-        <span id="extra"></span> nagyon boldog, hogy segítettél. Hálája jeléül vendégül lát minden jóval. Azt is megígéri, hogy elterjeszti jó híredet az emberek között. Te is boldog vagy, hogy segítettél.
+        <span id="modified"></span> nagyon boldog, hogy segítettél. Hálája jeléül vendégül lát minden jóval. Azt is megígéri, hogy elterjeszti jó híredet az emberek között. Te is boldog vagy, hogy segítettél.
       </p>  
       <p>
        Végül érzékeny búcsút vesztek és elindulsz vissza a főtérre.
@@ -4704,7 +4706,7 @@ window.rooms = [
     pic: "s-soso.png",
     desc: `
       <p>
-        <span id="extra"></span> kissé csalódott, de azért értékeli, hogy legalább megpróbáltál segíteni. Isztok együtt egy italt, aztán elbúcsúztok.
+        <span id="modified"></span> kissé csalódott, de azért értékeli, hogy legalább megpróbáltál segíteni. Isztok együtt egy italt, aztán elbúcsúztok.
       </p>  
       <p>
        Elindulsz vissza a főtérre.
@@ -4744,7 +4746,7 @@ window.rooms = [
     pic: "s-bad.png",
     desc: `
       <p>
-       <span id="extra"></span> mérges és csalódott, hogy cserben hagytad. Utatok itt elvált és érzed, hogy nem fogja jó híredet kelteni.
+       <span id="modified"></span> mérges és csalódott, hogy cserben hagytad. Utatok itt elvált és érzed, hogy nem fogja jó híredet kelteni.
       </p>  
       <p>
        Elindulsz vissza a főtérre.

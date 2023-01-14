@@ -21,6 +21,25 @@ function _load() {
   window.prg = 0;
   window.progi = " ";
   window.fegyverRaktár = [];
+  window.skills = [
+    "ero",
+    "Erő",
+    "Bivalyerő",
+    "ugy",
+    "Ügyesség",
+    "Villámgyorsaság",
+    "esz",
+    "Ész",
+    "Pengeagy",
+    "lel",
+    "Lélek",
+    "Hit",
+    "hat",
+    "Hatalom",
+    "Vasakarat",
+  ];
+  window.upSkill = (id) => `S_${skills[skills.indexOf(id) + 2]}`;
+  window.nameSkill = (id) => skills[skills.indexOf(id) + 1];
   var timo;
   var timo1;
   var timo2;
@@ -286,6 +305,7 @@ function _load() {
           <p id="haverok"></p>
           <p id="hullák"></p>
           <p id="segítség"></p>
+          <p id="képesség"></p>
           <p>De ha mégsem vagy elégedett az eredménnyel, az F5 tartogat egy időutazó varázslatot számodra.</p>
         `;
         if (localStorage.getItem("charName")) {
@@ -329,6 +349,15 @@ function _load() {
           }
           segítségStr += "</ul>";
           document.getElementById("segítség").innerHTML = segítségStr;
+        }
+        let képesség = getObj("S");
+        if (képesség.length > 0) {
+          let képességStr = "A következő képességeket szerezted meg:<br><ul>";
+          for (let kép of képesség) {
+            képességStr += "<li> " + kép + "</li>";
+          }
+          képességStr += "</ul>";
+          document.getElementById("képesség").innerHTML = képességStr;
         }
         main.classList.add("brighten");
       }, 4500);
@@ -395,9 +424,10 @@ function _load() {
     let v = document.getElementById("val_" + id);
     v.innerHTML = val;
     v.classList.add(klassz);
-    if (char.lel === 100 && !getObj("S_Hit")) {
-      char.objs.push("S_Hit");
-      message("Erős hited lett.");
+    let newSkill = upSkill(id);
+    if (char[id] >= 100 && !getObj(newSkill)) {
+      char.objs.push(newSkill);
+      message("Elsajátítottad a " + newSkill.split("_")[1] + " képességét");
     }
 
     if (char.ero < 1) {
@@ -473,6 +503,8 @@ function _load() {
     let num = rooms.findIndex((r) => r.num === char.room);
     if (num === -1) {
       message("Ez még nincs kész, ezért lefagyok.");
+      if (document.getElementById("saveBtn"))
+        document.getElementById("saveBtn").disabled = true;
       return;
     }
     room = { ...rooms[num] };
@@ -579,78 +611,22 @@ function _load() {
       document.getElementById("saveBtn").disabled = true;
       let result = "";
       let crease = 0;
-      if (modi) room.value = modi;
-      switch (room.value) {
-        case "Erő":
-          if (Math.random() * 101 < char.ero) {
-            char.room = room.pass;
-            crease = 1;
-            result = "siker!";
-          } else {
-            char.room = room.fail;
-            crease = -1;
-            result = "bukás!";
-          }
-          changeVal("ero", crease);
-          break;
-
-        case "Ügyesség":
-          if (Math.random() * 101 < char.ugy) {
-            char.room = room.pass;
-            crease = 1;
-            result = "siker!";
-          } else {
-            char.room = room.fail;
-            crease = -1;
-            result = "bukás!";
-          }
-          changeVal("ugy", crease);
-          break;
-
-        case "Ész":
-          if (Math.random() * 101 < char.esz) {
-            char.room = room.pass;
-            crease = 1;
-            result = "siker!";
-          } else {
-            char.room = room.fail;
-            crease = -1;
-            result = "bukás!";
-          }
-          changeVal("esz", crease);
-          break;
-
-        case "Lélek":
-          if (Math.random() * 101 < char.lel) {
-            char.room = room.pass;
-            crease = 1;
-            result = "siker!";
-          } else {
-            char.room = room.fail;
-            crease = -1;
-            result = "bukás!";
-          }
-          changeVal("lel", crease);
-          break;
-
-        case "Hatalom":
-          if (Math.random() * 101 < char.hat) {
-            char.room = room.pass;
-            crease = 1;
-            result = "siker!";
-          } else {
-            char.room = room.fail;
-            crease = -1;
-            result = "bukás!";
-          }
-          changeVal("hat", crease);
-          break;
-
-        default:
-          break;
+      let id = modi ? modi : room.value;
+      if (Math.random() * 105 < char[id] + getObj(upSkill(id)) * 20) {
+        char.room = room.pass;
+        crease = 1;
+        result = "siker!";
+      } else {
+        char.room = room.fail;
+        crease = -1;
+        result = "bukás!";
       }
+      changeVal(id, crease);
+
       music.volume = 0.25;
-      message(room.value + " próba: <span id='result'>" + result + "</span>");
+      message(
+        nameSkill(id) + " próba: <span id='result'>" + result + "</span>"
+      );
       document.getElementById("result").style.color =
         result === "siker!" ? "green" : "red";
       setTimeout(() => {
@@ -918,8 +894,8 @@ function _load() {
       if (document.querySelector(".part")) {
         document.querySelectorAll(".part").forEach((p) => (p.innerHTML = part));
       }
-      if (document.getElementById("extra") && modi) {
-        document.getElementById("extra").innerHTML = modi;
+      if (document.getElementById("modified") && modi) {
+        document.getElementById("modified").innerHTML = modi;
         modi = false;
       }
       if (document.querySelector(".cond")) {
@@ -1567,7 +1543,12 @@ function _load() {
         let gyilokUsed = -1;
         let fegyObj = getWeapons();
         let att = Math.round(
-          char.ugy / 1.1 + char.esz / 2.8 + char.ero / 1.5 - char.lel / 1.2
+          char.ugy / 1.1 +
+            char.esz / 2.8 +
+            char.ero / 1.5 -
+            char.lel / 1.2 +
+            getObj("S").length +
+            getObj("X").length * 2
         );
         att = att < 0 ? 0 : att > 150 ? 150 : att;
         let def = Math.round(
@@ -1587,7 +1568,8 @@ function _load() {
               char.hat * 5 +
               steps * 3 -
               char.ero * 10 +
-              Math.random() * 500
+              Math.random() * 500 +
+              getObj("S_Villámgyorsaság") * 1000
           );
         speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
         if (room.dungeon) {
@@ -1940,7 +1922,13 @@ function _load() {
           );
           if (seb < 1) seb = 1;
           nmeHit = " -" + seb;
-          if (seb > 10 + Math.random() * 10) {
+          if (
+            seb + char.esz / 20 >
+            12 +
+              Math.random() * 10 -
+              getObj("S_Bivalyerő") * 2 -
+              getObj("S_Villámgyorsaság" * 2 - getObj("S_Pengeagy" * 2))
+          ) {
             let x = Math.random() * 12;
             switch (true) {
               case x < 3:

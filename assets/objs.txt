@@ -24,7 +24,11 @@ S - képesség (skill)
   Micuki
   Bübüszimat
   Belépőkártya
+  Bivalyerő
+  Villámgyorsaság
+  Pengeagy
   Hit
+  Vasakarat
 
 D - döntés (decision)
   puccs

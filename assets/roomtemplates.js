@@ -36,7 +36,7 @@ let templates = [
     music: "basicmusic",
     pic: "forest,6",
     desc: `
-      <p id="extra"></p>  
+      <p id="modified"></p>  
       <p>
        A <span id="fullName"></span>
       </p>
@@ -137,6 +137,27 @@ let templates = [
       txt: "Ez lesz dicső nevünk!",
       new: 90,
     },
+  },
+
+  //normal + input
+  {
+    num: 126,
+    title: "Beszélgetés Bogival",
+    type: "normal",
+    music: "pubmusic",
+    pic: "bogi_face.JPG",
+    desc: `
+      <p>
+       blabla
+      </p>
+      `,
+    input: {
+      label: "Írd be ide a kocsmáros pontos nevét:",
+      max: 10,
+      key: "Bodri papa",
+    },
+    pass: 193,
+    fail: 194,
   },
 
   //trial
