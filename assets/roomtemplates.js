@@ -244,6 +244,51 @@ let templates = [
     fail: 114,
   },
 
+  //digger
+  {
+    num: 134,
+    title: "A Városháza alatt",
+    type: "dig",
+    size: 21,
+    level: 9,
+    helper: "Frici",
+    gems: ["Üzemanyag", "Agyag", "Kvarc", "Gyémánt"],
+    music: "underground",
+    pic: "cave.gif",
+    desc: `
+      <p>
+        Elindultok és Frici elkezd magyarázni:
+      </p>
+      <p>
+        - Kiválaszthatod, hogy hol ássuk be magunkat, de jó messziről kell indulnunk. Pontosan én sem tudom, milyen talajban fogunk haladni, csak a közvetlen mellettünk lévőket látjuk és nyilván csak erre haladhatunk. Minél világosabb földben haladunk, annál kevesebb energiába kerül az ásás, de a sötétebb földek több és értékesebb ásványi anyagot rejtenek, amikből Betyár folyamatosan gyűjti a hasznosíthatókat az ásás közben, a végén pedig gyárthat belőle hasznos tárgyakat. Egyedül a kék sziklás talajjal nem tud megbirkózni, azt ki kell kerülnünk. Figyeld folyamatosan Betyár üzemanyag-szintjét, mert ha még van energiája, akkor mászklálhatunk ide-oda gyűjtögetni ásványokat, de a végén mindenképpen meg kell érkeznünk középre, mert ott tudjuk a raktárba felásni magunkat. Ha hamarabb elfogy az üzemanyagunk, akkor cseszhetjük... Készen állsz?
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Igen, irány a föld belseje!",
+      },
+    ],
+    pass: 195,
+    fail: 196,
+  },
+
+  //kotyvasztó (digger után)
+  {
+    num: 195,
+    title: "Fegyvergyártás betyárral",
+    type: "kotyvaszt",
+    music: "epicsearch",
+    pic: "betyarküche.JPG",
+    prodtxt:
+      "Batyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
+    desc: `
+      <p>
+       - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. De egy klicsit nehéz belegyömöszölni Betyárba a dolgokat, inkább kattints kétszer a GYÁRTÁS gombra, ha először nem csinálna semmit!
+      </p>
+    `,
+    cont: 197,
+  },
+
   //fight
 
   {

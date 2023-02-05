@@ -6,6 +6,7 @@ function _load() {
   music.loop = true;
   let main = document.getElementById("main");
   main.classList.remove("brighten");
+  let modal = document.getElementById("modal");
   let footer = document.getElementById("footer");
   let header = document.getElementById("header");
   window.curmusic = "basicmusic";
@@ -22,27 +23,41 @@ function _load() {
   window.progi = " ";
   window.fegyverRaktár = [];
   window.skills = [
-    "ero",
-    "Erő",
-    "Bivalyerő",
-    "ugy",
-    "Ügyesség",
-    "Villámgyorsaság",
-    "esz",
-    "Ész",
-    "Pengeagy",
-    "lel",
-    "Lélek",
-    "Hit",
-    "hat",
-    "Hatalom",
-    "Vasakarat",
+    {
+      id: "ero",
+      name: "Erő",
+      upskill: "Bivalyerő",
+    },
+    {
+      id: "ugy",
+      name: "Ügyesség",
+      upskill: "Villámgyorsaság",
+    },
+    {
+      id: "esz",
+      name: "Ész",
+      upskill: "Pengeagy",
+    },
+    {
+      id: "lel",
+      name: "Lélek",
+      upskill: "Hit",
+    },
+    {
+      id: "hat",
+      name: "Hatalom",
+      upskill: "Vasakarat",
+    },
   ];
-  window.upSkill = (id) => `S_${skills[skills.indexOf(id) + 2]}`;
-  window.nameSkill = (id) => skills[skills.indexOf(id) + 1];
+  window.upSkill = (id) =>
+    `S_${skills[skills.findIndex((s) => s.id === id)].upskill}`;
+  window.nameSkill = (id) => skills[skills.findIndex((s) => s.id === id)].name;
+  window.rnd = (arr) => arr[Math.floor(Math.random() * arr.length)];
   var timo;
   var timo1;
   var timo2;
+  var timesIn;
+  var timesOut;
   var dying;
 
   startGame();
@@ -95,7 +110,7 @@ function _load() {
   function chooseChar(x) {
     let numera = Number(x.target.id.split("-")[1]);
     char = { ...chars[numera] };
-    char.room = 0; //startr
+    char.room = 0; //startroom
     char.objs = [];
     steps = 0;
     isDying = false;
@@ -232,11 +247,13 @@ function _load() {
     m.innerHTML = text;
     m.classList.remove("disappear");
     m.classList.add("pear");
-    setTimeout(() => {
+    clearTimeout(timesIn);
+    clearTimeout(timesOut);
+    timesIn = setTimeout(() => {
       m.classList.remove("pear");
       m.classList.add("appear");
     }, 1);
-    setTimeout(() => {
+    timesOut = setTimeout(() => {
       m.classList.remove("appear");
       m.classList.add("disappear");
       document.querySelector("body").style.overflow = "auto";
@@ -287,8 +304,10 @@ function _load() {
       setTimeout(() => {
         main.classList.add("darken");
         footer.classList.add("darken");
+        modal.classList.add("darken");
       }, 1500);
       setTimeout(() => {
+        modal.style.display = "none";
         let musicEnd = music.src.substr(-14);
         if (musicEnd !== "deathmusic.mp3") {
           music.src = "./audio/deathmusic.mp3";
@@ -879,7 +898,7 @@ function _load() {
         <div id="subMain">
           <p id="roomDesc">${room.desc}</p>
           <p id="pickup"></p>
-          <div id="sels"></div>
+          <div id="opart"></div>
           <div id="btns"></div>
         </div>
         
@@ -969,7 +988,7 @@ function _load() {
           <button type="submit" id="submit" class="btn">${sub.txt}</button>
           </form>
         `;
-        document.getElementById("sels").innerHTML = selString;
+        document.getElementById("opart").innerHTML = selString;
         document
           .getElementById("submit")
           .addEventListener("click", function (event) {
@@ -1012,7 +1031,7 @@ function _load() {
       if (room.input) {
         let rip = room.input;
         let leng = 0;
-        document.getElementById("sels").innerHTML = `
+        document.getElementById("opart").innerHTML = `
           <div id="inputDiv">
             <span id="iplab"><i>${rip.label} </i></span>
             <input type="text" id="tip" maxlength="${rip.max}">
@@ -1039,6 +1058,175 @@ function _load() {
         });
       }
 
+      //Kotyvasztó
+      if (room.type === "kotyvaszt") {
+        let gemName = [];
+        let gemNum = [];
+        let gemIn = [];
+        for (let i = 0; i < 3; i++) {
+          gemName.push(modi[i]);
+          gemNum.push(modi[i + 3]);
+          gemIn.push(0);
+        }
+        modi = false;
+
+        function kotyInput(e) {
+          let val = Number(e.target.value);
+          val = val > e.target.max ? Number(e.target.max) : val;
+          val = val < e.target.min ? 0 : val;
+          let numera = Number(e.target.id.split("-")[1]);
+          gemIn[numera] = val;
+          updateKotyvaszt(numera + 1);
+        }
+
+        function kotyButton(e) {
+          let id = e.target.id.split("-");
+          let numera = Number(id[2]);
+          if (id[1] == "min") {
+            gemIn[numera] = 0;
+          } else {
+            gemIn[numera] = gemNum[numera];
+          }
+          updateKotyvaszt(numera + 1);
+        }
+
+        function kotySubmit(e) {
+          e.preventDefault();
+          for (let x = 0; x < 3; x++) {
+            gemNum[x] -= gemIn[x];
+          }
+
+          let reciName = "";
+          for (let reci of receptek) {
+            let reciHit = 0;
+            for (let x = 0; x < 3; x++) {
+              if (reci[gemName[x]] && reci[gemName[x]] == gemIn[x]) reciHit++;
+            }
+            if (reciHit === 3) {
+              reciName = reci.name;
+              break;
+            }
+          }
+          if (reciName.length < 1) {
+            let minimalArt = Math.round(
+              (gemIn[0] + gemIn[1] * 3 + gemIn[2] * 9) / 300 +
+                Math.random() / 5 -
+                Math.random() / 3
+            );
+            if (minimalArt > 3) minimalArt = 3;
+            let potrecik = weapons.filter((w) => w.recept);
+            if (minimalArt > 0) {
+              potrecik = potrecik.filter((p) => p.recept == minimalArt);
+              reciName = rnd(potrecik).name;
+            }
+          }
+          let fobjString = `<p class='rightScore'>${room.prodtxt}</p><p>`;
+          if (reciName.length) {
+            char.objs.push("W_" + reciName);
+            let fegyverO = weapons.find((w) => w.name === reciName);
+            let titleString = `${fegyverO.name}&#10;${fegyverO.desc}&#10;Hatás:`;
+            for (let ef of fegyverO.effect) {
+              titleString += `&#10;- ${ef.val}: ${ef.ch}`;
+            }
+            fobjString += `
+                <img class="weapon" title="${titleString}" src="./img/weapons/${fegyverO.pic}">
+              `;
+          } else {
+            let szirszar = [
+              "WC-pumpa",
+              "sötét trutymó",
+              "óriási adag bizmutkása",
+              "nagy büdös semmi",
+              "szakadt alsógatya",
+              "torz vigyorú kertitörpe",
+              "felhúzható, csicsergő fémbölény",
+              "művészi gyurmafigura",
+              "elsózott csokifagyi",
+              "TDK magnókazetta",
+              "elem nélküli számológép",
+              "WINDOWS update csomag",
+            ];
+            fobjString += `Egy ${rnd(szirszar)}. Dühösen eldobod! `;
+          }
+          fobjString += "</p>";
+          for (let x = 0; x < 3; x++) {
+            gemIn[x] = 0;
+          }
+
+          updateKotyvaszt();
+          document.getElementById("gyártmány").innerHTML = fobjString;
+
+          let ossz = 0;
+          for (let x = 0; x < 3; x++) {
+            ossz += gemNum[x];
+          }
+          if (ossz < 1) {
+            message("Elfogytak az ásványaid!");
+            document.getElementById("submit").disabled = true;
+            document.querySelectorAll("input").forEach((i) => {
+              i.disabled = true;
+            });
+            document.querySelectorAll(".Mbtn").forEach((i) => {
+              i.disabled = true;
+            });
+          }
+        }
+
+        function updateKotyvaszt(foka) {
+          let storeStr = "";
+          let cardStr = "";
+          for (let i = 0; i < 3; i++) {
+            storeStr += `${gemName[i]}: ${gemNum[i]}  `;
+            cardStr += `
+              <tr>
+                <td>${gemName[i]}</td>
+                <td><input id="in-${i}" type="number" tabindex="${
+              i + 1
+            }" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
+                <td><input id="ir-${i}" type="range" min="0" max="${
+              gemNum[i]
+            }" value="${gemIn[i]}"></td>
+                <td>
+                  <button class="Mbtn" id="b-min-${i}">Min</button>
+                  <button class="Mbtn" id="b-max-${i}">Max</button>
+                </td>
+              </tr>
+            `;
+          }
+          document.getElementById("opart").innerHTML = `
+          <div class="kotyHead">MARADÉK ÁSVÁNY:</div>
+          <div id="kotyStore">${storeStr}</div>
+          <form id="kotyFeed">
+            <div class="kotyHead">BETÁPLÁLÁS:</div>
+            <table>${cardStr}</table>
+            <button type="submit" id="submit" tabindex="4" class="btn">GYÁRTÁS</button>
+          </form>
+          <div id="gyártmány"></div>
+          <button id="eleg" class="btn">Elég volt ennyi</button>
+        `;
+          document
+            .querySelectorAll("input")
+            .forEach((i) => i.addEventListener("change", kotyInput));
+          document
+            .querySelectorAll(".Mbtn")
+            .forEach((i) => i.addEventListener("click", kotyButton));
+          document
+            .getElementById("submit")
+            .addEventListener("click", kotySubmit);
+          document
+            .getElementById("eleg")
+            .addEventListener("click", function () {
+              char.room = room.cont;
+              newRoom();
+            });
+          let fókusz = foka < 3 ? "in-" + foka : "submit";
+          document.getElementById(fókusz).focus();
+        }
+
+        updateKotyvaszt(0);
+      }
+
+      //Room tovább
       if (room.buttons) {
         let btnString = "";
         let btns = room.buttons;
@@ -1535,6 +1723,680 @@ function _load() {
         }
         break;
 
+      //Dig
+      case "dig":
+        music.volume = 0.6;
+        let sz = room.size;
+        let ctr = Math.floor(sz / 2);
+        let fields = [];
+        for (let x = 0; x < sz; x++) {
+          fields.push([]);
+          for (let y = 0; y < sz; y++) {
+            let r = Math.random();
+            let z = r < 0.5 ? 0 : r < 0.8 ? 1 : 2;
+            fields[x].push([0, z]);
+          }
+        }
+        let rock = room.level + Math.random() * sz * room.level;
+        let dangerRocks = 0;
+        for (let i = 1; i < rock; i++) {
+          let rx = 1 + parseInt(Math.random() * (sz - 2));
+          let ry = 1 + parseInt(Math.random() * (sz - 2));
+          if (
+            (rx === ctr && (ry === ctr + 1 || ry === ctr - 1)) ||
+            (ry === ctr && (rx === ctr + 1 || rx === ctr - 1))
+          ) {
+            dangerRocks++;
+          }
+          if (dangerRocks < 4) {
+            fields[ry][rx][1] = 3;
+          }
+        }
+        fields[ctr][ctr] = [2, 4];
+        let fuel = 100;
+
+        let gems = [0, 0, 0];
+        let aX = false;
+        let aY = false;
+
+        document.getElementById("subMain").innerHTML = `
+          <div id="subHeader">
+            <span id="scoresM"></span>
+            <button id="exitBtn" title="Utálom a sötétet!">Feladom!</button> 
+          </div>
+          <table id="garden"></table>
+        `;
+
+        function updateDScore() {
+          let scoreStr = `<span class="score">${room.gems[0]}: ${Math.round(
+            fuel
+          )}%</span>`;
+          for (let i = 1; i < room.gems.length; i++) {
+            scoreStr += `<span class="score">${room.gems[i]}: ${
+              gems[i - 1]
+            }</span>`;
+          }
+          document.getElementById("scoresM").innerHTML = scoreStr;
+
+          if (fuel < 1) {
+            let nrg = room.gems[0];
+            message(
+              "Kifogyott a" +
+                (/[öüóeuioőúaéáűí]/i.test(nrg.charAt(0)) ? "z " : " ") +
+                nrg +
+                "!"
+            );
+            document.getElementById("exitBtn").disabled = true;
+            document.removeEventListener("keyup", move);
+            changeVal("sup", -5 - Math.round(Math.random() * 5));
+            setTimeout(() => {
+              char.room = room.fail;
+              newRoom();
+            }, 4000);
+          }
+        }
+
+        function drawBoard() {
+          let dirtStr = "<tr>";
+          for (let row = 0; row < sz; row++) {
+            for (let col = 0; col < sz; col++) {
+              let fold = fields[row][col];
+              let picstr = fold[0] > 0 ? "dirt" + fold[1] : "black";
+              dirtStr +=
+                fold[0] == 1
+                  ? `<td class="dirtCard dim" id="mfc-${col}-${row}"}>`
+                  : `<td class="dirtCard" id="mfc-${col}-${row}"}>`;
+              dirtStr += `
+                  <img
+                    class="dirt"
+                    id="mf-${col}-${row}"
+                    src="./img/rooms/${picstr}.jpg"
+                    title="Vajon mi lehet itt?"
+                  />
+                </td>
+              `;
+            }
+            dirtStr += "</tr>";
+          }
+          document.getElementById("garden").innerHTML = dirtStr;
+        }
+
+        updateDScore();
+        drawBoard();
+        message("Válassz ki egy kiindulási mezőt a pálya szélén!");
+
+        function chooseStartD(e) {
+          let dy = Number(e.target.id.split("-")[1]);
+          let dx = Number(e.target.id.split("-")[2]);
+          aY = dx;
+          aX = dy;
+          discover(dx, dy);
+          message("Innentől a nyilakkal haladj tovább!");
+          document.addEventListener("keyup", move);
+        }
+
+        function invalidMove() {
+          message("Próbáld meg a játék szélét eltalálni!");
+        }
+
+        function discover(x, y) {
+          let land = fields[x][y][1] + 1;
+          if (fields[x][y][0] == 1) {
+            sound.src = "./audio/machinemoves.mp3";
+            sound.play();
+            for (let i = 0; i < land; i++) {
+              let anti = 5 - i;
+              gems[i] += Math.round(Math.random() * anti);
+              if (i > 0) gems[i - 1] += Math.round(Math.random() * anti);
+              if (i > 1) gems[i - 2] += Math.round(Math.random() * anti);
+              fuel -= Math.random() * i * 1.5;
+            }
+            if (Math.random() > 0.7 + land / 10 - room.level / 20)
+              randomine(x, y);
+          }
+          fuel -= land * 0.5;
+          fuel = fuel < 1 ? 0 : fuel;
+          updateDScore();
+
+          fields[x][y][0] = 2;
+          if (x > 0 && fields[x - 1][y][0] == 0)
+            fields[x - 1][y][0] = fields[x - 1][y][1] > 2 ? 2 : 1;
+          if (y > 0 && fields[x][y - 1][0] == 0)
+            fields[x][y - 1][0] = fields[x][y - 1][1] > 2 ? 2 : 1;
+          if (x < sz - 1 && fields[x + 1][y][0] == 0)
+            fields[x + 1][y][0] = fields[x + 1][y][1] > 2 ? 2 : 1;
+          if (y < sz - 1 && fields[x][y + 1][0] == 0)
+            fields[x][y + 1][0] = fields[x][y + 1][1] > 2 ? 2 : 1;
+          drawBoard();
+          document.getElementById(`mf-${y}-${x}`).classList.add("activePos");
+
+          if (land == 5) endig();
+        }
+
+        function move(e) {
+          let key = e.key;
+          switch (key) {
+            case "ArrowUp":
+              if (aY == 0 || (aY > 0 && fields[aY - 1][aX][1] == 3)) {
+                message("Erre nem mehetsz!");
+              } else {
+                aY--;
+              }
+              break;
+
+            case "ArrowDown":
+              if (aY == sz - 1 || (aY < sz - 1 && fields[aY + 1][aX][1] == 3)) {
+                message("Erre nem mehetsz!");
+              } else {
+                aY++;
+              }
+              break;
+
+            case "ArrowLeft":
+              if (aX == 0 || (aX > 0 && fields[aY][aX - 1][1] == 3)) {
+                message("Erre nem mehetsz!");
+              } else {
+                aX--;
+              }
+              break;
+
+            case "ArrowRight":
+              if (aX == sz - 1 || (aX < sz - 1 && fields[aY][aX + 1][1] == 3)) {
+                message("Erre nem mehetsz!");
+              } else {
+                aX++;
+              }
+              break;
+
+            default:
+              break;
+          }
+          discover(aY, aX);
+        }
+
+        document.querySelectorAll(".dirt").forEach((i) => {
+          let idA = i.id.split("-");
+          if (
+            idA[1] == 0 ||
+            idA[2] == 0 ||
+            idA[1] == sz - 1 ||
+            idA[2] == sz - 1
+          ) {
+            i.addEventListener("click", chooseStartD);
+          } else i.addEventListener("click", invalidMove);
+        });
+        document.getElementById("exitBtn").addEventListener("click", fleeM);
+
+        function fleeM() {
+          document.getElementById("exitBtn").disabled = true;
+          document.removeEventListener("keyup", move);
+          changeVal("sup", -10 - Math.round(Math.random() * 5));
+          changeVal("hat", -5 - Math.round(Math.random() * 3));
+          changeVal("lel", -3 - Math.round(Math.random()));
+          char.room = room.fail;
+          newRoom();
+        }
+
+        function randomine(xx, yy) {
+          let rect = document
+            .getElementById(`mf-${yy}-${xx}`)
+            .getBoundingClientRect();
+          let x = Math.round((Math.random() * room.level) / 3);
+          if (x < Math.random() * 3) x += Math.round(Math.random());
+
+          switch (x) {
+            case 0:
+              let f = 15 - Math.round(Math.random() * room.level);
+              if (f + fuel > 100) f = 1;
+              00 - fuel;
+              message(
+                `Találtál kb. ${Math.round(f)}% ${
+                  room.gems[0]
+                }ként hasznosítható ásványt.`
+              );
+              fuel += f;
+              updateDScore();
+              break;
+
+            case 1:
+              document.getElementById("exitBtn").disabled = true;
+              document.removeEventListener("keyup", move);
+              modal.style.left = rect.x + "px";
+              modal.style.top = rect.y + "px";
+              modal.style.width = rect.width + "px";
+              modal.style.height = rect.width + "px";
+              modal.style.backgroundColor = "darkslategray";
+              modal.style.padding = "20px";
+              setTimeout(() => {
+                modal.style.transition = "all 1.5s";
+                modal.style.left = "35vw";
+                modal.style.top = "30vh";
+                modal.style.width = "30vw";
+                modal.style.height = "40vh";
+                modal.style.border = "5px double lightblue";
+                modal.style.borderRadius = "30px";
+              }, 1);
+              let filterecept = [];
+              for (let r of receptek) {
+                let keys = Object.keys(r);
+                let test = false;
+                for (let g of room.gems.slice(1)) {
+                  if (keys.includes(g)) test = true;
+                }
+                if (test) filterecept.push(r);
+              }
+              let rd = Math.floor((room.level / 2) * Math.random());
+              rd = rd * Math.round(Math.random());
+              let rp = filterecept.length + rd;
+              let firka = "";
+              if (rd < 1) {
+                let recept = filterecept[Math.floor(Math.random() * rp)];
+                let ingredients = "";
+                for (const [key, value] of Object.entries(recept)) {
+                  if (key != "name") ingredients += `<li>${value} ${key}</li>`;
+                }
+                firka =
+                  "<h5>" + recept.name + "</h5><ul>" + ingredients + "</ul>";
+              } else {
+                switch (rd) {
+                  case 1:
+                    firka =
+                      "<h4>" +
+                      new Date().toLocaleDateString() +
+                      "</h4><div>A mai napon különös rossz előérzetem támadt. Amint elkezdtem ásni, vészjósló hangokat hallottam a méyből. Fel akartam adni háromszor is, de aztán tovább ástam. Ekkor... várjunk, mi ez???!!!</div>";
+                    break;
+
+                  case 2:
+                    firka = "<h3>Jelszó: 85bz4ruiewghwnoiuhjro7önxhek</h3>";
+                    break;
+
+                  case 3:
+                    firka = `
+                      <h4>Jegyezd meg!!!</h4>
+                      <ol>
+                        <li>Ha van múlt idejű időhatározó, nem lehet Present Perfect!</li>
+                        <li>JavaScriptben zárojelbe kell tenni a feltételt!</li>
+                        <li>Isten a rosszból is tud jót előhozni!</li>
+                      </ol>
+                    `;
+                    break;
+
+                  default:
+                    firka = "<h3>Hülye, aki elolvassa!</h3>";
+                    break;
+                }
+              }
+
+              function closeFecni() {
+                modal.innerHTML = "";
+                modal.style.left = rect.x + "px";
+                modal.style.top = rect.y + "px";
+                modal.style.width = rect.width + "px";
+                modal.style.height = rect.width + "px";
+                modal.style.height = rect.width + "px";
+                modal.style.padding = "0";
+                modal.style.margin = "0";
+                document.removeEventListener("keyup", closeFecni);
+
+                setTimeout(() => {
+                  modal.style.backgroundColor = "transparent";
+                  modal.style.border = "none";
+                  modal.style.left = "0";
+                  modal.style.top = "0";
+                  modal.style.width = "0";
+                  modal.style.height = "0";
+                  modal.style.transition = "none";
+                  document.getElementById("exitBtn").disabled = false;
+                  document.addEventListener("keyup", move);
+                }, 1501);
+              }
+
+              setTimeout(() => {
+                modal.innerHTML = `
+                  <p>Ásás közben találsz egy papírfecnit. Megnézed, mi van rajta. Nem rakod el, mert eléggé koszos, de  ha fontosnak tartod, jegyezd le valahova.</p>
+                  <div id="fecni">${firka}</div>
+                  <button id="OKbtn">Nagyszerű!</button>
+                `;
+                document
+                  .getElementById("OKbtn")
+                  .addEventListener("click", closeFecni);
+                document.addEventListener("keyup", closeFecni);
+              }, 1502);
+
+              break;
+
+            case 2:
+              message(`Sérülés miatt elvesztettél néhány ásványt.`);
+              gems[0] -= Math.round(Math.random() * room.level);
+              gems[0] = gems[0] < 0 ? 0 : gems[0];
+              gems[1] -= Math.round((Math.random() * room.level) / 2);
+              gems[1] = gems[1] < 0 ? 0 : gems[1];
+              gems[2] -= Math.round((Math.random() * room.level) / 4);
+              gems[2] = gems[2] < 0 ? 0 : gems[2];
+              updateDScore();
+              break;
+
+            //Hangman
+            case 3:
+              document.getElementById("exitBtn").disabled = true;
+              document.removeEventListener("keyup", move);
+              modal.style.left = rect.x + "px";
+              modal.style.top = rect.y + "px";
+              modal.style.width = rect.width + "px";
+              modal.style.height = rect.width + "px";
+              modal.style.backgroundColor = "darkslategray";
+              modal.style.padding = "30px";
+              setTimeout(() => {
+                modal.style.transition = "all 1.5s";
+                modal.style.left = "20vw";
+                modal.style.top = "10vh";
+                modal.style.width = "60vw";
+                modal.style.height = "80vh";
+                modal.style.border = "5px double lightblue";
+                modal.style.borderRadius = "40px";
+              }, 1);
+              let allDesc = "";
+              for (let d of rooms) {
+                allDesc += d.desc + " ";
+              }
+              let szotar = [
+                ...new Set(
+                  allDesc
+                    .replace(/(<([^>]+)>)/gi, "")
+                    .replace(/\\n/g, "")
+                    .replace(/ +(?= )/g, "")
+                    .replace(/[\\.,\?\/#!$%\^&\*;:{}=\-_`~()<>]/g, "")
+                    .replace(/\s{2,}/g, " ")
+                    .toUpperCase()
+                    .split(" ")
+                    .filter((word) => word.length > 3 && word.length < 11)
+                ),
+              ];
+              let szo = rnd(szotar);
+              let szoArr = szo.split("");
+              let joBetuk = [];
+              let joBetukStr = "";
+              let rosszBetuk = [];
+              console.log("Helyes: ", szoArr, joBetuk, rosszBetuk);
+              let helps = 0;
+
+              function digHelp() {
+                document.getElementById("helpBtn").disabled = true;
+                if (helps > 12 - room.level + Math.random() * 7) {
+                  let r = Math.random();
+                  let m = "";
+                  if (r < 0.25) m = "- Kifogytam az ötletből, bocs.";
+                  else if (r < 0.5)
+                    m = "- Eleget segítettem, most már erőltesd meg magad te!";
+                  else if (r < 0.75) m = "- Rám jött a szarás, hagyjál!";
+                  else
+                    m =
+                      "- Engem már nem érdekel ez az egész, ha megdöglünk, hát megdöglünk!";
+                  helps += 2 + r * 2;
+                  message(m);
+                  return;
+                }
+                if (char.ero < 10 + Math.random() * 10) {
+                  message("- Leápolom a sebeidet!");
+                  changeVal("ero", 5 + Math.round(Math.random() * 7));
+                  helps++;
+                  return;
+                }
+                if (
+                  szo.length - joBetukStr.length < 3 &&
+                  (Math.random() < char.lel / 100 || getObj("S_Hit"))
+                ) {
+                  message(
+                    `- Még ezt sem tudod? <span id="hilit">${szo}</span> !`
+                  );
+                  helps = 20;
+                  return;
+                }
+                if (
+                  rosszBetuk.length > 2 + Math.random() * 5 ||
+                  joBetuk.length === 0
+                ) {
+                  let gyakorik =
+                    "aaaaaaaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeellllllllllllllllllrrrrrrrrrrrrrrrrrttttttttttttttttkkkkkkkkkkkkkkkiiiiiiiiiiiiiiiááááááááááááááooooooooooooossssssssssssnnnnnnnnnnnéééééééééémmmmmmmmmzzzzzzzzdddddddbbbbbbbgggggggóóóóóóppppppvvvvvvuuuuuuffffffhhhhhööööőőőjjjyyyccíínnúúgcüű".toUpperCase();
+                  let betSug = "";
+                  let sikerult = false;
+                  for (let index = 0; index < 3; index++) {
+                    betSug = gyakorik.charAt(
+                      Math.floor(Math.random() * gyakorik.length)
+                    );
+                    if (
+                      joBetuk.indexOf(betSug) == -1 &&
+                      rosszBetuk.indexOf(betSug) == -1
+                    ) {
+                      sikerult = true;
+                      break;
+                    }
+                  }
+                  if (!sikerult) {
+                    let maradek = szoArr.filter(
+                      (b) => joBetuk.indexOf(b) == -1
+                    );
+                    betSug = rnd(maradek);
+                  }
+                  message(
+                    `- Próbálj meg egy <span id="hilit">${betSug}</span> betűt!`
+                  );
+                  helps++;
+                  return;
+                }
+                if (
+                  joBetuk.length > 0 &&
+                  joBetuk.length < 5 &&
+                  rosszBetuk.length > 0
+                ) {
+                  let joSug1 = rnd(joBetuk);
+                  let joSug2 = rnd(joBetuk);
+                  let rosszSug1 = rnd(rosszBetuk);
+                  let rosszSug2 = rnd(rosszBetuk);
+                  let xr = Math.floor(Math.random() * rosszBetuk.length);
+                  let szoSugArr = szotar.filter(
+                    (s) =>
+                      s.length === szo.length &&
+                      s.includes(joSug1) &&
+                      s.includes(joSug2) &&
+                      !s.includes(rosszSug1) &&
+                      !s.includes(rosszSug2) &&
+                      (joBetuk.indexOf(szoArr[0]) > -1
+                        ? s.charAt(0) === szoArr[0]
+                        : 2 > 1) &&
+                      (joBetuk.indexOf(szoArr[1]) > -1
+                        ? s.charAt(1) === szoArr[1]
+                        : 2 > 1) &&
+                      (joBetuk.indexOf(szoArr[szoArr.length - 1]) > -1
+                        ? s.charAt(s.length - 1) === szoArr[szoArr.length - 1]
+                        : 2 > 1) &&
+                      (joBetuk.indexOf(szoArr[xr]) > -1
+                        ? s.charAt(xr) === szoArr[xr]
+                        : 2 > 1)
+                  );
+                  let szoSug = rnd(szoSugArr);
+                  message(
+                    `- Nem tudom, talán <span id="hilit">${szoSug}</span>.`
+                  );
+                  helps += 2;
+                  return;
+                }
+                message("- Passz! Gondolkozz te, fog az menni!");
+              }
+
+              function szadi(mes) {
+                message(mes);
+                changeVal("ero", -2 - Math.floor(Math.random() * 6));
+                sound.src = "./audio/zsibi.mp3";
+                sound.play();
+                setTimeout(() => {
+                  sound.src =
+                    "./audio/vihog" +
+                    (1 + Math.floor(Math.random() * 4)) +
+                    ".mp3";
+                  sound.play();
+                }, 1100);
+              }
+
+              setTimeout(() => {
+                modal.innerHTML = `
+                  <img id="modalPic" src="./img/rooms/banya.jpg"></>
+                  <p>Megjelenik előtted egy rusnya bánya-banya, és körülveszi a mezőt egy áthatolhatatlan erőtérrel. Reszelős hangon beszélni kezd:</p>
+                  <p>- Hehehehe! Ha tovább akarsz menni, ahhoz ki kell találnod, hogy milyen szó van éppen a fejemben. De lehet ragozott szó is, biz' ám! Bármennyi betűt kérdezhetsz, de ha rossz betűt mondasz, megrázlak árammal, ha pedig rossz szót tippelsz, meghalsz!</p>
+                  <div id="joLetters" class="modalLetters"></div>
+                  <div id="vonalak" class="modalLetters"></div>
+                  <div id="rosszLetters" class="modalLetters"></div>
+                  <div id="modalConsole">
+                    <span>Betű tipped?</span>
+                    <input id="Ibetű" type="text" autofocus maxlength="1">
+                    <br/>
+                    <span>Szó tipped?</span>
+                    <input id="Iszó" type="text" maxlength="${szo.length}">
+                    <br/>
+                  </div>
+                `;
+                if (room.helper) {
+                  document.getElementById("modalConsole").innerHTML += `
+                  <button id="helpBtn">Segíts, ${room.helper}!</button>
+                  `;
+                  document
+                    .getElementById("helpBtn")
+                    .addEventListener("click", digHelp);
+                }
+                let megfejtes = document.getElementById("joLetters");
+                let szarok = document.getElementById("rosszLetters");
+                for (let s = 0; s < szoArr.length; s++) {
+                  megfejtes.innerHTML += `<span class="betu" id="joBet-${s}">&nbsp;</span>`;
+                  document.getElementById(
+                    "vonalak"
+                  ).innerHTML += `<span class="betu">_</span>`;
+                }
+
+                function modalClose() {
+                  sound.pause();
+                  sound.src = "./audio/magic2.mp3";
+                  sound.play();
+                  message("Igen, erre gondoltam, hihetetlen!");
+                  changeVal("ero", 1 + Math.round(Math.random() * 3));
+                  changeVal("esz", 1 + Math.round(Math.random() * 2));
+                  changeVal("hat", Math.round(Math.random()));
+                  document.getElementById("helpBtn").disabled = true;
+                  document.querySelectorAll("input").forEach((ip) => {
+                    ip.disabled = true;
+                  });
+                  setTimeout(() => {
+                    modal.innerHTML = "";
+                    modal.style.left = rect.x + "px";
+                    modal.style.top = rect.y + "px";
+                    modal.style.width = rect.width + "px";
+                    modal.style.height = rect.width + "px";
+                    modal.style.height = rect.width + "px";
+                    modal.style.padding = "0";
+                    modal.style.margin = "0";
+                    sound.src = "./audio/surprised.mp3";
+                    sound.play();
+                  }, 2500);
+                  setTimeout(() => {
+                    modal.style.backgroundColor = "transparent";
+                    modal.style.border = "none";
+                    modal.style.left = "0";
+                    modal.style.top = "0";
+                    modal.style.width = "0";
+                    modal.style.height = "0";
+                    modal.style.transition = "none";
+                    document.getElementById("exitBtn").disabled = false;
+                    document.addEventListener("keyup", move);
+                  }, 4001);
+                }
+
+                document
+                  .getElementById("Ibetű")
+                  .addEventListener("keyup", function (event) {
+                    document.getElementById("helpBtn").disabled = false;
+                    let ibet = event.target.value.toUpperCase();
+                    if (
+                      joBetuk.indexOf(ibet) > -1 ||
+                      rosszBetuk.indexOf(ibet) > -1
+                    ) {
+                      szadi("Ezt a betűt már kérdezted!");
+                    } else {
+                      let talalt = false;
+                      for (let b = 0; b < szoArr.length; b++) {
+                        if (szoArr[b] === ibet) {
+                          talalt = true;
+                          joBetukStr += ibet;
+                          if (joBetuk.indexOf(ibet) == -1) joBetuk.push(ibet);
+                          document.getElementById(`joBet-${b}`).innerHTML =
+                            ibet;
+                          if (joBetukStr.length === szoArr.length) modalClose();
+                          changeVal("esz", 1);
+                        }
+                      }
+                      if (talalt) {
+                        sound.src = "./audio/magic.mp3";
+                        sound.play();
+                      } else {
+                        rosszBetuk.push(ibet);
+                        szarok.innerHTML += `<span class="betu">${ibet}</span>`;
+                        szadi("Ilyen betű nincs benne!");
+                      }
+                    }
+                    document.getElementById("Ibetű").value = "";
+                  });
+
+                document
+                  .getElementById("Iszó")
+                  .addEventListener("change", function (event) {
+                    if (event.target.value.toUpperCase() === szo) {
+                      for (let b = 0; b < szoArr.length; b++) {
+                        document.getElementById(`joBet-${b}`).innerHTML =
+                          szoArr[b];
+                      }
+                      changeVal(
+                        "esz",
+                        5 + Math.round((Math.random() * szo.length) / 1.5)
+                      );
+                      changeVal(
+                        "hat",
+                        3 + Math.round((Math.random() * szo.length) / 1.7)
+                      );
+                      modalClose();
+                    } else {
+                      message("Nem nyert!");
+                      sound.src = "./audio/villamcsapas.mp3";
+                      sound.play();
+                      setTimeout(() => {
+                        sound.src =
+                          "./audio/vihog" +
+                          (1 + Math.floor(Math.random() * 4)) +
+                          ".mp3";
+                        sound.play();
+                        changeVal("ero", -100);
+                      }, 2000);
+                    }
+                  });
+              }, 1502);
+              break;
+
+            default:
+              break;
+          }
+        }
+
+        function endig() {
+          message("Megtaláltad a célt!");
+          document.getElementById("exitBtn").disabled = true;
+          document.removeEventListener("keyup", move);
+          setTimeout(() => {
+            char.room = room.pass;
+            modi = room.gems.slice(1).concat(gems);
+            console.log("MODI: ", modi);
+            newRoom();
+          }, 4000);
+        }
+
+        break;
+
       //Fight
       case "fight":
         music.volume = 0.7;
@@ -1828,7 +2690,7 @@ function _load() {
           if (mivan > -1) {
             sound.src = "./audio/" + fegyObj[mivan].sound + ".mp3";
           } else {
-            let x = Math.floor(1 + Math.random() * 20);
+            let x = Math.floor(1 + Math.random() * 21);
             sound.src = "./audio/hit" + x + ".mp3";
           }
           sound.play();

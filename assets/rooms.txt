@@ -131,23 +131,23 @@
 131 - YTrial: ostrom (136) vagy utca (137)
 132 - Újra Fricinél (alagútásás)
 133 - Újra Fricinél (mesterlövész puska)
-134 - A Városháza megtámadása a föld alól (új pálya)
+134 - A Városháza alatt (új pálya)
 135 - Oshinokoval (és a Gárdával?) a Branyiszkó-téren
 136 - A városháza megostromlása a Gárdával (Oshinoko lehet vagy nem)
 137 - A Gárdával a Branyiszkó-téren (Oshinoko nincs, de fegyverek vannak)
 138 - XTrial (com) - Kidumálás a házmesterrel (140-141)
 139 - Fight a házmesterrel
-140 - A házmester visszamegy
-141 - A házmester nem tágít
-142 - A pártprogram meghódítja a médiát (Xchange kampány)
+140 - A házmester visszamegy (ha nem => 139)
+141 - A házmester nem tágít100
+142 - A pártprogram meghódítja a médiát (Xchange kampány. A lentiek => 141)
 143 - Beszédeket mondasz - Xtrial: recruit (144-145)
 144 - Sikeres beszédeket tartasz (+sup)
 145 - Boti beszédei hatásosabbak (-sup)
 146 - Büdös Berci elkapása (pursuit)
 147 - Harc Büdös Bercivel (fight)
-148 - Jótékony kincsásás (mine - 149-150)
-149 - Sikeres kincsásás
-150 - Sikertelen kincsásás
+148 - Jótékony kincsásás (dig)
+149 - A kincsek átadása (digrecruit)
+150 - Elveszett tárgyak keresése (mine, outcome: 198-200)
 151 - Elveszett tárgyak keresése (dungeon)
 152 - Elveszett tárgyak keresése (dungeon-fight)
 153 - XTrial (ima - 154-155)
@@ -192,6 +192,14 @@
 192 - Bogi megkedvel téged
 193 - Jó válasz Boginak
 194 - Rossz válasz Boginak
+195 - A földalatti ásás vége
+196 - Nem sikerült a föld alól bejutni
+197 - A server szobában
+198 - Jótékony kampányakció pass
+199 - Jótékony kampányakció med
+200 - Jótékony kampányakció fail
+201 - Újabb kampány help kör?
+
 
 
 

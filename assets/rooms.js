@@ -3603,11 +3603,15 @@ window.rooms = [
         new: 146,
       },
       {
-        txt: "Kincseket ásol a népnek",
+        txt: "Kincseket bányászol a népnek",
         new: 148,
       },
       {
         txt: "Megkeresed az elveszett tárgyaikat",
+        new: 150,
+      },
+      {
+        txt: "Elkíséred a veszélyes helyen élőket",
         new: 151,
       },
       {
@@ -4267,6 +4271,32 @@ window.rooms = [
       },
     ],
   },
+  {
+    num: 134,
+    title: "A Városháza alatt",
+    type: "dig",
+    size: 17,
+    level: 7,
+    helper: "Frici",
+    gems: ["Üzemanyag", "Kőszén", "Érc", "Gyémánt"],
+    music: "underground",
+    pic: "cave.gif",
+    desc: `
+      <p>
+        Elindultok és Frici elkezd magyarázni:
+      </p>
+      <p>
+        - Kiválaszthatod, hogy hol ássuk be magunkat, de jó messziről kell indulnunk. Pontosan én sem tudom, milyen talajban fogunk haladni, csak a közvetlen mellettünk lévőket látjuk és nyilván csak erre haladhatunk. Minél világosabb földben haladunk, annál kevesebb energiába kerül az ásás, de a sötétebb földek több és értékesebb ásványi anyagot rejtenek, amikből Betyár folyamatosan gyűjti a hasznosíthatókat az ásás közben, a végén pedig gyárthat belőle hasznos tárgyakat. Egyedül a kék sziklás talajjal nem tud megbirkózni, azt ki kell kerülnünk. Figyeld folyamatosan Betyár üzemanyag-szintjét, mert ha még van energiája, akkor mászklálhatunk ide-oda gyűjtögetni ásványokat, de a végén mindenképpen meg kell érkeznünk középre, mert ott tudjuk a raktárba felásni magunkat. Ha hamarabb elfogy az üzemanyagunk, akkor cseszhetjük... Készen állsz?
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Igen, irány a föld belseje!",
+      },
+    ],
+    pass: 195,
+    fail: 196,
+  },
 
   //*
 
@@ -4522,7 +4552,7 @@ window.rooms = [
         Miután elmentek, bemászol a kutyaólba a puskával és csendesen vársz. Nem kell sokat várni. Nemsokára kaparászásra leszel figyelmes a kerítés aljában. Aztán meglátod a ravasz - rókát! Ő tehát a tolvaj!
       </p>
       <p><i>
-        A harcban mindenki a sebessége ritmusában támad a másikra, de nekedkülön rá kell nyomni a mindig máshol megjelenő Támadás gombra! A sebzés a támadó Támadás értékétől és a védő Védelem értékétől függ (nálad ezek az értékek az általános jellemzőidből vannak átszámítva). Túl nagy különbség esetén kritikus sebzést is be lehet vinni, ami csökkenti az ellenfél képességeit vagy a te esetedben elveszítheted az éppen használt fegyvert. Csak egy fegyvert használhatsz egyszerre, és erre külön rá kell kattintani. Ha nem használsz, akkor puszta kézzel küzdesz (de nem is veszítheted el a fegyveredet). Fegyvert lehet lerakni vagy másra is váltani, de egy harc alatt csak korlátozott mértékben. Ha nem akarsz tovább harcolni, fel is adhatod és elmenekülhetsz, de akkor az ellenfél búcsúzóul még ejt rajtad egy nagyobb sebzést. Sok sikert!
+        A harcban mindenki a sebessége ritmusában támad a másikra, de  neked külön rá kell nyomni a mindig máshol megjelenő Támadás gombra! A sebzés a támadó Támadás értékétől és a védő Védelem értékétől függ (nálad ezek az értékek az általános jellemzőidből vannak átszámítva). Túl nagy különbség esetén kritikus sebzést is be lehet vinni, ami csökkenti az ellenfél képességeit vagy a te esetedben elveszítheted az éppen használt fegyvert. Csak egy fegyvert használhatsz egyszerre, és erre külön rá kell kattintani. Ha nem használsz, akkor puszta kézzel küzdesz (de nem is veszítheted el a fegyveredet). Fegyvert lehet lerakni vagy másra is váltani, de egy harc alatt csak korlátozott mértékben. Ha nem akarsz tovább harcolni, fel is adhatod és elmenekülhetsz, de akkor az ellenfél búcsúzóul még ejt rajtad egy nagyobb sebzést. Sok sikert!
       </i></p>
     `,
     obj: ["W_VADÁSZPUSKA"],
@@ -4875,6 +4905,22 @@ window.rooms = [
     ],
     pass: 176,
     fail: 180,
+  },
+
+  {
+    num: 195,
+    title: "Fegyvergyártás betyárral",
+    type: "kotyvaszt",
+    music: "epicsearch",
+    pic: "betyarküche.JPG",
+    prodtxt:
+      "Batyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
+    desc: `
+      <p>
+       - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. De egy klicsit nehéz belegyömöszölni Betyárba a dolgokat, inkább kattints kétszer a GYÁRTÁS gombra, ha először nem csinálna semmit!
+      </p>
+    `,
+    cont: 197,
   },
 ];
 

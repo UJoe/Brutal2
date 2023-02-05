@@ -40,6 +40,7 @@ window.weapons = [
     desc: "Ha kell egy kis erő.",
     pic: "kisero.JPG",
     sound: "swallow",
+    recept: 2,
     effect: [
       {
         val: "erő",
@@ -148,6 +149,7 @@ window.weapons = [
     desc: "Tökéletes fegyver - amíg nincs más",
     pic: "bökő.JPG",
     sound: "stabcry",
+    recept: 2,
     effect: [
       {
         val: "támadás",
@@ -164,6 +166,7 @@ window.weapons = [
     desc: "Orvgyilkosok csendes kése",
     pic: "gyilok.jpg",
     sound: "suhint",
+    recept: 3,
     effect: [
       {
         val: "támadás",
@@ -180,6 +183,7 @@ window.weapons = [
     desc: "Levág minden kolbászt",
     pic: "kés.JPG",
     sound: "stabcry",
+    recept: 1,
     effect: [
       {
         val: "támadás",
@@ -192,6 +196,7 @@ window.weapons = [
     desc: "Mindenki ájuldozik tőle",
     pic: "bűz.JPG",
     sound: "undor",
+    recept: 1,
     effect: [
       {
         val: "támadás",
@@ -260,6 +265,7 @@ window.weapons = [
     desc: "Pattogsz tőle, mint a gumilabda.",
     pic: "gumibogyó.gif",
     sound: "bounce",
+    recept: 3,
     effect: [
       {
         val: "sebesség",
@@ -300,6 +306,22 @@ window.weapons = [
     ],
   },
   {
+    name: "KÉTKEZES KARD",
+    desc: "Az old-school hősök nélkülözhetetlen fegyvere.",
+    pic: "kkkard.jpg",
+    sound: "suhint",
+    effect: [
+      {
+        val: "támadás",
+        ch: "+33",
+      },
+      {
+        val: "védelem",
+        ch: "+10",
+      },
+    ],
+  },
+  {
     name: "GÉPFEGYVER",
     desc: "Szitává lő mindenkit",
     pic: "gépfegyver.jpg",
@@ -316,6 +338,26 @@ window.weapons = [
       {
         val: "ellenség védelem",
         ch: "-45",
+      },
+    ],
+  },
+  {
+    name: "LÉZERFEGYVER",
+    desc: "Minden létforma ellen hatásos",
+    pic: "lasergun.jpg",
+    sound: "lasergun",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "+5",
+      },
+      {
+        val: "támadás",
+        ch: "+70",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-50",
       },
     ],
   },
@@ -364,6 +406,7 @@ window.weapons = [
     desc: "Az.",
     pic: "axe.jpg",
     sound: "suhint-nagy",
+    recept: 3,
     effect: [
       {
         val: "sebesség",
@@ -420,6 +463,7 @@ window.weapons = [
     desc: "Piromániás hülyegyerekek játéka.",
     pic: "petárda.jpg",
     sound: "petárda",
+    recept: 1,
     effect: [
       {
         val: "sebesség",
@@ -472,6 +516,7 @@ window.weapons = [
     desc: "Lassabban mozogsz benne, de szilárd védelmet ad.",
     pic: "armor.jpg",
     sound: "pancel",
+    recept: 2,
     effect: [
       {
         val: "védelem",
@@ -526,5 +571,95 @@ window.weapons = [
         ch: "-50",
       },
     ],
+  },
+  {
+    name: "PROTONÁGYÚ",
+    desc: "Sugárban mindent letarol.",
+    pic: "proton.JPG",
+    sound: "protonbeam",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-3",
+      },
+      {
+        val: "támadás",
+        ch: "+100",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-100",
+      },
+    ],
+  },
+  {
+    name: "ROBI",
+    desc: "Egy leselejtezett harci robot.",
+    pic: "robi.jpg",
+    sound: "robitalk",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "+5",
+      },
+      {
+        val: "támadás",
+        ch: "+50",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "+50",
+      },
+      {
+        val: "ellenség sebesség",
+        ch: "-5",
+      },
+    ],
+  },
+];
+
+//receptek
+window.receptek = [
+  {
+    name: "VARÁZSPOR",
+    Kőszén: 50,
+    Érc: 20,
+    Gyémánt: 3,
+  },
+  {
+    name: "KÉZIGRÁNÁT",
+    Kőszén: 30,
+    Érc: 5,
+    Gyémánt: 1,
+  },
+  {
+    name: "PÁNCÉLÖKÖL",
+    Kőszén: 50,
+    Érc: 50,
+    Gyémánt: 10,
+  },
+  {
+    name: "KÉTKEZES KARD",
+    Kőszén: 5,
+    Érc: 10,
+    Gyémánt: 2,
+  },
+  {
+    name: "PROTONÁGYÚ",
+    Kőszén: 120,
+    Érc: 60,
+    Gyémánt: 24,
+  },
+  {
+    name: "LÉZERFEGYVER",
+    Kőszén: 80,
+    Érc: 40,
+    Gyémánt: 8,
+  },
+  {
+    name: "ROBI",
+    Kőszén: 3,
+    Érc: 30,
+    Gyémánt: 3,
   },
 ];

@@ -13,6 +13,93 @@ body {
   box-sizing: border-box;
 }
 
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+#modalPic {
+  display: block;
+  margin: 10px auto;
+  border: outset 5px turquoise;
+  border-radius: 40px;
+  height: 15vh;
+}
+
+.modalLetters {
+  font-family:'Courier New', Courier, monospace;
+  display: flex;
+  width: 50%;
+  font-size: 2rem;
+  justify-content: space-between;
+  gap: 2rem;
+  color: black;
+  font-weight: bold;
+}
+
+#joLetters {
+  margin: 20px auto 0;
+  color: aqua;
+}
+
+#vonalak {
+  margin: -20px auto 10px;
+}
+
+#rosszLetters {
+  justify-content: flex-start;
+  text-decoration: line-through;
+  margin: 25px auto 15px;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  gap: 1rem;
+}
+
+#modalConsole {
+  color:  lightskyblue; 
+}
+
+#Ibetű {
+  width: 1rem;
+  margin: 20px
+}
+
+#Iszó {
+  width: 15rem;
+  margin: 20px
+}
+
+
+#helpBtn {
+  padding: 4px 20px;
+  height: 40px;
+  width: fit-content;
+  background-color: turquoise;
+  color: black;
+  outline: none;
+  border: solid 2px darkblue;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.6s;
+}
+
+#helpBtn:hover {
+  padding: 0;
+  font-size: 1.2rem;
+  color: red;
+  border: double 6px red;
+}
+
+#helpBtn:disabled {
+  background-color: lightgray;
+  color: darkgray;
+}
+
 p, #main {
   color:greenyellow;
 }
@@ -74,7 +161,7 @@ h1 {
 #img-x {
   height: 80px;
   border-radius: 5px;
-  margin: 25px;;
+  margin: 25px;
   transition: all .1s;
   filter: invert(0) brightness(.9);;
 }
@@ -194,6 +281,11 @@ ul {
   margin: 0 auto;
 }
 
+#hilit {
+  color: red;
+  background-color: lime;
+}
+
 .pear {
   transition: none;
   filter: opacity(0) blur(5px);
@@ -256,19 +348,6 @@ h2 {
   max-width: 240px;
 }
 
-select {
-  transform: scale(1.2);
-  margin: 30px;
-  padding: 5px;
-  color: turquoise;
-  background-color: darkslategrey;
-  border: solid 1px lime;
-  border-radius: 10px;
-  width: fit-content;
-  min-width: 120px;
-  max-width: 30vw;
-}
-
 .btn:hover {
   font-size: 1rem;
   transform: scale(1.5);
@@ -292,6 +371,19 @@ select {
 
 .btn:focus {
   outline: none;
+}
+
+select {
+  transform: scale(1.2);
+  margin: 30px;
+  padding: 5px;
+  color: turquoise;
+  background-color: darkslategrey;
+  border: solid 1px lime;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 120px;
+  max-width: 30vw;
 }
 
 /* input */
@@ -378,7 +470,7 @@ select {
   border-radius: 5px;
 }
 
-/* mine + fight*/
+/* mine + fight + dig*/
 #subHeader {
   padding: 10px;
   height: fit-content;
@@ -419,19 +511,53 @@ select {
 }
 
 .minefield {
-  width: 52px;
-  height: 52px;
+  width: 53px;
+  height: 53px;
   margin: auto;
+  padding: 0;
   border-radius: 5px;
 }
 
 .minefieldCard {
+  display: inline-block;
   width: 54px;
   height: 54px;
   padding: 1px;
   border: solid 1px white;
   border-radius: 5px;
   background-color: green;
+}
+
+.dirtCard {
+  display: inline-block;
+  width:  60px;
+  height: 60px;
+  padding: 0;
+  border: solid 1px darkslategray;
+  background-color: black;
+}
+
+.dirt {
+  width: 59px;
+  height: 59px;
+  margin: 0;
+  padding: 0;
+}
+
+.activePos {
+  border: 1s solid blue;
+  border-radius: 0;
+  animation: blinkborder 0.8s linear infinite alternate ;
+}
+
+@keyframes blinkborder {
+  0% {width: 57px; height: 57px; border: 1px solid blue; border-radius: 0;}
+  50% {width: 53px; height: 53px; border: 3px solid blueviolet; border-radius: 25%;}
+  100% {width: 49px; height: 49px; border: 5px solid red; border-radius: 50%;}
+}
+
+.dim {
+  filter: brightness(.5) blur(5px);
 }
 
 .near {
@@ -550,4 +676,82 @@ select {
   filter: opacity(.5) brightness(0.5);
 }
 
+#fecni {
+  width: fit-content;
+  max-width: 80%;
+  height: fit-content;
+  margin: 20px auto;
+  padding: 15px 35px 25px;
+  border: solid black 1px;
+  border-radius: 25px;
+  color: blue !important;
+  font-size: 1rem;
+  font-family: 'Lucida Handwriting';
+  background-image: linear-gradient(to right, black, lightgrey, darkgray, gray, black);
+}
+
+#OKbtn {
+  display: block;
+  font-size: 1rem;
+  margin: 25px;
+  float: right;
+  padding: 10px;
+  color: violet;
+  background-color: darkblue;
+  border: solid 1px turquoise;
+  border-radius: 10px;
+  transition: all 0.4s;
+  width: 20%;
+}
+
+#OKbtn:hover {
+  transform: scale(1.1);
+  border: outset 5px turquoise;
+}
+
+.kotyHead {
+  padding: 10px;
+  height: fit-content;
+  width: 30vw;
+  margin: 30px 10px;
+  background-color: purple;
+  color: yellow;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+#kotyStore {
+  padding: 10px;
+  height: fit-content;
+  width: 30vw;
+  background-color: transparent;
+  color: lime;
+}
+
+#kotyFeed {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#kotyFeed tr {
+  width: 25vw;
+  height: 20px;
+  margin: 5px;
+}
+
+.Mbtn {
+  background-color: blue;
+  color: red;
+  margin: 10px;
+  transform: scale(1.3);
+  border-radius: 5px;
+}
+
+.Mbtn:disabled {
+  background-color: grey;
+  color: darkslategrey;
+}
 
