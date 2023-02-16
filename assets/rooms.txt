@@ -132,7 +132,7 @@
 132 - Újra Fricinél (alagútásás)
 133 - Újra Fricinél (mesterlövész puska)
 134 - A Városháza alatt (új pálya)
-135 - Oshinokoval (és a Gárdával?) a Branyiszkó-téren
+135 - XTrial: nincs fegyver és nem üldöz Boti: (=> bejutsz a tömegbe 186, nem: elkapnak: 185)
 136 - A városháza megostromlása a Gárdával (Oshinoko lehet vagy nem)
 137 - A Gárdával a Branyiszkó-téren (Oshinoko nincs, de fegyverek vannak)
 138 - XTrial (com) - Kidumálás a házmesterrel (140-141)
@@ -182,10 +182,10 @@
 182 - Bandát szervezel segítés után (D_puccs, beszéd => 41 (nincs Oshinoko))
 183 - Csongi dungeon fight
 184 - Yendela dungeon fight
-185 - Új Check: fegyverek vagy Boti üldöz: bejutsz: 186, ha elkapnak: van-e Oshinoko vagy Gárda?
-186 - A Branyiszkó-téri orvgyilkosság (ügyesség-próba jön)
-187 - Elkapnak Oshinokoval (Szenyamuki a ködben)
-188 - Elkapnak a Gárdával: harc / menekülés
+185 - Elkapnak a téren: modi + "Körülvesz három őr." Van-e Oshinoko vagy Gárda? (187, 188)
+186 - Bejutsz a tömegbe (modi: 135, aztán ügyesség-próba jön)
+187 - Elkapnak Oshinokoval (Szenyamuki a ködben, közben lehet Géárda vagy nem)
+188 - Elkapnak Oshinoko nélkül a Gárdával: harc / menekülés
 189 - Tanácskozás Szenyamukival (J_Szenyamuki)
 190 - Szenyamuki legyőzése (nem hal meg, hanem mellétek áll: 189)
 191 - Vereség Szenyamukitól

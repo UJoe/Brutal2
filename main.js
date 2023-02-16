@@ -263,7 +263,7 @@ function _load() {
       m.classList.remove("appear");
       m.classList.add("disappear");
       document.querySelector("body").style.overflow = "auto";
-    }, text.length * 50 + 2000);
+    }, text.length * 55 + 1200);
   }
 
   function saveGame() {
@@ -665,31 +665,30 @@ function _load() {
     //Xtrial
     function XtrialRoom() {
       document.getElementById("saveBtn").disabled = true;
+      let basemes = "";
+      let outcome = "";
       let result = "";
       let crease = 0;
+      let changes = [];
+
       switch (room.value) {
         case "com":
+          basemes = "A beszéded ";
           if (45 + Math.random() * 120 < char.esz + char.hat + char.sup / 3) {
-            char.room = room.pass;
+            outcome = "pass";
             crease = 1;
-            music.volume = 0.75;
             result = "lenyűgöző volt!";
             if (room.modi) modi = room.modi;
           } else {
-            char.room = room.fail;
+            outcome = "fail";
             crease = -1;
-            music.volume = 0.25;
             result = "inkább rontott a helyzeten.";
           }
-          message("A beszéded <span id='result'>" + result + "</span>");
-          document.getElementById("result").style.color =
-            result === "lenyűgöző volt!" ? "green" : "red";
-          changeVal("hat", crease);
-          changeVal("esz", crease);
-          changeVal("sup", crease);
+          changes = ["hat", "esz", "sup"];
           break;
 
         case "recruit":
+          basemes = "Személyed varázsa ";
           let kisugarzas =
             char.esz +
             char.hat +
@@ -700,83 +699,69 @@ function _load() {
             getObj("S").length +
             getObj("H").length * 2;
           if (75 + Math.random() * 155 < kisugarzas) {
-            char.room = room.pass;
+            outcome = "pass";
             crease = 1 + Math.round(kisugarzas / 15 + Math.random() * 10);
-            music.volume = 0.75;
             result = "nagy hatást keltett.";
           } else {
-            char.room = room.fail;
+            outcome = "fail";
             crease = -1 - Math.round(10 - kisugarzas / 60 + Math.random() * 3);
-            music.volume = 0.25;
             result = "csalódást okozott.";
           }
-          message("Személyed varázsa <span id='result'>" + result + "</span>");
-          document.getElementById("result").style.color =
-            result === "nagy hatást keltett." ? "green" : "red";
-          changeVal("sup", crease);
+          changes = ["sup"];
           break;
 
         case "vanepuca":
+          basemes = "Az embert próbáló próbát ";
           if (
-            char.ero > 30 + Math.random() * 40 &&
-            char.lel / 2 + char.hat > 40 + Math.random() * 60 &&
-            char.esz + char.ugy > 20 + Math.random() * 20
+            ((char.ero > 30 + Math.random() * 40 || getObj("S_Bivalyerő")) &&
+              (char.lel / 2 + char.hat > 40 + Math.random() * 60 ||
+                getObj("S_Hit")) &&
+              (char.esz + char.ugy > 20 + Math.random() * 20 ||
+                getObj("S_Pengeagy"))) ||
+            getObj("S_Vasakarat")
           ) {
-            char.room = room.pass;
+            outcome = "pass";
             crease = 3;
-            music.volume = 0.75;
             result = "sikerrel kiálltad!";
           } else {
-            char.room = room.fail;
+            outcome = "fail";
             crease = -3;
-            music.volume = 0.25;
             result = "csúfosan elbuktad!";
           }
           message(
             "Az embert próbáló próbát <span id='result'>" + result + "</span>"
           );
-          document.getElementById("result").style.color =
-            result === "sikerrel kiálltad!" ? "green" : "red";
+          changes = ["ugy", "esz"];
           changeVal("ero", crease * 4);
           changeVal("hat", crease * 3);
           changeVal("lel", crease * 2);
-          changeVal("ugy", crease);
-          changeVal("esz", crease);
           break;
 
         case "night":
+          basemes = "";
           if (
             checkCond("E_Boldi elzárása") ||
             checkCond("X_Béna Boldizsár, !E_Boldi kivégzése") ||
             checkCond("D_választás") ||
             checkCond("E_help")
           ) {
-            char.room = room.pass;
-            music.volume = 0.75;
+            outcome = "pass";
             result = "Sikeresen elhárítottad ma a fő veszélyt.";
           } else {
             let x = char.lel + Math.random() * 100;
-            if (x > 85 || checkCond("S_Bübüszimat")) {
-              char.room = room.mid;
-              music.volume = 0.5;
+            if (x > 85 || checkCond("S_Bübüszimat") || checkCond("S_Hit")) {
+              outcome = "mid";
               result =
                 "Nem sikerült elhárítanod ma a fő veszélyt, de szerencséd van.";
             } else {
-              char.room = room.fail;
-              music.volume = 0.25;
+              outcome = "fail";
               result = "Nem sikerült a nap során elhárítanod a fő veszélyt.";
             }
           }
-          message(result);
-          document.getElementById("message").style.color =
-            char.room == room.pass
-              ? "green"
-              : char.room == room.mid
-              ? "blue"
-              : "red";
           break;
 
         case "ima":
+          basemes = "";
           let hit =
             char.lel +
             getObj("S_Hit") * 50 -
@@ -784,23 +769,19 @@ function _load() {
             getObj("W").length;
 
           if (Math.random() * 120 < hit) {
-            char.room = room.pass;
+            outcome = "pass";
             crease = 1 + Math.round((100 - char.lel) / 15 + Math.random() * 3);
-            music.volume = 0.75;
             result = "Az imád meghallgatásra talált.";
           } else {
-            char.room = room.fail;
+            outcome = "fail";
             crease = -1 - Math.round((100 - char.lel) / 20 + Math.random() * 2);
-            music.volume = 0.25;
             result = "Nem tudsz hinni az imád meghallgatásában.";
           }
-          message("<span id='result'>" + result + "</span>");
-          document.getElementById("result").style.color =
-            result === "Az imád meghallgatásra talált." ? "green" : "red";
-          changeVal("lel", crease);
+          changes = ["lel"];
           break;
 
         case "love":
+          basemes = "";
           let appeal = false;
           if (checkCond("férfi")) {
             if (
@@ -835,7 +816,7 @@ function _load() {
             ) {
               appeal = true;
               result =
-                "Úgy tűnik, az erdei manók vezére első látásra fülig szerelmes lett beléd";
+                "Úgy tűnik, az erdei manók vezére első látásra fülig szerelmes lett beléd.";
             } else {
               result =
                 "Az erdei manók vezére teljesen közömbösnek tűnik irántad.";
@@ -843,46 +824,64 @@ function _load() {
           }
 
           if (appeal) {
-            char.room = room.pass;
-            music.volume = 0.75;
+            outcome = "pass";
             changeVal("hat", 1 + Math.round(Math.random() * 9));
             changeVal("lel", 1 + Math.round(Math.random() * 5));
           } else {
-            char.room = room.fail;
-            music.volume = 0.25;
+            outcome = "fail";
             changeVal("hat", -1 - Math.round(Math.random() * 5));
           }
-          message("<span id='result'>" + result + "</span>");
-          document.getElementById("result").style.color =
-            appeal === true ? "green" : "red";
           break;
 
         case "hang":
+          basemes = "Hangutánzásod ";
           let voice = char.ugy + char.esz + char.lel + Math.random() * 50;
 
           if (Math.random() * 250 < voice) {
-            char.room = room.pass;
-            music.volume = 0.75;
-            result = "sikeres volt";
+            outcome = "pass";
+            result = "sikeres volt!";
           } else {
-            char.room = room.fail;
-            music.volume = 0.25;
-            result = "elég gyatrára sikeredett";
+            outcome = "fail";
+            result = "elég gyatrára sikeredett.";
           }
-          message("Hangutánzásod <span id='result'>" + result + "</span>.");
-          document.getElementById("result").style.color =
-            result === "sikeres volt" ? "green" : "red";
+          break;
+
+        case "secu":
+          basemes = "";
+          if (getObj("W").length) {
+            outcome = "fail";
+            result = "Nem sikerül átjutnod az őrökön.";
+            modi =
+              "A biztonsági őr megállít, megvizsgál és egyből kiszúrja, hogy fegyver van nálad.";
+          } else if (getObj("E_Boti üldöz")) {
+            outcome = "fail";
+            result = "Nem sikerül átjutnod az őrökön.";
+            modi =
+              "A biztonsági őr megállít. Egy ideig nézi a képed, majd beleszól a gallérmikrofonjába:</p><p>- Megvan <span class'name'></span>!";
+          } else {
+            outcome = "pass";
+            result = "Sikeresen átjutotsz az őrökön.";
+            modi =
+              "A biztonsági őr megállít, megvizsgál, de semmi gyanúsat nem talál nálad. Int, hogy bemehetsz a térre.";
+          }
           break;
 
         default:
           break;
       }
+
+      char.room = room[outcome];
+      let vol = outcome === "pass" ? 0.75 : outcome === "fail" ? 0.25 : 0.5;
+      music.volume = vol;
+      message(basemes + "<span id='result'>" + result + "</span>");
+      document.getElementById("result").style.color =
+        outcome === "pass" ? "green" : outcome === "fail" ? "red" : "blue";
+      for (let cs of changes) {
+        changeVal(cs, crease);
+      }
       setTimeout(() => {
-        if (room.mid) {
-          document.getElementById("message").style.color = "darkblue";
-        }
         newRoom();
-      }, 6000);
+      }, 5600);
     }
 
     //ADDS
