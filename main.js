@@ -48,6 +48,11 @@ function _load() {
       name: "Hatalom",
       upskill: "Vasakarat",
     },
+    {
+      id: "sup",
+      name: "Támogatás",
+      upskill: "",
+    },
   ];
   window.upSkill = (id) =>
     `S_${skills[skills.findIndex((s) => s.id === id)].upskill}`;
@@ -110,8 +115,9 @@ function _load() {
   function chooseChar(x) {
     let numera = Number(x.target.id.split("-")[1]);
     char = { ...chars[numera] };
-    char.room = 0; //startroom
+    char.room = 134; //startroom
     char.objs = [];
+    char.sup = 0;
     steps = 0;
     isDying = false;
     part = " ";
@@ -443,10 +449,12 @@ function _load() {
     let v = document.getElementById("val_" + id);
     v.innerHTML = val;
     v.classList.add(klassz);
-    let newSkill = upSkill(id);
-    if (char[id] >= 100 && !getObj(newSkill)) {
-      char.objs.push(newSkill);
-      message("Elsajátítottad a " + newSkill.split("_")[1] + " képességét");
+    if (id !== "sup") {
+        let newSkill = upSkill(id);
+        if (char[id] >= 100 && !getObj(newSkill)) {
+        char.objs.push(newSkill);
+        message("Elsajátítottad a " + newSkill.split("_")[1] + " képességét");
+      }
     }
 
     if (char.ero < 1) {
@@ -1964,7 +1972,7 @@ function _load() {
               modal.style.left = rect.x + "px";
               modal.style.top = rect.y + "px";
               modal.style.width = rect.width + "px";
-              modal.style.height = rect.width + "px";
+              modal.style.height = rect.height + "px";
               modal.style.backgroundColor = "darkslategray";
               modal.style.padding = "20px";
               setTimeout(() => {
@@ -1973,6 +1981,7 @@ function _load() {
                 modal.style.top = "30vh";
                 modal.style.width = "30vw";
                 modal.style.height = "40vh";
+                modal.style.minHeight = "fit-content";
                 modal.style.border = "5px double lightblue";
                 modal.style.borderRadius = "30px";
               }, 1);
@@ -2028,12 +2037,15 @@ function _load() {
               }
 
               function closeFecni() {
+                rect = document
+                 .getElementById(`mf-${yy}-${xx}`)
+                 .getBoundingClientRect();
                 modal.innerHTML = "";
                 modal.style.left = rect.x + "px";
                 modal.style.top = rect.y + "px";
                 modal.style.width = rect.width + "px";
-                modal.style.height = rect.width + "px";
-                modal.style.height = rect.width + "px";
+                modal.style.minHeight = rect.height + "px";
+                modal.style.height = rect.height + "px";
                 modal.style.padding = "0";
                 modal.style.margin = "0";
                 document.removeEventListener("keyup", closeFecni);
@@ -2053,9 +2065,11 @@ function _load() {
 
               setTimeout(() => {
                 modal.innerHTML = `
-                  <p>Ásás közben találsz egy papírfecnit. Megnézed, mi van rajta. Nem rakod el, mert eléggé koszos, de  ha fontosnak tartod, jegyezd le valahova.</p>
-                  <div id="fecni">${firka}</div>
-                  <button id="OKbtn">Nagyszerű!</button>
+                  <div id="fecniCont">
+                    <p>Ásás közben találsz egy papírfecnit. Megnézed, mi van rajta. Nem rakod el, mert eléggé koszos, de  ha fontosnak tartod, jegyezd le valahova.</p>
+                    <div id="fecni">${firka}</div>
+                    <button id="OKbtn">Nagyszerű!</button>
+                  </div>
                 `;
                 document
                   .getElementById("OKbtn")
@@ -2092,6 +2106,7 @@ function _load() {
                 modal.style.top = "10vh";
                 modal.style.width = "60vw";
                 modal.style.height = "80vh";
+                modal.style.minHeight = "fit-content";
                 modal.style.border = "5px double lightblue";
                 modal.style.borderRadius = "40px";
               }, 1);
@@ -2273,6 +2288,9 @@ function _load() {
                 }
 
                 function modalClose() {
+                  rect = document
+                   .getElementById(`mf-${yy}-${xx}`)
+                   .getBoundingClientRect()
                   sound.pause();
                   sound.src = "./audio/magic2.mp3";
                   sound.play();
@@ -2289,8 +2307,8 @@ function _load() {
                     modal.style.left = rect.x + "px";
                     modal.style.top = rect.y + "px";
                     modal.style.width = rect.width + "px";
-                    modal.style.height = rect.width + "px";
-                    modal.style.height = rect.width + "px";
+                    modal.style.height = rect.height + "px";
+                    modal.style.minHeight = rect.height + "px";
                     modal.style.padding = "0";
                     modal.style.margin = "0";
                     sound.src = "./audio/surprised.mp3";

@@ -14,6 +14,7 @@ body {
 }
 
 #modal {
+  font-size: 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -681,11 +682,11 @@ select {
   max-width: 80%;
   height: fit-content;
   margin: 20px auto;
-  padding: 15px 35px 25px;
+  padding: 10px 35px 20px;
   border: solid black 1px;
   border-radius: 25px;
   color: blue !important;
-  font-size: 1rem;
+  font-size: .9rem;
   font-family: 'Lucida Handwriting';
   background-image: linear-gradient(to right, black, lightgrey, darkgray, gray, black);
 }
@@ -701,7 +702,7 @@ select {
   border: solid 1px turquoise;
   border-radius: 10px;
   transition: all 0.4s;
-  width: 20%;
+  width: fit-content;
 }
 
 #OKbtn:hover {
@@ -755,3 +756,6 @@ select {
   color: darkslategrey;
 }
 
+#fecniCont {
+  min-height: fit-content;
+}

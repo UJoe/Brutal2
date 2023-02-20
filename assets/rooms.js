@@ -4510,7 +4510,7 @@ window.rooms = [
     num: 172,
     title: "Lóri papa adóbevallása",
     type: "pursuit",
-    level: 7,
+    level: 6,
     music: "nightstalker",
     pic: "SZJA.jpg",
     goalpic: "NAV.png",
