@@ -282,7 +282,7 @@ ul {
   margin: 0 auto;
 }
 
-#hilit {
+.hilit {
   color: red;
   background-color: lime;
 }
@@ -413,8 +413,12 @@ select {
   padding: 8px;
 }
 
-#len {
+#len, .red {
   color: red;
+}
+
+.lime {
+  color: lime;
 }
 
 #footer {
@@ -567,6 +571,7 @@ select {
   display: inline-block;
   text-align: center;
   color: ghostwhite;
+  line-height: 53px;
 }
 
 .aknaHits {

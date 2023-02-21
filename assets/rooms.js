@@ -3515,7 +3515,7 @@ window.rooms = [
     buttons: [
       {
         txt: "Vesszen a zsarnok!",
-        new: 135,
+        new: 121,
       },
     ],
   },
@@ -3873,20 +3873,21 @@ window.rooms = [
   },
   {
     num: 121,
-    title: "A Branyiszkó-téren",
+    title:
+      "Oshinokoval<span class='cond' data-cond='J_Gárda'> és a <span class='name'></span> Gárdával</span> a Branyiszkó téren",
     type: "normal",
-    music: "epicsearch",
+    music: "actionIncrease",
     pic: "kordon.jpg",
     desc: `
       <p id="modified"></p>  
       <p>
-       Elindultok a Branyiszkó-tér felé. Már messziről meglátjátok a tömeget, és azt is, hogy nagy körben körül van zárva és Boti emberei mindenkit ellenőriznek, aki be akar lépni. Úgy látszik, Boti tényleg tart a tömegtől.
+       Elindultok a Branyiszkó-tér felé. Oshinoko némán lépdel melletted. Már messziről meglátjátok a tömeget, és azt is, hogy nagy körben körül van zárva és Boti emberei mindenkit ellenőriznek, aki be akar lépni. Úgy látszik, Boti tényleg tart a tömegtől.
       </p>
     `,
     buttons: [
       {
         txt: "Ne baj, akkor is bejutsz",
-        new: 185,
+        new: 135,
         cond: "!_S_Micuki",
       },
       {
@@ -4296,6 +4297,13 @@ window.rooms = [
     ],
     pass: 195,
     fail: 196,
+  },
+  {
+    num: 135,
+    type: "Xtrial",
+    value: "secu",
+    pass: 186,
+    fail: 185,
   },
 
   //*
