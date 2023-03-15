@@ -134,12 +134,12 @@
 134 - A Városháza alatt (új pálya)
 135 - XTrial: nincs fegyver és nem üldöz Boti: (=> bejutsz a tömegbe 186, nem: elkapnak: 185)
 136 - A városháza megostromlása a Gárdával (Oshinoko lehet vagy nem)
-137 - A Gárdával a Branyiszkó-téren (Oshinoko nincs, de fegyverek vannak)
+137 - A Gárdával a Branyiszkó-téren (Oshinoko nincs, de fegyverek vannak => pursuit)
 138 - XTrial (com) - Kidumálás a házmesterrel (140-141)
 139 - Fight a házmesterrel
 140 - A házmester visszamegy (ha nem => 139)
-141 - A házmester nem tágít100
-142 - A pártprogram meghódítja a médiát (Xchange kampány. A lentiek => 141)
+141 - A házmester nem tágít
+142 - A pártprogram meghódítja a médiát (Xchange kampány. A lentiek => 201)
 143 - Beszédeket mondasz - Xtrial: recruit (144-145)
 144 - Sikeres beszédeket tartasz (+sup)
 145 - Boti beszédei hatásosabbak (-sup)
@@ -148,8 +148,8 @@
 148 - Jótékony kincsásás (dig)
 149 - A kincsek átadása (digrecruit)
 150 - Elveszett tárgyak keresése (mine, outcome: 198-200)
-151 - Elveszett tárgyak keresése (dungeon)
-152 - Elveszett tárgyak keresése (dungeon-fight)
+151 - Védő kíséret (dungeon)
+152 - Védő kíséret (dungeon-fight)
 153 - XTrial (ima - 154-155)
 154 - A hited növelte a támogatást
 155 - Nem tudsz hinni a sikerben
@@ -184,7 +184,7 @@
 184 - Yendela dungeon fight
 185 - Elkapnak a téren: modi + "Körülvesz három őr." Van-e Oshinoko vagy Gárda? (187, 188)
 186 - Bejutsz a tömegbe (modi: 135, aztán ügyesség-próba jön)
-187 - Elkapnak Oshinokoval (Szenyamuki a ködben, közben lehet Géárda vagy nem)
+187 - Elkapnak Oshinokoval (Szenyamuki a ködben, közben lehet Gárda vagy nem)
 188 - Elkapnak Oshinoko nélkül a Gárdával: harc / menekülés
 189 - Tanácskozás Szenyamukival (J_Szenyamuki)
 190 - Szenyamuki legyőzése (nem hal meg, hanem mellétek áll: 189)
@@ -195,10 +195,16 @@
 195 - A földalatti ásás vége
 196 - Nem sikerült a föld alól bejutni
 197 - A server szobában
-198 - Jótékony kampányakció pass
-199 - Jótékony kampányakció med
-200 - Jótékony kampányakció fail
-201 - Újabb kampány help kör?
+198 - Jótékony kampányakció pass (modi)
+199 - Jótékony kampányakció med (modi)
+200 - Jótékony kampányakció fail (modi)
+201 - Nyilvános vita Bitang Botival (új xtrial minden eredmény figyelembevételével)
+202 - A gárda bevette a Városházát
+203 - Sikertelen ostrom a Városháza ellen
+204 - Elmenekültél a mesterlövészek elől (Gárda vége, E_Boti üldöz => piac)
+205 - Leszedtek a mesterlövészek (death)
+206 - Fricivel a háztetőn ("Miután sikeresen kiiktattátok a házmestert...")
+207 - Frici lecsapja a házmestert (mivel feladtad a harcot, -hat, -sup. => 206)
 
 
 

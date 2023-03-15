@@ -3551,7 +3551,7 @@ window.rooms = [
         Beléptek egy emeletes házba és felmentek a lépcsőn. A tetőre vezető vasajtó zárva van, de Frici elővesz egy tolvajkulcsot, kicsit babrál vele, mire kattan a zár. Lenyomja a kilincset, de továbbra sem mozdul az ajtó.
       </p>
       <p>
-        - Nem nagyon használhatták ezt, biztos berozsdásodott! Lökjük be! - mondja, azzal nekiugrotok az ajtónak. Hatalmasat döng, de sikerül kinyitni. A zajra viszont megjelenik a lépcsőn egy füstszagú, bajszos, vastag keretes szemüveget viselő fickó és rátok kiált:
+        - Nem nagyon használhatták ezt, biztos berozsdásodott! Lökjük be! - mondja, azzal nekiugrotok az ajtónak. Hatalmasat döng, de sikerül kinyitni. A zajra viszont megjelenik a lépcsőn egy füstszagú munkaruhát viselő szemüveges fickó és rátok kiált:
       </p>
       <p>
         - Mi az anyátok úristenit csináltok itt?!
@@ -3566,7 +3566,7 @@ window.rooms = [
         new: 138,
       },
       {
-        txt: "Leápolod a fickót",
+        txt: "Móresre tanítod a fickót",
         new: 139,
       },
     ],
@@ -4305,6 +4305,366 @@ window.rooms = [
     pass: 186,
     fail: 185,
   },
+  {
+    num: 136,
+    title: "A városháza megostromlása a <span class='name'></span> Gárdával",
+    type: "finalwar",
+    friends: "Gárda, J_Oshinoko",
+    enemies: "Városháza",
+    music: "finalwar",
+    pic: "townhall.JPG",
+    desc: `
+      <p>
+        Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Városháza felé.
+      </p>
+      <p>
+        Amikor elérkeztek a Városháza előtti parkhoz, látjátok, hogy az őrök már vártak titeket és felsorakoztak a túloldalon. Nincs mese, meg kell velük küzdenetek!
+      </p>
+      <i>
+      <p>
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - számláló eléri a 0-t, és a kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld a fent megjelenő üzeneteket!
+      </p>
+      <p>
+        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll, pihen és őrködik. Ha egy üres mezőre, akkor átmegy oda saját sebességével, ha egy ellenségre vagy fára, akkor letámadja, ha barátra, akkor pedig társul vele. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség.  Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A CR (céltudatossági ráta) értéke (1-3) mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Aki támad, annak kék lesz az aurája, aki speciális képességet használ, annak lila, akinek villog az életerő-jelző csíkja, az éppen sérül. A zöld csík teljes, a sárga legalább fél, a piros félnél kisebb életerőt jelez. Amelyik szereplő a játék során a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+      </p>
+      <p>
+        Jó szórakozást!
+      </p>
+      </i>
+    `,
+    buttons: [
+      {
+        txt: "Harcra fel, győzni kell",
+      },
+    ],
+    pass: 202,
+    fail: 203,
+  },
+  {
+    num: 137,
+    title: "Mesterlövészek kereszttüzében",
+    type: "pursuit",
+    level: 10,
+    music: "gangwar",
+    pic: "sniper.gif",
+    goalpic: "exit.png",
+    desc: `
+      <p>
+        Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Branyiszkó-tér felé.
+      </p>
+      <p>
+        Amint befordultok abba az utcába, amelynek a végén a tér van, hirtelen az egyik gárdista felnyög és összeesik. Mindenki ledöbben. Egy másik azonnal felismeri a helyzetet és elordítja magát.
+      </p>
+      <p>
+        - Mesterlövészek!
+      </p>
+      <p>
+        Nem lehetett nehéz kiszúrniuk a közeledő fegyveres bandát. Felnézel, de az utcát mindenhol magas házak veszik körül, amelyekben bárhol rejtőzhetnek a mesterlövészek. Hiába vagytok felfegyverkezve, könnyű célpontok vagytok. Az embereid egymás után esnek el, a következő akár te is lehetsz. Ennek fele se tréfa. Elordítod magad:
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Meneküljünk!",
+      },
+    ],
+    pass: 204,
+    fail: 205,
+  },
+  {
+    num: 138,
+    type: "Xtrial",
+    value: "com",
+    pass: 140,
+    fail: 141,
+  },
+  {
+    num: 139,
+    title: "Harc a házmesterrel",
+    type: "fight",
+    pic: "hazmester.jpg",
+    nmepic: "hazmester.jpg",
+    att: 40,
+    def: 20,
+    speed: 4,
+    hp: 50,
+    desc: `
+      <p>
+        - Isten nevét hiába ne vedd! - idézed a parancsolatot, és lekeversz a fickónak egy pedagógiai pofont. Az kissé meglepődik, de ez kevés ahhoz, hogy elszálljon a haragja.
+      </p>
+      <p>
+        - Ti valami szektások vagytok?! Hát én meg a házmester és nem kérünk ebből a hitből! Takarodjatok innen!
+      </p>
+      <p>
+        - Felőlem lehetsz a császár is, akkor is feletted áll a valódi Úr, akit tisztelned kell, te gőgös pogány! - vágsz vissza.
+      </p>
+      <p>
+        - Ebben a házban senki nem áll felettem! - feleli tajtékzó öntudatossággal. Fricire nézel. Láthatóan tetszik neki a műsor, mert vigyorog, mint a tejbetök.
+      </p>
+      <p>
+        - Verj bele némi alázatot, hogy helyreálljon az értékrendje!
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Rendben, Frici! Én is úgy látom, a szép szó itt nem használ.",
+      },
+    ],
+    pass: 206,
+    fail: 207,
+  },
+  {
+    num: 140,
+    title: "A házmester visszamegy",
+    type: "normal",
+    music: "basicfun",
+    pic: "hazmester.jpg",
+    desc: `
+      <p>
+        - Az önkormányzattól jöttünk az Ajándék Karbantartás Akció keretében - mondod vidáman hirtelen. - Egyelőre a beszorult tetőajtót javítottuk meg. Meglepetésnek akartuk szánni, de ha már Ön így rajtakapott minket, megondhatja, mit kellene még megjavítanunk.
+      </p>
+      <p>
+        A mogorva házmester egy ideig néz, de aztán győz benne az ingyenes karbantartás hasznának értéke.
+      </p>
+      <p>
+        - Hát, éppenséggel a szennyvízelvezetésünk akadozik, valami dugulás lehet a csőben.
+      </p>
+      <p>
+        - Ne aggódjon, a kollégám semmi perc alatt megoldja! - kurjantasz vidáman és biztatóan hátbaveregeted Fricit. Ő egy ezredmásodperce dühösen megvillantja feléd a szemét, mégiscsak szennyvízről van szó, de aztán belátja, hogy a szerep végigjátszása a legbiztosabb módja annak, hogy ne bukjatok le. Lementek a házmester után a pincébe, ahonnan egy aknatető vezet le a ház vízhálózatának csöveihez. A házmester kinyitja és lemásztok egymás után. Frici a fülét az egyik csőhöz tapasztja, megkopogtatja, aztán egy torz fintorral nyugtázza, hogy tényleg valami baj van. Mászkál egy ideig ide-oda, tekerget különféle elzárókat, majd megáll és fülel egy ideig. A néma csendben halljátok, hogy az egyik lakó fent elordítja magát, hogy "Miért nem jön már megint víz ebből a durva csapból?!" Frici elégedetten bólint és kinyit egy nyílást annak a csőnek az oldalán, amit legelőször meghallgatott. Abból egy kevés koszos víz folyik a padlóra egy nagy adag orrfacsaró bűz kíséretében. Frici ekkor elővesz egy furcsa szerszámot, aminek állítható fejei és karjai vannak és belenyúl vele a csőbe. Pár percig turkál benne dühösen grimaszolva, majd kihúzza a szerszámot, aminek a végén egy döglött papagáj van.
+      </p>
+      <p>
+        - Valamelyik hülye lehúzta a budin! - vonja le bosszúsan a következtetést, majd a házmester felé nyújtja a tetemet. - Van még valami gond?! 
+      </p>
+      <p>
+        - Nem, nem, teljesen rendben vagyunk, köszönöm szépen! - mondja a házmester. Frici elégedetten visszazárja a nyílást, tekerget még egyet a rendszeren, majd mindhárman felmentek. Frici kidobja a kommunális kukába a papagájt, te pedig vidáman kezet nyújtasz a polgármesternek.
+      </p>
+      <p>
+        - Örömmel segítettünk! Reméljük, Bitang Botondra fognak szavazni a lakók!
+      </p>
+      <p>
+        A házmester megígéri, hoyg így lesz és visszamegy a lakásába. Amikor végre kettesben maradtok, Frici halkan hozzád fordul:
+      </p>
+      <p>
+        - Rendben, hogy ne keltsünk feltűnést, de muszáj volt ezt a szavazós nyalizást a végére raknod?
+      </p>
+      <p>
+        - Így tökéletes az alibink! Amúgy sincs jelentősége, mert mindjárt meghal a polgármester, nem?
+      </p>
+      <p>
+        - De... Na jó, muszáj visszamennünk, mert ennek a háznak a tetejéről van a legjobb rálátás a térre azok közül az épületek közül, amit Boti mesterlövészei valószínűleg már nem figyelnek.
+      </p>
+      <p>
+        - Rendben, osonjunk vissza halkan! - szólsz végül.
+      </p>
+    `,
+    change: [
+      {
+        id: "lel",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "esz",
+        crease: 3,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Visszalópództok a tetőre",
+        new: 206,
+      },
+    ],
+  },
+  {
+    num: 141,
+    title: "A házmester nem tágít",
+    type: "normal",
+    music: "basicfun",
+    pic: "hazmester.jpg",
+    desc: `
+      <p>
+        - Mi csak cigizni szerettünk volna a tetőn. Tudja, hogy van ez - mondod ártatlan képpel a füstszagú fickónak.
+      </p>
+      <p>
+        - Mit kellene tudnom ezen? Én se megyek fel a tetőre, ha bagzani akarok, erre van az erkély!
+      </p>
+      <p>
+        Erre gondolhattál volna, mivel nem úgy tűnt az ajtó, mint ami napi használatban van. Vetsz egy oldalpillantást Fricire, de ő is rosszallóan csóválja a fejét. Ismét a házmester szólal meg reszelős hangján.
+      </p>
+      <p>
+        - Mi az istenre vártok még?! Húzzatok innen vagy hívom a rendőrséget!
+      </p>
+    `,
+    change: [
+      {
+        id: "esz",
+        crease: -3,
+        rnd: 2,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Nana!",
+        new: 139,
+      },
+    ],
+  },
+  {
+    num: 142,
+    title: "A <span class='part'></span> programja meghódítja a médiát",
+    type: "normal",
+    music: "democracy",
+    pic: "ecampaign.png",
+    desc: `
+      <p>
+        Összedobtok egy jó propagandaanyagot a <span class='part'></span> programjáról és elárasztjátok vele az internetes reklámfelületeket és a médiát. Ez a fent átfutó értékkel növelte tovább a támogatásotokat. 
+      </p>
+      <p>
+        De vajon elég lesz-e ez, hogy megnyerjétek az önkormányzati választást és átvehesd az uralmat a város felett?
+      </p>
+      `,
+    Xchange: "kampány",
+    buttons: [
+      {
+        txt: "Lássuk a közvéleménykutatások eredményét!",
+        new: 201,
+      },
+    ],
+  },
+  {
+    num: 143,
+    type: "Xtrial",
+    value: "recruit",
+    pass: 144,
+    fail: 145,
+  },
+  {
+    num: 144,
+    title: "Sikeres politikai beszédeket tartasz",
+    type: "normal",
+    music: "democracy",
+    pic: "speaker.png",
+    desc: `
+      <p>
+        A következő napokban több helyen is tartasz sikeres beszédeket, amivel nagyban növelni tudtad a <span class='part'></span> szavazótáborát.
+      </p>
+      <p>
+        De vajon elég lesz-e ez, hogy megnyerjétek az önkormányzati választást és átvehesd az uralmat a város felett?
+      </p>
+      `,
+    change: [
+      {
+        id: "esz",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "hat",
+        crease: 3,
+        rnd: 2,
+      },
+      {
+        id: "sup",
+        crease: 15,
+        rnd: 10,
+      },
+    ],
+    Xchange: "kampány",
+    buttons: [
+      {
+        txt: "Lássuk a közvéleménykutatások eredményét!",
+        new: 201,
+      },
+    ],
+  },
+  {
+    num: 145,
+    title: "Politikai ellenfeled hatásosabb beszédeket tartott",
+    type: "normal",
+    music: "democracy",
+    pic: "speaker.png",
+    desc: `
+      <p>
+        A következő napokban te és Bitang Botond is több helyen tart kampánybeszédeket. Boti beszédeire azonban sokkal többen mennek el, mint a tiédre, úgy tűnik, a népet hatásosabban maga mellé tudta állítani. 
+      </p>
+      `,
+    change: [
+      {
+        id: "esz",
+        crease: -1,
+      },
+      {
+        id: "hat",
+        crease: -5,
+        rnd: 5,
+      },
+      {
+        id: "sup",
+        crease: -15,
+        rnd: 10,
+      },
+    ],
+    buttons: [
+      {
+        txt: "Lássuk a közvéleménykutatások eredményét!",
+        new: 201,
+      },
+    ],
+  },
+  {
+    num: 146,
+    title: "Büdös Berci üldözése",
+    type: "pursuit",
+    level: 10,
+    music: "longmixed",
+    pic: "runner.gif",
+    goalpic: "berci.jpg",
+    desc: `
+      <p>
+        Némi kutatás és tanakodás után úgy látjátok, hogy Büdös Berci az a bűnöző, akitől a nép leginkább meg akar szabadulni. Szinte mindenkit zaklatott már: átveri a nyugdíjasokat, molesztálja a gyerekeket, játékgépeket hackel meg, elcsábítja és kirabolja a nőket, megöli a férfiakat, kínozza az állatokat és még adót sem fizet. Csak az a baj, hogy nagyon nehéz a nyomára akadni, így még az se biztos, hogy mindezeket ő követte el. De büdösnek büdös, úgyhogy mindenki örülne, ha végre valaki eltemetné.
+      </p>
+      <p>
+        Hozzálátsz a nyomozáshoz. Vajon vagy-e elég eszes, ügyes és kitartó, hogy a nyomára akadj? Elvezet-e hozzá a szimatod?
+      </p>
+    `,
+    buttons: [
+      {
+        txt: "Ki érezte utoljára szagát és hol?",
+      },
+    ],
+    pass: 147,
+    fail: 200,
+  },
+  {
+    num: 147,
+    title: "Harc Büdös Bercivel",
+    type: "fight",
+    pic: "dualfight_real.gif",
+    nmepic: "berci.jpg",
+    att: 100,
+    def: 50,
+    speed: 7,
+    hp: 80,
+    desc: `
+      <p>
+        Nyomozásod gyümölcse beérett. Sikerült eljutni Berci rejtekhelyére. Vársz rá egy ideig, aztán amikor hazajön, elébe toppansz.
+      </p>
+      <p>
+        - Most véged van! - kiáltasz rá vészjóslóan, de rögtön meg is szédülsz, mert az enyészet bűzhödt lehellete lengi körül Bercit. - Te tényleg egy szar ember vagy! - állapítod meg elfúló hangon és friss levegő után kapkodsz - hiába. Kétségbeesésed egyre nő, ahogy érzed, hogy kezdesz elgyengülni és a szemedet is könnyek öntik el...
+      </p>
+      <p>
+        Berci látja, hogy szuperképessége, a szaga most is a segítségére siet. Nem számolt azonban azzal, hogy egy nála nagyobb ősi erő, a szél ezúttal téged támogat ebben az eposzi párbajban. Hirtelen fordul a szél és Berci felé kezd fújni. Nagyot szívsz a friss fuvallatból, a fejed és a látásod ismét kitisztul, és érzed az oxigén szétáradó erejét a tagjaidban.
+      </p>
+    `,
+    help: true,
+    modi: "Berci összeroskad és nem mozdul többet. Csak erre vártál! Szólsz a telefonon a <span class='part'></span> második emberének, hogy a küldetésed sikeresen teljesítve van.</p><p>Egy percet sem kell várni és már jönnek a lelkes párttagok kamerákkal és felveszik, ahogy Bercit berakjátok egy zsákba és elássátok mélyen a földbe. Közben egyre nő körülöttetek a tömeg, embereid lelkesen dicsérnek téged, te pedig szerényen mosolyogva mondod, hogy kötelességednek tekinted elbánni mindenkivel, aki zavarja a város békéjét és fejlődését. A nép a szag megszünésével párhuzamosan egyre lelkesebben gratulál neked és éltet téged és pártodat!",
+    buttons: [
+      {
+        txt: "Ütött az órád, te görény!",
+      },
+    ],
+    pass: 198,
+    fail: 200,
+  },
 
   //*
 
@@ -4917,12 +5277,12 @@ window.rooms = [
 
   {
     num: 195,
-    title: "Fegyvergyártás betyárral",
+    title: "Fegyvergyártás Betyárral",
     type: "kotyvaszt",
     music: "epicsearch",
     pic: "betyarküche.JPG",
     prodtxt:
-      "Batyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
+      "Betyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
     desc: `
       <p>
        - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. De egy klicsit nehéz belegyömöszölni Betyárba a dolgokat, inkább kattints kétszer a GYÁRTÁS gombra, ha először nem csinálna semmit!

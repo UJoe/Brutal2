@@ -41,6 +41,7 @@ window.weapons = [
     pic: "kisero.JPG",
     sound: "swallow",
     recept: 2,
+    final: "friend",
     effect: [
       {
         val: "erő",
@@ -53,6 +54,7 @@ window.weapons = [
     desc: "Ha sokkal több erő kell.",
     pic: "nagyero.JPG",
     sound: "liquid",
+    final: "friend",
     effect: [
       {
         val: "erő",
@@ -65,6 +67,7 @@ window.weapons = [
     desc: "Dühöngő őrültté tesz, de nem túl egészséges.",
     pic: "diaster.jpg",
     sound: "demonlaugh",
+    final: "friend",
     effect: [
       {
         val: "sebesség",
@@ -86,9 +89,10 @@ window.weapons = [
   },
   {
     name: "KÉZIGRÁNÁT",
-    desc: "Na, vajon mi lehet?",
+    desc: "Robbant egy nagyot.",
     pic: "gránát.jpg",
     sound: "bomb",
+    final: "bomb",
     effect: [
       {
         val: "ellenség erő",
@@ -197,6 +201,7 @@ window.weapons = [
     pic: "bűz.JPG",
     sound: "undor",
     recept: 1,
+    final: "bomb",
     effect: [
       {
         val: "támadás",
@@ -537,6 +542,7 @@ window.weapons = [
     desc: "Megbűvöli az ellenfelet.",
     pic: "varázspor.gif",
     sound: "spell",
+    final: "nme",
     effect: [
       {
         val: "ellenség támadás",
@@ -577,6 +583,7 @@ window.weapons = [
     desc: "Sugárban mindent letarol.",
     pic: "proton.JPG",
     sound: "protonbeam",
+    final: "sugar",
     effect: [
       {
         val: "sebesség",
@@ -597,6 +604,7 @@ window.weapons = [
     desc: "Egy leselejtezett harci robot.",
     pic: "robi.jpg",
     sound: "robitalk",
+    final: "robi",
     effect: [
       {
         val: "sebesség",

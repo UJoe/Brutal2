@@ -115,7 +115,7 @@ function _load() {
   function chooseChar(x) {
     let numera = Number(x.target.id.split("-")[1]);
     char = { ...chars[numera] };
-    char.room = 0; //startroom
+    char.room = 136; //startroom
     char.objs = [];
     char.sup = 0;
     steps = 0;
@@ -1170,7 +1170,6 @@ function _load() {
 
       updateKotyvaszt(0);
     }
-
     //Xchange
     function xchangelj() {
       switch (room.Xchange) {
@@ -1264,7 +1263,7 @@ function _load() {
       //other rooms
       if (curmusic != room.music) {
         if (room.type === "fight") {
-          let fm = "fight" + (1 + Math.floor(8 * Math.random()));
+          let fm = "fight" + (1 + Math.floor(9 * Math.random()));
           music.src = "./audio/" + fm + ".mp3";
           curmusic = fm;
         } else {
@@ -1341,6 +1340,7 @@ function _load() {
         inputAdd();
       }
 
+      //kotyvasztó
       if (room.type === "kotyvaszt") {
         kotyvassz();
       }
@@ -1969,54 +1969,53 @@ function _load() {
           updateDScore();
           break;
 
-            case 1:
-              document.getElementById("exitBtn").disabled = true;
-              document.removeEventListener("keyup", move);
-              modal.style.left = rect.x + "px";
-              modal.style.top = rect.y + "px";
-              modal.style.width = rect.width + "px";
-              modal.style.height = rect.height + "px";
-              modal.style.backgroundColor = "darkslategray";
-              modal.style.padding = "20px";
-              setTimeout(() => {
-                modal.style.transition = "all 1.5s";
-                modal.style.left = "35vw";
-                modal.style.top = "30vh";
-                modal.style.width = "30vw";
-                modal.style.height = "40vh";
-                modal.style.minHeight = "fit-content";
-                modal.style.border = "5px double lightblue";
-                modal.style.borderRadius = "30px";
-              }, 1);
-              let filterecept = [];
-              for (let r of receptek) {
-                let keys = Object.keys(r);
-                let test = false;
-                for (let g of room.gems.slice(1)) {
-                  if (keys.includes(g)) test = true;
-                }
-                if (test) filterecept.push(r);
-              }
-              let rd = Math.floor((room.level / 2) * Math.random());
-              rd = rd * Math.round(Math.random());
-              let rp = filterecept.length + rd;
-              let firka = "";
-              if (rd < 1) {
-                let recept = filterecept[Math.floor(Math.random() * rp)];
-                let ingredients = "";
-                for (const [key, value] of Object.entries(recept)) {
-                  if (key != "name") ingredients += `<li>${value} ${key}</li>`;
-                }
+        case 1:
+          document.getElementById("exitBtn").disabled = true;
+          document.removeEventListener("keyup", move);
+          modal.style.left = rect.x + "px";
+          modal.style.top = rect.y + "px";
+          modal.style.width = rect.width + "px";
+          modal.style.height = rect.height + "px";
+          modal.style.backgroundColor = "darkslategray";
+          modal.style.padding = "20px";
+          setTimeout(() => {
+            modal.style.transition = "all 1.5s";
+            modal.style.left = "35vw";
+            modal.style.top = "30vh";
+            modal.style.width = "30vw";
+            modal.style.height = "40vh";
+            modal.style.minHeight = "fit-content";
+            modal.style.border = "5px double lightblue";
+            modal.style.borderRadius = "30px";
+          }, 1);
+          let filterecept = [];
+          for (let r of receptek) {
+            let keys = Object.keys(r);
+            let test = false;
+            for (let g of room.gems.slice(1)) {
+              if (keys.includes(g)) test = true;
+            }
+            if (test) filterecept.push(r);
+          }
+          let rd = Math.floor((room.level / 2) * Math.random());
+          rd = rd * Math.round(Math.random());
+          let rp = filterecept.length + rd;
+          let firka = "";
+          if (rd < 1) {
+            let recept = filterecept[Math.floor(Math.random() * rp)];
+            let ingredients = "";
+            for (const [key, value] of Object.entries(recept)) {
+              if (key != "name") ingredients += `<li>${value} ${key}</li>`;
+            }
+            firka = "<h5>" + recept.name + "</h5><ul>" + ingredients + "</ul>";
+          } else {
+            switch (rd) {
+              case 1:
                 firka =
-                  "<h5>" + recept.name + "</h5><ul>" + ingredients + "</ul>";
-              } else {
-                switch (rd) {
-                  case 1:
-                    firka =
-                      "<h4>" +
-                      new Date().toLocaleDateString() +
-                      "</h4><div>A mai napon különös rossz előérzetem támadt. Amint elkezdtem ásni, vészjósló hangokat hallottam a méyből. Fel akartam adni háromszor is, de aztán tovább ástam. Ekkor... várjunk, mi ez???!!!</div>";
-                    break;
+                  "<h4>" +
+                  new Date().toLocaleDateString() +
+                  "</h4><div>A mai napon különös rossz előérzetem támadt. Amint elkezdtem ásni, vészjósló hangokat hallottam a méyből. Fel akartam adni háromszor is, de aztán tovább ástam. Ekkor... várjunk, mi ez???!!!</div>";
+                break;
 
               case 2:
                 firka = "<h3>Jelszó: 85bz4ruiewghwnoiuhjro7önxhek</h3>";
@@ -2039,19 +2038,19 @@ function _load() {
             }
           }
 
-              function closeFecni() {
-                rect = document
-                 .getElementById(`mf-${yy}-${xx}`)
-                 .getBoundingClientRect();
-                modal.innerHTML = "";
-                modal.style.left = rect.x + "px";
-                modal.style.top = rect.y + "px";
-                modal.style.width = rect.width + "px";
-                modal.style.minHeight = rect.height + "px";
-                modal.style.height = rect.height + "px";
-                modal.style.padding = "0";
-                modal.style.margin = "0";
-                document.removeEventListener("keyup", closeFecni);
+          function closeFecni() {
+            rect = document
+              .getElementById(`mf-${yy}-${xx}`)
+              .getBoundingClientRect();
+            modal.innerHTML = "";
+            modal.style.left = rect.x + "px";
+            modal.style.top = rect.y + "px";
+            modal.style.width = rect.width + "px";
+            modal.style.minHeight = rect.height + "px";
+            modal.style.height = rect.height + "px";
+            modal.style.padding = "0";
+            modal.style.margin = "0";
+            document.removeEventListener("keyup", closeFecni);
 
             setTimeout(() => {
               modal.style.backgroundColor = "transparent";
@@ -2066,8 +2065,8 @@ function _load() {
             }, 1501);
           }
 
-              setTimeout(() => {
-                modal.innerHTML = `
+          setTimeout(() => {
+            modal.innerHTML = `
                   <p>Ásás közben találsz egy papírfecnit. Megnézed, mi van rajta. Nem rakod el, mert eléggé koszos, de  ha fontosnak tartod, jegyezd le valahova.</p>
                   <div id="fecni">${firka}</div>
                   <button id="OKbtn">Nagyszerű!</button>
@@ -2091,50 +2090,50 @@ function _load() {
           updateDScore();
           break;
 
-            //Hangman
-            case 3:
-              document.getElementById("exitBtn").disabled = true;
-              document.removeEventListener("keyup", move);
-              modal.style.left = rect.x + "px";
-              modal.style.top = rect.y + "px";
-              modal.style.width = rect.width + "px";
-              modal.style.height = rect.width + "px";
-              modal.style.backgroundColor = "darkslategray";
-              modal.style.padding = "30px";
-              setTimeout(() => {
-                modal.style.transition = "all 1.5s";
-                modal.style.left = "20vw";
-                modal.style.top = "10vh";
-                modal.style.width = "60vw";
-                modal.style.height = "80vh";
-                modal.style.minHeight = "fit-content";
-                modal.style.border = "5px double lightblue";
-                modal.style.borderRadius = "40px";
-              }, 1);
-              let allDesc = "";
-              for (let d of rooms) {
-                allDesc += d.desc + " ";
-              }
-              let szotar = [
-                ...new Set(
-                  allDesc
-                    .replace(/(<([^>]+)>)/gi, "")
-                    .replace(/\\n/g, "")
-                    .replace(/ +(?= )/g, "")
-                    .replace(/[\\.,\?\/#!$%\^&\*;:{}=\-_`~()<>]/g, "")
-                    .replace(/\s{2,}/g, " ")
-                    .toUpperCase()
-                    .split(" ")
-                    .filter((word) => word.length > 3 && word.length < 11)
-                ),
-              ];
-              let szo = rnd(szotar);
-              let szoArr = szo.split("");
-              let joBetuk = [];
-              let joBetukStr = "";
-              let rosszBetuk = [];
-              console.log("Helyes: ", szoArr, joBetuk, rosszBetuk);
-              let helps = 0;
+        //Hangman
+        case 3:
+          document.getElementById("exitBtn").disabled = true;
+          document.removeEventListener("keyup", move);
+          modal.style.left = rect.x + "px";
+          modal.style.top = rect.y + "px";
+          modal.style.width = rect.width + "px";
+          modal.style.height = rect.width + "px";
+          modal.style.backgroundColor = "darkslategray";
+          modal.style.padding = "30px";
+          setTimeout(() => {
+            modal.style.transition = "all 1.5s";
+            modal.style.left = "20vw";
+            modal.style.top = "10vh";
+            modal.style.width = "60vw";
+            modal.style.height = "80vh";
+            modal.style.minHeight = "fit-content";
+            modal.style.border = "5px double lightblue";
+            modal.style.borderRadius = "40px";
+          }, 1);
+          let allDesc = "";
+          for (let d of rooms) {
+            allDesc += d.desc + " ";
+          }
+          let szotar = [
+            ...new Set(
+              allDesc
+                .replace(/(<([^>]+)>)/gi, "")
+                .replace(/\\n/g, "")
+                .replace(/ +(?= )/g, "")
+                .replace(/[\\.,\?\/#!$%\^&\*;:{}=\-_`~()<>]/g, "")
+                .replace(/\s{2,}/g, " ")
+                .toUpperCase()
+                .split(" ")
+                .filter((word) => word.length > 3 && word.length < 11)
+            ),
+          ];
+          let szo = rnd(szotar);
+          let szoArr = szo.split("");
+          let joBetuk = [];
+          let joBetukStr = "";
+          let rosszBetuk = [];
+          console.log("Helyes: ", szoArr, joBetuk, rosszBetuk);
+          let helps = 0;
 
           function digHelp() {
             document.getElementById("helpBtn").disabled = true;
@@ -2284,45 +2283,45 @@ function _load() {
               ).innerHTML += `<span class="betu">_</span>`;
             }
 
-                function modalClose() {
-                  rect = document
-                   .getElementById(`mf-${yy}-${xx}`)
-                   .getBoundingClientRect()
-                  sound.pause();
-                  sound.src = "./audio/magic2.mp3";
-                  sound.play();
-                  message("Igen, erre gondoltam, hihetetlen!");
-                  changeVal("ero", 1 + Math.round(Math.random() * 3));
-                  changeVal("esz", 1 + Math.round(Math.random() * 2));
-                  changeVal("hat", Math.round(Math.random()));
-                  document.getElementById("helpBtn").disabled = true;
-                  document.querySelectorAll("input").forEach((ip) => {
-                    ip.disabled = true;
-                  });
-                  setTimeout(() => {
-                    modal.innerHTML = "";
-                    modal.style.left = rect.x + "px";
-                    modal.style.top = rect.y + "px";
-                    modal.style.width = rect.width + "px";
-                    modal.style.height = rect.height + "px";
-                    modal.style.minHeight = rect.height + "px";
-                    modal.style.padding = "0";
-                    modal.style.margin = "0";
-                    sound.src = "./audio/surprised.mp3";
-                    sound.play();
-                  }, 2500);
-                  setTimeout(() => {
-                    modal.style.backgroundColor = "transparent";
-                    modal.style.border = "none";
-                    modal.style.left = "0";
-                    modal.style.top = "0";
-                    modal.style.width = "0";
-                    modal.style.height = "0";
-                    modal.style.transition = "none";
-                    document.getElementById("exitBtn").disabled = false;
-                    document.addEventListener("keyup", move);
-                  }, 4001);
-                }
+            function modalClose() {
+              rect = document
+                .getElementById(`mf-${yy}-${xx}`)
+                .getBoundingClientRect();
+              sound.pause();
+              sound.src = "./audio/magic2.mp3";
+              sound.play();
+              message("Igen, erre gondoltam, hihetetlen!");
+              changeVal("ero", 1 + Math.round(Math.random() * 3));
+              changeVal("esz", 1 + Math.round(Math.random() * 2));
+              changeVal("hat", Math.round(Math.random()));
+              document.getElementById("helpBtn").disabled = true;
+              document.querySelectorAll("input").forEach((ip) => {
+                ip.disabled = true;
+              });
+              setTimeout(() => {
+                modal.innerHTML = "";
+                modal.style.left = rect.x + "px";
+                modal.style.top = rect.y + "px";
+                modal.style.width = rect.width + "px";
+                modal.style.height = rect.height + "px";
+                modal.style.minHeight = rect.height + "px";
+                modal.style.padding = "0";
+                modal.style.margin = "0";
+                sound.src = "./audio/surprised.mp3";
+                sound.play();
+              }, 2500);
+              setTimeout(() => {
+                modal.style.backgroundColor = "transparent";
+                modal.style.border = "none";
+                modal.style.left = "0";
+                modal.style.top = "0";
+                modal.style.width = "0";
+                modal.style.height = "0";
+                modal.style.transition = "none";
+                document.getElementById("exitBtn").disabled = false;
+                document.addEventListener("keyup", move);
+              }, 4001);
+            }
 
             document
               .getElementById("Ibetű")
@@ -2572,8 +2571,7 @@ function _load() {
       let objString = "<p>";
       if (fegyObj.length > 0) {
         gyilok = true;
-        document.getElementById("weapons").innerHTML =
-          "<div id='weapons'>Fegyverek:</div>";
+        document.getElementById("weapons").innerHTML = "<div>Fegyverek:</div>";
         fegyObj.map((fegy, i) => {
           let titleString = `${fegy.name}&#10;${fegy.desc}&#10;Hatás:`;
           for (let ef of fegy.effect) {
@@ -2892,6 +2890,126 @@ function _load() {
     }
   }
 
+  //finalwar
+  function finalwarAct() {
+    music.volume = 0.7;
+    let fields = [];
+    for (let y = 0; y < 16; y++) {
+      fields.push([]);
+      for (let x = 0; x < 16; x++) {
+        let r = Math.random();
+        let z = r < 0.8 || y < 2 || y > 13 ? 0 : r < 0.9 ? 1 : 2;
+        fields[y].push({ terrain: z, empty: z === 0 });
+      }
+    }
+    console.log("FIELDS: ", fields);
+    let gspeed = 1;
+    let actionClick = false;
+    let opera = 0;
+    let operaBtn = ["Kapjuk el őket!", "Meneküljünk!", "Győztünk!"];
+    let fe = getObj("W");
+    let fegyObj = [];
+    if (fe.length > 0) {
+      for (let f of fe) {
+        let match = weapons.find((w) => w.name === f && !!w.final);
+        if (match) fegyObj.push(match);
+      }
+    }
+    let weaponCountMax =
+      3 +
+      Math.round(
+        ((100 - char.ugy) / 1 +
+          (100 - char.ero) / 2 +
+          (100 - char.esz) / 4 +
+          (100 - char.hat) / 4 +
+          char.lel / 2) /
+          15
+      );
+    let weaponCount = 0;
+    let gyilok = false;
+
+    main.innerHTML = `
+        <div id="warpanels">
+          <table id="harcter"></table>
+          <div id="kezeles">
+            <div id="opBtns">
+              <button class="btn" id="vezerBtn" >${operaBtn[opera]}</button>
+              <span id="speedBtns">
+                Sebesség:
+                <button class="speedBtn" id="sp-0.5">1/2</button>
+                <button class="speedBtn curSpeed" id="sp-1">1</button>
+                <button class="speedBtn" id="sp-2">2</button>
+                <button class="speedBtn" id="sp-5">5</button>
+              </span>
+            </div>
+            <div id="weapons"></div>
+            <div id="ustat"></div>
+          </div>
+        </div>
+      `;
+
+    function drawFBoard() {
+      let dirtStr = "";
+      for (let row = 0; row < 16; row++) {
+        dirtStr += "<tr>";
+        for (let col = 0; col < 16; col++) {
+          let fold = fields[row][col];
+          dirtStr += `
+            <td
+              class="terepCard"
+              id="terc-${col}-${row}"
+            >
+              <img
+                class="terep"
+                id="teri-${col}-${row}"
+                src="./img/rooms/terep${fold.terrain}.jpg"
+              />
+            </td>
+          `;
+        }
+        dirtStr += "</tr>";
+      }
+      document.getElementById("harcter").innerHTML = dirtStr;
+    }
+
+    function chooseFWeapon(e) {
+      let fn = e.target.id.split("-")[1];
+      let fegy = fegyObj[fn];
+      let type = fegy.final;
+      let effekt = fegy.effect;
+      console.log("Chosen: ", fegy);
+    }
+
+    function updateFWeapons() {
+      let objString = "<p>";
+      if (fegyObj.length > 0) {
+        gyilok = true;
+        document.getElementById("weapons").innerHTML = "<div>Fegyverek:</div>";
+        fegyObj.map((fegy, i) => {
+          let titleString = `${fegy.name}&#10;${fegy.desc}&#10;`;
+          objString +=
+            weaponCount === weaponCountMax
+              ? `
+                <img class="weapon usable" id="w-${i}" title="${titleString}" src="./img/weapons/${fegy.pic}">`
+              : `<img class="weapon unused" id="w-${i}" title="${titleString}" src="./img/weapons/${fegy.pic}">`;
+        });
+        objString += "</p>";
+        document.getElementById("weapons").innerHTML += objString;
+        if (gyilok) {
+          document.querySelectorAll(".weapon.usable").forEach((i) => {
+            i.addEventListener("click", chooseFWeapon);
+          });
+        }
+      } else {
+        document.getElementById("weapons").innerHTML = "";
+        gyilok = false;
+      }
+    }
+
+    drawFBoard();
+    updateFWeapons();
+  }
+
   //Act triggers
   function pressBtn(e) {
     switch (room.type) {
@@ -2935,9 +3053,12 @@ function _load() {
         digAct();
         break;
 
-      //Fight
       case "fight":
         fightAct();
+        break;
+
+      case "finalwar":
+        finalwarAct();
         break;
 
       default:

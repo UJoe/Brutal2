@@ -672,6 +672,11 @@ select {
   border-radius: 5px; 
 }
 
+.usable {
+  border: 1px solid white;
+  filter: opacity(1) brightness(1.1);
+}
+
 .used {
   border: 5px solid red;
   filter: opacity(1) brightness(1.1);
@@ -763,4 +768,92 @@ select {
 
 #fecniCont {
   min-height: fit-content;
+}
+
+/* Final war */
+#warpanels {
+  display: flex;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 70px;
+  left: 15vw;
+  width: 100%;
+  height: fit-content;
+}
+
+#harcter {
+  width: fit-content;
+  height: fit-content;
+  background-color: whitesmoke;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+}
+
+#harcter tr {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+
+#kezeles {
+  width: 30vw;
+  background-color: darkblue;
+  display: flex;
+  flex-direction: column;
+}
+
+#opBtns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid cyan;
+  border-radius: 20px;
+  padding-bottom: 1rem;
+}
+
+#vezerBtn {
+  width: 9rem;
+  background-color: red;
+  color: white;
+}
+
+.speedBtn {
+  background-color: dodgerblue;
+  color: black;
+  width: 2rem;
+  margin: 0.25rem;
+  border-radius: 5px;
+}
+
+.curSpeed {
+  background-color: white;
+}
+
+.terepCard {
+  display: flex;
+  width:  2.5vw;
+  height: 2.5vw;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.terep {
+  width: calc(2.5vw - 2px);
+  height: calc(2.5vw - 2px);
+  margin: 0;
+  padding: 0;
+}
+
+.sprite {
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 3;
+ width: calc(2.5vw - 4px); 
+ height: calc(2.5vw - 4px); 
 }
