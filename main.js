@@ -58,6 +58,15 @@ function _load() {
     `S_${skills[skills.findIndex((s) => s.id === id)].upskill}`;
   window.nameSkill = (id) => skills[skills.findIndex((s) => s.id === id)].name;
   window.rnd = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  window.shuffle = (arr) => {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+    return arr;
+  }
   var timo;
   var timo1;
   var timo2;
@@ -786,14 +795,14 @@ function _load() {
           if (checkCond("férfi")) {
             if (
               char.esz +
-                char.hat +
-                char.sup / 2 +
-                char.lel / 2 +
-                char.ero +
-                char.ugy / 2 +
-                getObj("H").length +
-                getObj("S").length * 3 -
-                getObj("X").length * 2 >
+              char.hat +
+              char.sup / 2 +
+              char.lel / 2 +
+              char.ero +
+              char.ugy / 2 +
+              getObj("H").length +
+              getObj("S").length * 3 -
+              getObj("X").length * 2 >
               100 + Math.random() * 250
             ) {
               appeal = true;
@@ -804,14 +813,14 @@ function _load() {
           } else {
             if (
               char.esz / 2 +
-                char.hat / 4 +
-                char.sup / 2 +
-                char.lel +
-                char.ero / 4 +
-                char.ugy / 2 +
-                getObj("H").length +
-                getObj("S").length * 3 -
-                getObj("X").length * 2 >
+              char.hat / 4 +
+              char.sup / 2 +
+              char.lel +
+              char.ero / 4 +
+              char.ugy / 2 +
+              getObj("H").length +
+              getObj("S").length * 3 -
+              getObj("X").length * 2 >
               75 + Math.random() * 125
             ) {
               appeal = true;
@@ -1059,8 +1068,8 @@ function _load() {
         if (reciName.length < 1) {
           let minimalArt = Math.round(
             (gemIn[0] + gemIn[1] * 3 + gemIn[2] * 9) / 300 +
-              Math.random() / 5 -
-              Math.random() / 3
+            Math.random() / 5 -
+            Math.random() / 3
           );
           if (minimalArt > 3) minimalArt = 3;
           let potrecik = weapons.filter((w) => w.recept);
@@ -1129,12 +1138,10 @@ function _load() {
           cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${
-            i + 1
-          }" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
-                <td><input id="ir-${i}" type="range" min="0" max="${
-            gemNum[i]
-          }" value="${gemIn[i]}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1
+            }" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
+                <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]
+            }" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
                   <button class="Mbtn" id="b-max-${i}">Max</button>
@@ -1465,11 +1472,11 @@ function _load() {
     function newQuestion() {
       let a = parseInt(
         room.level * 2 +
-          (Math.random() * (100 + room.level * modi * 5 - counter)) / 2
+        (Math.random() * (100 + room.level * modi * 5 - counter)) / 2
       );
       let b = parseInt(
         room.level +
-          (Math.random() * (100 + room.level * modi * 3 - counter)) / 2
+        (Math.random() * (100 + room.level * modi * 3 - counter)) / 2
       );
       let c = parseInt(Math.random() * 3);
       let d = ["+", "-", "*"][c];
@@ -1586,12 +1593,12 @@ function _load() {
             5 +
             Math.round(
               room.size * 2 +
-                room.akna * 2.5 -
-                room.kincs / 2 +
-                Math.random() * 5 +
-                (room.size * (room.size - 1) - digs) / 2 +
-                kincsHit / 1.5 -
-                aknaHit
+              room.akna * 2.5 -
+              room.kincs / 2 +
+              Math.random() * 5 +
+              (room.size * (room.size - 1) - digs) / 2 +
+              kincsHit / 1.5 -
+              aknaHit
             );
           changeVal("sup", bonus);
           changeVal("hat", 1);
@@ -1604,13 +1611,13 @@ function _load() {
           finish = true;
           let bonus = Math.round(
             room.size * 1.5 +
-              room.akna * 2 -
-              room.kincs -
-              Math.random() * 5 +
-              Math.random() * 5 -
-              (room.kincs - kincsHit) * 2 +
-              kincsHit -
-              aknaHit
+            room.akna * 2 -
+            room.kincs -
+            Math.random() * 5 +
+            Math.random() * 5 -
+            (room.kincs - kincsHit) * 2 +
+            kincsHit -
+            aknaHit
           );
           changeVal("sup", bonus);
           changeVal("hat", -1);
@@ -1785,13 +1792,11 @@ function _load() {
         `;
 
     function updateDScore() {
-      let scoreStr = `<span class="score">${
-        room.gems[0]
-      }: <span class="red">${Math.round(fuel)}%</span></span>`;
+      let scoreStr = `<span class="score">${room.gems[0]
+        }: <span class="red">${Math.round(fuel)}%</span></span>`;
       for (let i = 1; i < room.gems.length; i++) {
-        scoreStr += `<span class="score">${room.gems[i]}: <span class="lime">${
-          gems[i - 1]
-        }</span></span>`;
+        scoreStr += `<span class="score">${room.gems[i]}: <span class="lime">${gems[i - 1]
+          }</span></span>`;
       }
       document.getElementById("scoresM").innerHTML = scoreStr;
 
@@ -1799,9 +1804,9 @@ function _load() {
         let nrg = room.gems[0];
         message(
           "Kifogyott a" +
-            (/[öüóeuioőúaéáűí]/i.test(nrg.charAt(0)) ? "z " : " ") +
-            nrg +
-            "!"
+          (/[öüóeuioőúaéáűí]/i.test(nrg.charAt(0)) ? "z " : " ") +
+          nrg +
+          "!"
         );
         document.getElementById("exitBtn").disabled = true;
         document.removeEventListener("keyup", move);
@@ -1961,8 +1966,7 @@ function _load() {
           if (f + fuel > 100) f = 1;
           00 - fuel;
           message(
-            `Találtál kb. ${Math.round(f)}% ${
-              room.gems[0]
+            `Találtál kb. ${Math.round(f)}% ${room.gems[0]
             }ként hasznosítható ásványt.`
           );
           fuel += f;
@@ -2417,11 +2421,11 @@ function _load() {
     let fegyObj = getWeapons();
     let att = Math.round(
       char.ugy / 1.1 +
-        char.esz / 2.8 +
-        char.ero / 1.5 -
-        char.lel / 1.2 +
-        getObj("S").length +
-        getObj("X").length * 2
+      char.esz / 2.8 +
+      char.ero / 1.5 -
+      char.lel / 1.2 +
+      getObj("S").length +
+      getObj("X").length * 2
     );
     att = att < 0 ? 0 : att > 150 ? 150 : att;
     let def = Math.round(
@@ -2432,13 +2436,13 @@ function _load() {
       5000 -
       Math.round(
         char.ugy * 60 +
-          char.esz * 5 +
-          char.lel * 5 +
-          char.hat * 5 +
-          steps * 3 -
-          char.ero * 10 +
-          Math.random() * 500 +
-          getObj("S_Villámgyorsaság") * 1000
+        char.esz * 5 +
+        char.lel * 5 +
+        char.hat * 5 +
+        steps * 3 -
+        char.ero * 10 +
+        Math.random() * 500 +
+        getObj("S_Villámgyorsaság") * 1000
       );
     speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
     if (room.dungeon) {
@@ -2783,9 +2787,9 @@ function _load() {
       if (
         seb + char.esz / 20 >
         12 +
-          Math.random() * 10 -
-          getObj("S_Bivalyerő") * 2 -
-          getObj("S_Villámgyorsaság" * 2 - getObj("S_Pengeagy" * 2))
+        Math.random() * 10 -
+        getObj("S_Bivalyerő") * 2 -
+        getObj("S_Villámgyorsaság" * 2 - getObj("S_Pengeagy" * 2))
       ) {
         let x = Math.random() * 12;
         switch (true) {
@@ -2850,9 +2854,9 @@ function _load() {
               15 -
               Math.round(
                 room.att / 20 +
-                  room.def / 20 +
-                  room.speed / 2 +
-                  Math.random() * 2
+                room.def / 20 +
+                room.speed / 2 +
+                Math.random() * 2
               );
             if (bonus < 1) bonus = 1;
             changeVal("sup", -bonus);
@@ -2894,17 +2898,16 @@ function _load() {
   function finalwarAct() {
     music.volume = 0.7;
     let fields = [];
-    for (let y = 0; y < 16; y++) {
+    for (let y = 0; y < 15; y++) {
       fields.push([]);
-      for (let x = 0; x < 16; x++) {
+      for (let x = 0; x < 15; x++) {
         let r = Math.random();
-        let z = r < 0.8 || y < 2 || y > 13 ? 0 : r < 0.9 ? 1 : 2;
+        let z = r < 0.8 || y < 2 || y > 12 ? 0 : r < 0.9 ? 1 : 2;
         fields[y].push({ terrain: z, empty: z === 0 });
       }
     }
-    console.log("FIELDS: ", fields);
     let gspeed = 1;
-    let actionClick = false;
+    let gclick = "select";
     let opera = 0;
     let operaBtn = ["Kapjuk el őket!", "Meneküljünk!", "Győztünk!"];
     let fe = getObj("W");
@@ -2923,7 +2926,7 @@ function _load() {
           (100 - char.esz) / 4 +
           (100 - char.hat) / 4 +
           char.lel / 2) /
-          15
+        15
       );
     let weaponCount = 0;
     let gyilok = false;
@@ -2931,6 +2934,7 @@ function _load() {
     main.innerHTML = `
         <div id="warpanels">
           <table id="harcter"></table>
+          <div id="sprites"></div>
           <div id="kezeles">
             <div id="opBtns">
               <button class="btn" id="vezerBtn" >${operaBtn[opera]}</button>
@@ -2950,9 +2954,9 @@ function _load() {
 
     function drawFBoard() {
       let dirtStr = "";
-      for (let row = 0; row < 16; row++) {
+      for (let row = 0; row < 15; row++) {
         dirtStr += "<tr>";
-        for (let col = 0; col < 16; col++) {
+        for (let col = 0; col < 15; col++) {
           let fold = fields[row][col];
           dirtStr += `
             <td
@@ -2970,6 +2974,141 @@ function _load() {
         dirtStr += "</tr>";
       }
       document.getElementById("harcter").innerHTML = dirtStr;
+      let units = [];
+      let uid = 0;
+      function newSprite(model, id, team) {
+        return {
+          id: id,
+          team: team,
+          name: model.name,
+          pic: model.pic,
+          oatt: model.att,
+          att: model.att,
+          odef: model.def,
+          def: model.def,
+          ohp: model.hp,
+          hp: model.hp,
+          ospeed: model.speed,
+          speed: model.speed,
+          cr: model.cr,
+        };
+      }
+      let preFriends = armies[room.friends].split(", ");
+      let preNmes = armies[room.enemies].split(", ");
+      let preOpts = room.opts.split(", ");
+      for (let f of preFriends) {
+        let numb = f.split(" ")[0];
+        let type = f.split(" ")[1];
+        for (let i = 0; i < numb; i++) {
+          let model = sprites.find((s) => s.name == type);
+          units.push(newSprite(model, uid, "friend"));
+          uid++;
+        }
+      }
+      for (let f of preNmes) {
+        let numb = f.split(" ")[0];
+        let type = f.split(" ")[1];
+        for (let i = 0; i < numb; i++) {
+          let model = sprites.find((s) => s.name == type);
+          units.push(newSprite(model, uid, "nme"));
+          uid++;
+        }
+      }
+      for (let f of preOpts) {
+        let who = "";
+        let team = "";
+        if (f.includes("_")) {
+          let type = f.split("_")[0];
+          let ki = f.split("_")[1];
+          if (type === "J") {
+            if (getObj(f) && !getObj("X_" + ki)) {
+              who = ki;
+              team = "friend";
+            }
+          } else {
+            if (!getObj(f) && !getObj("J_" + ki)) {
+              who = ki;
+              team = "nme";
+            }
+          }
+        } else {
+          if (!getObj("X_" + f)) {
+            who = f;
+            team = "friend";
+          }
+        }
+        if (who.length) {
+          let model = sprites.find((s) => s.name == who);
+          if (model) units.push(newSprite(model, uid, team));
+          uid++;
+        }
+      }
+      let lerakN = [
+        [7, 0],
+        [5, 0],
+        [9, 0],
+        [3, 0],
+        [11, 0],
+        [6, 1],
+        [8, 1],
+        [4, 1],
+        [10, 1],
+        [1, 0],
+        [13, 0],
+        [2, 1],
+        [12, 1],
+        [0, 1],
+        [14, 1],
+      ]
+      let lerakF = [
+        [7, 14],
+        [5, 14],
+        [9, 14],
+        [3, 14],
+        [11, 14],
+        [6, 13],
+        [8, 13],
+        [4, 13],
+        [10, 13],
+        [1, 14],
+        [13, 14],
+        [2, 13],
+        [12, 13],
+        [0, 13],
+        [14, 13],
+      ]
+      let fids = [];
+      let nids = [];
+      for (let u of units) {
+        if (u.team === "friend") fids.push(u.id);
+        if (u.team === "nme") nids.push(u.id);
+      }
+      fids = shuffle(fids);
+      nids = shuffle(nids);
+      for (let i = 0; i < fids.length; i++) {
+        let n = fids[i];
+        units[n].x = lerakF[i][0];
+        units[n].y = lerakF[i][1];
+      }
+      for (let i = 0; i < nids.length; i++) {
+        let n = nids[i];
+        units[n].x = lerakN[i][0];
+        units[n].y = lerakN[i][1];
+      }
+      console.log("UNITS: ", units);
+      let spriteStr = "";
+      for (let u of units) {
+        spriteStr += `
+          <img id="unit-${u.id}" class="sprite ${u.team}" src="./img/rooms/${u.pic}">
+        `
+      }
+      document.getElementById("sprites").innerHTML = spriteStr;
+      for (let u of units) {
+        let leftv = 3 * u.x;
+        let topv = 3 * u.y;
+        document.getElementById("unit-" + u.id).style.left = `calc(12vw + ${leftv}vw + 4px)`;
+        document.getElementById("unit-" + u.id).style.top = `calc(70px + ${topv}vw + 4px)`;
+      }
     }
 
     function chooseFWeapon(e) {

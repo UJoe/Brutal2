@@ -55,3 +55,56 @@ window.chars = [
     sup: 0,
   },
 ];
+
+window.sprites = [
+  {
+    name: "Szekus",
+    pic: "szekus.jpg",
+    att: 70,
+    def: 30,
+    hp: 100,
+    speed: 1,
+    cr: 3,
+  },
+  {
+    name: "Indián",
+    pic: "indian.png",
+    att: 50,
+    def: 10,
+    hp: 60,
+    speed: 3,
+    cr: 1,
+  },
+  {
+    name: "Oshinoko",
+    pic: "oshinoko-face.JPG",
+    att: 110,
+    def: 55,
+    hp: 100,
+    speed: 3,
+    cr: 2,
+  },
+  {
+    name: "Szenyamuki",
+    pic: "szenyamuki-face.JPG",
+    att: 132,
+    def: 77,
+    hp: 110,
+    speed: 3,
+    cr: 1,
+  },
+  {
+    name: "Ügyes Frigyes",
+    pic: "frici.JPG",
+    att: 70,
+    def: 50,
+    hp: 100,
+    speed: 3,
+    cr: 3,
+  },
+];
+
+window.armies = {
+  városháza: "2 Szekus, 1 Indián",
+  gárda: "2 Indián, 2 Szekus",
+};

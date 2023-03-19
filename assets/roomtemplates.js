@@ -47,7 +47,7 @@ let templates = [
        C
       </p>
       <p>
-       D <span class='part'></span> 
+       D <span class="part"></span> 
       </p>
       <p><i>
        Mit teszel?
@@ -387,4 +387,40 @@ let templates = [
     ],
     findmany: 3,
   },
-];
+
+  //finalwar
+
+  {
+    num: 136,
+    title: "A városháza megostromlása a <span class='name'></span> Gárdával",
+    type: "finalwar",
+    friends: "gárda",
+    enemies: "városháza",
+    opts: "J_Oshinoko, J_Szenyamuki, X_Szenyamuki, Ügyes Frigyes",
+    music: "finalwar",
+    pic: "townhall.JPG",
+    desc: `
+      <p>
+      </p>
+      <i>
+      <p>
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - számláló eléri a 0-t, és a kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld a fent megjelenő üzeneteket!
+      </p>
+      <p>
+        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll, pihen és őrködik. Ha egy üres mezőre, akkor átmegy oda saját sebességével, ha egy ellenségre vagy fára, akkor letámadja, ha barátra, akkor pedig társul vele. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség.  Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A CR (céltudatossági ráta) értéke (1-3) mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Aki támad, annak kék lesz az aurája, aki speciális képességet használ, annak lila, akinek villog az életerő-jelző csíkja, az éppen sérül. A zöld csík teljes, a sárga legalább fél, a piros félnél kisebb életerőt jelez. Amelyik szereplő a játék során a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+      </p>
+      <p>
+        Jó szórakozást!
+      </p>
+      </i>
+    `,
+    buttons: [
+      {
+        txt: "Harcra fel, győzni kell"
+      }
+    ],
+    pass: 202,
+    fail: 203
+  }
+]
+

@@ -4309,8 +4309,9 @@ window.rooms = [
     num: 136,
     title: "A városháza megostromlása a <span class='name'></span> Gárdával",
     type: "finalwar",
-    friends: "Gárda, J_Oshinoko",
-    enemies: "Városháza",
+    friends: "gárda",
+    enemies: "városháza",
+    opts: "J_Oshinoko",
     music: "finalwar",
     pic: "townhall.JPG",
     desc: `
