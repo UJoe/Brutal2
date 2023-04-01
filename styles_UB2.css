@@ -694,7 +694,7 @@ select {
 }
 
 .usable {
-  border: 1px solid white;
+  border: 5px solid transparent;
   filter: opacity(1) brightness(1.1);
 }
 
@@ -886,8 +886,29 @@ select {
 
 .friend {
   border-bottom: 3px solid white;
+  cursor: pointer;
 }
 
 .nme {
   border-bottom: 3px solid black;
+  cursor: crosshair;
+}
+
+#overlay {
+  position: relative;
+  display: inline-block;
+  --reveal: 5px;
+}
+
+#overlay:after {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--reveal);
+  background: rgba(0, 0, 0, .7);
+  margin: 10px;
+  transition: bottom 1s linear;
 }

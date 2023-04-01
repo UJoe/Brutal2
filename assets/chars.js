@@ -58,22 +58,115 @@ window.chars = [
 
 window.sprites = [
   {
+    name: "Paraszt",
+    pic: "paraszt.jpg",
+    att: 20,
+    def: 5,
+    hp: 30,
+    cr: 3,
+    range: 1,
+    spec: "-",
+    sound: "suhint-nagy"
+  },
+  {
     name: "Szekus",
     pic: "szekus.jpg",
     att: 70,
     def: 30,
-    hp: 100,
-    speed: 1,
+    hp: 90,
     cr: 3,
+    range: 1,
+    spec: "-",
+    sound: "hit13"
+  },
+  {
+    name: "Izomagy",
+    pic: "kidobo.jpg",
+    att: 75,
+    def: 50,
+    hp: 120,
+    cr: 2,
+    range: 1,
+    spec: "-",
+    sound: "hit4"
   },
   {
     name: "Indián",
     pic: "indian.png",
     att: 50,
     def: 10,
-    hp: 60,
-    speed: 3,
+    hp: 50,
     cr: 1,
+    range: 2,
+    spec: "-",
+    sound: "indian"
+  },
+  {
+    name: "Íjász",
+    pic: "archer.png",
+    att: 75,
+    def: 15,
+    hp: 70,
+    cr: 2,
+    range: 3,
+    spec: "-",
+    sound: "flyhit"
+  },
+  {
+    name: "Tüzér",
+    pic: "soldier.jpg",
+    att: 100,
+    def: 30,
+    hp: 80,
+    cr: 3,
+    range: 4,
+    spec: "Gránátvetés: A célpont szomszédjai is megsebesülnek.",
+    sound: "rifleshot"
+  },
+  {
+    name: "Robi",
+    pic: "robi.jpg",
+    att: 50,
+    def: 50,
+    hp: 100,
+    cr: 1,
+    range: 1,
+    spec: "Feltartóztatás: Megállásra kényszeríti az ellenfelet.",
+    sound: "robi"
+  },
+  {
+    name: "Favágó",
+    pic: "favago.jpg",
+    att: 80,
+    def: 40,
+    hp: 80,
+    cr: 3,
+    range: 2,
+    spec: "Favágás: Egy csapással végez a fákkal.",
+    sound: "hit14"
+  },
+  {
+    name: "Távolugró",
+    pic: "jumper.jpg",
+    att: 50,
+    def: 20,
+    hp: 70,
+    cr: 1,
+    range: 1,
+    spec: "Távolugrás: Két mezőnyit ugrik, akár víz felett is.",
+    sound: "hit10"
+
+  },
+  {
+    name: "Óriás",
+    pic: "giant.JPG",
+    att: 130,
+    def: 70,
+    hp: 150,
+    cr: 3,
+    range: 1,
+    spec: "Lökés: Aki az útjába áll, azt ellőki. Ha nem tudja hova, akkor eltapossa.",
+    sound: "giantroar"
   },
   {
     name: "Oshinoko",
@@ -81,30 +174,58 @@ window.sprites = [
     att: 110,
     def: 55,
     hp: 100,
-    speed: 3,
     cr: 2,
+    range: 1,
+    spec: "Lopakodás: Csak akkor veszik észre, ha támad.",
+    sound: "suhint"
   },
   {
     name: "Szenyamuki",
     pic: "szenyamuki-face.JPG",
-    att: 132,
-    def: 77,
+    att: 135,
+    def: 75,
     hp: 110,
-    speed: 3,
-    cr: 1,
+    cr: 2,
+    range: 1,
+    spec: "Halálos csapás: Ha formában van, egy csapásra végez bárkivel.",
+    sound: "suhint-szur"
   },
   {
     name: "Ügyes Frigyes",
     pic: "frici.JPG",
     att: 70,
     def: 50,
-    hp: 100,
-    speed: 3,
-    cr: 3,
+    hp: 90,
+    cr: 1,
+    range: 5,
+    spec: "Mesterlövész: Akár 5 mezőnyire is tud támadni bármilyen akadályon át.",
+    sound: "hit8"
+  },
+  {
+    name: "Bogi",
+    pic: "bogi.JPG",
+    att: 50,
+    def: 20,
+    hp: 60,
+    cr: 1,
+    range: 1,
+    spec: "Csábítás: Megpróbálja átállítani az ellenfelet.",
+    sound: "femaleattack"
+  },
+  {
+    name: "Kocsmatöltelékek",
+    pic: "kocsmatöltelékek.jpg",
+    att: 80,
+    def: 30,
+    hp: 150,
+    cr: 1,
+    range: 1,
+    spec: "Részegség: Rendezetlen mozgás, az összes szomszéd támadása.",
+    sound: "hit5"
   },
 ];
 
 window.armies = {
-  városháza: "2 Szekus, 1 Indián",
-  gárda: "2 Indián, 2 Szekus",
+  városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+  gárda: "1 Oshinoko, 1 Szenyamuki, 1 Ügyes Frigyes, 1 Bogi, 1 Kocsmatöltelékek, 1 Robi",
 };
