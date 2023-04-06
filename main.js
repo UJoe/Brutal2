@@ -77,6 +77,16 @@ function _load() {
   var timesOut;
   var dying;
 
+  function clearTimers() {
+    clearInterval(timo);
+    clearTimeout(timo);
+    clearTimeout(timo1);
+    clearInterval(timo2);
+    for (let t of timok) {
+      clearInterval(t);
+    }
+  }
+
   startGame();
 
   function saveChar() {
@@ -306,9 +316,7 @@ function _load() {
   function checkDeath() {
     if (char.ero < 1) {
       clearInterval(dying);
-      clearInterval(timo);
-      clearTimeout(timo1);
-      clearInterval(timo2);
+      clearTimers();
       document.querySelectorAll("button").forEach((i) => {
         i.disabled = true;
       });
@@ -471,9 +479,7 @@ function _load() {
 
     if (char.ero < 1) {
       clearInterval(dying);
-      clearInterval(timo);
-      clearTimeout(timo1);
-      clearInterval(timo2);
+      clearTimers();
       document.querySelectorAll("button").forEach((i) => {
         i.disabled = true;
       });
@@ -534,10 +540,7 @@ function _load() {
 
   //Új Helyszín
   window.newRoom = () => {
-    clearInterval(timo);
-    clearTimeout(timo);
-    clearTimeout(timo1);
-    clearInterval(timo2);
+    clearTimers();
     room = {};
     let num = rooms.findIndex((r) => r.num === char.room);
     if (num === -1) {
@@ -2994,6 +2997,7 @@ function _load() {
           id: id,
           team: team,
           name: model.name,
+          vip: model.vip,
           pic: model.pic,
           oatt: model.att,
           att: model.att,
@@ -3011,10 +3015,9 @@ function _load() {
       let preNmes = armies[room.enemies].split(", ");
       let preOpts = room.opts.split(", ");
       for (let f of preFriends) {
-        let numb = f.split(" ")[0];
-        let type = f.split(" ")[1];
-        if (type === "Ügyes") type = "Ügyes Frigyes";
-        console.log("TYPE: ", type)
+        let spc = f.indexOf(" ");
+        let numb = Number(f.substring(0, spc));
+        let type = f.substring(spc + 1);
         for (let i = 0; i < numb; i++) {
           let model = sprites.find((s) => s.name == type);
           console.log("Model: ", model);
@@ -3023,8 +3026,9 @@ function _load() {
         }
       }
       for (let f of preNmes) {
-        let numb = f.split(" ")[0];
-        let type = f.split(" ")[1];
+        let spc = f.indexOf(" ");
+        let numb = Number(f.substring(0, spc));
+        let type = f.substring(spc + 1);
         for (let i = 0; i < numb; i++) {
           let model = sprites.find((s) => s.name == type);
           units.push(newSprite(model, uid, "nme"));
@@ -3176,25 +3180,11 @@ function _load() {
       let szótő = teljesszó[0];
       switch (szótő) {
         case "vezerBtn":
-          music.volume = 0.7;
-          alert("ROHAM!")
+          scene();
           break;
 
         case "sp":
-          let newsped = teljesszó[1];
-          document.getElementById("sp-" + gspeed).classList.remove("curSpeed");
-          document.getElementById("sp-" + newsped).classList.add("curSpeed");
-          gspeed = Number(newsped);
-          for (let t of timok) {
-            console.log("T: ", t);
-            clearInterval(t);
-            if (!opera) {
-              timok[0] = setInterval(() => {
-                message(rnd(intro));
-              }, 9000 / gspeed);
-            }
-          }
-          //És még minden mást is!!!
+          changeSpeed(teljesszó[1]);
           break;
 
         default:
@@ -3203,9 +3193,15 @@ function _load() {
     }
 
     function scene() {
+      opera++;
+      document.getElementById("vezerBtn").innerHTML = operaBtn[opera];
+      clearTimers();
       switch (opera) {
-        case 0:
-
+        case 1:
+          music.volume = 0.7;
+          if (fegyObj.length > 0) {
+            weapontimer();
+          }
           break;
 
         default:
@@ -3213,24 +3209,51 @@ function _load() {
       }
     }
 
-    drawFBoard();
-    updateFWeapons();
-    document.addEventListener("click", fwAction); //removewhenleaving!!!
-    timok.push(setInterval(() => {
-      message(rnd(intro));
-    }, 9000 / gspeed));
-    if (fegyObj.length > 0) {
-      timok.push(setInterval(() => {
+    function changeSpeed(newsped) {
+      document.getElementById("sp-" + gspeed).classList.remove("curSpeed");
+      document.getElementById("sp-" + newsped).classList.add("curSpeed");
+      gspeed = Number(newsped);
+      clearTimers();
+      switch (opera) {
+        case 0:
+          timo = setInterval(() => {
+            message(rnd(intro));
+          }, 10000 / gspeed);
+          break;
+
+        case 1:
+          if (fegyObj.length > 0) {
+            document.getElementById("overlay").style.setProperty('transition', `bottom ${1 / gspeed}s linear`);
+            weapontimer();
+          }
+          break;
+
+        default:
+          break;
+      }
+      //És még minden mást is!!!
+    }
+
+    function weapontimer() {
+      timo = setInterval(() => {
         weaponCount++;
         document.getElementById("overlay").style.setProperty('--reveal', `${5 + weaponCount * (50 / weaponCountMax)}px`);
         if (weaponCount === weaponCountMax) {
           updateFWeapons();
           document.getElementById("overlay").style.setProperty('--reveal', '55px')
-          clearInterval(timok[timok.length - 1]);
+          clearInterval(timo);
         };
-      }, 1000 / gspeed));
+      }, 1000 / gspeed);
     }
+
+    drawFBoard();
+    updateFWeapons();
+    document.addEventListener("click", fwAction); //removewhenleaving!!!
+    timo = setInterval(() => {
+      message(rnd(intro));
+    }, 10000 / gspeed);
   }
+
 
   //Act triggers
   function pressBtn(e) {

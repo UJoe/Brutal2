@@ -59,6 +59,7 @@ window.chars = [
 window.sprites = [
   {
     name: "Paraszt",
+    vip: false,
     pic: "paraszt.jpg",
     att: 20,
     def: 5,
@@ -70,6 +71,7 @@ window.sprites = [
   },
   {
     name: "Szekus",
+    vip: false,
     pic: "szekus.jpg",
     att: 70,
     def: 30,
@@ -81,6 +83,7 @@ window.sprites = [
   },
   {
     name: "Izomagy",
+    vip: false,
     pic: "kidobo.jpg",
     att: 75,
     def: 50,
@@ -92,6 +95,7 @@ window.sprites = [
   },
   {
     name: "Indián",
+    vip: false,
     pic: "indian.png",
     att: 50,
     def: 10,
@@ -103,6 +107,7 @@ window.sprites = [
   },
   {
     name: "Íjász",
+    vip: false,
     pic: "archer.png",
     att: 75,
     def: 15,
@@ -114,6 +119,7 @@ window.sprites = [
   },
   {
     name: "Tüzér",
+    vip: false,
     pic: "soldier.jpg",
     att: 100,
     def: 30,
@@ -125,6 +131,7 @@ window.sprites = [
   },
   {
     name: "Robi",
+    vip: false,
     pic: "robi.jpg",
     att: 50,
     def: 50,
@@ -136,6 +143,7 @@ window.sprites = [
   },
   {
     name: "Favágó",
+    vip: false,
     pic: "favago.jpg",
     att: 80,
     def: 40,
@@ -147,6 +155,7 @@ window.sprites = [
   },
   {
     name: "Távolugró",
+    vip: false,
     pic: "jumper.jpg",
     att: 50,
     def: 20,
@@ -159,6 +168,7 @@ window.sprites = [
   },
   {
     name: "Óriás",
+    vip: false,
     pic: "giant.JPG",
     att: 130,
     def: 70,
@@ -170,6 +180,7 @@ window.sprites = [
   },
   {
     name: "Oshinoko",
+    vip: true,
     pic: "oshinoko-face.JPG",
     att: 110,
     def: 55,
@@ -181,6 +192,7 @@ window.sprites = [
   },
   {
     name: "Szenyamuki",
+    vip: true,
     pic: "szenyamuki-face.JPG",
     att: 135,
     def: 75,
@@ -192,6 +204,7 @@ window.sprites = [
   },
   {
     name: "Ügyes Frigyes",
+    vip: true,
     pic: "frici.JPG",
     att: 70,
     def: 50,
@@ -203,6 +216,7 @@ window.sprites = [
   },
   {
     name: "Bogi",
+    vip: true,
     pic: "bogi.JPG",
     att: 50,
     def: 20,
@@ -214,6 +228,7 @@ window.sprites = [
   },
   {
     name: "Kocsmatöltelékek",
+    vip: true,
     pic: "kocsmatöltelékek.jpg",
     att: 80,
     def: 30,
@@ -227,5 +242,5 @@ window.sprites = [
 
 window.armies = {
   városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-  gárda: "1 Oshinoko, 1 Szenyamuki, 1 Ügyes Frigyes, 1 Bogi, 1 Kocsmatöltelékek, 1 Robi",
+  gárda: "1 Oshinoko, 1 Szenyamuki, 1 Ügyes Frigyes, 1 Bogi, 1 Kocsmatöltelékek, 2 Robi",
 };
