@@ -136,7 +136,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 136; //startroom
+		char.room = 0; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -3120,7 +3120,7 @@ function _load() {
 		}
 
 		function dies(id) {
-			//
+			//töröld ki és ellenőrizd a seregek állapotát, hogy véget ér-e a harc!
 		}
 
 		let distance = (u1, u2) => Math.floor(Math.sqrt((u1.x - u2.x) * (u1.x - u2.x) + (u1.y - u2.y) * (u1.y - u2.y)));
@@ -3128,14 +3128,8 @@ function _load() {
 		let attacker = (id) => units.filter((u) => u.presentAct.type === "támad" && u.presentAct.victim === id);
 
 		let inrange = (id) =>
-			units.filter(
-				(u) =>
-					u.friend === !id.friend &&
-					distance(
-						u,
-						units[id] && (u.spec !== "lopakodás" || (u.spec === "lopakodás" && u.presentAct.type === "támad"))
-					) <= id.range
-			);
+			units.filter((u) => u.friend === !units[id].friend && distance(u, units[id])) <= id.range &&
+			(u.spec !== "lopakodás" || (u.spec === "lopakodás" && u.presentAct.type === "támad" && clearview(u.x, u.y)));
 
 		let chooseVictim = (u, arr) =>
 			u.name === "Kocsmatöltelékek"
@@ -3145,6 +3139,14 @@ function _load() {
 				: u.name === "Tüzér"
 				? strongest(arr).id
 				: bestmatch(u, arr).id;
+
+		function neighbors(u) {
+			let aFriends = units.filter((u2) => u.friend && distance(u, u2) === 1);
+			let aNmes = units.filter((u2) => !u.friend && distance(u, u2) === 1);
+			return { friends: aFriends, nmes: aNmes };
+		}
+
+		function clearview(x, y) {}
 
 		function movebullet(u, x, y) {
 			document.getElementById("bullet-" + u.id).style.setProperty("transition", "none");
@@ -3379,7 +3381,7 @@ function _load() {
 			let fx = u.presentAct.x;
 			let fy = u.presentAct.y;
 			movebullet(u, fx, fy);
-			if (u.spec === "favágás" || u.att + u.hp > 50 + Math.random() * 150) {
+			if (u.spec === "favágás" || u.att + u.hp > 75 + Math.random() * 150) {
 				sound.src = "./audio/treecut.mp3";
 				sound.play();
 				fields[fy][fx].terrain = 0;
@@ -3390,12 +3392,6 @@ function _load() {
 				}, 500 / gspeed);
 			} else {
 				if (u.cr < 0.5 + Math.random() * 3) {
-					u.presentAct = {
-						type: "áll",
-						victim: -1,
-						x: -1,
-						y: -1,
-					};
 					u.futureAct = {
 						type: "áll",
 						victim: -1,

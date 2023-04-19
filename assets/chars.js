@@ -130,7 +130,7 @@ window.sprites = [
 		def: 30,
 		hp: 80,
 		cr: 3,
-		range: 4,
+		range: 3,
 		spec: "gránátvetés",
 		desc: "Vagy a legerősebbre lő, vagy gránátot dob, ami a célpont szomszédjait is megséríti.",
 		sound: "rifleshot",
@@ -223,7 +223,7 @@ window.sprites = [
 		cr: 1,
 		range: 5,
 		spec: "mesterlövész",
-		desc: "Elég messzire tud lőni bármilyen akadályon át.",
+		desc: "Jó messzire tud lőni bármilyen akadályon át.",
 		sound: "hit8",
 	},
 	{
@@ -257,6 +257,6 @@ window.sprites = [
 window.armies = {
 	/* városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
 	gárda: "5 Óriás, 5 Kocsmatöltelékek, 1 Robi", */
-	városháza: "1 Paraszt, 1 Indián",
-	gárda: "1 Óriás, 5 Favágó",
+	városháza: "1 Favágó, 2 Óriás",
+	gárda: "1 Favágó, 1 Robi, 1 Íjász",
 };

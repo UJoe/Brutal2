@@ -48,7 +48,7 @@ window.rooms = [
         - Eljött az idő, hogy átvegyem a hatalmat felettetek - jelented be hűvösen.
       </p>
       <p>
-        Az emberek először zavartan néznek rád, de elszánt, kemény arcodból kiolvassák, hogy nem viccelsz. Tanácstalanul néznek egymásra. Nemrég szabaultak meg a technokrata varázsló Battle Beetle zsarnokságától - csak azért, hogy egy újabb despota irányítsa az életüket?
+        Az emberek először zavartan néznek rád, de elszánt, kemény arcodból kiolvassák, hogy nem viccelsz. Tanácstalanul néznek egymásra. Nemrég szabadultak meg a technokrata varázsló Battle Beetle zsarnokságától - csak azért, hogy egy újabb despota irányítsa az életüket?
       </p>
       <p>
         De te kőkemény maradsz. Valójában a szíved mélyén mindig is erre vágytál. Battle Beetle csak útban volt a terveid megvalósításában. De most eltűnt, és eljött a te időd!
