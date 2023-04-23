@@ -118,6 +118,10 @@ p,
 	filter: brightness(0.1) opacity(0.1) blur(10px);
 }
 
+.darkenFW {
+	filter: brightness(0.1) opacity(0.1) blur(10px);
+}
+
 .brighten {
 	transition: filter 1s;
 	filter: brightness(1) opacity(1) blur(0);
@@ -457,6 +461,14 @@ select {
 
 .darkcyan {
 	color: darkcyan;
+}
+
+.lightskyblue {
+	color: lightskyblue;
+}
+
+.green {
+	color: green;
 }
 
 #footer {
@@ -914,7 +926,7 @@ select {
 	border-top: 3px solid lime;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
-	transition: left linear 1s, top linear 1s;
+	transition: left linear 1s, top linear 1s, filter linear 1s;
 }
 
 .bullet {
@@ -981,6 +993,7 @@ select {
 	transition: opacity 0.2s;
 	border-radius: 1vw;
 	font-size: 0.9vw;
+	transition: filter linear 1s;
 }
 
 .selectedUnit {

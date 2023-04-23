@@ -103,7 +103,7 @@ window.sprites = [
 		att: 50,
 		def: 10,
 		hp: 50,
-		cr: 1,
+		cr: 2,
 		range: 2,
 		spec: "-",
 		desc: "Cingár kis alak, aki mindig a leggyengébbre céloz.",
@@ -116,7 +116,7 @@ window.sprites = [
 		att: 75,
 		def: 15,
 		hp: 70,
-		cr: 2,
+		cr: 1,
 		range: 3,
 		spec: "-",
 		desc: "Meglepő módon íja van, amivel nyilakat lő.",
@@ -142,7 +142,7 @@ window.sprites = [
 		att: 50,
 		def: 50,
 		hp: 100,
-		cr: 1,
+		cr: 2,
 		range: 1,
 		spec: "feltartóztatás",
 		desc: "Megállásra kényszerít és letámad minden szomszédot.",
@@ -171,7 +171,7 @@ window.sprites = [
 		cr: 1,
 		range: 1,
 		spec: "távolugrás",
-		desc: "Két mezőnyit ugrik, ha siet, akár víz felett is áthúz.",
+		desc: "Két mezőnyit ugrik, ha siet, minden akadály felett áthúz.",
 		sound: "hit10",
 	},
 	{
@@ -220,7 +220,7 @@ window.sprites = [
 		att: 70,
 		def: 50,
 		hp: 90,
-		cr: 1,
+		cr: 2,
 		range: 5,
 		spec: "mesterlövész",
 		desc: "Jó messzire tud lőni bármilyen akadályon át.",
@@ -256,7 +256,16 @@ window.sprites = [
 
 window.armies = {
 	/* városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "5 Óriás, 5 Kocsmatöltelékek, 1 Robi", */
-	városháza: "1 Favágó, 2 Óriás",
-	gárda: "1 Favágó, 1 Robi, 1 Íjász",
+	gárda: "5 Óriás, 1 Kocsmatöltelékek, 1 Robi", */
+	városháza: "2 Robi",
+	gárda: "2 Robi",
 };
+
+window.specvoices = {
+	gránátvetés: "bomb",
+	favágás: "treecut",
+	távolugrás: "bounce",
+	lökés: "giantpush",
+	csábítás: "seduce",
+	részegség: "csuklik"
+}
