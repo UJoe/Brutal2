@@ -2789,7 +2789,7 @@ function _load() {
               id="terc-${col}-${row}"
             >
               <img
-                class="terep"
+                class="terep terep-${fold.terrain}"
                 id="teri-${col}-${row}"
                 src="./img/rooms/terep${fold.terrain}.jpg"
               />
@@ -2966,7 +2966,7 @@ function _load() {
       let fegy = fegyObj[fn];
       let type = fegy.final;
       let effekt = fegy.effect;
-      gclick = "weapon";
+      gclick = "shoot";
       console.log("Chosen: ", fegy);
     }
 
@@ -3018,18 +3018,21 @@ function _load() {
           switch (gclick) {
             case "select":
               updateFeatured(tu);
-              if (opera === 1 && tu.friend) {
-                gclick = "attack";
+              if (opera === 1 && tu.friend && tu.name !== "Robi") {
+                gclick = "order";
                 command = tu;
                 document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "crosshair");
+                document.querySelectorAll(".terep-0").forEach(s => s.style.cursor = "move");
+                document.querySelectorAll(".terep-1").forEach(s => s.style.cursor = "crosshair");
+                document.querySelectorAll(".terep-2").forEach(s => s.style.cursor = "not-allowed");
               } else {
                 document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "help");
+                document.querySelectorAll(".terep").forEach(s => s.style.cursor = opera === 0 ? "help" : "default");
               }
               break;
 
-            case "attack":
+            case "order":
               if (!tu.friend) {
-                console.log("CMD: ", command)
                 command.futureAct = {
                   type: "támad",
                   victim: tu.id,
@@ -3038,9 +3041,24 @@ function _load() {
                 }
                 if (command.id === featuredU) updateFeatured(command);
                 document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "help");
+                document.querySelectorAll(".terep").forEach(s => s.style.cursor = "default");
                 gclick = "select";
               }
               if (tu.friend) {
+                if (tu.id === command.id) {
+                  command.futureAct = {
+                    type: "áll",
+                    victim: -1,
+                    x: -1,
+                    y: -1,
+                  }
+                  document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "help");
+                  document.querySelectorAll(".terep").forEach(s => s.style.cursor = "default");
+                  gclick = "select";
+                  updateFeatured(tu);
+                  return;
+                }
+
                 updateFeatured(tu);
                 command = tu;
                 document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "crosshair");
@@ -3057,10 +3075,10 @@ function _load() {
           break;
 
         case "teri":
-          if (opera === 0) {
-            let tx = teljesszó[1];
-            let ty = teljesszó[2];
-            let tt = ffields[ty][tx].terrain;
+          let tx = teljesszó[1];
+          let ty = teljesszó[2];
+          let tt = ffields[ty][tx].terrain;
+          if (opera === 0 || opera === 2) {
             let tn = ["MEZŐ", "ERDŐ", "TÓ"];
             let td = [
               "Sima terep.",
@@ -3080,12 +3098,23 @@ function _load() {
           }
 
           switch (gclick) {
-            /* case "select":
-              updateFeatured(Number(teljesszó[1]));
-              break;
+            case "order":
+              command.futureAct = {
+                type: "mozog",
+                victim: -1,
+                x: tx,
+                y: ty,
+              };
+              if (command.presentAct.type === "favágás") {
+                command.presentAct = {
+                  type: "áll",
+                  victim: -1,
+                  x: -1,
+                  y: -1,
+                }
+              }
 
-            case "attack":
-              unitTarget(Number(teljesszó[1]));
+              if (command.id === featuredU) updateFeatured(command);
               break;
 
             case "shoot":
@@ -3093,7 +3122,7 @@ function _load() {
               break;
 
             default:
-              break; */
+              break;
           }
 
         default:
@@ -3125,11 +3154,11 @@ function _load() {
       return x;
     }
 
-    function bestmatch(b, array) {
+    function bestmatch(u, array) {
       let x = -1;
       let y = 1000;
       for (let a of array) {
-        let z = Math.abs(a.hp + a.att + a.def - (units[b].hp + units[b].att + units[b].def));
+        let z = Math.abs(a.hp + a.att + a.def - (u.hp + u.att + u.def));
         if (z < y) {
           y = z;
           x = a.id;
@@ -3205,17 +3234,18 @@ function _load() {
 
     let attackers = (u) => units.filter((uf) => uf.presentAct.type === "támad" && uf.presentAct.victim === u.id);
 
-    let inrange = (u) => units.filter((uf) => uf.friend === !u.friend && distance(uf, u)) <= u.range && !uf.dead && (uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad" && clearview(u, uf)));
+    let inrange = (u) => units.filter((uf) => uf.friend === !u.friend && distance(uf, u) <= u.range && !uf.dead && (uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad") && clearview(u, uf)));
 
-
-    let chooseVictim = (u, arr) =>
-      u.name === "Kocsmatöltelékek"
-        ? rnd(arr).id
+    function chooseVictim(u, arr) {
+      let pick = rnd(arr);
+      return u.name === "Kocsmatöltelékek"
+        ? pick.id
         : u.name === "Indián"
-          ? weakest(arr).id
+          ? weakest(arr)
           : u.name === "Tüzér" || u.name === "Óriás"
-            ? strongest(arr).id
-            : bestmatch(u, arr).id;
+            ? strongest(arr)
+            : bestmatch(u, arr);
+    }
 
     function neighbors(u) {
       let aFriends = units.filter((u2) => u.friend && !u.dead && distance(u, u2) === 1);
@@ -3272,15 +3302,30 @@ function _load() {
       let oy = u.y;
       let fx = u.futureAct.x;
       let fy = u.futureAct.y;
-      if ((ox === fx && oy === fy) || (Math.abs(fx - ox) < 2 && Math.abs(fy - oy) < 2 && !ffields[fy][fx].empty)) {
+      if (u.futureAct.victim > -1) {
+        fx = units[u.futureAct.victim].x;
+        fy = units[u.futureAct.victim].y;
+      }
+
+      if (Math.floor(Math.sqrt((ox - fx) * (ox - fx) + (oy - fy) * (oy - fy))) === 1 && ffields[fy][fx].terrain === 1) {
         u.presentAct = {
-          type: "célbaér",
+          type: "favágás",
+          victim: -1,
+          x: fx,
+          y: fy,
+        };
+        if (u.id === featuredU) updateFeatured(u);
+        return;
+      }
+      if ((ox === fx && oy === fy) || (Math.abs(fx - ox) < 2 && Math.abs(fy - oy) < 2 && !ffields[fy][fx].empty)) {
+        u.futureAct = {
+          type: "áll",
           victim: -1,
           x: -1,
           y: -1,
         };
-        u.FutureAct = {
-          type: "célbaér",
+        u.presentAct = {
+          type: "áll",
           victim: -1,
           x: -1,
           y: -1,
@@ -3288,6 +3333,7 @@ function _load() {
         if (u.id === featuredU) updateFeatured(u);
         return;
       }
+
       let mx = 0;
       let my = 0;
       if (fx > ox) mx = u.spec === "távolugrás" && fx - ox > 1 ? 2 : 1;
@@ -3455,13 +3501,14 @@ function _load() {
       if (u.id === featuredU) updateFeatured(u);
     }
 
+    //present Actions
     function prÁll(u) {
       if (u.name === "Robi") {
         u.hp -= Math.round(Math.random());
       } else if (u.hp < u.ohp) {
         u.hp + Math.round(Math.random() - 0.35);
       }
-      if (Math.random() > 0.45 + u.cr / 8) changeMind(u);
+      if (Math.random() > 0.5 + u.cr / 8) changeMind(u);
     }
 
     function prMozog(u) {
@@ -3509,11 +3556,15 @@ function _load() {
       }
     }
 
-    function fuMozog(u) {
-      if (u.presentAct.type === "favágás") return;
-      pathfinder(u);
+    function prTámad(u) {
+      let fx = units[u.presentAct.victim].x;
+      let fy = units[u.presentAct.victim].y;
+      movebullet(u, fx, fy);
+
     }
 
+
+    //future Actions
     function fuÁll(u) {
       u.presentAct = {
         type: "áll",
@@ -3521,11 +3572,39 @@ function _load() {
         x: -1,
         y: -1,
       };
-      changeMind(u);
+      if (Math.random() > 0.3 + u.cr / 7) changeMind(u);
     }
 
+    function fuMozog(u) {
+      if (u.presentAct.type === "favágás") return;
+      pathfinder(u);
+    }
+
+    function fuTámad(u) {
+      let célpont = units[u.futureAct.victim];
+      if ((distance(u, célpont) > u.range) || (distance(u, célpont) <= u.range && !clearview(u, célpont))) {
+        if (u.name === "Robi") {
+          u.futureAct = {
+            type: "áll",
+            victim: -1,
+            x: -1,
+            y: -1,
+          }
+        } else {
+          pathfinder(u);
+        }
+      } else {
+        u.presentAct = {
+          type: "támad",
+          victim: célpont.id,
+          x: -1,
+          y: -1,
+        }
+      }
+    }
+
+    //AI
     function decide(u) {
-      //if (u.id === featuredU) updateFeatured(u);
       switch (u.presentAct.type) {
         case "áll":
           prÁll(u);
@@ -3540,6 +3619,7 @@ function _load() {
           break;
 
         case "támad":
+          prTámad(u);
           break;
 
         default:
@@ -3570,6 +3650,7 @@ function _load() {
               break;
 
             case "támad":
+              fuTámad(u)
               break;
 
             default:
@@ -3583,11 +3664,12 @@ function _load() {
 
     function changeMind(u) {
       let ar = attackers(u);
+      if (u.name === "Robi") ar = ar.filter(a => distance(u, a) <= u.range);
       let ir = inrange(u);
       if (ar.length > 0) {
         u.futureAct = {
           type: "támad",
-          victim: weakest(ar).id,
+          victim: weakest(ar),
           x: -1,
           y: -1,
         };
@@ -3625,7 +3707,7 @@ function _load() {
           document.querySelectorAll(".sprite.friend").forEach(s => s.style.cursor = "pointer");
           document.querySelectorAll(".terep").forEach(s => s.style.cursor = "default");
           if (featuredU > -1 && units[featuredU].friend) {
-            gclick = "attack";
+            gclick = "order";
             command = units[featuredU];
             document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "crosshair");
           }
@@ -3702,8 +3784,8 @@ function _load() {
       featuredU = u.id;
       if (featuredU > -1) document.getElementById("unit-" + featuredU).classList.add("selectedUnit");
       document.getElementById("ustat").className = "occur";
-      if (featuredU > -1 && units[featuredU].futureAct.vitim > -1)
-        document.getElementById("unit-" + units[featuredU].futureAct.vitim).classList.add("targetUnit");
+      if (featuredU > -1 && units[featuredU].futureAct.victim > -1)
+        document.getElementById("unit-" + units[featuredU].futureAct.victim).classList.add("targetUnit");
       if (featuredU > -1 && units[featuredU].futureAct.x > -1)
         document
           .getElementById("teri-" + units[featuredU].futureAct.x + "-" + units[featuredU].futureAct.y)
@@ -3740,6 +3822,10 @@ function _load() {
 					<tr>
 						<td class="blue">VÉDELEM:</td>
 						<td>${u.def}/${u.odef}</td>
+					</tr>
+					<tr>
+						<td class="blue">HATÓTÁVOLSÁG:</td>
+						<td>${u.range}</td>
 					</tr>
 					<tr>
 						<td class="blue">CÉLTUDATOSSÁG:</td>

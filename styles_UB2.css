@@ -963,6 +963,7 @@ select {
 .nme {
 	border-bottom: 3px solid black;
 	cursor: help;
+	filter: brightness(.7);
 }
 
 #overlay {

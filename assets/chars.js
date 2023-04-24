@@ -257,8 +257,8 @@ window.sprites = [
 window.armies = {
 	/* városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
 	gárda: "5 Óriás, 1 Kocsmatöltelékek, 1 Robi", */
-	városháza: "2 Robi",
-	gárda: "2 Robi",
+	városháza: "1 Robi, 1 Kocsmatöltelékek",
+	gárda: "1 Óriás, 1 Indián",
 };
 
 window.specvoices = {
