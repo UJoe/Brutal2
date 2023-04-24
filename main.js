@@ -70,7 +70,7 @@ function _load() {
   };
   window.timok = [];
   window.units = [];
-  window.fields = [];
+  window.ffields = [];
   var timo;
   var timo1;
   var timo2;
@@ -2707,17 +2707,19 @@ function _load() {
 
   //finalwar
   function finalwarAct() {
+    modi = [];
+    let command = {};
     music.volume = 0.4;
     let featuredU = -1;
-    fields.length = 0;
+    ffields.length = 0;
     units.length = 0;
     let uid = 0;
     for (let y = 0; y < 13; y++) {
-      fields.push([]);
+      ffields.push([]);
       for (let x = 0; x < 13; x++) {
         let r = Math.random();
         let z = r < 0.7 || y < 2 || y > 10 ? 0 : r < 0.9 ? 1 : 2;
-        fields[y].push({ terrain: z, empty: z === 0 });
+        ffields[y].push({ terrain: z, empty: z === 0 });
       }
     }
     let gspeed = 1;
@@ -2780,7 +2782,7 @@ function _load() {
       for (let row = 0; row < 13; row++) {
         dirtStr += "<tr>";
         for (let col = 0; col < 13; col++) {
-          let fold = fields[row][col];
+          let fold = ffields[row][col];
           dirtStr += `
             <td
               class="terepCard"
@@ -2953,10 +2955,10 @@ function _load() {
         document.getElementById("bullet-" + u.id).style.left = bulletPosX(u.x);
         document.getElementById("bullet-" + u.id).style.top = bulletPosY(u.y);
 
-        fields[u.y][u.x].empty = false;
+        ffields[u.y][u.x].empty = false;
       }
       console.log("Units: ", units, uid);
-      console.log("Fields: ", fields);
+      console.log("fFields: ", ffields);
     }
 
     function chooseFWeapon(e) {
@@ -3012,13 +3014,37 @@ function _load() {
           break;
 
         case "unit":
+          let tu = units[Number(teljesszó[1])];
           switch (gclick) {
             case "select":
-              updateFeatured(units[Number(teljesszó[1])]);
+              updateFeatured(tu);
+              if (opera === 1 && tu.friend) {
+                gclick = "attack";
+                command = tu;
+                document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "crosshair");
+              } else {
+                document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "help");
+              }
               break;
 
             case "attack":
-              unitTarget(Number(teljesszó[1]));
+              if (!tu.friend) {
+                console.log("CMD: ", command)
+                command.futureAct = {
+                  type: "támad",
+                  victim: tu.id,
+                  x: -1,
+                  y: -1,
+                }
+                if (command.id === featuredU) updateFeatured(command);
+                document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "help");
+                gclick = "select";
+              }
+              if (tu.friend) {
+                updateFeatured(tu);
+                command = tu;
+                document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "crosshair");
+              }
               break;
 
             case "shoot":
@@ -3028,12 +3054,13 @@ function _load() {
             default:
               break;
           }
+          break;
 
         case "teri":
           if (opera === 0) {
             let tx = teljesszó[1];
             let ty = teljesszó[2];
-            let tt = fields[ty][tx].terrain;
+            let tt = ffields[ty][tx].terrain;
             let tn = ["MEZŐ", "ERDŐ", "TÓ"];
             let td = [
               "Sima terep.",
@@ -3148,6 +3175,7 @@ function _load() {
         let gyászín = friendly ? "red" : "green";
         message(`<span class=${gyászín}>${gyász}</span>`);
         char.objs.push("X_" + u.name);
+        modi.push(u.name); //Következő pályán halottszemle!
       }
       let uDom = document.getElementById("unit-" + u.id);
       document.getElementById("voice-" + u.id).src = `./audio/${halálhörgés}.mp3`;
@@ -3156,7 +3184,7 @@ function _load() {
       uDom.classList.add("darkenFW");
       if (u.id === featuredU) {
         document.getElementById("ustat").style.transition = `filter ${1 / gspeed}s`;
-        document.getElementById("ustat").classList.add("darken");
+        document.getElementById("ustat").classList.add("darken2");
       }
       timok[u.id] = setTimeout(() => {
         if (featuredU < 0 || featuredU === u.id) {
@@ -3167,9 +3195,9 @@ function _load() {
         uDom.style.display = "none";
         document.getElementById("bullet-" + u.id).style.display = "none";
         document.getElementById("voice-" + u.id).style.display = "none";
-        fields[u.y][u.x].empty = true;
+        ffields[u.y][u.x].empty = true;
         let survivors = units.filter(u => u.friend === friendly && !u.dead);
-        if (survivors.length < 1) finalend(friendly);
+        if (survivors.length < 1 && opera === 1) finalend(friendly);
       }, 1000 / gspeed)
     }
 
@@ -3177,7 +3205,7 @@ function _load() {
 
     let attackers = (u) => units.filter((uf) => uf.presentAct.type === "támad" && uf.presentAct.victim === u.id);
 
-    let inrange = (u) => units.filter((uf) => uf.friend === !u.friend && distance(uf, u)) <= u.range && !uf.dead && (uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad" && clearview(uf.x, uf.y)));
+    let inrange = (u) => units.filter((uf) => uf.friend === !u.friend && distance(uf, u)) <= u.range && !uf.dead && (uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad" && clearview(u, uf)));
 
 
     let chooseVictim = (u, arr) =>
@@ -3190,12 +3218,20 @@ function _load() {
             : bestmatch(u, arr).id;
 
     function neighbors(u) {
-      let aFriends = units.filter((u2) => u.friend && distance(u, u2) === 1);
-      let aNmes = units.filter((u2) => !u.friend && distance(u, u2) === 1);
+      let aFriends = units.filter((u2) => u.friend && !u.dead && distance(u, u2) === 1);
+      let aNmes = units.filter((u2) => !u.friend && !u.dead && distance(u, u2) === 1);
       return { friends: aFriends, nmes: aNmes };
     }
 
-    function clearview(x, y) { } //csináld meg neighborsszal együtt
+    function clearview(u1, u2) {
+      let [x1, y1, x2, y2] = [u1.x, u1.y, u2.x, u2.y];
+      let dx = Math.abs(x2 - x1);
+      let dy = Math.abs(y2 - y1);
+      if (dx < 2 && dy < 2) return true;
+      if ((dx === 1 && dy === 2) || (dy === 1 && dx === 2)) return true;
+      //egyenes vonalak v. 1-3, 2-3
+      return true;
+    }
 
     function specVoice(u) {
       document.getElementById("voice-" + u.id).src = `./audio/${specvoices[u.spec]}.mp3`;
@@ -3236,7 +3272,7 @@ function _load() {
       let oy = u.y;
       let fx = u.futureAct.x;
       let fy = u.futureAct.y;
-      if ((ox === fx && oy === fy) || (Math.abs(fx - ox) < 2 && Math.abs(fy - oy) < 2 && !fields[fy][fx].empty)) {
+      if ((ox === fx && oy === fy) || (Math.abs(fx - ox) < 2 && Math.abs(fy - oy) < 2 && !ffields[fy][fx].empty)) {
         u.presentAct = {
           type: "célbaér",
           victim: -1,
@@ -3289,7 +3325,7 @@ function _load() {
         }
       }
       dülöngélés();
-      if (fields[oy + my][ox + mx].empty && !siker) {
+      if (ffields[oy + my][ox + mx].empty && !siker) {
         siker = true;
         move(ox + mx, oy + my);
         if (Math.abs(mx) > 1 || Math.abs(my) > 1) specVoice(u);
@@ -3298,10 +3334,10 @@ function _load() {
         if (mx < -1) mx = -1;
         if (my > 1) my = 1;
         if (my < -1) my = -1;
-        if (fields[oy + my][ox + mx].empty && !siker) {
+        if (ffields[oy + my][ox + mx].empty && !siker) {
           siker = true;
           move(ox + mx, oy + my);
-        } else if (fields[oy + my][ox + mx].terrain === 1 && u.spec === "favágás") {
+        } else if (ffields[oy + my][ox + mx].terrain === 1 && u.spec === "favágás") {
           u.presentAct = {
             type: "favágás",
             victim: -1,
@@ -3318,12 +3354,12 @@ function _load() {
               if (o === 0) {
                 if (mx === 0 && !siker) {
                   mmx =
-                    ox === 0 || (ox > 0 && !fields[oy + my][ox - 1].empty)
+                    ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
                       ? 1
-                      : ox === 12 || (ox < 12 && !fields[oy + my][ox + 1].empty)
+                      : ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
                         ? -1
                         : rnd([1, -1]);
-                  if (fields[oy + my][ox + mmx].empty) {
+                  if (ffields[oy + my][ox + mmx].empty) {
                     siker = true;
                     move(ox + mmx, oy + my);
                   }
@@ -3331,12 +3367,12 @@ function _load() {
               } else {
                 if (my === 0 && !siker) {
                   mmy =
-                    oy === 0 || (oy > 0 && !fields[oy - 1][ox + mx].empty)
+                    oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
                       ? 1
-                      : oy === 12 || (oy < 12 && !fields[oy + 1][ox + mx].empty)
+                      : oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
                         ? -1
                         : rnd([1, -1]);
-                  if (fields[oy + mmy][ox + mx].empty) {
+                  if (ffields[oy + mmy][ox + mx].empty) {
                     siker = true;
                     move(ox + mx, oy + mmy);
                   }
@@ -3360,7 +3396,7 @@ function _load() {
                 default:
                   break;
               }
-              if (fields[oy + mmy][ox + mmx].empty && !siker) {
+              if (ffields[oy + mmy][ox + mmx].empty && !siker) {
                 siker = true;
                 move(ox + mmx, oy + mmy);
               }
@@ -3384,7 +3420,7 @@ function _load() {
                 default:
                   break;
               }
-              if (fields[oy + mmy][ox + mmx].empty && !siker) {
+              if (ffields[oy + mmy][ox + mmx].empty && !siker) {
                 siker = true;
                 move(ox + mmx, oy + mmy);
               }
@@ -3392,14 +3428,14 @@ function _load() {
           }
 
           if (!siker) {
-            if (fields[oy + my][ox + mx].terrain === 1) {
+            if (ffields[oy + my][ox + mx].terrain === 1) {
               u.presentAct = {
                 type: "favágás",
                 victim: -1,
                 x: ox + mx,
                 y: oy + my,
               };
-            } else if (fields[oy + mmy][ox + mmx].terrain === 1) {
+            } else if (ffields[oy + mmy][ox + mmx].terrain === 1) {
               u.presentAct = {
                 type: "favágás",
                 victim: -1,
@@ -3440,8 +3476,8 @@ function _load() {
         };
         return;
       }
-      fields[u.y][u.x].empty = true;
-      fields[fy][fx].empty = false;
+      ffields[u.y][u.x].empty = true;
+      ffields[fy][fx].empty = false;
       u.x = fx;
       u.y = fy;
       document.getElementById("unit-" + u.id).style.left = unitPosX(u.x);
@@ -3455,8 +3491,8 @@ function _load() {
       if (u.spec === "favágás" || u.att + u.hp > 75 + Math.random() * 175) {
         sound.src = "./audio/treecut.mp3";
         sound.play();
-        fields[fy][fx].terrain = 0;
-        fields[fy][fx].empty = true;
+        ffields[fy][fx].terrain = 0;
+        ffields[fy][fx].empty = true;
         u.presentAct.type = "mozog";
         setTimeout(() => {
           document.getElementById(`teri-${fx}-${fy}`).src = "./img/rooms/terep0.jpg";
@@ -3489,7 +3525,7 @@ function _load() {
     }
 
     function decide(u) {
-      if (u.id === featuredU) updateFeatured(u);
+      //if (u.id === featuredU) updateFeatured(u);
       switch (u.presentAct.type) {
         case "áll":
           prÁll(u);
@@ -3519,8 +3555,8 @@ function _load() {
       }
       if (u.hp < 1) {
         u.hp = 0;
-        dies(u);
         if (u.id === featuredU) updateFeatured(u);
+        dies(u);
       } else {
         if (u.id === featuredU) updateFeatured(u);
         timok[u.id] = setTimeout(() => {
@@ -3539,6 +3575,7 @@ function _load() {
             default:
               break;
           }
+          if (u.id === featuredU) updateFeatured(u);
           decide(u);
         }, 1000 / gspeed);
       }
@@ -3576,14 +3613,21 @@ function _load() {
 
     function scene() {
       gclick = "select";
-      opera++;
-      document.getElementById("vezerBtn").innerHTML = operaBtn[opera];
       clearTimers();
       switch (opera) {
-        case 1:
+        case 0:
+          opera = 1;
+          document.getElementById("vezerBtn").innerHTML = operaBtn[opera];
           music.volume = 0.7;
           if (fegyObj.length > 0) {
             weapontimer();
+          }
+          document.querySelectorAll(".sprite.friend").forEach(s => s.style.cursor = "pointer");
+          document.querySelectorAll(".terep").forEach(s => s.style.cursor = "default");
+          if (featuredU > -1 && units[featuredU].friend) {
+            gclick = "attack";
+            command = units[featuredU];
+            document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "crosshair");
           }
           for (let u of units) {
             decide(u);
@@ -3649,7 +3693,7 @@ function _load() {
     }
 
     function updateFeatured(u) {
-      //dies!!!
+      if (u.dead) return;
       if (featuredU > -1) document.getElementById("unit-" + featuredU).classList.remove("selectedUnit");
       document.querySelectorAll(".sprite").forEach((s) => s.classList.remove("targetUnit"));
 

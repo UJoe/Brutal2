@@ -912,6 +912,7 @@ select {
 	height: calc(3.3vw - 1px);
 	margin: 0;
 	padding: 0;
+	cursor: help;
 }
 
 .sprite {
@@ -956,12 +957,12 @@ select {
 
 .friend {
 	border-bottom: 3px solid white;
-	cursor: pointer;
+	cursor: help;
 }
 
 .nme {
 	border-bottom: 3px solid black;
-	cursor: crosshair;
+	cursor: help;
 }
 
 #overlay {

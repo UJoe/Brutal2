@@ -201,7 +201,6 @@ window.weapons = [
     pic: "bűz.JPG",
     sound: "undor",
     recept: 1,
-    final: "bomb",
     effect: [
       {
         val: "támadás",
@@ -539,10 +538,10 @@ window.weapons = [
   },
   {
     name: "VARÁZSPOR",
-    desc: "Megbűvöli az ellenfelet.",
+    desc: "Valami furát mindig csinál.",
     pic: "varázspor.gif",
     sound: "spell",
-    final: "nme",
+    final: "spell",
     effect: [
       {
         val: "ellenség támadás",
