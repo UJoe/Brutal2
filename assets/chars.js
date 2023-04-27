@@ -131,7 +131,7 @@ window.sprites = [
 		hp: 80,
 		cr: 3,
 		range: 3,
-		spec: "gránátvetés",
+		spec: "gránátvetés",//do
 		desc: "Vagy a legerősebbre lő, vagy gránátot dob, ami a célpont szomszédjait is megséríti.",
 		sound: "rifleshot",
 	},
@@ -144,7 +144,7 @@ window.sprites = [
 		hp: 100,
 		cr: 2,
 		range: 1,
-		spec: "feltartóztatás",
+		spec: "feltartóztatás",//do
 		desc: "Megállásra kényszerít és letámad minden szomszédot.",
 		sound: "robi",
 	},
@@ -183,7 +183,7 @@ window.sprites = [
 		hp: 150,
 		cr: 3,
 		range: 1,
-		spec: "lökés",
+		spec: "lökés",//do
 		desc: "A legerősebbet támadja. Aki az útjába áll, azt ellőki. Ha nem tudja hova, akkor eltapossa.",
 		sound: "giantroar",
 	},
@@ -196,7 +196,7 @@ window.sprites = [
 		hp: 100,
 		cr: 2,
 		range: 1,
-		spec: "lopakodás",
+		spec: "lopakodás",//do check
 		desc: "Csak akkor veszik észre, ha támad.",
 		sound: "suhint",
 	},
@@ -235,7 +235,7 @@ window.sprites = [
 		hp: 60,
 		cr: 1,
 		range: 1,
-		spec: "csábítás",
+		spec: "csábítás",//do
 		desc: "Megpróbálja átállítani az ellenfeleit az ő oldalára.",
 		sound: "femaleattack",
 	},
@@ -248,17 +248,17 @@ window.sprites = [
 		hp: 150,
 		cr: 1,
 		range: 1,
-		spec: "részegség",
+		spec: "részegség",//do round attack
 		desc: "Rendezetlenül mozognak, az összes szomszédot letámadják.",
 		sound: "hit5",
 	},
 ];
 
 window.armies = {
-	/* városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "5 Óriás, 1 Kocsmatöltelékek, 1 Robi", */
-	városháza: "1 Robi, 1 Kocsmatöltelékek",
-	gárda: "1 Óriás, 1 Indián",
+	városháza: "1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+	gárda: "1 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes",
+	/* városháza: "2 Óriás, 2 Íjász, 2 Izomagy, 1 Kocsmatöltelékek",
+	gárda: "2 Óriás, 2 Íjász, 2 Izomagy, 1 Ügyes Frigyes", */
 };
 
 window.specvoices = {

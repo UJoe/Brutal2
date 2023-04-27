@@ -3113,8 +3113,10 @@ function _load() {
                   y: -1,
                 }
               }
-
               if (command.id === featuredU) updateFeatured(command);
+              document.querySelectorAll(".sprite.nme").forEach(s => s.style.cursor = "help");
+              document.querySelectorAll(".terep").forEach(s => s.style.cursor = "default");
+              gclick = "select";
               break;
 
             case "shoot":
@@ -3167,20 +3169,79 @@ function _load() {
       return x;
     }
 
+    function closest(u, array) {
+      let x = -1;
+      let y = 15;
+      for (let a of array) {
+        let z = distance(u, a);
+        if (z < y) {
+          y = z;
+          x = a.id;
+        }
+      }
+      console.log("CLOSEST: ", x, u, array)
+      return x;
+    }
+
     function activate(u) {
+      let friends = units.filter(fu => fu.friend === u.friend && !fu.dead && u.id !== fu.id);
+      let nmes = units.filter(fu => fu.friend !== u.friend && !fu.dead);
+
+      if (u.name === "Óriás" && nmes.length > 0) {
+        u.futureAct = {
+          type: "támad",
+          victim: strongest(nmes),
+          x: -1,
+          y: -1,
+        };
+        return;
+      }
+
+      if (friends.length > 0) {
+        let mugged = [];
+        for (let f of friends) {
+          if (attackers(f).length > 0) {
+            mugged.push(f);
+          }
+        }
+        if (mugged.length > 0 && u.cr < Math.random() * 4) {
+          let muggers = attackers(units[closest(u, mugged)])
+          if (muggers.length > 0) {
+            u.futureAct = {
+              type: "támad",
+              victim: closest(u, muggers),
+              x: -1,
+              y: -1,
+            };
+            return;
+          }
+        }
+      }
+
+      let nmesinsight = nmes.filter(fu => distance(u, fu) <= u.range * 3);
+      if (nmesinsight.length > 0 && nmesinsight.length > u.cr - Math.random() * 3) {
+        console.log("NMESSEEN: ", nmesinsight)
+        u.futureAct = {
+          type: "támad",
+          victim: chooseVictim(u, nmesinsight),
+          x: -1,
+          y: -1,
+        };
+        return;
+      }
+
       u.futureAct = {
         type: "mozog",
         victim: -1,
         x: Math.floor(Math.random() * 13),
         y: Math.floor(Math.random() * 13),
       };
-      if (u.id === featuredU) updateFeatured(u);
     }
 
     function finalend(friend) {
       //ezt még normális operára
       let murdel = !!friend ? "a sereged." : "az ellenség."
-      //alert("Megsemmisült " + murdel);
+      alert("Megsemmisült " + murdel);
     }
 
     function dies(u) {
@@ -3254,6 +3315,7 @@ function _load() {
     }
 
     function clearview(u1, u2) {
+      if (u1.spec === "mesterlövész") return true;
       let [x1, y1, x2, y2] = [u1.x, u1.y, u2.x, u2.y];
       let dx = Math.abs(x2 - x1);
       let dy = Math.abs(y2 - y1);
@@ -3350,7 +3412,7 @@ function _load() {
         };
       }
       function dülöngélés() {
-        if (u.spec !== "részegség" || Math.random() < 0.325 + u.cr / 8) return;
+        if (u.spec !== "részegség" || (u.spec === "részegség" && Math.random() < 0.325 + u.cr / 8)) return;
         let ax = [-1, 0, 1];
         let ay = [-1, 0, 1];
         if (ox === 0) ax = [0, 1];
@@ -3506,15 +3568,21 @@ function _load() {
       if (u.name === "Robi") {
         u.hp -= Math.round(Math.random());
       } else if (u.hp < u.ohp) {
-        u.hp + Math.round(Math.random() - 0.35);
+        u.hp += Math.round(Math.random() - 0.35);
       }
-      if (Math.random() > 0.5 + u.cr / 8) changeMind(u);
+      if (Math.random() > 0.6 + u.cr / 9.3) changeMind(u);
     }
 
     function prMozog(u) {
       let fx = u.presentAct.x;
       let fy = u.presentAct.y;
       if (fx === u.x && fy === u.y) {
+        u.futureAct = {
+          type: "áll",
+          victim: -1,
+          x: -1,
+          y: -1,
+        };
         u.presentAct = {
           type: "áll",
           victim: -1,
@@ -3535,7 +3603,7 @@ function _load() {
       let fx = u.presentAct.x;
       let fy = u.presentAct.y;
       movebullet(u, fx, fy);
-      if (u.spec === "favágás" || u.att + u.hp > 75 + Math.random() * 175) {
+      if (u.spec === "favágás" || u.att + u.hp > 75 + Math.random() * 200) {
         sound.src = "./audio/treecut.mp3";
         sound.play();
         ffields[fy][fx].terrain = 0;
@@ -3557,10 +3625,45 @@ function _load() {
     }
 
     function prTámad(u) {
-      let fx = units[u.presentAct.victim].x;
-      let fy = units[u.presentAct.victim].y;
+      let nme = units[u.presentAct.victim]
+      let fx = nme.x;
+      let fy = nme.y;
       movebullet(u, fx, fy);
+      let [att, hp, nmeAtt, nmeDef, nmeHp] = [u.att, u.hp, nme.att, nme.def, nme.hp];
+      let seb = Math.round((att + hp / 10 - nmeDef) / 2.5 + Math.random() * 3 - Math.random() * 3);
+      if (seb < 0) seb = 0;
+      if (
+        u.spec === "halálos csapás" ||
+        seb > 12 + Math.random() * 10
+      ) {
+        let x = Math.random() * 12;
+        switch (true) {
+          case x < 3:
+            nme.att -= Math.floor(1 + (Math.random() * seb) / 1.1);
+            nme.att = nme.att < 0 ? 0 : nme.att;
+            break;
 
+          case x < 6:
+            nme.def -= Math.floor(1 + (Math.random() * seb) / 1.4);
+            nme.def = nme.def < 0 ? 0 : nme.def;
+            break;
+
+          case x < 9:
+            nme.def -= nme.def > 1 ? 2 : nme.def;
+            nme.att -= nme.att > 1 ? 2 : nme.att;
+            seb += 1;
+            break;
+
+          default:
+            seb = seb * 2;
+            break;
+        }
+      }
+      nme.hp -= seb;
+      if (nme.hp < 0) {
+        nme.hp = 0;
+        changeMind(u);
+      }
     }
 
 
@@ -3572,12 +3675,13 @@ function _load() {
         x: -1,
         y: -1,
       };
-      if (Math.random() > 0.3 + u.cr / 7) changeMind(u);
+      if (Math.random() > 0.3 + u.cr / 6 - (u.name === "Óriás" && u.hp === u.ohp)) changeMind(u);
     }
 
     function fuMozog(u) {
       if (u.presentAct.type === "favágás") return;
       pathfinder(u);
+      if (Math.random() > 0.66 + u.cr / 9.5) changeMind(u);
     }
 
     function fuTámad(u) {
@@ -3601,6 +3705,7 @@ function _load() {
           y: -1,
         }
       }
+      if (Math.random() > 0.68 + u.cr / 10) changeMind(u);
     }
 
     //AI
@@ -3667,6 +3772,7 @@ function _load() {
       if (u.name === "Robi") ar = ar.filter(a => distance(u, a) <= u.range);
       let ir = inrange(u);
       if (ar.length > 0) {
+        //menekülés is lehet
         u.futureAct = {
           type: "támad",
           victim: weakest(ar),
@@ -3674,7 +3780,7 @@ function _load() {
           y: -1,
         };
         if (u.id === featuredU) updateFeatured(u);
-      } else if (u.cr <= ir.length) {
+      } else if (u.cr < ir.length + Math.random() * 1.5 + u.futureAct.type === "áll") {
         u.futureAct = {
           type: "támad",
           victim: chooseVictim(u, ir),
@@ -3685,11 +3791,18 @@ function _load() {
       } else {
         if (
           u.name !== "Robi" &&
-          u.cr < Math.random() * 3 + (u.spec === "részegség") + (u.hp === u.ohp) - (u.hp < u.ohp / 2)
+          u.cr < Math.random() * 3 + (u.spec === "részegség") + (u.hp === u.ohp) - (u.ohp - u.hp) / 100
         ) {
           activate(u);
-          if (u.id === featuredU) updateFeatured(u);
+        } else {
+          u.futureAct = {
+            type: "áll",
+            victim: -1,
+            x: -1,
+            y: -1,
+          }
         }
+        if (u.id === featuredU) updateFeatured(u);
       }
     }
 
