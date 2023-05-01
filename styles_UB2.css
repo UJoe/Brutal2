@@ -927,6 +927,7 @@ select {
 	border-top: 3px solid lime;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
+	filter: opacity(1), blur(0);
 	transition: left linear 1s, top linear 1s, filter linear 1s;
 }
 
@@ -1059,4 +1060,8 @@ select {
 	100% {
 		border: 2px solid yellow;
 	}
+}
+
+.stealth {
+	opacity: 0.5;
 }

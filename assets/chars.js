@@ -77,7 +77,7 @@ window.sprites = [
 		att: 70,
 		def: 30,
 		hp: 90,
-		cr: 3,
+		cr: 1,
 		range: 1,
 		spec: "-",
 		desc: "Játsza a keményt, de azért nem nagy májer.",
@@ -144,8 +144,8 @@ window.sprites = [
 		hp: 100,
 		cr: 2,
 		range: 1,
-		spec: "feltartóztatás", //do
-		desc: "Megállásra kényszerít és letámad minden szomszédot.",
+		spec: "feltartóztatás",
+		desc: "Megpróbálja megállítani a szomszédos ellenfeleket.",
 		sound: "robi",
 	},
 	{
@@ -183,8 +183,8 @@ window.sprites = [
 		hp: 150,
 		cr: 3,
 		range: 1,
-		spec: "lökés", //do
-		desc: "A legerősebbet támadja. Aki az útjába áll, azt ellőki. Ha nem tudja hova, akkor eltapossa.",
+		spec: "nagykorty",
+		desc: "Az egész ellenséges sereg legerősebb emberét támadja. Ha nagyon szomjas, megissza az egész tavat.",
 		sound: "giantroar",
 	},
 	{
@@ -196,7 +196,7 @@ window.sprites = [
 		hp: 100,
 		cr: 2,
 		range: 1,
-		spec: "lopakodás", //do check
+		spec: "lopakodás",
 		desc: "Csak akkor veszik észre, ha támad.",
 		sound: "suhint",
 	},
@@ -235,7 +235,7 @@ window.sprites = [
 		hp: 60,
 		cr: 1,
 		range: 1,
-		spec: "csábítás", //do
+		spec: "csábítás",
 		desc: "Megpróbálja átállítani az ellenfeleit az ő oldalára.",
 		sound: "femaleattack",
 	},
@@ -255,17 +255,17 @@ window.sprites = [
 ];
 
 window.armies = {
-	városháza: "1 Óriás, 1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "1 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes",
-	/* városháza: "2 Óriás, 2 Íjász, 2 Izomagy, 1 Kocsmatöltelékek",
-	gárda: "2 Óriás, 2 Íjász, 2 Izomagy, 1 Ügyes Frigyes", */
+	/* városháza: "1 Óriás, 1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+	gárda: "1 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes", */
+	városháza: "5 Szekus, 5 Izomagy",
+	gárda: "10 Robi",
 };
 
 window.specvoices = {
 	gránátvetés: "bomb",
 	favágás: "treecut",
 	távolugrás: "bounce",
-	lökés: "giantpush",
 	csábítás: "seduce",
 	részegség: "csuklik",
+	nagykorty: "swallow",
 };

@@ -84,8 +84,8 @@ function _load() {
 		clearTimeout(timo1);
 		clearInterval(timo2);
 		/* for (let t of timok) {
-      clearInterval(t);
-    } */
+			clearInterval(t);
+		} */
 	}
 
 	startGame();
@@ -776,14 +776,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-								char.hat +
-								char.sup / 2 +
-								char.lel / 2 +
-								char.ero +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat +
+							char.sup / 2 +
+							char.lel / 2 +
+							char.ero +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -794,14 +794,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-								char.hat / 4 +
-								char.sup / 2 +
-								char.lel +
-								char.ero / 4 +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat / 4 +
+							char.sup / 2 +
+							char.lel +
+							char.ero / 4 +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1109,9 +1109,8 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
-						gemIn[i]
-					}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
+						}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1363,12 +1362,15 @@ function _load() {
           <div id="countCont">
             Szufla: <span id="countNo">${counter}</span>
           </div>
+					<button id="exitBtn" title="Gyáva!">Feladom!</button>
+					<br/> 
           <div id="runnerCont">
             <img class="runners" id="charRunner" src="./img/chars/${char.pic}.jpg">
             <img class="runners" id="nmeRunner" src="./img/rooms/${room.goalpic}">
           </div>
           <div id="question"></div>
         `;
+		document.getElementById("exitBtn").addEventListener("click", fleeP);
 		let count = document.getElementById("countNo");
 		timo = setInterval(() => {
 			counter--;
@@ -1385,6 +1387,12 @@ function _load() {
 				newRoom();
 			}
 		}, 1000);
+
+		function fleeP() {
+			clearInterval(timo);
+			char.room = room.fail;
+			newRoom();
+		}
 
 		function checkEnd() {
 			if (counter > 0 && pos < 85) newQuestion();
@@ -1534,12 +1542,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-								room.akna * 2.5 -
-								room.kincs / 2 +
-								Math.random() * 5 +
-								(room.size * (room.size - 1) - digs) / 2 +
-								kincsHit / 1.5 -
-								aknaHit
+							room.akna * 2.5 -
+							room.kincs / 2 +
+							Math.random() * 5 +
+							(room.size * (room.size - 1) - digs) / 2 +
+							kincsHit / 1.5 -
+							aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1552,13 +1560,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-							room.akna * 2 -
-							room.kincs -
-							Math.random() * 5 +
-							Math.random() * 5 -
-							(room.kincs - kincsHit) * 2 +
-							kincsHit -
-							aknaHit
+						room.akna * 2 -
+						room.kincs -
+						Math.random() * 5 +
+						Math.random() * 5 -
+						(room.kincs - kincsHit) * 2 +
+						kincsHit -
+						aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2284,13 +2292,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-					char.esz * 5 +
-					char.lel * 5 +
-					char.hat * 5 +
-					steps * 3 -
-					char.ero * 10 +
-					Math.random() * 500 +
-					getObj("S_Villámgyorsaság") * 1000
+				char.esz * 5 +
+				char.lel * 5 +
+				char.hat * 5 +
+				steps * 3 -
+				char.ero * 10 +
+				Math.random() * 500 +
+				getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -3191,7 +3199,6 @@ function _load() {
 				for (let x = 0; x < 13; x++) {
 					if (ffields[y][x].terrain === 2) {
 						let w = distance({ x: u.x, y: u.y }, { x: x, y: y });
-						console.log("Víz: ", w, u);
 						if (w < z) {
 							z = w;
 							xx = x;
@@ -3224,7 +3231,7 @@ function _load() {
 						mugged.push(f);
 					}
 				}
-				if (mugged.length > 0 && u.cr < Math.random() * 4) {
+				if (mugged.length > 0 && u.cr < 0.5 + Math.random() * 4.5) {
 					let muggers = attackers(units[closest(u, mugged)]);
 					if (muggers.length > 0) {
 						u.futureAct = {
@@ -3238,7 +3245,7 @@ function _load() {
 				}
 			}
 
-			let nmesinsight = nmes.filter((fu) => distance(u, fu) <= u.range * 3);
+			let nmesinsight = nmes.filter((fu) => distance(u, fu) <= u.range * 3 && (fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad")));
 			if (nmesinsight.length > 0 && nmesinsight.length > u.cr - Math.random() * 3) {
 				u.futureAct = {
 					type: "támad",
@@ -3318,9 +3325,9 @@ function _load() {
 			units.filter(
 				(uf) =>
 					uf.friend === !u.friend &&
-					distance(uf, u) <= u.range &&
+					distance(u, uf) <= u.range &&
 					!uf.dead &&
-					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad" && clearview(u, uf)))
+					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad") && clearview(u, uf))
 			);
 
 		function chooseVictim(u, arr) {
@@ -3328,10 +3335,10 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Indián"
-				? weakest(arr)
-				: u.name === "Tüzér" || u.name === "Óriás"
-				? strongest(arr)
-				: bestmatch(u, arr);
+					? weakest(arr)
+					: u.name === "Tüzér" || u.name === "Óriás"
+						? strongest(arr)
+						: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3500,8 +3507,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3513,8 +3520,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -3601,11 +3608,43 @@ function _load() {
 
 		//present Actions
 		function prÁll(u) {
+			if (u.spec === "lopakodás") document.getElementById("unit-" + u.id).classList.add("stealth");
 			let ct = closestó(u);
 			let cd = distance(u, { x: ct.x, y: ct.y });
 			if (u.name === "Robi") {
 				u.hp -= Math.round(Math.random());
+				let nmes = inrange(u);
+				if (nmes.length > 0) {
+					document.getElementById("voice-" + u.id).src = `./audio/${u.sound}.mp3`;
+					nmes.forEach(n => {
+						if (n.cr < Math.random() * 3.5) {
+							n.futureAct = {
+								type: "áll",
+								victim: -1,
+								x: -1,
+								y: -1
+							}
+							document.getElementById("voice-" + u.id).play();
+							if (Math.random() > 0.4) {
+								u.futureAct = {
+									type: "támad",
+									victim: n.id,
+									x: -1,
+									y: -1
+								}
+							}
+						}
+						if (n.id === featuredU) updateFeatured(n);
+					})
+				}
 			} else if (u.hp < u.ohp && cd === 1) {
+				if (u.spec === "nagykorty" && u.hp < 40 + 20 * Math.random()) {
+					specVoice(u);
+					u.hp = u.ohp - (1 + Math.round(Math.random() * 9));
+					ffields[ct.y][ct.x].terrain = 0;
+					ffields[ct.y][ct.x].empty = true;
+					document.getElementById(`teri-${ct.x}-${ct.y}`).src = "./img/rooms/terep0.jpg";
+				}
 				u.hp += Math.round(Math.random());
 			} else {
 				if (Math.random() > 0.6 + u.cr / 9.3) changeMind(u);
@@ -3613,6 +3652,7 @@ function _load() {
 		}
 
 		function prMozog(u) {
+			if (u.spec === "lopakodás") document.getElementById("unit-" + u.id).classList.add("stealth");
 			let fx = u.presentAct.x;
 			let fy = u.presentAct.y;
 			if (fx === u.x && fy === u.y) {
@@ -3639,6 +3679,7 @@ function _load() {
 		}
 
 		function prFavágás(u) {
+			if (u.spec === "lopakodás") document.getElementById("unit-" + u.id).classList.add("stealth");
 			let fx = u.presentAct.x;
 			let fy = u.presentAct.y;
 			movebullet(u, fx, fy);
@@ -3664,14 +3705,90 @@ function _load() {
 		}
 
 		function prTámad(u) {
+			if (u.spec === "lopakodás") document.getElementById("unit-" + u.id).classList.remove("stealth");
+			let friendly = u.friend;
 			let nme = units[u.presentAct.victim];
-			let fx = nme.x;
-			let fy = nme.y;
-			movebullet(u, fx, fy);
+			if (nme.friend === u.friend || nme.dead) {
+				u.futureAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1
+				}
+				u.presentAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1
+				}
+				return;
+			}
+			let nx = nme.x;
+			let ny = nme.y;
 			let [att, hp, nmeDef] = [u.att, u.hp, nme.def];
-			let seb = Math.round((att + hp / 10 - nmeDef) / 2.5 + Math.random() * 3 - Math.random() * 3);
-			if (seb < 0) seb = 0;
-			if (u.spec === "halálos csapás" || seb > 12 + Math.random() * 10) {
+			let seb = Math.round((att + hp / 10 - nmeDef) / 3 + Math.random() * 3 - Math.random() * 3);
+			seb = seb < 0 ? 0 : seb > 50 ? 50 : seb;
+
+			if (u.spec === "csábítás" && Math.random() * 50 + seb > 25 + Math.random() * 50) {
+				nme.friend = friendly;
+				specVoice(u);
+				let team = friendly ? "friend" : "nme";
+				document.getElementById("unit-" + nme.id).className = `sprite ${team}`;
+				if (nme.vip) {
+					let gyász = friendly ? `${nme.name} átállt hozzánk!` : `${nme.name} átállt az ellenséghez!`;
+					let gyászín = friendly ? "green" : "red";
+					message(`<span class=${gyászín}>${gyász}</span>`);
+					let i = char.objs.indexOf("J_" + nme.name);
+					if (i > -1 && !friendly) {
+						char.objs.splice(i, 1);
+					} else if (i < 0 && friendly) {
+						char.objs.push("J_" + nme.name);
+					}
+				}
+				u.futureAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1
+				}
+				u.presentAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1
+				}
+				nme.futureAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1
+				}
+				nme.presentAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1
+				}
+				if (nme.id === featuredU) updateFeatured(nme);
+				let survivors = units.filter((u) => u.friend === !friendly && !u.dead);
+				if (survivors.length < 1 && opera === 1) finalend(!friendly);
+				return;
+			}
+
+			movebullet(u, nx, ny);
+
+			if (u.spec === "feltartóztatás") {
+				if (nme.cr < seb / 20 + Math.random() * 3) {
+					nme.futureAct = {
+						type: "áll",
+						victim: -1,
+						x: -1,
+						y: -1
+					}
+					if (nme.id === featuredU) updateFeatured(nme);
+				}
+			}
+			if (u.spec === "halálos csapás" || seb > 15 + Math.random() * 10) {
 				let x = Math.random() * 12;
 				switch (true) {
 					case x < 3:
@@ -3700,6 +3817,7 @@ function _load() {
 				nme.hp = 0;
 				changeMind(u);
 			}
+			if (nme.id === featuredU) updateFeatured(nme);
 		}
 
 		//future Actions
@@ -3809,7 +3927,7 @@ function _load() {
 			if (ar.length > 0) {
 				if (
 					u.name !== "Robi" &&
-					u.hp < 10 + Math.random() * ar.length * 25 &&
+					u.hp < 10 + Math.random() * ar.length * 20 &&
 					u.cr < Math.random() * (ar.length + 2.5)
 				) {
 					let ct = closestó(u);
