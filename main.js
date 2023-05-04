@@ -776,14 +776,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-							char.hat +
-							char.sup / 2 +
-							char.lel / 2 +
-							char.ero +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat +
+								char.sup / 2 +
+								char.lel / 2 +
+								char.ero +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -794,14 +794,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-							char.hat / 4 +
-							char.sup / 2 +
-							char.lel +
-							char.ero / 4 +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat / 4 +
+								char.sup / 2 +
+								char.lel +
+								char.ero / 4 +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1109,8 +1109,9 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
-						}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
+						gemIn[i]
+					}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1542,12 +1543,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-							room.akna * 2.5 -
-							room.kincs / 2 +
-							Math.random() * 5 +
-							(room.size * (room.size - 1) - digs) / 2 +
-							kincsHit / 1.5 -
-							aknaHit
+								room.akna * 2.5 -
+								room.kincs / 2 +
+								Math.random() * 5 +
+								(room.size * (room.size - 1) - digs) / 2 +
+								kincsHit / 1.5 -
+								aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1560,13 +1561,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-						room.akna * 2 -
-						room.kincs -
-						Math.random() * 5 +
-						Math.random() * 5 -
-						(room.kincs - kincsHit) * 2 +
-						kincsHit -
-						aknaHit
+							room.akna * 2 -
+							room.kincs -
+							Math.random() * 5 +
+							Math.random() * 5 -
+							(room.kincs - kincsHit) * 2 +
+							kincsHit -
+							aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2292,13 +2293,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-				char.esz * 5 +
-				char.lel * 5 +
-				char.hat * 5 +
-				steps * 3 -
-				char.ero * 10 +
-				Math.random() * 500 +
-				getObj("S_Villámgyorsaság") * 1000
+					char.esz * 5 +
+					char.lel * 5 +
+					char.hat * 5 +
+					steps * 3 -
+					char.ero * 10 +
+					Math.random() * 500 +
+					getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -2763,6 +2764,8 @@ function _load() {
 		let unitPosY = (n) => `calc(70px + ${3.3 * n}vw + 4px)`;
 		let bulletPosX = (n) => `calc(12vw + ${3.3 * n + 1.65}vw - 5px)`;
 		let bulletPosY = (n) => `calc(70px + ${3.3 * n + 1.65}vw - 5px)`;
+		let bumPosX = (n) => `calc(12vw + ${3.3 * n - 2.35}vw)`;
+		let bumPosY = (n) => `calc(70px + ${3.3 * n - 2.35}vw)`;
 
 		main.innerHTML = `
         <div id="warpanels">
@@ -3245,7 +3248,11 @@ function _load() {
 				}
 			}
 
-			let nmesinsight = nmes.filter((fu) => distance(u, fu) <= u.range * 3 && (fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad")));
+			let nmesinsight = nmes.filter(
+				(fu) =>
+					distance(u, fu) <= u.range * 3 &&
+					(fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad"))
+			);
 			if (nmesinsight.length > 0 && nmesinsight.length > u.cr - Math.random() * 3) {
 				u.futureAct = {
 					type: "támad",
@@ -3327,7 +3334,7 @@ function _load() {
 					uf.friend === !u.friend &&
 					distance(u, uf) <= u.range &&
 					!uf.dead &&
-					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad") && clearview(u, uf))
+					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad" && clearview(u, uf)))
 			);
 
 		function chooseVictim(u, arr) {
@@ -3335,16 +3342,17 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Indián"
-					? weakest(arr)
-					: u.name === "Tüzér" || u.name === "Óriás"
-						? strongest(arr)
-						: bestmatch(u, arr);
+				? weakest(arr)
+				: u.name === "Tüzér" || u.name === "Óriás"
+				? strongest(arr)
+				: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
-			let aFriends = units.filter((u2) => u.friend && !u.dead && distance(u, u2) === 1);
-			let aNmes = units.filter((u2) => !u.friend && !u.dead && distance(u, u2) === 1);
-			return { friends: aFriends, nmes: aNmes };
+			let all = units.filter((u2) => !u2.dead && distance(u, u2) === 1);
+			let nf = all.filter((u2) => u2.friend === u.friend).length;
+			let nn = all.filter((u2) => u2.friend === !u.friend).length;
+			return { all: all, nf: nf, nn: nn };
 		}
 
 		function clearview(u1, u2) {
@@ -3362,33 +3370,43 @@ function _load() {
 			document.getElementById("voice-" + u.id).src = `./audio/${specvoices[u.spec]}.mp3`;
 			document.getElementById("voice-" + u.id).play();
 		}
-		function movebullet(u, x, y) {
+		function movebullet(u, x, y, bum = false) {
 			document.getElementById("bullet-" + u.id).style.setProperty("transition", "none");
 			document.getElementById("bullet-" + u.id).style.left = bulletPosX(u.x);
 			document.getElementById("bullet-" + u.id).style.top = bulletPosY(u.y);
 			document.getElementById("bullet-" + u.id).classList.add("occur");
 			document
 				.getElementById("bullet-" + u.id)
-				.style.setProperty(
-					"transition",
-					`left linear ${0.5 / gspeed}s, top linear ${0.5 / gspeed}s, opacity ${0.2 / gspeed}s`
-				);
+				.style.setProperty("transition", `left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s`);
 			clearTimeout(timok[50 + u.id]);
 			timok[50 + u.id] = setTimeout(() => {
-				document
-					.getElementById("bullet-" + u.id)
-					.style.setProperty(
-						"transition",
-						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, opacity ${0.15 / gspeed}s`
-					);
 				document.getElementById("bullet-" + u.id).style.left = bulletPosX(x);
 				document.getElementById("bullet-" + u.id).style.top = bulletPosY(y);
 				document.getElementById("voice-" + u.id).src = `./audio/${u.sound}.mp3`;
 				document.getElementById("voice-" + u.id).play();
 				clearTimeout(timok[100 + u.id]);
 				timok[100 + u.id] = setTimeout(() => {
-					document.getElementById("bullet-" + u.id).classList.remove("occur");
-				}, 310 / gspeed);
+					if (!bum) {
+						document.getElementById("bullet-" + u.id).classList.remove("occur");
+					} else {
+						document
+							.getElementById("bullet-" + u.id)
+							.style.setProperty(
+								"transition",
+								`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${
+									0.3 / gspeed
+								}s, height linear ${0.3 / gspeed}s`
+							);
+						document.getElementById("bullet-" + u.id).classList.add("bumm");
+						document.getElementById("bullet-" + u.id).style.left = bumPosX(x);
+						document.getElementById("bullet-" + u.id).style.top = bumPosY(y);
+						clearTimeout(timok[150 + u.id]);
+						timok[150 + u.id] = setTimeout(() => {
+							document.getElementById("bullet-" + u.id).classList.remove("bumm");
+							document.getElementById("bullet-" + u.id).classList.remove("occur");
+						}, 303 / gspeed);
+					}
+				}, 302 / gspeed);
 			}, 1);
 		}
 
@@ -3507,8 +3525,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3520,8 +3538,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -3616,26 +3634,26 @@ function _load() {
 				let nmes = inrange(u);
 				if (nmes.length > 0) {
 					document.getElementById("voice-" + u.id).src = `./audio/${u.sound}.mp3`;
-					nmes.forEach(n => {
+					nmes.forEach((n) => {
 						if (n.cr < Math.random() * 3.5) {
 							n.futureAct = {
 								type: "áll",
 								victim: -1,
 								x: -1,
-								y: -1
-							}
+								y: -1,
+							};
 							document.getElementById("voice-" + u.id).play();
 							if (Math.random() > 0.4) {
 								u.futureAct = {
 									type: "támad",
 									victim: n.id,
 									x: -1,
-									y: -1
-								}
+									y: -1,
+								};
 							}
 						}
 						if (n.id === featuredU) updateFeatured(n);
-					})
+					});
 				}
 			} else if (u.hp < u.ohp && cd === 1) {
 				if (u.spec === "nagykorty" && u.hp < 40 + 20 * Math.random()) {
@@ -3713,14 +3731,14 @@ function _load() {
 					type: "áll",
 					victim: -1,
 					x: -1,
-					y: -1
-				}
+					y: -1,
+				};
 				u.presentAct = {
 					type: "áll",
 					victim: -1,
 					x: -1,
-					y: -1
-				}
+					y: -1,
+				};
 				return;
 			}
 			let nx = nme.x;
@@ -3729,7 +3747,7 @@ function _load() {
 			let seb = Math.round((att + hp / 10 - nmeDef) / 3 + Math.random() * 3 - Math.random() * 3);
 			seb = seb < 0 ? 0 : seb > 50 ? 50 : seb;
 
-			if (u.spec === "csábítás" && Math.random() * 50 + seb > 25 + Math.random() * 50) {
+			if (nme.name !== "Robi" && u.spec === "csábítás" && Math.random() * 50 + seb > 25 + Math.random() * 50) {
 				nme.friend = friendly;
 				specVoice(u);
 				let team = friendly ? "friend" : "nme";
@@ -3749,33 +3767,39 @@ function _load() {
 					type: "áll",
 					victim: -1,
 					x: -1,
-					y: -1
-				}
+					y: -1,
+				};
 				u.presentAct = {
 					type: "áll",
 					victim: -1,
 					x: -1,
-					y: -1
-				}
+					y: -1,
+				};
 				nme.futureAct = {
 					type: "áll",
 					victim: -1,
 					x: -1,
-					y: -1
-				}
+					y: -1,
+				};
 				nme.presentAct = {
 					type: "áll",
 					victim: -1,
 					x: -1,
-					y: -1
-				}
+					y: -1,
+				};
 				if (nme.id === featuredU) updateFeatured(nme);
 				let survivors = units.filter((u) => u.friend === !friendly && !u.dead);
 				if (survivors.length < 1 && opera === 1) finalend(!friendly);
 				return;
 			}
 
-			movebullet(u, nx, ny);
+			let boom = false;
+			let nb = u.spec === "gránátvetés" ? neighbors(nme) : u.spec === "részegség" ? neighbors(u) : null;
+			if (nb) console.log("JITONÁSZ: ", u, nb);
+			if (nb !== null && u.spec === "gránátvetés" && nb.nn > nb.nf && nb.nf < 3 && distance(u, nme) > 1) boom = true;
+			if (nb !== null && u.spec === "részegség" && nb.nn > 1) boom = true;
+
+			movebullet(u, nx, ny, boom);
 
 			if (u.spec === "feltartóztatás") {
 				if (nme.cr < seb / 20 + Math.random() * 3) {
@@ -3783,8 +3807,8 @@ function _load() {
 						type: "áll",
 						victim: -1,
 						x: -1,
-						y: -1
-					}
+						y: -1,
+					};
 					if (nme.id === featuredU) updateFeatured(nme);
 				}
 			}
@@ -3812,6 +3836,7 @@ function _load() {
 						break;
 				}
 			}
+
 			nme.hp -= seb;
 			if (nme.hp < 0) {
 				nme.hp = 0;

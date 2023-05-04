@@ -944,7 +944,12 @@ select {
 	margin: 0;
 	border: none;
 	opacity: 0;
-	transition: left linear 0.3s, top linear 0.3s, opacity 0.15s;
+	transition: left linear 0.3s, top linear 0.3s, width linear 0.3s, height linear 0.3s;
+}
+
+.bumm {
+	width: 7.3vw;
+	height: 7.3vw;
 }
 
 .occur {
@@ -964,7 +969,7 @@ select {
 .nme {
 	border-bottom: 3px solid black;
 	cursor: help;
-	filter: brightness(.7);
+	filter: brightness(0.7);
 }
 
 #overlay {
