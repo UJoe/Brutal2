@@ -3370,44 +3370,54 @@ function _load() {
 			document.getElementById("voice-" + u.id).src = `./audio/${specvoices[u.spec]}.mp3`;
 			document.getElementById("voice-" + u.id).play();
 		}
-		function movebullet(u, x, y, bum = false) {
-			document.getElementById("bullet-" + u.id).style.setProperty("transition", "none");
-			document.getElementById("bullet-" + u.id).style.left = bulletPosX(u.x);
-			document.getElementById("bullet-" + u.id).style.top = bulletPosY(u.y);
-			document.getElementById("bullet-" + u.id).classList.add("occur");
-			document
-				.getElementById("bullet-" + u.id)
-				.style.setProperty("transition", `left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s`);
-			clearTimeout(timok[50 + u.id]);
-			timok[50 + u.id] = setTimeout(() => {
-				document.getElementById("bullet-" + u.id).style.left = bulletPosX(x);
-				document.getElementById("bullet-" + u.id).style.top = bulletPosY(y);
-				document.getElementById("voice-" + u.id).src = `./audio/${u.sound}.mp3`;
-				document.getElementById("voice-" + u.id).play();
-				clearTimeout(timok[100 + u.id]);
-				timok[100 + u.id] = setTimeout(() => {
-					if (!bum) {
-						document.getElementById("bullet-" + u.id).classList.remove("occur");
-					} else {
-						document
-							.getElementById("bullet-" + u.id)
-							.style.setProperty(
-								"transition",
-								`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${
-									0.3 / gspeed
-								}s, height linear ${0.3 / gspeed}s`
-							);
-						document.getElementById("bullet-" + u.id).classList.add("bumm");
-						document.getElementById("bullet-" + u.id).style.left = bumPosX(x);
-						document.getElementById("bullet-" + u.id).style.top = bumPosY(y);
-						clearTimeout(timok[150 + u.id]);
-						timok[150 + u.id] = setTimeout(() => {
-							document.getElementById("bullet-" + u.id).classList.remove("bumm");
-							document.getElementById("bullet-" + u.id).classList.remove("occur");
-						}, 303 / gspeed);
-					}
-				}, 302 / gspeed);
-			}, 1);
+		function movebullet(u, x, y, type = "shot") {
+			let bullet = document.getElementById("bullet-" + u.id);
+			bullet.style.setProperty("transition", "none");
+			bullet.style.left = bulletPosX(u.x);
+			bullet.style.top = bulletPosY(u.y);
+			bullet.classList.add("occur");
+
+			function bum() {
+				bullet.style.setProperty(
+					"transition",
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+						0.3 / gspeed
+					}s`
+				);
+				bullet.style.zIndex = type === "round" ? "2" : "4";
+				bullet.classList.add("bumm");
+				bullet.style.left = bumPosX(x);
+				bullet.style.top = bumPosY(y);
+				clearTimeout(timok[150 + u.id]);
+				timok[150 + u.id] = setTimeout(() => {
+					bullet.classList.remove("bumm");
+					bullet.classList.remove("occur");
+					bullet.style.zIndex = "4";
+				}, 303 / gspeed);
+			}
+
+			if (type !== "round") {
+				bullet.style.setProperty("transition", `left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s`);
+				clearTimeout(timok[50 + u.id]);
+				timok[50 + u.id] = setTimeout(() => {
+					bullet.style.left = bulletPosX(x);
+					bullet.style.top = bulletPosY(y);
+					document.getElementById("voice-" + u.id).src = `./audio/${u.sound}.mp3`;
+					document.getElementById("voice-" + u.id).play();
+					clearTimeout(timok[100 + u.id]);
+					timok[100 + u.id] = setTimeout(() => {
+						if (type === "shot") {
+							bullet.classList.remove("occur");
+						} else {
+							bum();
+						}
+					}, 302 / gspeed);
+				}, 1);
+			} else {
+				x = u.x;
+				y = u.y;
+				bum();
+			}
 		}
 
 		function pathfinder(u) {
@@ -3793,13 +3803,13 @@ function _load() {
 				return;
 			}
 
-			let boom = false;
+			let at = "shot";
 			let nb = u.spec === "gránátvetés" ? neighbors(nme) : u.spec === "részegség" ? neighbors(u) : null;
 			if (nb) console.log("JITONÁSZ: ", u, nb);
-			if (nb !== null && u.spec === "gránátvetés" && nb.nn > nb.nf && nb.nf < 3 && distance(u, nme) > 1) boom = true;
-			if (nb !== null && u.spec === "részegség" && nb.nn > 1) boom = true;
+			if (nb !== null && u.spec === "gránátvetés" && nb.nf > nb.nn && nb.nn < 3 && distance(u, nme) > 1) at = "tuzer";
+			if (nb !== null && u.spec === "részegség" && nb.nn > 1) at = "round";
 
-			movebullet(u, nx, ny, boom);
+			movebullet(u, nx, ny, at);
 
 			if (u.spec === "feltartóztatás") {
 				if (nme.cr < seb / 20 + Math.random() * 3) {
