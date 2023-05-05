@@ -78,14 +78,14 @@ function _load() {
 	var timesOut;
 	var dying;
 
-	function clearTimers() {
+	function clearTimers(hard = false) {
 		clearInterval(timo);
 		clearTimeout(timo);
 		clearTimeout(timo1);
 		clearInterval(timo2);
-		/* for (let t of timok) {
+		if (hard) for (let t of timok) {
 			clearInterval(t);
-		} */
+		}
 	}
 
 	startGame();
@@ -776,14 +776,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-								char.hat +
-								char.sup / 2 +
-								char.lel / 2 +
-								char.ero +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat +
+							char.sup / 2 +
+							char.lel / 2 +
+							char.ero +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -794,14 +794,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-								char.hat / 4 +
-								char.sup / 2 +
-								char.lel +
-								char.ero / 4 +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat / 4 +
+							char.sup / 2 +
+							char.lel +
+							char.ero / 4 +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1109,9 +1109,8 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
-						gemIn[i]
-					}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
+						}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1543,12 +1542,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-								room.akna * 2.5 -
-								room.kincs / 2 +
-								Math.random() * 5 +
-								(room.size * (room.size - 1) - digs) / 2 +
-								kincsHit / 1.5 -
-								aknaHit
+							room.akna * 2.5 -
+							room.kincs / 2 +
+							Math.random() * 5 +
+							(room.size * (room.size - 1) - digs) / 2 +
+							kincsHit / 1.5 -
+							aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1561,13 +1560,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-							room.akna * 2 -
-							room.kincs -
-							Math.random() * 5 +
-							Math.random() * 5 -
-							(room.kincs - kincsHit) * 2 +
-							kincsHit -
-							aknaHit
+						room.akna * 2 -
+						room.kincs -
+						Math.random() * 5 +
+						Math.random() * 5 -
+						(room.kincs - kincsHit) * 2 +
+						kincsHit -
+						aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2293,13 +2292,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-					char.esz * 5 +
-					char.lel * 5 +
-					char.hat * 5 +
-					steps * 3 -
-					char.ero * 10 +
-					Math.random() * 500 +
-					getObj("S_Villámgyorsaság") * 1000
+				char.esz * 5 +
+				char.lel * 5 +
+				char.hat * 5 +
+				steps * 3 -
+				char.ero * 10 +
+				Math.random() * 500 +
+				getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -2735,7 +2734,7 @@ function _load() {
 		let gspeed = 1;
 		let gclick = "select";
 		let opera = 0;
-		let operaBtn = ["Kapjuk el őket!", "Meneküljünk!", "Győztünk!"];
+		let operaBtn = ["Kapjuk el őket!", "Meneküljünk!", "Győztünk!", "Ne már!"];
 		let fe = getObj("W");
 		let fegyObj = [];
 		if (fe.length > 0) {
@@ -3090,7 +3089,7 @@ function _load() {
 					let tx = teljesszó[1];
 					let ty = teljesszó[2];
 					let tt = ffields[ty][tx].terrain;
-					if (opera === 0 || opera === 2) {
+					if (opera === 0) {
 						let tn = ["MEZŐ", "ERDŐ", "TÓ"];
 						let td = [
 							"Sima terep.",
@@ -3272,9 +3271,20 @@ function _load() {
 		}
 
 		function finalend(friend) {
-			//ezt még normális operára
-			let murdel = !!friend ? "a sereged." : "az ellenség.";
-			alert("Megsemmisült " + murdel);
+			clearTimers(true);
+			if (friend) {
+				message("Megsemmisült a sereged!");
+				music.volume = 0.2;
+				opera = 3;
+			} else {
+				message("Legyőztétek az ellenséget!");
+				music.volume = 1;
+				opera = 2;
+			}
+			document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
+			document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
+			glick = "select";
+			document.getElementById("vezerBtn").innerHTML = operaBtn[opera];
 		}
 
 		function dies(u) {
@@ -3310,10 +3320,13 @@ function _load() {
 				document.getElementById("ustat").classList.add("darken2");
 			}
 			timok[u.id] = setTimeout(() => {
-				if (featuredU < 0 || featuredU === u.id) {
+				if (featuredU === u.id || featuredU === command.id) {
 					document.getElementById("ustat").className = "noccur";
 					document.getElementById("ustat").innerHTML = "";
 					featuredU = -1;
+					document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
+					document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
+					gclick = "select";
 				}
 				uDom.style.display = "none";
 				document.getElementById("bullet-" + u.id).style.display = "none";
@@ -3342,10 +3355,10 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Indián"
-				? weakest(arr)
-				: u.name === "Tüzér" || u.name === "Óriás"
-				? strongest(arr)
-				: bestmatch(u, arr);
+					? weakest(arr)
+					: u.name === "Tüzér" || u.name === "Óriás"
+						? strongest(arr)
+						: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3380,8 +3393,7 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-						0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
@@ -3409,6 +3421,8 @@ function _load() {
 						if (type === "shot") {
 							bullet.classList.remove("occur");
 						} else {
+							document.getElementById("voice-" + u.id).src = "./audio/bomb.mp3";
+							document.getElementById("voice-" + u.id).play();
 							bum();
 						}
 					}, 302 / gspeed);
@@ -3416,6 +3430,8 @@ function _load() {
 			} else {
 				x = u.x;
 				y = u.y;
+				document.getElementById("voice-" + u.id).src = "./audio/angrydrunk.mp3";
+				document.getElementById("voice-" + u.id).play();
 				bum();
 			}
 		}
@@ -3535,8 +3551,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3548,8 +3564,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -3675,7 +3691,7 @@ function _load() {
 				}
 				u.hp += Math.round(Math.random());
 			} else {
-				if (Math.random() > 0.6 + u.cr / 9.3) changeMind(u);
+				if (Math.random() > 0.75 + u.cr / 15) changeMind(u);
 			}
 		}
 
@@ -3805,8 +3821,7 @@ function _load() {
 
 			let at = "shot";
 			let nb = u.spec === "gránátvetés" ? neighbors(nme) : u.spec === "részegség" ? neighbors(u) : null;
-			if (nb) console.log("JITONÁSZ: ", u, nb);
-			if (nb !== null && u.spec === "gránátvetés" && nb.nf > nb.nn && nb.nn < 3 && distance(u, nme) > 1) at = "tuzer";
+			if (nb !== null && u.spec === "gránátvetés" && nb.nf > nb.nn && nb.nn < 3 && distance(u, nme) > 1) at = "rakéta";
 			if (nb !== null && u.spec === "részegség" && nb.nn > 1) at = "round";
 
 			movebullet(u, nx, ny, at);
@@ -3822,7 +3837,7 @@ function _load() {
 					if (nme.id === featuredU) updateFeatured(nme);
 				}
 			}
-			if (u.spec === "halálos csapás" || seb > 15 + Math.random() * 10) {
+			if (nb === null && (u.spec === "halálos csapás" || seb > 15 + Math.random() * 10)) {
 				let x = Math.random() * 12;
 				switch (true) {
 					case x < 3:
@@ -3853,6 +3868,18 @@ function _load() {
 				changeMind(u);
 			}
 			if (nme.id === featuredU) updateFeatured(nme);
+
+			if (nb !== null) {
+				for (let n of nb.all) {
+					let sebb = Math.round((att + hp / 10 - n.def) / 5 + - Math.random() * 3);
+					sebb = sebb < 0 ? 0 : sebb > 50 ? 50 : sebb;
+					n.hp -= sebb;
+					if (n.hp < 0) {
+						n.hp = 0;
+					}
+					if (n.id === featuredU) updateFeatured(n);
+				}
+			}
 		}
 
 		//future Actions
@@ -3869,7 +3896,7 @@ function _load() {
 		function fuMozog(u) {
 			if (u.presentAct.type === "favágás") return;
 			pathfinder(u);
-			if (Math.random() > 0.66 + u.cr / 9.5) changeMind(u);
+			if (Math.random() > 0.7 + u.cr / 12) changeMind(u);
 		}
 
 		function fuTámad(u) {
@@ -4008,13 +4035,17 @@ function _load() {
 				} else {
 					let ct = closestó(u);
 					let cd = distance(u, { x: ct.x, y: ct.y });
-					if (u.name !== "Robi" && cd > 1) {
-						u.futureAct = {
-							type: "mozog",
-							victim: -1,
-							x: ct.x,
-							y: ct.y,
-						};
+					if (u.name !== "Robi") {
+						if (u.hp < u.ohp * 0.8 && cd > 1) {
+							u.futureAct = {
+								type: "mozog",
+								victim: -1,
+								x: ct.x,
+								y: ct.y,
+							};
+						} else {
+							activate(u)
+						}
 					} else {
 						u.futureAct = {
 							type: "áll",
@@ -4195,7 +4226,7 @@ function _load() {
 
 		drawFBoard();
 		updateFWeapons();
-		document.addEventListener("click", fwAction); //removewhenleaving!!!
+		document.addEventListener("click", fwAction);
 		timo = setInterval(() => {
 			message(rnd(intro));
 		}, 10000 / gspeed);

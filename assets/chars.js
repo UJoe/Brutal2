@@ -131,7 +131,7 @@ window.sprites = [
 		hp: 80,
 		cr: 3,
 		range: 3,
-		spec: "gránátvetés", //do
+		spec: "gránátvetés",
 		desc: "Vagy a legerősebbre lő, vagy gránátot dob, ami a célpont szomszédjait is megséríti.",
 		sound: "rifleshot",
 	},
@@ -248,17 +248,17 @@ window.sprites = [
 		hp: 150,
 		cr: 1,
 		range: 1,
-		spec: "részegség", //do round attack
+		spec: "részegség",
 		desc: "Rendezetlenül mozognak, az összes szomszédot letámadják.",
 		sound: "hit5",
 	},
 ];
 
 window.armies = {
-	/* városháza: "1 Óriás, 1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "1 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes", */
-	városháza: "5 Tüzér, 2 Óriás",
-	gárda: "5 Kocsmatöltelékek, 2 Óriás",
+	városháza: "1 Óriás, 1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+	gárda: "2 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes",
+	/* városháza: "5 Tüzér, 2 Óriás",
+	gárda: "5 Kocsmatöltelékek, 2 Óriás", */
 };
 
 window.specvoices = {
