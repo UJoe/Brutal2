@@ -139,7 +139,7 @@ window.sprites = [
 		name: "Robi",
 		vip: false,
 		pic: "robi.jpg",
-		att: 50,
+		att: 75,
 		def: 50,
 		hp: 100,
 		cr: 2,
@@ -183,7 +183,7 @@ window.sprites = [
 		hp: 150,
 		cr: 3,
 		range: 1,
-		spec: "nagykorty",
+		spec: "hörpintés",
 		desc: "Az egész ellenséges sereg legerősebb emberét támadja. Ha nagyon szomjas, megissza az egész tavat.",
 		sound: "giantroar",
 	},
@@ -192,7 +192,7 @@ window.sprites = [
 		vip: true,
 		pic: "oshinoko-face.JPG",
 		att: 110,
-		def: 55,
+		def: 60,
 		hp: 100,
 		cr: 2,
 		range: 1,
@@ -205,7 +205,7 @@ window.sprites = [
 		vip: true,
 		pic: "szenyamuki-face.JPG",
 		att: 135,
-		def: 75,
+		def: 65,
 		hp: 110,
 		cr: 2,
 		range: 1,
@@ -245,7 +245,7 @@ window.sprites = [
 		pic: "kocsmatöltelékek.jpg",
 		att: 80,
 		def: 30,
-		hp: 150,
+		hp: 160,
 		cr: 1,
 		range: 1,
 		spec: "részegség",
@@ -256,7 +256,7 @@ window.sprites = [
 
 window.armies = {
 	városháza: "1 Óriás, 1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "2 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes",
+	gárda: "1 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes",
 	/* városháza: "5 Tüzér, 2 Óriás",
 	gárda: "5 Kocsmatöltelékek, 2 Óriás", */
 };
@@ -267,5 +267,5 @@ window.specvoices = {
 	távolugrás: "bounce",
 	csábítás: "seduce",
 	részegség: "csuklik",
-	nagykorty: "swallow",
+	hörpintés: "swallow",
 };

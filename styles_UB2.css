@@ -119,7 +119,7 @@ p,
 }
 
 .darkenFW {
-	filter: brightness(0.1) opacity(0.1) blur(10px);
+	filter: brightness(0.1) opacity(0.1) blur(10px) !important;
 }
 
 .brighten {

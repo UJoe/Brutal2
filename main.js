@@ -71,12 +71,14 @@ function _load() {
 	window.timok = [];
 	window.units = [];
 	window.ffields = [];
+	window.fwb = "";
 	var timo;
 	var timo1;
 	var timo2;
 	var timesIn;
 	var timesOut;
 	var dying;
+
 
 	function clearTimers(hard = false) {
 		clearInterval(timo);
@@ -1243,6 +1245,49 @@ function _load() {
 			if (pp.length > 1) {
 				let r = Math.floor(1 + Math.random() * Number(pp[1]));
 				room.pic = pp[0] + r + ".jpg";
+			}
+
+			function fwdesc() {
+				let bonusT = "";
+				let bt = 70;
+				if (char.esz > bt) {
+					bt = char.esz;
+					bonusT = "esz";
+				}
+				if (char.ugy > bt) {
+					bt = char.ugy;
+					bonusT = "ugy";
+				}
+				if (char.ero > bt) {
+					bt = char.ero;
+					bonusT = "ero";
+				}
+				if (char.hat > bt) {
+					bt = char.hat;
+					bonusT = "hat";
+				}
+				if (char.lel > bt) {
+					bt = char.lel;
+					bonusT = "lel";
+				}
+				return bonusT;
+			}
+
+			if (room.type === "finalwar") {
+				let bonusD = {
+					esz: "TAKTIKA: Minden embered kap +20% Támadást.",
+					ugy: "ELKERÜLÉS: Minden embered kap +20% Védelmet.",
+					ero: "IZOMTÖMEG: Minden embered kap +20% HP-t.",
+					hat: "ENGEDELMESSÉG: Önmagukhoz képest sokkal engedelmesebbek az embereid.",
+					lel: "TÚLÉLÉS: Minden embered gyorsabban gyógyul, ha iszik."
+				}
+				fwb = fwdesc();
+				if (fwb !== "") {
+					room.desc += `
+						</p><p class="red">Kiváló képességeid az alábbi hatással vannak az embereidre:</p>
+						<p class="yellow">${bonusD[fwb]}</p>
+					`
+				}
 			}
 
 			main.innerHTML = `
@@ -2811,18 +2856,21 @@ function _load() {
 			}
 			document.getElementById("harcter").innerHTML = dirtStr;
 			function newSprite(model, id, team, ally = false) {
+				let attB = (1 + ally * 0.5 + (fwb === "esz" && team) * 0.2);
+				let defB = (1 + ally * 0.5 + (fwb === "ugy" && team) * 0.2);
+				let hpB = (1 + ally * 0.5 + (fwb === "ero" && team) * 0.2);
 				return {
 					id: id,
 					friend: team,
 					name: model.name,
 					vip: model.vip,
 					pic: model.pic,
-					oatt: Math.round(model.att * (1 + ally * 0.5)) > 150 ? 150 : Math.round(model.att * (1 + ally * 0.5)),
-					att: Math.round(model.att * (1 + ally * 0.5)) > 150 ? 150 : Math.round(model.att * (1 + ally * 0.5)),
-					odef: Math.round(model.def * (1 + ally * 0.5)) > 75 ? 75 : Math.round(model.def * (1 + ally * 0.5)),
-					def: Math.round(model.def * (1 + ally * 0.5)) > 75 ? 75 : Math.round(model.def * (1 + ally * 0.5)),
-					ohp: Math.round(model.hp * (1 + ally * 0.5)),
-					hp: Math.round(model.hp * (1 + ally * 0.5)),
+					oatt: Math.round(model.att * attB) > 150 ? 150 : Math.round(model.att * attB),
+					att: Math.round(model.att * attB) > 150 ? 150 : Math.round(model.att * attB),
+					odef: Math.round(model.def * defB) > 75 ? 75 : Math.round(model.def * defB),
+					def: Math.round(model.def * defB) > 75 ? 75 : Math.round(model.def * defB),
+					ohp: Math.round(model.hp * hpB),
+					hp: Math.round(model.hp * hpB),
 					cr: model.cr,
 					range: Math.round(model.range * (1 + ally / 9)),
 					spec: model.spec,
@@ -2841,6 +2889,7 @@ function _load() {
 						y: -1,
 					},
 					dead: false,
+					obey: false
 				};
 			}
 			let preFriends = armies[room.friends].split(", ");
@@ -3051,6 +3100,7 @@ function _load() {
 									y: -1,
 								};
 								if (command.id === featuredU) updateFeatured(command);
+								if (fwb === "hat") tu.obey = true;
 								document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
 								document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
 								gclick = "select";
@@ -3116,6 +3166,7 @@ function _load() {
 								x: tx,
 								y: ty,
 							};
+							if (fwb === "hat") command.obey = true;
 							if (command.presentAct.type === "favágás") {
 								command.presentAct = {
 									type: "áll",
@@ -3213,6 +3264,7 @@ function _load() {
 		}
 
 		function activate(u) {
+			if (u.obey) return;
 			let friends = units.filter((fu) => fu.friend === u.friend && !fu.dead && u.id !== fu.id);
 			let nmes = units.filter((fu) => fu.friend !== u.friend && !fu.dead);
 
@@ -3248,9 +3300,9 @@ function _load() {
 			}
 
 			let nmesinsight = nmes.filter(
-				(fu) =>
-					distance(u, fu) <= u.range * 3 &&
-					(fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad"))
+				(nu) =>
+					distance(u, nu) <= u.range * 3 &&
+					(nu.spec !== "lopakodás" || (nu.spec === "lopakodás" && nu.presentAct.type === "támad")) && clearview(u, nu)
 			);
 			if (nmesinsight.length > 0 && nmesinsight.length > u.cr - Math.random() * 3) {
 				u.futureAct = {
@@ -3289,6 +3341,7 @@ function _load() {
 
 		function dies(u) {
 			u.dead = true;
+			u.obey = false;
 			u.futureAct = {
 				type: "meghal",
 				victim: -1,
@@ -3317,15 +3370,21 @@ function _load() {
 			uDom.classList.add("darkenFW");
 			if (u.id === featuredU) {
 				document.getElementById("ustat").style.transition = `filter ${1 / gspeed}s`;
-				document.getElementById("ustat").classList.add("darken2");
+				document.getElementById("ustat").classList.add("darkenFW");
 			}
 			timok[u.id] = setTimeout(() => {
-				if (featuredU === u.id || featuredU === command.id) {
+				if (featuredU === u.id) {
 					document.getElementById("ustat").className = "noccur";
 					document.getElementById("ustat").innerHTML = "";
 					featuredU = -1;
-					document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
-					document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
+					document.querySelectorAll(".sprite.nme").forEach((s) => {
+						s.style.cursor = "help";
+						s.classList.remove("targetUnit");
+					});
+					document.querySelectorAll(".terep").forEach((s) => {
+						s.style.cursor = "default";
+						s.classList.remove("targetTerep")
+					});
 					gclick = "select";
 				}
 				uDom.style.display = "none";
@@ -3354,11 +3413,13 @@ function _load() {
 			let pick = rnd(arr);
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
-				: u.name === "Indián"
-					? weakest(arr)
-					: u.name === "Tüzér" || u.name === "Óriás"
-						? strongest(arr)
-						: bestmatch(u, arr);
+				: u.name === "Tüzér" || u.name === "Óriás" ?
+					strongest(arr)
+					: u.name === "Indián" || u.hp < u.ohp * Math.random() / 3
+						? weakest(arr) :
+						u.hp > 0.5 + u.ohp * Math.random() / 2 ?
+							closest(u, arr) :
+							bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3469,6 +3530,7 @@ function _load() {
 					x: -1,
 					y: -1,
 				};
+				u.obey = false;
 				if (u.id === featuredU) updateFeatured(u);
 				return;
 			}
@@ -3488,6 +3550,7 @@ function _load() {
 						x: -1,
 						y: -1,
 					};
+					u.obey = false;
 				} else {
 					u.presentAct = {
 						type: "mozog",
@@ -3682,14 +3745,15 @@ function _load() {
 					});
 				}
 			} else if (u.hp < u.ohp && cd === 1) {
-				if (u.spec === "nagykorty" && u.hp < 40 + 20 * Math.random()) {
+				if (u.spec === "hörpintés" && u.hp < 40 + 20 * Math.random()) {
 					specVoice(u);
-					u.hp = u.ohp - (1 + Math.round(Math.random() * 9));
+					u.hp = u.ohp - (1 + Math.round(Math.random() * 9) - (fwb === "lel"));
 					ffields[ct.y][ct.x].terrain = 0;
 					ffields[ct.y][ct.x].empty = true;
 					document.getElementById(`teri-${ct.x}-${ct.y}`).src = "./img/rooms/terep0.jpg";
+					return;
 				}
-				u.hp += Math.round(Math.random());
+				u.hp += Math.round(Math.random() + (fwb === "lel") * (1 + Math.random() * 3));
 			} else {
 				if (Math.random() > 0.75 + u.cr / 15) changeMind(u);
 			}
@@ -3712,6 +3776,7 @@ function _load() {
 					x: -1,
 					y: -1,
 				};
+				u.obey = false;
 				return;
 			}
 			ffields[u.y][u.x].empty = true;
@@ -3737,7 +3802,7 @@ function _load() {
 					document.getElementById(`teri-${fx}-${fy}`).src = "./img/rooms/terep0.jpg";
 				}, 500 / gspeed);
 			} else {
-				if (u.cr < 0.5 + Math.random() * 3) {
+				if (u.cr < 0.5 + Math.random() * 3 && !u.obey) {
 					u.futureAct = {
 						type: "áll",
 						victim: -1,
@@ -3765,6 +3830,7 @@ function _load() {
 					x: -1,
 					y: -1,
 				};
+				u.obey = false;
 				return;
 			}
 			let nx = nme.x;
@@ -3773,11 +3839,14 @@ function _load() {
 			let seb = Math.round((att + hp / 10 - nmeDef) / 3 + Math.random() * 3 - Math.random() * 3);
 			seb = seb < 0 ? 0 : seb > 50 ? 50 : seb;
 
-			if (nme.name !== "Robi" && u.spec === "csábítás" && Math.random() * 50 + seb > 25 + Math.random() * 50) {
+			if (nme.name !== "Robi" && u.spec === "csábítás" && Math.random() * 50 + seb > 25 + Math.random() * 45) {
 				nme.friend = friendly;
 				specVoice(u);
 				let team = friendly ? "friend" : "nme";
 				document.getElementById("unit-" + nme.id).className = `sprite ${team}`;
+				document.querySelectorAll(".sprite.friend").forEach((s) => (s.style.cursor = "pointer"));
+				document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
+				gclick = "select";
 				if (nme.vip) {
 					let gyász = friendly ? `${nme.name} átállt hozzánk!` : `${nme.name} átállt az ellenséghez!`;
 					let gyászín = friendly ? "green" : "red";
@@ -3813,6 +3882,7 @@ function _load() {
 					x: -1,
 					y: -1,
 				};
+				u.obey = false;
 				if (nme.id === featuredU) updateFeatured(nme);
 				let survivors = units.filter((u) => u.friend === !friendly && !u.dead);
 				if (survivors.length < 1 && opera === 1) finalend(!friendly);
@@ -3865,12 +3935,15 @@ function _load() {
 			nme.hp -= seb;
 			if (nme.hp < 0) {
 				nme.hp = 0;
+				dies(nme);
+				u.obey = false;
 				changeMind(u);
 			}
 			if (nme.id === featuredU) updateFeatured(nme);
 
 			if (nb !== null) {
 				for (let n of nb.all) {
+					if (n.id === nme.id) continue;
 					let sebb = Math.round((att + hp / 10 - n.def) / 5 + - Math.random() * 3);
 					sebb = sebb < 0 ? 0 : sebb > 50 ? 50 : sebb;
 					n.hp -= sebb;
@@ -3983,6 +4056,7 @@ function _load() {
 		}
 
 		function changeMind(u) {
+			if (u.obey) return;
 			let ar = attackers(u);
 			if (u.name === "Robi") ar = ar.filter((a) => distance(u, a) <= u.range);
 			let ir = inrange(u);
@@ -4083,6 +4157,41 @@ function _load() {
 					}
 					break;
 
+				case 1:
+					let sereg = units.filter(u => u.friend && !u.dead)
+					for (let s of sereg) {
+						s.futureAct = {
+							type: "mozog",
+							victim: -1,
+							x: s.x,
+							y: 12
+						}
+						s.obey = true;
+					}
+					clearInterval(timo);
+					document.getElementById("harcter").style.transition = `filter linear ${5 / gspeed}s`;
+					document.getElementById("harcter").classList.add("darkenFW");
+					document.querySelectorAll(".sprite").forEach(s => {
+						s.style.transition = `left linear ${1 / gspeed}s, top linear ${1 / gspeed}s, filter linear ${5 / gspeed}s`;
+						s.classList.add("darkenFW");
+					});
+					timo = setTimeout(() => {
+						clearTimers(true);
+						char.room = room.fail;
+						newRoom();
+					}, 5000 / gspeed);
+					break;
+
+				case 2:
+					char.room = room.pass;
+					newRoom();
+					break;
+
+				case 3:
+					char.room = room.fail;
+					newRoom();
+					break;
+
 				default:
 					break;
 			}
@@ -4134,7 +4243,6 @@ function _load() {
 				default:
 					break;
 			}
-			//És még minden mást is!!!
 		}
 
 		function weapontimer() {
@@ -4155,7 +4263,6 @@ function _load() {
 			if (u.dead) return;
 			if (featuredU > -1) document.getElementById("unit-" + featuredU).classList.remove("selectedUnit");
 			document.querySelectorAll(".sprite").forEach((s) => s.classList.remove("targetUnit"));
-
 			document.querySelectorAll(".terep").forEach((s) => s.classList.remove("targetTerep"));
 
 			featuredU = u.id;
