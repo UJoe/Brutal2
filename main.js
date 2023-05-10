@@ -79,15 +79,15 @@ function _load() {
 	var timesOut;
 	var dying;
 
-
 	function clearTimers(hard = false) {
 		clearInterval(timo);
 		clearTimeout(timo);
 		clearTimeout(timo1);
 		clearInterval(timo2);
-		if (hard) for (let t of timok) {
-			clearInterval(t);
-		}
+		if (hard)
+			for (let t of timok) {
+				clearInterval(t);
+			}
 	}
 
 	startGame();
@@ -531,11 +531,11 @@ function _load() {
 		return feri;
 	}
 
-	function loseObj(oo) {
+	function loseObj(oo, mes = true) {
 		let i = char.objs.indexOf("W_" + oo);
 		if (i > -1) {
 			char.objs.splice(i, 1);
-			message("Elvesztetted a következő tárgyat: " + oo);
+			if (mes) message("Elvesztetted a következő tárgyat: " + oo);
 		}
 	}
 
@@ -778,14 +778,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-							char.hat +
-							char.sup / 2 +
-							char.lel / 2 +
-							char.ero +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat +
+								char.sup / 2 +
+								char.lel / 2 +
+								char.ero +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -796,14 +796,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-							char.hat / 4 +
-							char.sup / 2 +
-							char.lel +
-							char.ero / 4 +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat / 4 +
+								char.sup / 2 +
+								char.lel +
+								char.ero / 4 +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1111,8 +1111,9 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
-						}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
+						gemIn[i]
+					}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1279,14 +1280,14 @@ function _load() {
 					ugy: "ELKERÜLÉS: Minden embered kap +20% Védelmet.",
 					ero: "IZOMTÖMEG: Minden embered kap +20% HP-t.",
 					hat: "ENGEDELMESSÉG: Önmagukhoz képest sokkal engedelmesebbek az embereid.",
-					lel: "TÚLÉLÉS: Minden embered gyorsabban gyógyul, ha iszik."
-				}
+					lel: "TÚLÉLÉS: Minden embered gyorsabban gyógyul, ha iszik.",
+				};
 				fwb = fwdesc();
 				if (fwb !== "") {
 					room.desc += `
 						</p><p class="red">Kiváló képességeid az alábbi hatással vannak az embereidre:</p>
 						<p class="yellow">${bonusD[fwb]}</p>
-					`
+					`;
 				}
 			}
 
@@ -1587,12 +1588,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-							room.akna * 2.5 -
-							room.kincs / 2 +
-							Math.random() * 5 +
-							(room.size * (room.size - 1) - digs) / 2 +
-							kincsHit / 1.5 -
-							aknaHit
+								room.akna * 2.5 -
+								room.kincs / 2 +
+								Math.random() * 5 +
+								(room.size * (room.size - 1) - digs) / 2 +
+								kincsHit / 1.5 -
+								aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1605,13 +1606,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-						room.akna * 2 -
-						room.kincs -
-						Math.random() * 5 +
-						Math.random() * 5 -
-						(room.kincs - kincsHit) * 2 +
-						kincsHit -
-						aknaHit
+							room.akna * 2 -
+							room.kincs -
+							Math.random() * 5 +
+							Math.random() * 5 -
+							(room.kincs - kincsHit) * 2 +
+							kincsHit -
+							aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2337,13 +2338,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-				char.esz * 5 +
-				char.lel * 5 +
-				char.hat * 5 +
-				steps * 3 -
-				char.ero * 10 +
-				Math.random() * 500 +
-				getObj("S_Villámgyorsaság") * 1000
+					char.esz * 5 +
+					char.lel * 5 +
+					char.hat * 5 +
+					steps * 3 -
+					char.ero * 10 +
+					Math.random() * 500 +
+					getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -2778,6 +2779,7 @@ function _load() {
 		}
 		let gspeed = 1;
 		let gclick = "select";
+		let shootWeapon = {};
 		let opera = 0;
 		let operaBtn = ["Kapjuk el őket!", "Meneküljünk!", "Győztünk!", "Ne már!"];
 		let fe = getObj("W");
@@ -2821,6 +2823,7 @@ function _load() {
               <button class="btn" id="vezerBtn" >${operaBtn[opera]}</button>
               <span id="speedBtns">
                 Sebesség:
+                <button class="speedBtn" id="sp-0.25">1/5</button>
                 <button class="speedBtn" id="sp-0.5">1/2</button>
                 <button class="speedBtn curSpeed" id="sp-1">1</button>
                 <button class="speedBtn" id="sp-2">2</button>
@@ -2856,9 +2859,9 @@ function _load() {
 			}
 			document.getElementById("harcter").innerHTML = dirtStr;
 			function newSprite(model, id, team, ally = false) {
-				let attB = (1 + ally * 0.5 + (fwb === "esz" && team) * 0.2);
-				let defB = (1 + ally * 0.5 + (fwb === "ugy" && team) * 0.2);
-				let hpB = (1 + ally * 0.5 + (fwb === "ero" && team) * 0.2);
+				let attB = 1 + ally * 0.5 + (fwb === "esz" && team) * 0.2;
+				let defB = 1 + ally * 0.5 + (fwb === "ugy" && team) * 0.2;
+				let hpB = 1 + ally * 0.5 + (fwb === "ero" && team) * 0.2;
 				return {
 					id: id,
 					friend: team,
@@ -2889,7 +2892,7 @@ function _load() {
 						y: -1,
 					},
 					dead: false,
-					obey: false
+					obey: false,
 				};
 			}
 			let preFriends = armies[room.friends].split(", ");
@@ -3021,13 +3024,79 @@ function _load() {
 			console.log("fFields: ", ffields);
 		}
 
+		//friend, bomb, spell, sugar, robi
+		//char.objs = ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_DIABOLIKUS SZTEROID", "W_KÉZIGRÁNÁT", "W_VARÁZSPOR", "W_PROTONÁGYÚ", "W_ROBI"]
 		function chooseFWeapon(e) {
+			if (opera !== 1) return;
+			document.getElementById("wtimer").src = "./img/rooms/cancel.png";
+			weaponCount = 0;
+			clearInterval(timo);
 			let fn = e.target.id.split("-")[1];
 			let fegy = fegyObj[fn];
-			let type = fegy.final;
-			let effekt = fegy.effect;
+			fegyObj.splice(fn, 1);
+			updateFWeapons();
+			loseObj(fegy.name, false);
 			gclick = "shoot";
-			console.log("Chosen: ", fegy);
+			shootWeapon = fegy;
+
+			switch (shootWeapon.final) {
+				case "friend":
+					message("Válaszd ki az emberedet!");
+					document.querySelectorAll(".friend").forEach((x) => (x.style.cursor = "crosshair"));
+					document.querySelectorAll(".nme").forEach((x) => (x.style.cursor = "not-allowed"));
+					document.querySelectorAll(".terep").forEach((x) => (x.style.cursor = "not-allowed"));
+					break;
+
+				case "bomb":
+					message("Válaszd ki, hova dobod!");
+					document.querySelectorAll(".sprite").forEach((x) => (x.style.cursor = "crosshair"));
+					document.querySelectorAll(".terep").forEach((x) => (x.style.cursor = "crosshair"));
+					break;
+
+				case "spell":
+					message("Válaszd ki, hol használod!");
+					document.querySelectorAll(".sprite").forEach((x) => (x.style.cursor = "crosshair"));
+					document.querySelectorAll(".terep").forEach((x) => (x.style.cursor = "crosshair"));
+					break;
+
+				case "sugar":
+					message("Válaszd ki annak az oszlopnak vagy sornak az üres szélét, ahonnan belősz!");
+					document.querySelectorAll(".sprite").forEach((x) => (x.style.cursor = "not-allowed"));
+					document.querySelectorAll(".terep").forEach((x) => {
+						let tx = Number(x.id.split("-")[1]);
+						let ty = Number(x.id.split("-")[2]);
+						if (tx === 0 && ty === 0) {
+							x.style.cursor = "se-resize";
+						} else if (tx === 0 && ty === 12) {
+							x.style.cursor = "ne-resize";
+						} else if (tx === 12 && ty === 0) {
+							x.style.cursor = "sw-resize";
+						} else if (tx === 12 && ty === 12) {
+							x.style.cursor = "nw-resize";
+						} else if (tx === 0) {
+							x.style.cursor = "e-resize";
+						} else if (tx === 12) {
+							x.style.cursor = "w-resize";
+						} else if (ty === 0) {
+							x.style.cursor = "s-resize";
+						} else if (ty === 12) {
+							x.style.cursor = "n-resize";
+						} else {
+							x.style.cursor = "not-allowed";
+						}
+					});
+					break;
+
+				case "robi":
+					message("Válaszd ki azt az üres mezőt, ahova lerakod Robit!");
+					document.querySelectorAll(".sprite").forEach((x) => (x.style.cursor = "not-allowed"));
+					document.querySelectorAll(".terep").forEach((x) => (x.style.cursor = "not-allowed"));
+					document.querySelectorAll(".terep-0").forEach((x) => (x.style.cursor = "crosshair"));
+					break;
+
+				default:
+					break;
+			}
 		}
 
 		function updateFWeapons() {
@@ -3035,11 +3104,11 @@ function _load() {
 			if (fegyObj.length > 0) {
 				gyilok = true;
 				document.getElementById("weapons").innerHTML = `
-          <div>Fegyverek:</div>
-          <div id="overlay">
-            <img id="wtimer" class="weapon" src="./img/rooms/pipa.jpg">
-          </div>        
-        `;
+					<div>Fegyverek:</div>
+					<div id="overlay">
+						<img id="wtimer" class="weapon" src="./img/rooms/pipa.jpg">
+					</div>        
+				`;
 				fegyObj.map((fegy, i) => {
 					let titleString = `${fegy.name}&#10;${fegy.desc}&#10;`;
 					objString +=
@@ -3127,7 +3196,7 @@ function _load() {
 							break;
 
 						case "shoot":
-							weaponTarget(Number(teljesszó[1]));
+							weaponTarget(Number(teljesszó[1], null));
 							break;
 
 						default:
@@ -3182,7 +3251,7 @@ function _load() {
 							break;
 
 						case "shoot":
-							weaponTarget(Number(teljesszó[1]));
+							weaponTarget(Number(teljesszó[1], teljesszó[2]));
 							break;
 
 						default:
@@ -3302,7 +3371,8 @@ function _load() {
 			let nmesinsight = nmes.filter(
 				(nu) =>
 					distance(u, nu) <= u.range * 3 &&
-					(nu.spec !== "lopakodás" || (nu.spec === "lopakodás" && nu.presentAct.type === "támad")) && clearview(u, nu)
+					(nu.spec !== "lopakodás" || (nu.spec === "lopakodás" && nu.presentAct.type === "támad")) &&
+					clearview(u, nu)
 			);
 			if (nmesinsight.length > 0 && nmesinsight.length > u.cr - Math.random() * 3) {
 				u.futureAct = {
@@ -3340,6 +3410,7 @@ function _load() {
 		}
 
 		function dies(u) {
+			if (u.dead) return;
 			u.dead = true;
 			u.obey = false;
 			u.futureAct = {
@@ -3377,15 +3448,17 @@ function _load() {
 					document.getElementById("ustat").className = "noccur";
 					document.getElementById("ustat").innerHTML = "";
 					featuredU = -1;
-					document.querySelectorAll(".sprite.nme").forEach((s) => {
-						s.style.cursor = "help";
-						s.classList.remove("targetUnit");
-					});
-					document.querySelectorAll(".terep").forEach((s) => {
-						s.style.cursor = "default";
-						s.classList.remove("targetTerep")
-					});
-					gclick = "select";
+					if (gclick.split("-")[0] !== "shoot") {
+						document.querySelectorAll(".sprite.nme").forEach((s) => {
+							s.style.cursor = "help";
+							s.classList.remove("targetUnit");
+						});
+						document.querySelectorAll(".terep").forEach((s) => {
+							s.style.cursor = "default";
+							s.classList.remove("targetTerep");
+						});
+						gclick = "select";
+					}
 				}
 				uDom.style.display = "none";
 				document.getElementById("bullet-" + u.id).style.display = "none";
@@ -3413,13 +3486,13 @@ function _load() {
 			let pick = rnd(arr);
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
-				: u.name === "Tüzér" || u.name === "Óriás" ?
-					strongest(arr)
-					: u.name === "Indián" || u.hp < u.ohp * Math.random() / 3
-						? weakest(arr) :
-						u.hp > 0.5 + u.ohp * Math.random() / 2 ?
-							closest(u, arr) :
-							bestmatch(u, arr);
+				: u.name === "Tüzér" || u.name === "Óriás"
+				? strongest(arr)
+				: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
+				? weakest(arr)
+				: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+				? closest(u, arr)
+				: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3454,7 +3527,8 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+						0.3 / gspeed
 					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
@@ -3614,8 +3688,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3627,8 +3701,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -3844,9 +3918,11 @@ function _load() {
 				specVoice(u);
 				let team = friendly ? "friend" : "nme";
 				document.getElementById("unit-" + nme.id).className = `sprite ${team}`;
-				document.querySelectorAll(".sprite.friend").forEach((s) => (s.style.cursor = "pointer"));
-				document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
-				gclick = "select";
+				if (gclick.split("-")[0] !== "shoot") {
+					document.querySelectorAll(".sprite.friend").forEach((s) => (s.style.cursor = "pointer"));
+					document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
+					gclick = "select";
+				}
 				if (nme.vip) {
 					let gyász = friendly ? `${nme.name} átállt hozzánk!` : `${nme.name} átállt az ellenséghez!`;
 					let gyászín = friendly ? "green" : "red";
@@ -3944,7 +4020,7 @@ function _load() {
 			if (nb !== null) {
 				for (let n of nb.all) {
 					if (n.id === nme.id) continue;
-					let sebb = Math.round((att + hp / 10 - n.def) / 5 + - Math.random() * 3);
+					let sebb = Math.round((att + hp / 10 - n.def) / 5 + -Math.random() * 3);
 					sebb = sebb < 0 ? 0 : sebb > 50 ? 50 : sebb;
 					n.hp -= sebb;
 					if (n.hp < 0) {
@@ -4118,7 +4194,7 @@ function _load() {
 								y: ct.y,
 							};
 						} else {
-							activate(u)
+							activate(u);
 						}
 					} else {
 						u.futureAct = {
@@ -4158,20 +4234,22 @@ function _load() {
 					break;
 
 				case 1:
-					let sereg = units.filter(u => u.friend && !u.dead)
+					changeSpeed(1);
+					opera = 4;
+					let sereg = units.filter((u) => u.friend && !u.dead);
 					for (let s of sereg) {
 						s.futureAct = {
 							type: "mozog",
 							victim: -1,
 							x: s.x,
-							y: 12
-						}
+							y: 12,
+						};
 						s.obey = true;
 					}
 					clearInterval(timo);
 					document.getElementById("harcter").style.transition = `filter linear ${5 / gspeed}s`;
 					document.getElementById("harcter").classList.add("darkenFW");
-					document.querySelectorAll(".sprite").forEach(s => {
+					document.querySelectorAll(".sprite").forEach((s) => {
 						s.style.transition = `left linear ${1 / gspeed}s, top linear ${1 / gspeed}s, filter linear ${5 / gspeed}s`;
 						s.classList.add("darkenFW");
 					});
@@ -4198,12 +4276,15 @@ function _load() {
 		}
 
 		function changeSpeed(newsped) {
-			document.getElementById("sp-" + gspeed).classList.remove("curSpeed");
-			document.getElementById("sp-" + newsped).classList.add("curSpeed");
-			gspeed = Number(newsped);
+			function reallyChangeIt() {
+				document.getElementById("sp-" + gspeed).classList.remove("curSpeed");
+				document.getElementById("sp-" + newsped).classList.add("curSpeed");
+				gspeed = Number(newsped);
+			}
 			clearTimers();
 			switch (opera) {
 				case 0:
+					reallyChangeIt();
 					timo = setInterval(() => {
 						message(rnd(intro));
 					}, 10000 / gspeed);
@@ -4218,6 +4299,7 @@ function _load() {
 					break;
 
 				case 1:
+					reallyChangeIt();
 					if (fegyObj.length > 0) {
 						document.getElementById("overlay").style.setProperty("transition", `bottom ${1 / gspeed}s linear`);
 						weapontimer();
