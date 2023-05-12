@@ -2793,10 +2793,10 @@ function _load() {
 		let weaponCountMax =
 			3 +
 			Math.round(
-				((100 - char.ugy) / 1 + (100 - char.ero) / 2 + (100 - char.esz) / 4 + (100 - char.hat) / 4 + char.lel / 2) / 15
+				(100 - char.ugy + (100 - char.ero) / 2 + (100 - char.esz) / 4 + (100 - char.hat) / 3.5 + char.lel / 2) / 18
 			);
+		console.log("WCM: ", weaponCountMax);
 		let weaponCount = 0;
-		let gyilok = false;
 		let intro = [
 			"Na, mi lesz?",
 			"Ezek gyengék, zúzzuk le őket!",
@@ -3028,16 +3028,14 @@ function _load() {
 		//char.objs = ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_DIABOLIKUS SZTEROID", "W_KÉZIGRÁNÁT", "W_VARÁZSPOR", "W_PROTONÁGYÚ", "W_ROBI"]
 		function chooseFWeapon(e) {
 			if (opera !== 1) return;
-			document.getElementById("wtimer").src = "./img/rooms/cancel.png";
 			weaponCount = 0;
 			clearInterval(timo);
 			let fn = e.target.id.split("-")[1];
-			let fegy = fegyObj[fn];
-			fegyObj.splice(fn, 1);
+			shootWeapon = fegyObj[fn];
 			updateFWeapons();
-			loseObj(fegy.name, false);
+			document.getElementById("wtimer").src = "./img/rooms/cancel.png";
+			document.getElementById("wtimer").style.cursor = "crosshair";
 			gclick = "shoot";
-			shootWeapon = fegy;
 
 			switch (shootWeapon.final) {
 				case "friend":
@@ -3099,10 +3097,94 @@ function _load() {
 			}
 		}
 
+		function weaponTarget(wx, wy) {
+			let wi = !wy ? wx : -1;
+			let curs = "";
+			if (wi < 0) {
+				curs = document.getElementById(`teri-${wx}-${wy}`).style.cursor;
+			} else {
+				curs = document.getElementById(`unit-${wi}`).style.cursor;
+			}
+			if (curs !== "crosshair") {
+				updateFWeapons();
+				document.getElementById("overlay").style.setProperty("--reveal", "55px");
+				return;
+			}
+
+			switch (shootWeapon.final) {
+				case "friend":
+					let effektek = [];
+					if (wi < 0) return;
+					let wu = units[wi];
+					for (let e of shootWeapon.effect) {
+						if (e.val === "erő") effektek.push({ prop: "hp", ch: Number(e.ch) });
+						if (e.val === "támadás") effektek.push({ prop: "att", ch: Number(e.ch) });
+						if (e.val === "védelem") effektek.push({ prop: "def", ch: Number(e.ch) });
+					}
+					for (let e of effektek) {
+						let o = "o" + e.prop;
+						wu[e.prop] += e.ch;
+						if (wu[e.prop] > wu[o]) wu[o] = wu[e.prop];
+					}
+					if (wu.id === featuredU) updateFeatured(wu);
+					break;
+				//addsound
+				case "bomb":
+					break;
+
+				case "spell":
+					break;
+
+				case "sugar":
+					/* document.querySelectorAll(".terep").forEach((x) => {
+						let tx = Number(x.id.split("-")[1]);
+						let ty = Number(x.id.split("-")[2]);
+						if (tx === 0 && ty === 0) {
+							x.style.cursor = "se-resize";
+						} else if (tx === 0 && ty === 12) {
+							x.style.cursor = "ne-resize";
+						} else if (tx === 12 && ty === 0) {
+							x.style.cursor = "sw-resize";
+						} else if (tx === 12 && ty === 12) {
+							x.style.cursor = "nw-resize";
+						} else if (tx === 0) {
+							x.style.cursor = "e-resize";
+						} else if (tx === 12) {
+							x.style.cursor = "w-resize";
+						} else if (ty === 0) {
+							x.style.cursor = "s-resize";
+						} else if (ty === 12) {
+							x.style.cursor = "n-resize";
+						} else {
+							x.style.cursor = "not-allowed";
+						} */
+					break;
+
+				case "robi":
+					break;
+
+				default:
+					break;
+			}
+
+			loseObj(shootWeapon.name, false);
+			fe = getObj("W");
+			fegyObj = [];
+			if (fe.length > 0) {
+				for (let f of fe) {
+					let match = weapons.find((w) => w.name === f && !!w.final);
+					if (match) fegyObj.push(match);
+				}
+			}
+			updateFWeapons();
+			if (fegyObj.length > 0) {
+				weapontimer();
+			}
+		}
+
 		function updateFWeapons() {
 			let objString = "";
 			if (fegyObj.length > 0) {
-				gyilok = true;
 				document.getElementById("weapons").innerHTML = `
 					<div>Fegyverek:</div>
 					<div id="overlay">
@@ -3119,14 +3201,12 @@ function _load() {
 				});
 				objString += "";
 				document.getElementById("weapons").innerHTML += objString;
-				if (gyilok) {
-					document.querySelectorAll(".weapon.usable").forEach((i) => {
-						i.addEventListener("click", chooseFWeapon);
-					});
-				}
+
+				document.querySelectorAll(".weapon.usable").forEach((i) => {
+					i.addEventListener("click", chooseFWeapon);
+				});
 			} else {
 				document.getElementById("weapons").innerHTML = "";
-				gyilok = false;
 			}
 		}
 
@@ -3257,6 +3337,19 @@ function _load() {
 						default:
 							break;
 					}
+
+				case "overlay":
+					if (gclick !== "shoot") return;
+					document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
+					document.querySelectorAll(".sprite.friend").forEach((s) => (s.style.cursor = "pointer"));
+					document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
+					gclick = "select";
+					weaponCount = weaponCountMax;
+					updateFWeapons();
+					document.getElementById("overlay").style.setProperty("--reveal", "55px");
+					shootWeapon = {};
+
+					break;
 
 				default:
 					break;
@@ -4333,7 +4426,8 @@ function _load() {
 				document
 					.getElementById("overlay")
 					.style.setProperty("--reveal", `${5 + weaponCount * (50 / weaponCountMax)}px`);
-				if (weaponCount === weaponCountMax) {
+				if (weaponCount >= weaponCountMax) {
+					weaponCount = weaponCountMax;
 					updateFWeapons();
 					document.getElementById("overlay").style.setProperty("--reveal", "55px");
 					clearInterval(timo);
