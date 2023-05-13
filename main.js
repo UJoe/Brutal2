@@ -778,14 +778,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-								char.hat +
-								char.sup / 2 +
-								char.lel / 2 +
-								char.ero +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat +
+							char.sup / 2 +
+							char.lel / 2 +
+							char.ero +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -796,14 +796,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-								char.hat / 4 +
-								char.sup / 2 +
-								char.lel +
-								char.ero / 4 +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat / 4 +
+							char.sup / 2 +
+							char.lel +
+							char.ero / 4 +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1111,9 +1111,8 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
-						gemIn[i]
-					}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
+						}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1588,12 +1587,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-								room.akna * 2.5 -
-								room.kincs / 2 +
-								Math.random() * 5 +
-								(room.size * (room.size - 1) - digs) / 2 +
-								kincsHit / 1.5 -
-								aknaHit
+							room.akna * 2.5 -
+							room.kincs / 2 +
+							Math.random() * 5 +
+							(room.size * (room.size - 1) - digs) / 2 +
+							kincsHit / 1.5 -
+							aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1606,13 +1605,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-							room.akna * 2 -
-							room.kincs -
-							Math.random() * 5 +
-							Math.random() * 5 -
-							(room.kincs - kincsHit) * 2 +
-							kincsHit -
-							aknaHit
+						room.akna * 2 -
+						room.kincs -
+						Math.random() * 5 +
+						Math.random() * 5 -
+						(room.kincs - kincsHit) * 2 +
+						kincsHit -
+						aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2098,7 +2097,7 @@ function _load() {
 					let joBetuk = [];
 					let joBetukStr = "";
 					let rosszBetuk = [];
-					console.log("Helyes: ", szoArr, joBetuk, rosszBetuk);
+					console.log("Helyes: ", szo);
 					let helps = 0;
 
 					function digHelp() {
@@ -2338,13 +2337,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-					char.esz * 5 +
-					char.lel * 5 +
-					char.hat * 5 +
-					steps * 3 -
-					char.ero * 10 +
-					Math.random() * 500 +
-					getObj("S_Villámgyorsaság") * 1000
+				char.esz * 5 +
+				char.lel * 5 +
+				char.hat * 5 +
+				steps * 3 -
+				char.ero * 10 +
+				Math.random() * 500 +
+				getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -2795,7 +2794,6 @@ function _load() {
 			Math.round(
 				(100 - char.ugy + (100 - char.ero) / 2 + (100 - char.esz) / 4 + (100 - char.hat) / 3.5 + char.lel / 2) / 18
 			);
-		console.log("WCM: ", weaponCountMax);
 		let weaponCount = 0;
 		let intro = [
 			"Na, mi lesz?",
@@ -2817,7 +2815,7 @@ function _load() {
         <div id="warpanels">
           <table id="harcter"></table>
           <div id="sprites"></div>
-          <div id="bullets"></div>
+          <div id="extra"></div>
           <div id="kezeles">
             <div id="opBtns">
               <button class="btn" id="vezerBtn" >${operaBtn[opera]}</button>
@@ -3020,19 +3018,30 @@ function _load() {
 
 				ffields[u.y][u.x].empty = false;
 			}
-			console.log("Units: ", units, uid);
-			console.log("fFields: ", ffields);
+		}
+
+		function cancelShoot() {
+			document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
+			document.querySelectorAll(".sprite.friend").forEach((s) => (s.style.cursor = "pointer"));
+			document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
+			gclick = "select";
+			weaponCount = weaponCountMax;
+			updateFWeapons();
+			document.getElementById("overlay").style.setProperty("--reveal", "55px");
+			shootWeapon = {};
 		}
 
 		//friend, bomb, spell, sugar, robi
 		//char.objs = ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_DIABOLIKUS SZTEROID", "W_KÉZIGRÁNÁT", "W_VARÁZSPOR", "W_PROTONÁGYÚ", "W_ROBI"]
 		function chooseFWeapon(e) {
 			if (opera !== 1) return;
+			let feD = e.target.id;
 			weaponCount = 0;
 			clearInterval(timo);
-			let fn = e.target.id.split("-")[1];
+			let fn = feD.split("-")[1];
 			shootWeapon = fegyObj[fn];
 			updateFWeapons();
+			document.getElementById(feD).classList.add("selectedUnit");
 			document.getElementById("wtimer").src = "./img/rooms/cancel.png";
 			document.getElementById("wtimer").style.cursor = "crosshair";
 			gclick = "shoot";
@@ -3105,16 +3114,18 @@ function _load() {
 			} else {
 				curs = document.getElementById(`unit-${wi}`).style.cursor;
 			}
-			if (curs !== "crosshair") {
-				updateFWeapons();
-				document.getElementById("overlay").style.setProperty("--reveal", "55px");
+			if (curs === "not-allowed") {
+				cancelShoot();
 				return;
 			}
 
 			switch (shootWeapon.final) {
 				case "friend":
 					let effektek = [];
-					if (wi < 0) return;
+					if (wi < 0 || (wi > -1 && !units[wi].friend)) {
+						cancelShoot();
+						return;
+					}
 					let wu = units[wi];
 					for (let e of shootWeapon.effect) {
 						if (e.val === "erő") effektek.push({ prop: "hp", ch: Number(e.ch) });
@@ -3127,15 +3138,126 @@ function _load() {
 						if (wu[e.prop] > wu[o]) wu[o] = wu[e.prop];
 					}
 					if (wu.id === featuredU) updateFeatured(wu);
+					sound2.src = "./audio/" + shootWeapon.sound + ".mp3"
+					sound2.play();
 					break;
-				//addsound
+
 				case "bomb":
+					let seb = Math.round(40 + Math.random() * 40);
+					let bx = wi < 0 ? wx : units[wi].x;
+					let by = wi < 0 ? wy : units[wi].y;
+					nbs = units.filter((u2) => !u2.dead && distance({ x: bx, y: by }, u2) === 1);
+					if (wi > -1) {
+						let wu = units[wi];
+						let seb1 = seb - wu.def;
+						seb1 = seb1 < 1 ? 1 : seb1 > 50 ? 50 : seb1;
+						wu.hp -= seb1;
+						if (wu.hp < 1) {
+							wu.hp = 0;
+							dies(wu);
+						}
+						if (featuredU === wu.id) updateFeatured(wu);
+					} else {
+						if (ffields[wy][wx].terrain === 2) {
+							sound2.src = "./audio/splash.mp3"
+							sound2.play();
+							break;
+						}
+					}
+					if (nbs.length > 0) {
+						for (let n of nbs) {
+							let seb2 = seb - n.def - Math.round(Math.random() * 20);
+							seb2 = seb2 < 0 ? 0 : seb2 > 30 ? 30 : seb2;
+							n.hp -= seb2;
+							if (n.hp < 0) {
+								n.hp = 0;
+								dies(n);
+							}
+							if (n.id === featuredU) updateFeatured(n);
+						}
+					}
+					sound2.src = "./audio/bomb.mp3"
+					sound2.play();
+					document.getElementById("extra").innerHTML = `<img id="bomba" class="bullet" src="./img/rooms/bullet.png">`
+					let bomb = document.getElementById("bomba");
+					bomb.style.setProperty("transition", "none");
+					bomb.style.left = bulletPosX(bx);
+					bomb.style.top = bulletPosY(by);
+					bomb.classList.add("occur");
+					bomb.style.setProperty(
+						"transition",
+						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
+						}s`
+					);
+					bomb.classList.add("bumm");
+					bomb.style.left = bumPosX(bx);
+					bomb.style.top = bumPosY(by);
+					timok[200] = setTimeout(() => {
+						bomb.classList.remove("bumm");
+						bomb.classList.remove("occur");
+					}, 303 / gspeed);
 					break;
 
 				case "spell":
+					if (wi < 0) {
+						for (let uu of units) {
+							if (uu.presentAct.x === wx && uu.presentAct.y === wy) {
+								cancelShoot();
+								return;
+							}
+						}
+						let choice = [];
+						for (let i = 0; i < 3; i++) {
+							if (i !== ffields[wy][wx].terrain) choice.push(i);
+						}
+						let t = rnd(choice);
+						ffields[wy][wx].terrain = t;
+						ffields[wy][wx].empty = (t === 0);
+						let f = document.getElementById(`teri-${wx}-${wy}`);
+						f.src = `./img/rooms/terep${t}.jpg`
+						f.className = `terep terep-${t}`;
+					} else {
+						let wu = units[wi];
+						if (wu.vip) {
+							if (wu.friend) {
+								wu.range++;
+								if (wu.cr < 3) wu.cr++;
+								if (wu.att < 131) wu.att += 20;
+								if (wu.def < 66) wu.def += 10;
+								wu.hp = Math.round(wu.hp * 1.5);
+								if (wu.hp > wu.ohp) wu.ohp = wu.hp
+							} else {
+								if (wu.range > 1) wu.range--;
+								if (wu.cr > 1) wu.cr--;
+								if (wu.att > 20) wu.att -= 20;
+								if (wu.def > 10) wu.def -= 10;
+								wu.hp = Math.round(wu.hp / 1.5);
+							}
+						} else {
+							let choice = sprites.filter(s => s.name !== wu.name && !s.vip);
+							let model = rnd(choice);
+							wu.name = model.name;
+							wu.pic = model.pic;
+							wu.att = model.att;
+							wu.def = model.def;
+							wu.cr = model.cr;
+							wu.range = model.range;
+							wu.spec = model.spec;
+							wu.desc = model.desc;
+							wu.sound = model.sound;
+							wu.ohp = model.hp;
+							if (wu.hp > wu.ohp) wu.hp = wu.ohp;
+							document.getElementById("unit-" + wu.id).src = `./img/rooms/${wu.pic}`
+						}
+						if (featuredU === wu.id) updateFeatured(wu);
+					}
+					sound2.src = "./audio/" + shootWeapon.sound + ".mp3"
+					sound2.play();
 					break;
 
 				case "sugar":
+					console.log("CURS: ", curs);
+					cancelShoot();
 					/* document.querySelectorAll(".terep").forEach((x) => {
 						let tx = Number(x.id.split("-")[1]);
 						let ty = Number(x.id.split("-")[2]);
@@ -3158,13 +3280,15 @@ function _load() {
 						} else {
 							x.style.cursor = "not-allowed";
 						} */
-					break;
+					return;
+				//break;
 
 				case "robi":
 					break;
 
 				default:
 					break;
+
 			}
 
 			loseObj(shootWeapon.name, false);
@@ -3176,6 +3300,12 @@ function _load() {
 					if (match) fegyObj.push(match);
 				}
 			}
+			document.querySelectorAll(".nme").forEach((s) => (s.style.cursor = "help"));
+			document.querySelectorAll(".friend").forEach((s) => (s.style.cursor = "pointer"));
+			document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
+			gclick = "select";
+			weaponCount = 0;
+			shootWeapon = {};
 			updateFWeapons();
 			if (fegyObj.length > 0) {
 				weapontimer();
@@ -3213,6 +3343,7 @@ function _load() {
 		function fwAction(e) {
 			let teljesszó = e.target.id.split("-");
 			let szótő = teljesszó[0];
+
 			switch (szótő) {
 				case "vezerBtn":
 					scene();
@@ -3331,24 +3462,17 @@ function _load() {
 							break;
 
 						case "shoot":
-							weaponTarget(Number(teljesszó[1], teljesszó[2]));
+							weaponTarget(tx, ty);
 							break;
 
 						default:
 							break;
 					}
+					break;
 
 				case "overlay":
 					if (gclick !== "shoot") return;
-					document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
-					document.querySelectorAll(".sprite.friend").forEach((s) => (s.style.cursor = "pointer"));
-					document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
-					gclick = "select";
-					weaponCount = weaponCountMax;
-					updateFWeapons();
-					document.getElementById("overlay").style.setProperty("--reveal", "55px");
-					shootWeapon = {};
-
+					cancelShoot();
 					break;
 
 				default:
@@ -3487,6 +3611,11 @@ function _load() {
 
 		function finalend(friend) {
 			clearTimers(true);
+			if (fegyObj.length > 0) {
+				if (shootWeapon !== {}) cancelShoot();
+				weaponCount = 0;
+				updateFWeapons();
+			}
 			if (friend) {
 				message("Megsemmisült a sereged!");
 				music.volume = 0.2;
@@ -3518,6 +3647,7 @@ function _load() {
 				x: -1,
 				y: -1,
 			};
+			if (featuredU === u.id) updateFeatured(u);
 			let friendly = u.friend;
 			let halálhörgés = friendly ? "no" : "die";
 			if (u.vip) {
@@ -3580,12 +3710,12 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Tüzér" || u.name === "Óriás"
-				? strongest(arr)
-				: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
-				? weakest(arr)
-				: u.hp > 0.5 + (u.ohp * Math.random()) / 2
-				? closest(u, arr)
-				: bestmatch(u, arr);
+					? strongest(arr)
+					: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
+						? weakest(arr)
+						: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+							? closest(u, arr)
+							: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3620,8 +3750,7 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-						0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
@@ -3781,8 +3910,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3794,8 +3923,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -4118,6 +4247,7 @@ function _load() {
 					n.hp -= sebb;
 					if (n.hp < 0) {
 						n.hp = 0;
+						dies(n);
 					}
 					if (n.id === featuredU) updateFeatured(n);
 				}
@@ -4143,6 +4273,11 @@ function _load() {
 
 		function fuTámad(u) {
 			let célpont = units[u.futureAct.victim];
+			if (célpont.friend === u.friend || célpont.dead) {
+				u.obey = false;
+				changeMind(u);
+				return;
+			}
 			if (distance(u, célpont) > u.range || (distance(u, célpont) <= u.range && !clearview(u, célpont))) {
 				if (u.name === "Robi") {
 					u.futureAct = {
@@ -4340,6 +4475,11 @@ function _load() {
 						s.obey = true;
 					}
 					clearInterval(timo);
+					if (fegyObj.length > 0) {
+						if (shootWeapon !== {}) cancelShoot();
+						weaponCount = 0;
+						updateFWeapons();
+					}
 					document.getElementById("harcter").style.transition = `filter linear ${5 / gspeed}s`;
 					document.getElementById("harcter").classList.add("darkenFW");
 					document.querySelectorAll(".sprite").forEach((s) => {

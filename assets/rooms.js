@@ -5278,8 +5278,3 @@ window.rooms = [
 		cont: 197,
 	},
 ];
-
-//Fegyveres utcai támadás: jelt adnak, vársz: mesterlövész leszed, nem: harc
-//135 Akkor is, ha Gárda nélkül mész Oshinoko házából a térre!
-//136-7: "Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. (Oshinoko?) Készen álltok a harcra."
-//Erdeiék: ha nő, recruit: szerelmes lesz belé, bübszimat, csont nélkül vége másnap; ha férfi vagy fail recruit, próbák, kiállja: join, Bübüszimat csak opció bármely esetben

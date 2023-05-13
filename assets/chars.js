@@ -255,8 +255,8 @@ window.sprites = [
 ];
 
 window.armies = {
-	városháza: "1 Óriás, 1 Paraszt, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "1 Óriás, 1 Oshinoko, 1 Szenyamuki, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes",
+	városháza: "1 Óriás, 1 Paraszt, 1 Szenyamuki, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+	gárda: "1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró",
 	/* városháza: "5 Tüzér, 2 Óriás",
 	gárda: "5 Kocsmatöltelékek, 2 Óriás", */
 };
