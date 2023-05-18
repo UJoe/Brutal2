@@ -778,14 +778,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-							char.hat +
-							char.sup / 2 +
-							char.lel / 2 +
-							char.ero +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat +
+								char.sup / 2 +
+								char.lel / 2 +
+								char.ero +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -796,14 +796,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-							char.hat / 4 +
-							char.sup / 2 +
-							char.lel +
-							char.ero / 4 +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat / 4 +
+								char.sup / 2 +
+								char.lel +
+								char.ero / 4 +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1111,8 +1111,9 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
-						}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
+						gemIn[i]
+					}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1587,12 +1588,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-							room.akna * 2.5 -
-							room.kincs / 2 +
-							Math.random() * 5 +
-							(room.size * (room.size - 1) - digs) / 2 +
-							kincsHit / 1.5 -
-							aknaHit
+								room.akna * 2.5 -
+								room.kincs / 2 +
+								Math.random() * 5 +
+								(room.size * (room.size - 1) - digs) / 2 +
+								kincsHit / 1.5 -
+								aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1605,13 +1606,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-						room.akna * 2 -
-						room.kincs -
-						Math.random() * 5 +
-						Math.random() * 5 -
-						(room.kincs - kincsHit) * 2 +
-						kincsHit -
-						aknaHit
+							room.akna * 2 -
+							room.kincs -
+							Math.random() * 5 +
+							Math.random() * 5 -
+							(room.kincs - kincsHit) * 2 +
+							kincsHit -
+							aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2337,13 +2338,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-				char.esz * 5 +
-				char.lel * 5 +
-				char.hat * 5 +
-				steps * 3 -
-				char.ero * 10 +
-				Math.random() * 500 +
-				getObj("S_Villámgyorsaság") * 1000
+					char.esz * 5 +
+					char.lel * 5 +
+					char.hat * 5 +
+					steps * 3 -
+					char.ero * 10 +
+					Math.random() * 500 +
+					getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -2834,6 +2835,44 @@ function _load() {
         </div>
       `;
 
+		function newSprite(model, id, team, ally = false) {
+			let attB = 1 + ally * 0.5 + (fwb === "esz" && team) * 0.2;
+			let defB = 1 + ally * 0.5 + (fwb === "ugy" && team) * 0.2;
+			let hpB = 1 + ally * 0.5 + (fwb === "ero" && team) * 0.2;
+			return {
+				id: id,
+				friend: team,
+				name: model.name,
+				vip: model.vip,
+				pic: model.pic,
+				oatt: Math.round(model.att * attB) > 150 ? 150 : Math.round(model.att * attB),
+				att: Math.round(model.att * attB) > 150 ? 150 : Math.round(model.att * attB),
+				odef: Math.round(model.def * defB) > 75 ? 75 : Math.round(model.def * defB),
+				def: Math.round(model.def * defB) > 75 ? 75 : Math.round(model.def * defB),
+				ohp: Math.round(model.hp * hpB),
+				hp: Math.round(model.hp * hpB),
+				cr: model.cr,
+				range: Math.round(model.range * (1 + ally / 9)),
+				spec: model.spec,
+				desc: model.desc,
+				sound: model.sound,
+				presentAct: {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1,
+				},
+				futureAct: {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1,
+				},
+				dead: false,
+				obey: false,
+			};
+		}
+
 		function drawFBoard() {
 			let dirtStr = "";
 			for (let row = 0; row < 13; row++) {
@@ -2856,43 +2895,7 @@ function _load() {
 				dirtStr += "</tr>";
 			}
 			document.getElementById("harcter").innerHTML = dirtStr;
-			function newSprite(model, id, team, ally = false) {
-				let attB = 1 + ally * 0.5 + (fwb === "esz" && team) * 0.2;
-				let defB = 1 + ally * 0.5 + (fwb === "ugy" && team) * 0.2;
-				let hpB = 1 + ally * 0.5 + (fwb === "ero" && team) * 0.2;
-				return {
-					id: id,
-					friend: team,
-					name: model.name,
-					vip: model.vip,
-					pic: model.pic,
-					oatt: Math.round(model.att * attB) > 150 ? 150 : Math.round(model.att * attB),
-					att: Math.round(model.att * attB) > 150 ? 150 : Math.round(model.att * attB),
-					odef: Math.round(model.def * defB) > 75 ? 75 : Math.round(model.def * defB),
-					def: Math.round(model.def * defB) > 75 ? 75 : Math.round(model.def * defB),
-					ohp: Math.round(model.hp * hpB),
-					hp: Math.round(model.hp * hpB),
-					cr: model.cr,
-					range: Math.round(model.range * (1 + ally / 9)),
-					spec: model.spec,
-					desc: model.desc,
-					sound: model.sound,
-					presentAct: {
-						type: "áll",
-						victim: -1,
-						x: -1,
-						y: -1,
-					},
-					futureAct: {
-						type: "áll",
-						victim: -1,
-						x: -1,
-						y: -1,
-					},
-					dead: false,
-					obey: false,
-				};
-			}
+
 			let preFriends = armies[room.friends].split(", ");
 			let preNmes = armies[room.enemies].split(", ");
 			let preOpts = room.opts.split(", ");
@@ -3138,7 +3141,7 @@ function _load() {
 						if (wu[e.prop] > wu[o]) wu[o] = wu[e.prop];
 					}
 					if (wu.id === featuredU) updateFeatured(wu);
-					sound2.src = "./audio/" + shootWeapon.sound + ".mp3"
+					sound2.src = "./audio/" + shootWeapon.sound + ".mp3";
 					sound2.play();
 					break;
 
@@ -3159,7 +3162,7 @@ function _load() {
 						if (featuredU === wu.id) updateFeatured(wu);
 					} else {
 						if (ffields[wy][wx].terrain === 2) {
-							sound2.src = "./audio/splash.mp3"
+							sound2.src = "./audio/splash.mp3";
 							sound2.play();
 							break;
 						}
@@ -3176,9 +3179,9 @@ function _load() {
 							if (n.id === featuredU) updateFeatured(n);
 						}
 					}
-					sound2.src = "./audio/bomb.mp3"
+					sound2.src = "./audio/bomb.mp3";
 					sound2.play();
-					document.getElementById("extra").innerHTML = `<img id="bomba" class="bullet" src="./img/rooms/bullet.png">`
+					document.getElementById("extra").innerHTML = `<img id="bomba" class="bullet" src="./img/rooms/bullet.png">`;
 					let bomb = document.getElementById("bomba");
 					bomb.style.setProperty("transition", "none");
 					bomb.style.left = bulletPosX(bx);
@@ -3186,7 +3189,8 @@ function _load() {
 					bomb.classList.add("occur");
 					bomb.style.setProperty(
 						"transition",
-						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
+						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+							0.3 / gspeed
 						}s`
 					);
 					bomb.classList.add("bumm");
@@ -3212,9 +3216,9 @@ function _load() {
 						}
 						let t = rnd(choice);
 						ffields[wy][wx].terrain = t;
-						ffields[wy][wx].empty = (t === 0);
+						ffields[wy][wx].empty = t === 0;
 						let f = document.getElementById(`teri-${wx}-${wy}`);
-						f.src = `./img/rooms/terep${t}.jpg`
+						f.src = `./img/rooms/terep${t}.jpg`;
 						f.className = `terep terep-${t}`;
 					} else {
 						let wu = units[wi];
@@ -3225,7 +3229,7 @@ function _load() {
 								if (wu.att < 131) wu.att += 20;
 								if (wu.def < 66) wu.def += 10;
 								wu.hp = Math.round(wu.hp * 1.5);
-								if (wu.hp > wu.ohp) wu.ohp = wu.hp
+								if (wu.hp > wu.ohp) wu.ohp = wu.hp;
 							} else {
 								if (wu.range > 1) wu.range--;
 								if (wu.cr > 1) wu.cr--;
@@ -3234,7 +3238,7 @@ function _load() {
 								wu.hp = Math.round(wu.hp / 1.5);
 							}
 						} else {
-							let choice = sprites.filter(s => s.name !== wu.name && !s.vip);
+							let choice = sprites.filter((s) => s.name !== wu.name && !s.vip);
 							let model = rnd(choice);
 							wu.name = model.name;
 							wu.pic = model.pic;
@@ -3247,11 +3251,11 @@ function _load() {
 							wu.sound = model.sound;
 							wu.ohp = model.hp;
 							if (wu.hp > wu.ohp) wu.hp = wu.ohp;
-							document.getElementById("unit-" + wu.id).src = `./img/rooms/${wu.pic}`
+							document.getElementById("unit-" + wu.id).src = `./img/rooms/${wu.pic}`;
 						}
 						if (featuredU === wu.id) updateFeatured(wu);
 					}
-					sound2.src = "./audio/" + shootWeapon.sound + ".mp3"
+					sound2.src = "./audio/" + shootWeapon.sound + ".mp3";
 					sound2.play();
 					break;
 
@@ -3284,11 +3288,36 @@ function _load() {
 				//break;
 
 				case "robi":
+					for (let uu of units) {
+						if (uu.presentAct.x === wx && uu.presentAct.y === wy) {
+							cancelShoot();
+							return;
+						}
+					}
+					let model = sprites.find((s) => s.name == "Robi");
+					units.push(newSprite(model, uid, true));
+					let ur = units[uid];
+					ur.x = wx;
+					ur.y = wy;
+					ffields[wy][wx].empty = false;
+					document.getElementById("extra").innerHTML += `
+						<img id="unit-${ur.id}" class="sprite friend" src="./img/rooms/${ur.pic}">
+						<img id="bullet-${ur.id}" class="bullet" src="./img/rooms/bullet.png">
+						<audio id="voice-${ur.id}" src = "./audio/${ur.sound}.mp3";></audio>
+					`;
+					let ud = document.getElementById(`unit-${ur.id}`);
+					ud.style.left = unitPosX(ur.x);
+					ud.style.top = unitPosY(ur.y);
+					document.getElementById("bullet-" + ur.id).style.left = bulletPosX(ur.x);
+					document.getElementById("bullet-" + ur.id).style.top = bulletPosY(ur.y);
+					uid++;
+					sound2.src = "./audio/" + ur.sound + ".mp3";
+					sound2.play();
+					decide(ur);
 					break;
 
 				default:
 					break;
-
 			}
 
 			loseObj(shootWeapon.name, false);
@@ -3710,12 +3739,12 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Tüzér" || u.name === "Óriás"
-					? strongest(arr)
-					: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
-						? weakest(arr)
-						: u.hp > 0.5 + (u.ohp * Math.random()) / 2
-							? closest(u, arr)
-							: bestmatch(u, arr);
+				? strongest(arr)
+				: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
+				? weakest(arr)
+				: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+				? closest(u, arr)
+				: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3750,7 +3779,8 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+						0.3 / gspeed
 					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
@@ -3910,8 +3940,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3923,8 +3953,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
