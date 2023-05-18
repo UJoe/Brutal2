@@ -778,14 +778,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-								char.hat +
-								char.sup / 2 +
-								char.lel / 2 +
-								char.ero +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat +
+							char.sup / 2 +
+							char.lel / 2 +
+							char.ero +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -796,14 +796,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-								char.hat / 4 +
-								char.sup / 2 +
-								char.lel +
-								char.ero / 4 +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat / 4 +
+							char.sup / 2 +
+							char.lel +
+							char.ero / 4 +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1111,9 +1111,8 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
-						gemIn[i]
-					}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
+						}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1588,12 +1587,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-								room.akna * 2.5 -
-								room.kincs / 2 +
-								Math.random() * 5 +
-								(room.size * (room.size - 1) - digs) / 2 +
-								kincsHit / 1.5 -
-								aknaHit
+							room.akna * 2.5 -
+							room.kincs / 2 +
+							Math.random() * 5 +
+							(room.size * (room.size - 1) - digs) / 2 +
+							kincsHit / 1.5 -
+							aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1606,13 +1605,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-							room.akna * 2 -
-							room.kincs -
-							Math.random() * 5 +
-							Math.random() * 5 -
-							(room.kincs - kincsHit) * 2 +
-							kincsHit -
-							aknaHit
+						room.akna * 2 -
+						room.kincs -
+						Math.random() * 5 +
+						Math.random() * 5 -
+						(room.kincs - kincsHit) * 2 +
+						kincsHit -
+						aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2338,13 +2337,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-					char.esz * 5 +
-					char.lel * 5 +
-					char.hat * 5 +
-					steps * 3 -
-					char.ero * 10 +
-					Math.random() * 500 +
-					getObj("S_Villámgyorsaság") * 1000
+				char.esz * 5 +
+				char.lel * 5 +
+				char.hat * 5 +
+				steps * 3 -
+				char.ero * 10 +
+				Math.random() * 500 +
+				getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -3189,8 +3188,7 @@ function _load() {
 					bomb.classList.add("occur");
 					bomb.style.setProperty(
 						"transition",
-						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-							0.3 / gspeed
+						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 						}s`
 					);
 					bomb.classList.add("bumm");
@@ -3205,7 +3203,7 @@ function _load() {
 				case "spell":
 					if (wi < 0) {
 						for (let uu of units) {
-							if (uu.presentAct.x === wx && uu.presentAct.y === wy) {
+							if ((uu.presentAct.x == wx && uu.presentAct.y == wy) || (uu.x == wx && uu.y == wy)) {
 								cancelShoot();
 								return;
 							}
@@ -3289,7 +3287,7 @@ function _load() {
 
 				case "robi":
 					for (let uu of units) {
-						if (uu.presentAct.x === wx && uu.presentAct.y === wy) {
+						if ((uu.presentAct.x == wx && uu.presentAct.y == wy) || (uu.x == wx && uu.y == wy)) {
 							cancelShoot();
 							return;
 						}
@@ -3300,11 +3298,11 @@ function _load() {
 					ur.x = wx;
 					ur.y = wy;
 					ffields[wy][wx].empty = false;
-					document.getElementById("extra").innerHTML += `
+					document.getElementById("sprites").insertAdjacentHTML("beforeend", `
 						<img id="unit-${ur.id}" class="sprite friend" src="./img/rooms/${ur.pic}">
 						<img id="bullet-${ur.id}" class="bullet" src="./img/rooms/bullet.png">
 						<audio id="voice-${ur.id}" src = "./audio/${ur.sound}.mp3";></audio>
-					`;
+					`);
 					let ud = document.getElementById(`unit-${ur.id}`);
 					ud.style.left = unitPosX(ur.x);
 					ud.style.top = unitPosY(ur.y);
@@ -3358,7 +3356,6 @@ function _load() {
                 <img class="weapon usable" id="w-${i}" title="${titleString}" src="./img/weapons/${fegy.pic}">`
 							: `<img class="weapon unused" id="w-${i}" title="${titleString}" src="./img/weapons/${fegy.pic}">`;
 				});
-				objString += "";
 				document.getElementById("weapons").innerHTML += objString;
 
 				document.querySelectorAll(".weapon.usable").forEach((i) => {
@@ -3640,6 +3637,9 @@ function _load() {
 
 		function finalend(friend) {
 			clearTimers(true);
+			document.querySelectorAll(".bullet").forEach(b => {
+				b.display = "none"
+			});
 			if (fegyObj.length > 0) {
 				if (shootWeapon !== {}) cancelShoot();
 				weaponCount = 0;
@@ -3739,12 +3739,12 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Tüzér" || u.name === "Óriás"
-				? strongest(arr)
-				: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
-				? weakest(arr)
-				: u.hp > 0.5 + (u.ohp * Math.random()) / 2
-				? closest(u, arr)
-				: bestmatch(u, arr);
+					? strongest(arr)
+					: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
+						? weakest(arr)
+						: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+							? closest(u, arr)
+							: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3779,8 +3779,7 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-						0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
@@ -3922,6 +3921,7 @@ function _load() {
 					siker = true;
 					move(ox + mx, oy + my);
 				} else if (ffields[oy + my][ox + mx].terrain === 1 && u.spec === "favágás") {
+					siker = true;
 					u.presentAct = {
 						type: "favágás",
 						victim: -1,
@@ -3940,8 +3940,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -3953,8 +3953,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -3971,10 +3971,12 @@ function _load() {
 							switch (o) {
 								case 0:
 									mmx = 0;
+									mmy = my;
 									break;
 
 								case 1:
 									mmy = 0;
+									mmx = mx;
 									break;
 
 								default:
@@ -3993,12 +3995,14 @@ function _load() {
 						for (let o of order) {
 							switch (o) {
 								case 0:
-									mmx = -mmx;
+									mmx = -mx;
+									mmy = my;
 									if (ox + mmx < 0 || ox + mmx > 12) mmx = 0;
 									break;
 
 								case 1:
-									mmy = -mmy;
+									mmx = mx;
+									mmy = -my;
 									if (oy + mmy < 0 || oy + mmy > 12) mmy = 0;
 									break;
 
@@ -4008,32 +4012,43 @@ function _load() {
 							if (ffields[oy + mmy][ox + mmx].empty && !siker) {
 								siker = true;
 								move(ox + mmx, oy + mmy);
+							} else {
+								mmx = -mx;
+								mmy = -my;
+								if (ox + mmx < 0 || ox + mmx > 12) mmx = 0;
+								if (oy + mmy < 0 || oy + mmy > 12) mmy = 0;
+								if (ffields[oy + mmy][ox + mmx].empty && !siker) {
+									siker = true;
+									move(ox + mmx, oy + mmy);
+								}
 							}
 						}
-					}
-					if (siker) return;
+						if (siker) return;
 
-					if (ffields[oy + my][ox + mx].terrain === 1) {
-						u.presentAct = {
-							type: "favágás",
-							victim: -1,
-							x: ox + mx,
-							y: oy + my,
-						};
-					} else if (ffields[oy + mmy][ox + mmx].terrain === 1) {
-						u.presentAct = {
-							type: "favágás",
-							victim: -1,
-							x: ox + mmx,
-							y: oy + mmy,
-						};
-					} else
-						u.presentAct = {
-							type: "áll",
-							victim: -1,
-							x: -1,
-							y: -1,
-						};
+						if (ffields[oy + my][ox + mx].terrain === 1) {
+							u.presentAct = {
+								type: "favágás",
+								victim: -1,
+								x: ox + mx,
+								y: oy + my,
+							};
+						} else if (ffields[oy + mmy][ox + mmx].terrain === 1) {
+							u.presentAct = {
+								type: "favágás",
+								victim: -1,
+								x: ox + mmx,
+								y: oy + mmy,
+							};
+						} else {
+							u.presentAct = {
+								type: "áll",
+								victim: -1,
+								x: -1,
+								y: -1,
+							};
+						}
+
+					}
 				}
 			}
 			if (u.id === featuredU) updateFeatured(u);
@@ -4077,6 +4092,7 @@ function _load() {
 					ffields[ct.y][ct.x].terrain = 0;
 					ffields[ct.y][ct.x].empty = true;
 					document.getElementById(`teri-${ct.x}-${ct.y}`).src = "./img/rooms/terep0.jpg";
+					document.getElementById(`teri-${ct.x}-${ct.y}`).className = "terep terep-0";
 					return;
 				}
 				u.hp += Math.round(Math.random() + (fwb === "lel") * (1 + Math.random() * 3));
@@ -4126,6 +4142,7 @@ function _load() {
 				u.presentAct.type = "mozog";
 				setTimeout(() => {
 					document.getElementById(`teri-${fx}-${fy}`).src = "./img/rooms/terep0.jpg";
+					document.getElementById(`teri-${fx}-${fy}`).className = "terep terep-0";
 				}, 500 / gspeed);
 			} else {
 				if (u.cr < 0.5 + Math.random() * 3 && !u.obey) {
@@ -4298,7 +4315,7 @@ function _load() {
 		function fuMozog(u) {
 			if (u.presentAct.type === "favágás") return;
 			pathfinder(u);
-			if (Math.random() > 0.7 + u.cr / 12) changeMind(u);
+			if (Math.random() > 0.6 + u.cr / 10) changeMind(u);
 		}
 
 		function fuTámad(u) {
@@ -4327,7 +4344,7 @@ function _load() {
 					y: -1,
 				};
 			}
-			if (Math.random() > 0.68 + u.cr / 10) changeMind(u);
+			if (Math.random() > 0.7 + u.cr / 11) changeMind(u);
 		}
 
 		//AI
