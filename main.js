@@ -3958,7 +3958,7 @@ function _load() {
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
 												? -1
 												: rnd([1, -1]);
-									if (ffields[oy + my][ox + mmx].empty) {
+									if (!!ffields[oy + my][ox + mmx] && ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
 									}
@@ -3971,7 +3971,7 @@ function _load() {
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
 												? -1
 												: rnd([1, -1]);
-									if (ffields[oy + mmy][ox + mx].empty) {
+									if (!!ffields[oy + mmy][ox + mx] && ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
 									}
