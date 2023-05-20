@@ -2810,6 +2810,8 @@ function _load() {
 		let bulletPosY = (n) => `calc(70px + ${3.3 * n + 1.65}vw - 5px)`;
 		let bumPosX = (n) => `calc(12vw + ${3.3 * n - 2.35}vw)`;
 		let bumPosY = (n) => `calc(70px + ${3.3 * n - 2.35}vw)`;
+		let punchPosX = (n) => `calc(12vw + ${3.3 * n + 0.15}vw)`;
+		let punchPosY = (n) => `calc(70px + ${3.3 * n + 0.15}vw)`;
 
 		main.innerHTML = `
         <div id="warpanels">
@@ -3033,6 +3035,15 @@ function _load() {
 			shootWeapon = {};
 		}
 
+		function noMoveThere(x, y) {
+			for (let uu of units) {
+				if ((uu.presentAct.x == x && uu.presentAct.y == y) || (uu.x == x && uu.y == y)) {
+					return false;
+				}
+			}
+			return true;
+		}
+
 		//friend, bomb, spell, sugar, robi
 		//char.objs = ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_DIABOLIKUS SZTEROID", "W_KÉZIGRÁNÁT", "W_VARÁZSPOR", "W_PROTONÁGYÚ", "W_ROBI"]
 		function chooseFWeapon(e) {
@@ -3202,12 +3213,11 @@ function _load() {
 
 				case "spell":
 					if (wi < 0) {
-						for (let uu of units) {
-							if ((uu.presentAct.x == wx && uu.presentAct.y == wy) || (uu.x == wx && uu.y == wy)) {
-								cancelShoot();
-								return;
-							}
+						if (!noMoveThere(wx, wy)) {
+							cancelShoot();
+							return;
 						}
+
 						let choice = [];
 						for (let i = 0; i < 3; i++) {
 							if (i !== ffields[wy][wx].terrain) choice.push(i);
@@ -3286,11 +3296,9 @@ function _load() {
 				//break;
 
 				case "robi":
-					for (let uu of units) {
-						if ((uu.presentAct.x == wx && uu.presentAct.y == wy) || (uu.x == wx && uu.y == wy)) {
-							cancelShoot();
-							return;
-						}
+					if (!noMoveThere(wx, wy)) {
+						cancelShoot();
+						return;
 					}
 					let model = sprites.find((s) => s.name == "Robi");
 					units.push(newSprite(model, uid, true));
@@ -3406,7 +3414,7 @@ function _load() {
 									y: -1,
 								};
 								if (command.id === featuredU) updateFeatured(command);
-								if (fwb === "hat") tu.obey = true;
+								if (fwb === "hat") command.obey = true;
 								document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
 								document.querySelectorAll(".terep").forEach((s) => (s.style.cursor = "default"));
 								gclick = "select";
@@ -3765,11 +3773,13 @@ function _load() {
 			return true;
 		}
 
-		function specVoice(u) {
-			document.getElementById("voice-" + u.id).src = `./audio/${specvoices[u.spec]}.mp3`;
-			document.getElementById("voice-" + u.id).play();
+		function specVoice(u, other = false) {
+			let mélynyomó = other ? sound : document.getElementById("voice-" + u.id)
+			mélynyomó.src = `./audio/${specvoices[u.spec]}.mp3`;
+			mélynyomó.play();
 		}
-		function movebullet(u, x, y, type = "shot") {
+
+		function movebullet(u, x, y, type = "shot", punch = false) {
 			let bullet = document.getElementById("bullet-" + u.id);
 			bullet.style.setProperty("transition", "none");
 			bullet.style.left = bulletPosX(u.x);
@@ -3779,8 +3789,7 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
-					}s`
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
 				bullet.classList.add("bumm");
@@ -3795,16 +3804,23 @@ function _load() {
 			}
 
 			if (type !== "round") {
-				bullet.style.setProperty("transition", `left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s`);
+				bullet.style.setProperty("transition", `left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed}s`);
 				clearTimeout(timok[50 + u.id]);
 				timok[50 + u.id] = setTimeout(() => {
-					bullet.style.left = bulletPosX(x);
-					bullet.style.top = bulletPosY(y);
+					if (punch) {
+						bullet.classList.add("punch");
+						bullet.style.left = punchPosX(x);
+						bullet.style.top = punchPosY(y);
+					} else {
+						bullet.style.left = bulletPosX(x);
+						bullet.style.top = bulletPosY(y);
+					}
 					document.getElementById("voice-" + u.id).src = `./audio/${u.sound}.mp3`;
 					document.getElementById("voice-" + u.id).play();
 					clearTimeout(timok[100 + u.id]);
 					timok[100 + u.id] = setTimeout(() => {
 						if (type === "shot") {
+							if (punch) bullet.classList.remove("punch");
 							bullet.classList.remove("occur");
 						} else {
 							document.getElementById("voice-" + u.id).src = "./audio/bomb.mp3";
@@ -4184,7 +4200,7 @@ function _load() {
 
 			if (nme.name !== "Robi" && u.spec === "csábítás" && Math.random() * 50 + seb > 25 + Math.random() * 45) {
 				nme.friend = friendly;
-				specVoice(u);
+				specVoice(u, true);
 				let team = friendly ? "friend" : "nme";
 				document.getElementById("unit-" + nme.id).className = `sprite ${team}`;
 				if (gclick.split("-")[0] !== "shoot") {
@@ -4238,8 +4254,46 @@ function _load() {
 			let nb = u.spec === "gránátvetés" ? neighbors(nme) : u.spec === "részegség" ? neighbors(u) : null;
 			if (nb !== null && u.spec === "gránátvetés" && nb.nf > nb.nn && nb.nn < 3 && distance(u, nme) > 1) at = "rakéta";
 			if (nb !== null && u.spec === "részegség" && nb.nn > 1) at = "round";
+			let punch = false;
 
-			movebullet(u, nx, ny, at);
+			if (u.spec === "kiütés") {
+				let cx = nme.x - u.x;
+				let cy = nme.y - u.y;
+				let tx = nme.x;
+				let ty = nme.y;
+				let ll = 0;
+				for (let l = 1; l < 6; l++) {
+					tx += cx;
+					ty += cy;
+					if (tx < 0 || tx > 12 || ty < 0 || ty > 12) break;
+					if (ffields[ty][tx].empty && noMoveThere(tx, ty)) {
+						punch = true;
+						ll = l;
+						break;
+					}
+				}
+				if (punch) {
+					clearTimeout(timok[nme.id]);
+					nme.futureAct = {
+						type: "áll",
+						victim: -1,
+						x: -1,
+						y: -1,
+					};
+					nme.presentAct = {
+						type: "mozog",
+						victim: -1,
+						x: tx,
+						y: ty,
+					}
+					specVoice(u, true);
+					decide(nme);
+					seb = Math.round(seb * (1 + ll / 10));
+					if (!u.obey) changeMind(u);
+				}
+			}
+
+			movebullet(u, nx, ny, at, punch);
 
 			if (u.spec === "feltartóztatás") {
 				if (nme.cr < seb / 20 + Math.random() * 3) {

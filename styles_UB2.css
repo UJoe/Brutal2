@@ -952,6 +952,11 @@ select {
 	height: 7.3vw;
 }
 
+.punch {
+	width: 3vw;
+	height: 3vw;
+}
+
 .occur {
 	display: block;
 	opacity: 1;
