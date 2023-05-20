@@ -194,7 +194,7 @@ window.sprites = [
 		att: 110,
 		def: 60,
 		hp: 100,
-		cr: 2,
+		cr: 3,
 		range: 1,
 		spec: "lopakodás",
 		desc: "Csak akkor veszik észre, ha támad.",
@@ -272,7 +272,7 @@ window.sprites = [
 		att: 95,
 		def: 75,
 		hp: 85,
-		cr: 3,
+		cr: 2,
 		range: 1,
 		spec: "lopakodás",
 		desc: "Észrevétlenül mozgó, kemény kis erdei lények.",
@@ -281,10 +281,10 @@ window.sprites = [
 ];
 
 window.armies = {
-	/* városháza: "1 Óriás, 1 Paraszt, 1 Szenyamuki, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "1 Erdei Zsolt, 1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró", */
-	városháza: "5 Tüzér, 2 Óriás",
-	gárda: "1 Erdei Zsolt, 10 Bübük",
+	városháza: "1 Óriás, 1 Paraszt, 1 Szenyamuki, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+	gárda: "1 Erdei Zsolt, 1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró, 1 Bübük",
+	/* városháza: "5 Óriás",
+	gárda: "5 Bübük, 1 Erdei Zsolt, 1 Oshinoko", */
 };
 
 window.specvoices = {

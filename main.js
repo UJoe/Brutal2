@@ -3583,12 +3583,12 @@ function _load() {
 			return { x: xx, y: yy };
 		}
 
-		function activate(u) {
-			if (u.obey) return;
+		function activate(u, forced) {
+			if (u.obey && !forced) return;
 			let friends = units.filter((fu) => fu.friend === u.friend && !fu.dead && u.id !== fu.id);
-			let nmes = units.filter((fu) => fu.friend !== u.friend && !fu.dead);
+			let nmes = units.filter((fu) => fu.friend !== u.friend && !fu.dead && (fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad")));
 
-			if (u.name === "Óriás" && nmes.length > 0) {
+			if (u.name === "Óriás" && nmes.length > 0 && u.hp > u.ohp / 2) {
 				u.futureAct = {
 					type: "támad",
 					victim: strongest(nmes),
@@ -3635,12 +3635,9 @@ function _load() {
 				return;
 			}
 
-			u.futureAct = {
-				type: "mozog",
-				victim: -1,
-				x: Math.floor(Math.random() * 13),
-				y: Math.floor(Math.random() * 13),
-			};
+			if (forced) {
+				valag(u);
+			}
 		}
 
 		function finalend(friend) {
@@ -3739,7 +3736,7 @@ function _load() {
 					uf.friend === !u.friend &&
 					distance(u, uf) <= u.range &&
 					!uf.dead &&
-					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad" && clearview(u, uf)))
+					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad")) && clearview(u, uf)
 			);
 
 		function chooseVictim(u, arr) {
@@ -3936,7 +3933,7 @@ function _load() {
 				if (ffields[oy + my][ox + mx].empty) {
 					siker = true;
 					move(ox + mx, oy + my);
-				} else if (ffields[oy + my][ox + mx].terrain === 1 && u.spec === "favágás") {
+				} else if (ffields[oy + my][ox + mx].terrain === 1 && (u.spec === "favágás" || u.att + u.hp > 120 + Math.random() * 240)) {
 					siker = true;
 					u.presentAct = {
 						type: "favágás",
@@ -4113,7 +4110,7 @@ function _load() {
 				}
 				u.hp += Math.round(Math.random() + (fwb === "lel") * (1 + Math.random() * 3));
 			} else {
-				if (Math.random() > 0.75 + u.cr / 15) changeMind(u);
+				if (Math.random() > 0.75 + u.cr / 15 && u.hp > u.ohp * Math.random()) changeMind(u);
 			}
 		}
 
@@ -4289,7 +4286,8 @@ function _load() {
 					specVoice(u, true);
 					decide(nme);
 					seb = Math.round(seb * (1 + ll / 10));
-					if (!u.obey) changeMind(u);
+					if (!u.obey && Math.random() > u.cr / 6
+					) changeMind(u);
 				}
 			}
 
@@ -4336,7 +4334,7 @@ function _load() {
 				nme.hp = 0;
 				dies(nme);
 				u.obey = false;
-				changeMind(u);
+				changeMind(u, true);
 			}
 			if (nme.id === featuredU) updateFeatured(nme);
 
@@ -4363,20 +4361,20 @@ function _load() {
 				x: -1,
 				y: -1,
 			};
-			if (Math.random() > 0.3 + u.cr / 6 - (u.name === "Óriás" && u.hp === u.ohp)) changeMind(u);
+			if (Math.random() > 0.2 + u.cr / 6 - (u.name === "Óriás" || u.hp === u.ohp) * 0.7) changeMind(u, true);
 		}
 
 		function fuMozog(u) {
 			if (u.presentAct.type === "favágás") return;
 			pathfinder(u);
-			if (Math.random() > 0.6 + u.cr / 10) changeMind(u);
+			if (Math.random() > 0.3 + u.cr / 6) changeMind(u);
 		}
 
 		function fuTámad(u) {
 			let célpont = units[u.futureAct.victim];
-			if (célpont.friend === u.friend || célpont.dead) {
+			if (célpont.friend === u.friend || célpont.dead || (célpont.spec === "lopakodás" && célpont.presentAct.type !== "támad")) {
 				u.obey = false;
-				changeMind(u);
+				changeMind(u, true);
 				return;
 			}
 			if (distance(u, célpont) > u.range || (distance(u, célpont) <= u.range && !clearview(u, célpont))) {
@@ -4398,7 +4396,7 @@ function _load() {
 					y: -1,
 				};
 			}
-			if (Math.random() > 0.7 + u.cr / 11) changeMind(u);
+			if (Math.random() > 0.6 + u.cr / 10) changeMind(u);
 		}
 
 		//AI
@@ -4460,8 +4458,24 @@ function _load() {
 			}
 		}
 
-		function changeMind(u) {
-			if (u.obey) return;
+		function valag(u) {
+			let mx = u.x;
+			let my = u.y;
+			do {
+				mx = Math.floor(Math.random() * 13);
+				my = Math.floor(Math.random() * 13);
+			} while (mx === u.x && my === u.y)
+
+			u.futureAct = {
+				type: "mozog",
+				victim: -1,
+				x: mx,
+				y: my,
+			};
+		}
+
+		function changeMind(u, forced = false) {
+			if (u.obey && !forced) return;
 			let ar = attackers(u);
 			if (u.name === "Robi") ar = ar.filter((a) => distance(u, a) <= u.range);
 			let ir = inrange(u);
@@ -4481,12 +4495,14 @@ function _load() {
 							y: ct.y,
 						};
 					} else {
-						u.futureAct = {
-							type: "mozog",
-							victim: -1,
-							x: Math.floor(Math.random() * 13),
-							y: Math.floor(Math.random() * 13),
-						};
+						if (cd === 1) {
+							u.futureAct = {
+								type: "áll",
+								victim: -1,
+								x: -1,
+								y: -1,
+							};
+						} else valag(u);
 					}
 				} else {
 					u.futureAct = {
@@ -4497,7 +4513,7 @@ function _load() {
 					};
 				}
 				if (u.id === featuredU) updateFeatured(u);
-			} else if (u.cr < ir.length + Math.random() * 1.5 + u.futureAct.type === "áll") {
+			} else if ((u.cr < ir.length + Math.random() * 1.5 + (u.futureAct.type === "áll")) && ir.length > 1) {
 				u.futureAct = {
 					type: "támad",
 					victim: chooseVictim(u, ir),
@@ -4510,7 +4526,7 @@ function _load() {
 					u.name !== "Robi" &&
 					u.cr < Math.random() * 3 + (u.spec === "részegség") + (u.hp === u.ohp) - (u.ohp - u.hp) / 100
 				) {
-					activate(u);
+					activate(u, forced);
 				} else {
 					let ct = closestó(u);
 					let cd = distance(u, { x: ct.x, y: ct.y });
@@ -4523,9 +4539,9 @@ function _load() {
 								y: ct.y,
 							};
 						} else {
-							activate(u);
+							activate(u, cd > 1);
 						}
-					} else {
+					} else if (forced || (u.hp < u.ohp / 2 && cd === 1)) {
 						u.futureAct = {
 							type: "áll",
 							victim: -1,
