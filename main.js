@@ -13,6 +13,7 @@ function _load() {
 	let header = document.getElementById("header");
 	window.curmusic = "basicmusic";
 	window.musicOn = true;
+	window.soundOn = true;
 	window.char = {};
 	window.room = {};
 	window.modi = false;
@@ -263,12 +264,26 @@ function _load() {
 		let sBtn = document.getElementById("soundBtn");
 		if (musicOn) {
 			music.pause();
-			sBtn.src = "./img/soundOff.png";
-			musicOn = false;
-		} else {
-			music.play();
 			sBtn.src = "./img/soundOn.png";
-			musicOn = true;
+			musicOn = false;
+			soundOn = true;
+		} else {
+			if (soundOn) {
+				sBtn.src = "./img/soundOff.png";
+				soundOn = false;
+				soundOn = false;
+				sound.volume = 0;
+				sound2.volume = 0;
+				document.querySelectorAll(".sounds").forEach(s => s.volume = 0);
+			} else {
+				music.play();
+				sBtn.src = "./img/musicOn.png";
+				musicOn = true;
+				soundOn = true;
+				sound.volume = 0;
+				sound2.volume = 0;
+				document.querySelectorAll(".sounds").forEach(s => s.volume = 1);
+			}
 		}
 	}
 
@@ -565,7 +580,7 @@ function _load() {
 		main.innerHTML = "";
 
 		//header
-		let musIcon = musicOn ? "./img/soundOn.png" : "./img/soundOff.png";
+		let musIcon = musicOn ? "./img/musicOn.png" : soundOn ? "./img/soundOn.png" : "./img/soundOff.png";
 		header.innerHTML = `
       <div id="topMenu">
         <img class="thumb" src="./img/chars/${char.pic}.jpg">
@@ -3009,7 +3024,7 @@ function _load() {
 				spriteStr += `
 					<img id="unit-${u.id}" class="sprite ${team}" src="./img/rooms/${u.pic}">
 					<img id="bullet-${u.id}" class="bullet" src="./img/rooms/bullet.png">
-					<audio id="voice-${u.id}" src = "./audio/${u.sound}.mp3";></audio>
+					<audio id="voice-${u.id}" class="sounds" src = "./audio/${u.sound}.mp3";></audio>
 				`;
 			}
 			document.getElementById("sprites").innerHTML = spriteStr;
@@ -3955,7 +3970,7 @@ function _load() {
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
 												? -1
 												: rnd([1, -1]);
-									if (!!ffields[oy + my][ox + mmx] && ffields[oy + my][ox + mmx].empty) {
+									if (ffields[oy + my][ox + mmx] && ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
 									}
@@ -3968,7 +3983,7 @@ function _load() {
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
 												? -1
 												: rnd([1, -1]);
-									if (!!ffields[oy + mmy][ox + mx] && ffields[oy + mmy][ox + mx].empty) {
+									if (ffields[oy + mmy][ox + mx] && ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
 									}

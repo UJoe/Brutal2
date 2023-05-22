@@ -221,7 +221,8 @@ ul {
 }
 
 #soundBtn {
-	margin-right: 45px;
+	padding-right: 55px;
+	width: 30px;
 }
 
 .navBtn {
