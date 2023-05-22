@@ -325,7 +325,10 @@ function _load() {
 				}, 20000);
 			}
 			if (musicOn) music.volume = 1;
-			sound.volume = 1;
+			if (soundOn) {
+				sound.volume = 1;
+				sound2.volume = 1;
+			}
 			music.loop = true;
 			newRoom();
 		}, 4100);
@@ -3028,6 +3031,7 @@ function _load() {
 				`;
 			}
 			document.getElementById("sprites").innerHTML = spriteStr;
+			document.querySelectorAll(".sounds").forEach(s => s.volume = soundOn ? 1 : 0);
 
 			for (let u of units) {
 				document.getElementById("unit-" + u.id).style.left = unitPosX(u.x);
@@ -3326,6 +3330,7 @@ function _load() {
 						<img id="bullet-${ur.id}" class="bullet" src="./img/rooms/bullet.png">
 						<audio id="voice-${ur.id}" src = "./audio/${ur.sound}.mp3";></audio>
 					`);
+					document.getElementById(`voice-${ur.id}`).volume = soundOn ? 1 : 0;
 					let ud = document.getElementById(`unit-${ur.id}`);
 					ud.style.left = unitPosX(ur.x);
 					ud.style.top = unitPosY(ur.y);
@@ -3775,12 +3780,41 @@ function _load() {
 		}
 
 		function clearview(u1, u2) {
-			if (u1.spec === "mesterlövész") return true;
+			if (u1.spec === "mesterlövész" || u1.range === 1) return true;
 			let [x1, y1, x2, y2] = [u1.x, u1.y, u2.x, u2.y];
 			let dx = Math.abs(x2 - x1);
 			let dy = Math.abs(y2 - y1);
+			let cx = Math.sign(x2 - x1);
+			let cy = Math.sign(y2 - y1);
 			if (dx < 2 && dy < 2) return true;
-			if ((dx === 1 && dy === 2) || (dy === 1 && dx === 2)) return true;
+			let [short, long] = ["", ""];
+			let [shortD, longD] = [0, 0];
+			if (dx < dy) {
+				[short, long] = ["x", "y"];
+				[shortD, longD] = [dx, dy];
+				[shortC, longC] = [cx, cy];
+			} else {
+				[short, long] = ["y", "x"];
+				[shortD, longD] = [dy, dx];
+				[shortC, longC] = [cy, cx];
+			}
+			if (shortD === 1 && longD === 2) {
+				//inkább kellene a dupla köz
+				return true;
+			}
+			if (longD > 3) return false; //ha ez a max. range
+			if (dx === dy || dx === 0 || dy === 0) {
+				for (let i = 1; i < longD; i++) {
+					let f = ffields[x1 + i * cx][y1 + i * cy];
+					if (!f.empty && f.terrain !== 2) {
+						console.log("AKADÁLY: ", u1.name, x1 + i * cx, y1 + i * cy);
+						return false;
+					}
+				}
+			} else {
+				//durvák
+			}
+
 			//egyenes vonalak v. 1-3, 2-3
 			return true;
 		}
@@ -3948,7 +3982,7 @@ function _load() {
 				if (ffields[oy + my][ox + mx].empty) {
 					siker = true;
 					move(ox + mx, oy + my);
-				} else if (ffields[oy + my][ox + mx].terrain === 1 && (u.spec === "favágás" || u.att + u.hp > 120 + Math.random() * 240)) {
+				} else if (ffields[oy + my][ox + mx].terrain === 1 && (u.spec === "favágás" || u.att + u.hp > 120 + Math.random() * 250)) {
 					siker = true;
 					u.presentAct = {
 						type: "favágás",
@@ -4591,6 +4625,7 @@ function _load() {
 					for (let u of units) {
 						decide(u);
 					}
+					document.querySelectorAll(".sounds").forEach(s => s.volume = soundOn ? 1 : 0);
 					break;
 
 				case 1:
