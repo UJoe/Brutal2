@@ -3102,21 +3102,12 @@ function _load() {
 					break;
 
 				case "sugar":
-					message("Válaszd ki annak az oszlopnak vagy sornak az üres szélét, ahonnan belősz!");
+					message("Válasszd ki azt az üres alsó mezőt, ahonnan belősz!");
 					document.querySelectorAll(".sprite").forEach((x) => (x.style.cursor = "not-allowed"));
 					document.querySelectorAll(".terep").forEach((x) => {
-						let tx = Number(x.id.split("-")[1]);
 						let ty = Number(x.id.split("-")[2]);
-						if (tx === 0 && ty === 12) {
-							x.style.cursor = "ne-resize";
-						} else if (tx === 12 && ty === 12) {
-							x.style.cursor = "nw-resize";
-						} else if (tx === 0 && ty > 5) {
-							x.style.cursor = "e-resize";
-						} else if (tx === 12 && ty > 5) {
-							x.style.cursor = "w-resize";
-						} else if (ty === 12) {
-							x.style.cursor = "n-resize";
+						if (ty === 12) {
+							x.style.cursor = "crosshair";
 						} else {
 							x.style.cursor = "not-allowed";
 						}
@@ -3285,43 +3276,7 @@ function _load() {
 					break;
 
 				case "sugar":
-					let vx = 0;
-					let vy = 0;
-					let rota = 0;
-					switch (curs) {
-						case "ne-resize":
-							vx = 1;
-							vy = -1;
-							rota = 45;
-							break;
-
-						case "nw-resize":
-							vx = -1;
-							vy = -1;
-							rota = 135;
-							break;
-
-						case "e-resize":
-							vx = 1;
-							vy = 0;
-							rota = 90;
-							break;
-
-						case "w-resize":
-							vx = -1;
-							vy = 0;
-							rota = 90;
-							break;
-
-						case "n-resize":
-							vx = 0;
-							vy = -1;
-							rota = 0;
-							break;
-
-						default:
-							break;
-					}
+					wx = parseInt(wx);
 					sound2.src = "./audio/protonbeam.mp3";
 					sound2.play();
 					document.getElementById("extra").innerHTML = `<img id="beam" class="beam" src="./img/rooms/beam.png">`;
@@ -3329,20 +3284,19 @@ function _load() {
 					beam.style.setProperty("transition", "none");
 					beam.style.left = beamPosX(wx);
 					beam.style.top = beamPosY(wy);
-					beam.style.transform = `rotate(${rota}deg)`;
 					beam.style.setProperty(
 						"transition",
-						`left linear ${0.07 / gspeed}s, top linear ${0.07 / gspeed}s, width linear ${
-							0.07 / gspeed
-						}s, height linear ${0.07 / gspeed}s`
+						`left linear ${0.05 / gspeed}s, top linear ${0.05 / gspeed}s, width linear ${
+							0.05 / gspeed
+						}s, height linear ${0.05 / gspeed}s`
 					);
-					for (let i = 1; i < 13; i++) {
+					for (let i = 12; i > -1; i--) {
 						timok[200 + i] = setTimeout(() => {
-							console.log("BX: ", wx + vx * i, " BY: ", wy + vy * i);
-							beam.style.left = beamPosX(wx + vx * i);
-							beam.style.top = beamPosY(wy + vy * i);
-							beam.style.height = `${3.3 * i}vw`;
-						}, (70 * i) / gspeed);
+							console.log(i);
+							beam.style.left = beamPosX(wx);
+							beam.style.top = beamPosY(i);
+							beam.style.height = `${3.3 * (13 - i)}vw`;
+						}, (50 * (12 - i)) / gspeed);
 					}
 
 					timok[200] = setTimeout(() => {
