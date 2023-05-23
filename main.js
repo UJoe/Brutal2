@@ -2831,6 +2831,8 @@ function _load() {
 		let bumPosY = (n) => `calc(70px + ${3.3 * n - 2.35}vw)`;
 		let punchPosX = (n) => `calc(12vw + ${3.3 * n + 0.15}vw)`;
 		let punchPosY = (n) => `calc(70px + ${3.3 * n + 0.15}vw)`;
+		let beamPosX = (n) => `calc(12vw + ${3.3 * n}vw)`;
+		let beamPosY = (n) => `calc(70px + ${3.3 * n}vw)`;
 
 		main.innerHTML = `
         <div id="warpanels">
@@ -3105,20 +3107,14 @@ function _load() {
 					document.querySelectorAll(".terep").forEach((x) => {
 						let tx = Number(x.id.split("-")[1]);
 						let ty = Number(x.id.split("-")[2]);
-						if (tx === 0 && ty === 0) {
-							x.style.cursor = "se-resize";
-						} else if (tx === 0 && ty === 12) {
+						if (tx === 0 && ty === 12) {
 							x.style.cursor = "ne-resize";
-						} else if (tx === 12 && ty === 0) {
-							x.style.cursor = "sw-resize";
 						} else if (tx === 12 && ty === 12) {
 							x.style.cursor = "nw-resize";
-						} else if (tx === 0) {
+						} else if (tx === 0 && ty > 5) {
 							x.style.cursor = "e-resize";
-						} else if (tx === 12) {
+						} else if (tx === 12 && ty > 5) {
 							x.style.cursor = "w-resize";
-						} else if (ty === 0) {
-							x.style.cursor = "s-resize";
 						} else if (ty === 12) {
 							x.style.cursor = "n-resize";
 						} else {
@@ -3289,32 +3285,75 @@ function _load() {
 					break;
 
 				case "sugar":
-					console.log("CURS: ", curs);
-					cancelShoot();
-					/* document.querySelectorAll(".terep").forEach((x) => {
-						let tx = Number(x.id.split("-")[1]);
-						let ty = Number(x.id.split("-")[2]);
-						if (tx === 0 && ty === 0) {
-							x.style.cursor = "se-resize";
-						} else if (tx === 0 && ty === 12) {
-							x.style.cursor = "ne-resize";
-						} else if (tx === 12 && ty === 0) {
-							x.style.cursor = "sw-resize";
-						} else if (tx === 12 && ty === 12) {
-							x.style.cursor = "nw-resize";
-						} else if (tx === 0) {
-							x.style.cursor = "e-resize";
-						} else if (tx === 12) {
-							x.style.cursor = "w-resize";
-						} else if (ty === 0) {
-							x.style.cursor = "s-resize";
-						} else if (ty === 12) {
-							x.style.cursor = "n-resize";
-						} else {
-							x.style.cursor = "not-allowed";
-						} */
-					return;
-				//break;
+					let vx = 0;
+					let vy = 0;
+					let rota = 0;
+					switch (curs) {
+						case "ne-resize":
+							vx = 1;
+							vy = -1;
+							rota = 45;
+							break;
+
+						case "nw-resize":
+							vx = -1;
+							vy = -1;
+							rota = 135;
+							break;
+
+						case "e-resize":
+							vx = 1;
+							vy = 0;
+							rota = 90;
+							break;
+
+						case "w-resize":
+							vx = -1;
+							vy = 0;
+							rota = 90;
+							break;
+
+						case "n-resize":
+							vx = 0;
+							vy = -1;
+							rota = 0;
+							break;
+
+						default:
+							break;
+					}
+					sound2.src = "./audio/protonbeam.mp3";
+					sound2.play();
+					document.getElementById("extra").innerHTML = `<img id="beam" class="beam" src="./img/rooms/beam.png">`;
+					let beam = document.getElementById("beam");
+					beam.style.setProperty("transition", "none");
+					beam.style.left = beamPosX(wx);
+					beam.style.top = beamPosY(wy);
+					beam.style.transform = `rotate(${rota}deg)`;
+					beam.style.setProperty(
+						"transition",
+						`left linear ${0.07 / gspeed}s, top linear ${0.07 / gspeed}s, width linear ${
+							0.07 / gspeed
+						}s, height linear ${0.07 / gspeed}s`
+					);
+					for (let i = 1; i < 13; i++) {
+						timok[200 + i] = setTimeout(() => {
+							console.log("BX: ", wx + vx * i, " BY: ", wy + vy * i);
+							beam.style.left = beamPosX(wx + vx * i);
+							beam.style.top = beamPosY(wy + vy * i);
+							beam.style.height = `${3.3 * i}vw`;
+						}, (70 * i) / gspeed);
+					}
+
+					timok[200] = setTimeout(() => {
+						beam.classList.add("darken");
+					}, 1000 / gspeed);
+
+					timok[200] = setTimeout(() => {
+						document.getElementById("extra").innerHTML = "";
+					}, 1400 / gspeed);
+
+					break;
 
 				case "robi":
 					if (!noMoveThere(wx, wy)) {

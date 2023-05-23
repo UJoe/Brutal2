@@ -948,6 +948,21 @@ select {
 	transition: left linear 0.3s, top linear 0.3s, width linear 0.3s, height linear 0.3s;
 }
 
+.beam {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 3.3vw;
+	height: 3.3vw;
+	z-index: 5;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	filter: brightness(1.5);
+	transform: rotate(0deg);
+	transition: left linear 0.07s, top linear 0.07s, width linear 0.07s, height linear 0.07s;
+}
+
 .bumm {
 	width: 7.3vw;
 	height: 7.3vw;
