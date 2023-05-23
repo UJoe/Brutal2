@@ -275,16 +275,16 @@ window.sprites = [
 		cr: 2,
 		range: 1,
 		spec: "lopakodás",
-		desc: "Észrevétlenül mozgó, kemény kis erdei lények.",
+		desc: "Észrevétlenül mozgó, kemény kis erdei lények, akik tisztelik a fákat.",
 		sound: "bübü-beep",
 	},
 ];
 
 window.armies = {
-	városháza: "1 Óriás, 1 Paraszt, 1 Szenyamuki, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
-	gárda: "1 Erdei Zsolt, 1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró, 1 Bübük",
-	/* városháza: "5 Óriás",
-	gárda: "5 Bübük, 1 Erdei Zsolt, 1 Oshinoko", */
+	/* városháza: "1 Óriás, 1 Paraszt, 1 Szenyamuki, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
+	gárda: "1 Erdei Zsolt, 1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró, 1 Bübük", */
+	városháza: "5 Óriás",
+	gárda: "1 Erdei Zsolt, 10 Bübük",
 };
 
 window.specvoices = {

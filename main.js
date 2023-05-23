@@ -274,7 +274,7 @@ function _load() {
 				soundOn = false;
 				sound.volume = 0;
 				sound2.volume = 0;
-				document.querySelectorAll(".sounds").forEach(s => s.volume = 0);
+				document.querySelectorAll(".sounds").forEach((s) => (s.volume = 0));
 			} else {
 				music.play();
 				sBtn.src = "./img/musicOn.png";
@@ -282,7 +282,7 @@ function _load() {
 				soundOn = true;
 				sound.volume = 0;
 				sound2.volume = 0;
-				document.querySelectorAll(".sounds").forEach(s => s.volume = 1);
+				document.querySelectorAll(".sounds").forEach((s) => (s.volume = 1));
 			}
 		}
 	}
@@ -796,14 +796,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-							char.hat +
-							char.sup / 2 +
-							char.lel / 2 +
-							char.ero +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat +
+								char.sup / 2 +
+								char.lel / 2 +
+								char.ero +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -814,14 +814,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-							char.hat / 4 +
-							char.sup / 2 +
-							char.lel +
-							char.ero / 4 +
-							char.ugy / 2 +
-							getObj("H").length +
-							getObj("S").length * 3 -
-							getObj("X").length * 2 >
+								char.hat / 4 +
+								char.sup / 2 +
+								char.lel +
+								char.ero / 4 +
+								char.ugy / 2 +
+								getObj("H").length +
+								getObj("S").length * 3 -
+								getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1129,8 +1129,9 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
-						}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
+						gemIn[i]
+					}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1605,12 +1606,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-							room.akna * 2.5 -
-							room.kincs / 2 +
-							Math.random() * 5 +
-							(room.size * (room.size - 1) - digs) / 2 +
-							kincsHit / 1.5 -
-							aknaHit
+								room.akna * 2.5 -
+								room.kincs / 2 +
+								Math.random() * 5 +
+								(room.size * (room.size - 1) - digs) / 2 +
+								kincsHit / 1.5 -
+								aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1623,13 +1624,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-						room.akna * 2 -
-						room.kincs -
-						Math.random() * 5 +
-						Math.random() * 5 -
-						(room.kincs - kincsHit) * 2 +
-						kincsHit -
-						aknaHit
+							room.akna * 2 -
+							room.kincs -
+							Math.random() * 5 +
+							Math.random() * 5 -
+							(room.kincs - kincsHit) * 2 +
+							kincsHit -
+							aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -2355,13 +2356,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-				char.esz * 5 +
-				char.lel * 5 +
-				char.hat * 5 +
-				steps * 3 -
-				char.ero * 10 +
-				Math.random() * 500 +
-				getObj("S_Villámgyorsaság") * 1000
+					char.esz * 5 +
+					char.lel * 5 +
+					char.hat * 5 +
+					steps * 3 -
+					char.ero * 10 +
+					Math.random() * 500 +
+					getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -3031,7 +3032,7 @@ function _load() {
 				`;
 			}
 			document.getElementById("sprites").innerHTML = spriteStr;
-			document.querySelectorAll(".sounds").forEach(s => s.volume = soundOn ? 1 : 0);
+			document.querySelectorAll(".sounds").forEach((s) => (s.volume = soundOn ? 1 : 0));
 
 			for (let u of units) {
 				document.getElementById("unit-" + u.id).style.left = unitPosX(u.x);
@@ -3218,7 +3219,8 @@ function _load() {
 					bomb.classList.add("occur");
 					bomb.style.setProperty(
 						"transition",
-						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
+						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+							0.3 / gspeed
 						}s`
 					);
 					bomb.classList.add("bumm");
@@ -3325,11 +3327,14 @@ function _load() {
 					ur.x = wx;
 					ur.y = wy;
 					ffields[wy][wx].empty = false;
-					document.getElementById("sprites").insertAdjacentHTML("beforeend", `
+					document.getElementById("sprites").insertAdjacentHTML(
+						"beforeend",
+						`
 						<img id="unit-${ur.id}" class="sprite friend" src="./img/rooms/${ur.pic}">
 						<img id="bullet-${ur.id}" class="bullet" src="./img/rooms/bullet.png">
 						<audio id="voice-${ur.id}" src = "./audio/${ur.sound}.mp3";></audio>
-					`);
+					`
+					);
 					document.getElementById(`voice-${ur.id}`).volume = soundOn ? 1 : 0;
 					let ud = document.getElementById(`unit-${ur.id}`);
 					ud.style.left = unitPosX(ur.x);
@@ -3606,7 +3611,12 @@ function _load() {
 		function activate(u, forced) {
 			if (u.obey && !forced) return;
 			let friends = units.filter((fu) => fu.friend === u.friend && !fu.dead && u.id !== fu.id);
-			let nmes = units.filter((fu) => fu.friend !== u.friend && !fu.dead && (fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad")));
+			let nmes = units.filter(
+				(fu) =>
+					fu.friend !== u.friend &&
+					!fu.dead &&
+					(fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad"))
+			);
 
 			if (u.name === "Óriás" && nmes.length > 0 && u.hp > u.ohp / 2) {
 				u.futureAct = {
@@ -3662,8 +3672,8 @@ function _load() {
 
 		function finalend(friend) {
 			clearTimers(true);
-			document.querySelectorAll(".bullet").forEach(b => {
-				b.display = "none"
+			document.querySelectorAll(".bullet").forEach((b) => {
+				b.style.display = "none";
 			});
 			if (fegyObj.length > 0) {
 				if (shootWeapon !== {}) cancelShoot();
@@ -3756,7 +3766,8 @@ function _load() {
 					uf.friend === !u.friend &&
 					distance(u, uf) <= u.range &&
 					!uf.dead &&
-					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad")) && clearview(u, uf)
+					(uf.spec !== "lopakodás" || (uf.spec === "lopakodás" && uf.presentAct.type === "támad")) &&
+					clearview(u, uf)
 			);
 
 		function chooseVictim(u, arr) {
@@ -3764,12 +3775,12 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Tüzér" || u.name === "Óriás"
-					? strongest(arr)
-					: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
-						? weakest(arr)
-						: u.hp > 0.5 + (u.ohp * Math.random()) / 2
-							? closest(u, arr)
-							: bestmatch(u, arr);
+				? strongest(arr)
+				: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
+				? weakest(arr)
+				: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+				? closest(u, arr)
+				: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3798,29 +3809,56 @@ function _load() {
 				[shortD, longD] = [dy, dx];
 				[shortC, longC] = [cy, cx];
 			}
-			if (shortD === 1 && longD === 2) {
-				//inkább kellene a dupla köz
-				return true;
-			}
 			if (longD > 3) return false; //ha ez a max. range
+			let f1 = null;
+			let f2 = null;
+			if (shortD === 1 && longD === 2) {
+				if (long === "x") {
+					f1 = ffields[y1][x1 + cx];
+					f2 = ffields[y1 + cy][x1 + cx];
+				} else {
+					f1 = ffields[y1 + cy][x1];
+					f2 = ffields[y1 + cy][x1 + cx];
+				}
+				if (!f1.empty && f1.terrain !== 2 && !f2.empty && f2.terrain !== 2) {
+					return false;
+				} else return true;
+			}
 			if (dx === dy || dx === 0 || dy === 0) {
 				for (let i = 1; i < longD; i++) {
 					let f = ffields[x1 + i * cx][y1 + i * cy];
 					if (!f.empty && f.terrain !== 2) {
-						console.log("AKADÁLY: ", u1.name, x1 + i * cx, y1 + i * cy);
 						return false;
 					}
 				}
-			} else {
-				//durvák
+			} else if (longD === 3) {
+				if (shortD === 1) {
+					if (long === "x") {
+						f1 = ffields[y1][x1 + cx];
+						f2 = ffields[y1 + cy][x1 + 2 * cx];
+					} else {
+						f1 = ffields[y1 + cy][x1];
+						f2 = ffields[y1 + 2 * cy][x1 + cx];
+					}
+				}
+				if (shortD === 2) {
+					if (long === "x") {
+						f1 = ffields[y1 + cy][x1 + cx];
+						f2 = ffields[y1 + cy][x1 + 2 * cx];
+					} else {
+						f1 = ffields[y1 + cy][x1 + cx];
+						f2 = ffields[y1 + 2 * cy][x1 + cx];
+					}
+				}
+				if ((!f1.empty && f1.terrain !== 2) || (!f2.empty && f2.terrain !== 2)) {
+					return false;
+				} else return true;
 			}
-
-			//egyenes vonalak v. 1-3, 2-3
 			return true;
 		}
 
 		function specVoice(u, other = false) {
-			let mélynyomó = other ? sound : document.getElementById("voice-" + u.id)
+			let mélynyomó = other ? sound : document.getElementById("voice-" + u.id);
 			mélynyomó.src = `./audio/${specvoices[u.spec]}.mp3`;
 			mélynyomó.play();
 		}
@@ -3835,7 +3873,9 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed}s`
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+						0.3 / gspeed
+					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
 				bullet.classList.add("bumm");
@@ -3850,7 +3890,12 @@ function _load() {
 			}
 
 			if (type !== "round") {
-				bullet.style.setProperty("transition", `left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed}s`);
+				bullet.style.setProperty(
+					"transition",
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
+						0.3 / gspeed
+					}s`
+				);
 				clearTimeout(timok[50 + u.id]);
 				timok[50 + u.id] = setTimeout(() => {
 					if (punch) {
@@ -3895,12 +3940,28 @@ function _load() {
 			}
 
 			if (Math.floor(Math.sqrt((ox - fx) * (ox - fx) + (oy - fy) * (oy - fy))) === 1 && ffields[fy][fx].terrain === 1) {
-				u.presentAct = {
-					type: "favágás",
-					victim: -1,
-					x: fx,
-					y: fy,
-				};
+				if (u.name === "Bübük") {
+					u.futureAct = {
+						type: "áll",
+						victim: -1,
+						x: -1,
+						y: -1,
+					};
+					u.presentAct = {
+						type: "áll",
+						victim: -1,
+						x: -1,
+						y: -1,
+					};
+					u.obey = false;
+				} else {
+					u.presentAct = {
+						type: "favágás",
+						victim: -1,
+						x: fx,
+						y: fy,
+					};
+				}
 				if (u.id === featuredU) updateFeatured(u);
 				return;
 			}
@@ -3982,7 +4043,10 @@ function _load() {
 				if (ffields[oy + my][ox + mx].empty) {
 					siker = true;
 					move(ox + mx, oy + my);
-				} else if (ffields[oy + my][ox + mx].terrain === 1 && (u.spec === "favágás" || u.att + u.hp > 120 + Math.random() * 250)) {
+				} else if (
+					ffields[oy + my][ox + mx].terrain === 1 &&
+					(u.spec === "favágás" || u.att + u.hp > 120 + Math.random() * 250) & (u.name !== "Bübük")
+				) {
 					siker = true;
 					u.presentAct = {
 						type: "favágás",
@@ -4002,8 +4066,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + my][ox + mmx] && ffields[oy + my][ox + mmx].empty) {
 										siker = true;
 										move(ox + mmx, oy + my);
@@ -4015,8 +4079,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-												? -1
-												: rnd([1, -1]);
+											? -1
+											: rnd([1, -1]);
 									if (ffields[oy + mmy][ox + mx] && ffields[oy + mmy][ox + mx].empty) {
 										siker = true;
 										move(ox + mx, oy + mmy);
@@ -4087,14 +4151,14 @@ function _load() {
 						}
 						if (siker) return;
 
-						if (ffields[oy + my][ox + mx].terrain === 1) {
+						if ((ffields[oy + my][ox + mx].terrain === 1) & (u.name !== "Bübük")) {
 							u.presentAct = {
 								type: "favágás",
 								victim: -1,
 								x: ox + mx,
 								y: oy + my,
 							};
-						} else if (ffields[oy + mmy][ox + mmx].terrain === 1) {
+						} else if ((ffields[oy + mmy][ox + mmx].terrain === 1) & (u.name !== "Bübük")) {
 							u.presentAct = {
 								type: "favágás",
 								victim: -1,
@@ -4109,7 +4173,6 @@ function _load() {
 								y: -1,
 							};
 						}
-
 					}
 				}
 			}
@@ -4331,12 +4394,11 @@ function _load() {
 						victim: -1,
 						x: tx,
 						y: ty,
-					}
+					};
 					specVoice(u, true);
 					decide(nme);
 					seb = Math.round(seb * (1 + ll / 10));
-					if (!u.obey && Math.random() > u.cr / 6
-					) changeMind(u);
+					if (!u.obey && Math.random() > u.cr / 6) changeMind(u);
 				}
 			}
 
@@ -4421,7 +4483,11 @@ function _load() {
 
 		function fuTámad(u) {
 			let célpont = units[u.futureAct.victim];
-			if (célpont.friend === u.friend || célpont.dead || (célpont.spec === "lopakodás" && célpont.presentAct.type !== "támad")) {
+			if (
+				célpont.friend === u.friend ||
+				célpont.dead ||
+				(célpont.spec === "lopakodás" && célpont.presentAct.type !== "támad")
+			) {
 				u.obey = false;
 				changeMind(u, true);
 				return;
@@ -4513,7 +4579,7 @@ function _load() {
 			do {
 				mx = Math.floor(Math.random() * 13);
 				my = Math.floor(Math.random() * 13);
-			} while (mx === u.x && my === u.y)
+			} while (mx === u.x && my === u.y);
 
 			u.futureAct = {
 				type: "mozog",
@@ -4562,7 +4628,7 @@ function _load() {
 					};
 				}
 				if (u.id === featuredU) updateFeatured(u);
-			} else if ((u.cr < ir.length + Math.random() * 1.5 + (u.futureAct.type === "áll")) && ir.length > 1) {
+			} else if (u.cr < ir.length + Math.random() * 1.5 + (u.futureAct.type === "áll") && ir.length > 1) {
 				u.futureAct = {
 					type: "támad",
 					victim: chooseVictim(u, ir),
@@ -4625,7 +4691,7 @@ function _load() {
 					for (let u of units) {
 						decide(u);
 					}
-					document.querySelectorAll(".sounds").forEach(s => s.volume = soundOn ? 1 : 0);
+					document.querySelectorAll(".sounds").forEach((s) => (s.volume = soundOn ? 1 : 0));
 					break;
 
 				case 1:
