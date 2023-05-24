@@ -9,6 +9,7 @@ M - találkozás (meet)
 X - megölve
   Béna Boldizsár
   Oshinoko
+  Gárda
 
 J - szövetséges (join)
   Gárda

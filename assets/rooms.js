@@ -5321,39 +5321,40 @@ window.rooms = [
 	},
 	{
 		num: 203,
-		title: "Nem sikerült bevenni a Városházát.",
-		type: "normal",
-		music: "epicloop",
-		pic: "happymass.jpg",
+		title: "Nem sikerült bevenni a Városházát",
+		type: "pursuit",
+		level: 8,
+		music: "darkbackground",
+		pic: "deadfield.jpg",
+		goalpic: "exit.png",
 		desc: `
       	<p>
-		Ezt a palyat meg csinald meg!!!	
-		Embereid sikeresen leverték a városháza őreit. A <span class="name"></span> Gárda üdvrivalgása után egy gyors halottszemlét tartasz.
+		 A <span class='name'></span> Gárdát sajnos szétverték a Városháza őrei.
 		</p>  
 		<p id="casualties"></p>
 		<p>
-        	A teljes győzelemhez viszont meg kell még találni magát Bitang Botondot. Maradék embereddel bevonulsz a Városházába, hogy megtaláld őt az irodai rész útvesztőiben.
+		 De nincs időd sokat sajnálkozni, mert téged magadat is üldözőbe vettek a megmaradt őrök. Rohannod kell az életedért!
       	</p>
       `,
-		obj: ["E_a Városháza bevétele"],
+		obj: ["X_Gárda"],
 		change: [
 			{
 				id: "hat",
-				crease: 20,
+				crease: -20,
 				rnd: 10,
 			},
 			{
 				id: "support",
-				crease: 20,
+				crease: -30,
 				rnd: 30,
 			},
 		],
 		buttons: [
 			{
-				txt: "Keressük meg ezt a bitangot!",
-				new: 209,
-				modi: 2,
+				txt: "Ujjujujj!!",
 			},
 		],
+		pass: 210,
+		fail: 211,
 	},
 ];
