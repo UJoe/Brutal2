@@ -45,6 +45,7 @@ E - egyéb események (events)
   Boti üldöz
   Boti halottnak hisz
   help (segített)
+  a Városháza bevétele
 
 H - segítés (help)
   Pirike

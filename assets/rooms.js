@@ -3602,6 +3602,10 @@ window.rooms = [
 				new: 151,
 			},
 			{
+				txt: "Segítesz a városszéli lakóknak legyőzni a hegyi óriásokat",
+				new: 208,
+			},
+			{
 				txt: "Imádkozol a sikerért",
 				new: 153,
 			},
@@ -4310,10 +4314,10 @@ window.rooms = [
       </p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - számláló eléri a 0-t, és a kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld a fent megjelenő üzeneteket!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
-        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll, pihen és őrködik. Ha egy üres mezőre, akkor átmegy oda saját sebességével, ha egy ellenségre vagy fára, akkor letámadja, ha barátra, akkor pedig társul vele. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség.  Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A CR (céltudatossági ráta) értéke (1-3) mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Aki támad, annak kék lesz az aurája, aki speciális képességet használ, annak lila, akinek villog az életerő-jelző csíkja, az éppen sérül. A zöld csík teljes, a sárga legalább fél, a piros félnél kisebb életerőt jelez. Amelyik szereplő a játék során a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
       </p>
       <p>
         Jó szórakozást!
@@ -4772,6 +4776,7 @@ window.rooms = [
 			},
 		],
 	},
+
 	{
 		num: 169,
 		title: "Pirike kertjében",
@@ -5276,5 +5281,79 @@ window.rooms = [
       </p>
     `,
 		cont: 197,
+	},
+
+	{
+		num: 202,
+		title: "A <span class='name'></span> Gárda bevette a Városházát",
+		type: "normal",
+		music: "epicloop",
+		pic: "happymass.jpg",
+		desc: `
+      	<p>
+			Embereid sikeresen leverték a városháza őreit. A <span class="name"></span> Gárda üdvrivalgása után egy gyors halottszemlét tartasz.
+		</p>  
+		<p id="casualties"></p>
+		<p>
+        	A teljes győzelemhez viszont meg kell még találni magát Bitang Botondot. Maradék embereddel bevonulsz a Városházába, hogy megtaláld őt az irodai rész útvesztőiben.
+      	</p>
+      `,
+		obj: ["E_a Városháza bevétele"],
+		change: [
+			{
+				id: "hat",
+				crease: 20,
+				rnd: 10,
+			},
+			{
+				id: "support",
+				crease: 20,
+				rnd: 30,
+			},
+		],
+		buttons: [
+			{
+				txt: "Keressük meg ezt a bitangot!",
+				new: 209,
+				modi: 2,
+			},
+		],
+	},
+	{
+		num: 203,
+		title: "Nem sikerült bevenni a Városházát.",
+		type: "normal",
+		music: "epicloop",
+		pic: "happymass.jpg",
+		desc: `
+      	<p>
+		Ezt a palyat meg csinald meg!!!	
+		Embereid sikeresen leverték a városháza őreit. A <span class="name"></span> Gárda üdvrivalgása után egy gyors halottszemlét tartasz.
+		</p>  
+		<p id="casualties"></p>
+		<p>
+        	A teljes győzelemhez viszont meg kell még találni magát Bitang Botondot. Maradék embereddel bevonulsz a Városházába, hogy megtaláld őt az irodai rész útvesztőiben.
+      	</p>
+      `,
+		obj: ["E_a Városháza bevétele"],
+		change: [
+			{
+				id: "hat",
+				crease: 20,
+				rnd: 10,
+			},
+			{
+				id: "support",
+				crease: 20,
+				rnd: 30,
+			},
+		],
+		buttons: [
+			{
+				txt: "Keressük meg ezt a bitangot!",
+				new: 209,
+				modi: 2,
+			},
+		],
 	},
 ];

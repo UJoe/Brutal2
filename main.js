@@ -1310,15 +1310,15 @@ function _load() {
 			}
 
 			main.innerHTML = `
-        <img id="roomPic" src="./img/rooms/${room.pic}">
-        <h2>${room.title}</h2>
-        <div id="subMain">
-          <p id="roomDesc">${room.desc}</p>
-          <p id="pickup"></p>
-          <div id="opart"></div>
-          <div id="btns"></div>
-        </div>
-      `;
+				<img id="roomPic" src="./img/rooms/${room.pic}">
+				<h2>${room.title}</h2>
+				<div id="subMain">
+				<p id="roomDesc">${room.desc}</p>
+				<p id="pickup"></p>
+				<div id="opart"></div>
+				<div id="btns"></div>
+				</div>
+			`;
 
 			if (document.getElementById("fullName")) document.getElementById("fullName").innerHTML = char.name;
 			if (document.querySelector(".name")) {
@@ -1344,6 +1344,44 @@ function _load() {
 					prgTxt += "<li>" + p + "</li>";
 				}
 				document.getElementById("pp").innerHTML = prgTxt;
+			}
+
+			if (document.getElementById("casualties")) {
+				let cStr = "";
+				if (modi.length < 1) {
+					cStr = "Senki fontos nem vesztette el most az életét.";
+				} else {
+					let fd = [];
+					let nd = [];
+					for (let m of modi) {
+						if (getObj("J_" + m)) {
+							fd.push(m);
+						} else {
+							nd.push(m);
+						}
+					}
+					if (fd.length > 0) {
+						cStr += `
+							Az alábbi barátaid pihentek meg örökre:
+							<ul>
+						`;
+						for (let f of fd) {
+							cStr += `<li> ${f}</li>`;
+						}
+						cStr += "</ul>";
+					}
+					if (nd.length > 0) {
+						cStr += `
+							Az alábbi fontos emberek haraptak itt fűbe:
+							<ul>
+						`;
+						for (let f of nd) {
+							cStr += `<li> ${f}</li>`;
+						}
+						cStr += "</ul>";
+					}
+				}
+				document.getElementById("casualties").innerHTML = cStr;
 			}
 
 			if (document.getElementById("akna")) document.getElementById("akna").innerHTML = room.akna;
@@ -4557,7 +4595,7 @@ function _load() {
 
 			if (u.hp === u.ohp) {
 				document.getElementById("unit-" + u.id).style.borderTop = "3px solid lime";
-			} else if (u.hp > u.ohp / 3) {
+			} else if (u.hp >= u.ohp / 3) {
 				document.getElementById("unit-" + u.id).style.borderTop = "3px solid yellow";
 			} else {
 				document.getElementById("unit-" + u.id).style.borderTop = "3px solid red";
