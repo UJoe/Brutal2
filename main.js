@@ -3129,6 +3129,7 @@ function _load() {
 		function weaponTarget(wx, wy) {
 			let wi = !wy ? wx : -1;
 			let curs = "";
+			let disposable = true;
 			if (wi < 0) {
 				curs = document.getElementById(`teri-${wx}-${wy}`).style.cursor;
 			} else {
@@ -3290,12 +3291,30 @@ function _load() {
 							0.05 / gspeed
 						}s, height linear ${0.05 / gspeed}s`
 					);
+					disposable = false;
 					for (let i = 12; i > -1; i--) {
 						timok[200 + i] = setTimeout(() => {
-							console.log(i);
 							beam.style.left = beamPosX(wx);
 							beam.style.top = beamPosY(i);
 							beam.style.height = `${3.3 * (13 - i)}vw`;
+							for (let ud of units) {
+								if (ud.x === wx && ud.y === i) {
+									let sebs = Math.round(ud.ohp / 2 + Math.random() * i * 10 - ud.def);
+									sebs = sebs < 0 ? 1 : sebs > ud.hp ? ud.hp : sebs;
+									ud.hp -= sebs;
+									if (ud.hp < 0) {
+										ud.hp = 0;
+										dies(ud);
+									}
+									if (ud.id === featuredU) updateFeatured(ud);
+								}
+							}
+							if (ffields[i][wx].terrain === 1 && Math.random() * i > 3) {
+								ffields[i][wx].terrain = 0;
+								ffields[i][wx].empty = true;
+								document.getElementById(`teri-${wx}-${i}`).src = "./img/rooms/terep0.jpg";
+								document.getElementById(`teri-${wx}-${i}`).className = "terep terep-0";
+							}
 						}, (50 * (12 - i)) / gspeed);
 					}
 
@@ -3344,13 +3363,15 @@ function _load() {
 					break;
 			}
 
-			loseObj(shootWeapon.name, false);
-			fe = getObj("W");
-			fegyObj = [];
-			if (fe.length > 0) {
-				for (let f of fe) {
-					let match = weapons.find((w) => w.name === f && !!w.final);
-					if (match) fegyObj.push(match);
+			if (disposable) {
+				loseObj(shootWeapon.name, false);
+				fe = getObj("W");
+				fegyObj = [];
+				if (fe.length > 0) {
+					for (let f of fe) {
+						let match = weapons.find((w) => w.name === f && !!w.final);
+						if (match) fegyObj.push(match);
+					}
 				}
 			}
 			document.querySelectorAll(".nme").forEach((s) => (s.style.cursor = "help"));
@@ -4061,9 +4082,11 @@ function _load() {
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
 											? -1
 											: rnd([1, -1]);
-									if (ffields[oy + my][ox + mmx] && ffields[oy + my][ox + mmx].empty) {
-										siker = true;
-										move(ox + mmx, oy + my);
+									if (!!ffields[oy + my][ox + mmx]) {
+										if (ffields[oy + my][ox + mmx].empty) {
+											siker = true;
+											move(ox + mmx, oy + my);
+										}
 									}
 								}
 							} else {
@@ -4074,9 +4097,11 @@ function _load() {
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
 											? -1
 											: rnd([1, -1]);
-									if (ffields[oy + mmy][ox + mx] && ffields[oy + mmy][ox + mx].empty) {
-										siker = true;
-										move(ox + mx, oy + mmy);
+									if (!!ffields[oy + mmy][ox + mx]) {
+										if (ffields[oy + mmy][ox + mx].empty) {
+											siker = true;
+											move(ox + mx, oy + mmy);
+										}
 									}
 								}
 							}

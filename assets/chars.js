@@ -283,8 +283,9 @@ window.sprites = [
 window.armies = {
 	/* városháza: "1 Óriás, 1 Paraszt, 1 Szenyamuki, 1 Szekus, 1 Indián, 1 Íjász, 1 Tüzér, 1 Favágó, 1 Távolugró, 1 Óriás, 1 Izomagy",
 	gárda: "1 Erdei Zsolt, 1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró, 1 Bübük", */
-	városháza: "5 Óriás",
-	gárda: "1 Erdei Zsolt, 10 Bübük",
+
+	városháza: "5 Szekus, 5 Tüzér, 3 Izomagy",
+	gárda: "5 Tüzér, 3 Izomagy, 2 Paraszt, 1 Indián, 1 Favágó, 1 Távolugró",
 };
 
 window.specvoices = {
