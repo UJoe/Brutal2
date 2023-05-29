@@ -207,7 +207,9 @@
 207 - Frici lecsapja a házmestert (mivel feladtad a harcot, -hat, -sup. => 206)
 208 - Harc a hegyi óriásokkal
 209 - Bitang Botond keresése a Városházán (dungeon, szint modiban)
-210 -
+210 - Üldözés a szétvert Gárda után (level 10 pursuit)
+211 - Céltalanná vált élet (?)
+212 - Megöltek téged is (death)
 
 
 

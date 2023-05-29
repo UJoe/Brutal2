@@ -4647,7 +4647,6 @@ window.rooms = [
         Berci látja, hogy szuperképessége, a szaga most is a segítségére siet. Nem számolt azonban azzal, hogy egy nála nagyobb ősi erő, a szél ezúttal téged támogat ebben az eposzi párbajban. Hirtelen fordul a szél és Berci felé kezd fújni. Nagyot szívsz a friss fuvallatból, a fejed és a látásod ismét kitisztul, és érzed az oxigén szétáradó erejét a tagjaidban.
       </p>
     `,
-		help: true,
 		modi: "Berci összeroskad és nem mozdul többet. Csak erre vártál! Szólsz a telefonon a <span class='part'></span> második emberének, hogy a küldetésed sikeresen teljesítve van.</p><p>Egy percet sem kell várni és már jönnek a lelkes párttagok kamerákkal és felveszik, ahogy Bercit berakjátok egy zsákba és elássátok mélyen a földbe. Közben egyre nő körülöttetek a tömeg, embereid lelkesen dicsérnek téged, te pedig szerényen mosolyogva mondod, hogy kötelességednek tekinted elbánni mindenkivel, aki zavarja a város békéjét és fejlődését. A nép a szag megszünésével párhuzamosan egyre lelkesebben gratulál neked és éltet téged és pártodat!",
 		buttons: [
 			{
@@ -4655,6 +4654,32 @@ window.rooms = [
 			},
 		],
 		pass: 198,
+		fail: 200,
+	},
+	{
+		num: 148,
+		title: "Kincskeresés Gizikével",
+		type: "dig",
+		size: 11,
+		level: 5,
+		helper: "Gizike",
+		gems: ["Üzemanyag", "Bronz", "Ezüst", "Arany"],
+		music: "epicsearch",
+		pic: "cave.gif",
+		desc: `
+      <p>
+        Gizike, a <span class="part"></span> titkárnője dobja be az ötletet, hogy a nagybátyjának van egy alagútásó gépe, amivel szokott a Kincses-bányában ásni. Ezt akár ti is megtehetnétek, felajánlva a népnek a kibányászott nemesfémeket.
+      </p>
+      <p>
+        Jó ötletnek tartod, így rögvest elindultok a Kincses-bánya felé, ahol Tódor úrfi - Gizikének a koszos képével együtt is békés méltóságot árasztó nagybátyja - gyorsan elmagyarázza, mi vár rátok lent - mivel Gizike annyira lelkes, hogy ő akar veled menni a föld gyomrába. A hegy széléről kell eljutnotok a közepéig, de bármerre mehettek, az a lényeg, hogy minél több és értékesebb ásványkincseket gyűjtsetek. Minél világosabb földben haladtok, annál kevesebb energiába kerül az ásás, de a sötétebb földek több és értékesebb ásványkincset rejtenek. Egyedül a kék sziklás talajjal nem tud a gép megbirkózni, azt ki kell kerülnötök. Figyeld folyamatosan az üzemanyag-szintet, mert ha nem éritek el a hegy közepén lévő teherliftet, akkor nem tudjátok felhozni a begyűjtött ásványokat. Jó szerencsét a bányásznak!
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Köszönjük, Tódor úrfi! Gyere, Gizike!",
+			},
+		],
+		pass: 149,
 		fail: 200,
 	},
 
@@ -5306,7 +5331,7 @@ window.rooms = [
 				rnd: 10,
 			},
 			{
-				id: "support",
+				id: "sup",
 				crease: 20,
 				rnd: 30,
 			},
@@ -5322,20 +5347,18 @@ window.rooms = [
 	{
 		num: 203,
 		title: "Nem sikerült bevenni a Városházát",
-		type: "pursuit",
-		level: 8,
+		type: "normal",
 		music: "darkbackground",
 		pic: "deadfield.jpg",
-		goalpic: "exit.png",
 		desc: `
-      	<p>
-		 A <span class='name'></span> Gárdát sajnos szétverték a Városháza őrei.
-		</p>  
-		<p id="casualties"></p>
-		<p>
-		 De nincs időd sokat sajnálkozni, mert téged magadat is üldözőbe vettek a megmaradt őrök. Rohannod kell az életedért!
-      	</p>
-      `,
+     	<p>
+				A <span class='name'></span> Gárdát sajnos szétverték a Városháza őrei.
+			</p>  
+			<p id="casualties"></p>
+			<p>
+				De nincs időd sokat sajnálkozni, mert téged magadat is üldözőbe vettek a megmaradt őrök. Rohannod kell az életedért!
+			</p>
+		`,
 		obj: ["X_Gárda"],
 		change: [
 			{
@@ -5344,7 +5367,7 @@ window.rooms = [
 				rnd: 10,
 			},
 			{
-				id: "support",
+				id: "sup",
 				crease: -30,
 				rnd: 30,
 			},
@@ -5352,9 +5375,30 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Ujjujujj!!",
+				new: 210
 			},
 		],
-		pass: 210,
-		fail: 211,
+	},
+
+	{
+		num: 210,
+		title: "Üldözés a szétvert Gárda után",
+		type: "pursuit",
+		level: 10,
+		music: "darkbackground",
+		pic: "deadfield.jpg",
+		goalpic: "exit.png",
+		desc: `
+			<p>
+			A megmaradt ellenségek össztüzet zúdítanak rád. Próbálj meg valahogykijutni!
+			</p>  
+		`,
+		buttons: [
+			{
+				txt: "Jááááj!!!",
+			},
+		],
+		pass: 211,
+		fail: 212,
 	},
 ];

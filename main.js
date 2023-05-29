@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 136; //startroom
+		char.room = 148; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -611,7 +611,6 @@ function _load() {
 			dungeon++;
 			document.getElementById("saveBtn").disabled = true;
 			if (room.help) modi = room.help.split("_")[1];
-
 			if (dungeon >= room.end * (0.5 + Math.random()) || (room.num === 57 && steps > 50)) {
 				room.desc = room.passDesc;
 				room.buttons = [room.passBtn];
@@ -796,14 +795,14 @@ function _load() {
 					if (checkCond("férfi")) {
 						if (
 							char.esz +
-								char.hat +
-								char.sup / 2 +
-								char.lel / 2 +
-								char.ero +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat +
+							char.sup / 2 +
+							char.lel / 2 +
+							char.ero +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							100 + Math.random() * 250
 						) {
 							appeal = true;
@@ -814,14 +813,14 @@ function _load() {
 					} else {
 						if (
 							char.esz / 2 +
-								char.hat / 4 +
-								char.sup / 2 +
-								char.lel +
-								char.ero / 4 +
-								char.ugy / 2 +
-								getObj("H").length +
-								getObj("S").length * 3 -
-								getObj("X").length * 2 >
+							char.hat / 4 +
+							char.sup / 2 +
+							char.lel +
+							char.ero / 4 +
+							char.ugy / 2 +
+							getObj("H").length +
+							getObj("S").length * 3 -
+							getObj("X").length * 2 >
 							75 + Math.random() * 125
 						) {
 							appeal = true;
@@ -1000,6 +999,7 @@ function _load() {
 				} else {
 					char.room = room.fail;
 				}
+				modi = false;
 				newRoom();
 			});
 			dip.addEventListener("input", function (event) {
@@ -1129,9 +1129,8 @@ function _load() {
 					cardStr += `
               <tr>
                 <td>${gemName[i]}</td>
-                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${
-						gemIn[i]
-					}"></td>
+                <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
+						}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
                 <td>
                   <button class="Mbtn" id="b-min-${i}">Min</button>
@@ -1156,6 +1155,7 @@ function _load() {
 				document.getElementById("submit").addEventListener("click", kotySubmit);
 				document.getElementById("eleg").addEventListener("click", function () {
 					char.room = room.cont;
+					modi = false;
 					newRoom();
 				});
 				let fókusz = foka < 3 ? "in-" + foka : "submit";
@@ -1466,6 +1466,7 @@ function _load() {
           </div>
 					<button id="exitBtn" title="Gyáva!">Feladom!</button>
 					<br/> 
+					<br/> 
           <div id="runnerCont">
             <img class="runners" id="charRunner" src="./img/chars/${char.pic}.jpg">
             <img class="runners" id="nmeRunner" src="./img/rooms/${room.goalpic}">
@@ -1644,12 +1645,12 @@ function _load() {
 						5 +
 						Math.round(
 							room.size * 2 +
-								room.akna * 2.5 -
-								room.kincs / 2 +
-								Math.random() * 5 +
-								(room.size * (room.size - 1) - digs) / 2 +
-								kincsHit / 1.5 -
-								aknaHit
+							room.akna * 2.5 -
+							room.kincs / 2 +
+							Math.random() * 5 +
+							(room.size * (room.size - 1) - digs) / 2 +
+							kincsHit / 1.5 -
+							aknaHit
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
@@ -1662,13 +1663,13 @@ function _load() {
 					finish = true;
 					let bonus = Math.round(
 						room.size * 1.5 +
-							room.akna * 2 -
-							room.kincs -
-							Math.random() * 5 +
-							Math.random() * 5 -
-							(room.kincs - kincsHit) * 2 +
-							kincsHit -
-							aknaHit
+						room.akna * 2 -
+						room.kincs -
+						Math.random() * 5 +
+						Math.random() * 5 -
+						(room.kincs - kincsHit) * 2 +
+						kincsHit -
+						aknaHit
 					);
 					changeVal("sup", bonus);
 					changeVal("hat", -1);
@@ -1820,6 +1821,12 @@ function _load() {
 		let gems = [0, 0, 0];
 		let aX = false;
 		let aY = false;
+		let storyN = [0, 1, 2];
+		let storyT = [
+			"A mai napon különös rossz előérzetem támadt. Amint elkezdtem ásni, vészjósló hangokat hallottam a méyből. Ez vajon a titokzatos lény lehet, akiről a helyi leganadák szólnak? Valahogy úgy érzem, nincs kedvem már megtalálni. Mégis folytatom, mert már nem vagyok ura önmagamnak. Várjunk, mi ez???!!!",
+			"A lényt még mindig nem találtam meg, de ez a föld tele van kincsekkel! Mi mindent lehet ezekből előállíatani, gazdag leszek, gyerekek, gazdag leszek! Már nem bántam meg, hogy belevágtam. Aki olvassa a naplómat, annak azt a tanácsot tudom adni, hogy",
+			"Ma kezdtem el ásni az alagutat. Keményebb volt, mint gondoltam! Konkrét és átvitt értelemben is. Talán szert teszek némi ásványkicsre is, de igazából nem ez érdekel. Azt mondják, lakik a hegy gyomrában egy rejtélyes lény, aki"
+		];
 
 		document.getElementById("subMain").innerHTML = `
           <div id="subHeader">
@@ -2027,7 +2034,7 @@ function _load() {
 					rd = rd * Math.round(Math.random());
 					let rp = filterecept.length + rd;
 					let firka = "";
-					if (rd < 1) {
+					if (rd < 1 && filterecept.length > 0) {
 						let recept = filterecept[Math.floor(Math.random() * rp)];
 						let ingredients = "";
 						for (const [key, value] of Object.entries(recept)) {
@@ -2035,12 +2042,20 @@ function _load() {
 						}
 						firka = "<h5>" + recept.name + "</h5><ul>" + ingredients + "</ul>";
 					} else {
+						if (filterecept.length < 1) {
+							rd = 1;
+							if (storyN.length < 1) rd = 3 + Math.round(Math.random());
+						}
 						switch (rd) {
 							case 1:
+								let d = rnd(storyN);
+								let datum = new Date();
+								datum.setDate(datum.getDate() - d);
+								datum = datum.toLocaleDateString();
 								firka =
-									"<h4>" +
-									new Date().toLocaleDateString() +
-									"</h4><div>A mai napon különös rossz előérzetem támadt. Amint elkezdtem ásni, vészjósló hangokat hallottam a méyből. Fel akartam adni háromszor is, de aztán tovább ástam. Ekkor... várjunk, mi ez???!!!</div>";
+									`<h4>${datum}</h4>
+									<div>${storyT[d]}</div>`;
+								storyN.splice(storyN.indexOf(d), 1);
 								break;
 
 							case 2:
@@ -2394,13 +2409,13 @@ function _load() {
 			5000 -
 			Math.round(
 				char.ugy * 60 +
-					char.esz * 5 +
-					char.lel * 5 +
-					char.hat * 5 +
-					steps * 3 -
-					char.ero * 10 +
-					Math.random() * 500 +
-					getObj("S_Villámgyorsaság") * 1000
+				char.esz * 5 +
+				char.lel * 5 +
+				char.hat * 5 +
+				steps * 3 -
+				char.ero * 10 +
+				Math.random() * 500 +
+				getObj("S_Villámgyorsaság") * 1000
 			);
 		speed = speed < 1000 ? 1000 : speed > 5000 ? 5000 : speed;
 		if (room.dungeon) {
@@ -2495,7 +2510,9 @@ function _load() {
 					firstchange = false;
 					changeVal("ugy", Math.floor(nmeAtt / 30 + nmeDef / 20 + orgNMEHP / 25 + Math.random() * 3));
 					changeVal("lel", -1);
+					if (room.modi) modi = room.modi;
 					if (room.help) {
+
 						let bonus = 10 + Math.round(room.att / 10 + room.def / 7 + room.speed + Math.random() * 5);
 						changeVal("sup", bonus);
 						changeVal("lel", 1 + Math.round(bonus / 10));
@@ -3245,8 +3262,7 @@ function _load() {
 					bomb.classList.add("occur");
 					bomb.style.setProperty(
 						"transition",
-						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-							0.3 / gspeed
+						`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 						}s`
 					);
 					bomb.classList.add("bumm");
@@ -3325,8 +3341,7 @@ function _load() {
 					beam.style.top = beamPosY(wy);
 					beam.style.setProperty(
 						"transition",
-						`left linear ${0.05 / gspeed}s, top linear ${0.05 / gspeed}s, width linear ${
-							0.05 / gspeed
+						`left linear ${0.05 / gspeed}s, top linear ${0.05 / gspeed}s, width linear ${0.05 / gspeed
 						}s, height linear ${0.05 / gspeed}s`
 					);
 					disposable = false;
@@ -3827,12 +3842,12 @@ function _load() {
 			return u.name === "Kocsmatöltelékek"
 				? pick.id
 				: u.name === "Tüzér" || u.name === "Óriás"
-				? strongest(arr)
-				: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
-				? weakest(arr)
-				: u.hp > 0.5 + (u.ohp * Math.random()) / 2
-				? closest(u, arr)
-				: bestmatch(u, arr);
+					? strongest(arr)
+					: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
+						? weakest(arr)
+						: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+							? closest(u, arr)
+							: bestmatch(u, arr);
 		}
 
 		function neighbors(u) {
@@ -3925,8 +3940,7 @@ function _load() {
 			function bum() {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-						0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 					}s`
 				);
 				bullet.style.zIndex = type === "round" ? "2" : "4";
@@ -3944,8 +3958,7 @@ function _load() {
 			if (type !== "round") {
 				bullet.style.setProperty(
 					"transition",
-					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${
-						0.3 / gspeed
+					`left linear ${0.3 / gspeed}s, top linear ${0.3 / gspeed}s, width linear ${0.3 / gspeed}s, height linear ${0.3 / gspeed
 					}s`
 				);
 				clearTimeout(timok[50 + u.id]);
@@ -4118,8 +4131,8 @@ function _load() {
 										ox === 0 || (ox > 0 && !ffields[oy + my][ox - 1].empty)
 											? 1
 											: ox === 12 || (ox < 12 && !ffields[oy + my][ox + 1].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (!!ffields[oy + my][ox + mmx]) {
 										if (ffields[oy + my][ox + mmx].empty) {
 											siker = true;
@@ -4133,8 +4146,8 @@ function _load() {
 										oy === 0 || (oy > 0 && !ffields[oy - 1][ox + mx].empty)
 											? 1
 											: oy === 12 || (oy < 12 && !ffields[oy + 1][ox + mx].empty)
-											? -1
-											: rnd([1, -1]);
+												? -1
+												: rnd([1, -1]);
 									if (!!ffields[oy + mmy][ox + mx]) {
 										if (ffields[oy + mmy][ox + mx].empty) {
 											siker = true;
@@ -4959,6 +4972,7 @@ function _load() {
 				} else {
 					char.room = btn.new;
 				}
+				if (!room.modi) modi = false;
 				newRoom();
 				break;
 
