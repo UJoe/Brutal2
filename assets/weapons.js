@@ -614,10 +614,6 @@ window.weapons = [
         ch: "+50",
       },
       {
-        val: "ellenség védelem",
-        ch: "+50",
-      },
-      {
         val: "ellenség sebesség",
         ch: "-5",
       },

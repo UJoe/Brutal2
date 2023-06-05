@@ -3594,11 +3594,11 @@ window.rooms = [
 				new: 148,
 			},
 			{
-				txt: "Megkeresed az elveszett tárgyaikat",
+				txt: "Megkeresed az elkóborolt birkáikat",
 				new: 150,
 			},
 			{
-				txt: "Elkíséred a veszélyes helyen élőket",
+				txt: "Hazakíséred az erdőszélen lakó gyerekeket",
 				new: 151,
 			},
 			{
@@ -4660,7 +4660,7 @@ window.rooms = [
 		num: 148,
 		title: "Kincskeresés Gizikével",
 		type: "dig",
-		size: 11,
+		size: 9,
 		level: 5,
 		helper: "Gizike",
 		gems: ["Üzemanyag", "Bronz", "Ezüst", "Arany"],
@@ -4680,6 +4680,111 @@ window.rooms = [
 			},
 		],
 		pass: 149,
+		fail: 200,
+	},
+	{
+		num: 149,
+		title: "Kincsadományozás",
+		type: "normal",
+		music: "country",
+		pic: "gold.gif",
+		desc: `
+      <p>
+       A talált kincseket szétszórod a nép között, ami a fent jelzett értékkel növelte a <span class="part"></span> támogatottságát. Úgy érzitek jó úton haladtok.
+      </p>
+		`,
+		Xchange: "treasure",
+		buttons: [
+			{
+				txt: "Lássuk az eredményeket!",
+				new: 201,
+			},
+		],
+	},
+	{
+		num: 150,
+		title: "Nyájkeresés",
+		type: "mine",
+		size: 9,
+		akna: 5,
+		kincs: 15,
+		music: "happyFutyi",
+		pic: "yendela3.jpg",
+		treasure: "bari.jpg",
+		desc: `
+      <p>
+        Több juhász - köztük a híres Vidróczki Márton is - jelezte, hogy amikor Battle Beatle elvarázsolta a várost, a birkáik megkergültek és széjjel rohantak. Azóta sem sikerült őket összeszedni. Széles a mező, ahol keresni kell őket, és sajnos van a talajban néhány, még a második világháború idején elásott akna is, úgyhogy óvatosan keresgélj. De nagyon bíznak benned! Nagy a terep, de te vidáman, fütyörészve fogsz neki a keresésnek.
+      </p>
+      <p><i>
+        Addig keresgélj, amennyi erőd van. A területen összesen <span id="kincs"></span> kincset érő bárány és <span id="akna"></span> akna van. Ha aknára lépsz, az ügyességedtől függ, hogy mennyit sebesülsz. Ha üres mezőn keresel, az első szám a szomszédos mezőkön lévő bárányok, a második az aknák számát mutatja meg. Próbálj meg minél több bárányt megtalálni!
+      </p></i>
+    `,
+		buttons: [
+			{
+				txt: "Hol vagytok, barikák?",
+			},
+		],
+		pass: 198,
+		med: 199,
+		fail: 200,
+	},
+	{
+		num: 151,
+		title: "Jancsi és Juliska hazakísérése",
+		type: "dungeon",
+		pic: "forest,5",
+		music: "forest",
+		desc: "<p>Kíséred Jancsit és Juliskát az iskola után a város melletti erdő veszélyesebb részén át.<p>",
+		contBtn: "Gyertek tovább!",
+		failBtn: {
+			txt: "Innen már egyedül is hazataláltok!",
+			new: 200,
+		},
+		passBtn: {
+			txt: "Jónapot kivánok! Épségben hazahoztam a gyerekeket.",
+			new: 198,
+		},
+		passDesc:
+			"<p>Hosszas vándorlás után végül kiértek az erdőből. A gyerekek szülei már vártak rátok. Jancsi és Juliska örömmel rohannak feléjük.</p>",
+		fight: 152,
+		end: 22,
+		find: [
+			"W_PROTONÁGYÚ",
+			"W_CSATABÁRD",
+			"W_OSTOR",
+			"W_ROZSDÁS BÖKŐ",
+			"W_VADÁSZPUSKA",
+			"W_PÁNCÉL",
+			"W_ROBI",
+			"W_FÜTYKÖS",
+			"W_SÁRKÁNYVÉR",
+			"W_KONYHAKÉS",
+			"W_GUMIBOGYÓ",
+			"W_KIS ERŐITAL",
+			"W_VARÁZSPOR",
+			"W_PÁLINKÁS FLASKA",
+		],
+		findmany: 10,
+	},
+	{
+		num: 152,
+		title: "Támad a vasorrú bába",
+		type: "fight",
+		pic: "banya.jpg",
+		nmepic: "banya.jpg",
+		dungeon: true,
+		level: 4,
+		desc: `
+      <p>
+       Megjelenik egy fa mögül egy vasorrű bába, és elkezdi mézeskaláccsal csalogatni a gyerekeket. Közbe kell lépned!
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Mikor tűnsz már el, vén szipirtyó?!",
+			},
+		],
+		pass: 151,
 		fail: 200,
 	},
 

@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 148; //startroom
+		char.room = 151; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -1207,6 +1207,16 @@ function _load() {
 					message(messzi);
 					break;
 
+				case "treasure":
+					console.log("M: ", modi);
+					let bl = prg + Math.round(Math.random() * (char.hat + char.sup) / 25);
+					for (let i = 3; i < 6; i++) {
+						bl += Math.round(modi[i] * (i - 2) / 1.5)
+					}
+					message("A szétosztott kincsek " + bl + " ponttal növelték a támogatásodat!");
+					changeVal("sup", bl);
+					break;
+
 				default:
 					break;
 			}
@@ -1676,7 +1686,7 @@ function _load() {
 					char.room = room.med;
 				}
 				if (finish) {
-					modi = room.help.split("_")[1];
+					if (room.help) modi = room.help.split("_")[1];
 					firstEnd = false;
 					document.querySelectorAll(".minefield").forEach((i) => i.removeEventListener("click", pressMine));
 					document.getElementById("exitBtn").disabled = true;
@@ -1688,7 +1698,7 @@ function _load() {
 		}
 
 		function fleeM() {
-			modi = room.help.split("_")[1];
+			if (room.help) modi = room.help.split("_")[1];
 			char.room = room.fail;
 			newRoom();
 		}
@@ -1710,7 +1720,7 @@ function _load() {
                     class="minefield"
                     id="mf-${col}-${row}"
                     src="./img/rooms/gyep.jpg"
-                    title="Ássál csak, ${name}!"
+                    title="Keress csak, ${name}!"
                 />
               </td>
             `;
@@ -1765,20 +1775,20 @@ function _load() {
 					sound.src = "./audio/pearl.mp3";
 					sound.play();
 					kincsHit++;
-					updateMScore();
 					document.getElementById("mf-" + mineX + "-" + mineY).src = "./img/rooms/" + room.treasure;
 					document.getElementById("mf-" + mineX + "-" + mineY).title = "Drágaságom!";
+					updateMScore();
 					break;
 
 				case 2:
 					sound.src = "./audio/bomb.mp3";
 					sound.play();
 					aknaHit++;
-					updateMScore();
 					document.getElementById("mf-" + mineX + "-" + mineY).src = "./img/rooms/akna.png";
 					document.getElementById("mf-" + mineX + "-" + mineY).title = "Ez jó nagyot szólt!";
 					let loser = Math.floor(21 + Math.random() * (20 - char.ugy / 5) - char.ugy / 5);
 					changeVal("ero", -loser);
+					updateMScore();
 					break;
 
 				default:
@@ -2512,7 +2522,6 @@ function _load() {
 					changeVal("lel", -1);
 					if (room.modi) modi = room.modi;
 					if (room.help) {
-
 						let bonus = 10 + Math.round(room.att / 10 + room.def / 7 + room.speed + Math.random() * 5);
 						changeVal("sup", bonus);
 						changeVal("lel", 1 + Math.round(bonus / 10));
