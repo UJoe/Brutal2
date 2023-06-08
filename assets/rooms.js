@@ -4787,6 +4787,83 @@ window.rooms = [
 		pass: 151,
 		fail: 200,
 	},
+	{
+		num: 153,
+		type: "Xtrial",
+		value: "ima",
+		pass: 154,
+		fail: 155,
+	},
+	{
+		num: 154,
+		title: "A hited növelte a támogatást",
+		type: "normal",
+		music: "lightaction",
+		pic: "godsmile.PNG",
+		desc: `
+			<p>
+				Addig imádkozol, amíg nem tölti el a lelked Isten békeje. Tudod, hogy Isten segíteni fogja a <span class="part"></span> jövőjét, és bármi történjen, az jó lesz nektek és a polgároknak. 
+			</p>
+		`,
+		change: [
+			{
+				id: "sup",
+				crease: 100,
+				rnd: 100,
+			},
+			{
+				id: "hat",
+				crease: 5,
+				rnd: 5,
+			},
+			{
+				id: "lel",
+				crease: 10,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Lássuk, hogy állunk!",
+				new: 201,
+			},
+		],
+	},
+	{
+		num: 155,
+		title: "Nem tudsz hinni a sikerben",
+		type: "normal",
+		music: "lightaction",
+		pic: "godnosmile.PNG",
+		desc: `
+			<p>
+				Úgy teszel, mintha imádkoznál, de valójában nem hiszed, hogy bármi haszna van annak, amit csinálsz. A szíved mélyén erős kételyeid vannak azzal kapcsolatban, hogy a <span class="part"></span> hatalomra jut-e és ha igen, akkor ennek lesz-e bármi haszna. Hiába mondasz kívül mást, legbelül valójában azt szeretnéd, ha elbuknátok a választást.
+			</p>
+		`,
+		change: [
+			{
+				id: "sup",
+				crease: -50,
+				rnd: 50,
+			},
+			{
+				id: "hat",
+				crease: -5,
+				rnd: 3,
+			},
+			{
+				id: "lel",
+				crease: -10,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Lássuk, mi lesz ebből!",
+				new: 201,
+			},
+		],
+	},
 
 	//*
 

@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 151; //startroom
+		char.room = 153; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
