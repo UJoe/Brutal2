@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 153; //startroom
+		char.room = 134; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -807,6 +807,7 @@ function _load() {
 						) {
 							appeal = true;
 							result = "Úgy tűnik, Bogi megkedvelt téged.";
+							char.objs.push("E_love Bogi");
 						} else {
 							result = "Bogi teljesen közömbös irántad.";
 						}
@@ -825,6 +826,7 @@ function _load() {
 						) {
 							appeal = true;
 							result = "Úgy tűnik, az erdei manók vezére első látásra fülig szerelmes lett beléd.";
+							char.objs.push("E_love Erdei");
 						} else {
 							result = "Az erdei manók vezére teljesen közömbösnek tűnik irántad.";
 						}
@@ -2006,7 +2008,6 @@ function _load() {
 				case 0:
 					let f = 15 - Math.round(Math.random() * room.level);
 					if (f + fuel > 100) f = 1;
-					00 - fuel;
 					message(`Találtál kb. ${Math.round(f)}% ${room.gems[0]}ként hasznosítható ásványt.`);
 					fuel += f;
 					updateDScore();
@@ -2837,7 +2838,11 @@ function _load() {
 			var nmeF = document.getElementById("nmeFighter");
 			var charF = document.getElementById("charFighter");
 			attBtn.addEventListener("click", attack);
-			xitBtn.addEventListener("click", fleeF);
+			if (room.death) {
+				xitBtn.style.display = "none";
+			} else {
+				xitBtn.addEventListener("click", fleeF);
+			}
 			timo2 = setInterval(() => nmeAttack(), nmeSpeed * 2);
 		}
 	}

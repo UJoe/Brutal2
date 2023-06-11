@@ -192,7 +192,7 @@
 192 - Bogi megkedvel téged
 193 - Jó válasz Boginak
 194 - Rossz válasz Boginak
-195 - A földalatti ásás vége
+195 - Fegyvergyártás Betyárral
 196 - Nem sikerült a föld alól bejutni
 197 - A server szobában
 198 - Jótékony kampányakció pass (modi:pont)
@@ -207,9 +207,13 @@
 207 - Frici lecsapja a házmestert (mivel feladtad a harcot, -hat, -sup. => 206)
 208 - Harc a hegyi óriásokkal
 209 - Bitang Botond keresése a Városházán (dungeon, szint modiban)
-210 - Üldözés a szétvert Gárda után (level 10 pursuit)
-211 - Céltalanná vált élet (?)
+210 - Üldözés a kudarcot vallott harc (gárda vagy Erdeiék stb.) után (level 10 pursuit)
+211 - Céltalanná vált élet ( => piac, 113)
 212 - Megöltek téged is (death)
+213 - Erdei Zsolt és a bübük elmossák Bitang Botond uralmát (normal Szállj el kismadár)
+214 - Erdei Zsolt és a bübük megküzdenek Bitang Botondékkal (finalwar : 215, 210)
+215 - Győzelem Erdei Zsoltékkal
+216 - Bogi vallatása a fagyigyárban
 
 
 

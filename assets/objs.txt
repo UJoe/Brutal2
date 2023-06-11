@@ -47,6 +47,9 @@ E - egyéb események (events)
   Boti halottnak hisz
   help (segített)
   a Városháza bevétele
+  love Erdei
+  love Bogi
+  Bogi kavar
 
 H - segítés (help)
   Pirike

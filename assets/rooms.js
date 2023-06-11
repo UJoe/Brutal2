@@ -2453,7 +2453,7 @@ window.rooms = [
 			{
 				txt: "A régi fagyigyárba Bogihoz",
 				new: 112,
-				cond: "J_Bogi",
+				cond: "E_Bogi kavar",
 			},
 			{
 				txt: "A piacra",
@@ -3004,7 +3004,7 @@ window.rooms = [
 		num: 94,
 		title: "Találkozás Szenyamukival",
 		type: "normal",
-		music: "oshinoko",
+		music: "gravenight",
 		pic: "szenyamuki-face.JPG",
 		desc: `
     <p>
@@ -3911,7 +3911,7 @@ window.rooms = [
 		num: 123,
 		title: "Szenyamuki mellétek áll",
 		type: "normal",
-		music: "oshinoko",
+		music: "gravenight",
 		pic: "szenyamuki-face.JPG",
 		desc: `
     <p>
@@ -4864,6 +4864,115 @@ window.rooms = [
 			},
 		],
 	},
+	{
+		num: 156,
+		title: "Ismét Erdei Zsoltéknál",
+		type: "normal",
+		music: "forest",
+		pic: "erdei.jpg",
+		desc: `
+			<p>
+				Az ismerős apró jelekre <span class="cond" data-cond="S_Bübüszimat">és Bübüszimatodra </span>támaszkodva sikerül visszajutnod a rejtőzködő életmódot folytató bübükhöz és Erdei Zsolthoz.
+			</p>
+			<p>
+				Zsolt már várt rád. Mosolyogva üdvözöl.
+			</p>
+			<p>
+				Felkészítettem a bübüket a harcra. Itt az ideje, hogy elmossuk Bitang Botond uralmát és egyesítsük az erdőt a várossal!
+			</p>
+		`,
+		buttons: [
+			{
+				txt: "Induljunk!",
+				new: 214,
+				cond: "!E_love Zsolt"
+			},
+			{
+				txt: "Induljunk!",
+				new: 213,
+				cond: "E_love Zsolt"
+			},
+		],
+	},
+	{
+		num: 157,
+		title: "Erdeiék keresése",
+		type: "pursuit",
+		level: 6,
+		music: "forest",
+		pic: "forest,5",
+		goalpic: "erdei.jpg",
+		desc: `
+      <p>
+        Megpróbálod emlékezetedre és az apró jelekre támaszkodva ismét megtalálni Erdei Zsoltot és a bübüketz. Nem könnyű, mert eléggé jól rejtőzködnek.
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Nem baj, gondolkodjunk!",
+			},
+		],
+		pass: 156,
+		fail: 158,
+	},
+	{
+		num: 158,
+		title: "Sikertelen keresés",
+		type: "normal",
+		music: "forest",
+		pic: "forest,5",
+		desc: `
+			<p>
+				Hiába minden igyekezeted, nem sikerül visszatalálnod Erdeiékhez. Végül már eleged van a bolyongásból és inkább hazamész...
+			</p>
+			<p>
+				Mikor otthon végre kifújod magad, szétnézel. Úgy látod, nem ártana venni pár dolgot.
+			</p>
+			`,
+		change: [
+			{
+				id: "ero",
+				crease: -5,
+				rnd: 2,
+			},
+			{
+				id: "lel",
+				crease: -3,
+				rnd: 1,
+			},
+		],
+		buttons: [
+			{
+				txt: "Irány a piac!",
+				new: 113,
+			},
+		],
+	},
+	{
+		num: 159,
+		title: "Letámadnak a fagyigyárban",
+		type: "fight",
+		pic: "sötétalak.jpg",
+		nmepic: "mugger.jpg",
+		att: 110,
+		def: 20,
+		speed: 5,
+		hp: 100,
+		desc: `
+      <p>
+				Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem!
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Hogy rohadjatok meg!",
+			},
+		],
+		death: true,
+		pass: 216,
+	},
+
+
 
 	//*
 
@@ -4983,7 +5092,6 @@ window.rooms = [
 			},
 		],
 	},
-
 	{
 		num: 169,
 		title: "Pirike kertjében",
@@ -5476,6 +5584,105 @@ window.rooms = [
 	},
 
 	{
+		num: 192,
+		title: "Szerelem első látásra",
+		type: "normal",
+		music: "bogilove",
+		pic: "bogi_face.JPG",
+		desc: `
+      <p>
+        Ahogy az énekesnő elé lépsz, neki rögtön kitágul a szeme és a szája és egy kicsit el is pirul.
+      </p>
+      <p>
+      - <span id="fullName"></span>? - kérdezi kicsit elrévedve.
+      </p>
+      <p>
+        - Így van! - válaszolod mély, búgó hangon. Sármosan elmosolyodosz, hátra fésülöd a hajad és kidülleszted befeszített mellizmodat. Látszik, hogy egyre nagyobb hatást gyakorolsz rá. De az igazat megvallva, neked is egyre jobban tetszik a csinos énekesnő. Lazán a szintetizátorra könyökölsz, a színesbörű fickó mondana valamit, de Bogi egy szemvillantással leinti. Te szerény mosollyal folytatod: - Én mentettem meg a várost Battle Beatle-től. Ezek szerint a hírnevem megelőzött.
+      </p>
+			<p>A nő elismerően megnyalja a szája szélét, majd kecsesen előre nyújtja a kezét:
+        - Örülök, hogy megismertelek. Bogi.
+      </p>
+      <p>
+        Te udvariasan megfogod a puha kezét, előrehajolsz és kezet csókolsz neki. Egyre kevésbé hallod és látod már a kocsmát körülöttetek, már csak Bogi létezik számodra. Van benne valami megmagyarázhatatlanul varázslatos, ami rabul ejt. Így teljesen őszintén tudod mondani: - Én is nagyon örülök, hogy megismertelek.
+      </p>
+      <p>
+        - Én nem gondoltam... szóval, hallottam a híredet, de így élőben találkozni veled... egyszerűen... le vagyok nyűgözve! - hebegi zavartan, majd a végén teljesen elpirul és már csak zavartan mosolyog és pislog.
+      </p>
+      <p>
+        Egy percig te is csak nézed hangtalanul. Hihetetlenül gyönyörű és bájos, amikor zavartan mosolyog! De aztán kínosan kezdi érezni magát, így megpróbál gyorsan feltenni egy semlegesebb kérdést: - És mi járatban vagy erre? Újabb küldetés a láthatáron vagy csak beugrottál?
+      </p>
+      <p>
+        - Éppenséggel... - gondolkodsz el, de aztán valahogy úgy érzed, erre csak egyféleképpen válaszolhatsz, mert ez van legbelül benned, és Boginak valahogy nem lehet hazudni: - Azt tervezem, hogy átveszem az uralmat a város felett. Elég volt Bitang Botond polgármester önkényuralmából, jobb élet jár nektek! Mi haszna volt Battle Beatle-t és bandáját legyőzni, ha még mindig nem szabad a város? Akkor nyugszom meg, ha már mindenki boldogan élhet itt! Erre születtem!
+      </p>
+				Amíg beszélsz, Bogi arcán az érzelmek teljes hadserege vonul át. Látszik, hogy a szavaid nagy belső küzdelmet indítottak el benne, ahol neki muszáj súlyos döntéseket meghozni. Amikor végetért ars poetica beszéded, egy ideig még mindig gondolkodik, majd arcán határozott eltökéltség jelenik meg. Egészen közel hajol hozzád, és a füledbe súg.
+			<p>
+        - Segítek neked! Most nem beszélhetünk, de mindent elmondok. Holnap napnyugta után gyere a régi fagyigyárhoz!
+      </p>
+			<P>
+				- Rendben! - súgod vissza. Bogi még egyszer zavartan rád mosolyog, majd eltűnik.
+			</P>
+			<p>
+				Úgy gondolod, te is végeztél, így távozol a kocsmából.
+			</p>
+      `,
+		obj: ["E_Bogi kavar"],
+		buttons: [
+			{
+				txt: "Irány haza!",
+				new: 46,
+			},
+		],
+	},
+	{
+		num: 193,
+		title: "Bogi segít neked",
+		type: "normal",
+		music: "pubmusic",
+		pic: "bogi_face.JPG",
+		desc: `
+      <p>
+        - Helyes válasz! - bólint Bogi. Majd egy ideig fürkészően néz téged. Végül közel hajol hozzád és suttogva így szól:
+      </p>
+      <p>
+        - Segítek neked! Most nem beszélhetünk, de mindent elmondok. Holnap napnyugta után gyere a régi fagyigyárhoz!
+      </p>
+			<P>
+				- Rendben! - súgod vissza. Bogi még egyszer zavartan rád mosolyog, majd eltűnik.
+			</P>
+			<p>
+				Úgy gondolod, te is végeztél, így távozol a kocsmából.
+			</p>
+      `,
+		obj: ["E_Bogi kavar"],
+		buttons: [
+			{
+				txt: "Irány haza!",
+				new: 46,
+			},
+		],
+	},
+	{
+		num: 194,
+		title: "Bogi nem segít",
+		type: "normal",
+		music: "pubmusic",
+		pic: "bogi_face.JPG",
+		desc: `
+      <p>
+        Bogi csalódottan megrázza a fejét, majd így szól: - Tegyél le a terveidről! Így könnyen meghalhatsz...
+      </p>
+      <p>
+				Mielőtt még bármit mondanál, eltűnik egy hátsó ajtón. Láthatóan nem fog segíteni. Úgy gondolod, végeztél itt, így távozol a kocsmából.
+			</p>
+      `,
+		buttons: [
+			{
+				txt: "Irány haza!",
+				new: 46,
+			},
+		],
+	},
+	{
 		num: 195,
 		title: "Fegyvergyártás Betyárral",
 		type: "kotyvaszt",
@@ -5488,6 +5695,45 @@ window.rooms = [
       </p>
     `,
 		cont: 197,
+	},
+	{
+		num: 196,
+		title: "Nem sikerült a föld alól bejutni",
+		type: "normal",
+		music: "darkbackground",
+		pic: "dirt2.jpg",
+		desc: `
+			<p>
+				Leveszed a kezed Betyár kormányáról és Fricire nézel: - Bocs.
+			</p>
+			<p>
+				- A rohadt életit! Egész éjjel ezen dolgoztam, és most kudarcot vallottunk! - ordítja dühösen Frici és belerúg egy nagyot Betyárba. Ő méltatlankodva morog egyet. Frici feléd fordul: - Csalódtam benned!
+			</p>
+			<p>
+				Te is érzed, hogy nem úgy sikerült ez az akció, ahogy kellett volna. De per pillanat nincs jobb ötleted, így széttárod a kezed, megfordulsz és megkeresed a kivezető utat.
+			</p>
+			<p>
+				Mikor újra a szabad ég alatt vagy, átgondolod, merre folytasd ez után a kudarc után az utadat. A hasad korgása segít: enned kellene valamit.
+			</p>
+			`,
+		change: [
+			{
+				id: "lel",
+				crease: -3,
+				rnd: 1,
+			},
+			{
+				id: "hat",
+				crease: -8,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Irány a piac!",
+				new: 113,
+			},
+		],
 	},
 
 	{
@@ -5564,7 +5810,7 @@ window.rooms = [
 
 	{
 		num: 210,
-		title: "Üldözés a szétvert Gárda után",
+		title: "Üldözés a sereged kudarce",
 		type: "pursuit",
 		level: 10,
 		music: "darkbackground",
@@ -5572,7 +5818,7 @@ window.rooms = [
 		goalpic: "exit.png",
 		desc: `
 			<p>
-			A megmaradt ellenségek össztüzet zúdítanak rád. Próbálj meg valahogykijutni!
+				Az embereid kudarcot vallottak! Már csak te maradtál, így a megmaradt ellenségek össztüzet zúdítanak rád. Próbálj meg valahogy kijutni!
 			</p>  
 		`,
 		buttons: [
@@ -5583,4 +5829,58 @@ window.rooms = [
 		pass: 211,
 		fail: 212,
 	},
+	{
+		num: 211,
+		title: "Sikeresen elmenekülsz",
+		type: "normal",
+		music: "basicmusic",
+		pic: "starttown.jpg",
+		desc: `
+			<p>
+				Sikerül leráznod a támadóidat, de tudod, hogy innentől bujkálás és menekülés lesz az életed. Hacsak nem sikerül titokban szervezkedve megdönteni Boti uralmát.
+			</p>
+			<p>
+				Akárhogy is folytatod tovább, úgy gondolod, hasznos lehet, ha beszerzel pár dolgot.
+			</p>
+			`,
+		change: [
+			{
+				id: "ero",
+				crease: -5,
+				rnd: 2,
+			},
+			{
+				id: "lel",
+				crease: -3,
+				rnd: 1,
+			},
+			{
+				id: "hat",
+				crease: -7,
+				rnd: 3,
+			},
+		],
+		obj: ["E_Boti üldöz"],
+		buttons: [
+			{
+				txt: "Irány a piac!",
+				new: 113,
+			},
+		],
+	},
+	{
+		num: 212,
+		title: "Megöltek az ellenségek",
+		type: "death",
+		music: "difshots",
+		stopmusic: true,
+		pic: "shot.jpg",
+		desc: `
+      <p>
+				Egyre több golyó talál el, ahogy botladozva menekülsz. Érzed, ahogy egyre jobban elhagy az erőd és semmit sem tehetsz. Végül elsötétül a világ. Kalandod itt véget ért...
+			</p>
+    `,
+	},
 ];
+
+//Piaci vonal: találkozhatsz újra még élő szövetségesekkel, mivel minden csata után ide menekülsz.
