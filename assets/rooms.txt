@@ -158,7 +158,7 @@
 158 - Nem találsz vissza erdeiékhez => Piac
 159 - Megtámadnak a fagyigyárban
 160 - Bogi haditerve
-161 - Bogi letámadása
+161 - Ytrial: Bogi szeret?
 162 - Piaci támadás (dungeon fight)
 163 - Ytrial - Boti üldöz: piacról kifelé Boti kap el vagy más
 164 - YTrial - találkozás Zsolttal: férfi-nő
@@ -213,7 +213,12 @@
 213 - Erdei Zsolt és a bübük elmossák Bitang Botond uralmát (normal Szállj el kismadár)
 214 - Erdei Zsolt és a bübük megküzdenek Bitang Botondékkal (finalwar : 215, 210)
 215 - Győzelem Erdei Zsoltékkal
-216 - Bogi vallatása a fagyigyárban
+216 - Bogi vallatása a fagyigyárban (Bogi szeret)
+217 - Bogi vallatása a fagyigyárban (Bogi nem szeret)
+218 - Boti emberei elkapnak a piacról hazafelé
+219 - Találkozol valakivel a piacról hazafelé (XChange: ismerős mégis segít)
+220 - Erdei Zsolt és a bübük (comment! utána próbák vagy love (egyből gomb) a bübüszimathoz)
+
 
 
 

@@ -3636,6 +3636,7 @@ window.rooms = [
 			{
 				txt: "Megvárod, mit csinál",
 				new: 159,
+				modi: "Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem, mert ő lát téged, de te nem látod őt!"
 			},
 			{
 				txt: "Üdvözlöd, mert ki más lehetne, mint Bogi",
@@ -3643,7 +3644,8 @@ window.rooms = [
 			},
 			{
 				txt: "Letepered",
-				new: 161,
+				new: 159,
+				modi: "Gondolod, akár Bogi az, akár nem, mindkét esetben jó, ha letepered. Így elindulsz futva felé. Ahogy közeledsz, a nő hirtelen kinéz oldalra és kiált valamit egy számodra ismeretlen nyelven. A következő pillanatban felbotlasz valamiben, ami egy lábnak tűnik. Csodálkozva fordulsz hátra a földről. Ezek szerint nem kettesben vagytok. Csapda is lehet ez az egész!</p><p>- Csak ne olyan hevesen! Keres probléma? Megtalál! - mordul rád egy mély, rekedt hang erős szláv akcentussal a sötétből, és egy nagydarab fickó körvonalai rajzolódnak ki. Talpra ugrasz, hogy megküzdj vele. Belátod, hogy nem tudsz elmenekülni sem, mert ő lát téged, te viszont nem nagyon látod őt."
 			},
 		],
 	},
@@ -3761,7 +3763,7 @@ window.rooms = [
 		type: "Xtrial",
 		value: "com",
 		pass: 118,
-		modi: `- Tudod, hogy van ez - mondod, miközben jelentőségteljesen Frici szemébe nézel, majd végignézel magadon, ismét rá nézel és vágsz egy kétértelmű grimaszt. Arra számítasz, hogy Frici, aki oly nagyra van az eszével, nem fogja azt mondani, hogy nem tudja. Frici fürkészően bámul rád egy ideig, aztán - vagy azért, mert tényleg nem akarta azt mondani, hogy nem tudja, vagy azért, mert tényleg olyan okos, hogy veled ellentétben megértette a célzásodat - végül együttérzően bólint:
+		modi: `- Tudod, hogy van ez - mondod, miközben jelentőségteljesen Frici szemébe nézel, majd végignézel magadon, ismét ránézel és vágsz egy kétértelmű grimaszt. Arra számítasz, hogy Frici, aki oly nagyra van az eszével, nem fogja azt mondani, hogy nem tudja. Frici fürkészően bámul rád egy ideig, aztán - vagy azért, mert tényleg nem akarta azt mondani, hogy nem tudja, vagy azért, mert tényleg olyan okos, hogy veled ellentétben megértette a célzásodat - végül együttérzően bólint:
         </p>
         <p>
         - Tudom. Én ne tudnám? Haajj... tudnék ám mesélni! Na de most fontosabb dolgunk van. Beszéljük meg akkor hogy tudjuk eltenni láb alól ezt a Bitangot! - amikor pedig ezt kimondja, a traktorja helyeslően pöfög kettőt.
@@ -4959,23 +4961,54 @@ window.rooms = [
 		speed: 5,
 		hp: 100,
 		desc: `
-      <p>
-				Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem!
-      </p>
-    `,
+      <p id="modified"></p> 
+		`,
 		buttons: [
 			{
-				txt: "Hogy rohadjatok meg!",
+				txt: "Rohadj meg!",
 			},
 		],
 		death: true,
-		pass: 216,
+		pass: 161,
 	},
-
-
-
-	//*
-
+	{
+		num: 160,
+		title: "Bogi terve",
+		type: "normal",
+		music: "gravenight",
+		pic: "darkbogi-face.jpg",
+		desc: `
+      <p>
+        - Te vagy az, Bogi? - kérdezed és teszel néhány lépést felé. Ő egy kicsit arrébb lép, így félig ráesik a fény az arcára. Nem vagy benne biztos, de talán ő az - smink nélkül. Még közelebb mész. Amikor egész közel vagy, már biztos vagy benne, hogy ő az. Halkan megszólít:
+      </p>
+      <p>
+        - Nincs sok időnk, <span class="name"></span>, így gyors leszek. Boti titkos szeretője vagyok! <span class="cond" data-cond="E_love Bogi">- láthatóan gyorsan akarta ezt kimondani, de erős érzelmek dúlnak benne. Te is meglepődsz és haragot érzel. - </span>De utálom őt! Egy undorító féreg! De nem tudok tőle szabadulni, mert mindenütt ott vannak az emberei - itt tart egy kis szünetet, fürkészően nézve szavai hatását. Érzed, hogy csak egyféleképpen tudsz válaszolni...
+      <p>
+			<p>
+				- Megszabadítalak tőle! - Bogi arcán megkönnyebbült mosoly suhan át. - De úgy emlékszem, tegnap azt mondtad, hogy segítesz nekem.
+			</p>
+			<p>
+				- Így van! - suttogja és közelebb lép hozzád. <span class="cond" data-cond="E_love Bogi"> - Én most visszamegyek hozzá, mert a ma estét velem akarja tölteni. Ráveszem, hogy jöjjön ki velem a Feneketlen-tóhoz. Csak egy kocsival megyünk, egy testőrt hoz és a sofőrt. Van a tó mellett egy csónakház. Rejtőzz el ott és én odacsalom. 
+			</p>
+			<p>
+				Ekkor hirtelen nesz hallatszik oldalról, de a sötétben nem látszik semmi. Bogira nézel, de nem tudod biztosan megállapítani az arcáról, hogy mi történik. Valaki viszont megragadja a vállad.
+			</p>
+      `,
+		buttons: [
+			{
+				txt: "Mi a franc?!",
+				new: 159,
+				modi: "- Elég beszélget! - mordul rád egy mély, rekedt hang erős szláv akcentussal. Ahogy megpördülsz, egy nagydarab fickó körvonalai bontakoznak ki a sötétségben. Lehet, hogy az egész csapda volt? Mindenestre meg kell vele küzdened, ráadásul a számodra ismeretlen terepen el sem tudsz előle menekülni, mert láthatóan ő jól lát téged, te viszont nem nagyon látod őt!"
+			},
+		],
+	},
+	{
+		num: 161,
+		type: "Ytrial",
+		value: "E_love Bogi",
+		pass: 216,
+		fail: 217,
+	},
 	{
 		num: 162,
 		title: "Piaci bunyó",
@@ -4997,7 +5030,97 @@ window.rooms = [
 		pass: 113,
 		fail: 113,
 	},
-
+	{
+		num: 163,
+		type: "Ytrial",
+		value: "E_Boti üldöz",
+		pass: 218,
+		fail: 219,
+	},
+	{
+		num: 164,
+		type: "Ytrial",
+		value: "nő",
+		pass: 165,
+		fail: 167,
+	},
+	{
+		num: 165,
+		type: "Xtrial",
+		value: "love",
+		pass: 166,
+		fail: 167,
+	},
+	{
+		num: 166,
+		title: "Zsolt beléd zúg",
+		type: "normal",
+		music: "love",
+		pic: "erdei.jpg",
+		desc: `
+      <p>
+       Felismered, hogy az az erdei boxoló a manók vezére, akivel akkor találkoztál, amikor a Brutal Ballt kerested az erdőben! Most viszont egyáltalán nincs bunyós kedvében. Sőt! Amint meglát, rögtön felpattan a farönkről, ahol eddig ült, és nagyra nyílt szemmel és szájjal mosolyogva eléd siet. Félreérthetetlenül látod, hogy  első látásra beléd szeretett.
+      </p>
+      <p>
+       - Üdvözöllek! - mondja, és kishíján elcsuklik a hangja ebben az egy szóban. Tovább mosolyog és könnyedén meghajol előtted. - Erdei Zsolt vagyok.
+      </p>
+			<p>
+				Erdei Zsolt, aki az erdőben él és boxoló! Ez jó! - gondolod magadban, mire önkéntelenül is elmosolyodsz. Udvariasan előre nyújtod a kezed és bemutatkozol a teljes neveden:
+			</p>
+			<p>
+				- <span id="fullName"></span>.
+			</p>
+			<p>
+				Ő megfogja a kezed. Érzed, hogy érdes, kemény kéz, mégis finoman tartja a tiédet. Azon veszed észre magad, hogy neked is egyre jobban tetszik a fickó. Érezhetően eszméletlenül erős, mégis milyen gyengéd veled...
+			</p>
+			<p>
+				- Örülök, hogy találkoztunk! - mondja és hosszasan a szemedbe néz. A kezdet továbbra sem engedi el. Láthatóan teljesen elmerült benned... De aztán hirtelen magához tér, elengedi a kezed, körülnéz és szól a manóknak: - Vendégünk van!
+			</p>
+			<p>
+				A manók ránéznek, majd egymásra, gurguláznak egy kicsit a saját nyelvükön, ami aztán vidám vinnyogásba megy át és szerte-széjjel szaladnak az erdőbe. Megint kibuggyan belőled a nevetés.
+			</p>
+		`,
+		obj: ["E_love Erdei"],
+		buttons: [
+			{
+				txt: "Ti értitek egymást? Egyáltalán kik ezek?",
+				new: 220,
+			},
+		],
+	},
+	{
+		num: 167,
+		title: "Találkozás Erdei Zsolttal",
+		type: "normal",
+		music: "bübük",
+		pic: "erdei.jpg",
+		desc: `
+      <p>
+       Felismered, hogy az az erdei boxoló a manók vezére, akivel akkor találkoztál, amikor a Brutal Ballt kerested az erdőben! Felkészülsz arra az esetre, ha adna egy akkor pofont, amitől elszállsz, de ő most csak feláll és udvariasan kezet nyújt neked.
+			</p>
+			<p>
+				- Erdei Zsolt.
+		 	</p>
+		 	<p>
+			 Erdei Zsolt, aki az erdőben él és boxoló! Ez jó! - gondolod magadban. Kezet ráztok és te is bemutatkzol a teljes neveden:
+		 	</p>
+		 	<p>
+			 - <span id="fullName"></span>.
+		 	</p>
+			<p>
+				- Örülök, hogy találkoztunk! - mondja, majd körülnéz és szól a manóknak: - Vendégünk van!
+			</p>
+			<p>
+				A manók ránéznek, majd egymásra, gurguláznak egy kicsit a saját nyelvükön, ami aztán vidám vinnyogásba megy át és szerte-széjjel szaladnak az erdőbe.
+			</p>
+		`,
+		buttons: [
+			{
+				txt: "Ti értitek egymást? Egyáltalán kik ezek?",
+				new: 220,
+			},
+		],
+	},
 	{
 		num: 168,
 		title: "Felajánlod a segítséged az embereknek",
@@ -5583,11 +5706,14 @@ window.rooms = [
 		fail: 180,
 	},
 
+
+	//*
+
 	{
 		num: 192,
 		title: "Szerelem első látásra",
 		type: "normal",
-		music: "bogilove",
+		music: "love",
 		pic: "bogi_face.JPG",
 		desc: `
       <p>
@@ -5883,4 +6009,5 @@ window.rooms = [
 	},
 ];
 
-//Piaci vonal: találkozhatsz újra még élő szövetségesekkel, mivel minden csata után ide menekülsz.
+//220!	- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az élketükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
+

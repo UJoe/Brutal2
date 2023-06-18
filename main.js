@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 134; //startroom
+		char.room = 116; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -4978,7 +4978,13 @@ function _load() {
 			case "normal":
 				let n = Number(e.target.id.split("-")[1]);
 				let btn = room.buttons[n];
-				if (btn.modi) modi = btn.modi;
+				if (btn.modi) {
+					modi = btn.modi;
+				} else if (room.modi) {
+					modi = room.modi
+				} else {
+					modi = false;;
+				}
 				let num = rooms.findIndex((r) => r.num === btn.new);
 				if (num === -1) {
 					message("Ez még nincs kész.");
@@ -4986,7 +4992,6 @@ function _load() {
 				} else {
 					char.room = btn.new;
 				}
-				if (!room.modi) modi = false;
 				newRoom();
 				break;
 
