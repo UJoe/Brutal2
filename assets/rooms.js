@@ -3636,7 +3636,7 @@ window.rooms = [
 			{
 				txt: "Megvárod, mit csinál",
 				new: 159,
-				modi: "Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem, mert ő lát téged, de te nem látod őt!"
+				modi: "Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem, mert ő lát téged, de te nem látod őt!",
 			},
 			{
 				txt: "Üdvözlöd, mert ki más lehetne, mint Bogi",
@@ -3645,7 +3645,7 @@ window.rooms = [
 			{
 				txt: "Letepered",
 				new: 159,
-				modi: "Gondolod, akár Bogi az, akár nem, mindkét esetben jó, ha letepered. Így elindulsz futva felé. Ahogy közeledsz, a nő hirtelen kinéz oldalra és kiált valamit egy számodra ismeretlen nyelven. A következő pillanatban felbotlasz valamiben, ami egy lábnak tűnik. Csodálkozva fordulsz hátra a földről. Ezek szerint nem kettesben vagytok. Csapda is lehet ez az egész!</p><p>- Csak ne olyan hevesen! Keres probléma? Megtalál! - mordul rád egy mély, rekedt hang erős szláv akcentussal a sötétből, és egy nagydarab fickó körvonalai rajzolódnak ki. Talpra ugrasz, hogy megküzdj vele. Belátod, hogy nem tudsz elmenekülni sem, mert ő lát téged, te viszont nem nagyon látod őt."
+				modi: "Gondolod, akár Bogi az, akár nem, mindkét esetben jó, ha letepered. Így elindulsz futva felé. Ahogy közeledsz, a nő hirtelen kinéz oldalra és kiált valamit egy számodra ismeretlen nyelven. A következő pillanatban felbotlasz valamiben, ami egy lábnak tűnik. Csodálkozva fordulsz hátra a földről. Ezek szerint nem kettesben vagytok. Csapda is lehet ez az egész!</p><p>- Csak ne olyan hevesen! Keres probléma? Megtalál! - mordul rád egy mély, rekedt hang erős szláv akcentussal a sötétből, és egy nagydarab fickó körvonalai rajzolódnak ki. Talpra ugrasz, hogy megküzdj vele. Belátod, hogy nem tudsz elmenekülni sem, mert ő lát téged, te viszont nem nagyon látod őt.",
 			},
 		],
 	},
@@ -4880,19 +4880,19 @@ window.rooms = [
 				Zsolt már várt rád. Mosolyogva üdvözöl.
 			</p>
 			<p>
-				Felkészítettem a bübüket a harcra. Itt az ideje, hogy elmossuk Bitang Botond uralmát és egyesítsük az erdőt a várossal!
+				- Hát visszajöttél...! Felkészítettem a bübüket a harcra. Itt az ideje, hogy elmossuk Bitang Botond uralmát és egyesítsük az erdőt a várossal!
 			</p>
 		`,
 		buttons: [
 			{
 				txt: "Induljunk!",
 				new: 214,
-				cond: "!E_love Zsolt"
+				cond: "!E_love Zsolt",
 			},
 			{
 				txt: "Induljunk!",
 				new: 213,
-				cond: "E_love Zsolt"
+				cond: "E_love Zsolt",
 			},
 		],
 	},
@@ -4998,7 +4998,7 @@ window.rooms = [
 			{
 				txt: "Mi a franc?!",
 				new: 159,
-				modi: "- Elég beszélget! - mordul rád egy mély, rekedt hang erős szláv akcentussal. Ahogy megpördülsz, egy nagydarab fickó körvonalai bontakoznak ki a sötétségben. Lehet, hogy az egész csapda volt? Mindenestre meg kell vele küzdened, ráadásul a számodra ismeretlen terepen el sem tudsz előle menekülni, mert láthatóan ő jól lát téged, te viszont nem nagyon látod őt!"
+				modi: "- Elég beszélget! - mordul rád egy mély, rekedt hang erős szláv akcentussal. Ahogy megpördülsz, egy nagydarab fickó körvonalai bontakoznak ki a sötétségben. Lehet, hogy az egész csapda volt? Mindenestre meg kell vele küzdened, ráadásul a számodra ismeretlen terepen el sem tudsz előle menekülni, mert láthatóan ő jól lát téged, te viszont nem nagyon látod őt!",
 			},
 		],
 	},
@@ -5705,7 +5705,56 @@ window.rooms = [
 		pass: 176,
 		fail: 180,
 	},
-
+	{
+		num: 185,
+		title: "Elkapnak a Branyiszkó téren",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "kordon.jpg",
+		desc: `
+      		<p id="modified"></p>  
+      		<p>
+       			Körülvesz három őr. Mit teszel?
+      		</p>
+		`,
+		buttons: [
+			{
+				txt: "Megpróbálsz Oshinoko segítségével elmenekülni",
+				new: 187,
+				cond: "J_Oshinoko, !J_Gárda",
+			},
+			{
+				txt: "Kiadod a Gárdának a támadási parancsot",
+				new: 188,
+				cond: "J_Gárda",
+			},
+		],
+	},
+	{
+		num: 186,
+		title: "Bejutsz a tömegbe",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "kordon.jpg",
+		desc: `
+      		<p id="modified"></p>  
+      		<p>
+       			Körülvesz három őr. Mit teszel?
+      		</p>
+		`,
+		buttons: [
+			{
+				txt: "Intesz Oshinokonak, hogy indul a harc",
+				new: 187,
+				cond: "J_Oshinoko, !J_Gárda",
+			},
+			{
+				txt: "Kiadod a Gárdának a támadási parancsot",
+				new: 186,
+				cond: "J_Gárda",
+			},
+		],
+	},
 
 	//*
 
@@ -5929,7 +5978,7 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Ujjujujj!!",
-				new: 210
+				new: 210,
 			},
 		],
 	},
@@ -6010,4 +6059,3 @@ window.rooms = [
 ];
 
 //220!	- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az élketükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
-

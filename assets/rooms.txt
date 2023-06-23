@@ -184,8 +184,8 @@
 184 - Yendela dungeon fight
 185 - Elkapnak a téren: modi + "Körülvesz három őr." Van-e Oshinoko vagy Gárda? (187, 188)
 186 - Bejutsz a tömegbe (modi: 135, aztán ügyesség-próba jön)
-187 - Elkapnak Oshinokoval (Szenyamuki a ködben, közben lehet Gárda vagy nem)
-188 - Elkapnak Oshinoko nélkül a Gárdával: harc / menekülés
+187 - Elkapnak Oshinokoval Gárda nélkül (fight, escape)
+188 - Elkapnak a Gárdával: finalwar (Oshinoko, Szenyamuki ?)
 189 - Tanácskozás Szenyamukival (J_Szenyamuki)
 190 - Szenyamuki legyőzése (nem hal meg, hanem mellétek áll: 189)
 191 - Vereség Szenyamukitól
