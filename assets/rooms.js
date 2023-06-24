@@ -2960,7 +2960,7 @@ window.rooms = [
 	},
 	{
 		num: 93,
-		title: "Oshinoko haditerve Szenyamuki nélkül",
+		title: "Oshinoko haditerve",
 		type: "normal",
 		music: "oshinoko",
 		pic: "oshinoko-face.JPG",
@@ -2968,13 +2968,13 @@ window.rooms = [
     <p>
       Oshinoko elgondolkodik. Közben Sakura észrevétlenül elvonul.
     <p>
-      - Nem lesz könnyű, de megpróbáljuk. Ma Bitang Botond beszédet mond a Branyiszkó-téren. Ott könnyebb letámadni, mint a Városháza erődjében. Az emberei a modern fegyvereket könnyen kiszúrják, a legjobb lesz fúvócsővel végezni vele, miután elvegyültünk a tömegben. De számítani kell rá, hogy utána az egész bandája ellenünk fog támadni. Azzal nyerhetünk némi időt, hogy egyszerre öljük meg Botit és a korrupt rendőrfőnököt. A rendőrfőnök gyakran álruhában van, de én jól ismerem, mert már régóta megfigyelem. Én eintézem őt, te pedig intézd el Botit. Viszonylag közel kell menni hozzá, hogy biztos legyen a találat. Utána le fogják zárni a teret és egyenként engednek ki mindenkit. Ha rohannánk, nem jutnánk ki, csak magunkra vonnánk a figyelmet így amint végeztünk velük, ha nem vettek észre, eldobjuk a fúvócsövet és úgy viselkedünk, mint mindenki más a tömegben. Ha viszont észrevesznek, akkor menekülünk és minél több álrendőrt leszedünk. Ha eleget leszedünk, akár be is jelentheted a hatalomátvételt, ezt rád bízom. Téged szeret a nép. De ha sokan maradtak, biztosabb ha egyelőre csak élve kijutunk, aztán meglátjuk a folytatást. Ha Boti és a rendőrfőnők nincs többé, nagy előnyhöz jutunk. Viszont minden fegyveredet itt kell hagynod, ha nem akarod, hogy már az elején lebukjál, csak a fúvócsövet vihetjük.
+      - Nem lesz könnyű, de megpróbáljuk. Tehát: ma Bitang Botond beszédet mond a Branyiszkó-téren. Ott könnyebb letámadni, mint például a Városháza erődjében. Az emberei a modern fegyvereket könnyen kiszúrják, a legjobb lesz fúvócsővel végezni vele, miután elvegyültünk a tömegben. De számítani kell rá, hogy utána az egész bandája ellenünk fog támadni. Azzal nyerhetünk némi időt, hogy egyszerre öljük meg Botit és a korrupt rendőrfőnököt. A rendőrfőnök gyakran álruhában van, de én jól ismerem, mert már régóta megfigyelem. Én eintézem őt, te pedig intézd el Botit. Viszonylag közel kell menni hozzá, hogy biztos legyen a találat. Utána le fogják zárni a teret és egyenként engednek ki mindenkit. Ha rohannánk, nem jutnánk ki, csak magunkra vonnánk a figyelmet így amint végeztünk velük, ha nem vettek észre, eldobjuk a fúvócsövet és úgy viselkedünk, mint mindenki más a tömegben. Ha viszont észrevesznek, akkor menekülünk és minél több álrendőrt leszedünk. Ha eleget leszedünk, akár be is jelentheted a hatalomátvételt, ezt rád bízom. Téged szeret a nép. De ha sokan maradtak, biztosabb ha egyelőre csak élve kijutunk, aztán meglátjuk a folytatást. Ha Boti és a rendőrfőnők nincs többé, nagy előnyhöz jutunk. Viszont minden fegyveredet itt kell hagynod, ha nem akarod, hogy már az elején lebukjál, csak a fúvócsövet vihetjük.
     </p>
     <p>
       - Jó tervnek tűnik, de sokminden múlik azon, hogy észreveszik-e az elején a fúvócső használatát. Ennek esélyét mivel csökkenthetjük?
     </p>
     <p>
-      - Azzal, hogy a fúvőcső így néz ki - mosolyodik el kissé esetlenül Oshinoko, és átnyújt neked egy doboz cigit. Kinyitod, de még mindig csak cigarettaszálakat látsz bennük. Kiveszed az egyiket. Oshinoko elveszi tőled, elővesz egy öngyújtót és a cigi végéhez érinti. Amikor lenyomja az öngyújtó gombját, abból egy kis tüske jön ki, és akkor veszed ászre, hogy a cigi belül üreges, amikor a tüskét egy gyakorlott mozdulattal belejuttatja. - Hagyomőnyos fegyver modern köntösben. Van még időnk, hogy gyakoroljuk a "cigigyújtás" mozdulatát. De vigyázz, mert a tüske tényleg mérgezett, nehogy hozzáérj a végéhez!
+      - Azzal, hogy a fúvőcső így néz ki - mosolyodik el kissé esetlenül Oshinoko, és átnyújt neked egy doboz cigit. Kinyitod, de még mindig csak cigarettaszálakat látsz bennük. Kiveszed az egyiket. Oshinoko elveszi tőled, elővesz egy öngyújtót és a cigi végéhez érinti. Amikor lenyomja az öngyújtó gombját, abból egy kis tüske jön ki, és akkor veszed ászre, hogy a cigi belül üreges, amikor a tüskét egy gyakorlott mozdulattal belejuttatja. - Hagyományos fegyver modern köntösben. Van még időnk, hogy gyakoroljuk a "cigigyújtás" mozdulatát. De vigyázz, mert a tüske tényleg mérgezett, nehogy hozzáérj a végéhez!
     </p>
     <p>
       Egy ideig gyakoroltok még és megbeszéltek néhány további részletet. Aztán eljön az idő az indulásra. A tárgyaidnál kicsit hezitálsz, hogy nem lenne-e jobb mégis magaddal vinni valamilyen fegyvert, hátha mégsem buksz le. Hogy döntesz?
@@ -3013,7 +3013,7 @@ window.rooms = [
       - Szenyamuki vár minket - mondja, aztán vált még pár szót Sakurával, akin látszik, hogy továbbra is aggódik, de próbál erősnek látszani. Végül int neked, hogy induljatok.
     </p>
     <p>
-      Kifordultok a falon keresztül, aztán mentek össze-vissza az utcákon át, míg végül egy titkos ajtón át egy elhagyatott raktárépületbe értek. Itt egy sötét sarokban van egy alak. Oshinoko mond neki pár mondatot japánul, mire előrelép. A beszűrődő fényben megpillantod az arcát. Hasonlít Oshinokora, de gonoszabb és sötétebb, és egy sebhely is még visszataszítóbbá teszi. Megszólít.
+      Kifordultok a falon keresztül, aztán 2 sarokkal arrébb egy titkos ajtón át egy elhagyatott raktárépületbe értek. Itt egy sötét sarokban van egy alak. Oshinoko mond neki pár mondatot japánul, mire előrelép. A beszűrődő fényben megpillantod az arcát. Hasonlít Oshinokora, de gonoszabb és sötétebb, és egy sebhely is még visszataszítóbbá teszi. Megszólít.
     </p>
     <p>
       - Battle Beatle legyőzője... Ugyan miért kellene azt hinnem, hogy veled együtt le tudnánk győzni Bitang Botondot?
@@ -3028,6 +3028,7 @@ window.rooms = [
       - A fivérem tud egyetsmást a harc terén. Bár nem annyit, mint én. De rólad semmit nem tudok. Ezen pedig csak egyféleképpen segíthetünk - szól, és hirtelen harci állásba vágja magát. Meg kell vele küzdened.
     </p>
     `,
+		obj: ["M_Szenyamuki"],
 		buttons: [
 			{
 				txt: "Előrántod a katanát",
@@ -3879,14 +3880,15 @@ window.rooms = [
     `,
 		buttons: [
 			{
-				txt: "Ne baj, akkor is bejutsz",
+				txt: "Nem baj, akkor is bejutsz",
 				new: 135,
-				cond: "!_S_Micuki",
+				cond: "!S_Micuki",
 			},
 			{
 				txt: "Micuki technikával belopózol a tömegbe",
 				new: 186,
 				cond: "S_Micuki",
+				modi: "A Micuki technikával lopakodó üzemmódra kapcsolsz, és gond nélkül átjutsz az őrökön."
 			},
 		],
 	},
@@ -4319,7 +4321,7 @@ window.rooms = [
         A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
-        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+				A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki, de aki mellette áll, az iszik belőle és visszanyer egy kevés erőt. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy saját döntését az ember a váratlan események ellenére is. Az emberek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
       </p>
       <p>
         Jó szórakozást!
@@ -5705,10 +5707,261 @@ window.rooms = [
 		pass: 176,
 		fail: 180,
 	},
-
-
-	//*
-
+	{
+		num: 185,
+		title:
+			"Elkapnak a Branyiszkó téren",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "kordon.jpg",
+		desc: `
+      <p id="modified"></p>  
+      <p>
+       Körülvesz három őr. Mit teszel?
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Megpróbáltok Oshinokoval elmenekülni",
+				new: 187,
+				cond: "J_Oshinoko, !J_Gárda",
+			},
+			{
+				txt: "Támadó parancsot adsz ki a Gárdának",
+				new: 188,
+				cond: "J_Gárda",
+			},
+		],
+	},
+	{
+		num: 186,
+		title:
+			"Merénylet a Branyiszkó-téren",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "speaker.png",
+		desc: `
+      <p id="modified"></p>  
+      <p>
+       Elvegyülsz a tömegben úgy, hogy Oshinokoval szemmel tudjátok tartani egymást. Egy apró szemrándítással jelzi, hogy elfoglalta a helyét és  készen áll. Te is hasonlóan jelzel vissza neki. Látod, hogy előveszi az ál-cigarettás dobozt. Te is úgy teszel. Belerakod az álcázott öngyújtóból a halálos tüskét a fúvócsőbe. Az ál-cigit a szónokoló Bitang Botond felé irányítod. Egyre jobban izgulsz és fogalmad sincs, miről beszél. Megpróbálsz megnyugodni, mert a remegő végű fúvócsővel nehéz jól célozni. Veszel egy nagy levegőt, mintha csak letüdőznéd a cigit (szerencsére úgy van kialalkítva, hogy a te irányodba nem jöhet ki a tüske). Amint teljesen megtelik a tüdőd, a tömeg elejéről egy elhaló kiáltást hallasz és összeesik egy bőrszerkós hippi. Rögtön kapcsolsz: Oshinoko leszedte az álruhában lévő rendőrfőnököt. Azonnal lőnöd kell neked is!
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Phu!",
+				new: 221,
+			},
+		],
+	},
+	{
+		num: 187,
+		title:
+			"A füstben",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "smoke.gif",
+		desc: `
+      <p>
+      	Oshinokoval egymásra néztek. Nem kell semmit mondanotok, tudjátok, hogy mit kell tenni. Oshinoko bólint, elővesz a zsebéből egy csomag rágót és fapofával elkezdi rágni. A gutaütés kerülget: ezek szerint mégis kellene valamit mondani neki, mert nem látja, milyen szorult helyzetben vagytok!!! Vagy valami miatt megorrolt rád és most magadra hagy???!! Az őrök megindulnak, hogy leteperjenek, te megpróbálsz kitörni Oshinoko felé, ekkor viszont a japán a földre köpi a rágót, mire sűrű füst csap fel belőle és beborítja az egész teret. Ezek szerint ez is egy trükkös fegyver volt: rágónak álcázott füstbomba! Ez a jakuza tényleg érti a dolgát! A tömeg viszont elkezd visítozni...
+      </p>
+			<p>
+				- Azt hittem magamra hagysz! - ordítod, amikor a füstben támolyogva meglátod Oshinoko arcát. Legnagyobb meglepedésedre viszont a hátad mögül szólal meg Oshinoko:
+			</p>
+			<p>
+				- Ne sértegess!
+			</p>
+			<p>
+				Meglepve nézed, ki áll akkor előtted...
+				<span class="cond" data-cond="M_Szenyamuki, !J_Szenyamuki">Felismered: ez Szenyamuki, Oshinoko ikertestvére!</span>
+				<span class="cond" data-cond="J_Szenyamuki">Most jössz rá, hogy Szenyamukiba botlottál az előbb! Annyira hasonlítanak, pláne a füstben!</span>
+			</p>
+			<p>
+				Ekkor hirtelen megjelenik közvetlenül mellettetek az igazi Oshinoko és megszólítja hasonmását:
+			</p>
+			<p>
+				- Fivérem, Szenyamuki! Segítesz nekünk?
+			</p>
+    `,
+		obj: ["M_Szenyamuki"],
+		buttons: [
+			{
+				txt: "Megígérted!",
+				new: 224,
+				cond: "J_Szenyamuki"
+			},
+			{
+				txt: "Ez az! Segítesz?",
+				new: 225,
+				cond: "!J_Szenyamuki"
+			},
+		],
+	},
+	{
+		num: 188,
+		title: "Tömegbunyó a Branyiszkó-téren",
+		type: "finalwar",
+		friends: "gárda",
+		enemies: "böszörményi",
+		opts: "J_Oshinoko, J_Szenyamuki, X_Szenyamuki",
+		music: "finalwar",
+		pic: "streetfight.gif",
+		desc: `
+      <p>
+				Mivel látod, hogy innen már nem tudsz egyszerűen lelépni, nem marad más hátra, mint...
+      </p>
+			<p>
+				- ELŐREEE!!! - adod ki ordítva a parancsot, mire a Gárda tagjai előrántják a fegyvereket. Az őrök is azonnal harci alakzatba rendeződnek. A tömeg ordítva menekül, pillanatok alatt eluralkodik a káosz a téren...
+			</p>
+			<p class="cond" data-cond="!X_Szenyamuki">
+				- A fivérem, Szenyamuki is itt van! - súgja oda neked gyorsan Oshinoko, miközben támadóállást vesz fel. Észreveszed te is, és 
+				<span class="cond" data-cond="J_Szenyamuki">megkönnyebbülten nyugtázod, hogy mellétek áll a csatában.</span>
+				<span class="cond" data-cond="!J_Szenyamuki">csalódottan konstatálod, hogy sajnos az ellenség sorait erősíti.</span>
+			</p>
+      <i>
+      <p>
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+      </p>
+      <p>
+				A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki, de aki mellette áll, az iszik belőle és visszanyer egy kevés erőt. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy saját döntését az ember a váratlan események ellenére is. Az emberek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+      </p>
+      <p>
+        Jó szórakozást!
+      </p>
+      </i>
+    `,
+		buttons: [
+			{
+				txt: "Harcra fel, győzni kell",
+			},
+		],
+		pass: 226,
+		fail: 203,
+	},
+	{
+		num: 189,
+		title: "Tanácskozás Szenyamukival",
+		type: "normal",
+		music: "gravenight",
+		pic: "szenyamuki-face.JPG",
+		desc: `
+			<p>
+				- Nekem vissza kell mennem Bitang Botondhoz, mert többek között az ő testőrségéhez is tartozom - kezdi elgondolkodva Szenyamuki. - Ma délután beszédet mond a Branyiszkó-téren. Oda is visz testőrséget, de kevesebbet, mint amennyien a Városházán őrzik. Ne hagyományos fegyverekkel intézzétek el, hanem inkább csendesebb módszerekkel. Bárhogy is alakul, én ott leszek és segítelek titeket, ha kell. 
+			</p>
+			<p>
+				- Köszönjük! De tulajdonképpen miért nem ölöd meg te, ha már úgyis velünk vagy? - teszed fel a számodra praktikusnak tűnő kérdést.
+			</p>
+			<p> 
+				- Mert ez nem az én küldetésem! Vagy megbíztok vele, de az nagyon sok pénzbe fog kerülni, vagy legyen elég annyi, hogy segítek nektek ha gond lenne.
+			</p>
+			<p>
+				- Jó lesz így! - szól közbe Oshinoko. Végül is, jobban ismeri a testvérét és anyagi igényeit, így ráhagyod. Szenyamuki biccent egyet és egy szempillantás alatt eltűnik a sötétben.
+			</p>
+			<p>
+				- Hidd el, <span class='name'></span> san, ez a legtöbb, amit elérhettünk. És ez nagy eredmény! Menjünk haza, hogy kidolgozzuk jobban a haditervet! - mondja Oshinoko. Biccentesz és elindultok a titkos átjárókon át visszafelé.
+			</p>
+			<p>
+				Oshinoko az úton végig némán a gondolataiba temetkezik, de nem tart sokáig az út. Amikor beléptek a házba, Sakura ismét teával és egy kis süteménnyel fogad. Letelepedtek elfogyasztani.
+			</p>
+    `,
+		obj: ["J_Szenyamuki"],
+		change: [
+			{
+				id: "ero",
+				crease: 8,
+				rnd: 7,
+			},
+			{
+				id: "hat",
+				crease: 5,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Mi tehát a terved, Oshinoko san?",
+				new: 93,
+			},
+		],
+	},
+	{
+		num: 190,
+		title: "Szenyamuki legyőzése",
+		type: "normal",
+		music: "gravenight",
+		pic: "szenyamuki-face.JPG",
+		desc: `
+			<p>
+				Amikor Szenyamuki összeesik, te pedig odaugrasz mellé, hogy végezz vele, hirtelen Oshinoko elkapja a karodat, de olyan erővel, mint ha vasbilincsbe zárnák.
+			</p>
+			<p>
+				- Elég! Ha megölöd a fivérem, hogy segít minket?! - majd a földön fekvő alélt testvéréhez fordul: - Szenyamuki! <span class="name"></span> san már bizonyított! Legyen itt vége a harcnak!
+			</p>
+			<p> 
+				Szenyamuki nem mozdul. Oshinoko elengedi a karod, ráordít valamit japánul a testvérére és belerúg. Szenyamuki szeme kinyílik és rátok néz. Aztán megrázza magát és feláll. Nem semmik ezek a tesók!
+			</p>
+			<p>
+				- Rendben. Győztél! - mondja kurtán Szenyamuki.
+			</p>
+		`,
+		change: [
+			{
+				id: "ugy",
+				crease: 10,
+				rnd: 10,
+			},
+			{
+				id: "hat",
+				crease: 5,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "És ennek fényében mik az új tervek?",
+				new: 189,
+			},
+		],
+	},
+	{
+		num: 191,
+		title: "Vereség Szenyamukitól",
+		type: "normal",
+		music: "gravenight",
+		pic: "szenyamuki-face.JPG",
+		desc: `
+			<p>
+				Iszonyatosan erős harcos Szenyamuki, és mivel Oshinoko is mondta, hogy nem kell végig csinálni a harcot, ha nem akarod, te is úgy látod, hogy fölösleges itt most meghalnod a keze által. Jelzed, hogy feladod a harcot és elfogadod a győzelmét. Szenyamuki megáll és így szól:
+			</p>
+			<p>
+				- Tudtam, hogy nem vagytok elegendők a feladatra. Remélem, ezt most már te is belátod.
+			</p>
+			<p> 
+				- És akkor uralkodjon egy zsarnok a városon?!
+			</p>
+			<p>
+				Szenyamuki flegmán vállat von. Oshinoko int neked, hogy hagyjad. Amikor visszanézel, Szenyamuki már eltűnt. 
+			</p>
+			<p>
+				- Szenyamuki ilyen, <span class='name'></span> san - mondja beletörődve Oshinoko. - De egyetértek veled, hogy vesznie kell Botinak! Talán Szenyamuki nélkül is tudunk győzni. De remélem nem kerülök vele össze a harcmezőn... Menjünk haza, és dolgozzunk ki egy haditervet!
+			</p>
+			<p>
+				Biccentesz és elindultok a titkos átjárókon át visszafelé. Oshinoko az úton végig némán a gondolataiba temetkezik, de nem tart sokáig az út. Amikor beléptek a házba, Sakura ismét teával és egy kis süteménnyel fogad. Letelepedtek elfogyasztani.
+			</p>
+    `,
+		change: [
+			{
+				id: "hat",
+				crease: -3,
+				rnd: 3,
+			},
+		],
+		buttons: [
+			{
+				txt: "Mi tegyünk akkor?",
+				new: 93,
+			},
+		],
+	},
 	{
 		num: 192,
 		title: "Szerelem első látásra",
@@ -5870,10 +6123,10 @@ window.rooms = [
 		pic: "happymass.jpg",
 		desc: `
       	<p>
-			Embereid sikeresen leverték a városháza őreit. A <span class="name"></span> Gárda üdvrivalgása után egy gyors halottszemlét tartasz.
-		</p>  
-		<p id="casualties"></p>
-		<p>
+					Embereid sikeresen leverték a városháza őreit. A <span class="name"></span> Gárda üdvrivalgása után egy gyors halottszemlét tartasz.
+				</p>  
+				<p id="casualties"></p>
+				<p>
         	A teljes győzelemhez viszont meg kell még találni magát Bitang Botondot. Maradék embereddel bevonulsz a Városházába, hogy megtaláld őt az irodai rész útvesztőiben.
       	</p>
       `,
@@ -5900,13 +6153,13 @@ window.rooms = [
 	},
 	{
 		num: 203,
-		title: "Nem sikerült bevenni a Városházát",
+		title: "A <span class='name'></span> Gárda szétverése",
 		type: "normal",
 		music: "darkbackground",
 		pic: "deadfield.jpg",
 		desc: `
      	<p>
-				A <span class='name'></span> Gárdát sajnos szétverték a Városháza őrei.
+				A <span class='name'></span> Gárdát sajnos szétverték Bitang Botond őrei.
 			</p>  
 			<p id="casualties"></p>
 			<p>
@@ -5936,7 +6189,7 @@ window.rooms = [
 
 	{
 		num: 210,
-		title: "Üldözés a sereged kudarce",
+		title: "Üldözés a sereged kudarca után",
 		type: "pursuit",
 		level: 10,
 		music: "darkbackground",

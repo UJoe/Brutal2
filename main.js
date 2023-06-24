@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 116; //startroom
+		char.room = 121; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -868,7 +868,7 @@ function _load() {
 							"A biztonsági őr megállít. Egy ideig nézi a képed, majd beleszól a gallérmikrofonjába:</p><p>- Megvan <span class'name'></span>!";
 					} else {
 						outcome = "pass";
-						result = "Sikeresen átjutotsz az őrökön.";
+						result = "Sikeresen átjutsz az őrökön.";
 						modi =
 							"A biztonsági őr megállít, megvizsgál, de semmi gyanúsat nem talál nálad. Int, hogy bemehetsz a térre.";
 					}
@@ -4971,6 +4971,13 @@ function _load() {
 		}, 10000 / gspeed);
 	}
 
+	//köd
+	function fogAct() {
+		//egyedi room, classok a CSS végén, 
+		//pics: Szenyamuki-face, Oshinoko-face, Szekus, Boti, Civil1-8
+		//voices: yeah, oops
+	}
+
 	//Act triggers
 	function pressBtn(e) {
 		switch (room.type) {
@@ -5026,6 +5033,10 @@ function _load() {
 
 			case "finalwar":
 				finalwarAct();
+				break;
+
+			case "fog":
+				fogAct();
 				break;
 
 			default:

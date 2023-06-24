@@ -285,6 +285,7 @@ window.armies = {
 	gárda: "1 Erdei Zsolt, 1 Óriás, 1 Oshinoko, 1 Kocsmatöltelékek, 1 Robi, 1 Bogi, 1 Ügyes Frigyes, 1 Távolugró, 1 Bübük", */
 
 	városháza: "5 Szekus, 5 Tüzér, 3 Izomagy",
+	böszörményi: "4 Szekus, 3 Tüzér, 3 Izomagy",
 	gárda: "5 Tüzér, 3 Izomagy, 2 Paraszt, 1 Indián, 1 Favágó, 1 Távolugró",
 };
 

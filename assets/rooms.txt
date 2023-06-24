@@ -184,8 +184,8 @@
 184 - Yendela dungeon fight
 185 - Elkapnak a téren: modi + "Körülvesz három őr." Van-e Oshinoko vagy Gárda? (187, 188)
 186 - Bejutsz a tömegbe (modi: 135, aztán ügyesség-próba jön)
-187 - Elkapnak Oshinokoval (Szenyamuki a ködben, közben lehet Gárda vagy nem)
-188 - Elkapnak Oshinoko nélkül a Gárdával: harc / menekülés
+187 - A füstben (nincs Gárda)
+188 - Tömegbunyó a Branyiszkó-téren (finalwar: Oshinoko, Szenyamuki XJ?)
 189 - Tanácskozás Szenyamukival (J_Szenyamuki)
 190 - Szenyamuki legyőzése (nem hal meg, hanem mellétek áll: 189)
 191 - Vereség Szenyamukitól
@@ -218,6 +218,15 @@
 218 - Boti emberei elkapnak a piacról hazafelé
 219 - Találkozol valakivel a piacról hazafelé (XChange: ismerős mégis segít)
 220 - Erdei Zsolt és a bübük (comment! utána próbák vagy love (egyből gomb) a bübüszimathoz)
+221 - Ugy trial (sikerül-e leszedni Botit fúvócsővel)
+222 - Megölted Bitang Botondot
+223 - Meghiúsult a merénylet (death - mivel a rendőrfönök halott, nem bonyolítjuk)
+224 - Szenyamuki segít a füstben
+225 - Szenyamuki nem segít nektek (ködharc, fog)
+226 - Bitang Botond üldözése (casualties! - nyertes téri csata után, pursuit)
+227 - Bitang Botond elkapása (fight)
+228 - Bitang Botond meglógott => piac
+
 
 
 
