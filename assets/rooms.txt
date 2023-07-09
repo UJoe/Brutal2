@@ -1,7 +1,6 @@
 1 - Trial (leigáz)
 2 - A hatalomszerzés kezdete"
 3 - A hatalomátvétel kezdeti nehézségei
-4 - Trial (tényleg leigáz)
 5 - Inkább nem igázod le őket
 6 - A csirkefogó üldözése
 7 - A töketlen nép
@@ -195,17 +194,17 @@
 195 - Fegyvergyártás Betyárral
 196 - Nem sikerült a föld alól bejutni
 197 - A server szobában
-198 - Jótékony kampányakció pass (modi:pont)
+198 - Jótékony kampányakció pass (kampányhelp!)
 199 - Jótékony kampányakció med (modi::pont)
 200 - Jótékony kampányakció fail (modi::pont)
-201 - Nyilvános vita Bitang Botival (új xtrial minden eredmény figyelembevételével)
+201 - A polgármester-választás eredménye (új XTrial minden eredménnyel)
 202 - A gárda bevette a Városházát
 203 - Sikertelen ostrom a Városháza ellen
 204 - Elmenekültél a mesterlövészek elől (Gárda vége, E_Boti üldöz => piac)
 205 - Leszedtek a mesterlövészek (death)
 206 - Fricivel a háztetőn ("Miután sikeresen kiiktattátok a házmestert...")
 207 - Frici lecsapja a házmestert (mivel feladtad a harcot, -hat, -sup. => 206)
-208 - Harc a hegyi óriásokkal
+208 - Harc a hegyi óriásokkal (kampányhelp!)
 209 - Bitang Botond keresése a Városházán (dungeon, szint modiban)
 210 - Üldözés a kudarcot vallott harc (gárda vagy Erdeiék stb.) után (level 10 pursuit)
 211 - Céltalanná vált élet ( => piac, 113)
@@ -226,6 +225,9 @@
 226 - Bitang Botond üldözése (casualties! - nyertes téri csata után, pursuit)
 227 - Bitang Botond elkapása (fight)
 228 - Bitang Botond meglógott => piac
+229 - Jelszóbeírás a server szobában (input)
+230 - Sikeresen bejutsz a serverbe (modified: jelszó vagy hacker)
+
 
 
 

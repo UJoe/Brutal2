@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 121; //startroom
+		char.room = 0; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -559,6 +559,7 @@ function _load() {
 
 	//Új Helyszín
 	window.newRoom = () => {
+		console.log("MODI: ", modi);
 		clearTimers();
 		room = {};
 		let num = rooms.findIndex((r) => r.num === char.room);
@@ -616,6 +617,7 @@ function _load() {
 				room.buttons = [room.passBtn];
 				nobject = " ";
 				dungeon = 0;
+				if (room.modi) modi = room.modi;
 				if (room.help) {
 					let fi = rooms.findIndex((r) => r.num === room.fight);
 					let bonus = 10 + Math.round(dungeon * 2 + rooms[fi].level * 8 + Math.random() * 10);
@@ -1166,6 +1168,7 @@ function _load() {
 
 			updateKotyvaszt(0);
 		}
+
 		//Xchange
 		function xchangelj() {
 			switch (room.Xchange) {
@@ -1181,6 +1184,39 @@ function _load() {
 					changeVal("hat", Math.floor(baseline));
 					changeVal("sup", Math.round(baseline * 10));
 					message("A támogatásod " + Math.round(baseline * 10) + " ponttal nőtt.");
+					break;
+
+				case "kampányhelp":
+					let bézelájn = char.lel / 50 + char.esz / 40 + char.hat / 30 + char.sup / 20 + prg / 5 + 0.5 * Math.random();
+					changeVal("hat", Math.floor(bézelájn));
+					switch (modi.charAt(0)) {
+						case "S":
+							room.obj = ["W_MÍVES MORDÁLY"];
+							bézelájn += 10 + Math.random() * 2;
+							break;
+
+						case "B":
+							room.obj = ["X_Büdös Berci"];
+							bézelájn += 9 + Math.random() * 2.5;
+							break;
+
+						case "A":
+							bézelájn += 8 + Math.random() * 3;
+							break;
+
+						case "N":
+							bézelájn += 7 + Math.random() * 3.5;
+							let kaja = 1 + Math.floor(Math.random() * 5);
+							changeVal("ero", kaja * 3);
+							changeVal("lel", kaja * 2);
+							changeVal("ugy", kaja * 1);
+							break;
+
+						default:
+							break;
+					}
+					changeVal("sup", Math.round(bézelájn * 9));
+					message("A támogatásod " + Math.round(bézelájn * 9) + " ponttal nőtt.");
 					break;
 
 				case "lefegyverzés":
@@ -1210,7 +1246,6 @@ function _load() {
 					break;
 
 				case "treasure":
-					console.log("M: ", modi);
 					let bl = prg + Math.round(Math.random() * (char.hat + char.sup) / 25);
 					for (let i = 3; i < 6; i++) {
 						bl += Math.round(modi[i] * (i - 2) / 1.5)
@@ -1332,16 +1367,15 @@ function _load() {
 				</div>
 			`;
 
+			if (document.getElementById("modified") && modi) {
+				document.getElementById("modified").innerHTML = modi;
+			}
 			if (document.getElementById("fullName")) document.getElementById("fullName").innerHTML = char.name;
 			if (document.querySelector(".name")) {
 				document.querySelectorAll(".name").forEach((n) => (n.innerHTML = char.name.split(",")[0]));
 			}
 			if (document.querySelector(".part")) {
 				document.querySelectorAll(".part").forEach((p) => (p.innerHTML = part));
-			}
-			if (document.getElementById("modified") && modi) {
-				document.getElementById("modified").innerHTML = modi;
-				modi = false;
 			}
 			if (document.querySelector(".cond")) {
 				document.querySelectorAll(".cond").forEach((c) => {
@@ -1399,6 +1433,22 @@ function _load() {
 			if (document.getElementById("akna")) document.getElementById("akna").innerHTML = room.akna;
 			if (document.getElementById("kincs")) document.getElementById("kincs").innerHTML = room.kincs;
 
+			if (room.change && loaded == false) {
+				for (let ch of room.change) {
+					let chby = ch.crease;
+					if (ch.rnd) {
+						let xtra = parseInt(1 + Math.random() * ch.rnd);
+						if (ch.crease < 0) xtra = -xtra;
+						chby += xtra;
+					}
+					changeVal(ch.id, chby);
+				}
+			}
+
+			if (room.Xchange && loaded == false) {
+				xchangelj();
+			}
+
 			if (nobject) {
 				document.getElementById("pickup").innerHTML = nobject;
 			} else if (room.obj) {
@@ -1440,21 +1490,6 @@ function _load() {
 				document.querySelectorAll(".btn").forEach((i) => i.addEventListener("click", pressBtn));
 			}
 
-			if (room.change && loaded == false) {
-				for (let ch of room.change) {
-					let chby = ch.crease;
-					if (ch.rnd) {
-						let xtra = parseInt(1 + Math.random() * ch.rnd);
-						if (ch.crease < 0) xtra = -xtra;
-						chby += xtra;
-					}
-					changeVal(ch.id, chby);
-				}
-			}
-
-			if (room.Xchange && loaded == false) {
-				xchangelj();
-			}
 			if (loaded) loaded = false;
 			if (room.type === "death") {
 				die();
@@ -1689,6 +1724,7 @@ function _load() {
 				}
 				if (finish) {
 					if (room.help) modi = room.help.split("_")[1];
+					if (room.modi) modi = room.modi;
 					firstEnd = false;
 					document.querySelectorAll(".minefield").forEach((i) => i.removeEventListener("click", pressMine));
 					document.getElementById("exitBtn").disabled = true;
@@ -2397,7 +2433,6 @@ function _load() {
 			setTimeout(() => {
 				char.room = room.pass;
 				modi = room.gems.slice(1).concat(gems);
-				console.log("MODI: ", modi);
 				newRoom();
 			}, 4000);
 		}
@@ -2989,7 +3024,7 @@ function _load() {
 
 			let preFriends = armies[room.friends].split(", ");
 			let preNmes = armies[room.enemies].split(", ");
-			let preOpts = room.opts.split(", ");
+			let preOpts = room.opts ? room.opts.split(", ") : false;
 			for (let f of preFriends) {
 				let spc = f.indexOf(" ");
 				let numb = Number(f.substring(0, spc));
@@ -3011,34 +3046,36 @@ function _load() {
 				}
 			}
 			let ally = false;
-			for (let f of preOpts) {
-				let who = "";
-				let team = false;
-				if (f.includes("_")) {
-					let type = f.split("_")[0];
-					let ki = f.split("_")[1];
-					if (type === "J") {
-						if (getObj(f) && !getObj("X_" + ki)) {
-							who = ki;
-							team = true;
-							ally = true;
+			if (preOpts) {
+				for (let f of preOpts) {
+					let who = "";
+					let team = false;
+					if (f.includes("_")) {
+						let type = f.split("_")[0];
+						let ki = f.split("_")[1];
+						if (type === "J") {
+							if (getObj(f) && !getObj("X_" + ki)) {
+								who = ki;
+								team = true;
+								ally = true;
+							}
+						} else {
+							if (!getObj(f) && !getObj("J_" + ki)) {
+								who = ki;
+								team = false;
+							}
 						}
 					} else {
-						if (!getObj(f) && !getObj("J_" + ki)) {
-							who = ki;
-							team = false;
+						if (!getObj("X_" + f)) {
+							who = f;
+							team = true;
 						}
 					}
-				} else {
-					if (!getObj("X_" + f)) {
-						who = f;
-						team = true;
+					if (who.length) {
+						let model = sprites.find((s) => s.name == who);
+						if (model) units.push(newSprite(model, uid, team, ally));
+						uid++;
 					}
-				}
-				if (who.length) {
-					let model = sprites.find((s) => s.name == who);
-					if (model) units.push(newSprite(model, uid, team, ally));
-					uid++;
 				}
 			}
 			let lerakN = [
@@ -3233,14 +3270,14 @@ function _load() {
 					break;
 
 				case "bomb":
-					let seb = Math.round(40 + Math.random() * 40);
+					let seb = Math.round(50 + Math.random() * 50);
 					let bx = wi < 0 ? wx : units[wi].x;
 					let by = wi < 0 ? wy : units[wi].y;
 					nbs = units.filter((u2) => !u2.dead && distance({ x: bx, y: by }, u2) === 1);
 					if (wi > -1) {
 						let wu = units[wi];
 						let seb1 = seb - wu.def;
-						seb1 = seb1 < 1 ? 1 : seb1 > 50 ? 50 : seb1;
+						seb1 = seb1 < 1 ? 1 : seb1 > 60 ? 60 : seb1;
 						wu.hp -= seb1;
 						if (wu.hp < 1) {
 							wu.hp = 0;
@@ -3257,9 +3294,9 @@ function _load() {
 					if (nbs.length > 0) {
 						for (let n of nbs) {
 							let seb2 = seb - n.def - Math.round(Math.random() * 20);
-							seb2 = seb2 < 0 ? 0 : seb2 > 30 ? 30 : seb2;
+							seb2 = seb2 < 1 ? 1 : seb2 > 30 ? 30 : seb2;
 							n.hp -= seb2;
-							if (n.hp < 0) {
+							if (n.hp < 1) {
 								n.hp = 0;
 								dies(n);
 							}
@@ -3366,10 +3403,10 @@ function _load() {
 							beam.style.height = `${3.3 * (13 - i)}vw`;
 							for (let ud of units) {
 								if (ud.x === wx && ud.y === i) {
-									let sebs = Math.round(ud.ohp / 2 + Math.random() * i * 10 - ud.def);
-									sebs = sebs < 0 ? 1 : sebs > ud.hp ? ud.hp : sebs;
+									let sebs = Math.round(ud.ohp / 2 + i + Math.random() * i * 10 - ud.def);
+									sebs = sebs < 1 ? 1 : sebs > ud.hp ? ud.hp : sebs;
 									ud.hp -= sebs;
-									if (ud.hp < 0) {
+									if (ud.hp < 1) {
 										ud.hp = 0;
 										dies(ud);
 									}
@@ -4524,7 +4561,7 @@ function _load() {
 			}
 
 			nme.hp -= seb;
-			if (nme.hp < 0) {
+			if (nme.hp < 1) {
 				nme.hp = 0;
 				dies(nme);
 				u.obey = false;
@@ -4538,7 +4575,7 @@ function _load() {
 					let sebb = Math.round((att + hp / 10 - n.def) / 5 + -Math.random() * 3);
 					sebb = sebb < 0 ? 0 : sebb > 50 ? 50 : sebb;
 					n.hp -= sebb;
-					if (n.hp < 0) {
+					if (n.hp < 1) {
 						n.hp = 0;
 						dies(n);
 					}
@@ -4811,6 +4848,7 @@ function _load() {
 
 				case 2:
 					char.room = room.pass;
+					if (room.modi) modi = room.modi;
 					newRoom();
 					break;
 
@@ -4990,7 +5028,7 @@ function _load() {
 				} else if (room.modi) {
 					modi = room.modi
 				} else {
-					modi = false;;
+					modi = false;
 				}
 				let num = rooms.findIndex((r) => r.num === btn.new);
 				if (num === -1) {
