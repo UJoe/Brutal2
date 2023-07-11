@@ -3,22 +3,28 @@ M - találkozás (meet)
   Ügyes Frigyes
   Szenyamuki
   Bogi
-  Kocsmatöltelékek (akik meghívtak)
-
+  Kocsmatöltelékek
+  Erdei Zsolt
 
 X - megölve
   Béna Boldizsár
   Oshinoko
   Gárda
-
+  Büdös Berci
+  Ügyes Frigyes
+  Szenyamuki
+  Bogi
+  Kocsmatöltelékek
+  Erdei Zsolt
+  
 J - szövetséges (join)
   Gárda
   Párt
   Oshinoko
   Ügyes Frigyes
-  Erdeiék
+  Erdei Zsolt
   Szenyamuki
-  Kocsmatöltelékek (akik csatlakoztak)
+  Kocsmatöltelékek
   Bogi  
 
 S - képesség (skill)
@@ -47,7 +53,7 @@ E - egyéb események (events)
   Boti halottnak hisz
   help (segített)
   a Városháza bevétele
-  love Erdei
+  love Zsolt
   love Bogi
   Bogi kavar
 

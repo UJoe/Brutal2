@@ -386,6 +386,30 @@ window.weapons = [
     ],
   },
   {
+    name: "MÍVES MORDÁLY",
+    desc: "A vérbeli haramiák díszes puskája",
+    pic: "mivesmordaly.jpg",
+    sound: "rifleshot",
+    effect: [
+      {
+        val: "sebesség",
+        ch: "-1",
+      },
+      {
+        val: "támadás",
+        ch: "+70",
+      },
+      {
+        val: "ellenség védelem",
+        ch: "-25",
+      },
+      {
+        val: "ellenség sebesség",
+        ch: "-1",
+      },
+    ],
+  },
+  {
     name: "PÁNCÉLÖKÖL",
     desc: "Vállról indítható rakéták",
     pic: "rakéta.jpg",

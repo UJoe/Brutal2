@@ -1090,3 +1090,48 @@ select {
 .stealth {
 	opacity: 0.5;
 }
+
+/* köd */
+
+#ködScores {
+	width: 80vw;
+	min-width: fit-content;
+	height: 35px;
+	margin: 0 auto 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 0.9em;
+	background-image: linear-gradient(to right, black, purple, red, purple, black);
+}
+
+.köd {
+	position: fixed;
+	top: 120px;
+	left: 15vw;
+	width: 70vw;
+	height: calc(100vh - 150px);
+	background-color: gray;
+	border-radius: 50px;
+}
+
+.ködmön {
+	position: fixed;
+	top: 0;
+	left: 0;
+	animation: ködding 2s linear;
+}
+
+@keyframes ködding {
+	0% {
+		filter: brightness(.5) opacity(0) blur(15px);
+	}
+
+	50% {
+		filter: brightness(1) opacity(1) blur(0);
+	}
+
+	100% {
+		filter: brightness(.5) opacity(0) blur(15px);
+	}
+}
