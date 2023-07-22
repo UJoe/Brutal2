@@ -197,11 +197,11 @@
 198 - Jótékony kampányakció pass (kampányhelp!)
 199 - Jótékony kampányakció med (modi::pont)
 200 - Jótékony kampányakció fail (modi::pont)
-201 - A polgármester-választás eredménye (új XTrial minden eredménnyel)
+201 - A polgármester-választás (utána új Xtrial)
 202 - A gárda bevette a Városházát
-203 - Sikertelen ostrom a Városháza ellen
-204 - Elmenekültél a mesterlövészek elől (Gárda vége, E_Boti üldöz => piac)
-205 - Leszedtek a mesterlövészek (death)
+203 - Sikertelen ostrom a Városháza ellen, menekülés
+204 - XTRIAL: a választás eredménye
+205 - Megnyerte a Párt a választást (=> END)
 206 - Fricivel a háztetőn ("Miután sikeresen kiiktattátok a házmestert...")
 207 - Frici lecsapja a házmestert (mivel feladtad a harcot, -hat, -sup. => 206)
 208 - Harc a hegyi óriásokkal (kampányhelp!)
@@ -227,6 +227,8 @@
 228 - Bitang Botond meglógott => piac
 229 - Jelszóbeírás a server szobában (input)
 230 - Sikeresen bejutsz a serverbe (modified: jelszó vagy hacker)
+231 - Elbuktátok a választást (=> END)
+232 - END
 
 
 

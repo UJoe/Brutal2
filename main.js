@@ -876,6 +876,29 @@ function _load() {
 					}
 					break;
 
+				case "választás":
+					let pp = char.lel / 14 + char.hat / 10 + char.esz / 12 + char.sup / 5 + prg * 10 + Math.random() * 10 + getObj("S").length * 5 + (getObj("S_Hit")) * 100 + getObj("H").length * 10 - getObj("X").length * 5 + getObj("J").length * 15;
+					changeVal("sup", Math.floor(pp));
+					let pv = char.sup * 10 + Math.floor(Math.random() * 10)
+					let bv = Math.round(4000 + steps * 45 + Math.random() * 5000 + (getObj("!S_Hit")) * 1500 - (getObj("X_Béna Boldizsár")) * 1000 - char.sup / 2);
+					if (bv === pv) bv -= 1;
+
+					main.innerHTML = `
+						<p>A <span class='part'></span> szavazatai: ${pv}</p>
+						<p>Bitang Botond és bandája szavazatai: ${bv}</p>
+					`;
+
+					basemes = "A polgármesteri választást ";
+					if (bv < pv) {
+						outcome = "pass";
+						result = "megnyertétek!!!";
+					} else {
+						outcome = "fail";
+						result = "elveszítettétek.";
+					}
+
+					break;
+
 				default:
 					break;
 			}
@@ -1180,43 +1203,45 @@ function _load() {
 					break;
 
 				case "kampány":
-					let baseline = char.lel / 60 + char.esz / 50 + char.hat / 40 + char.sup / 30 + prg / 10 + 0.5 * Math.random();
+					let baseline = char.lel / 60 + char.esz / 50 + char.hat / 40 + char.sup / 30 + prg / 5 + 0.5 * Math.random();
 					changeVal("hat", Math.floor(baseline));
 					changeVal("sup", Math.round(baseline * 10));
 					message("A támogatásod " + Math.round(baseline * 10) + " ponttal nőtt.");
 					break;
 
 				case "kampányhelp":
-					let bézelájn = char.lel / 50 + char.esz / 40 + char.hat / 30 + char.sup / 20 + prg / 5 + 0.5 * Math.random();
+					let bézelájn = char.lel / 40 + char.esz / 35 + char.hat / 30 + char.sup / 20 + prg / 5 + Math.random();
 					changeVal("hat", Math.floor(bézelájn));
-					switch (modi.charAt(0)) {
-						case "S":
-							room.obj = ["W_MÍVES MORDÁLY"];
-							bézelájn += 10 + Math.random() * 2;
-							break;
+					if (modi) {
+						switch (modi.charAt(0)) {
+							case "A":
+								bézelájn += 10 + Math.random() * 2;
+								break;
 
-						case "B":
-							room.obj = ["X_Büdös Berci"];
-							bézelájn += 9 + Math.random() * 2.5;
-							break;
+							case "S":
+								room.obj = ["W_MÍVES MORDÁLY"];
+								bézelájn += 9 + Math.random() * 2.5;
+								break;
 
-						case "A":
-							bézelájn += 8 + Math.random() * 3;
-							break;
+							case "B":
+								room.obj = ["X_Büdös Berci"];
+								bézelájn += 8 + Math.random() * 3;
+								break;
 
-						case "N":
-							bézelájn += 7 + Math.random() * 3.5;
-							let kaja = 1 + Math.floor(Math.random() * 5);
-							changeVal("ero", kaja * 3);
-							changeVal("lel", kaja * 2);
-							changeVal("ugy", kaja * 1);
-							break;
+							case "N":
+								bézelájn += 7 + Math.random() * 3.5;
+								let kaja = 1 + Math.floor(Math.random() * 5);
+								changeVal("ero", kaja * 3);
+								changeVal("lel", kaja * 2);
+								changeVal("ugy", kaja * 1);
+								break;
 
-						default:
-							break;
+							default:
+								break;
+						}
 					}
-					changeVal("sup", Math.round(bézelájn * 9));
-					message("A támogatásod " + Math.round(bézelájn * 9) + " ponttal nőtt.");
+					changeVal("sup", Math.round(bézelájn * 10));
+					message("A támogatásod " + Math.round(bézelájn * 10) + " ponttal nőtt.");
 					break;
 
 				case "lefegyverzés":

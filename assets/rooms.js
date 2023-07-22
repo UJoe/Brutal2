@@ -3739,9 +3739,9 @@ window.rooms = [
 		desc: `
       <p id="modified"></p>
       <p>
-        Rémülten rohanva próbálod menteni az életedet, de a szemed sarkából látod, hogy esnek el körülötted az agyonlőtt emberek. Hirtelen te is éles fájdalmat érzel a bal lapockádban... Majd a jobban... Elsőtétül a világ...
+        Rémülten rohanva próbálod menteni az életedet, miközben a szemed sarkából látod, hogy esnek el körülötted az agyonlőtt emberek. Hirtelen te is éles fájdalmat érzel a bal lapockádban... Majd a jobban... Elsőtétül a világ...
       </p>
-      <p>Kalandod itt véget ért, de most már tudod, hogy többet kellett volna készülnöd a Botival való csatára, mert ő nem egy egyszerű polgármester.</p>
+      <p>Kalandod itt véget ért.</p>
     `,
 	},
 	{
@@ -4350,6 +4350,7 @@ window.rooms = [
 		music: "gangwar",
 		pic: "sniper.gif",
 		goalpic: "exit.png",
+		obj: "X_Gárda",
 		desc: `
       <p>
         Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Branyiszkó-tér felé.
@@ -4369,8 +4370,8 @@ window.rooms = [
 				txt: "Meneküljünk!",
 			},
 		],
-		pass: 204,
-		fail: 205,
+		pass: 211,
+		fail: 115,
 	},
 	{
 		num: 138,
@@ -4566,8 +4567,8 @@ window.rooms = [
 			},
 			{
 				id: "sup",
-				crease: 15,
-				rnd: 10,
+				crease: 30,
+				rnd: 30,
 			},
 		],
 		Xchange: "kampány",
@@ -4810,7 +4811,7 @@ window.rooms = [
 		num: 154,
 		title: "A hited növelte a támogatást",
 		type: "normal",
-		music: "lightaction",
+		music: "heaven",
 		pic: "godsmile.PNG",
 		desc: `
 			<p>
@@ -4845,7 +4846,7 @@ window.rooms = [
 		num: 155,
 		title: "Nem tudsz hinni a sikerben",
 		type: "normal",
-		music: "lightaction",
+		music: "sad",
 		pic: "godnosmile.PNG",
 		desc: `
 			<p>
@@ -4855,13 +4856,13 @@ window.rooms = [
 		change: [
 			{
 				id: "sup",
-				crease: -50,
-				rnd: 50,
+				crease: -100,
+				rnd: 100,
 			},
 			{
 				id: "hat",
 				crease: -5,
-				rnd: 3,
+				rnd: 5,
 			},
 			{
 				id: "lel",
@@ -5006,7 +5007,7 @@ window.rooms = [
       `,
 		buttons: [
 			{
-				txt: "Mi a franc?!",
+				txt: "Mi a szösz?!",
 				new: 159,
 				modi: "- Elég beszélget! - mordul rád egy mély, rekedt hang erős szláv akcentussal. Ahogy megpördülsz, egy nagydarab fickó körvonalai bontakoznak ki a sötétségben. Lehet, hogy az egész csapda volt? Mindenestre meg kell vele küzdened, ráadásul a számodra ismeretlen terepen el sem tudsz előle menekülni, mert láthatóan ő jól lát téged, te viszont nem nagyon látod őt!"
 			},
@@ -6167,8 +6168,73 @@ window.rooms = [
 			},
 		],
 	},
-
-	//*
+	{
+		num: 199,
+		title: "Félig sikeres kampányakció",
+		type: "normal",
+		music: "slowguitar",
+		pic: "happymass.jpg",
+		desc: `
+      <p>
+       Bár nem sikerült az összes birkát megtalálnod, a nép azért értékeli az igyekezetedet. A <span class="part"></span> szerzett így is jó pár új szavazót. Kérdés, hogy elég lesz-e ez a győzelemhez?
+      </p>
+    `,
+		Xchange: "kampány",
+		buttons: [
+			{
+				txt: "Lássuk az eredményeket!",
+				new: 201,
+			},
+		],
+	},
+	{
+		num: 200,
+		title: "Sikertelen kampányakció",
+		type: "normal",
+		music: "darkbackground",
+		pic: "shockedmass.gif",
+		desc: `
+      <p>
+       A nép csalódott benned, mert nem tudtál segíteni nekik. Csúfosan távozol. A <span class="part"></span> elveszített jó pár szavazót. Kérdés, hogy tudtok-e így is győzni?
+      </p>
+    `,
+		change: [
+			{
+				id: "hat",
+				crease: -10,
+				rnd: 15,
+			},
+			{
+				id: "sup",
+				crease: -100,
+				rnd: 150,
+			},
+		],
+		buttons: [
+			{
+				txt: "Lássuk az eredményeket!",
+				new: 201,
+			},
+		],
+	},
+	{
+		num: 201,
+		title: "A polgármesteri választás",
+		type: "normal",
+		music: "democracy",
+		pic: "szavaz.png",
+		desc: `
+      <p>
+       Eljött a polgármesteri választás napja. A kisváros népe szorgosan járul a szavazóurnákhoz. A <span class="part"></span> összegyűlik a Rónai Művelődési Központ színháztermében, ahol nagy monitorokkal, riporterek gyűrűjében és egyre gyülekező lelkes rajongóitok előtt követitek nyomon, hogy vajon több szavazotot kapsz-e te és a pártod, mint Bitang Botond és bandája. Vajon mi lesz az eredmény a nap végén?
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Ne borzold tovább az idegeimet, lássuk most már tényleg a végeredményt!",
+				new: 204,
+			},
+		],
+	},
 	{
 		num: 202,
 		title: "A <span class='name'></span> Gárda bevette a Városházát",
@@ -6229,7 +6295,7 @@ window.rooms = [
 			},
 			{
 				id: "sup",
-				crease: -30,
+				crease: -40,
 				rnd: 30,
 			},
 		],
@@ -6240,7 +6306,16 @@ window.rooms = [
 			},
 		],
 	},
+	{
+		num: 204,
+		type: "Xtrial",
+		value: "választás",
+		pass: 205,
+		fail: 231,
+	},
 
+
+	//*
 	{
 		num: 208,
 		title: "Harc az óriásokkal",
@@ -6297,7 +6372,7 @@ window.rooms = [
 			},
 		],
 		pass: 211,
-		fail: 212,
+		fail: 115,
 	},
 	{
 		num: 211,
@@ -6338,19 +6413,7 @@ window.rooms = [
 			},
 		],
 	},
-	{
-		num: 212,
-		title: "Megöltek az ellenségek",
-		type: "death",
-		music: "difshots",
-		stopmusic: true,
-		pic: "shot.jpg",
-		desc: `
-      <p>
-				Egyre több golyó talál el, ahogy botladozva menekülsz. Érzed, ahogy egyre jobban elhagy az erőd és semmit sem tehetsz. Végül elsötétül a világ. Kalandod itt véget ért...
-			</p>
-    `,
-	},
+	,
 ];
 
 //220!	- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az élketükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
