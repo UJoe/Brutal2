@@ -278,6 +278,32 @@ window.sprites = [
 		desc: "Észrevétlenül mozgó, kemény kis erdei lények, akik tisztelik a fákat.",
 		sound: "bübü-beep",
 	},
+	{
+		name: "Vadfa",
+		vip: false,
+		pic: "beast3.jpg",
+		att: 110,
+		def: 75,
+		hp: 140,
+		cr: 1,
+		range: 2,
+		spec: "lopakodás",
+		desc: "Észrevétlenül mozgó, kemény és vad fa, aki hosszúra tudja nyújtani az ágait.",
+		sound: "giantroar",
+	},
+	{
+		name: "Bestia",
+		vip: false,
+		pic: "beast4.jpg",
+		att: 145,
+		def: 60,
+		hp: 100,
+		cr: 3,
+		range: 1,
+		spec: "távolugrás",
+		desc: "Gyors és hatalmas ugrásokra képes erdei szörnyeteg.",
+		sound: "beast",
+	},
 ];
 
 window.armies = {
@@ -288,7 +314,9 @@ window.armies = {
 	böszörményi: "4 Szekus, 3 Tüzér, 3 Izomagy",
 	gárda: "5 Tüzér, 3 Izomagy, 2 Paraszt, 1 Indián, 1 Favágó, 1 Távolugró",
 	pórnép: "4 Paraszt, 4 Favágó, 4 Íjász, 1 Indián, 1 Távolugró, 1 Izomagy",
-	óriások: "2 Óriás"
+	óriások: "2 Óriás",
+	erdő: "1 Ügyes Frigyes, 5 Vadfa, 5 Bestia",
+	éjjeliműszak: "2 Tüzér, 2 Izomagy, 2 Szekus, 1 Favágó"
 };
 
 window.specvoices = {

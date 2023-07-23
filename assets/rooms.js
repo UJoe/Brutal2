@@ -6264,7 +6264,6 @@ window.rooms = [
 			{
 				txt: "Keressük meg ezt a bitangot!",
 				new: 209,
-				modi: 2,
 			},
 		],
 	},
@@ -6310,9 +6309,141 @@ window.rooms = [
 		pass: 205,
 		fail: 231,
 	},
-
-
-	//*
+	{
+		num: 205,
+		title: "A <span class='name'></span> átveszi a hatalmat a város felett",
+		type: "normal",
+		music: "happyDance",
+		pic: "happymass.jpg",
+		desc: `
+      	<p>
+					Amint meglátjátok a végső eredményt, hatalmas üdvrivalgásba tör ki mindenki a teremben. Felbontjátok az előre behűtött pezsgőket, vidáman koccintotok, majd kivonultok az utcára.
+				</p>  
+				<p>
+        	Az utcán hatalmas tömeg vár titeket, mindenhol örömmámorban úszó és téged éljenző embereket láttok. Megállsz és a tömegbe dobod a pezsgődet. Mindenki ráveti magát, hogy a kétszeres hősük után igyon belőle. Te pedig ünnepélyes, örömteli arccal belekezdesz a beszédedbe.
+      	</p>
+				<p>
+					- Győztünk! - hatalmas őrjöngés, tüzijátékokat lőnek fel. Vársz egy kicsit, hogy kiörüljék magukat, aztán intesz, hogy szeretnéd folytatni.- Nem csak mi, a <span class="part"></span>, hanem mi, az egész város, benne ti is, akiknek köszönhetjük győzelmünket! Köszönjük, hogy támogattatok szavazataitokkal minket, most pedig a <span class="part"></span> hozzáfog, hogy megvalósítsa ígéreteit.
+				</p>
+				<ol id="pp"></ol>
+				<p>
+					Mindegyik pont után hatalmas örömújjongásba tör ki a nép. Vársz sok percet, amíg végre kicsit elhalkulnak, majd emelt hangon folytatod:
+				</p>
+				<p>
+					- És ezen kívül még sok másban is egy szebb jövőt fogunk elhozni a városnak. Hiszen véget ért a zsarnokság. Először Battle Beatle és bandájának körmönfont zsarnokságának vetettem véget, most pedig közösen megállítottuk Bitang Botond és bandájának nyílt zsarnokságát! Foglaljuk tehát el méltó helyünket és űzzük el a csúfosan vereséget szenvedett bitangot! Irány a Városháza!
+				</p>
+				<p>
+					A tömeg lelkesen megindul veled. A Városházánál már vár titeket Bitang Botond és testőrserege. Egy pillanatra megfordul benned a gondolat, hogy mi van, ha most a tömegbe lőnek, de szerencsére nem ez történik. Botond odamegy hozzád. Az arca meggyötörtnek tűnik, de azért próbál diplomatikus kifejezést magára erőltetni. Kezet ráztok.
+				</p>
+				<p>
+					- Gratulálok! Tisztességes küzdelemben győztél. Elismerem, hogy te vagy a város hőse, a nép téged akar vezetőnek. Elvonulunk mindnyájan egy másik városba. Átadom neked a várost és a Városházát. Holnapra a technikusok elintézik a belépést és tiéd lesz itt minden - mondja, de utána az arcán egy furcsa, titokzatos kifejezés jelenik meg, és közelebb hajol hozzád. Suttogva mondja, hogy csak te halld.
+				</p>
+			`,
+		obj: ["V_demokratikus hatalomátvétel"],
+		change: [
+			{
+				id: "hat",
+				crease: 100,
+			},
+		],
+		buttons: [
+			{
+				txt: "Mit mond?",
+				new: 233,
+			},
+		],
+	},
+	{
+		num: 206,
+		title: "Fricivel a háztetőn",
+		type: "normal",
+		music: "actionincrease",
+		pic: "snipers.JPG",
+		desc: `
+      <p>
+       Miután sikeresen kiiktattátok a házmestert, elhelyezkedtek a tető szélén. Frici odaad neked egy távcsövet, hogy te is lásd, amit ő lát, aztán lehasal és a párkányra támasztja Hugót. Te is belenézel a távcsőbe. Megkeresed a Branyiszkó-teret és mégjobban ráközelítesz. Egy emelvényen mond beszédet Bitang Botond. Lélegzetvisszafojtva nézed. Aztán egy halk kattanás és a polgármester hanyatt vágódik.
+      </p>
+      <p>
+       - Fejlövés, nem éli túl. Most viszont húzzunk, mert ha profik, bemérhettek! - mondja Boti, azzal futni kezd a lépcsőház felé. Követed.
+      </p>
+			<p>
+				Amikor az utcára kiléptek, Frici normál lépéstempóra kapcsol és elkezd mesélni arról, milyen jó bablevest evett egyszer Annuska éttermében. Hugót már a lépcsőházban a kabátja mélyére rejtette. Profi a fickó. Te is felveszed az álcát és mindenféle kajáról beszéltek, amíg szép nyugodt tempóban el nem éritek Betyárt. Senki nem állított meg. Bepattantok, és Frici azonnal indít.
+			</p>
+			<p>
+				- Sietnünk kell, mert biztosan hajtóvadászat kezdődik és a várost is lezárják mindjárt, de innen hamar kijutunk! - mondja gyorsan és már húztok is az erdő felé. Eszes fickó, mindent jól tervezett el. Amikor már a hegyi utakon robogtok, ismét megszólal: 
+			</p>
+			<p>
+			- Oké, <span class="name"></span>, én teljesítettem a rám eső részt, Bitang Botond halott. Hogy tervezed ezután a hatalomátvételt?
+			</p>
+			<p>
+				- Holnap bemegyünk a Fő-térre és meglátjuk, milyen a hangulat. A városnak vezető kell, és erre én vagyok a legalkalmasabb. Már kétszer mentettem meg őket egy zsarnoktól. Másodszor a te segítségeddel, így téged is szeretni fognak. Csak kell egy jó beszéd és nyert ügyünk van.
+			</p>
+			<p>
+				Nem nagyon tervezted meg ennek a részleteit, de magabiztos vagy. Csak nem olyan hülye a nép, hogy a szabadítóját elveti. Bár pontosan nem tudod, milyen ellenállással kell szembenézned.
+			</p>
+			<p>
+				Nemsokára megérkeztek Frici titkos erdei kunyhójába. Először lépsz be ide. Nagyon zsúfolt, roskadásig tele van mindenféle furcsa tárggyal. Frici egy üllőn gyors vacsorát rögtönöz, azt követően pedig az egyik szekrényt eldőlti, aminek a hátsó fele egy teljesen jó ágy, amin ketten is elfértek. Mivel nincs más lehetőség, itt tértek nyugovóra.
+			</p>
+    `,
+		obj: ["X_Boti"],
+		change: [
+			{
+				id: "ero",
+				crease: 4,
+				rnd: 1,
+			},
+			{
+				id: "sup",
+				crease: 10,
+				rnd: 30,
+			},
+		],
+		buttons: [
+			{
+				txt: "Jó éjt!",
+				new: 234,
+			},
+		],
+	},
+	{
+		num: 207,
+		title: "Fricivel helyetted végzi el a munkát",
+		type: "normal",
+		music: "actionincrease",
+		pic: "frici.JPG",
+		desc: `
+      <p>
+       Látván gyáva megfutamodásod, Frici előkap egy kalapácsot és szakszerűen a földbe kalapálja a házmestert, majd a biztonság kedvéért egy harapófogóval kihúzza a nyelvét és egy irdatlan nagy csavart fúr át a koponyáján, amivel rögzíti a padlón.
+      </p>
+      <p>
+       - Mindent nekem kell csinálnom?! - kérdezi sértődötten. És jogosan. 
+      </p>
+			<p>
+				- Na, azért én kezdtem el, te csak befejezted! De most ne ezen vitatkozzunk, hanem szedjük le Botit!
+			</p>
+			<p>
+				- Szedjük?!
+			</p>
+		`,
+		change: [
+			{
+				id: "hat",
+				crease: -10,
+				rnd: 15,
+			},
+			{
+				id: "sup",
+				crease: -10,
+				rnd: 10,
+			},
+		],
+		buttons: [
+			{
+				txt: "Hagyjuk már az érzelmes részleteket, akció!",
+				new: 206,
+			},
+		],
+	},
 	{
 		num: 208,
 		title: "Harc az óriásokkal",
@@ -6349,7 +6480,39 @@ window.rooms = [
 		pass: 198,
 		fail: 200,
 	},
-
+	{
+		num: 209,
+		title: "Boti keresése a Városházán",
+		type: "dungeon",
+		pic: "corridor.gif",
+		music: "actionicrease",
+		desc: "<p>Járkálsz keresztül-kasul a Városháza elegáns folyosóin és szobáin át. MIndenképpen meg kell találni Bitang Botit!<p>",
+		contBtn: "Tovább keresel",
+		passBtn: {
+			txt: "Megvagy!",
+			new: 235,
+		},
+		passDesc: "<p>Az egyik zárt szoba ajtaját berúgva üres szobába lépsz be. Valami gyanús. Ahogy fülelsz, halk zihálást hallasz az egyik szekrényből. Odalépsz és felrántod az ajtaját. Boti az, teljesen halálra rémülve!</p>",
+		fight: 212,
+		end: 20,
+		find: [
+			"W_SZEGECSES BŐRDZSEKI",
+			"W_GYILOK",
+			"W_PÁNCÉL",
+			"W_GÉPFEGYVER",
+			"W_OSTOR",
+			"W_SÁRKÁNYVÉR",
+			"W_ROBI",
+			"W_PETÁRDA",
+			"W_KÉZIGRÁNÁT",
+			"W_KIS ERŐITAL",
+			"W_NAGY ERŐITAL",
+			"W_DIABOLIKUS SZTEROID",
+			"W_KONYHAKÉS",
+			"W_PÁLINKÁS FLASKA",
+		],
+		findmany: 7,
+	},
 	{
 		num: 210,
 		title: "Üldözés a sereged kudarca után",
@@ -6410,7 +6573,27 @@ window.rooms = [
 			},
 		],
 	},
-	,
+	{
+		num: 212,
+		title: "Harc a Városháza megmaradt őrével",
+		type: "fight",
+		pic: "kidobo.jpg",
+		nmepic: "kidobo.jpg",
+		dungeon: true,
+		level: 3,
+		desc: `
+      <p>
+       Egy megmaradt őrbe botlasz bele.
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Állj félre az utamból!",
+			},
+		],
+		pass: 209,
+		fail: 209,
+	},
 ];
 
 //220!	- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az élketükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.

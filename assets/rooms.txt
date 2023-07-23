@@ -205,10 +205,10 @@
 206 - Fricivel a háztetőn ("Miután sikeresen kiiktattátok a házmestert...")
 207 - Frici lecsapja a házmestert (mivel feladtad a harcot, -hat, -sup. => 206)
 208 - Harc a hegyi óriásokkal (kampányhelp!)
-209 - Bitang Botond keresése a Városházán (dungeon, szint modiban)
+209 - Bitang Botond keresése a Városházán (dungeon, hosszabb)
 210 - Üldözés a kudarcot vallott harc (gárda vagy Erdeiék stb.) után (level 10 pursuit)
 211 - Céltalanná vált élet ( => piac, 113)
-212 - Megöltek téged is (death)
+212 - A városházi dungeon (209) fightja, egyszerűbb szint
 213 - Erdei Zsolt és a bübük elmossák Bitang Botond uralmát (normal Szállj el kismadár)
 214 - Erdei Zsolt és a bübük megküzdenek Bitang Botondékkal (finalwar : 215, 210)
 215 - Győzelem Erdei Zsoltékkal
@@ -228,8 +228,10 @@
 229 - Jelszóbeírás a server szobában (input)
 230 - Sikeresen bejutsz a serverbe (modified: jelszó vagy hacker)
 231 - Elbuktátok a választást (=> END)
-232 - END
-
+232 - Botondos vég (Boti utal a földönkívüliekre, átveszed a hatalmat = 233)
+233 - END (dolgos hétköznapok, cond: V, aztán elrabolnak az ufók)
+234 - Éjjeli harc az erdőben (finalwar: erdő + éjjeliműszak, + fegyvereket kapsz)
+235 - Boti megtalálása a Városházán (=> 232?)
 
 
 

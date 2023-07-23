@@ -16,6 +16,7 @@ X - megölve
   Bogi
   Kocsmatöltelékek
   Erdei Zsolt
+  Boti
   
 J - szövetséges (join)
   Gárda
@@ -66,3 +67,6 @@ H - segítés (help)
   Brünhilda
   Csongika
   Yendela hercegnő
+
+V - vége
+  demokratikus hatalomátvétel

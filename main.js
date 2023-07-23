@@ -559,7 +559,6 @@ function _load() {
 
 	//Új Helyszín
 	window.newRoom = () => {
-		console.log("MODI: ", modi);
 		clearTimers();
 		room = {};
 		let num = rooms.findIndex((r) => r.num === char.room);
@@ -633,8 +632,8 @@ function _load() {
 						txt: room.contBtn,
 						new: room.num,
 					},
-					room.failBtn,
 				];
+				if (room.failBtn) room.buttons.push(room.failBtn);
 				let event = Math.random();
 				if (event < 0.4 || dungeon == 1) {
 					nobject = "<p>Semmi említésre méltó nem történik.</p>";
@@ -884,8 +883,8 @@ function _load() {
 					if (bv === pv) bv -= 1;
 
 					main.innerHTML = `
-						<p>A <span class='part'></span> szavazatai: ${pv}</p>
-						<p>Bitang Botond és bandája szavazatai: ${bv}</p>
+						<p>A ti szavazataitok: ${pv}</p>
+						<p>Boti szavazatai: ${bv}</p>
 					`;
 
 					basemes = "A polgármesteri választást ";
@@ -1798,7 +1797,7 @@ function _load() {
 		function pressMine(e) {
 			let mineX = Number(e.target.id.split("-")[1]);
 			let mineY = Number(e.target.id.split("-")[2]);
-			if (field[mineX][mineY][0] === true) return;
+			if (field[mineX][mineY][0] === true || char.ero < 1) return;
 			let nearAkna = 0;
 			let nearKincs = 0;
 			field[mineX][mineY][0] = true;
