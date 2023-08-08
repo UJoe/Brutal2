@@ -211,11 +211,11 @@
 212 - A városházi dungeon (209) fightja, egyszerűbb szint
 213 - Erdei Zsolt és a bübük elmossák Bitang Botond uralmát (normal Szállj el kismadár)
 214 - Erdei Zsolt és a bübük megküzdenek Bitang Botondékkal (finalwar : 215, 210)
-215 - Győzelem Erdei Zsoltékkal
-216 - Bogi vallatása a fagyigyárban (Bogi szeret)
-217 - Bogi vallatása a fagyigyárban (Bogi nem szeret)
+215 - Győzelem Erdei Zsoltékkal (casualties, V)
+216 - Bogi terve
+217 - Szakítás Bogival
 218 - Boti emberei elkapnak a piacról hazafelé
-219 - Találkozol valakivel a piacról hazafelé (XChange: ismerős mégis segít)
+219 - Céltalan éldegélés, amíg nem tör ki a lázadás (finalwar összes J-vel)
 220 - Erdei Zsolt és a bübük (comment! utána próbák vagy love (egyből gomb) a bübüszimathoz)
 221 - Ugy trial (sikerül-e leszedni Botit fúvócsővel)
 222 - Megölted Bitang Botondot
@@ -224,14 +224,19 @@
 225 - Szenyamuki nem segít nektek (ködharc, fog)
 226 - Bitang Botond üldözése (casualties! - nyertes téri csata után, pursuit)
 227 - Bitang Botond elkapása (fight)
-228 - Bitang Botond meglógott => piac
+228 - Bitang Botond meglógott => piac - 113
 229 - Jelszóbeírás a server szobában (input)
 230 - Sikeresen bejutsz a serverbe (modified: jelszó vagy hacker)
-231 - Elbuktátok a választást (=> END)
-232 - Botondos vég (Boti utal a földönkívüliekre, átveszed a hatalmat = 233)
-233 - END (dolgos hétköznapok, cond: V, aztán elrabolnak az ufók)
-234 - Éjjeli harc az erdőben (finalwar: erdő + éjjeliműszak, + fegyvereket kapsz)
+231 - Elbuktátok a választást (=> 219)
+232 - Botondos vég (Boti utal a földönkívüliekre, átveszed a hatalmat)
+233 - A Feneketlen-tónál
+234 - Éjjeli harc az erdőben (finalwar: vadállatok + éjjeliműszak, + fegyvereket kapsz)
 235 - Boti megtalálása a Városházán (=> 232?)
+236 - Házasság Zsolttal (V)
+237 - A Városháza elfoglalása (modi - END - UFOK?)
+
+
+
 
 
 

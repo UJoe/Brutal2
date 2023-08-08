@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 0; //startroom
+		char.room = 112; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -1526,7 +1526,7 @@ function _load() {
 	function pursuitAct() {
 		let counter = char.ero;
 		let pos = 5;
-		if (modi) {
+		if (typeof modi == "number") {
 			message("A késlekedés miatt már csak hideg nyomon haladsz.");
 		} else {
 			modi = 1;
@@ -3920,7 +3920,7 @@ function _load() {
 					? strongest(arr)
 					: u.name === "Indián" || u.hp < (u.ohp * Math.random()) / 3
 						? weakest(arr)
-						: u.hp > 0.5 + (u.ohp * Math.random()) / 2
+						: (u.hp > 0.5 + (u.ohp * Math.random()) / 2) || u.name === "Erdei Zsolt"
 							? closest(u, arr)
 							: bestmatch(u, arr);
 		}

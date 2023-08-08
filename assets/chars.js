@@ -245,7 +245,7 @@ window.sprites = [
 		pic: "kocsmatöltelékek.jpg",
 		att: 80,
 		def: 30,
-		hp: 160,
+		hp: 250,
 		cr: 1,
 		range: 1,
 		spec: "részegség",
@@ -257,12 +257,12 @@ window.sprites = [
 		vip: true,
 		pic: "erdei.jpg",
 		att: 150,
-		def: 75,
+		def: 100,
 		hp: 200,
 		cr: 3,
 		range: 1,
 		spec: "kiütés",
-		desc: "Az eltalált ellenfelet hátraüti.",
+		desc: "Az eltalált ellenfelet hátraüti, ha van hely.",
 		sound: "hit18",
 	},
 	{
@@ -315,8 +315,9 @@ window.armies = {
 	gárda: "5 Tüzér, 3 Izomagy, 2 Paraszt, 1 Indián, 1 Favágó, 1 Távolugró",
 	pórnép: "4 Paraszt, 4 Favágó, 4 Íjász, 1 Indián, 1 Távolugró, 1 Izomagy",
 	óriások: "2 Óriás",
-	erdő: "1 Ügyes Frigyes, 5 Vadfa, 5 Bestia",
-	éjjeliműszak: "2 Tüzér, 2 Izomagy, 2 Szekus, 1 Favágó"
+	vadállatok: "1 Ügyes Frigyes, 5 Vadfa, 5 Bestia",
+	éjjeliműszak: "2 Tüzér, 2 Izomagy, 2 Szekus, 1 Favágó",
+	erdeiék: "1 Erdei Zsolt, 12 Bübük"
 };
 
 window.specvoices = {

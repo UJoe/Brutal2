@@ -57,7 +57,8 @@ E - egyéb események (events)
   love Zsolt
   love Bogi
   Bogi kavar
-
+  szakítás Bogival
+  
 H - segítés (help)
   Pirike
   Mari néni

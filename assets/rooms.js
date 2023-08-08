@@ -3674,8 +3674,9 @@ window.rooms = [
 		},
 		passDesc: "<p>Eleget vásároltál.</p>",
 		fight: 162,
-		end: 15,
+		end: 25,
 		find: [
+			"W_PROTONÁGYÚ",
 			"W_SZEGECSES BŐRDZSEKI",
 			"W_CSÚZLI",
 			"W_ROZSDÁS BÖKŐ",
@@ -3691,8 +3692,10 @@ window.rooms = [
 			"W_NAGY ERŐITAL",
 			"W_SÁRKÁNYVÉR",
 			"W_KÉZIGRÁNÁT",
+			"W_VARÁZSPOR",
+			"W_ROBI",
 		],
-		findmany: 7,
+		findmany: 8,
 	},
 	{
 		num: 114,
@@ -4984,13 +4987,13 @@ window.rooms = [
 	},
 	{
 		num: 160,
-		title: "Bogi terve",
+		title: "Bogi háttere",
 		type: "normal",
 		music: "gravenight",
 		pic: "darkbogi-face.jpg",
 		desc: `
       <p>
-        - Te vagy az, Bogi? - kérdezed és teszel néhány lépést felé. Ő egy kicsit arrébb lép, így félig ráesik a fény az arcára. Nem vagy benne biztos, de talán ő az - smink nélkül. Még közelebb mész. Amikor egész közel vagy, már biztos vagy benne, hogy ő az. Halkan megszólít:
+        - Te vagy az, Bogi? - kérdezed és teszel néhány lépést felé. Ő egy kicsit arrébb lép, így félig ráesik a fény az arcára. Nem vagy benne biztos, de talán ő az. Még közelebb mész. Amikor egész közel vagy, már biztos vagy benne, hogy ő az. Halkan megszólít:
       </p>
       <p>
         - Nincs sok időnk, <span class="name"></span>, így gyors leszek. Boti titkos szeretője vagyok! <span class="cond" data-cond="E_love Bogi">- láthatóan gyorsan akarta ezt kimondani, de erős érzelmek dúlnak benne. Te is meglepődsz és haragot érzel. - </span>De utálom őt! Egy undorító féreg! De nem tudok tőle szabadulni, mert mindenütt ott vannak az emberei - itt tart egy kis szünetet, fürkészően nézve szavai hatását. Érzed, hogy csak egyféleképpen tudsz válaszolni...
@@ -4999,10 +5002,7 @@ window.rooms = [
 				- Megszabadítalak tőle! - Bogi arcán megkönnyebbült mosoly suhan át. - De úgy emlékszem, tegnap azt mondtad, hogy segítesz nekem.
 			</p>
 			<p>
-				- Így van! - suttogja és közelebb lép hozzád. <span class="cond" data-cond="E_love Bogi"> - Én most visszamegyek hozzá, mert a ma estét velem akarja tölteni. Ráveszem, hogy jöjjön ki velem a Feneketlen-tóhoz. Csak egy kocsival megyünk, egy testőrt hoz és a sofőrt. Van a tó mellett egy csónakház. Rejtőzz el ott és én odacsalom. 
-			</p>
-			<p>
-				Ekkor hirtelen nesz hallatszik oldalról, de a sötétben nem látszik semmi. Bogira nézel, de nem tudod biztosan megállapítani az arcáról, hogy mi történik. Valaki viszont megragadja a vállad.
+				- Így van! - suttogja és közelebb lép hozzád. Már szólásra nyílik az ajka, de hirtelen nesz hallatszik oldalról és mindketten odafordultok. A sötétben nem látszik semmi. Bogira nézel, de nem tudod biztosan megállapítani az arcáról, hogy mi történik. Valaki viszont megragadja a vállad.
 			</p>
       `,
 		buttons: [
@@ -5015,10 +5015,43 @@ window.rooms = [
 	},
 	{
 		num: 161,
-		type: "Ytrial",
-		value: "E_love Bogi",
-		pass: 216,
-		fail: 217,
+		title: "Bogi vallatása",
+		type: "normal",
+		music: "gravenight",
+		pic: "darkbogi-face.jpg",
+		desc: `
+				<p>
+					Miután sikerült legyűrnöd a támadót, Bogihoz ugrasz és megragadod.
+				</p>
+				<p>
+					- Mi volt ez? És ki volt ez?!
+				<p>
+				<p>
+					Bogi annyira reszket, hogy önkénelenül is engedsz a szorításon. 
+				</p>
+				<p>
+					- Ne haragudj! Azt hittem, titokban ide tudok jönni, de ezeket nem lehet lerázni. Barom Borisz, Boti embere, követett, elkapott és kényszerített, hogy mondjam el, hova jövök. Mondtam, hogy csak fagyizni, de tudta, hogy a fagyigyár már nem működik és innentől gyanús lett neki a dolog. Rájött, hogy valakivel találkozni akarok. Mivel kíváncsi volt, hogy kivel, mondta, hogy jöjjek tovább. Ezután szerintem felismert téged és valamiért meg akart ölni. 
+				</p>
+				<p>
+					Elgondolkodsz. Sok barom akart már megölni téged, ez igaz, és valószínűleg Boti is meghallhatta már, hogy a vezetői székére pályázol. De mi van akkor, ha Bogi mégsem mond igazat? Ha direkt ő hozta el Boriszt, hogy végezzen veled és ez az egész csak csapda volt? Ha mégis teljesen Boti embere Bogi? Végülis, neki is B-vel kezdődik a neve... Bár a vezetéknevét nem tudod... Ez egy őrület!
+				</p>
+				<p class="cond" data-cond="E_love Bogi">
+				 Bogi mintha olvasna a gondolataidban, könnyes szemmel elkezd neked könyörögni: 
+				</p>
+				<p class="cond" data-cond="E_love Bogi">
+				 - Tudom, hogy most azt hiszed, mi van, ha az egész csak egy csapda volt és Boti embere vagyok én is. Elárulom neked azt, amit senki sem tud: valójában Wakana Ootaki vagyok, a Kalafina együttes egykori énekesnője, a Bogi csak felvett név - azzal elővesz egy kendőt és elkezdi törölni az arcáról a sminket. Még ebben a félhomályban is látod, milyen döbbenetes változáson megy át. Tényleg Wakana az, gyerekkorod kedvence! Könnyes szemmel, szenvedélyesen folytatja: - Ezt senki nem tudja! A neoszamurájok lázadása után menekültem ide, és mivel nehéz volt új életet kezdeni, örültem, amikor felkarolt Bodri papa, majd Boti. Bodri papa rendes fickó, teljesen korrekt üzleti kapcsolatunk van, de Boti fertelmes! Szabadulni akarok tőle! És... és szeretlek! Téged szeretlek, tiszta szívemből, amióta csak megláttalak! Kérlek, higgyél nekem és ments meg!
+				</p>
+				`,
+		buttons: [
+			{
+				txt: "Hiszel neki",
+				new: 216,
+			},
+			{
+				txt: "Nem hiszel neki",
+				new: 217,
+			},
+		],
 	},
 	{
 		num: 162,
@@ -6349,7 +6382,7 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Mit mond?",
-				new: 233,
+				new: 232,
 			},
 		],
 	},
@@ -6594,7 +6627,220 @@ window.rooms = [
 		pass: 209,
 		fail: 209,
 	},
+	{
+		num: 213,
+		title: "Győzelem Erdeiékkel",
+		type: "normal",
+		music: "kismadár",
+		pic: "erdei.jpg",
+		desc: `
+      	<p>
+					- Hát akkor vegyük át a hatalmat, szerelmem! - szól Zsolt, majd a bübük felé fordul: - Zene!
+				</p>  
+				<p>
+        	Nem tudod honnan, de elindul egy ismert sláger, ami valahogyan érzed, hogy Zsolthoz kötődik. Ő mosolyogva, határozott, döngő léptekkel elindul a város felé. A lények lelkesen követik. Végigmentek az utcákon egyenesen a Városházához. Itt az őrök nektek szegezik a fegyvert, de Zsolt csak nevet egy nagyot, és szól, hogy indul a meccs!
+      	</p>
+				<p>
+					Ami ezután történik, azt nehéz felfogni és leírni. Zsolt pillanatok alatt hatalmas ütésekkel szétveri az egész őrséget. Hihetetlenül nagy ívben repkednek szét az emberek, ilyet eddig csak a DC univerzumról szóló filmekben láttál! Az összetört, földet ért emberekre a bübük vetik rá magukat és ágaikkal megfojtják őket vagy egyszerűen eltörik a gerincüket. Félelmetes, mire képesek ezek az aranyos, vidám, mesebeli lények. A távolabb álló őrök első döbbenetükből magukhoz térve tüzet nyitnak Zsoltra és a bübükre, de Zsolt kemény izmairól lapos kis konfettikként pattannak le a golyók. A bübük kemény bőre (kérge?) szintén áthatolhatatlannak tűnik. De nem is vagy benne biztos, hogy eltalálják-e őket, mert nagyon gyorsan mozognak, kicsik és könnyen beolvadnak a környezetbe. Zsolt közben ide-oda szökell és osztja iszonyatos ütéseit. Időd sincs felfogni nagyon, hogy mi történik, mire egyszercsak azt veszed észre, hogy nincs több őr a városháza körül. Zsolt huncutul rád kacsint, majd feltépi a hatalmas kaput és félredobja.
+				</p>
+				<p>
+					- Keressük meg a Bitangot! - adja ki az utasítást Zsolt, majd mosolyogva feléd fordul: - Várj meg itt, mindjárt hozzuk!
+				</p>
+				<p>
+					Ezután mind berohannak a nagy épületbe. Félúton elfojtott kiáltások, nagy puffanások hallatszanak, időnként pedig biztonsági őrök zuhannak ki a bezárt ablakokon keresztül nagy csörömpöléssel. Nem kell sokáig várnod, nemsokára megjelenik ismét Zsolt és mögötte egyre több bübü. Zsolt kezében Bitang Botond van, akit labdaként dobál, dekázik vele vagy súlyzó gyanánt a vállára rak és csinál pár guggolást - miközben folyamatosan közeledik feléd. Végül hanyagul eléd dobja a földre a több testi és lelki sebtől vérző, remegő zsarnokot.
+				</p>
+				<p>
+					- Könyörüljetek rajtam! Minden megadok, amit csak kértek! Nem is értem, mi ez az egész... - hebegi Boti. Zsolt megelőz a válasszal:
+				</p>
+				<p>
+					- Nem érted?! Te és a gengszter bandád évek óta élősködik a városon. Romokban az oktatás, az egészségügy és legális, tiszta boxmeccseket sem lehetett tartani! Hogyan lehetne így utánpótlást nevelni, ha minden meccset megbundáztál, hogy a te embereid nyerjenek! Nincs egy meg nem vett bíró ebben a városban! Az illegális meccseken meg csak a drog és a teljesítményfokozó megy, szabályok nélkül! Ki kellett mennem az erdőbe, hogy farönköket dobálva és köveket ütve fejlesszem az ütőerőmet ekkorára! Csak természetes módon, erdei étrenden élve el lehet érni ilyen erőt, ha elhiszed, hogy képes vagy rá! Na de minek, ha nem tudok tisztességes meccseken további bajnoki öveket szerezni? Hát maradtam az erdőben és védelmeztem azt. Hogy ne jöjjön be legalább oda az a szenny és rothadás, ami belőled árad! A Gyehenna bűzhödt lehelete lehet olyan, mint a tiéd! - mondja egyre jobban átszellemülve, majd rád néz elérzékenyült arccal és folytatja: - De akkor jött <span id="fullName"></span>, egy igazi hős, egy tiszta nő! Ő győzött meg arról, hogy ki kell lépnem az erdő nyújtotta komfortzónából, és meg kell tisztítani tőled és toxikus kipárolgásodtól a várost! Vissza kell hozni a tiszta sportot az emberek életébe, aminél nincs jobb jellemfejlesztő! A sport megtanít győzni és veszíteni, a sport mindenre megtanít!
+				</p>
+					Mindenki e nagyívű költői szónoklat hatása alá kerülve hallgat pár percig. Aztán úgy érzed, illene neked is megszólalni.
+				<p>
+					- Igen, pontosan így gondolom én is, ahogyan Zsolt kiválóan összefoglalta. Plusz még annyit tennék hozzá, hogy a sporton kívül minden más területet is fejleszteni fogok a magam részéről, hogy az emberek végre méltó körülmények között éljenek itt, és szabadon kibontakozhassanak! Te pedig útban vagy! - kiáltasz fel, azzal lerúgod a nyakáról Boti fejét. Zsolt teljesítménye tényleg motiválóan hatott a tiédre is, remek edző lesz belőle! Ő elismerően csettint egyet.
+				</p>
+				<p>
+					Ekkor mindenki hatalmas örömújjongásba tör ki. Most látod, hogy nagy tömeg gyűlt körétek, és most ők is kitörő lelkesedéssel fogadják a fordulatot és titkeket éljeneznek. Az őrjöngő tömeg meghitt gyűrűjében Zsolt feléd fordul és felteszi a kérdést:
+				</p>
+				<p>
+					- Leszel a feleségem?
+				</p>
+			`,
+		obj: ["X_Boti"],
+		change: [
+			{
+				id: "hat",
+				crease: 100,
+			},
+		],
+		buttons: [
+			{
+				txt: "Igen",
+				new: 236,
+			},
+			{
+				txt: "Nem",
+				new: 237,
+				modi: "Válaszodat hallva Zsolt elkomorult arccal lehorgasztja a fejét. Megsajnálod szegényt, és mivel nem akarod elrontani az ünnepi hangulatot, rögtön megfogod a kezét és mosolyogva így szólsz: - De szívesen alapítok veled egy sportegyesületet!</p>Zsolt arca felderül. Vagy kielégíti ez a válasz is, vagy új lehetőséget lát benne arra, hogy mégis meghódítson. Meglátjátok majd, mit hoz a jövő, de most inkább ünneplitek a győzelmet.<p>"
+			},
+		],
+	},
+	{
+		num: 214,
+		title: "A városháza megostromlása Eredeiékkel",
+		type: "finalwar",
+		friends: "erdeiék",
+		enemies: "városháza",
+		music: "kismadár",
+		pic: "townhall.JPG",
+		desc: `
+			<p>
+				- Hát akkor vegyük át a hatalmat! - szól Zsolt, majd a bübük felé fordul: - Zene!
+			</p>  
+			<p>
+				Nem tudod honnan, de elindul egy ismert sláger, ami valahogyan érzed, hogy Zsolthoz kötődik. Ő mosolyogva, határozott, döngő léptekkel elindul a város felé. A lények lelkesen követik. Végigmentek az utcákon egyenesen a Városházához. Itt az őrök nektek szegezik a fegyvert, de Zsolt csak nevet egy nagyot, és szól, hogy indul a meccs!
+			</p>
+      <i>
+      <p>
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+      </p>
+      <p>
+        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+      </p>
+      <p>
+        Jó szórakozást!
+      </p>
+      </i>
+    `,
+		buttons: [
+			{
+				txt: "Kapjátok el őket!",
+			},
+		],
+		pass: 215,
+		fail: 210,
+	},
+	{
+		num: 215,
+		title: "Győzelem Erdeiékkel",
+		type: "normal",
+		music: "kismadár",
+		pic: "erdei.jpg",
+		desc: `
+      	<p>
+					Leaíratatlan csatának voltáűl tanúja! Miközben Zsolt hatalmas ütésekkel verte szét az őröket, a bübük tökéletesen rejtőzködve támadtak rájuk. Vagy Zsolt körül repkedtek az emebrek, vagy hirtelen más őrök hullottak el láthatóan a semmitől. Időd sem volt felfogni nagyon, hogy mi történik, mire egyszercsak azt veszed észre, hogy nincs több őr a városháza körül. Zsolt rád kacsint, majd feltépi a hatalmas kaput és félredobja.
+				</p>
+				<p>
+					- Keressük meg a Bitangot! - adja ki az utasítást, majd feléd fordul: - Várj meg itt, mindjárt hozzuk!
+				</p>
+				<p>
+					Ezután mind berohannak a nagy épületbe. Félúton elfojtott kiáltások, nagy puffanások hallatszanak, időnként pedig biztonsági őrök zuhannak ki a bezárt ablakokon keresztül nagy csörömpöléssel. Nem kell sokáig várnod, nemsokára megjelenik ismét Zsolt és mögötte egyre több bübü. Zsolt kezében Bitang Botond van, akit labdaként dobál, dekázik vele vagy súlyzó gyanánt a vállára rak és csinál pár guggolást - miközben folyamatosan közeledik feléd. Végül hanyagul eléd dobja a földre a több testi és lelki sebtől vérző, remegő zsarnokot.
+				</p>
+				<p>
+					- Könyörüljetek rajtam! Minden megadok, amit csak kértek! Nem is értem, mi ez az egész... - hebegi Boti. Zsolt megelőz a válasszal:
+				</p>
+				<p>
+					- Nem érted?! Te és a gengszter bandád évek óta élősködik a városon. Romokban az oktatás, az egészségügy és legális, tiszta boxmeccseket sem lehetett tartani! Hogyan lehetne így utánpótlást nevelni, ha minden meccset megbundáztál, hogy a te embereid nyerjenek! Nincs egy meg nem vett bíró ebben a városban! Az illegális meccseken meg csak a drog és a teljesítményfokozó megy, szabályok nélkül! Ki kellett mennem az erdőbe, hogy farönköket dobálva és köveket ütve fejlesszem az ütőerőmet ekkorára! Csak természetes módon, erdei étrenden élve el lehet érni ilyen erőt, ha elhiszed, hogy képes vagy rá! Na de minek, ha nem tudok tisztességes meccseken további bajnoki öveket szerezni? Hát maradtam az erdőben és védelmeztem azt. Hogy ne jöjjön be legalább oda az a szenny és rothadás, ami belőled árad! A Gyehenna bűzhödt lehelete lehet olyan, mint a tiéd! - mondja egyre jobban átszellemülve a költői ihlettől, majd rád néz és folytatja: - De akkor jött <span id="fullName"></span>! Ő győzött meg arról, hogy ki kell lépnem az erdő nyújtotta komfortzónából, és meg kell tisztítani tőled és toxikus kipárolgásodtól a várost! Vissza kell hozni a tiszta sportot az emberek életébe, aminél nincs jobb jellemfejlesztő! A sport megtanít győzni és veszíteni, a sport mindenre megtanít!
+				</p>
+					Mindenki e nagyívű szónoklat hatása alá kerülve hallgat pár percig. Aztán úgy érzed, illene neked is megszólalni.
+				<p>
+					- Igen, pontosan így gondolom én is, ahogyan Zsolt kiválóan összefoglalta. Plusz még annyit tennék hozzá, hogy a sporton kívül minden más területet is fejleszteni fogok a magam részéről, hogy az emberek végre méltó körülmények között éljenek itt, és szabadon kibontakozhassanak! Te pedig útban vagy! - kiáltasz fel, azzal lerúgod a nyakáról Boti fejét. Zsolt teljesítménye tényleg motiválóan hatott a tiédre is, remek edző lesz belőle! Ő elismerően csettint egyet.
+				</p>
+				<p>
+					Ekkor mindenki hatalmas örömújjongásba tör ki. Most látod, hogy nagy tömeg gyűlt körétek, és most ők is kitörő lelkesedéssel fogadják a fordulatot és titkeket éljeneznek.
+				</p>
+			`,
+		obj: ["X_Boti"],
+		change: [
+			{
+				id: "hat",
+				crease: 100,
+			},
+		],
+		buttons: [
+			{
+				txt: "Itt az idő elfoglalni a Városházát!",
+				new: 237,
+				modi: "Megköszönöd Zsoltnak és a bübüknek a segítséget. Zsoltnak megígéred, hogy ő lesz a sportért felelős alpolgármester és a bübük mindig boldogan fognak élni. Ezután elindulsz, hogy elfoglald városvezető pozíciódat.<p>"
+			},
+		],
+	},
+	{
+		num: 216,
+		title: "Bogi terve",
+		type: "normal",
+		music: "gravenight",
+		pic: "darkbogi-face.jpg",
+		desc: `
+      <p>
+        - Rendben, hiszek neked - mondod végül neki. Bogi könnyei örömkönnyekké változnak. Megölel és a füledbe súgja: - Köszönöm! Tudtam, hogy egy igazi hős vagy! Nem fogod megbánni, hogy hittél nekem!
+      </p>
+      <p>
+        - Én is remélem. És mi lenne a terved? - kérdezed. Bogi letörli az arcát, aztán halkan válaszol:
+      <p>
+				- Én most visszamegyek Botihoz, mert a ma estét velem akarja tölteni. Ráveszem, hogy jöjjön ki velem a Feneketlen-tóhoz. Csak egy kocsival megyünk és csak a sofőr lesz vele. Van a tó mellett egy csónakház. Rejtőzz el ott és én odacsalom. Ott elintézheted. Ha most elindulsz, még előttünk oda fogsz érni. De most mennem kell, mielőtt gyanút fogna. Boriszt is keresni kezdheti. Siessünk! 
+      </p>
+			`,
+		change: [
+			{
+				id: "lel",
+				crease: 15,
+				rnd: 5,
+			},
+			{
+				id: "esz",
+				crease: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Rendben, menjünk!",
+				new: 238,
+			},
+		],
+	},
+	{
+		num: 217,
+		title: "Szakítás Bogival",
+		type: "normal",
+		music: "gravenight",
+		pic: "darkstreet.jpg",
+		desc: `
+      <p>
+        - Sajnálom, nem tudok benned megbízni! - mondod csalódottan, de határozottan. Bogi szemébe könnyek szöknek. Megragadja a karod és elkezd könyörögni, de te elrántod a kezed és elfordulsz tőle. Túl gyanús itt minden! Lehet, hogy lesz még alkalmad leszámolni Botival, de nem így.
+      </p>
+      <p>
+        Kilépsz az épületből magad mögöd hagyva Bogit és hazafelé veszed az utad. Este átgondolod, hogy vajon jól döntöttél-e Bogival kapcsolatban, de végül lezárod úgy, hogy túl sok volt a bizonytalanság ebben a történetben. És lehet, hogy azóta Boti megtudta Bogitól a terved és most kerestetni fog. Így kicsit nyugtalanul térsz nyugovóra.
+      <p>
+				Az éjjel mégis eseménytelenül zajlik. Miközben azon gondolkodsz, mi legyen most a terved, átvedd-e még mindig a hatalmat a város felett vagy éld az egyszerű hősök életét, észreveszed, hogy kevés már otthon a kajád. Gondolod, elmész a piacra.
+      </p>
+			`,
+		obj: ["szakítás Bogival", "Boti üldöz"],
+		change: [
+			{
+				id: "lel",
+				crease: -5,
+				rnd: 5,
+			},
+			{
+				id: "esz",
+				crease: -1,
+			},
+			{
+				id: "ero",
+				crease: 5,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Induljunk!",
+				new: 113,
+			},
+		],
+	},
 ];
 
 //220!	- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az élketükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
 //később J_Erdei Zsolt, hogy visszamenj másnap!
+
