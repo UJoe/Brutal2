@@ -39,9 +39,8 @@ let templates = [
       <p id="modified"></p>  
       <p>
        A <span id="fullName"></span>
-      </p>
-      <p>
-       B <span class="name"></span>
+			 Á <span class="name"></span>
+       B <span class="ally"></span>
       </p>
       <p class="cond" data-cond="=_name_Q">
        C
@@ -166,7 +165,7 @@ let templates = [
 	{
 		num: 1,
 		type: "trial",
-		value: "Hatalom",
+		value: "hat",
 		pass: 2,
 		fail: 3,
 	},

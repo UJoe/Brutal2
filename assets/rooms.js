@@ -5076,10 +5076,10 @@ window.rooms = [
 	},
 	{
 		num: 163,
-		type: "Ytrial",
-		value: "E_Boti üldöz",
-		pass: 218,
-		fail: 219,
+		type: "Xtrial",
+		value: "piacután",
+		fail: 218,
+		pass: 219,
 	},
 	{
 		num: 164,
@@ -5802,7 +5802,7 @@ window.rooms = [
 		pic: "smoke.gif",
 		desc: `
       <p>
-      	Oshinokoval egymásra néztek. Nem kell semmit mondanotok, tudjátok, hogy mit kell tenni. Oshinoko bólint, elővesz a zsebéből egy csomag rágót és fapofával elkezdi rágni. A gutaütés kerülget: ezek szerint mégis kellene valamit mondani neki, mert nem látja, milyen szorult helyzetben vagytok!!! Vagy valami miatt megorrolt rád és most magadra hagy???!! Az őrök megindulnak, hogy leteperjenek, te megpróbálsz kitörni Oshinoko felé, ekkor viszont a japán a földre köpi a rágót, mire sűrű füst csap fel belőle és beborítja az egész teret. Ezek szerint ez is egy trükkös fegyver volt: rágónak álcázott füstbomba! Ez a jakuza tényleg érti a dolgát! A tömeg viszont elkezd visítozni...
+      	Oshinokoval egymásra néztek. Nem kell semmit mondanotok, tudjátok, hogy mit kell tenni. Oshinoko bólint, elővesz a zsebéből egy csomag rágót és fapofával elkezdi rágni. A gutaütés kerülget: ezek szerint mégis kellene valamit mondani neki, mert nem látja, milyen szorult helyzetben vagytok!!! Vagy valami miatt megorrolt rád és most magadra hagy???!! Az őrök megindulnak, hogy leteperjenek, te megpróbálsz kitörni Oshinoko felé, ekkor viszont a japán a földre köpi a rágót, mire sűrű füst csap fel belőle és beborítja az egész teret. Megkönnyebbülsz: ezek szerint ez is egy trükkös fegyver volt: rágónak álcázott füstbomba! Ez a jakuza tényleg érti a dolgát! A tömeg viszont elkezd visítozni...
       </p>
 			<p>
 				- Azt hittem magamra hagysz! - ordítod, amikor a füstben támolyogva meglátod Oshinoko arcát. Legnagyobb meglepedésedre viszont a hátad mögül szólal meg Oshinoko:
@@ -6344,7 +6344,7 @@ window.rooms = [
 	},
 	{
 		num: 205,
-		title: "A <span class='name'></span> átveszi a hatalmat a város felett",
+		title: "A <span class='part'></span> átveszi a hatalmat a város felett",
 		type: "normal",
 		music: "happyDance",
 		pic: "happymass.jpg",
@@ -6839,8 +6839,256 @@ window.rooms = [
 			},
 		],
 	},
+	{
+		num: 218,
+		title: "Boti emberei elkapnak útban hazafelé",
+		type: "fight",
+		pic: "gangcars.jpg",
+		nmepic: "szekus.jpg",
+		att: 100,
+		def: 50,
+		speed: 8,
+		hp: 200,
+		desc: `
+      <p>
+			 Ahogy sétálsz hazafelé, hirtelen két rendőrautó áll meg csikorgó fékekkel előtted és mögötted. Ösztönösen keresed a menekülési útvonalat, de nem találod. Előre megtervezték a rajtaütés színhelyét. Ezek Bitang Botond emberei! Ki is ugrik belőle több álrendőr, és az egyik így szól:
+      </p>
+			<p>
+				- Lám, lám, <span id="fullName"></span>! A vakmerő hős, aki keresztbe akar tenni Bitang polgármester urunknak! Sajnos ezt nem engedhetjük, ezért meg kell ölnünk téged!
+			</p>
+			<p>
+				Kemény harcnak nézel elébe, mert sokan vannak és nem tudsz elmenekülni sem!
+			</p>
+    `,
+		buttons: [
+			{
+				txt: "Pedig most nem is vettem kakaót...",
+			},
+		],
+		pass: 219,
+		death: true,
+		modi: "Kifújod magad a nagy csata után. Ezt most megnyerted, de tudod, hogy nem lesz nyugtod mostantól. Lecseréled más névre az irataidat, új online profilt alkotsz, új frizurát csináltatsz és elköltözöl a város egyik csendesebb helyére."
+	},
+	{
+		num: 219,
+		title: "Szürke hétköznapok",
+		type: "normal",
+		music: "slowguitar",
+		pic: "starttown.jpg",
+		desc: `
+      <p id="modified"></p>  
+      <p>
+       Visszahúzódva éled tovább csendes hétköznapjaidat. Eleinte még fáj, ha látod, hogy Boti emberei bántalmaznak másokat, később már szenvtelenül elfordulsz. Egy kiégett hős lettél, akit az emberek is már egyre inkább elfelejtenek...
+      </p>
+      <p>
+       Egy napon viszont váratlan események ráznak fel letargiádból. Egyre erősödő hangokat hallasz az utcán. Az emberek izgatottan kiabálnak, egyre több új hangot hallasz. Kimész, hogy megnézd, mi történik.
+      </p>
+      <p>
+       Egyre növekvő tömeg gyűlik össze az utcán és egy irányba kezdenek tartani. Mielőtt bármit csinálnál, megragadnak téged is:
+      </p>
+      <ul>
+			<li>
+				Gyere velünk! Bitang Botond földönkívüliekkel akarja elvenni azt a keveset, ami megmaradt nekünk: a munkánkat és a szabad akaratunkat. Fellázadt a város!
+			</li>
+			<li>
+				Elsöpörjük a zsarnokot! 
+			</li>
+			<li>
+				Ezek az UFO-k kiszívják az agyadat! 
+			</li>
+			<p>
+				Képesek a végbélen át eltávolítani az ember szemöldökét! Akár mind a kettőt egyszerre!
+			</p>
+			<li>
+				Én azt hallottam, hogy levizelik a lelkedet! Semmi sem szent nekik! 
+			</li>
+			<li>
+				A fingjuk vakságot és rákot okoz! Már tanítják rá Boti embereit is! 
+			</li>
+			<li>
+				Munkát akarunk! Szabadságot akarunk! Vesszen a zsarnok! Irány a Városháza!
+			</li>
+			</ul>
+			<p>
+				Magával ragadnak az események, sodródzs a tömeggel. Hirtelen valaki elkiáltja magát:
+			</p>
+			<ul><li>
+				Nézzétek! <span id="fullName"></span>! Ő mentett meg minket Battle Beatle-től!
+			</li></ul>
+			<p>
+				Ez egy lavinát indít el. Egyre többen ismernek fel és te is egyre több régi ismerőst látsz meg a tömegben. Mindenki benned látja a szabadulás útját, ami újból lángra lobbantja harci véredet. Mire eléritek a Városházát, már a dühös tömeg vezetője vagy.
+			</p>
+    `,
+		change: [
+			{
+				id: "hat",
+				crease: 15,
+				rnd: 10,
+			},
+			{
+				id: "sup",
+				crease: 150,
+				rnd: 100
+			},
+			{
+				id: "lel",
+				crease: -1,
+			},
+		],
+		buttons: [
+			{
+				txt: "Egye fene, tegyünk még egy végső próbát!",
+				new: 238,
+			},
+		],
+	},
+	{
+		num: 220,
+		title: "A bübük",
+		type: "normal",
+		music: "bübük",
+		pic: "bübük.jpg",
+		desc: `
+      <p>
+				- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. És tiszta sport sincs azóta, csak a bunda! Kifordítom, béfordítom, mégis bunda a bunda! Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az életükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
+			</p>
+			<p>
+				- Bübüszimat? Az mi? - kérdezed érdeklődéssel.
+		 	</p>
+		 	<p>
+			  - Egyfajta érzék, amivel előre ki lehet szimatolni a veszélyt. Én például megérzem, hogy hol jön betolakodó a mi területünkre. Meg akarod tanulni? - teszi fel hirtelen a kérdést Zsolt. Erre viszont a bübük elkezdenek hevesen sípolni és ugrálni. - Haha! Igazuk van! Ezt a képességet csak annak adják át, aki már bizonyított! 
+		 	</p>
+		 	<p>
+			 	- És mit kell bizonyítani?
+		 	</p>
+			<p>
+				- Gyere velem! - kacsint titokzatosan Zsolt, majd levezet egy völgyben egy barlang bejáratához. A bübük lelkesen követnek titeket. - Ide kell bemenni és eljutni a barlang közepéig, miközben gyűjtögetsz nekünk mindenféle hasznos ásványt!
+			</p>
+			<p>
+				- Nincs saját bányászotok? - szalad ki a szádon a gyanakvó kérdés. Zsolt felnevet.
+			</p>
+			<p>
+				- A bübük éppenséggel jó földmunkások, de nehezen tudják felhozni az ásványokat. Nekem viszont őrködnöm kell, mert én vagyok az erdő ura, nincs időm a barlangban rohangászni. De a barlang közepén találsz egy nagy kosarat. Abba belerakhatod, amit gyűjtöttél, és fel is húzunk onnan!
+			</p>
+			<p>
+				- Nem lehetne, hogy eleve oda eresszetek le?
+			</p>
+			<p>
+				- Nem - mondja Zsolt, legyintve egyet a kezével. A keletkezett légáramlattól elveszíted az egyensúlyod és legurulsz egyenesen a barlang mélyébe...
+				</p>
+		`,
+		change: [
+			{
+				id: "ero",
+				crease: -5,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Remélem, megérte ez a zuhanás!",
+				new: 239,
+			},
+		],
+	},
+	{
+		num: 221,
+		type: "trial",
+		value: "ugy",
+		pass: 222,
+		fail: 223,
+	},
+	{
+		num: 222,
+		title: "Megölted Bitang Botondot",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "panicrowd.jpg",
+		desc: `
+      <p>
+				Amint kifújod a mérges tüskét, Botond torkán akad a szó, hátra esik és elterül. Sikerült! A zsarnok halott!
+			</p>
+      <p>
+       A tömegben kitör a pánik. Különösen azok ijednek meg, akik látták a rendőrfőnököt és Botit is elterülni egymás után. Elkezdenbek sikoltozni és menekülni, bár néhány kemény fickó csak kíváncsian és egykedvűen várja a fejleményeket és az esetleges magyarázatot. Oshinokora nézel, de ő is téged néz. Neked kell döntened, mi legyen.
+      </p>
+    `,
+		obj: ["X_Boti"],
+		buttons: [
+			{
+				txt: "Nyíltan átveszed a hatalmat",
+				new: 244,
+			},
+			{
+				txt: "Inkább most csak csendben lelépsz",
+				new: 251,
+			},
+		],
+	},
+	{
+		num: 223,
+		title: "Meghiúsult a merénylet",
+		type: "death",
+		music: "crowdshout",
+		stopmusic: true,
+		pic: "booing.gif",
+		desc: `
+      <p>
+				Sajnos a kezed a kritikus pillanatban beremeg, így az előtted álló öregasszonyt lövöd le. Az egy halk nyögéssel összeesik.
+			</p>
+      <p>
+				- Gyilkos!!! - ordítja valaki és a tömeg egyből neked támad hatalmas ütésekkel. Oshinoko próbál áttörni rajtuk, de már nem látod, hogy sikerül-e nekik, mert vér borítja be a szemed és az önbíráskodó tömeg pillanatok alatt meglincsel...
+			</p>
+    `,
+	},
+	{
+		num: 224,
+		title: "Szenyamuki segít a füstben",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "smoke.gif",
+		desc: `
+      <p>
+				Szenyamuki bólint és int, hogy menjetek utána. Szorosan követitek a sűrű füstben. Körülöttetek visítozó emberek elmosódott körvonalai úsznak el. Egyszer csak Szenyamuki szól, hogy álljatok meg, azzal eltűnik.
+			</p>
+      <p>
+       Oshinokoval egymásra néztek. Talán már nem is a téren vagytok, hanem egy mellékutcában, de a füst nagyon sűrű it is. Nemsokára Szenyamuki hangját halljátok egy kissé messzebbről.
+      </p>
+			<p>
+				- Jöjjön polgármester úr, kivezetem biztonságban!
+			</p>
+			<p>
+				- És eddig hol a francban voltál?! - dörren rá egy mély hang. Nem Botié, hanem valaki másé.
+			</p>
+			<p>
+				- Senki nem beszélhet velem így! - mondja önérzetesen Szenyamuki, aztán egy suhintást hallotok és valaki nyögve a földre zuhan mellettetek.
+			</p>
+			<p>
+				- Mit csináltál?! Megölted a Borbélyt! Normális vagy?! - hallatszik ezúttal Boti rikácsoló hangja. Oshinoko melletted azonnal kapcsol, hogy a fivére miben mesterkedik. Megindul a hang irányába és te követed. Szenyamuki és Boti körvonalai rajzolódnak ki előttetek. A két fivér egymásra kacsint. Aztán Szenyamuki Botihoz fordul.
+			</p>
+			<p>
+				- Bár beszólt nekem, engem köt a szerződésem. Így nem én fogom magát kinyírni. - mondja flegmán, azzal odadobja elétek Botit.
+			</p>
+			<p>
+				Oshinokoval teljes összhangban mutattok be egymás után halálos fogásokat a zsarnokon. Pár pillanat múlva már élettelenül fekszik előttetek. Oshinoko hamis mosollyal a fivérére néz:
+			</p>
+			<p>
+				- Mióta fontos neked a szerződés?
+			</p>
+			<p>
+				- Nem akartalak titeket megfosztani az élvezettől... Na jó, most hogy a rendőrfőnök és a polgármester is halott, javaslom, vonuljunk vissza. Biztonságosabb lenne a ma éjszakát a városon kívül töltenetek. Amit tudok, elrendezek, de biztosan hajtóvadászatot rendez a megmaradt banda a gyilkosok elkapására. Holnap meg átveheted a hatalmat, <span class="name"></span>.
+			</p>
+    `,
+		obj: ["X_Boti"],
+		buttons: [
+			{
+				txt: "Nem, én most veszem át a hatalmat!",
+				new: 244,
+			},
+			{
+				txt: "Rendben, lelépek Oshinokoval az erdőbe",
+				new: 245,
+			},
+		],
+	},
 ];
-
-//220!	- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az élketükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
-//később J_Erdei Zsolt, hogy visszamenj másnap!
 

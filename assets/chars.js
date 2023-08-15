@@ -317,7 +317,9 @@ window.armies = {
 	óriások: "2 Óriás",
 	vadállatok: "1 Ügyes Frigyes, 5 Vadfa, 5 Bestia",
 	éjjeliműszak: "2 Tüzér, 2 Izomagy, 2 Szekus, 1 Favágó",
-	erdeiék: "1 Erdei Zsolt, 12 Bübük"
+	erdeiék: "1 Erdei Zsolt, 12 Bübük",
+	finalfriends: "1",
+	finalnmes: "1",
 };
 
 window.specvoices = {

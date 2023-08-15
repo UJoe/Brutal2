@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 112; //startroom
+		char.room = 0; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -661,14 +661,26 @@ function _load() {
 			let result = "";
 			let crease = 0;
 			let id = modi ? modi : room.value;
-			if (Math.random() * 105 < char[id] + getObj(upSkill(id)) * 20) {
-				char.room = room.pass;
-				crease = 1;
-				result = "siker!";
+			if (id === "sup") {
+				if (steps * 5 + Math.random() * 150 < char[id]) {
+					char.room = room.pass;
+					crease = 10;
+					result = "siker!";
+				} else {
+					char.room = room.fail;
+					crease = -10;
+					result = "bukás!";
+				}
 			} else {
-				char.room = room.fail;
-				crease = -1;
-				result = "bukás!";
+				if (Math.random() * 105 < char[id] + getObj(upSkill(id)) * 20) {
+					char.room = room.pass;
+					crease = 1;
+					result = "siker!";
+				} else {
+					char.room = room.fail;
+					crease = -1;
+					result = "bukás!";
+				}
 			}
 			changeVal(id, crease);
 
@@ -770,6 +782,25 @@ function _load() {
 						} else {
 							outcome = "fail";
 							result = "Nem sikerült a nap során elhárítanod a fő veszélyt.";
+						}
+					}
+					break;
+
+				case "piacután":
+					basemes = "";
+					if (
+						checkCond("!E_Boti üldöz") ||
+						checkCond("E_Boti halottnak hisz")
+					) {
+						outcome = "pass";
+						result = "Sikeresen hazajutsz a piacról.";
+					} else {
+						if (checkCond("S_Bübüszimat") || checkCond("S_Hit")) {
+							outcome = "pass";
+							result = "Rossz érzésed támad, ezért kerülőutakon mész haza.";
+						} else {
+							outcome = "fail";
+							result = "Sajnos nem látod előre a rád leselkedő veszélyt...";
 						}
 					}
 					break;
@@ -1301,7 +1332,7 @@ function _load() {
 						sound.volume = 0;
 						changeVal("ero", -char.ero);
 					}
-				}, x * room.desc.length * 9);
+				}, x * room.desc.length * 10);
 			}
 		}
 
@@ -1400,6 +1431,10 @@ function _load() {
 			}
 			if (document.querySelector(".part")) {
 				document.querySelectorAll(".part").forEach((p) => (p.innerHTML = part));
+			}
+			if (document.querySelector(".ally")) {
+				let ally = getObj("J_Oshinoko") ? "Oshinoko" : "Frici"
+				document.querySelectorAll(".name").forEach((n) => (n.innerHTML = ally));
 			}
 			if (document.querySelector(".cond")) {
 				document.querySelectorAll(".cond").forEach((c) => {
