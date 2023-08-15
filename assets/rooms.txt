@@ -215,8 +215,8 @@
 216 - Bogi terve
 217 - Szakítás Bogival
 218 - Boti emberei elkapnak a piacról hazafelé
-219 - Céltalan éldegélés, amíg nem tör ki a lázadás (finalwar összes J-vel)
-220 - Erdei Zsolt és a bübük (comment! utána próbák vagy love (egyből gomb) a bübüszimathoz)
+219 - Céltalan éldegélés (modi), amíg nem tör ki a lázadás (finalwar összes J-vel)
+220 - Erdei Zsolt és a bübük (comment! utána próbák vagy love a bübüszimathoz)
 221 - Ugy trial (sikerül-e leszedni Botit fúvócsővel)
 222 - Megölted Bitang Botondot
 223 - Meghiúsult a merénylet (death - mivel a rendőrfönök halott, nem bonyolítjuk)
@@ -230,10 +230,25 @@
 231 - Elbuktátok a választást (=> 219)
 232 - Botondos vég (Boti utal a földönkívüliekre, átveszed a hatalmat)
 233 - A Feneketlen-tónál
-234 - Éjjeli harc az erdőben (finalwar: vadállatok + éjjeliműszak, + fegyvereket kapsz)
+234 - Éjjeli harc az erdőben (ally class!, finalwar: vadállatok + éjjeliműszak, + fegyvereket kapsz => 249, 250)
 235 - Boti megtalálása a Városházán (=> 232?)
 236 - Házasság Zsolttal (V)
 237 - A Városháza elfoglalása (modi - END - UFOK?)
+238 - Végső lázadás (finalwar mindenkivel)
+239 - Erdeiék próbája (DIG egyedül)
+240 - Kiálltad Erdeiék Digjét
+241 - Ytrial (elbuktad Zsolt próbáját, de ha szerelmes beléd, átenged)
+242 - Szövetségkötés Erdeiékkel (S_Bübüszimat, J_Erdei Zsolt)
+243 - Elbuktad Zsolt próbáját (nem is szerelmes beléd, 1. nap vége)
+244 - XTrial SUP (átveszed-e a hatalmat az orvgyilkosság után)
+245 - Visszavonulsz az erdőbe az orvgyilkosság után
+246 - Sikeres hatalomátvétel az orvgyilkosság után
+247 - Meglincsel a nép (dead)
+248 - Visszatérés a főtérre Boti halála után (ally class: Oshinoko, Frici, => beszédtrial vagy BIzonyíték bemutatása)
+249 - Az erdei harc után (bizonyíték Boti ellen => 248)
+250 - Az erdei harc elvesztése (dead)
+251 - Pursuit - sikerül-e kijutni a városból az orvgyilkosság után (ally class, => 245, 252)
+252 - Elkapnak az orvgyilkosság után (dead)
 
 
 
