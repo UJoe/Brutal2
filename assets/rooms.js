@@ -1346,7 +1346,7 @@ window.rooms = [
 		title: "A katana megszerzésének próbája",
 		type: "normal",
 		music: "oshinoko",
-		pic: "oshinoko-face.JPG",
+		pic: "oshinoko-face.jpg",
 		desc: `
     <p>
       Oshinoko hosszasan rád néz, majd komoly hangon így szól:
@@ -2968,7 +2968,7 @@ window.rooms = [
 		title: "Oshinoko haditerve",
 		type: "normal",
 		music: "oshinoko",
-		pic: "oshinoko-face.JPG",
+		pic: "oshinoko-face.jpg",
 		desc: `
     <p>
       Oshinoko elgondolkodik. Közben Sakura észrevétlenül elvonul.
@@ -3906,7 +3906,7 @@ window.rooms = [
 		title: "Oshinokonál hagyod a fegyvereidet",
 		type: "normal",
 		music: "oshinoko",
-		pic: "oshinoko-face.JPG",
+		pic: "oshinoko-face.jpg",
 		desc: `
       <p>
         Oshinoko átnézi a tárgyaidat és amit fegyvernek ítél, azt elzárja egy rejtett széfbe. Ezután int, hogy induljatok.
@@ -7089,6 +7089,29 @@ window.rooms = [
 				new: 245,
 			},
 		],
+	},
+	{
+		num: 225,
+		title: "Harc a füstben",
+		type: "fog",
+		music: "actionIncrease",
+		pic: "smoke.gif",
+		desc: `
+      <p>
+        - Sajnálom, nem harcolok a vesztes oldalon! - mondja pökhendi grimasszal Szenyamuki. Oshinoko ordít egyet japánul és nekiugrik. Mindketten eltűnnek a füstben. Gondolkodsz, mi lenne a legjobb. Talán a füst kapóra jön és meg tudod ölni Botit észrevétlenül benne. Elindulsz, hogy megkeresd.
+      </p>
+      <p>
+        A következő képernyőn különféle alakok fognak előbukkanni a ködből. Próbálj meg rájönni, ki Boti, és leginkább őt üsd meg, amíg látod. Ha polgárokat ütsz meg, csökken a támogatásod és a lélek pontod. Szenyamuki és a biztonsági őrök téged ütnek meg, ha nem ütöd meg őket előbb. Szenyamuki sokkal nagyobbat üt. A két testvér egymást is támadja, így próbáld meg Oshinokot életben tartani. A harcnak akkor van vége, ha valamelyik kulcsfigura meghal.
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Nosza!",
+			},
+		],
+		oshinoko: 253,
+		szenyamuki: 254,
+		boti: 255,
 	},
 ];
 

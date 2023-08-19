@@ -249,6 +249,9 @@
 250 - Az erdei harc elvesztése (dead)
 251 - Pursuit - sikerül-e kijutni a városból az orvgyilkosság után (ally class, => 245, 252)
 252 - Elkapnak az orvgyilkosság után (dead)
+253 - Oshinoko meghalt a ködben
+254 - Szanyamuki meghalt a ködben
+255 - Boti meghalt a ködben
 
 
 

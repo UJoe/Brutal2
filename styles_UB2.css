@@ -1100,38 +1100,54 @@ select {
 	margin: 0 auto 15px;
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 	font-size: 0.9em;
 	background-image: linear-gradient(to right, black, purple, red, purple, black);
+	border-radius: 50%;
 }
 
-.köd {
+.fscore {
+	margin: 10px 100px 10px 5px;
+	display: inline-block;
+	vertical-align: super;
+}
+
+#köd {
 	position: fixed;
-	top: 120px;
+	top: 150px;
 	left: 15vw;
-	width: 70vw;
-	height: calc(100vh - 150px);
-	background-color: gray;
-	border-radius: 50px;
+	width: 75vw;
+	height: calc(100vh - 180px);
+	background-image: radial-gradient(circle, gray, #1f1e4d 80%);
+	min-width: 120px;
+	min-height: 120px;
 }
 
-.ködmön {
+#mön {
+	display: none;
 	position: fixed;
+	animation: ködding 1.5s linear forwards;
+	width: 60px;
+	height: 60px;
+	z-index: 3;
 	top: 0;
 	left: 0;
-	animation: ködding 2s linear;
 }
 
 @keyframes ködding {
 	0% {
-		filter: brightness(.5) opacity(0) blur(15px);
+		filter: brightness(.2) opacity(0) blur(15px);
 	}
 
-	50% {
-		filter: brightness(1) opacity(1) blur(0);
+	40% {
+		filter: brightness(.9) opacity(.9) blur(2px);
+	}
+
+	60% {
+		filter: brightness(.9) opacity(.9) blur(2px);
 	}
 
 	100% {
-		filter: brightness(.5) opacity(0) blur(15px);
+		filter: brightness(.2) opacity(0) blur(15px);
 	}
 }

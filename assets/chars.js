@@ -190,7 +190,7 @@ window.sprites = [
 	{
 		name: "Oshinoko",
 		vip: true,
-		pic: "oshinoko-face.JPG",
+		pic: "oshinoko-face.jpg",
 		att: 110,
 		def: 60,
 		hp: 100,

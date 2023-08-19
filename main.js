@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 0; //startroom
+		char.room = 225; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -337,7 +337,7 @@ function _load() {
 	function checkDeath() {
 		if (char.ero < 1) {
 			clearInterval(dying);
-			clearTimers();
+			clearTimers(timok.length > 0);
 			document.querySelectorAll("button").forEach((i) => {
 				i.disabled = true;
 			});
@@ -5070,9 +5070,216 @@ function _load() {
 
 	//köd
 	function fogAct() {
-		//egyedi room, classok a CSS végén, 
-		//pics: Szenyamuki-face, Oshinoko-face, Szekus, Boti, Civil1-8
-		//voices: yeah, oops
+		music.volume = 0.7;
+		let hp = {
+			oshinoko: 100,
+			szenyamuki: 100,
+			boti: 70
+		}
+		let bbc = 0.15;
+		let nesze = false;
+
+		function ködhit(e) {
+			let mönar = e.target.src.split("/");
+			let mönév = mönar[mönar.length - 1].split(".")[0].split("-")[0];
+			let att = Math.round(
+				char.ugy / 1.1 + char.esz / 2.8 + char.ero / 1.5 - char.lel / 1.2);
+			let hitp = "";
+			let hitv = 0;
+			switch (mönév) {
+				case "civil":
+					sound.src = "./audio/oo.mp3";
+					sound.play();
+					let szadi = mönar[mönar.length - 1].split(".")[0].split("-")[1]
+					changeVal("lel", -szadi);
+					changeVal("sup", -(szadi * 2 + Math.round(Math.random() * 10)));
+					break;
+
+				case "boti":
+					sound.src = "./audio/yeah.mp3";
+					sound.play();
+					hitp = "boti";
+					hitv = Math.round((att - 30) / 2.5 + Math.random() * 3 - Math.random() * 3);
+					hitv = hitv < 4 ? 4 : hitv;
+					if (bbc < 0.4) bbc += 0.05;
+					break;
+
+				case "oshinoko":
+					sound.src = "./audio/na.mp3";
+					sound.play();
+					hitp = "oshinoko";
+					hitv = Math.round((att - 50) / 2.5 + Math.random() * 3 - Math.random() * 3);
+					hitv = hitv < 2 ? 2 : hitv;
+					changeVal("lel", -(1 + Math.floor(Math.random() * 5)));
+					break;
+
+				case "szenyamuki":
+					sound.src = "./audio/hit13.mp3";
+					sound.play();
+					hitp = "szenyamuki";
+					hitv = Math.round((att - 55) / 2.5 + Math.random() * 3 - Math.random() * 3);
+					hitv = hitv < 1 ? 1 : hitv;
+					nesze = true;
+					break;
+
+				case "szekus":
+					sound.src = "./audio/hit13.mp3";
+					sound.play();
+					nesze = true;
+					break;
+
+				default:
+					break;
+			}
+			if (hitv > 0) {
+				updateKödScore(hitp, hitv);
+			}
+		}
+
+		function ködmön() {
+			let c = Math.random();
+			let s = "";
+			let rect = document.getElementById("köd").getBoundingClientRect();
+			let kx = rect.width - 60;
+			let ky = rect.height - 60;
+			switch (true) {
+				case c < bbc:
+					s = "boti"
+					break;
+
+				case c < 0.5:
+					let cn = 1 + Math.floor(Math.random() * 8);
+					s = "civil-" + cn;
+					break;
+
+				case c < 0.625:
+					s = "oshinoko-face"
+					break;
+
+				case c < 0.75:
+					s = "szenyamuki-face"
+					break;
+
+				case c < 0.875:
+					s = "szekus"
+					break;
+
+				default:
+					let loser = "";
+					let seb = 0;
+					let ot = hp.oshinoko + Math.random() * 70;
+					let st = hp.oshinoko + Math.random() * 70;
+					sound.src = "./audio/japfight.mp3";
+					sound.play();
+					if (ot >= st) {
+						loser = "szenyamuki";
+						seb = 1 + Math.round((ot - st) / 7);
+					} else {
+						loser = "oshinoko";
+						seb = 1 + Math.round((st - ot) / 5);
+					}
+					updateKödScore(loser, seb);
+					break;
+			}
+			if (!s.length) {
+				clearTimeout(timo1);
+				timo1 = setTimeout(() => {
+					ködmön();
+				}, 500 + Math.round(Math.random() * 2500));
+				return;
+			}
+			nesze = false;
+			document.getElementById("ködmön").innerHTML = `<img id="mön" src="./img/rooms/${s}.jpg">`;
+			let mön = document.getElementById("mön");
+			let mx = Math.round(rect.left + kx * Math.random());
+			let my = 150 + Math.round(ky * Math.random());
+			mön.style.top = my + "px";
+			mön.style.left = mx + "px";
+			mön.style.display = "block";
+			mön.addEventListener("click", ködhit)
+			clearTimeout(timo);
+			timo = setTimeout(() => {
+				if (!nesze) {
+					let mönar = mön.src.split("/");
+					let mönév = mönar[mönar.length - 1].split(".")[0].split("-")[0];
+					let seb = 0;
+					switch (mönév) {
+						case "szekus":
+							sound.src = "./audio/hit12.mp3";
+							sound.play();
+							seb = Math.round(Math.random() * 25 - char.ugy / 3);
+							seb = seb < 5 ? 5 : seb > 15 ? 15 : seb;
+							break;
+
+						case "szenyamuki":
+							sound.src = "./audio/karate.mp3";
+							sound.play();
+							seb = Math.round(hp.szenyamuki / 8 + Math.random() * hp.szenyamuki / 2 - char.ugy / 4);
+							seb = seb < 7 ? 7 : seb > 35 ? 35 : seb;
+							break;
+
+						default:
+							break;
+					}
+					changeVal("ero", -seb);
+				}
+				mön.removeEventListener("click", ködhit);
+				mön.style.display = "none";
+				clearTimeout(timo1);
+				timo1 = setTimeout(() => {
+					ködmön();
+				}, Math.round(Math.random() * 3000));
+			}, 1501);
+		}
+
+		function updateKödScore(persona = false, ch = false) {
+			console.log(persona, ch);
+			let finish = false;
+			if (persona && ch) {
+				hp[persona] -= ch;
+				if (hp[persona] < 1) {
+					hp[persona] = "-";
+					finish = true;
+				}
+			}
+
+			document.getElementById("ködScores").innerHTML = `
+						<span>
+							<img class="thumb" src="./img/rooms/oshinoko-face.jpg">
+							<span class="fscore lime">${hp.oshinoko}</span> 
+						</span>
+						<span>
+							<img class="thumb" src="./img/rooms/szenyamuki-face.JPG">
+							<span class="fscore lime">${hp.szenyamuki}</span> 
+						</span>
+						<span>
+							<img class="thumb" src="./img/rooms/boti.jpg">
+							<span class="fscore lime">${hp.boti}</span> 
+						</span>
+          `;
+
+			if (finish) {
+				message(persona.charAt(0).toUpperCase() + persona.slice(1) + " meghalt!");
+				music.volume = (persona === "oshinoko") ? 0.3 : 1;
+				finish = true;
+				char.room = room[persona];
+				clearTimers();
+				firstEnd = false;
+				setTimeout(() => {
+					newRoom();
+				}, 4000);
+			}
+		}
+
+		main.innerHTML = `
+          <div id="ködScores"></div>
+          <div id="köd"></div>
+          <div id="ködmön"></div>
+        `;
+		updateKödScore();
+		timo1 = setTimeout(() => {
+			ködmön();
+		}, Math.round(1000 + Math.random() * 2500));
 	}
 
 	//Act triggers

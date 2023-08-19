@@ -420,4 +420,30 @@ let templates = [
 		pass: 202,
 		fail: 203,
 	},
+
+	//köd
+
+	{
+		num: 111,
+		title: "Harc a füstben",
+		type: "fog",
+		music: "lightmonkey",
+		pic: "grannygarden.jpg",
+		desc: `
+      <p>
+        Desc
+      </p>
+      <p>
+        Addig áshatsz, amennyi erőd van. A kertben összesen <span id="kincs"></span> kincs és <span id="akna"></span> bomba van. Ha bombát ásol ki, az ügyességedtől függ, hogy mennyit sebesülsz. Ha üres mezőn ásol, az első szám a szomszédos mezőkön lévő kincsek, a második a bombák számát mutatja meg. Próbálj meg minél több kincset megtalálni!
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Nosza!",
+			},
+		],
+		oshinoko: 112,
+		szenyamuki: 113,
+		boti: 114,
+	},
 ];
