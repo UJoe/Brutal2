@@ -5080,6 +5080,7 @@ function _load() {
 		let nesze = false;
 
 		function ködhit(e) {
+			if (char.ero < 1) return;
 			let mönar = e.target.src.split("/");
 			let mönév = mönar[mönar.length - 1].split(".")[0].split("-")[0];
 			let att = Math.round(
@@ -5099,7 +5100,7 @@ function _load() {
 					sound.src = "./audio/yeah.mp3";
 					sound.play();
 					hitp = "boti";
-					hitv = Math.round((att - 30) / 2.5 + Math.random() * 3 - Math.random() * 3);
+					hitv = Math.round((att - hp.boti / 2) / 2.5 + Math.random() * 3 - Math.random() * 3);
 					hitv = hitv < 4 ? 4 : hitv;
 					if (bbc < 0.4) bbc += 0.05;
 					break;
@@ -5173,10 +5174,10 @@ function _load() {
 					sound.play();
 					if (ot >= st) {
 						loser = "szenyamuki";
-						seb = 1 + Math.round((ot - st) / 7);
+						seb = 1 + Math.round((ot - st) / 5);
 					} else {
 						loser = "oshinoko";
-						seb = 1 + Math.round((st - ot) / 5);
+						seb = 1 + Math.round((st - ot) / 4);
 					}
 					updateKödScore(loser, seb);
 					break;
@@ -5233,7 +5234,6 @@ function _load() {
 		}
 
 		function updateKödScore(persona = false, ch = false) {
-			console.log(persona, ch);
 			let finish = false;
 			if (persona && ch) {
 				hp[persona] -= ch;
