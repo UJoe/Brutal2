@@ -31,7 +31,6 @@ J - szövetséges (join)
 S - képesség (skill)
   Micuki
   Bübüszimat
-  Belépőkártya
   Bivalyerő
   Villámgyorsaság
   Pengeagy
@@ -69,5 +68,3 @@ H - segítés (help)
   Csongika
   Yendela hercegnő
 
-V - vége
-  demokratikus hatalomátvétel

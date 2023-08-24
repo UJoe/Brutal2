@@ -1,6 +1,7 @@
 1 - Trial (leigáz)
 2 - A hatalomszerzés kezdete"
 3 - A hatalomátvétel kezdeti nehézségei
+4 - Trial
 5 - Inkább nem igázod le őket
 6 - A csirkefogó üldözése
 7 - A töketlen nép
@@ -223,24 +224,24 @@
 224 - Szenyamuki segít a füstben
 225 - Szenyamuki nem segít nektek (ködharc, fog)
 226 - Bitang Botond üldözése (casualties! - nyertes téri csata után, pursuit)
-227 - Bitang Botond elkapása (fight)
+227 - XTrial SUP (átveszed-e a hatalmat az orvgyilkosság után)
 228 - Bitang Botond meglógott => piac - 113
 229 - Jelszóbeírás a server szobában (input)
 230 - Sikeresen bejutsz a serverbe (modified: jelszó vagy hacker)
 231 - Elbuktátok a választást (=> 219)
-232 - Botondos vég (Boti utal a földönkívüliekre, átveszed a hatalmat)
+232 - Botondos vég (modi, egyből Boti szövegel, utal a földönkívüliekre, de nem ölöd megátveszed a hatalmat, modi 237)
 233 - A Feneketlen-tónál
 234 - Éjjeli harc az erdőben (ally class!, finalwar: vadállatok + éjjeliműszak, + fegyvereket kapsz => 249, 250)
 235 - Boti megtalálása a Városházán (=> 232?)
 236 - Házasság Zsolttal (V)
 237 - A Városháza elfoglalása (modi - END - UFOK?)
 238 - Végső lázadás (finalwar mindenkivel)
-239 - Erdeiék próbája (DIG egyedül)
+239 - Erdeiék próbája (DIG egyedül, underground2 music)
 240 - Kiálltad Erdeiék Digjét
 241 - Ytrial (elbuktad Zsolt próbáját, de ha szerelmes beléd, átenged)
 242 - Szövetségkötés Erdeiékkel (S_Bübüszimat, J_Erdei Zsolt)
 243 - Elbuktad Zsolt próbáját (nem is szerelmes beléd, 1. nap vége)
-244 - XTrial SUP (átveszed-e a hatalmat az orvgyilkosság után)
+244 - Észrevesznek a Városházán (fight vagy más?)
 245 - Visszavonulsz az erdőbe az orvgyilkosság után
 246 - Sikeres hatalomátvétel az orvgyilkosság után
 247 - Meglincsel a nép (dead)
@@ -252,6 +253,14 @@
 253 - Oshinoko meghalt a ködben
 254 - Szanyamuki meghalt a ködben
 255 - Boti meghalt a ködben
+256 - Boti szobájában
+257 - trial (ügy, Boti elkapása a csónakházban)
+258 - Végzel Botival a csónakházban, harc a sofőrrel (élethalál fight, 260)
+259 - Verekedés a csónakházban (sofőr bejön, fight => 261, élethalál)
+260 - Végzel Botival és a sofőrrel is a csónakházban, este Bogival (love betétek, modi?)
+261 - Ytrial (love Bogi)
+262 - Bogi megöli Botit => 260
+262 - Boti mindkettőtöket kinyír (death)
 
 
 

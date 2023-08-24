@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 225; //startroom
+		char.room = 206; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -1434,7 +1434,7 @@ function _load() {
 			}
 			if (document.querySelector(".ally")) {
 				let ally = getObj("J_Oshinoko") ? "Oshinoko" : "Frici"
-				document.querySelectorAll(".name").forEach((n) => (n.innerHTML = ally));
+				document.querySelectorAll(".ally").forEach((n) => (n.innerHTML = ally));
 			}
 			if (document.querySelector(".cond")) {
 				document.querySelectorAll(".cond").forEach((c) => {
@@ -4206,6 +4206,19 @@ function _load() {
 			}
 			dülöngélés();
 			if (siker) return;
+			let uv = false;
+			for (let um of units) {
+				if (um.x === ox + mx && um.y === oy + my && um.presentAct.type === "mozog") uv = true;
+			}
+			if (uv && Math.random() > .5) {
+				u.presentAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1,
+				};
+				return;
+			}
 			if (ffields[oy + my][ox + mx].empty) {
 				siker = true;
 				move(ox + mx, oy + my);
@@ -4399,7 +4412,8 @@ function _load() {
 					document.getElementById(`teri-${ct.x}-${ct.y}`).className = "terep terep-0";
 					return;
 				}
-				u.hp += Math.round(Math.random() + (fwb === "lel") * (1 + Math.random() * 3));
+				u.hp += Math.round(Math.random() * 3 + (fwb === "lel") * (2 + Math.random() * 5));
+				if (u.hp > u.ohp) u.hp = u.ohp;
 			} else {
 				if (Math.random() > 0.75 + u.cr / 15 && u.hp > u.ohp * Math.random()) changeMind(u);
 			}

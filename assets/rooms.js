@@ -3265,10 +3265,10 @@ window.rooms = [
 		pic: "home.jpg",
 		desc: `
       <p>
-        Sikerül legyőznöd az orvgyilkost. Kifújod magad és átkutatod. Találsz nála egy fejlett katonai kést, egy kézigránátot és két flaskát, valamint egy belépőkártyát. Nem tudod hova jó, de elteszed azt is a többivel együtt. Ahogy a feje felé hajolsz, egy nagyon halk hangot hallasz a síri csendben. Amikor közelebb hajolsz, észreveszed a nő füle mögé rejtett apró kommunikációs eszközt. A saját füledhez tartod, hogy jobban halld. Valaki azt kérdezi, hogy mi történt, mivel csökkentek az életfunkciói a nőnek. Mit teszel?
+        Sikerül legyőznöd az orvgyilkost. Kifújod magad és átkutatod. Találsz nála egy fejlett katonai kést, egy kézigránátot és két flaskát. Nem tudod hova jó, de elteszed azt is a többivel együtt. Ahogy a feje felé hajolsz, egy nagyon halk hangot hallasz a síri csendben. Amikor közelebb hajolsz, észreveszed a nő füle mögé rejtett apró kommunikációs eszközt. A saját füledhez tartod, hogy jobban halld. Valaki azt kérdezi, hogy mi történt, mivel csökkentek az életfunkciói a nőnek. Mit teszel?
       </p>
     `,
-		obj: ["W_GYILOK", "W_KÉZIGRÁNÁT", "W_DIABOLIKUS SZTEROID", "W_NAGY ERŐITAL", "S_Belépőkártya"],
+		obj: ["W_GYILOK", "W_KÉZIGRÁNÁT", "W_DIABOLIKUS SZTEROID", "W_NAGY ERŐITAL"],
 		buttons: [
 			{
 				txt: "Megpróbálsz a nő hangját utánozva válaszolni, hogy minden rendben, elintézted magad",
@@ -6162,7 +6162,7 @@ window.rooms = [
 		pic: "server.jpg",
 		desc: `
       <p>
-       Frigyes számításai pontosak voltak. A Betyár által ütött lukon átmászva a server-szobában találjátok magatokat. Kicsit hűvös van, de ez nem tántorít el. Odalépsz a terminálhoz. Természetesen jelszót kér.
+       Frigyes számításai pontosak voltak. A Betyár által ütött lukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. Odalépsz a terminálhoz. Természetesen jelszót kér.
       </p>
     `,
 		buttons: [
@@ -6372,7 +6372,6 @@ window.rooms = [
 					- Gratulálok! Tisztességes küzdelemben győztél. Elismerem, hogy te vagy a város hőse, a nép téged akar vezetőnek. Elvonulunk mindnyájan egy másik városba. Átadom neked a várost és a Városházát. Holnapra a technikusok elintézik a belépést és tiéd lesz itt minden - mondja, de utána az arcán egy furcsa, titokzatos kifejezés jelenik meg, és közelebb hajol hozzád. Suttogva mondja, hogy csak te halld.
 				</p>
 			`,
-		obj: ["V_demokratikus hatalomátvétel"],
 		change: [
 			{
 				id: "hat",
@@ -6518,7 +6517,7 @@ window.rooms = [
 		title: "Boti keresése a Városházán",
 		type: "dungeon",
 		pic: "corridor.gif",
-		music: "actionicrease",
+		music: "raveaction",
 		desc: "<p>Járkálsz keresztül-kasul a Városháza elegáns folyosóin és szobáin át. MIndenképpen meg kell találni Bitang Botit!<p>",
 		contBtn: "Tovább keresel",
 		passBtn: {
@@ -6795,7 +6794,7 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Rendben, menjünk!",
-				new: 238,
+				new: 233,
 			},
 		],
 	},
@@ -6896,9 +6895,9 @@ window.rooms = [
 			<li>
 				Ezek az UFO-k kiszívják az agyadat! 
 			</li>
-			<p>
+			<li>
 				Képesek a végbélen át eltávolítani az ember szemöldökét! Akár mind a kettőt egyszerre!
-			</p>
+			</li>
 			<li>
 				Én azt hallottam, hogy levizelik a lelkedet! Semmi sem szent nekik! 
 			</li>
@@ -7016,7 +7015,7 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Nyíltan átveszed a hatalmat",
-				new: 244,
+				new: 227,
 			},
 			{
 				txt: "Inkább most csak csendben lelépsz",
@@ -7082,7 +7081,7 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Nem, én most veszem át a hatalmat!",
-				new: 244,
+				new: 227,
 			},
 			{
 				txt: "Rendben, lelépek Oshinokoval az erdőbe",
@@ -7113,5 +7112,270 @@ window.rooms = [
 		szenyamuki: 254,
 		boti: 255,
 	},
+	{
+		num: 226,
+		title: "Bitang Botond üldözése",
+		type: "pursuit",
+		level: 9,
+		music: "longmixed",
+		pic: "runner.gif",
+		goalpic: "boti.jpg",
+		desc: `
+      <p>
+        A győztes harc után gyorsan felméred a kárt.
+      </p>
+			<p id="casualties"></p>
+      <p>
+        De nincs időd sokat mélázni, mert látod, hogy közben Boti meglógott a térről. Elkezditek keresni.
+      </p>
+      <p><i>
+        A nyomokat a megjelenő műveletek megoldásával fedezed fel. Minél gyorsabban válaszolsz, illetve minél több az Eszed és az Ügyességed, annál közelebb kerülsz Botihoz. Annyi időd van rá, amennyi az Erődből telik.</i>
+      </p>
+    `,
+		change: [
+			{
+				id: "sup",
+				crease: 150,
+				rnd: 100,
+			},
+			{
+				id: "hat",
+				crease: 10,
+			},
+		],
+		buttons: [
+			{
+				txt: "Ne hagyjuk meglógni!",
+			},
+		],
+		pass: 232,
+		modi: "A nyomokat követve sikerül elkapnotok Botit. Mindketten ki vagytok dögölve, de melletted ott állnak az embereid, Boti viszont egy szál egyedül maradt. Lihegve könyörögni kezd:</p><p>- Jól van, te nyertél! Szólok, hogy adják át neked a városházát! Aztán eltűnök innen rörökre...</p><p>Eléggé megtörtnek látszik ahhoz, hogy trükközzön, és mivel ki is vagy fulladva te is, úgy döntesz, megkíméled az életét. Boti megköszöni, majd közelebb hajol hozzád és suttogva mondja, hogy csak te halld:",
+		fail: 228,
+	},
+	{
+		num: 227,
+		type: "trial",
+		value: "sup",
+		pass: 246,
+		fail: 247,
+	},
+	{
+		num: 228,
+		title: "Bitang Botond meglógott",
+		type: "normal",
+		music: "slowguitar",
+		pic: "darkstreet.jpg",
+		desc: `
+			<p>
+				Hiába minden igyekezetetek, nem sikerül megtalálnotok Botit. Végül már leszáll az éj és mindenki baromi fáradt. Gondoljátok, ha van egy kis esze, még az is lehet, hogy elmenekült a városból és többé nem tér vissza. Végül te is hazamész.
+			</p>
+			<p>
+				Mikor másnap felébredsz, gondolkodsz, mi lehetne most a következő lépés.
+			</p>
+			`,
+		change: [
+			{
+				id: "sup",
+				crease: -10,
+				rnd: 40,
+			},
+			{
+				id: "hat",
+				crease: -1,
+				rnd: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Visszamész a főtérre és bejelented, hogy átveszed a hatalmat",
+				new: 227,
+			},
+			{
+				txt: "Elmész a piacra, mert kaját mindenképp venned kell",
+				new: 113,
+			},
+		],
+	},
+	{
+		num: 229,
+		title: "Belépés a Városháza rendszerébe",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "server.jpg",
+		desc: `
+      <p>
+       Elkezded pötyögni a jelszót.
+      </p>
+    `,
+		input: {
+			label: "De mit pötyögsz?",
+			max: 28,
+			key: "85bz4ruiewghwnoiuhjro7önxhek",
+		},
+		pass: 230,
+		fail: 244,
+	},
+	{
+		num: 230,
+		title: "Sikeres bejutás",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "server.jpg",
+		desc: `
+			<p id="modified"></p>
+			<p>
+       	A kijelzőn felvillan egy üdvözlő felirat. Bejutottál a rendszerbe! Nem kell sokat keresgélned, hogy rájöjj, melyik ajtókat kell feloldanod ahhoz, hogy bejuss Botihoz. Sőt magát Botit és az őrök tartózkodását is látod. Egy ideig megfigyeled a mozgásukat, aztán amint szabad lesz az útvonal, azonnal elindultok Fricivel.
+      </p>
+			<p>
+				Szerencsétek van! Anélkül bejuttok Boti szobájáig a menekülő-alagúton át, hogy találkoznátok őrökkel. Benyittok.
+			</p>
+    `,
+		buttons: [
+			{
+				txt: "Jó napot kívánok!",
+				new: 256,
+			},
+		],
+	},
+	{
+		num: 231,
+		title: "Elbuktátok a választást",
+		type: "normal",
+		music: "slowguitar",
+		pic: "s-bad.png",
+		desc: `
+			<p>
+       Sajnos Bitang Botond pártja nyert. A <span class="part"></span> csalódott. Talán a névválasztás nem volt szerencsés? Vagy a program nem volt túl vonzó? A kampány volt gyenge? 
+      </p>
+			<p>
+				Rövid beszéddel elköszöntök az összegyűlt hívektől, aztán hazamentek. Még nem tudod biztosan, hogy akarsz-e legközelebb is indulni, vagy elég volt ennyi a politikából.
+			</p>
+    `,
+		change: [
+			{
+				id: "sup",
+				crease: -20,
+				rnd: 50,
+			},
+			{
+				id: "hat",
+				crease: -10,
+				rnd: 20,
+			},
+			{
+				id: "lel",
+				crease: -2,
+				rnd: 3,
+			},
+		],
+		buttons: [
+			{
+				txt: "Ezek nem érdemelnek meg engem!",
+				new: 219,
+			},
+		],
+	},
+	{
+		num: 232,
+		title: "Boti utolsó szavai",
+		type: "normal",
+		music: "darkmystic",
+		pic: "boti.jpg",
+		desc: `
+			<p id="modified"></p>
+			<p>
+       - Egy valamit nem árt, ha tudsz, ha átveszed a hatalmat. Szerinted Battle Beatle és a Big Bugok ebből a világból származtak? Nem gyanakodtál arra, hogy földönkívüliek? Battle Beatle az ő ügynökök volt. Most, hogy eltetted őket láb alól, már útban vannak az idegenek. Lehet, hogy holnap ideérkeznek. És akkor itt kő kövön nem marad. 
+      </p>
+			<p>- Kik ezek az idegenek? - teszed fel némi aggodalommal a kérdést. De Boti most távolabb lép, széles mosollyal kezet ráz veled és hangosan így szól:
+			</p>
+			<p>
+				- Sok sikert a város vezetéséhez! - azzal eltűnik.
+			</p>
+		`,
+		buttons: [
+			{
+				txt: "Eh, nyertem, a többit meg majd meglátjuk!",
+				new: 237,
+			},
+		],
+	},
+	{
+		num: 233,
+		title: "A Feneketlen-tónál",
+		type: "normal",
+		music: "storm",
+		pic: "nightrain.gif",
+		desc: `
+			<p>
+       Bogi eltűnik, te pedig elindulsz a Feneketlen-tóhoz. Sőtét éjjel van. Amikor odaérsz a tóhoz, nem nagyon látsz mást. Az eső elkezd szemerkélni. Gyorsan megkeresed a csónak-házat. Amikor az ajtóhoz érsz, látod, hogy csak rá van téve a lakat, de nincs bezárva. Leszeded és belépsz.
+      </p>
+			<p>
+				Nincs bent senki, csak pár csónak, evezők és kötelek. Nem nehéz elrejtőzni. Miközben vársz, az eső egyre erősebb lesz. Aztán kintről fény szűrődik be, és hallod is az érkező kocsi motorzúgását. Nyílik az ajtó.
+			</p>
+			<p>
+				- Gyorsan, gyorsan, mert elázunk! - hallod meg Bogi hangját. Aztán már vágódik is ki az ajtó és belépnek. A lélegzetedet is visszafojtod. Két egymásra tett csónak közötti vékony résen át látod, hogy Bitang Botond és Bogi egymáshoz közel siet be. Csak a derekukat látod, de jó közel van egymáshoz. Felváltva ütődik neki hol Bogi, hol Boti a csónakoknak, aztán megállapodnak. Érzed, hogy izzik körülöttük a levegő. Mi van, ha ezek mégis szerelmesek egymásba és ez megint egy csapda? De a sofőrt nem látod sehol. Sem mást kettőjükön kívül. Ekkor Bogi megszólal:
+			</p>
+			<p>
+				- Várj még!
+			</p>
+			<p>
+				- Mégis mire?
+			</p>
+			<p>
+				- Egy kis meglepetés! - mondja Bogi, azzal látod, hogy megfogja Botit és a csónak vége felé löki. Fél karnyújtásnyira kerül tőled Boti, megérted, hogy Bogi ezzel neked jelzett.
+			</p>
+		`,
+		buttons: [
+			{
+				txt: "Akció!",
+				new: 257,
+			},
+		],
+	},
+	{
+		num: 234,
+		title: "Éjjeli harc az erdőben",
+		type: "finalwar",
+		friends: "vadállatok",
+		enemies: "éjjeliműszak",
+		opts: "J_Oshinoko, J_Ügyes Frigyes",
+		music: "gangwar",
+		pic: "nightrain.gif",
+		desc: `
+      <p>
+				Amint elaludnál, furcsa zaj ver fel. Telihold van és az eső is elkezdett esni. Szétnézel és elemlámpák fénye villódzik a fák között. <span class="ally"></span> is felébred. 
+      </p>
+			<p>
+				- Ezek az álrendőrök! Keresik Boti gyilkosát! Erősítést kell hívnom! - mondja halkan, de határozottan <span class="ally"></span>, azzal előkap egy furcsa körte alakú tárgyat. Megfújja, mire az egy alig hallható magas hangot ad ki. <span class="ally"></span> csendben fülel és nézelődik, majd végül bólint: - Jönnek!
+			</p>
+			<p>
+				- Kik? - kérdezed, mert hiába mereszted a szemed, senkit nem látsz, csak a közeledő pásztázó fényeket.
+			</p>
+			<p>
+				- Az erdei vadak! - monjda <span class="ally"></span>, majd rögtön egy kiáltást hallasz és - alig hiszed el, hogy jól látod! - az egyik fa az ágával hatalmasat üt az egyik támadóra, aki ettől nagyot repül. Majd megvillan mögötte egy gonosz szempár, egy félelmetres morgást hallasz és kegyetlen bírkózásba kezd az ember valami bestiális lénnyel.
+			</p>
+			<p>
+				- Én segítem őket, te meg ezekkel segíts! - mondja <span class="ally"></span> és egy doboz gránátot ad neked.
+			</p>
+      <i>
+      <p>
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+      </p>
+      <p>
+        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+      </p>
+      <p>
+        Jó szórakozást!
+      </p>
+      </i>
+    `,
+		obj: ["W_KÉZIGRÁNÁT", "W_KÉZIGRÁNÁT", "W_KÉZIGRÁNÁT"],
+		buttons: [
+			{
+				txt: "Induljon a harc!",
+			},
+		],
+		pass: 249,
+		fail: 250,
+	},
 ];
-

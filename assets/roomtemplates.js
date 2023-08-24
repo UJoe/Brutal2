@@ -48,6 +48,7 @@ let templates = [
       <p>
        D <span class="part"></span> 
       </p>
+			<ol id="pp"></ol>
       <p id="casualties"></p>
       <p><i>
        Mit teszel?
