@@ -280,7 +280,7 @@ let templates = [
 		type: "kotyvaszt",
 		music: "epicsearch",
 		pic: "betyarküche.JPG",
-		prodtxt: "Batyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
+		prodtxt: "Betyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
 		desc: `
       <p>
        - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. De egy klicsit nehéz belegyömöszölni Betyárba a dolgokat, inkább kattints kétszer a GYÁRTÁS gombra, ha először nem csinálna semmit!

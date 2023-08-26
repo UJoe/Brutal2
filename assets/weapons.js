@@ -689,4 +689,47 @@ window.receptek = [
     Érc: 30,
     Gyémánt: 3,
   },
+
+  {
+    name: "CSATABÁRD",
+    Bronz: 4,
+    Ezüst: 2,
+    Arany: 1,
+  },
+  {
+    name: "DIABOLIKUS SZTEROID",
+    Bronz: 10,
+    Ezüst: 5,
+    Arany: 1,
+  },
+  {
+    name: "KIS ERŐITAL",
+    Bronz: 20,
+    Ezüst: 2,
+    Arany: 1,
+  },
+  {
+    name: "LÉZERFEGYVER",
+    Bronz: 10,
+    Ezüst: 10,
+    Arany: 10,
+  },
+  {
+    name: "MÍVES MORDÁLY",
+    Bronz: 10,
+    Ezüst: 5,
+    Arany: 5,
+  },
+  {
+    name: "ROBI",
+    Bronz: 10,
+    Ezüst: 10,
+    Arany: 5,
+  },
+  {
+    name: "PROTONÁGYÚ",
+    Bronz: 70,
+    Ezüst: 30,
+    Arany: 20,
+  },
 ];

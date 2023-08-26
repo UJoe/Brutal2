@@ -318,8 +318,8 @@ window.armies = {
 	vadállatok: "2 Vadfa, 3 Bestia",
 	éjjeliműszak: "5 Tüzér, 3 Izomagy, 2 Szekus, 1 Favágó",
 	erdeiék: "1 Erdei Zsolt, 12 Bübük",
-	finalfriends: "1",
-	finalnmes: "1",
+	finalfriends: "2 Tüzér, 1 Vadfa, 1 Bübük, 1 Paraszt, 1 Indián, 1 Íjász, 1 Favágó, 1 Távolugró, 1 Óriás",
+	finalnmes: "2 Tüzér, 2 Izomagy, 2 Szekus, 1 Óriás, 1 Bestia, 1 Robi",
 };
 
 window.specvoices = {

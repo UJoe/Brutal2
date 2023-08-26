@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 206; //startroom
+		char.room = 93; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -444,6 +444,7 @@ function _load() {
 		let sn = char.name.split(",")[0];
 		if (cond == "férfi") return sn == "Brezsnyev" || sn == "Sanyi" || sn == "Q";
 		if (cond == "nő") return sn == "Lilike" || sn == "Gabi";
+		if (cond == "raktár") return (fegyverRaktár.length > 1);
 		let cc = true;
 		let conds = cond.split(", ");
 		for (let c of conds) {
@@ -1053,6 +1054,7 @@ function _load() {
 				let answer = event.target.value;
 				if (answer === rip.key) {
 					char.room = room.pass;
+					if (room.modi) modi = room.modi;
 				} else {
 					char.room = room.fail;
 				}
@@ -1189,9 +1191,9 @@ function _load() {
                 <td><input id="in-${i}" type="number" tabindex="${i + 1}" min="0" max="${gemNum[i]}" value="${gemIn[i]
 						}"></td>
                 <td><input id="ir-${i}" type="range" min="0" max="${gemNum[i]}" value="${gemIn[i]}"></td>
-                <td>
-                  <button class="Mbtn" id="b-min-${i}">Min</button>
-                  <button class="Mbtn" id="b-max-${i}">Max</button>
+                <td class="mbc">
+                  <button class="Mbtn mn" id="b-min-${i}">Min</button>
+                  <button class="Mbtn mx" id="b-max-${i}">Max</button>
                 </td>
               </tr>
             `;
@@ -1289,15 +1291,13 @@ function _load() {
 					break;
 
 				case "felfegyverzés":
-					let messzi = "Nem volt lerakva fegyvered.";
-					if (fegyverRaktár.length > 0) {
-						messzi = "Felvetted a korábban lerakott fegyvereidet.";
-						for (let fr of fegyverRaktár) {
-							char.objs.push(fr);
+					if (fegyverRaktár.length > 1) {
+						for (let f = 1; f < fegyverRaktár.length; f++) {
+							char.objs.push(fegyverRaktár[f]);
 						}
 						fegyverRaktár = [];
+						message("Felvetted a korábban lerakott fegyvereidet.");
 					}
-					message(messzi);
 					break;
 
 				case "treasure":
@@ -1305,7 +1305,7 @@ function _load() {
 					for (let i = 3; i < 6; i++) {
 						bl += Math.round(modi[i] * (i - 2) / 1.5)
 					}
-					message("A szétosztott kincsek " + bl + " ponttal növelték a támogatásodat!");
+					message("A kincseknek köszönhetően " + bl + " ponttal nőtt a támogatásod!");
 					changeVal("sup", bl);
 					break;
 
@@ -1433,7 +1433,11 @@ function _load() {
 				document.querySelectorAll(".part").forEach((p) => (p.innerHTML = part));
 			}
 			if (document.querySelector(".ally")) {
-				let ally = getObj("J_Oshinoko") ? "Oshinoko" : "Frici"
+				let ally = "A legjobb barátod";
+				if (getObj("J_Oshinoko") && !getObj("X_Oshinoko")) ally = "Oshinoko";
+				if (getObj("J_Ügyes Frigyes") && !getObj("X_Ügyes Frigyes")) ally = "Frici";
+				if (getObj("J_Erdei Zsolt") && !getObj("X_Erdei Zsolt")) ally = "Zsolt";
+				if (getObj("J_Bogi") && !getObj("X_Bogi") && !getObj("E_szakítás Bogival")) ally = "Bogi";
 				document.querySelectorAll(".ally").forEach((n) => (n.innerHTML = ally));
 			}
 			if (document.querySelector(".cond")) {
@@ -2400,7 +2404,7 @@ function _load() {
 							changeVal("ero", 1 + Math.round(Math.random() * 3));
 							changeVal("esz", 1 + Math.round(Math.random() * 2));
 							changeVal("hat", Math.round(Math.random()));
-							document.getElementById("helpBtn").disabled = true;
+							if (room.helper) document.getElementById("helpBtn").disabled = true;
 							document.querySelectorAll("input").forEach((ip) => {
 								ip.disabled = true;
 							});
@@ -2430,7 +2434,7 @@ function _load() {
 						}
 
 						document.getElementById("Ibetű").addEventListener("keyup", function (event) {
-							document.getElementById("helpBtn").disabled = false;
+							if (room.helper) document.getElementById("helpBtn").disabled = false;
 							let ibet = event.target.value.toUpperCase();
 							if (joBetuk.indexOf(ibet) > -1 || rosszBetuk.indexOf(ibet) > -1) {
 								szadi("Ezt a betűt már kérdezted!");

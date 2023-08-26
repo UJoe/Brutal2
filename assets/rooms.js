@@ -1747,6 +1747,7 @@ window.rooms = [
 			{
 				txt: "Ha dolgoztál az épületen, nincs belépőd oda?",
 				new: 81,
+				cond: ">_esz_30"
 			},
 		],
 	},
@@ -2628,18 +2629,28 @@ window.rooms = [
 	},
 	{
 		num: 81,
-		title: "Nem érdemes belógni",
+		title: "A belépőkártya megszerzése",
 		type: "normal",
 		music: "think1",
 		pic: "frici.JPG",
 		desc: `
       <p>
-       - Dehogy van! Azt egyből visszaveszik, amint lejár a szerződés. Hidd el, csak az a két lehetőség van, amit mondtam.
+       - Dehogy van! Azt egyből visszaveszik, amint lejár a szerződés. De ismernek is arcról az őrök minden ott dolgozót, mert nem sokan járnak oda. Még ha lenne is egy kártyánk, azzal se a főbejáraton kellene bemennünk - mondja Frici. Aztán pár pillanatig hallgattok, majd felkapjátok a fejeteket és egyszerre mondjátok:
       </p>
-    `,
+			<p>
+				- Boldi!!!
+			</p>
+			<p>
+				Beléptek a kunyhóba, ami tele van zsúfolva mindenféle furcsa tárggyal. Frici megmotozza a megkötözött, kétségbeesve nyögdécselő Boldit, és nemsokára megtalálja a belépőkártyáját.
+			</p>
+			<p>
+				- Ez az! Ezt most kölcsönvesszük, pajtikám! - mondja vigyorogva, aztán kimentek. - Na, akkor mi legyen? A kártya jól jöhet akkor is, ha beássuk megunkat az épületbe. Vagy marad a kevésbé macerás mesterlövész-támadás.
+			</p>
+		`,
+		obj: ["E_belépőkártya"],
 		buttons: [
 			{
-				txt: "Akkor legyen a beásás!",
+				txt: "Legyen a beásás! Ha már van kártyánk, szétnéznék bent.",
 				new: 79,
 			},
 			{
@@ -6110,7 +6121,7 @@ window.rooms = [
 		prodtxt: "Betyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
 		desc: `
       <p>
-       - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. De egy klicsit nehéz belegyömöszölni Betyárba a dolgokat, inkább kattints kétszer a GYÁRTÁS gombra, ha először nem csinálna semmit!
+       - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. A GYÁRTÁS gomb néha akadozik, ha először nem csinálna semmit, nyomd meg megint!
       </p>
     `,
 		cont: 197,
@@ -6162,7 +6173,7 @@ window.rooms = [
 		pic: "server.jpg",
 		desc: `
       <p>
-       Frigyes számításai pontosak voltak. A Betyár által ütött lukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. Odalépsz a terminálhoz. Természetesen jelszót kér.
+       Frigyes számításai pontosak voltak. A Betyár által ütött lukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. A server-szoba ajtaja természetesen zárva van. A server konzolja pedig jelszót kér. Mit teszel?
       </p>
     `,
 		buttons: [
@@ -6174,7 +6185,13 @@ window.rooms = [
 				txt: "Feltöröd a rendszert",
 				new: 230,
 				cond: "=_name_Q, >_esz_70",
-				modi: "Rutinosan lefuttatsz egy jelszófeltörő-algoritmust, ami mindig bejön és várod az eredményt.",
+				modi: "Rutinosan lefuttatsz egy jelszófeltörő-algoritmust, ami mindig bejön és várod az eredményt. A kijelzőn felvillan egy üdvözlő felirat. Bejutottál a rendszerbe! Nem kell sokat keresgélned, hogy rájöjj, melyik ajtókat kell feloldanod ahhoz, hogy bejuss Botihoz. Sőt magát Botit és az őrök tartózkodását is látod. Egy ideig megfigyeled a mozgásukat, aztán amint szabad lesz az útvonal, azonnal elindultok Fricivel.",
+			},
+			{
+				txt: "Használjátok a Bolditól szerzett belépőkártyát",
+				new: 230,
+				cond: "E_belépőkártya",
+				modi: "Előveszitek a kártyát és a leolvasóhoz érintitek. A led zöldre vált, egy kattintást hallotok és már nyitjátok is az ajtót. Egymásra kacsintotok. Ez könnyű volt! Elindultok megkeresni Botit.",
 			},
 		],
 	},
@@ -6267,13 +6284,13 @@ window.rooms = [
 	},
 	{
 		num: 202,
-		title: "A <span class='name'></span> Gárda bevette a Városházát",
+		title: "Bevettétek a Városházát",
 		type: "normal",
 		music: "epicloop",
 		pic: "happymass.jpg",
 		desc: `
       	<p>
-					Embereid sikeresen leverték a városháza őreit. A <span class="name"></span> Gárda üdvrivalgása után egy gyors halottszemlét tartasz.
+					Embereid sikeresen leverték a városháza őreit. Győztes sereged üdvrivalgása után egy gyors halottszemlét tartasz.
 				</p>  
 				<p id="casualties"></p>
 				<p>
@@ -6414,7 +6431,7 @@ window.rooms = [
 				Nem nagyon tervezted meg ennek a részleteit, de magabiztos vagy. Csak nem olyan hülye a nép, hogy a szabadítóját elveti. Bár pontosan nem tudod, milyen ellenállással kell szembenézned.
 			</p>
 			<p>
-				Nemsokára megérkeztek Frici titkos erdei kunyhójába. Először lépsz be ide. Nagyon zsúfolt, roskadásig tele van mindenféle furcsa tárggyal. Frici egy üllőn gyors vacsorát rögtönöz, azt követően pedig az egyik szekrényt eldőlti, aminek a hátsó fele egy teljesen jó ágy, amin ketten is elfértek. Mivel nincs más lehetőség, itt tértek nyugovóra.
+				Nemsokára megérkeztek Frici titkos erdei kunyhójába. Belépsz, de alig tudsz megmozdulni, mert roskadásig tele van mindenféle furcsa tárggyal. Frici egy üllőn gyors vacsorát rögtönöz, azt követően pedig az egyik szekrényt eldőlti, aminek a hátsó fele egy teljesen jó ágy, amin ketten is elfértek. Mivel nincs más lehetőség, itt tértek nyugovóra.
 			</p>
     `,
 		obj: ["X_Boti"],
@@ -6902,7 +6919,7 @@ window.rooms = [
 				Én azt hallottam, hogy levizelik a lelkedet! Semmi sem szent nekik! 
 			</li>
 			<li>
-				A fingjuk vakságot és rákot okoz! Már tanítják rá Boti embereit is! 
+				A fingjuk rákkeltő! Már tanítják rá Boti embereit is! 
 			</li>
 			<li>
 				Munkát akarunk! Szabadságot akarunk! Vesszen a zsarnok! Irány a Városháza!
@@ -6967,7 +6984,7 @@ window.rooms = [
 				- Nincs saját bányászotok? - szalad ki a szádon a gyanakvó kérdés. Zsolt felnevet.
 			</p>
 			<p>
-				- A bübük éppenséggel jó földmunkások, de nehezen tudják felhozni az ásványokat. Nekem viszont őrködnöm kell, mert én vagyok az erdő ura, nincs időm a barlangban rohangászni. De a barlang közepén találsz egy nagy kosarat. Abba belerakhatod, amit gyűjtöttél, és fel is húzunk onnan!
+				- A bübük sajnos fizikailag alkalmatlanok a berregő csákány használatára, mással pedig nem tudjuk kiszedni a földből az ásványkincseket! - mondja, azzal átnyújt neked egy fura munkagépet, ami leginkább György úrra, a lumbágós hangyászsünre emlékeztet, akit egyszer láttál egy dokumentumfilmben. - Egyszerű a használata: odanyomod a falhoz és megnyomod ezt a gombot. A szűrő lepergeti a földet, a tartályban meg megmarad a kemény ásvány. Ha ez a lámpa világít, akkor megtelt a tartály, ürítsd ki a zsákodba! Ennyi. Én sajnos azért nem bányászhatok, mert én vagyok az erdő ura, őriznem kell a rendet, így nincs időm barlangokban rohangászni... Ha kész vagy, a barlang közepén találsz egy nagy kosarat. Azzal fel tudunk húzni a gyűjtött kincseiddel együtt! 
 			</p>
 			<p>
 				- Nem lehetne, hogy eleve oda eresszetek le?
@@ -7019,7 +7036,7 @@ window.rooms = [
 			},
 			{
 				txt: "Inkább most csak csendben lelépsz",
-				new: 251,
+				new: 245,
 			},
 		],
 	},
@@ -7213,7 +7230,8 @@ window.rooms = [
 			key: "85bz4ruiewghwnoiuhjro7önxhek",
 		},
 		pass: 230,
-		fail: 244,
+		fail: 265,
+		modi: "A kijelzőn felvillan egy üdvözlő felirat. Bejutottál a rendszerbe! Nem kell sokat keresgélned, hogy rájöjj, melyik ajtókat kell feloldanod ahhoz, hogy bejuss Botihoz. Sőt magát Botit és az őrök tartózkodását is látod. Egy ideig megfigyeled a mozgásukat, aztán amint szabad lesz az útvonal, azonnal elindultok Fricivel."
 	},
 	{
 		num: 230,
@@ -7223,9 +7241,6 @@ window.rooms = [
 		pic: "server.jpg",
 		desc: `
 			<p id="modified"></p>
-			<p>
-       	A kijelzőn felvillan egy üdvözlő felirat. Bejutottál a rendszerbe! Nem kell sokat keresgélned, hogy rájöjj, melyik ajtókat kell feloldanod ahhoz, hogy bejuss Botihoz. Sőt magát Botit és az őrök tartózkodását is látod. Egy ideig megfigyeled a mozgásukat, aztán amint szabad lesz az útvonal, azonnal elindultok Fricivel.
-      </p>
 			<p>
 				Szerencsétek van! Anélkül bejuttok Boti szobájáig a menekülő-alagúton át, hogy találkoznátok őrökkel. Benyittok.
 			</p>
@@ -7289,13 +7304,14 @@ window.rooms = [
 			<p>- Kik ezek az idegenek? - teszed fel némi aggodalommal a kérdést. De Boti most távolabb lép, széles mosollyal kezet ráz veled és hangosan így szól:
 			</p>
 			<p>
-				- Sok sikert a város vezetéséhez! - azzal eltűnik.
+				- Sok sikert a város vezetéséhez!
 			</p>
 		`,
 		buttons: [
 			{
-				txt: "Eh, nyertem, a többit meg majd meglátjuk!",
+				txt: "Eh, ezzel a mesével ráér később is foglalkozni!",
 				new: 237,
+				modi: "Nem nagyon törődsz már vesztes, összetört ellenfeleddel, inkább örülsz a győzelemnek. Rég vártál már erre és végre sikerült, te lettél a város vezetője!"
 			},
 		],
 	},
@@ -7378,4 +7394,421 @@ window.rooms = [
 		pass: 249,
 		fail: 250,
 	},
+	{
+		num: 235,
+		title: "Boti megtalálása a Városházán",
+		type: "normal",
+		music: "raveaction",
+		pic: "boti.jpg",
+		desc: `
+			<p>
+       Botira végül egy zárt szoba ajtajának berúgása után találsz rá egy szekrényben. Gyanús volt, hogy ki van hányva belőle minden ruha a földre. Ilyen amatőrt!
+      </p>
+			<p>
+				Kirángatod. Egyáltalán nem nagylegény így egyedül. Annyira reszket a félelemtől, hogy szinte már megsajnálod. Próbál többször is úrrá lenni köhögésekkel remegő hangján, ahogy könyörögni kezd neked:
+			</p>
+			<p>
+				- Jól van, te győztél! Elismerem. Átadom a városháza belépési jogosultságait. Csak kíméld meg az életem! Eltűnök a megmaradt embereimmel együtt. Keresünk egy másik távoli várost. Nem láttok minket többé. Tiéd a győzelem!
+			</p>
+			<p>
+				Úgy érzed, ez is elég. Nem vagy te egy véreskezű gyilkos, elég neked, ha legyőzöd a gonoszt és helyreállítod a rendet. Meg egyébként is már elfáradtál. Meg talán tényleg szükség lesz technikai okokból a jogosultságok átvételére még Botira. Így beleegyezel, hogy nem ölöd meg. Boti felsóhajt és kicsit összeszedi magát. Közben többen is bejöttek a szobába. Ezért odahajol hozzád, és halkan suttogja, hogy csak te halld:
+			</p>
+		`,
+		buttons: [
+			{
+				txt: "Mit?",
+				new: 232,
+			},
+		],
+	},
+	{
+		num: 236,
+		title: "Házasság Zsolttal",
+		type: "normal",
+		music: "love",
+		pic: "erdei.jpg",
+		desc: `
+      <p>
+       - Köszönöm, <span class="name"></span>, szerelmem! - mondja elérzékenyülten Zsolt, azzal megölel. A nép még hangosabb üdvrivalgásba tör ki, dobálják a kalapjaikat, nadrágjaikat, kártyapakilijaikat... Érzed, ahogy egyszerre dobban a szívetek, mélyen egymás szemébe néztek és megcsókoljátok egymást. Úgy érzed, repülsz, repülsz a fellegekbe...
+      </p>
+      <p>
+       Az esküvőt az erdei tisztáson tartjátok meg, a bübük és számos ember kíséretében. Sőt, még pár mozgó fa is rád kacsint. Hogy mik élnek itt az erdőben! De mivel te lettél a város elöljárója, a Városházát is elfoglaljátok. Ott is együtt vagytok. Megtervezitek a sportéletet, csak olyan beruházásokat hagysz jóvá, ami nem árt az erdőnek, de használ az embereknek. Ünnepelt pár vagytok, az egész város szeret titeket. A hősnő és a legyőzhetetlen erdei boxoló!
+      </p>
+			<p>
+				Így élitek életeteket - közel fél éven át. Akkor viszont történik valami...
+			</p>
+    `,
+		change: [
+			{
+				id: "lel",
+				crease: 50,
+				rnd: 50,
+			},
+			{
+				id: "hat",
+				crease: 40,
+				rnd: 40,
+			},
+			{
+				id: "ero",
+				crease: 30,
+				rnd: 30,
+			},
+			{
+				id: "sup",
+				crease: 500,
+				rnd: 500,
+			},
+		],
+		buttons: [
+			{
+				txt: "Jaj, ne történjen semmi, legyen itt vége!",
+				new: 300,
+			},
+			{
+				txt: "Jöjjön a Bazibrutál 3. része!",
+				new: 301,
+			},
+		],
+	},
+	{
+		num: 237,
+		title: "A Városháza elfoglalása",
+		type: "normal",
+		music: "happyDance",
+		pic: "townhall.JPG",
+		desc: `
+			<p id="modified"></p>
+			<p>
+       Miután elfoglaltátok a Városházát, hozzálátsz egy új világ megalkotásához. <span class="ally"></span> segítségével - akit rögtön megtettél alpolgármesternek - kiűzítek Boti<span class="cond" data-cond="!X_Boti">t és</span> megmaradt embereit a városból. Kétszer is véget vetettél a zsarnokságnak, az egész nép téged ünnpel! Számos hasznos intézkedést vezetsz be, amitől az emberek jobban és boldogabban élnek, és rend uralkodik az egész városban. Mindenki szeret téged. Még az állatok és intelligens növényi életformák is.
+      <p>
+      <p>
+				Így éled boldog életeted - közel fél éven át. Akkor viszont történik valami...
+			</p>
+    `,
+		change: [
+			{
+				id: "lel",
+				crease: 50,
+				rnd: 50,
+			},
+			{
+				id: "hat",
+				crease: 40,
+				rnd: 40,
+			},
+			{
+				id: "ero",
+				crease: 30,
+				rnd: 30,
+			},
+			{
+				id: "sup",
+				crease: 500,
+				rnd: 500,
+			},
+		],
+		buttons: [
+			{
+				txt: "Jaj, ne történjen semmi, legyen itt vége!",
+				new: 300,
+			},
+			{
+				txt: "Jöjjön a Bazibrutál 3. része!",
+				new: 301,
+			},
+		],
+	},
+	{
+		num: 238,
+		title: "A végső felkelés",
+		type: "finalwar",
+		friends: "finalfriends",
+		enemies: "finalnmes",
+		opts: "J_Oshinoko, J_Szenyamuki, X_Szenyamuki, J_Ügyes Frigyes, J_Kocsmatöltelékek, J_Erdei Zsolt, J_Bogi, X_Bogi",
+		music: "finalwar",
+		pic: "townhall.JPG",
+		desc: `
+      <p>
+				- Roham!!! - adod ki a tömegnek a parancsot és véres összecsapás veszi kezdetét a zsarnok embereivel.
+      </p>
+      <i>
+      <p>
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+      </p>
+      <p>
+        A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosságazt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
+      </p>
+      <p>
+        Jó szórakozást!
+      </p>
+      </i>
+    `,
+		buttons: [
+			{
+				txt: "Harcra fel, győzni kell",
+			},
+		],
+		pass: 202,
+		fail: 263,
+	},
+	{
+		num: 239,
+		title: "Az erdei barlangban",
+		type: "dig",
+		size: 15,
+		level: 6,
+		gems: ["Energia", "Bronz", "Ezüst", "Arany"],
+		music: "underground2",
+		pic: "cave.gif",
+		desc: `
+      <p>
+        Feltápászkodsz és körülnézel. Gyér fény világítja be fentről a barlangot, bár úgy látod, beljebb remegve ég néhány fáklya. Kipróbálod a berregő csákányt. Tényleg berreg, alul kijön belőle a föld és a tartályban valami koppan. Kinyitod és látod, hogy egy nemesfém-rög! Lehet, hogy egy hihetetlenül értékes barlangba kerültél. A berregő csákány használata ugyan elvesz némi energiát, de legalább tudsz folyamatosan gyűjtögetni, miközben keresed a barlang közepét, ahonnan állítólag majd felhúznak.
+      </p>
+			<p><i>
+        Először válassz ki egy szélső mezőt, ahonnan indulsz. Utána a billentyűzet nyilaival tudod irányítani, hogy merre mész tovább. Minél világosabb földben haladsz, annál kevesebb energiába kerül az ásás, de a sötétebb földek több és értékesebb ásványokat rejtenek. A kék sziklás talajban nem tudsz haladni, azt ki kell kerülnöd. Figyeld folyamatosan az Energia-szintedet, mert amíg van elég, addig mászklálhatsz ide-oda gyűjtögetve ásványokat, de a végén mindenképpen meg kell érkezned középre, mert ott tudnak felhúzni. Készen állsz?
+			</i></p>
+    `,
+		buttons: [
+			{
+				txt: "Igen, mindig is bányász szerettem volna lenni!",
+			},
+		],
+		pass: 240,
+		fail: 241,
+	},
+	{
+		num: 240,
+		title: "Sikeres erdei barlangászat",
+		type: "kotyvaszt",
+		music: "bübük",
+		pic: "bübük.jpg",
+		prodtxt: "Beletöltitek a kincseket a kohóba, amiből alul a következő tárgy jön ki:",
+		desc: `
+      <p>
+				Már egy jó ideje mész és berregsz, amikor végre megpillantasz egy nagy kosarat, amit egy vastag kötél tart. Felnézel és tényleg a szabad ég felé vezet. Beszállsz, megrángatod a kötelet és felordítasz, hogy hőzzanak fel.
+			</p>
+			<p>
+				A kosár megmozdul és te elindulsz felfelé. Amikor végre megérkezel a felszínre, látod, hogy bübük lelkes, gurgulázó tömege vesz körül. Zsolt segít kiszállni, elnézést kér, hogy lelökött, nem így akarta, csak legyinteni akart egyet, de örül, hogy épségben, kincsekkel megrakodva visszatértél. Ezután begyűjtik a kincseket, és pár bübü már hoz is egy kerekeken guruló mobilkohót. Zsolt elkezd magyarázni:
+			</p>
+			<p>
+       - Köszönjük szépen, nagy segítség ez nekünk! Rögtön be is olvasztjuk a megszerzett kincseket. Ez a kohó, amit mi csak Leninkének hívunk, mindig csinál a berakott anyagokból valamit, nagyon szuper! Ügyes Frigyes, a város ezermestere készítette nekünk, aki szintén kijön néha az erdőbe. Mivel te szerezted meg az ásványokat, rád bízzuk, hogy mennyit olvasszunk be. Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Leninke mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Leninke. Legfeljebb nem tudjuk semmire használni. A GYÁRTÁS gomb sajnos már néha akad, olyankor kétszer is meg kell nyomni!
+      </p>
+    `,
+		Xchange: "treasure",
+		cont: 264,
+	},
+	{
+		num: 241,
+		type: "Ytrial",
+		value: "E_love Zsolt",
+		pass: 242,
+		fail: 243,
+	},
+	{
+		num: 242,
+		title: "Zsolt szíve megesik rajtad",
+		type: "normal",
+		music: "love",
+		pic: "erdei.jpg",
+		desc: `
+      <p>
+       Eleged lesz az egész ásásból, ott hagyod az egész kincset. Megpróbálsz visszajutni oda, ahonnan jöttél, de lehetetlen visszamászni. Elkezdesz kiabálni. Nem kell sokáig várni, Zsolt mintha megérezte volna, hogy baj van, megjelenik felül, aztán egy szökelléssel döngve leugrik melléd.
+      </p>
+      <p>
+       - Itt vagyok, ne aggódj! Látom, nem sikerült teljesítened a küldetést, de nem baj. Szerencsére én vagyok itt a főnök. Gyere! - mondja kedves hangon, aztán az egyik karjával átkarol, felemel, a másikkal pedig  elkezd felfelé mászni veled. Teljesen lenyűgöznek a képességei! A szükségesnél talán szorosabban kapaszkodsz belé...
+      </p>
+			<p>
+				Amikor felértek, gyengéden letesz a puha pázsitra, aztán a bübükhöz fordul.
+			</p>
+			<p>
+				- Bár <span id="fullName"></span> nem jutott el a kincsekkel a kosárig, azért így is sokat fáradozott, hogy segítsen nekünk. Jutalomból megtanítjuk neki a Bübüszimatot!
+			</p>
+			<p>
+				A bübük megrökönyödve egymásra néznek, aztán az egyik, aki talán 1 centivel magasabb, mint a többi, Zsolt elé lép és elkezd morogva gőgicsélni, mint valami csecsemő, akinek mindig 5 centivel hátrébb rakják a játszószőnyegen a cumit, hogy mászásra ösztönözzék.
+			</p>
+			<p>
+				Zsolt egy ideig hallgatja, aztán amikor rájön, mi a gond, teleszívja a tüdejét, amivel akkorára dagad, mint két egymás nyakában ülő pankrátor. A bübü hirtelen abbahagyja a beszédet, majd vinnyogva a tömeg közepe felé nyargal. A többi bübü is láthatóan belenyugszik ezután Zsolt döntésébe.
+			</p>
+		`,
+		change: [
+			{
+				id: "hat",
+				crease: -1,
+				rnd: 1,
+			},
+			{
+				id: "lel",
+				crease: -1,
+			},
+		],
+		buttons: [
+			{
+				txt: "Jöjjön az új képesség!",
+				new: 264,
+			},
+		],
+	},
+	{
+		num: 243,
+		title: "Elbuktad Erdeiék próbáját",
+		type: "normal",
+		music: "bübük",
+		pic: "erdei.jpg",
+		desc: `
+      <p>
+       Eleged lesz az egész ásásból, ott hagyod az egész kincset. Megpróbálsz visszajutni oda, ahonnan jöttél, de lehetetlen visszamászni. Elkezdesz kiabálni. Jó sokára hallanak meg. Zsolt feje jelenik meg felül és ledob neked egy kötélhágcsót. Felmászol rajta.
+      </p>
+      <p>
+       - Sajnos nem álltad ki a próbát. Csalódtunk benned, <span class="name"></span>. Egy igazi hős nem ilyen! Kérlek, hagyd el a területünket! - mondja Zsolt határozottan. Látod, hogy ő is és az összes bübü ellened fordult. Jobbnak látod távozni...
+      </p>
+			<p>
+				Bolyongsz egy ideig, és már késő este van, amikor kijutsz az erdőből. Nincs már semmi máshoz kedved, csak hazamenni.
+			</p>
+		`,
+		change: [
+			{
+				id: "hat",
+				crease: -3,
+				rnd: 4,
+			},
+			{
+				id: "lel",
+				crease: -3,
+				rnd: 2,
+			},
+			{
+				id: "ero",
+				crease: -3,
+				rnd: 6,
+			},
+		],
+		buttons: [
+			{
+				txt: "Édes otthon!",
+				new: 46,
+			},
+		],
+	},
+	{
+		num: 244,
+		title: "Harc a Városháza folyosóin",
+		type: "dungeon",
+		pic: "corridor.gif",
+		music: "raveaction",
+		desc: `
+			<p>
+				Rohantok Fricivel a folyosókon Boti szobáját keresve.
+			</p>
+			`,
+		contBtn: "Tovább keresel",
+		passBtn: {
+			txt: "Megvagy!",
+			new: 256,
+		},
+		passDesc: "<p>Az egyik zárt szoba ajtaját berúgva üres szobába lépsz be. Valami gyanús, mert az egyik szekrény előtt halomban állnak a ruhák. A szekrény mellé lépve halk zihálást hallasz belülről. Az amatőr! - gondolod és felrántod a szekrényajtót. Boti az, teljesen halálra rémülve!</p>",
+		fight: 251,
+		end: 15,
+		find: [
+			"W_GYILOK",
+			"W_GÉPFEGYVER",
+			"W_OSTOR",
+			"W_ROBI",
+			"W_PETÁRDA",
+			"W_KÉZIGRÁNÁT",
+			"W_KIS ERŐITAL",
+			"W_NAGY ERŐITAL",
+			"W_KONYHAKÉS",
+			"W_PÁLINKÁS FLASKA",
+		],
+		findmany: 3,
+	},
+	{
+		num: 245,
+		title: "Csendes menekülés Oshinokoval",
+		type: "normal",
+		music: "oshinoko",
+		pic: "darkstreet.jpg",
+		desc: `
+      <p>
+       Szép nyugodt léptekkel elindultok Oshinokoval. Szerencsére senki nem állít meg titeket.
+      </p>
+			<p class="cond" data-cond="raktár">
+				Csak egy gyors esemény történik útközben. Oshinoko befordul egy lakatlan mellékutcába, ahol egy kapualjban Khi Csivel, Oshinoko fiával találkoztok. Egy zsák van nála, benne a fegyvereiddel, amit leraktál Oshinokonál. Megköszönöd nekik, hogy nem felejtették el. Oshinoko még mond valamit japánul Khi Csinek, aki nem túl boldogan, de bólint egyet, azzal eltűnik.
+			</p>
+			<p class="cond" data-cond="raktár">
+				- Nem biztonságos most a házunkba se visszamenni, ezért szóltam előre Khi Csinek, hogy hozza el a fegyvereidet ide. De most jussunk ki minél előbb a városból, holnap meg meglátjuk, hogy tudod átvenni a hatalmat - mondja Oshinoko, azzal tovább mentek.
+			</p>
+      <p>
+       Sikeresen kijuttok a városból, mielőtt lezárnák azt. Mire eléritek az erdő sűrűjét, már leszáll az éj. Elérkeztek egy fákkal és bokrokkal sűrűn körülvett helyre.
+      </p>
+      <p>
+       - Itt szoktam néha meditálni. Itt senki nem zavar, és van hely kettőnknek is aludni a pázsiton. Ehetsz is egy kicsit! - mondja Oshinoko és a bokrokon növő erdei gyümölcsökre mutat. Fáradt testednek jót tesz az eledel. Nem beszéltek már sokat utána, hanem lefekszetek és elalszotok.
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Zzzz...",
+				new: 234,
+			},
+		],
+		Xchange: "felfegyverzés",
+		change: [
+			{
+				id: "ero",
+				crease: 7,
+				rnd: 5,
+			},
+		],
+	},
+
+	{
+		num: 251,
+		title: "Harc a Városháza őrével",
+		type: "fight",
+		pic: "kidobo.jpg",
+		nmepic: "kidobo.jpg",
+		dungeon: true,
+		level: 5,
+		desc: `
+      <p>
+       Egy őrbe botlasz bele.
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Állj félre az utamból!",
+			},
+		],
+		pass: 244,
+		fail: 244,
+	},
+
+	{
+		num: 265,
+		title: "Nem sikerült megadni a jelszót",
+		type: "normal",
+		music: "raveaction",
+		pic: "server.jpg",
+		desc: `
+      <p>
+				Nem sikerült beütni a jelszót, és úgy túnik, nincs is több próbálkozási lehetőségetek, mert egyből megszólal egy riasztó. Nemsokára kiáltozások és lépések zaját halljátok. Fricivel egymásra néztek.
+			<p>
+			<p>
+				- Ha már eddig eljutottunk, ne hátráljunk meg! Ha harc, legyen harc! - mondja Frici elszántan.
+			</p>
+			<p>
+				Nem lenne hőshöz méltó, ha nem értenél vele egyet. Beugrasz a raktárba, felkapod a legsúlyosabb nyomtatót és teljes erődből az üvegajtóhoz vágod. Az csörömpölve szilánkokra törik. Kiugrotok rajta és elindultok megkeresni Botit.
+			</p>
+    `,
+		buttons: [
+			{
+				txt: "Gyerünk!",
+				new: 244,
+			},
+		],
+	},
 ];
+
+
+//264: Zsolt int egy bübünek, akinek a többieknél színesebb levelek nőnek a fejéről és egy apró kolibrifészek van a kezében. Megáll előtted és integet, hogy hajolj le. Így teszel. Ekkor a fészekben levő port az arcodra önti. Csípős-édeskés szag csap meg, ami nemsokára nagyon tömény mentolos illattá változik. Közben a bübük elkezdenek kántálni valamit a babanyelvükön. Hirtelen azt veszed észre, hogy minden érzéked kitisztul. Tűélessé válik a látásod, minden tárgy a környezetedben sokkal színesebbé és részletesebbé válik, a hangok is kitisztulnak, azt is meghallod, hogy valaki a füvön lép egyet a hátsó sorban és az erdő gazdag illatkavalkádja veszi át fokozatosan a mentolos illat helyét. Az eddiginél jóval több infomráció jut el hozzád a környezetdből, azt is biztosan tudod, mi rejtőzik a fák takarásában, mi fog hozzád közelíteni milyen irányból és mikor ér el. Elképesztő!

@@ -237,30 +237,37 @@
 237 - A Városháza elfoglalása (modi - END - UFOK?)
 238 - Végső lázadás (finalwar mindenkivel)
 239 - Erdeiék próbája (DIG egyedül, underground2 music)
-240 - Kiálltad Erdeiék Digjét
+240 - Kiálltad Erdeiék Digjét (xchange: treasure + kotyvasztó)
 241 - Ytrial (elbuktad Zsolt próbáját, de ha szerelmes beléd, átenged)
-242 - Szövetségkötés Erdeiékkel (S_Bübüszimat, J_Erdei Zsolt)
+242 - Zsolt kivételez veled (=> 264)
 243 - Elbuktad Zsolt próbáját (nem is szerelmes beléd, 1. nap vége)
-244 - Észrevesznek a Városházán (fight vagy más?)
-245 - Visszavonulsz az erdőbe az orvgyilkosság után
+244 - Észrevesznek a Városházán (dungeon)
+245 - Visszavonulsz az erdőbe Oshinokoval az orvgyilkosság után (xchange: felfegyverzés => 234)
 246 - Sikeres hatalomátvétel az orvgyilkosság után
 247 - Meglincsel a nép (dead)
 248 - Visszatérés a főtérre Boti halála után (ally class: Oshinoko, Frici, => beszédtrial vagy BIzonyíték bemutatása)
 249 - Az erdei harc után (bizonyíték Boti ellen => 248)
 250 - Az erdei harc elvesztése (dead)
-251 - Pursuit - sikerül-e kijutni a városból az orvgyilkosság után (ally class, => 245, 252)
+251 - 244 dungeon fightja, kemény
 252 - Elkapnak az orvgyilkosság után (dead)
 253 - Oshinoko meghalt a ködben
-254 - Szanyamuki meghalt a ködben
+254 - Szenyamuki meghalt a ködben
 255 - Boti meghalt a ködben
-256 - Boti szobájában
-257 - trial (ügy, Boti elkapása a csónakházban)
-258 - Végzel Botival a csónakházban, harc a sofőrrel (élethalál fight, 260)
-259 - Verekedés a csónakházban (sofőr bejön, fight => 261, élethalál)
-260 - Végzel Botival és a sofőrrel is a csónakházban, este Bogival (love betétek, modi?)
+256 - Boti szobájában (kinyírod, vissza az alagúton át => erdei fight 234)
+257 - Xtrial (csendes ölés, Boti elkapása a csónakházban)
+258 - Végzel Botival és a sofőrrel is egymás után csendesen a csónakházban => 260
+259 - Verekedés a csónakházban (sofőr bejön, Boti még él, fight => 261, élethalál)
+260 - Este Bogival (love betétek, modi?)
 261 - Ytrial (love Bogi)
 262 - Bogi megöli Botit => 260
 262 - Boti mindkettőtöket kinyír (death)
+263 - A végső támadás elvesztése (death)
+264 - Szövetségkötés Erdeiékkel (S_Bübüszimat, J_Erdei Zsolt, a támadás terve, haza)
+265 - Nem sikerül beütni a jelszót => 244
+
+
+
+300 - Utolsó pálya (summary, ha nem mész a 3. részhez)
 
 
 

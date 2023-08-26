@@ -820,12 +820,26 @@ select {
 	margin: 5px;
 }
 
+.mbc {
+	width: fit-content;
+	display: flex;
+	flex-direction: row;
+}
+
 .Mbtn {
-	background-color: blue;
-	color: red;
 	margin: 10px;
 	transform: scale(1.3);
 	border-radius: 5px;
+}
+
+.mx {
+	background-color: blue;
+	color: red;
+}
+
+.mn {
+	background-color: red;
+	color: blue;
 }
 
 .Mbtn:disabled {
