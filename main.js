@@ -773,9 +773,7 @@ function _load() {
 					if (char.ugy > 40 + Math.random() * 35 || getObj("S_Villámgyorsaság")) ügyivagy++;
 					if (char.esz > 40 + Math.random() * 35 || getObj("S_Pengeagy")) ügyivagy++;
 
-					console.log(ügyivagy);
-
-					if (ügyivagy > 2) {
+					if (ügyivagy > 1) {
 						outcome = "pass";
 						crease = 5;
 						result = "Sikeresen kitaláltál egy trükkös akciót!";
