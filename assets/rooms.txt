@@ -257,17 +257,15 @@
 257 - Xtrial (csendes ölés, Boti elkapása a csónakházban)
 258 - Végzel Botival és a sofőrrel is egymás után csendesen a csónakházban => 260
 259 - Verekedés a csónakházban (sofőr bejön, Boti még él, fight => 261, élethalál)
-260 - Este Bogival (love betétek, modi?)
-261 - Ytrial (love Bogi)
-262 - Bogi megöli Botit => 260
-262 - Boti mindkettőtöket kinyír (death)
+260 - Este Bogival (love betétek? Bizonyítékot ad ő is 249)
+261 - Boti túszul ejti Bogit
+262 - Lelépsz Bogitól 
 263 - A végső támadás elvesztése (death)
 264 - Szövetségkötés Erdeiékkel (S_Bübüszimat, J_Erdei Zsolt, a támadás terve, haza)
-265 - éjjeli erdei death
-
-
-
-
+265 - éjjeli erdeid eath
+266 - Bogi megment téged
+267 - Megmented Bogit
+268 - Isteni segítséget kapsz
 
 300 - Utolsó pálya (summary, ha nem mész a 3. részhez)
 

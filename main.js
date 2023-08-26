@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 257; //startroom
+		char.room = 0; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -399,7 +399,7 @@ function _load() {
 				}
 				let hullák = getObj("X");
 				if (hullák.length > 0) {
-					let hullákStr = "Végeztél az alábbi ellenségeiddel:<br><ul>";
+					let hullákStr = "Az alábbi emberek haltak meg - közvetve vagy közvetlenül - neked köszönhetően:<br><ul>";
 					for (let hulla of hullák) {
 						hullákStr += "<li> " + hulla + "</li>";
 					}
@@ -443,29 +443,29 @@ function _load() {
 
 	function checkCond(cond) {
 		let sn = char.name.split(",")[0];
-		if (cond == "férfi") return sn == "Brezsnyev" || sn == "Sanyi" || sn == "Q";
-		if (cond == "nő") return sn == "Lilike" || sn == "Gabi";
 		if (cond == "raktár") return (fegyverRaktár.length > 1);
 		let cc = true;
 		let conds = cond.split(", ");
 		for (let c of conds) {
-			let op = c.charAt(0);
-			if (op === "=" || op === "ł" || op === "<" || op === ">") {
-				let key = c.split("_")[1];
-				let val = c.split("_")[2];
-				let ref = char[key];
-				if (key === "name") ref = sn;
-				if (
-					(op === "=" && ref != val) ||
-					(op === "ł" && ref == val) ||
-					(op === ">" && ref <= val) ||
-					(op === "<" && ref >= val)
-				)
-					cc = false;
-			} else if (op === "!") {
-				if (getObj(c.substring(1))) cc = false;
-			} else {
-				if (getObj(c) == false) cc = false;
+			if (c == "férfi") { cc = (sn == "Brezsnyev" || sn == "Sanyi" || sn == "Q") } else if (c == "nő") { cc = (sn == "Lilike" || sn == "Gabi") } else {
+				let op = c.charAt(0);
+				if (op === "=" || op === "ł" || op === "<" || op === ">") {
+					let key = c.split("_")[1];
+					let val = c.split("_")[2];
+					let ref = char[key];
+					if (key === "name") ref = sn;
+					if (
+						(op === "=" && ref != val) ||
+						(op === "ł" && ref == val) ||
+						(op === ">" && ref <= val) ||
+						(op === "<" && ref >= val)
+					)
+						cc = false;
+				} else if (op === "!") {
+					if (getObj(c.substring(1))) cc = false;
+				} else {
+					if (getObj(c) == false) cc = false;
+				}
 			}
 		}
 		return cc;
@@ -775,7 +775,7 @@ function _load() {
 
 					console.log(ügyivagy);
 
-					if (ügyivagy > 1) {
+					if (ügyivagy > 2) {
 						outcome = "pass";
 						crease = 5;
 						result = "Sikeresen kitaláltál egy trükkös akciót!";
@@ -1460,7 +1460,7 @@ function _load() {
 				if (getObj("J_Oshinoko") && !getObj("X_Oshinoko")) ally = "Oshinoko";
 				if (getObj("J_Ügyes Frigyes") && !getObj("X_Ügyes Frigyes")) ally = "Frici";
 				if (getObj("J_Erdei Zsolt") && !getObj("X_Erdei Zsolt")) ally = "Zsolt";
-				if (getObj("J_Bogi") && !getObj("X_Bogi") && !getObj("E_szakítás Bogival")) ally = "Bogi";
+				if ((getObj("J_Bogi") || getObj("E_love Bogi")) && !getObj("X_Bogi") && !getObj("E_szakítás Bogival")) ally = "Bogi";
 				document.querySelectorAll(".ally").forEach((n) => (n.innerHTML = ally));
 			}
 			if (document.querySelector(".cond")) {
@@ -1519,6 +1519,68 @@ function _load() {
 
 			if (document.getElementById("akna")) document.getElementById("akna").innerHTML = room.akna;
 			if (document.getElementById("kincs")) document.getElementById("kincs").innerHTML = room.kincs;
+
+			if (document.getElementById("end")) {
+				document.getElementById("end").innerHTML = `
+					Gratulálok! Elérted élve a BAZIBRUTÁL II végét! Tényleg egy igazi Hős vagy! Kalandod során a következő fő dolgok történtek:
+					<p id="tárgyak"></p>
+          <p id="haverok"></p>
+          <p id="hullák"></p>
+          <p id="segítség"></p>
+          <p id="képesség"></p>
+          <p>
+					Tudnod kell azonban, hogy csupán ${steps}-t érintettél az összesen ${rooms.length} helyszínből! Úgyhogy ha mégegyszer belevágnál ebbe a fergeteges kalandba, az F5 tartogat egy időutazó varázslatot számodra.</p>
+				`;
+				if (localStorage.getItem("charName")) {
+					main.innerHTML += "<p>Vagy a LOAD gombbal betöltheted a legutóbb elmentett állást.</p>";
+					document.getElementById("loadBtn").disabled = false;
+				}
+				let tárgyak = getObj("W");
+				if (tárgyak.length > 0) {
+					let tárgyakStr = "Megszerezted az alábbi tárgyakat:<br><ul>";
+					for (let tárgy of tárgyak) {
+						tárgyakStr += "<li> " + tárgy.toLowerCase() + "</li>";
+					}
+					tárgyakStr += "</ul>";
+					document.getElementById("tárgyak").innerHTML = tárgyakStr;
+				}
+				let haverok = getObj("J");
+				if (haverok.length > 0) {
+					let haverokStr = "Az alábbi emberek csatlakoztak hozzád:<br><ul>";
+					for (let haver of haverok) {
+						haverokStr += "<li> " + haver + "</li>";
+					}
+					haverokStr += "</ul>";
+					document.getElementById("haverok").innerHTML = haverokStr;
+				}
+				let hullák = getObj("X");
+				if (hullák.length > 0) {
+					let hullákStr = "Az alábbi emberek haltak meg - közvetve vagy közvetlenül - neked köszönhetően:<br><ul>";
+					for (let hulla of hullák) {
+						hullákStr += "<li> " + hulla + "</li>";
+					}
+					hullákStr += "</ul>";
+					document.getElementById("hullák").innerHTML = hullákStr;
+				}
+				let segítség = getObj("H");
+				if (segítség.length > 0) {
+					let segítségStr = "A következő egyszerű embereknek segítettél (vagy próbáltál segíteni):<br><ul>";
+					for (let segg of segítség) {
+						segítségStr += "<li> " + segg + "</li>";
+					}
+					segítségStr += "</ul>";
+					document.getElementById("segítség").innerHTML = segítségStr;
+				}
+				let képesség = getObj("S");
+				if (képesség.length > 0) {
+					let képességStr = "A következő képességeket szerezted meg:<br><ul>";
+					for (let kép of képesség) {
+						képességStr += "<li> " + kép + "</li>";
+					}
+					képességStr += "</ul>";
+					document.getElementById("képesség").innerHTML = képességStr;
+				}
+			}
 
 			if (room.change && loaded == false) {
 				for (let ch of room.change) {

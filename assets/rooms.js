@@ -4364,7 +4364,7 @@ window.rooms = [
 		music: "gangwar",
 		pic: "sniper.gif",
 		goalpic: "exit.png",
-		obj: "X_Gárda",
+		obj: ["X_Gárda"],
 		desc: `
       <p>
         Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Branyiszkó-tér felé.
@@ -4905,8 +4905,9 @@ window.rooms = [
 				Zsolt már várt rád. Mosolyogva üdvözöl.
 			</p>
 			<p>
-				Felkészítettem a bübüket a harcra. Itt az ideje, hogy elmossuk Bitang Botond uralmát és egyesítsük az erdőt a várossal!
+				- Felkészítettem a bübüket a harcra. Itt az ideje, hogy elmossuk Bitang Botond uralmát és egyesítsük az erdőt a várossal!
 			</p>
+			<p>Ennyit mond. Ebből megérted, hogy valóban a tettek ideje jött el.</p>
 		`,
 		buttons: [
 			{
@@ -6797,6 +6798,7 @@ window.rooms = [
 				- Én most visszamegyek Botihoz, mert a ma estét velem akarja tölteni. Ráveszem, hogy jöjjön ki velem a Feneketlen-tóhoz. Csak egy kocsival megyünk és csak a sofőr lesz vele. Van a tó mellett egy csónakház. Rejtőzz el ott és én odacsalom. Ott elintézheted. Ha most elindulsz, még előttünk oda fogsz érni. De most mennem kell, mielőtt gyanút fogna. Boriszt is keresni kezdheti. Siessünk! 
       </p>
 			`,
+		obj: ["J_Bogi"],
 		change: [
 			{
 				id: "lel",
@@ -6831,7 +6833,7 @@ window.rooms = [
 				Az éjjel mégis eseménytelenül zajlik. Miközben azon gondolkodsz, mi legyen most a terved, átvedd-e még mindig a hatalmat a város felett vagy éld az egyszerű hősök életét, észreveszed, hogy kevés már otthon a kajád. Gondolod, elmész a piacra.
       </p>
 			`,
-		obj: ["szakítás Bogival", "Boti üldöz"],
+		obj: ["E_szakítás Bogival", "E_Boti üldöz"],
 		change: [
 			{
 				id: "lel",
@@ -7493,7 +7495,10 @@ window.rooms = [
 			<p>
        Miután elfoglaltátok a Városházát, hozzálátsz egy új világ megalkotásához. <span class="ally"></span> segítségével - akit rögtön megtettél alpolgármesternek - kiűzítek Boti<span class="cond" data-cond="!X_Boti">t és</span> megmaradt embereit a városból. Kétszer is véget vetettél a zsarnokságnak, az egész nép téged ünnpel! Számos hasznos intézkedést vezetsz be, amitől az emberek jobban és boldogabban élnek, és rend uralkodik az egész városban. Mindenki szeret téged. Még az állatok és intelligens növényi életformák is.
       <p>
-      <p>
+      <p class="cond" data-cond="E_love Bogi">
+				Összeházasodtál Bogival is, akit innentől fogva <span class="name"></span>né Wakanának hívnak. A sok közös küzdelem örökre összekovácsolt titeket. Már alig várjátok, hogy gyereketek is szülessen, akiből majd szintén egy igazi hőst faragtok. Vagy akár jöhet egy egész hőscsapat is...
+			</p>
+			<p>
 				Így éled boldog életeted - közel fél éven át. Akkor viszont történik valami...
 			</p>
     `,
@@ -7867,7 +7872,7 @@ window.rooms = [
 		pic: "starttown.jpg",
 		desc: `
         <p>
-					Az események után gyakorlatilag álomba ájulod magad ott, ahol vagy. Amikor reggel kinyitod a szemed, nem mondani, hogy kipihenten ébrednél. <span class="ally"></span> ül melletted, szintén elgyötört arccal. Ha azért van itt, hogy erkölcsi támogatást nyújtson, úgy tűnik, azt most nem nagyon fog. Így inkább belegondolsz, mit kell ma megtenned és egyből eltökélt leszel.
+					Az események után gyakorlatilag álomba ájulod magad. Amikor reggel kinyitod a szemed, nem mondani, hogy kipihenten ébrednél. <span class="ally"></span> ül melletted, szintén elgyötört arccal. Ha azért van itt, hogy erkölcsi támogatást nyújtson, úgy tűnik, azt most nem nagyon fog. Így inkább belegondolsz, mit kell ma megtenned és egyből eltökélt leszel.
 				</p>
 				<p>
 					- Át kell vennünk a hatalmat! Irány a Fő-tér! - mondod. <span class="ally"></span> némán követ.
@@ -8125,8 +8130,466 @@ window.rooms = [
 		pass: 258,
 		fail: 259,
 	},
+	{
+		num: 258,
+		title: "Akcióban",
+		type: "normal",
+		music: "storm",
+		pic: "nightrain.gif",
+		desc: `
+      <p>
+       Hirtelen ötlettől vezérelve felkapsz egy hajókötelet, villámgyorsan Boti nyakára tekered és addig szorítod, amíg a zsarnok el nem ernyed. Ekkor a biztonság kedvéért mégegyet húzol rajta, majd lassan lefekteted Boti ekkor már élettelen testét. Fülelsz, de nincs mozgás, a sofőr nem hallott meg. Bogira kacsintasz és csendben így szólsz:
+      </p>
+      <p>
+       - Amikor azt mondtad, hogy "egy kis meglepetés", erre gondoltál? Gondolom, egy kicsit tényleg meglepődött Boti!
+      </p>
+			<p>
+				Bogi önkéntelenül elneveti magát. Ami nemcsak azért nem baj, mert szereted, ha a poénjaidon nevetnek, hanem azért is, mert a nevetés kevésbé gyanús, mint a hirtelen beállt néma csend. Tovább viszed ezt a szálat:
+			</p>
+			<p>
+				- Az lenne a legkevésbé gyanús, ha mi folytatnánk azt, amit Botival elkezdtetek! - mondod huncut mosollyal.
+			</p>
+			<p class="cond" data-cond="E_love Bogi">
+				Bogi szeme tágra nyílik. Ő is jónak találja a javaslatot. Közelebb lép hozzád és búgó hangon a füledbe súgja:
+			</p>
+			<p class="cond" data-cond="E_love Bogi">
+				- Én hősöm! Nem tudod, milyen hatalmas rossztól mentettél meg! Örökké hálás leszek neked! Bármit megadok, amit csak akarsz... - azzal lassan közelebb hajol majd megcsókol. Elönt téged is a szerelem érzése, átöleled a gyönyörű nőt és szenvedélyesen visszacsókolod. Megszűnik számotokra az egész brutális világ és csak egymás létezik számotokra. Teljesen összegabalyodtok...
+			</p>
+			<p class="cond" data-cond="!E_love Bogi">
+				Bogi arcán fájdalmas arckifejezés jelenik meg, majd így szól:
+			</p>
+			<p class="cond" data-cond="férfi, !E_love Bogi">
+				- Nézd, nagyon hálás vagyok neked, amiért megmentettél, el se hiszed, milyen hatalmas tehertől szabadítottál meg, de kérlek ne élj vissza a helyzettel! Egyébként is mindenképpen meg kell szabadulnunk a sofőrtől!
+			</p>
+			<p class="cond" data-cond="nő">
+				- <span class="name"></span>, én a férfiakat szeretem! Nagyon hálás vagyok neked, amiért megmentettél, el se hiszed, milyen hatalmas tehertől szabadítottál meg, de remélem, ez a javaslatod csak vicc volt.
+			</p>
+			<p>
+				Ekkor hirtelen kopognak az ajtón, majd a sofőr hangja hallatszik:
+			</p>
+			<p>
+				- Elnézést, főnök! Az órám szerint valami baj van az egészségi állapotával. Vagy minden rendben?
+			</p>
+			<p>
+				Bogi ijedten rád néz és suttogva mondja:
+			</p>
+			<p>
+				- Boti egészségügyi jellemzőit figyeli egy karperec, ami továbbítja az adatokat a személyi testőreinek. A sofőr is az.
+			</p>
+			<p>
+				Újabb ötletet kell kitalálnod. Letéped Boti felsőruháját, odasúgod Boginak, hogy mit mondjon, majd felkapsz egy evezőt és az ajtó mellé állsz.
+			</p>
+			<p>
+				- Nem tudom, mi történt. Elkezdtem vetkőztetni Botit, mire annyira felizgult, hogy egyszer csak összeesett. Lehet, hogy infarktust kapott! - mondja Bogi a megbeszéltek szerint.
+			</p>
+			<p>
+				A sofőr berúgja az ajtót és Boti felé hajol. Nem vesz észre téged. Te jó nagyot vágsz a tarkójára az evezővel. Összeesik, de aztán lassan megfordul. Kemény fából faragták. A pisztolyáért nyúl, de te rá vágsz a kezére az evezővel. Felnyög, de még mindig nem adja fel. Megpróbálja kirúgni a lábad. Szerencsére időben elugrasz, de már fogytán van a türelmed. Még egy nagyot vágsz a lapáttal a fejére, majd ráborítasz három csónakot a fickóra. Ennyi már csak elég lesz.
+			</p>
+			<p>
+				- Biztosan balesetnek fogják gondolni - nézed tűnödve a műved. - Ez itt idejött, hogy felakassza magát egy hajókötéllel, a másik viszont le akarta szedni, ezért ráállt a csónakokra, de amikor kiakasztotta a kötelet, megcsúszott, beverte elöl és hátul is a fejét egy-egy evezőbe, aztán véletlenül három csónakot is magára húzott, amikor próbálta állásba kapaszkodni magát. Tiszta sor!
+			</p>
+			<p>
+				Bogi megint elneveti magát.
+			</p>
+			<p>
+				- Te tényleg haláli vagy! Én viszont nem szeretném, ha egy ilyen tanúvallomást kellene elmondanom a rendőrségnek, ha nem baj, úgyhogy inkább tűnjünk el!
+			</p>
+		`,
+		obj: ["X_Boti"],
+		buttons: [
+			{
+				txt: "Rendben!",
+				new: 260,
+			},
+		],
+	},
+	{
+		num: 259,
+		title: "Harc a sofőrrel",
+		type: "fight",
+		pic: "kidobo.jpg",
+		nmepic: "kidobo.jpg",
+		att: 120,
+		def: 50,
+		speed: 5,
+		hp: 120,
+		desc: `
+		<p>
+			Mielőtt támadásba lendülnél, Boti észrevesz és elugrik. Kiordít a sofőrnek, mire az azonnal beront az ajtóval együtt. Kegyetlen marcona alak, aki az életét is odaadná a főnöke védelmezéséért, ezért nincs előle menekvés!
+		</p>
+	`,
+		buttons: [
+			{
+				txt: "Ám legyen!",
+			},
+		],
+		death: true,
+		pass: 261,
+	},
+	{
+		num: 260,
+		title: "Az akta",
+		type: "normal",
+		music: "raveaction",
+		pic: "bizonyíték.JPG",
+		desc: `
+        <p>
+					Visszamentek Boti üressé vált kocsijához és beültök. Bogi foglalta el a sofőr helyét.
+				</p>
+				<p>
+					- Most elviszlek egy barátomhoz! - mondja Bogi. <p class="cond" data-cond="E_love Bogi">Te nagyot nézel.</p>
+				</p>
+				<p class="cond" data-cond="E_love Bogi">
+					- Ez komoly? Már épp akartam kérdezni, hogy hozzád vagy hozzám menjünk...
+				</p>
+				<p class="cond" data-cond="E_love Bogi">
+					Bogi mosolyogva megsimogatja a karod.
+				</p>
+				<p class="cond" data-cond="E_love Bogi">
+					- Ne aggódj, mindennek eljön az ideje! De most, hogy Boti meghalt, valamit nagyon fontos még az éjjel megszereznünk.
+				</p>
+				<p>
+         Megvonod a vállad. Ez a nő csupa rejtély. Ennek ellenére egyre jobban kezdesz bízni benne, mert úgy tűnik, pontosan tudja, mit csinál.
+        </p>
+        <p>
+         Nem mentek vissza a városba, hanem egy erdőszéli birtokra hajt Bogi. Amikor megálltok, lámpa gyullad az egyik ablakban. Megjelenik egy fickó körvonala, majd nyílik a távirányítású kapu.
+        </p>
+        <p>
+          Behajtotok a kertbe, majd kiszálltok és felmentek a lépcsőn. Bent elhúzódik egy retesz, kulcs fordul a zárban és nyílik az ajtó. Egy fiatal, de megviselt arcú fickó áll előttetek.
+        </p>
+				<p>
+					- Szia, Bogi! Kicsit megáztál! Ő, gondolom, <span id="fullName"></span>. Gyertek be!
+				</p>
+        <p>
+					Bementek és kezet rázol a fickóval, aki McClone őrnagyként mutatkozik be, majd hellyel, törölközővel és teával kínál.
+        </p>
+				<p>
+					Amint kicsit komfortosabban kezditek érezni magatokat, Bogi szólal meg:
+				</p>
+				<p>
+					- Megvan az akta?
+				</p>
+				<p>
+					- Meg. Az egész - mondja McClone, majd leül egy íróasztalhoz, matat egy kicsit (a halk hangokból ítélve egy széfet nyit ki), majd feláll és odavisz Boginak egy aktacsomagot. - Ebben elegendő bizonyíték van ahhoz, hogy az egész bandát felszámoljuk! Csak bennetek bízhatok.
+				</p>
+				<p>
+					Érdeklődve közelebb ülsz Bogihoz és belenéztek a "TOP SECRET" feliratú aktába. Először számos dokumentum van benne Borbély Béláról, aki Boti rendőrfőnöke, de valójában elég hosszú bűnlajstroma van. Tulajdonképpen egy bérgyilkos. De találtok benne több bizonyítékot is más rendőrök bűntetett előéletéről. Ezután számos email és egyéb dokumentum, feljegyzés van arról, hogyan tárgyalt Borbély Béla vagy Bitang Botond földönkívüli lényekkel! Battle Beatle is egy volt közülük, gyakorlatilag ő is a polgármester embere volt, akit őrült kísérletekkel bízott meg. De még ennél is durvábbak azok a dokumentumok, amik arról szólnak, hogyan készítenek elő egy földönkívüli inváziót a város ellen! Őrület az egész, ezt meg kell tudnia a városnak! De már egyre fáradtabb vagy. A hosszú paksaméta végefelé kezd leragadozni a szemed. Házigazdátok így felajánlja, hogy aludjatok nála.
+				</p>
+			`,
+		obj: ["E_bizonyítékok"],
+		buttons: [
+			{
+				txt: "Köszönöm!",
+				new: 249,
+			},
+		],
+	},
+	{
+		num: 261,
+		title: "Boti túszul ejti Bogit",
+		type: "normal",
+		music: "raveaction",
+		pic: "túsz.JPG",
+		desc: `
+      <p>
+       Sikerül végre legyűrnöd ezt a szadista gorillát. A verekedés közben mindenki kiugrott a szűk csónakházból. De nincs időd pihenni, mert rémülten veszed észre, hogy közben Boti túszul ejtette Bogit. Szorosan magához fogja és a fegyvert hol rá, hol rád szegezi. Nehéz a sötétben bármilyen trükkel próbálkozni. Boti gúnyos hangon megszólal: 
+      </p>
+      <p>
+       - <span id="fullName"></span>, ha nem tévedek. Szóval veled szűrte össze a level Bogi ellenem. Mindkettőtökkel végeznem kellene. Kivel kezdjem?
+      </p>
+    `,
+		buttons: [
+			{
+				txt: "Tévedés volt az egész, elmegyek!",
+				new: 262,
+				cond: "!E_love Bogi"
+			},
+			{
+				txt: "Kezdd velem és Bogit hagyd életben!",
+				new: 266,
+				cond: "E_love Bogi"
+			},
+			{
+				txt: "Villámgyorsasággal kimenekíted Bogit",
+				new: 267,
+				cond: "S_Villámgyorsaság, >_ugy_75"
+			},
+			{
+				txt: "Imádkozol",
+				new: 268,
+				cond: "S_Hit"
+			},
+		],
+	},
+	{
+		num: 262,
+		title: "Lelépsz Bogitól",
+		type: "normal",
+		music: "raveaction",
+		pic: "túsz.JPG",
+		desc: `
+      <p>
+       Amint kimondod, már rohansz is a sötétbe. Nem hallasz pisztolylövést, így nem lőtt se utánad Boti, se Bogit nem lőtte le. Lehet, hogy mégis szeretik egymást és csak trükk volt az egész? Nem tudod, de abban biztos vagy, hogy most mindkettőjük ellensége lettél. Bár Bogi talán még értelmezhette úgy a helyzetet, hogy őt is akartad menteni, nemcsak magadat. Ki tudja? Mindenesetre egy ilyen kudarc után már nem tartod magad annyira nagy hősnek...
+      </p>
+    `,
+		obj: ["E_Boti üldöz", "E_szakítás Bogival"],
+		change: [
+			{
+				id: "lel",
+				crease: -5,
+				rnd: 10,
+			},
+			{
+				id: "hat",
+				crease: -10,
+				rnd: 5
+			},
+			{
+				id: "sup",
+				crease: -10,
+				rnd: 10
+			},
+		],
+		buttons: [
+			{
+				txt: "Kellemetlen",
+				new: 219,
+			},
+		],
+	},
+	{
+		num: 263,
+		title: "Végső bukás",
+		type: "death",
+		music: "difshots",
+		stopmusic: false,
+		pic: "shot.jpg",
+		desc: `
+      <p>
+				Amikor látod, hogy a csatát elvesztettétek, megállsz. Igazából már nem is akarsz menekülni, mert minek? Minek éljed a szürke emberek életét örökös búbánatban és szégyenben? Inkább bukjál el úgy, ahogy egy hőshöz illik! Egy csatakiáltással egyenesen berohansz a tűzvonalba és megpróbálod még a maradék ellenséget leszedni.
+			</p>
+      <p>
+				Az első lövés csak súrol, a második a lábadat éri és felbuksz. De nem érdekel, újra felállsz és sántikálva, de mész tovább. Könnyű célpont vagy, a következő lövés mellkason talál. Hátraesel, de még mindig érzed, hogy maradt benned egy kevés erő. Látod, hogy melletted egy gyerek néz. Legalább az ilyeneknek legyél példa. Összeszeded minden végső erődet és feltápászkodsz. Már mindenki téged néz.
+			</p>
+			<p>
+				- Szabadság! - kiáltod. Vér jön fel a tüdődből. Eddig bírtad. Elveszíted az öntudatodat és végleg összeesel...
+			</p>
+    `,
+	},
+	{
+		num: 264,
+		title: "Szövetségkötés Erdeiékkel",
+		type: "normal",
+		music: "bübük",
+		pic: "erdei.jpg",
+		desc: `
+      <p>
+				Zsolt int egy bübünek, akinek a többieknél színesebb levelek nőnek a fejéről és egy apró kolibrifészek van a kezében. Megáll előtted és integet, hogy hajolj le. Így teszel. Ekkor a fészekben levő port az arcodra önti. Csípős-édeskés szag csap meg, ami nemsokára nagyon tömény mentolos illattá változik. Közben a bübük elkezdenek kántálni valamit a babanyelvükön. Hirtelen azt veszed észre, hogy minden érzéked kitisztul. Tűélessé válik a látásod, minden tárgy a környezetedben sokkal színesebbé és részletesebbé válik, a hangok is kitisztulnak, azt is meghallod, hogy valaki a füvön lép egyet a hátsó sorban és az erdő gazdag illatkavalkádja veszi át fokozatosan a mentolos illat helyét. Az eddiginél jóval több információ jut el hozzád a környezetedből, azt is biztosan tudod, mi rejtőzik a fák takarásában, mi fog hozzád közelíteni milyen irányból és mikor ér el. Elképesztő!
+      </p>
+      <p>
+       	A sámán-bübü most abbahagyja a kántálást és megnéz téged alaposan. Majd atöbbiek felé fordul és visít egy nagyot. Az összes bübü vidám üdvrivalgásba tör ki. Zsolt odalép hozzád:
+      </p>
+			<p>
+				- A tested befogadta a varázsszert. Most már tudod használni a Bübüszimatot! Olyan lettél, mint egy közülünk. Ünnepeljük meg szövetségkötésünket!
+			</p>
+			<p>
+				Azzal kezdetét veszi egy nagy buli. Előkerül egy bübü-zenekar, akik mindenféle fából faragott hangszerrel őserdei zenét kezdenek játszani. Ahogy nézed a hangszereket fújó, fához hasonlító lényeket, más dimenziót kap a "fafúvós" kifejezés. A többi bübü körtáncba kezd, riszálják magukat, énekelnek. Zsoltot és téged is bevonnak a táncba. Aztán észreveszed, hogy más bübük mindenféle gyümölcsöt és fapohárban kínált színes italokat hoznak. Te is megkóstolsz párat, nincs rossz ízük, úgy tűnik, erdei gyümölcsökből készültek az italok is, de nem bonyolíthatták túl a receptet.
+			</p>
+			<p>
+				A nagy bulinak a nap lemenetele kezd lassan véget vetni. Nagyon jól érezted magad, a szívedbve zártad örökre Erdei Zsoltot és a bübüket. Amikor leültök Zsolttal megpihenni, megkérdezi, hogy tehet-e érted még valamit. Elgondolkodsz. Majd lassan így szólsz:
+			</p>
+			<p>
+				- Ha tényleg szövetségesek vagyunk, kérnék valamit. Nem magamnak, hanem az egész városnak és tulajdonképpen nektek is. Régóta élősködik már Bitang Botond polgármester a népen. Én már egyszer megmentettem a várost Battle Beatle zsarnokságától, és most addig nem tudok megnyugodni, amíg nem vetek véget az újabb zsarnokságnak is. Úgy érzem erre születtem. Tudnál, tudnátok segíteni abban, hogy elúzzük a városból a zsarnokot és gengsztereit? Tudom, hogy te is miattuk jöttél az erdőbe, de gondolj azokra az emberekre, akik ott maradtak és tovább szenvednek tőlük.
+			</p>
+			<p>
+				Zsolt hosszú percekig gondolkodi. Vagy az egyik erjedt ital hatása alatt van, vagy tényleg sokmindent fontolgat válasza előtt. Végül ő is lassan, tagoltan, de határozottan szólal meg:
+			</p>
+			<p>
+				- Rendben! Segítünk neked és a városnak. Igazad van. Nem a menekülés a mgoldás, hanem a győzelem. És hidd el, ezek a bübük félelmetes harcosok tudnak lenni, ha akarnak. És azért én is elég kemény vagyok. Megbeszélem velük! Gyere vissza holnap!
+			</p>
+			<p>
+				Elbúszúzol tőlük. A Bübüszimattal nem gond kijutni az erdőből. Mire beérsz a városba, már késő éjjel van. Úgy döntesz, hazamész.
+			</p>
+		`,
+		obj: ["S_Bübüszimat, J_Erdei Zsolt"],
+		change: [
+			{
+				id: "ugy",
+				crease: 15,
+				rnd: 10,
+			},
+			{
+				id: "esz",
+				crease: 10,
+				rnd: 5
+			},
+			{
+				id: "ero",
+				crease: 10,
+				rnd: 10
+			},
+			{
+				id: "hat",
+				crease: 5,
+				rnd: 10
+			},
+			{
+				id: "lel",
+				crease: 5,
+				rnd: 5
+			},
+			{
+				id: "sup",
+				crease: 150,
+				rnd: 50
+			},
+		],
+		buttons: [
+			{
+				txt: "Így van",
+				new: 46,
+			},
+		],
+	},
+	{
+		num: 265,
+		title: "Lelőnek az erdőben",
+		type: "death",
+		music: "difshots",
+		stopmusic: true,
+		pic: "shot.jpg",
+		desc: `
+      <p>
+				Sajnos hiába menekülsz, üldözőid gyorsak és jobban is látnak. Folyamatosan lövöldöznek rád, és az egyik végül eltalál. Iszonyű fájdalom hasít a lapockádba. A másik lövés már a tarkódat éri, így többé nem érzel semmit...
+			</p>
+    `,
+	},
+	{
+		num: 266,
+		title: "Bogi megment téged",
+		type: "normal",
+		music: "raveaction",
+		pic: "túsz.JPG",
+		desc: `
+      <p>
+       - Rendben! - mondja kárörvendőn Boti és rád szegezi a fegyvert. Fontolgatod, hogy próbálkozz most valami trükkel, vagy egyszerűen hozd meg ezt az áldozatot Bogiért, de Bogi rögtön dönt. Bizonyára meghatotta önfeláldozó gesztusod és hirtelen Boti karjába harap. Boti felordít és reflexből ellőki a nőt magától.
+      </p>
+			<p>
+				- Te szuka! Halj meg te is! - ordítja Boti és Bogira emeli a fegyvert. Ez a te harci reflexeidet is aktivizálja. Azonnal oda ugrasz és Botira veted magad. Elég béna harcos a fickó, különösebb erőfeszítés nélkül megszerzed a fegyverét. Úgy döntesz, nem húzod tovább az időt és keresztüllövöd sötét szívét. Itt ért véget a zsarnok élete.
+      </p>
+			<p>
+				Bogi ijedten zihál mögötted, majd amikor felfogta, hogy vége van Botinak, egy hatalmas, sipító "Köszönöm!" tör fel belőle és a nyakadba ugrik. Te is megöleled és nyugtatgatod. Abból látod, hogy valamelyest visszanyerte már önmagát, hogy egyszer csak megszólal:
+			</p>
+			<p>
+				- Meghallhatta valaki a lövést! El kell tűnnünk!
+			</p>
+    `,
+		obj: ["X_Boti"],
+		buttons: [
+			{
+				txt: "Ésszerű javaslat",
+				new: 260,
+			},
+		],
+	},
+	{
+		num: 267,
+		title: "Megmented Bogit",
+		type: "normal",
+		music: "raveaction",
+		pic: "túsz.JPG",
+		desc: `
+      <p>
+       Összpontosítasz. Lelki szemeid előtt pontosan eltervezed a mozdulatsort, amivel kiiktathatod Botit. Tudod, hogy gyorsabbnak kell lenned, mint ahogy ő meghúzza a ravaszt, mert nem leszel nehéz célpont. Kell egy kis elterelés is.
+      </p>
+			<p>
+				- Rendben! Legyen úgy, hogy... mi a franc ez itt a földön? - mondod és  leguggolsz.
+      </p>
+			<p>
+				- Csak semmi...! - szól Boti, de már nem tudja végig mondani. Egy jó adag földet kiszórsz oldalra, hogy a mozgás ösztönösen elvonja a figyelmét, és rögtön kilősz! Szinte repülsz felé alulról és egy hatalmas horogütéssel álcsúcson vágod.
+			</p>
+			<p>
+				Boti döngve esik el. Agyrázkódást kaphatott. KO. De úgy döntesz, nem húzod tovább ezt a történetet bizonytalanságokkal. Felveszed a földről a fegyverét és fejbe lövöd. Itt ért véget a zsarnok élete.
+			</p>
+			<p>
+				Bogi ijedten zihál mögötted, majd amikor felfogta, hogy vége van Botinak, egy hatalmas, sipító "Köszönöm!" tör fel belőle és a nyakadba ugrik. Te is megöleled és nyugtatgatod. Abból látod, hogy valamelyest visszanyerte már önmagát, hogy egyszer csak megszólal:
+			</p>
+			<p>
+				- Meghallhatta valaki a lövést! El kell tűnnünk!
+			</p>
+    `,
+		obj: ["X_Boti"],
+		buttons: [
+			{
+				txt: "Ésszerű javaslat",
+				new: 260,
+			},
+		],
+	},
+	{
+		num: 268,
+		title: "Megmented Bogit",
+		type: "normal",
+		music: "raveaction",
+		pic: "túsz.JPG",
+		desc: `
+      <p>
+       Belátod, hogy a helyzet megoldásához kevesek a képességeid. Pontosabban a hited menthet már csak meg. Isteni segítségért fohászkodsz.
+      </p>
+			<p>
+				- Na, mi legyen? Döntsem el én? - kérdezi ekkor Boti. Még egy kérés az Úr felé, és most már érzed, hogy meghallgatta az imád. Megszólal valaki Boti mögött:
+      </p>
+			<p>
+				- Elnézést, nem tudják megmondani, merre van a Branyiszkó-tér?
+			</p>
+			<p>
+				Botit váratlanul érte a kérés, és elkövette azt a hibát, hogy ösztönösen megfordult. Ez azonnal aktiválta harci reflexeidet. Mintha ágyúból lőttek volna ki, úgy viharzol Boti felé. Egyik kezeddel elkapod a fegyverét, a másikkal a nyakát és rántod magaddal a földre, Bogitól minél messzebb.
+			</p>
+			<p>
+				Nem egy nagy harcos Boti, könnyen megszerzed a fegyverét. Felugrasz és rá szegezed. Aztán elkezdesz gondolkodni, mert az idegen még mindig itt van. De te vagy <span id="fullName"></span>, így nem hazudtolod meg magad. Botira kiáltasz:
+			</p>
+			<p>
+				- Nem hallottad, hogy kérdeztek? Süket vagy?! Merre van a Branyiszkó-tér?!
+			</p>
+			<p>
+				Mindenki néma csendben van egy percig. Aztán Boti nyöszörögve megszólal:
+			</p>
+			<p>
+				- Ez most tényleg komoly?
+			</p>
+			<p>
+				- Rossz válasz! - mondod és agyonlövöd. - Így járnak az udvariatlan bunkók! - mondod, majd az idegen férfi felé fordulsz, és udvarias hangon így szólsz: - Menjen be abba az utcába a szobor mögött, amíg el nem éri a 7-es villamos megállóját. Szálljon fel rá! A Branyiszkó-tér a hatodik megálló.
+			</p>
+			<p>
+				- Köszönöm! - mondja zavartan a férfi és szaporán eliszkol.
+			</p>
+			<p>
+				- Én is köszönöm, Istenem! - nézel fel boldogan a csillagos égre. - Nincs Nálad nagyobb zseni! Ennek az embernek az eltévedése nemcsak a mi életünket mentette meg, hanem az egész városét is! Mintha valahol olvastam volna, hogy Te a rosszból is tudsz jót kihozni...
+			</p>
+			<p>
+				Ekkor Bogi lép melléd.
+			</p>
+			<p>
+				- Én is csatlakozom a köszönetmondók sorába. Te tényleg nem vagy semmi, <span class="name"></span>! Ezzel együtt szerintem lépjünk most le, mielőtt még valakit idecsal a lövés hangja.
+			</p>
+    `,
+		obj: ["X_Boti"],
+		buttons: [
+			{
+				txt: "Ésszerű javaslat",
+				new: 260,
+			},
+		],
+	},
+	{
+		num: 300,
+		title: "ITT A VÉGE A BAZUBRUTÁL II. RÉSZÉNEK",
+		type: "end",
+		music: "happyDance",
+		pic: "fireworks.gif",
+		desc: `
+      <p id="end"></p>
+    `,
+	},
 
 ];
-
-
-//264: Zsolt int egy bübünek, akinek a többieknél színesebb levelek nőnek a fejéről és egy apró kolibrifészek van a kezében. Megáll előtted és integet, hogy hajolj le. Így teszel. Ekkor a fészekben levő port az arcodra önti. Csípős-édeskés szag csap meg, ami nemsokára nagyon tömény mentolos illattá változik. Közben a bübük elkezdenek kántálni valamit a babanyelvükön. Hirtelen azt veszed észre, hogy minden érzéked kitisztul. Tűélessé válik a látásod, minden tárgy a környezetedben sokkal színesebbé és részletesebbé válik, a hangok is kitisztulnak, azt is meghallod, hogy valaki a füvön lép egyet a hátsó sorban és az erdő gazdag illatkavalkádja veszi át fokozatosan a mentolos illat helyét. Az eddiginél jóval több infomráció jut el hozzád a környezetdből, azt is biztosan tudod, mi rejtőzik a fák takarásában, mi fog hozzád közelíteni milyen irányból és mikor ér el. Elképesztő!
