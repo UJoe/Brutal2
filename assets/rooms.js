@@ -1916,7 +1916,7 @@ window.rooms = [
         <li>Persze, bármit, ami csak kell!</li>
         <li>Ha van elég fegyverünk, akkor eléggé ütőképes csapat vagyunk! Azt kellene eldönteni, hogy a városházán támadjuk meg vagy az utcán?</li>
         <li>
-        Bármelyiket is választjuk, egy dolog fontos - szól végül Oshinoko. Úgy tűnik, a szavának olyan tekintélye van, hogy rögtön mindenki elhallgat és rá szegeződik minden tekintet. - Ha nyíltan támadunk, még fegyverekkel is rosszak az esélyeink. Láttam az embereit, ha könnyen félre lehetne őket állítani, már megtettem volna én is egymagam. Az én javaslatom a következő. Nemsokára indulnak az önkormányzati választások. Sok helyen fog emiatt kampányolni. Egy olyan helyszínen kell rajta ütnünk, ahol nagyobb civil tömeggel érintkezik, de kevésbé védhető a helyszín. El kell vegyülnünk a tömegben annyian, amennyi őrt egyszerre semlegesíteni tudunk. Nem lőfegyverrel, mert azzal könnyen lebukhatunk, hanem hagyományos fegyverekkel, például fúvócsővel. Aztán végezni kell Botival is meg a rendőrfőnökkel, Böszme Bélával is. Hiába nyírjuk ki őt, a Béla vezette álrendőrökkel meggyűlhet a bajunk. De ha Béla feje is hull, akkor még törvényesen is felszámoltathatjuk azt a bűnszervezetet, amit létrehozott.
+        Bármelyiket is választjuk, egy dolog fontos - szól végül Oshinoko. Úgy tűnik, a szavának olyan tekintélye van, hogy rögtön mindenki elhallgat és rá szegeződik minden tekintet. - Ha nyíltan támadunk, még fegyverekkel is rosszak az esélyeink. Láttam az embereit, ha könnyen félre lehetne őket állítani, már megtettem volna én is egymagam. Az én javaslatom a következő. Nemsokára indulnak az önkormányzati választások. Sok helyen fog emiatt kampányolni. Egy olyan helyszínen kell rajta ütnünk, ahol nagyobb civil tömeggel érintkezik, de kevésbé védhető a helyszín. El kell vegyülnünk a tömegben annyian, amennyi őrt egyszerre semlegesíteni tudunk. Nem lőfegyverrel, mert azzal könnyen lebukhatunk, hanem hagyományos fegyverekkel, például fúvócsővel. Aztán végezni kell Botival is meg a rendőrfőnökkel, Borbély Bélával is. Hiába nyírjuk ki őt, a Béla vezette álrendőrökkel meggyűlhet a bajunk. De ha Béla feje is hull, akkor még törvényesen is felszámoltathatjuk azt a bűnszervezetet, amit létrehozott.
         </li>
       </ul>
       <p>
@@ -2572,7 +2572,7 @@ window.rooms = [
         Ekkor megjelenik a ház mellett egy kóborkutya és unottan de helyeslően  vakkant egyet. Frici rá vigyorog, mire az eb rémülten nagyot ugrik és vinnyogva eliszkol. Frici folytatja:
       </p>
       <p>
-        -Amíg eljutunk oda, addig is gyűjthetünk a földből pár hasznos anyagot, amiből fegyvereket tud készíteni Betyár. Ásványkicsekben gazdag hely felé építették a Városházát, mindenre gondoltak. A server-szobából nyílik egy vészhelyzeti alagút a biztonsági központba. Ott felmászunk, meglepetésszerűen megjelenünk és kiiktatjuk az őröket. Itt számítok harci képességeidre. Ezután ezen a titkos menekülő-folyosón keresztül tudunk eljutni Boti rezidenciájára. Ott már nem lesz más, csak ő. Ha jól csináljuk, észre sem vesz senki. Miután elintéztük Botit, ugyanitt visszamegyünk Betyárhoz és hazajövünk ünnepelni. Régóta agyalok már ezen a terven, csak eddig még nem találtam olyan útvonalat, ahol nem találkozunk őrökkel. De ezen az útvonalon van a legkevesebb. Csak én egy ezermester-feltaláló vagyok, nem harcos. De ketten meg tudjuk csinálni! Mit szólsz?
+        -Amíg eljutunk oda, addig is gyűjthetünk a földből pár hasznos anyagot, amiből fegyvereket tud készíteni Betyár. Ásványkicsekben gazdag hely felé építették a Városházát, mindenre gondoltak. A server-szobából nyílik egy vészhelyzeti alagút a biztonsági központba. Ott felmászunk, meglepetésszerűen megjelenünk és kiiktatjuk az őröket, ha vannak. Itt számítok harci képességeidre. Ezután ezen a titkos menekülő-folyosón keresztül tudunk eljutni Boti rezidenciájára. Ott már nem lesz más, csak ő. Ha jól csináljuk, észre sem vesz senki. Miután elintéztük Botit, ugyanitt visszamegyünk Betyárhoz és hazajövünk ünnepelni. Régóta agyalok már ezen a terven, csak eddig még nem találtam olyan útvonalat, ahol nem találkozunk őrökkel. De ezen az útvonalon van a legkevesebb. Csak én egy ezermester-feltaláló vagyok, nem harcos. De ketten meg tudjuk csinálni! Mit szólsz?
       </p>
       <p>
         - Tetszik a terv! - mondod lelkesen. 
@@ -6169,11 +6169,11 @@ window.rooms = [
 		num: 197,
 		title: "A server szobában",
 		type: "normal",
-		music: "actionIncrease",
+		music: "raveaction",
 		pic: "server.jpg",
 		desc: `
       <p>
-       Frigyes számításai pontosak voltak. A Betyár által ütött lukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. A server-szoba ajtaja természetesen zárva van. A server konzolja pedig jelszót kér. Mit teszel?
+       Frigyes számításai pontosak voltak. A Betyár által ütött lyukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. A server-szoba ajtaja természetesen zárva van. A server konzolja pedig jelszót kér. Mit teszel?
       </p>
     `,
 		buttons: [
@@ -6456,7 +6456,7 @@ window.rooms = [
 	},
 	{
 		num: 207,
-		title: "Fricivel helyetted végzi el a munkát",
+		title: "Frici helyetted végzi el a munkát",
 		type: "normal",
 		music: "actionincrease",
 		pic: "frici.JPG",
@@ -7095,6 +7095,17 @@ window.rooms = [
 			</p>
     `,
 		obj: ["X_Boti"],
+		change: [
+			{
+				id: "lel",
+				crease: -5,
+				rnd: 5,
+			},
+			{
+				id: "hat",
+				crease: 5,
+			},
+		],
 		buttons: [
 			{
 				txt: "Nem, én most veszem át a hatalmat!",
@@ -7217,7 +7228,7 @@ window.rooms = [
 		num: 229,
 		title: "Belépés a Városháza rendszerébe",
 		type: "normal",
-		music: "actionIncrease",
+		music: "raveaction",
 		pic: "server.jpg",
 		desc: `
       <p>
@@ -7230,14 +7241,14 @@ window.rooms = [
 			key: "85bz4ruiewghwnoiuhjro7önxhek",
 		},
 		pass: 230,
-		fail: 265,
+		fail: 252,
 		modi: "A kijelzőn felvillan egy üdvözlő felirat. Bejutottál a rendszerbe! Nem kell sokat keresgélned, hogy rájöjj, melyik ajtókat kell feloldanod ahhoz, hogy bejuss Botihoz. Sőt magát Botit és az őrök tartózkodását is látod. Egy ideig megfigyeled a mozgásukat, aztán amint szabad lesz az útvonal, azonnal elindultok Fricivel."
 	},
 	{
 		num: 230,
 		title: "Sikeres bejutás",
 		type: "normal",
-		music: "actionIncrease",
+		music: "raveaction",
 		pic: "server.jpg",
 		desc: `
 			<p id="modified"></p>
@@ -7391,7 +7402,7 @@ window.rooms = [
 				txt: "Induljon a harc!",
 			},
 		],
-		pass: 249,
+		pass: 248,
 		fail: 250,
 	},
 	{
@@ -7429,7 +7440,7 @@ window.rooms = [
 		pic: "erdei.jpg",
 		desc: `
       <p>
-       - Köszönöm, <span class="name"></span>, szerelmem! - mondja elérzékenyülten Zsolt, azzal megölel. A nép még hangosabb üdvrivalgásba tör ki, dobálják a kalapjaikat, nadrágjaikat, kártyapakilijaikat... Érzed, ahogy egyszerre dobban a szívetek, mélyen egymás szemébe néztek és megcsókoljátok egymást. Úgy érzed, repülsz, repülsz a fellegekbe...
+       - Köszönöm, <span class="name"></span>, szerelmem! - mondja elérzékenyülten Zsolt, azzal megölel. A nép még hangosabb üdvrivalgásba tör ki, dobálják a kalapjaikat, nadrágjaikat, kártyapaklijaikat. Bodri papa, a kocsmáros, ingyen csapra ver egy egész hordó Ászok Ászát (bár utána pénzt kér azoktól, akik isznak is). De téged ez már nem érdekel.Érzed, ahogy egyszerre dobban a szívetek Zsolttal, mélyen egymás szemébe néztek és megcsókoljátok egymást... Repülsz, repülsz a fellegekbe...
       </p>
       <p>
        Az esküvőt az erdei tisztáson tartjátok meg, a bübük és számos ember kíséretében. Sőt, még pár mozgó fa is rád kacsint. Hogy mik élnek itt az erdőben! De mivel te lettél a város elöljárója, a Városházát is elfoglaljátok. Ott is együtt vagytok. Megtervezitek a sportéletet, csak olyan beruházásokat hagysz jóvá, ami nem árt az erdőnek, de használ az embereknek. Ünnepelt pár vagytok, az egész város szeret titeket. A hősnő és a legyőzhetetlen erdei boxoló!
@@ -7761,7 +7772,160 @@ window.rooms = [
 			},
 		],
 	},
-
+	{
+		num: 246,
+		title: "Sikeres hatalomátvétel",
+		type: "normal",
+		music: "epiclift",
+		pic: "happymass.jpg",
+		desc: `
+     	<p>
+       A nép felé fordulsz és elkezdesz szónokolni:
+      </p>
+      <p>
+       - Polgártársaim! Én voltam az, aki megszabadított Battle Beatle és a Big Bugok fogságából! De utána sajnos láttam, hogy egy másik zsarnok uralkodik felettetek: Bitang Botond, a polgármester! Rendőröknek nevezett gengszterekkel sanyargatott titeket. <span class="cond" data-cond="E_bizonyítékok">Bizonyítékom van rá, hogy a rendőrfönök valójában egy körözött bűnöző volt és idegen lények ügynöke! Ezeket az idegen lényeket akarták a városra küldeni Battle Beatle megbosszulása miatt! Nálam vannak a bizonyítékok!</span> De ennek a zsarnokságnak most vége! Ha szeretnétek engem polgármesternek, elhozom nektek a szebb jövőt. Én nem ellenetek fogok harcolni, hanem azokkal, akik titeket fenyegetnek! Ahogy eddig is tettem!
+      </p>
+			<p>
+				A nép hatalmas üdvrivalgásba tör ki. Mindenhonnan kiáltozzák, hogy téged akarnak polgármesternek, és vesszenek Boti megmaradt emberei! Felemelnek a tömeg felé és megindultok a Városháza felé.
+			</p>
+			`,
+		change: [
+			{
+				id: "hat",
+				crease: 15,
+				rnd: 10
+			},
+		],
+		buttons: [
+			{
+				txt: "Bevesszük a Városházát!",
+				new: 237,
+				modi: "Mikor megérkeztek a Városházához, furcsa módon nem találtok előtte egy őrt sem. Úgy tűnik, megértették Boti emberei, hogy itt a vég és inkább elhagyták az épületet. Betöritek a kaput. Akárhova mentek, nem találkoztok senkivel. Harc nélkül bevetted a néppel a Városházát!",
+			},
+		],
+	},
+	{
+		num: 247,
+		title: "A nép - enyhén szólva - nem támogat",
+		type: "death",
+		music: "crowdshout",
+		stopmusic: false,
+		pic: "booing.gif",
+		desc: `
+      <p>
+				- Emberek! Bitang Botond egy zsarnok volt! - kezded a szónoklatot, de meglepedésedre rögtön neked támadnak az emberek.
+			</p>
+      <p>
+				- Milyen zsarnok? Miről beszélsz te?! És egyáltalán ki vagy te? Megölted a polgármestert?! Gyilkos!!! - ordítják egyre többen majd ütlegelni kezdenek. Próbálsz védekezni és ismét hozzájuk szólni, hogy megállítsd ezt az őrületet, de a nép egyetlen feldühödött hatalmas vadállatként ver téged. Nemsokára vérbe borul a szemed és elsötétül előtted a világ...
+			</p>
+    `,
+	},
+	{
+		num: 248,
+		title: "Az éjjeli felfedezések",
+		type: "normal",
+		music: "darkbackground",
+		pic: "bizonyíték.JPG",
+		desc: `
+        <p>
+					Kifújod magad a harc után és szétnézel - amennyire látsz.
+				</p>
+				<p id="casualties"></p>
+				<p>
+         A megidézett vadállatok és vadnövények úgy tűnik, eltűntek. Viszont látsz pár hullát a közeledben. Az egyiknek mintha valami iratcsomag lógna ki széttépett kabárja alól. Ez érdekes lehet. Előveszed, de nem nagyon látsz a sötétben. Egy zseblámpa még világít nem messze tőled a földön. Felveszed és megvilágítod az írásokat. TOP SECRET felirat van az első lapon. Egyre érdekesebb...
+        </p>
+        <p>
+         Beleolvasol és egy egyre durvább történet áll össze benne. Számos akta van benne Borbély Béláról, aki Boti rendőrfőnöke volt, de valójában elég hosszú bűnlajstroma van. Tulajdonképpen egy bérgyilkos. De találsz több bizonyítékot is más rendőrök bűntetett előéletéről. Lehet, hogy az egyik rendőrnek feltámadt a lelkiismerete és ő gyűjtötte össze ezeket a bizonyítékokat, csak pechjére éppen kivezényelték az erdőbe, ahol szomorú sorsra jutott?
+        </p>
+        <p>
+          De olvasol tovább, mert a java még hátra van! Számos email és egyéb dokumentum, feljegyzés van arról, hogyan tárgyalt Borbély Béla vagy Bitang Botond földönkívüli lényekkel. Battle Beatle is egy volt közülük, gyakorlatilag ő is a polgármester embere volt, akit őrült kísérletekkel bízott meg. De még ennél is durvábbak azok a dokumentumok, amik arról szólnak, hogyan készítenek elő egy földönkívüli inváziót a város ellen! Őrület az egész, ezt meg kell tudnia a városnak!
+        </p>
+        <p>
+					Összecsomagolod az írásokat, elteszed jó helyre, aztán próbálsz még reggelig aludni ideiglenes szállásodon.
+        </p>
+      `,
+		change: [
+			{
+				id: "hat",
+				crease: 5,
+				rnd: 10,
+			},
+		],
+		obj: ["E_bizonyítékok"],
+		buttons: [
+			{
+				txt: "Reggel leleplezem az egész összeesküvést!",
+				new: 249,
+			},
+		],
+	},
+	{
+		num: 249,
+		title: "Ismét a Fő-téren",
+		type: "normal",
+		music: "basicmusic",
+		pic: "starttown.jpg",
+		desc: `
+        <p>
+					Az események után gyakorlatilag álomba ájulod magad ott, ahol vagy. Amikor reggel kinyitod a szemed, nem mondani, hogy kipihenten ébrednél. <span class="ally"></span> ül melletted, szintén elgyötört arccal. Ha azért van itt, hogy erkölcsi támogatást nyújtson, úgy tűnik, azt most nem nagyon fog. Így inkább belegondolsz, mit kell ma megtenned és egyből eltökélt leszel.
+				</p>
+				<p>
+					- Át kell vennünk a hatalmat! Irány a Fő-tér! - mondod. <span class="ally"></span> némán követ.
+				</p>
+				<p>
+         A városba nem gond bejutni, de kifelé tényleg őrzik még a fő helyeken a kivezető utakat. Az arcotokat igyekeztek eltakarni, amíg be nem értek a Fő-térre. Most is jó pár ember gyülekezik a téren és élénken beszélgetnek arról, mi történhetett Botonddal. <i>Mit teszel?</i>
+        </p>
+      `,
+		buttons: [
+			{
+				txt: "Beszédet intézel hozzájuk",
+				cond: "!E_bizonyítékok",
+				new: 227,
+			},
+			{
+				txt: "Előveszed a tegnap éjjel megszerzett aktákat",
+				cond: "E_bizonyítékok",
+				new: 246,
+			},
+		],
+	},
+	{
+		num: 250,
+		title: "Éjjeli menekülés",
+		type: "pursuit",
+		level: 3,
+		music: "storm",
+		pic: "nightrain.gif",
+		goalpic: "exit.png",
+		desc: `
+     	<p>
+				Szétnézel a sötétben, hogy megvan-e még a társad.
+			</p>  
+			<p id="casualties"></p>
+			<p>
+				A megmaradt ellenségek téged vesznek üldözőbe. Rohanni kezdesz! Abban reménykedsz, hogy sikerül őket leráznod a sötétben és találsz egy helyet, ahol reggelig kihúzod. Az eső meg csak nem akar elállni.
+			</p>
+		`,
+		change: [
+			{
+				id: "hat",
+				crease: -5,
+				rnd: 10,
+			},
+			{
+				id: "ero",
+				crease: -3,
+				rnd: 2,
+			},
+		],
+		buttons: [
+			{
+				txt: "Ritka ótvar ez az éjszaka!",
+			},
+		],
+		pass: 249,
+		fail: 265,
+	},
 	{
 		num: 251,
 		title: "Harc a Városháza őrével",
@@ -7783,9 +7947,8 @@ window.rooms = [
 		pass: 244,
 		fail: 244,
 	},
-
 	{
-		num: 265,
+		num: 252,
 		title: "Nem sikerült megadni a jelszót",
 		type: "normal",
 		music: "raveaction",
@@ -7808,6 +7971,161 @@ window.rooms = [
 			},
 		],
 	},
+	{
+		num: 253,
+		title: "Mindketten meghaltok a füstben",
+		type: "death",
+		music: "suhint",
+		stopmusic: true,
+		pic: "deadninja.png",
+		desc: `
+      <p>
+       A füstben hirtelen átesel egy fekvő testen. Amikor megnézed, ki volt az, döbbenten látod, hogy Oshinoko élete ért véget. De még jobban megdöbbensz, amikor a mellkasodól egy kard vége ugrik ki! Oshinoko gyilkosa - vélhetően Szenyamuki - veled is végzett! Elborul előtted a világ...
+      </p>
+    `,
+	},
+	{
+		num: 254,
+		title: "Szenyamuki és Boti meghal füstben",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "smoke.gif",
+		desc: `
+      <p>
+				A füstben hirtelen átesel egy földön fekvő testen. Amikor megnézed, látod, hogy Szenyamuki az. Ekkor valaki megfogja a vállad.
+			</p>
+      <p>
+        - Ez volt a sorsa! - hallod Oshinoko hangját. - Már régóta rossz úton járt. A rossz útnak pedig nincs jó vége...
+      </p>
+			<p>
+				Elismerően bólintasz a japán bölcsességén. Ez rád is inspirálóan hat és egyből megvilágosodsz:
+			</p>
+			<p>
+				- Ha az egyik domino eldől, mindig eldőlt egy másikat.
+			</p>
+			<p>
+				- Nana, biztos, hogy mindig? - vonja fel egyik szemöldökét Oshinoko.
+			</p>
+			<p>
+				- Ezen majd filózunk később! Most az a lényeg, hogy amíg eltakar minket a füst, keressük meg Botit és nyírjuk ki!
+			</p>
+			<p>
+				Oshinoko bólint és elindultok szorosan egymás mellett. Pár civil ember félrelökése után hirtelen a tétován kóválygó, menekülni próbáló Botiba botlotok. Oshinokoval már nem kell egymásnak semmit mondanotok. Teljes összhangban mutattok be egymás után halálos fogásokat a zsarnokon. Pár pillanat múlva már élettelenül fekszik előttetek. Oshinoko egy bólintással konstatálja a helyzetet és feléd fordul:
+			</p>
+			<p>
+				- Ez is megvan. Mi legyen most, <span class="name"></span> san?
+			</p>
+		`,
+		obj: ["X_Boti"],
+		change: [
+			{
+				id: "lel",
+				crease: -5,
+				rnd: 5,
+			},
+			{
+				id: "hat",
+				crease: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Egyelőre lépjünk le innen!",
+				new: 245,
+			},
+			{
+				txt: "Ha eloszlik a füst, átveszem a hatalmat.",
+				new: 227,
+			},
+		],
+	},
+	{
+		num: 255,
+		title: "Boti meghal füstben",
+		type: "normal",
+		music: "actionIncrease",
+		pic: "smoke.gif",
+		desc: `
+      <p>
+				Utolsó csapásoddal sikerült végre leterítened a zsarnokot! Pár kiélvezett pillanat után Oshinoko jelenik meg melletted. Egy bólintással konstatálja a helyzetet, majd feléd fordul:
+			</p>
+			<p>
+				- Ez is megvan. Mi legyen most, <span class="name"></span> san?
+			</p>
+		`,
+		change: [
+			{
+				id: "lel",
+				crease: -5,
+				rnd: 5,
+			},
+			{
+				id: "hat",
+				crease: 5,
+				rnd: 5
+			},
+		],
+		buttons: [
+			{
+				txt: "Egyelőre lépjünk le innen!",
+				new: 245,
+			},
+			{
+				txt: "Ha eloszlik a füst, átveszem a hatalmat.",
+				new: 227,
+			},
+		],
+	},
+	{
+		num: 256,
+		title: "Boti szobájában",
+		type: "normal",
+		music: "raveaction",
+		pic: "boti.jpg",
+		desc: `
+      <p>
+				Amikor benyittok, Boti szemben ül veletek egy iróasztal mögött. Ijedtében falfehérré válik és kiejti a kezéből a Barbie-babákat. Frici azonnal bezárja az ajtót, te pedig ráveted magad Botira mielőtt esetleg megnyomna valami pánikgombot. Elkezdtek egymással birkózni. Szerencsére a szoba teljesen hangszigetelt Boti nyugalma érdekében, ezért nem zavarnak meg titeket. Boti hamarosan végleg megnyugszik a karjaid között. Élettelen testét arréb rúgod és megigazítod gyűrött ruhádat.
+			</p>
+      <p>
+        - Nem akartál előbb pár drámai szót szólni hozzá, hogy tudja, miért ölöd meg? - kérdezi Frici. Elgondolkodsz. Lehajolsz és jól megrázod Botit. De tényleg meghalt.
+      </p>
+			<p>
+				- Ezt már cseszhetjük! Gyenge nyápic voltál, Botika! Ezért nem kaptál most útravalót a másvilágra. Mi viszont így is végeztünk. Menjünk!
+			</p>
+			<p>
+				Visszaosontok a menekülőalagúton át. Szerencsére nem találkoztok senkivel. Bevált Frici terve! Visszamásztok Betyárba, kimentek az ásott útvonalon át, aztán beomlasztjátok a bejáratot, ha esetleg utánatok akarna valaki jönni belülről.
+			</p>
+			<p>
+				Aztán nagy pacsit adtok egymásnak, visszamentek a kunyhóba, megisztok egy egész üveg ürmös bort, jót mulattok, röhögtök, majd békés nyugovóra tértek egy ággyá alakuló lehajtott szekrényen.
+			</p>
+		`,
+		obj: ["X_Boti"],
+		change: [
+			{
+				id: "lel",
+				crease: -5,
+				rnd: 5,
+			},
+			{
+				id: "hat",
+				crease: 5,
+			},
+		],
+		buttons: [
+			{
+				txt: "Jó éjt!",
+				new: 245,
+			},
+		],
+	},
+	{
+		num: 257,
+		type: "Xtrial",
+		value: "assassin",
+		pass: 258,
+		fail: 259,
+	},
+
 ];
 
 

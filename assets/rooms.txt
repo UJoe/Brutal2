@@ -224,7 +224,7 @@
 224 - Szenyamuki segít a füstben
 225 - Szenyamuki nem segít nektek (ködharc, fog)
 226 - Bitang Botond üldözése (casualties! - nyertes téri csata után, pursuit)
-227 - XTrial SUP (átveszed-e a hatalmat az orvgyilkosság után)
+227 - Trial SUP (átveszed-e a hatalmat az orvgyilkosság után)
 228 - Bitang Botond meglógott => piac - 113
 229 - Jelszóbeírás a server szobában (input)
 230 - Sikeresen bejutsz a serverbe (modified: jelszó vagy hacker)
@@ -243,13 +243,13 @@
 243 - Elbuktad Zsolt próbáját (nem is szerelmes beléd, 1. nap vége)
 244 - Észrevesznek a Városházán (dungeon)
 245 - Visszavonulsz az erdőbe Oshinokoval az orvgyilkosság után (xchange: felfegyverzés => 234)
-246 - Sikeres hatalomátvétel az orvgyilkosság után
+246 - Sikeres hatalomátvétel (az orvgyilkosság után)
 247 - Meglincsel a nép (dead)
-248 - Visszatérés a főtérre Boti halála után (ally class: Oshinoko, Frici, => beszédtrial vagy BIzonyíték bemutatása)
-249 - Az erdei harc után (bizonyíték Boti ellen => 248)
-250 - Az erdei harc elvesztése (dead)
+248 - Éjjeli harc után. Átkutatod a hullákat bizonyíték.
+249 - Alvás és visszatérés a főtérre (ally class: Oshinoko, Frici, => nincs bizonyíték: beszéd => 227, van: 246)
+250 - Az erdei harc elvesztése (pursuit modival => valamelyik dead vagy 249)
 251 - 244 dungeon fightja, kemény
-252 - Elkapnak az orvgyilkosság után (dead)
+252 - Nem sikerül beütni a jelszót => 244
 253 - Oshinoko meghalt a ködben
 254 - Szenyamuki meghalt a ködben
 255 - Boti meghalt a ködben
@@ -263,7 +263,9 @@
 262 - Boti mindkettőtöket kinyír (death)
 263 - A végső támadás elvesztése (death)
 264 - Szövetségkötés Erdeiékkel (S_Bübüszimat, J_Erdei Zsolt, a támadás terve, haza)
-265 - Nem sikerül beütni a jelszót => 244
+265 - éjjeli erdei death
+
+
 
 
 

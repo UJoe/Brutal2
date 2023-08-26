@@ -58,6 +58,7 @@ E - egyéb események (events)
   Bogi kavar
   szakítás Bogival
   belépőkártya
+  bizonyítékok
   
 H - segítés (help)
   Pirike

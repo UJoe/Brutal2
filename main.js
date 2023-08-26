@@ -141,7 +141,7 @@ function _load() {
 	function chooseChar(x) {
 		let numera = Number(x.target.id.split("-")[1]);
 		char = { ...chars[numera] };
-		char.room = 93; //startroom
+		char.room = 257; //startroom
 		char.objs = [];
 		char.sup = 0;
 		steps = 0;
@@ -150,6 +150,7 @@ function _load() {
 		window.prg = 0;
 		window.progi = " ";
 		modi = false;
+		fegyverRaktár = [];
 		music.play();
 		newRoom();
 	}
@@ -758,11 +759,33 @@ function _load() {
 						crease = -3;
 						result = "csúfosan elbuktad!";
 					}
-					message("Az embert próbáló próbát <span id='result'>" + result + "</span>");
 					changes = ["ugy", "esz"];
 					changeVal("ero", crease * 4);
 					changeVal("hat", crease * 3);
 					changeVal("lel", crease * 2);
+					break;
+
+				case "assassin":
+					basemes = "";
+					let ügyivagy = 0;
+					if (char.lel < 20 + Math.random() * 30 || getObj("S_Micuki") || getObj("S_Bübüszimat")) ügyivagy++;
+					if (char.ero > 40 + Math.random() * 35 || getObj("S_Bivalyerő")) ügyivagy++;
+					if (char.ugy > 40 + Math.random() * 35 || getObj("S_Villámgyorsaság")) ügyivagy++;
+					if (char.esz > 40 + Math.random() * 35 || getObj("S_Pengeagy")) ügyivagy++;
+
+					console.log(ügyivagy);
+
+					if (ügyivagy > 1) {
+						outcome = "pass";
+						crease = 5;
+						result = "Sikeresen kitaláltál egy trükkös akciót!";
+					} else {
+						outcome = "fail";
+						crease = -2;
+						result = "Semmi értelmes akció nem jut eszedbe.";
+					}
+					changes = ["ugy", "esz", "ero"];
+					changeVal("lel", (crease + 1) * -2);
 					break;
 
 				case "night":
@@ -1456,6 +1479,7 @@ function _load() {
 			}
 
 			if (document.getElementById("casualties")) {
+				if (!modi) return;
 				let cStr = "";
 				if (modi.length < 1) {
 					cStr = "Senki fontos nem vesztette el most az életét.";
@@ -2532,8 +2556,8 @@ function _load() {
 			nmeAtt = nmeAtt > 150 ? 150 : nmeAtt;
 			var nmeDef = Math.round(steps / 10 + dungeon * 2.5 + (Math.random() * 25 * room.level) / 2);
 			nmeDef = nmeDef > 75 ? 75 : nmeDef;
-			var nmeSpeed = 5000 - Math.round(room.level * 750 + steps / 1.5 + dungeon * 45 - Math.random() * 300);
-			nmeSpeed = nmeSpeed < 1000 ? 1000 : nmeSpeed > 5000 ? 5000 : nmeSpeed;
+			var nmeSpeed = 5000 - Math.round(room.level * 700 + steps / 1.5 + dungeon * 45 - Math.random() * 300);
+			nmeSpeed = nmeSpeed < 1200 ? 1200 : nmeSpeed > 5000 ? 5000 : nmeSpeed;
 			room.speed = Math.round((5000 - nmeSpeed) / 500);
 			room.hp = dungeon * 7 * room.level + Math.round(Math.random() * 30);
 			room.hp = room.hp > 100 ? 100 : room.hp;
@@ -5277,7 +5301,9 @@ function _load() {
           `;
 
 			if (finish) {
-				message(persona.charAt(0).toUpperCase() + persona.slice(1) + " meghalt!");
+				let hullanév = persona.charAt(0).toUpperCase() + persona.slice(1);
+				char.objs.push("X_" + hullanév);
+				message(hullanév + " meghalt!");
 				music.volume = (persona === "oshinoko") ? 0.3 : 1;
 				finish = true;
 				char.room = room[persona];
