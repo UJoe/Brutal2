@@ -4982,10 +4982,10 @@ window.rooms = [
 		type: "fight",
 		pic: "sötétalak.jpg",
 		nmepic: "mugger.jpg",
-		att: 110,
+		att: 90,
 		def: 20,
-		speed: 5,
-		hp: 100,
+		speed: 3,
+		hp: 90,
 		desc: `
       <p id="modified"></p> 
 		`,
@@ -8411,7 +8411,7 @@ window.rooms = [
 				Elbúszúzol tőlük. A Bübüszimattal nem gond kijutni az erdőből. Mire beérsz a városba, már késő éjjel van. Úgy döntesz, hazamész.
 			</p>
 		`,
-		obj: ["S_Bübüszimat, J_Erdei Zsolt"],
+		obj: ["S_Bübüszimat", "J_Erdei Zsolt"],
 		change: [
 			{
 				id: "ugy",
