@@ -5033,7 +5033,7 @@ window.rooms = [
 		pic: "darkbogi-face.jpg",
 		desc: `
 				<p>
-					Miután sikerült legyűrnöd a támadót, Bogihoz ugrasz és megragadod.
+					Miután sikerült legyűrnöd a támadót, gyorsan magadhoz veszed a nála levő tárgyakat, majd Bogihoz ugrasz és megragadod.
 				</p>
 				<p>
 					- Mi volt ez? És ki volt ez?!
@@ -5054,6 +5054,7 @@ window.rooms = [
 				 - Tudom, hogy most azt hiszed, mi van, ha az egész csak egy csapda volt és Boti embere vagyok én is. Elárulom neked azt, amit senki sem tud: valójában Wakana Ootaki vagyok, a Kalafina együttes egykori énekesnője, a Bogi csak felvett név - azzal elővesz egy kendőt és elkezdi törölni az arcáról a sminket. Még ebben a félhomályban is látod, milyen döbbenetes változáson megy át. Tényleg Wakana az, gyerekkorod kedvence! Könnyes szemmel, szenvedélyesen folytatja: - Ezt senki nem tudja! A neoszamurájok lázadása után menekültem ide, és mivel nehéz volt új életet kezdeni, örültem, amikor felkarolt Bodri papa, majd Boti. Bodri papa rendes fickó, teljesen korrekt üzleti kapcsolatunk van, de Boti fertelmes! Szabadulni akarok tőle! És... és szeretlek! Téged szeretlek, tiszta szívemből, amióta csak megláttalak! Kérlek, higgyél nekem és ments meg!
 				</p>
 				`,
+		obj: ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_DIABOLIKUS SZTEROID", "W_KÉZIGRÁNÁT", "W_GYILOK"],
 		buttons: [
 			{
 				txt: "Hiszel neki",
@@ -7493,13 +7494,13 @@ window.rooms = [
 		desc: `
 			<p id="modified"></p>
 			<p>
-       Miután elfoglaltátok a Városházát, hozzálátsz egy új világ megalkotásához. <span class="ally"></span> segítségével - akit rögtön megtettél alpolgármesternek - kiűzítek Boti<span class="cond" data-cond="!X_Boti">t és</span> megmaradt embereit a városból. Kétszer is véget vetettél a zsarnokságnak, az egész nép téged ünnpel! Számos hasznos intézkedést vezetsz be, amitől az emberek jobban és boldogabban élnek, és rend uralkodik az egész városban. Mindenki szeret téged. Még az állatok és intelligens növényi életformák is.
+       Miután elfoglaltátok a Városházát, hozzálátsz egy új világ megalkotásához. <span class="ally"></span> segítségével - akit rögtön megtettél alpolgármesternek - kiűzítek Boti<span class="cond" data-cond="!X_Boti">t és</span> megmaradt embereit a városból. Kétszer is véget vetettél a zsarnokságnak, az egész nép téged ünnepel! Számos hasznos intézkedést vezetsz be, amitől az emberek jobban és boldogabban élnek, és rend uralkodik az egész városban. Mindenki szeret téged. Még az állatok és intelligens növényi életformák is.
       <p>
       <p class="cond" data-cond="E_love Bogi">
 				Összeházasodtál Bogival is, akit innentől fogva <span class="name"></span>né Wakanának hívnak. A sok közös küzdelem örökre összekovácsolt titeket. Már alig várjátok, hogy gyereketek is szülessen, akiből majd szintén egy igazi hőst faragtok. Vagy akár jöhet egy egész hőscsapat is...
 			</p>
 			<p>
-				Így éled boldog életeted - közel fél éven át. Akkor viszont történik valami...
+				Így éled boldog életed - közel fél éven át. Akkor viszont történik valami...
 			</p>
     `,
 		change: [
@@ -8583,7 +8584,7 @@ window.rooms = [
 	},
 	{
 		num: 300,
-		title: "ITT A VÉGE A BAZUBRUTÁL II. RÉSZÉNEK",
+		title: "ITT A VÉGE A BAZIBRUTÁL II. RÉSZÉNEK",
 		type: "end",
 		music: "happyDance",
 		pic: "fireworks.gif",
