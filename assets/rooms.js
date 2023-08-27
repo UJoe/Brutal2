@@ -4458,7 +4458,7 @@ window.rooms = [
         - Örömmel segítettünk! Reméljük, Bitang Botondra fognak szavazni a lakók!
       </p>
       <p>
-        A házmester megígéri, hoyg így lesz és visszamegy a lakásába. Amikor végre kettesben maradtok, Frici halkan hozzád fordul:
+        A házmester megígéri, hogy így lesz és visszamegy a lakásába. Amikor végre kettesben maradtok, Frici halkan hozzád fordul:
       </p>
       <p>
         - Rendben, hogy ne keltsünk feltűnést, de muszáj volt ezt a szavazós nyalizást a végére raknod?
@@ -8120,7 +8120,7 @@ window.rooms = [
 		buttons: [
 			{
 				txt: "Jó éjt!",
-				new: 245,
+				new: 234,
 			},
 		],
 	},
