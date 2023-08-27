@@ -8134,7 +8134,7 @@ window.rooms = [
 		num: 258,
 		title: "Akcióban",
 		type: "normal",
-		music: "storm",
+		music: "raveaction",
 		pic: "nightrain.gif",
 		desc: `
       <p>
@@ -8209,10 +8209,10 @@ window.rooms = [
 		type: "fight",
 		pic: "kidobo.jpg",
 		nmepic: "kidobo.jpg",
-		att: 110,
-		def: 50,
+		att: 100,
+		def: 45,
 		speed: 4,
-		hp: 120,
+		hp: 110,
 		desc: `
 		<p>
 			Mielőtt támadásba lendülnél, Boti észrevesz és elugrik. Kiordít a sofőrnek, mire az azonnal beront az ajtóval együtt. Kegyetlen marcona alak, aki az életét is odaadná a főnöke védelmezéséért, ezért nincs előle menekvés!
