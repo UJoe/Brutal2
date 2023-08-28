@@ -768,12 +768,12 @@ function _load() {
 				case "assassin":
 					basemes = "";
 					let ügyivagy = 0;
-					if (char.lel < 35 + Math.random() * 35 || getObj("S_Micuki") || getObj("S_Bübüszimat")) ügyivagy++;
-					if (char.ero > 35 + Math.random() * 35 || getObj("S_Bivalyerő")) ügyivagy++;
-					if (char.ugy > 35 + Math.random() * 35 || getObj("S_Villámgyorsaság")) ügyivagy++;
-					if (char.esz > 35 + Math.random() * 35 || getObj("S_Pengeagy")) ügyivagy++;
+					if (char.lel < 40 + Math.random() * 35 || getObj("S_Micuki") || getObj("S_Bübüszimat")) ügyivagy++;
+					if (char.ero > 40 + Math.random() * 35 || getObj("S_Bivalyerő")) ügyivagy++;
+					if (char.ugy > 40 + Math.random() * 35 || getObj("S_Villámgyorsaság")) ügyivagy++;
+					if (char.esz > 40 + Math.random() * 35 || getObj("S_Pengeagy")) ügyivagy++;
 
-					if (ügyivagy > 1) {
+					if (ügyivagy > 2) {
 						outcome = "pass";
 						crease = 5;
 						result = "Sikeresen kitaláltál egy trükkös akciót!";
@@ -3964,7 +3964,7 @@ function _load() {
 				opera = 3;
 			} else {
 				message("Legyőztétek az ellenséget!");
-				changeVal("hat", 5 + Math.round(Math.random() * 7));
+				changeVal("hat", Math.round(Math.random() * 7));
 				changeVal("lel", Math.round(Math.random() * -7));
 				music.volume = 1;
 				opera = 2;

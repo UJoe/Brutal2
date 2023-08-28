@@ -5054,7 +5054,7 @@ window.rooms = [
 				 - Tudom, hogy most azt hiszed, mi van, ha az egész csak egy csapda volt és Boti embere vagyok én is. Elárulom neked azt, amit senki sem tud: valójában Wakana Ootaki vagyok, a Kalafina együttes egykori énekesnője, a Bogi csak felvett név - azzal elővesz egy kendőt és elkezdi törölni az arcáról a sminket. Még ebben a félhomályban is látod, milyen döbbenetes változáson megy át. Tényleg Wakana az, gyerekkorod kedvence! Könnyes szemmel, szenvedélyesen folytatja: - Ezt senki nem tudja! A neoszamurájok lázadása után menekültem ide, és mivel nehéz volt új életet kezdeni, örültem, amikor felkarolt Bodri papa, majd Boti. Bodri papa rendes fickó, teljesen korrekt üzleti kapcsolatunk van, de Boti fertelmes! Szabadulni akarok tőle! És... és szeretlek! Téged szeretlek, tiszta szívemből, amióta csak megláttalak! Kérlek, higgyél nekem és ments meg!
 				</p>
 				`,
-		obj: ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_DIABOLIKUS SZTEROID", "W_KÉZIGRÁNÁT", "W_GYILOK"],
+		obj: ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_KÉZIGRÁNÁT", "W_GYILOK"],
 		buttons: [
 			{
 				txt: "Hiszel neki",
