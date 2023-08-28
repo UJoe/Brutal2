@@ -1708,8 +1708,8 @@ function _load() {
 					if (room.help) modi = room.help.split("_")[1];
 				} else {
 					char.room = room.pass;
-					changeVal("esz", room.level);
-					changeVal("ugy", room.level);
+					changeVal("esz", room.level - 1);
+					changeVal("ugy", room.level - 1);
 					if (room.modi) {
 						modi = room.modi;
 					} else {
@@ -1856,8 +1856,8 @@ function _load() {
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
-					changeVal("esz", 1 + Math.floor(bonus / 3));
-					changeVal("ugy", 1 + Math.floor(bonus / 3));
+					changeVal("esz", 1 + Math.floor(bonus / 4));
+					changeVal("ugy", Math.floor(bonus / 4));
 					char.room = room.pass;
 					if (room.help) {
 						changeVal("lel", 1 + Math.round(bonus / 3));
@@ -2588,8 +2588,8 @@ function _load() {
 			document.getElementById("exitBtn").disabled = true;
 			document.removeEventListener("keyup", move);
 			clearTimeout(timo1);
-			changeVal("ugy", 5);
-			changeVal("esz", 3);
+			changeVal("ugy", 3);
+			changeVal("esz", 2);
 			setTimeout(() => {
 				char.room = room.pass;
 				modi = room.gems.slice(1).concat(gems);
