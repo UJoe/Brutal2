@@ -458,17 +458,17 @@ window.rooms = [
 		type: "normal",
 		music: "darkmystic",
 		pic: "behead.jpg",
-		obj: ["X_Béna Boldizsár", "E_Boldi kivégzése", "M_Oshinoko"],
+		obj: ["X_Béna Boldizsár", "E_Boldi kivégzése", "M_Oshinoko", "W_PETÁRDA"],
 		desc: `
       <p id="modified"></p>
       <p>
         - Végezzétek ki! - adod ki a kegyetlen parancsot. Megfagy a levegő.
       </p>
       <p>
-        Először senki sem mozdul. De aztán előjön a tömegből egy keménykötésű, sebhelyes ázsiai. Meghajol előtted, aztán előránt egy katanát, odaugrik a reszkető, vánszorgó Boldihoz és egy csatakiáltással levágja az orrát. Halkan elmorog egy japán káromkodást, majd újra nekirugaszkodik és ezúttal a fejét vágja le.
+        Először senki sem mozdul. De aztán előjön a tömegből egy keménykötésű, sebhelyes ázsiai. Meghajol előtted, aztán előránt egy katanát, odaugrik a reszkető, vánszorgó Boldihoz és egy csatakiáltással levágja az orrát. Halkan elmorog egy japán káromkodást, majd újra nekirugaszkodik és ezúttal a fejét vágja le. Boldi teste eldől és a kabátzsebéből kiesik egy petárda.
       </p>
       <p>
-        A tömegben többen felszisszennek és elfordítják a fejüket. De néhány keményebb kötésű ember kíváncsian szemléli az eseményeket. Odalépsz a fejhez és felemeled. Két nő elájul. Nem törődsz velük. Ránézel a körülötted állókra és emelt hangon így szólsz hozzájuk:
+        A tömegben többen felszisszennek és elfordítják a fejüket. De néhány keményebb kötésű ember kíváncsian szemléli az eseményeket. Odalépsz és elrakod a petárdát, mert még jól jöhet, majd felemeled Boldi fejét. Két nő elájul. Nem törődsz velük. Ránézel a körülötted állókra és emelt hangon így szólsz hozzájuk:
       </p>
       <p>
         - Így jár mindaz, aki az ellenség besúgója! Véget ért annak a polgármesternek az uralma, aki semmit sem tett értetek, amikor Battle Beetle mocskos bandája rátok támadt! Egyedül én védtelek meg titeket! És ez így is lesz! Új korszak köszönt ránk. Ennek jelzésére tűzd ki az áruló fejét a főtér oszlopára!

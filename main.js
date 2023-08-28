@@ -5219,7 +5219,7 @@ function _load() {
 					hitp = "boti";
 					hitv = Math.round((att - hp.boti / 2) / 2.5 + Math.random() * 3 - Math.random() * 3);
 					hitv = hitv < 4 ? 4 : hitv;
-					if (bbc < 0.4) bbc += 0.05;
+					if (bbc < 0.4) bbc += 0.04;
 					break;
 
 				case "oshinoko":
@@ -5291,10 +5291,10 @@ function _load() {
 					sound.play();
 					if (ot >= st) {
 						loser = "szenyamuki";
-						seb = 1 + Math.round((ot - st) / 5);
+						seb = 1 + Math.round((ot - st) / 3);
 					} else {
 						loser = "oshinoko";
-						seb = 1 + Math.round((st - ot) / 4);
+						seb = 1 + Math.round((st - ot) / 2.5);
 					}
 					updateKödScore(loser, seb);
 					break;
