@@ -8217,9 +8217,9 @@ window.rooms = [
 		type: "fight",
 		pic: "kidobo.jpg",
 		nmepic: "kidobo.jpg",
-		att: 100,
+		att: 120,
 		def: 45,
-		speed: 4,
+		speed: 5,
 		hp: 110,
 		desc: `
 		<p>
