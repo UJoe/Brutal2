@@ -5187,7 +5187,7 @@ function _load() {
 
 	//köd
 	function fogAct() {
-		music.volume = 0.7;
+		music.volume = 0.4;
 		let hp = {
 			oshinoko: 100,
 			szenyamuki: 100,
