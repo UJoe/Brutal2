@@ -1330,6 +1330,13 @@ function _load() {
 					changeVal("sup", bl);
 					break;
 
+				case "growlove":
+					if (checkCond("férfi") && !checkCond("E_love Bogi")) {
+						char.objs.push("E_love Bogi");
+						message("Bogi egyre jobban megszeret téged.");
+					}
+					break;
+
 				default:
 					break;
 			}
@@ -1702,6 +1709,7 @@ function _load() {
 				} else {
 					char.room = room.pass;
 					changeVal("esz", room.level);
+					changeVal("ugy", room.level);
 					if (room.modi) {
 						modi = room.modi;
 					} else {
@@ -1848,6 +1856,8 @@ function _load() {
 						);
 					changeVal("sup", bonus);
 					changeVal("hat", 1);
+					changeVal("esz", 1 + Math.floor(bonus / 3));
+					changeVal("ugy", 1 + Math.floor(bonus / 3));
 					char.room = room.pass;
 					if (room.help) {
 						changeVal("lel", 1 + Math.round(bonus / 3));
@@ -2044,7 +2054,7 @@ function _load() {
 				document.getElementById("exitBtn").disabled = true;
 				document.removeEventListener("keyup", move);
 				changeVal("sup", -5 - Math.round(Math.random() * 5));
-				setTimeout(() => {
+				timo1 = setTimeout(() => {
 					char.room = room.fail;
 					newRoom();
 				}, 4000);
@@ -2577,6 +2587,9 @@ function _load() {
 			message("Megtaláltad a célt!");
 			document.getElementById("exitBtn").disabled = true;
 			document.removeEventListener("keyup", move);
+			clearTimeout(timo1);
+			changeVal("ugy", 5);
+			changeVal("esz", 3);
 			setTimeout(() => {
 				char.room = room.pass;
 				modi = room.gems.slice(1).concat(gems);
@@ -3951,6 +3964,8 @@ function _load() {
 				opera = 3;
 			} else {
 				message("Legyőztétek az ellenséget!");
+				changeVal("hat", 5 + Math.round(Math.random() * 7));
+				changeVal("lel", Math.round(Math.random() * -7));
 				music.volume = 1;
 				opera = 2;
 			}

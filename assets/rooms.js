@@ -5566,12 +5566,22 @@ window.rooms = [
 				rnd: 7,
 			},
 			{
+				id: "ugy",
+				crease: 4,
+				rnd: 3,
+			},
+			{
+				id: "esz",
+				crease: 3,
+				rnd: 2,
+			},
+			{
 				id: "lel",
-				crease: 2,
+				crease: 3,
 			},
 			{
 				id: "sup",
-				crease: 2,
+				crease: 3,
 			},
 		],
 		buttons: [
@@ -7455,23 +7465,18 @@ window.rooms = [
 		change: [
 			{
 				id: "lel",
-				crease: 50,
-				rnd: 50,
+				crease: 20,
+				rnd: 10,
 			},
 			{
 				id: "hat",
-				crease: 40,
-				rnd: 40,
-			},
-			{
-				id: "ero",
 				crease: 30,
-				rnd: 30,
+				rnd: 20,
 			},
 			{
 				id: "sup",
-				crease: 500,
-				rnd: 500,
+				crease: 300,
+				rnd: 200,
 			},
 		],
 		buttons: [
@@ -7506,23 +7511,18 @@ window.rooms = [
 		change: [
 			{
 				id: "lel",
-				crease: 50,
-				rnd: 50,
+				crease: 20,
+				rnd: 10,
 			},
 			{
 				id: "hat",
-				crease: 40,
-				rnd: 40,
-			},
-			{
-				id: "ero",
 				crease: 30,
-				rnd: 30,
+				rnd: 20,
 			},
 			{
 				id: "sup",
-				crease: 500,
-				rnd: 500,
+				crease: 300,
+				rnd: 200,
 			},
 		],
 		buttons: [
@@ -8197,6 +8197,13 @@ window.rooms = [
 			</p>
 		`,
 		obj: ["X_Boti"],
+		change: [
+			{
+				id: "lel",
+				crease: -1,
+				rnd: 2,
+			},
+		],
 		buttons: [
 			{
 				txt: "Rendben!",
@@ -8278,6 +8285,7 @@ window.rooms = [
 				</p>
 			`,
 		obj: ["E_bizonyítékok"],
+		Xchange: "growlove",
 		buttons: [
 			{
 				txt: "Köszönöm!",
@@ -8486,6 +8494,13 @@ window.rooms = [
 			</p>
     `,
 		obj: ["X_Boti"],
+		change: [
+			{
+				id: "lel",
+				crease: 3,
+				rnd: 4,
+			},
+		],
 		buttons: [
 			{
 				txt: "Ésszerű javaslat",
@@ -8520,6 +8535,13 @@ window.rooms = [
 			</p>
     `,
 		obj: ["X_Boti"],
+		change: [
+			{
+				id: "ugy",
+				crease: 5,
+				rnd: 2,
+			},
+		],
 		buttons: [
 			{
 				txt: "Ésszerű javaslat",
@@ -8575,6 +8597,20 @@ window.rooms = [
 			</p>
     `,
 		obj: ["X_Boti"],
+		change: [
+			{
+				id: "lel",
+				crease: 2,
+				rnd: 5,
+			},
+		],
+		change: [
+			{
+				id: "esz",
+				crease: 1,
+				rnd: 2,
+			},
+		],
 		buttons: [
 			{
 				txt: "Ésszerű javaslat",
