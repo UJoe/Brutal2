@@ -5366,7 +5366,7 @@ function _load() {
 							<span class="fscore lime">${hp.oshinoko}</span> 
 						</span>
 						<span>
-							<img class="thumb" src="./img/rooms/szenyamuki-face.JPG">
+							<img class="thumb" src="./img/rooms/szenyamuki-face.jpg">
 							<span class="fscore lime">${hp.szenyamuki}</span> 
 						</span>
 						<span>
