@@ -5567,12 +5567,12 @@ window.rooms = [
 			},
 			{
 				id: "ugy",
-				crease: 4,
-				rnd: 3,
+				crease: 1,
+				rnd: 2,
 			},
 			{
 				id: "esz",
-				crease: 3,
+				crease: 1,
 				rnd: 2,
 			},
 			{
@@ -5582,6 +5582,7 @@ window.rooms = [
 			{
 				id: "sup",
 				crease: 3,
+				rnd: 2
 			},
 		],
 		buttons: [
