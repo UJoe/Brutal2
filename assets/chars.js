@@ -203,7 +203,7 @@ window.sprites = [
 	{
 		name: "Szenyamuki",
 		vip: true,
-		pic: "szenyamuki-face.JPG",
+		pic: "szenyamuki-face.jpg",
 		att: 135,
 		def: 65,
 		hp: 110,

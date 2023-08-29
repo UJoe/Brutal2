@@ -1195,7 +1195,7 @@ window.rooms = [
 		title: "Menekülés a vadonba",
 		type: "normal",
 		music: "forest",
-		pic: "forest1.JPG",
+		pic: "forest1.jpg",
 		desc: `
       <p>
         Inkább mented az irhád, jó messze futsz a böszmedvétől. Annyira, hogy már Frici titkos kunyhójához se találsz vissza.
@@ -1749,7 +1749,7 @@ window.rooms = [
 		title: "Bolyongás az erdőben",
 		type: "normal",
 		music: "forest",
-		pic: "forest1.JPG",
+		pic: "forest1.jpg",
 		desc: `
       <p>
         Egyre fáradtabban bolyongsz a sűrű erdőben. 
@@ -3014,7 +3014,7 @@ window.rooms = [
 		title: "Találkozás Szenyamukival",
 		type: "normal",
 		music: "gravenight",
-		pic: "szenyamuki-face.JPG",
+		pic: "szenyamuki-face.jpg",
 		desc: `
     <p>
       Oshinoko bólint, azzal szó nélkül a ház oldalához megy, ahol megrángat háromszor egy lelógó vezetéket. Pár percig néz a ház falán túl valamit, majd megint bólint és hozzád fordul.
@@ -3929,7 +3929,7 @@ window.rooms = [
 		title: "Szenyamuki mellétek áll",
 		type: "normal",
 		music: "gravenight",
-		pic: "szenyamuki-face.JPG",
+		pic: "szenyamuki-face.jpg",
 		desc: `
     <p>
       Amint előrántod a katanát, Szenyamuki szeme elkerekedik.
@@ -3957,7 +3957,7 @@ window.rooms = [
 		title: "Harc Szenyamukival",
 		type: "fight",
 		pic: "dualfight.gif",
-		nmepic: "szenyamuki-face.JPG",
+		nmepic: "szenyamuki-face.jpg",
 		att: 120,
 		def: 70,
 		speed: 9,
@@ -5899,7 +5899,7 @@ window.rooms = [
 		title: "Tanácskozás Szenyamukival",
 		type: "normal",
 		music: "gravenight",
-		pic: "szenyamuki-face.JPG",
+		pic: "szenyamuki-face.jpg",
 		desc: `
 			<p>
 				- Nekem vissza kell mennem Bitang Botondhoz, mert többek között az ő testőrségéhez is tartozom - kezdi elgondolkodva Szenyamuki. - Ma délután beszédet mond a Branyiszkó-téren. Oda is visz testőrséget, de kevesebbet, mint amennyien a Városházán őrzik. Ne hagyományos fegyverekkel intézzétek el, hanem inkább csendesebb módszerekkel. Bárhogy is alakul, én ott leszek és segítelek titeket, ha kell. 
@@ -5945,7 +5945,7 @@ window.rooms = [
 		title: "Szenyamuki legyőzése",
 		type: "normal",
 		music: "gravenight",
-		pic: "szenyamuki-face.JPG",
+		pic: "szenyamuki-face.jpg",
 		desc: `
 			<p>
 				Amikor Szenyamuki összeesik, te pedig odaugrasz mellé, hogy végezz vele, hirtelen Oshinoko elkapja a karodat, de olyan erővel, mint ha vasbilincsbe zárnák.
@@ -5984,7 +5984,7 @@ window.rooms = [
 		title: "Vereség Szenyamukitól",
 		type: "normal",
 		music: "gravenight",
-		pic: "szenyamuki-face.JPG",
+		pic: "szenyamuki-face.jpg",
 		desc: `
 			<p>
 				Iszonyatosan erős harcos Szenyamuki, és mivel Oshinoko is mondta, hogy nem kell végig csinálni a harcot, ha nem akarod, te is úgy látod, hogy fölösleges itt most meghalnod a keze által. Jelzed, hogy feladod a harcot és elfogadod a győzelmét. Szenyamuki megáll és így szól:
