@@ -920,6 +920,11 @@ function _load() {
 						result = "Nem sikerül átjutnod az őrökön.";
 						modi =
 							"A biztonsági őr megállít. Egy ideig nézi a képed, majd beleszól a gallérmikrofonjába:</p><p>- Megvan <span class'name'></span>!";
+					} else if (getObj("J_Gárda")) {
+						outcome = "fail";
+						result = "Nem sikerül átjutnod az őrökön.";
+						modi =
+							"Bár nálad nem szúrnak ki semmit az őrök, az egyik Gárda-tagnál találnak egy rugós bicskát. Amikor ki akarják állítani a tömegből, egy másik tag társa védelmére kel és elkezd ordítozni, egy baseball ütővel a kezében gesztikulálva. Nem nagyon maradhattok már rejtve.";
 					} else {
 						outcome = "pass";
 						result = "Sikeresen átjutsz az őrökön.";

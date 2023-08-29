@@ -872,7 +872,7 @@ window.rooms = [
 		pic: "cheering.gif",
 		desc: `
       <p>
-       Boldi összerogyik. Nem tudod, hogy él-e még vagy meghalt, de a nép hirtelen üdvrigalgásba tör ki, és magával ragad a hangulatuk. Mindenhonnan azt hallod, hogy te vagy a hős, aki az összes ellenségükkel leszámol. Érzed, hogy most fontos döntést kell meghoznod, de a nép melletted áll.
+       Boldi összerogyik. A nép hirtelen üdvrigalgásba tör ki, és magával ragad a hangulatuk. Mindenhonnan azt hallod, hogy te vagy a hős, aki az összes ellenségükkel leszámol. Érzed, hogy most fontos döntést kell meghoznod, de a nép melletted áll.
       </p>
     `,
 		change: [
@@ -887,15 +887,8 @@ window.rooms = [
 				rnd: 5,
 			},
 		],
+		obj: ["X_Béna Boldizsár"],
 		buttons: [
-			{
-				txt: "Levágatod Boldi fejét elrettentő példaként",
-				new: 16,
-			},
-			{
-				txt: "Biztos, ami biztos: bezáratod Boldit valahová",
-				new: 18,
-			},
 			{
 				txt: "Közlöd, hogy a következő, akivel leszámolsz, a polgármester lesz",
 				new: 32,
@@ -903,7 +896,7 @@ window.rooms = [
 			{
 				txt: "Bejelented, hogy indulsz a következő önkormányzati választáson",
 				new: 12,
-				modi: "A mozdulatlan Béna Boldival már senki nem törődik.",
+				modi: "A mozdulatlan Béna Boldit egy rendszerető öregasszony kidobja egy kukába.",
 			},
 		],
 	},
@@ -2278,7 +2271,7 @@ window.rooms = [
        - Te vagy á hős, ki legyőszte Bedől... Betlit?
       </p>
       <p>
-       - Ha Battle Beatle-re gondolsz, akkor igen - feleled kapásból. Felesleges lenne titkolni. A legkisebb gnóm rögtön kikerekedett szemmel elkiáltja magát, miközben úgy oldalba löki a harmadik tagot, hogy az kilöttyinti a sörét. De láthatóan nem foglalkozik vele.
+       - Ha Battle Beetle-re gondolsz, akkor igen - feleled kapásból. Felesleges lenne titkolni. A legkisebb gnóm rögtön kikerekedett szemmel elkiáltja magát, miközben úgy oldalba löki a harmadik tagot, hogy az kilöttyinti a sörét. De láthatóan nem foglalkozik vele.
       </p>
       <p>
         - Hű, Frédi! Asztakutya! Látod, megmontam! Húha, most micsinájunk? Rendeljünk neki a legjob sörbű! BODRIII!!! - Ez utóbbit dobhártyátszaggatóan ordítja. Először azt hiszed, a kutyája kapta el közben a tökét az asztal alatt, de nem! A pultos rögtön visszaordít neki.
@@ -3032,7 +3025,7 @@ window.rooms = [
       Kifordultok a falon keresztül, aztán 2 sarokkal arrébb egy titkos ajtón át egy elhagyatott raktárépületbe értek. Itt egy sötét sarokban van egy alak. Oshinoko mond neki pár mondatot japánul, mire előrelép. A beszűrődő fényben megpillantod az arcát. Hasonlít Oshinokora, de gonoszabb és sötétebb, és egy sebhely is még visszataszítóbbá teszi. Megszólít.
     </p>
     <p>
-      - Battle Beatle legyőzője... Ugyan miért kellene azt hinnem, hogy veled együtt le tudnánk győzni Bitang Botondot?
+      - Battle Beetle legyőzője... Ugyan miért kellene azt hinnem, hogy veled együtt le tudnánk győzni Bitang Botondot?
     </p>
     <p>
       - Ha mi hárman összefogunk, mindenkinél erősebbek vagyunk! Miért gondolod, hogy nem?
@@ -4738,7 +4731,7 @@ window.rooms = [
 		treasure: "bari.jpg",
 		desc: `
       <p>
-        Több juhász - köztük a híres Vidróczki Márton is - jelezte, hogy amikor Battle Beatle elvarázsolta a várost, a birkáik megkergültek és széjjel rohantak. Azóta sem sikerült őket összeszedni. Széles a mező, ahol keresni kell őket, és sajnos van a talajban néhány, még a második világháború idején elásott akna is, úgyhogy óvatosan keresgélj. De nagyon bíznak benned! Nagy a terep, de te vidáman, fütyörészve fogsz neki a keresésnek.
+        Több juhász - köztük a híres Vidróczki Márton is - jelezte, hogy amikor Battle Beetle elvarázsolta a várost, a birkáik megkergültek és széjjel rohantak. Azóta sem sikerült őket összeszedni. Széles a mező, ahol keresni kell őket, és sajnos van a talajban néhány, még a második világháború idején elásott akna is, úgyhogy óvatosan keresgélj. De nagyon bíznak benned! Nagy a terep, de te vidáman, fütyörészve fogsz neki a keresésnek.
       </p>
       <p><i>
         Addig keresgélj, amennyi erőd van. A területen összesen <span id="kincs"></span> kincset érő bárány és <span id="akna"></span> akna van. Ha aknára lépsz, az ügyességedtől függ, hogy mennyit sebesülsz. Ha üres mezőn keresel, az első szám a szomszédos mezőkön lévő bárányok, a második az aknák számát mutatja meg. Próbálj meg minél több bárányt megtalálni!
@@ -6040,7 +6033,7 @@ window.rooms = [
       - <span id="fullName"></span>? - kérdezi kicsit elrévedve.
       </p>
       <p>
-        - Így van! - válaszolod mély, búgó hangon. Sármosan elmosolyodosz, hátra fésülöd a hajad és kidülleszted befeszített mellizmodat. Látszik, hogy egyre nagyobb hatást gyakorolsz rá. De az igazat megvallva, neked is egyre jobban tetszik a csinos énekesnő. Lazán a szintetizátorra könyökölsz, a színesbörű fickó mondana valamit, de Bogi egy szemvillantással leinti. Te szerény mosollyal folytatod: - Én mentettem meg a várost Battle Beatle-től. Ezek szerint a hírnevem megelőzött.
+        - Így van! - válaszolod mély, búgó hangon. Sármosan elmosolyodosz, hátra fésülöd a hajad és kidülleszted befeszített mellizmodat. Látszik, hogy egyre nagyobb hatást gyakorolsz rá. De az igazat megvallva, neked is egyre jobban tetszik a csinos énekesnő. Lazán a szintetizátorra könyökölsz, a színesbörű fickó mondana valamit, de Bogi egy szemvillantással leinti. Te szerény mosollyal folytatod: - Én mentettem meg a várost Battle Beetle-től. Ezek szerint a hírnevem megelőzött.
       </p>
 			<p>A nő elismerően megnyalja a szája szélét, majd kecsesen előre nyújtja a kezét:
         - Örülök, hogy megismertelek. Bogi.
@@ -6055,7 +6048,7 @@ window.rooms = [
         Egy percig te is csak nézed hangtalanul. Hihetetlenül gyönyörű és bájos, amikor zavartan mosolyog! De aztán kínosan kezdi érezni magát, így megpróbál gyorsan feltenni egy semlegesebb kérdést: - És mi járatban vagy erre? Újabb küldetés a láthatáron vagy csak beugrottál?
       </p>
       <p>
-        - Éppenséggel... - gondolkodsz el, de aztán valahogy úgy érzed, erre csak egyféleképpen válaszolhatsz, mert ez van legbelül benned, és Boginak valahogy nem lehet hazudni: - Azt tervezem, hogy átveszem az uralmat a város felett. Elég volt Bitang Botond polgármester önkényuralmából, jobb élet jár nektek! Mi haszna volt Battle Beatle-t és bandáját legyőzni, ha még mindig nem szabad a város? Akkor nyugszom meg, ha már mindenki boldogan élhet itt! Erre születtem!
+        - Éppenséggel... - gondolkodsz el, de aztán valahogy úgy érzed, erre csak egyféleképpen válaszolhatsz, mert ez van legbelül benned, és Boginak valahogy nem lehet hazudni: - Azt tervezem, hogy átveszem az uralmat a város felett. Elég volt Bitang Botond polgármester önkényuralmából, jobb élet jár nektek! Mi haszna volt Battle Beetle-t és bandáját legyőzni, ha még mindig nem szabad a város? Akkor nyugszom meg, ha már mindenki boldogan élhet itt! Erre születtem!
       </p>
 				Amíg beszélsz, Bogi arcán az érzelmek teljes hadserege vonul át. Látszik, hogy a szavaid nagy belső küzdelmet indítottak el benne, ahol neki muszáj súlyos döntéseket meghozni. Amikor végetért ars poetica beszéded, egy ideig még mindig gondolkodik, majd arcán határozott eltökéltség jelenik meg. Egészen közel hajol hozzád, és a füledbe súg.
 			<p>
@@ -6393,7 +6386,7 @@ window.rooms = [
 					Mindegyik pont után hatalmas örömújjongásba tör ki a nép. Vársz sok percet, amíg végre kicsit elhalkulnak, majd emelt hangon folytatod:
 				</p>
 				<p>
-					- És ezen kívül még sok másban is egy szebb jövőt fogunk elhozni a városnak. Hiszen véget ért a zsarnokság. Először Battle Beatle és bandájának körmönfont zsarnokságának vetettem véget, most pedig közösen megállítottuk Bitang Botond és bandájának nyílt zsarnokságát! Foglaljuk tehát el méltó helyünket és űzzük el a csúfosan vereséget szenvedett bitangot! Irány a Városháza!
+					- És ezen kívül még sok másban is egy szebb jövőt fogunk elhozni a városnak. Hiszen véget ért a zsarnokság. Először Battle Beetle és bandájának körmönfont zsarnokságának vetettem véget, most pedig közösen megállítottuk Bitang Botond és bandájának nyílt zsarnokságát! Foglaljuk tehát el méltó helyünket és űzzük el a csúfosan vereséget szenvedett bitangot! Irány a Városháza!
 				</p>
 				<p>
 					A tömeg lelkesen megindul veled. A Városházánál már vár titeket Bitang Botond és testőrserege. Egy pillanatra megfordul benned a gondolat, hogy mi van, ha most a tömegbe lőnek, de szerencsére nem ez történik. Botond odamegy hozzád. Az arca meggyötörtnek tűnik, de azért próbál diplomatikus kifejezést magára erőltetni. Kezet ráztok.
@@ -6943,7 +6936,7 @@ window.rooms = [
 				Magával ragadnak az események, sodródzs a tömeggel. Hirtelen valaki elkiáltja magát:
 			</p>
 			<ul><li>
-				Nézzétek! <span id="fullName"></span>! Ő mentett meg minket Battle Beatle-től!
+				Nézzétek! <span id="fullName"></span>! Ő mentett meg minket Battle Beetle-től!
 			</li></ul>
 			<p>
 				Ez egy lavinát indít el. Egyre többen ismernek fel és te is egyre több régi ismerőst látsz meg a tömegben. Mindenki benned látja a szabadulás útját, ami újból lángra lobbantja harci véredet. Mire eléritek a Városházát, már a dühös tömeg vezetője vagy.
@@ -6980,7 +6973,7 @@ window.rooms = [
 		pic: "bübük.jpg",
 		desc: `
       <p>
-				- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beatle... Minden állatot csak elszomorítanak, akik oda tévedtek. És tiszta sport sincs azóta, csak a bunda! Kifordítom, béfordítom, mégis bunda a bunda! Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az életükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
+				- Valójában nem tudom kik ezek - válaszol Zsolt nevetve. - Én csak bübüknek hívom őket, ők meg a vezérüknek tartanak. Nem mindig értem őket, de ők valahogy mindig kitalálják, mit akarok. De nem is a szavak számítanak itt az erdőben, hanem a tettek. Már nem is tudom, mikor költöztem ki az erdőbe, amikor elegem lett abból, ami a városban van. Bitang Botond, Battle Beetle... Minden állatot csak elszomorítanak, akik oda tévedtek. És tiszta sport sincs azóta, csak a bunda! Kifordítom, béfordítom, mégis bunda a bunda! Elegem lett! Kijöttem ide élni. A bübük befogadtak, én pedig a védelmezőjükké váltam. Vittem némi szervezettséget az életükbe, ők pedig sokmindenre megtanítottak az erdei életből. A leghasznosabb talán az a képesség volt, amit én csak bübüszimatnak hívok.
 			</p>
 			<p>
 				- Bübüszimat? Az mi? - kérdezed érdeklődéssel.
@@ -7191,7 +7184,7 @@ window.rooms = [
 			},
 		],
 		pass: 232,
-		modi: "A nyomokat követve sikerül elkapnotok Botit. Mindketten ki vagytok dögölve, de melletted ott állnak az embereid, Boti viszont egy szál egyedül maradt. Lihegve könyörögni kezd:</p><p>- Jól van, te nyertél! Szólok, hogy adják át neked a városházát! Aztán eltűnök innen rörökre...</p><p>Eléggé megtörtnek látszik ahhoz, hogy trükközzön, és mivel ki is vagy fulladva te is, úgy döntesz, megkíméled az életét. Boti megköszöni, majd közelebb hajol hozzád és suttogva mondja, hogy csak te halld:",
+		modi: "A nyomokat követve sikerül elkapnotok Botit. Mindketten ki vagytok dögölve, de melletted ott állnak az embereid, Boti viszont egy szál egyedül maradt. Lihegve könyörögni kezd:</p><p>- Jól van, te nyertél! Szólok, hogy adják át neked a városházát! Aztán eltűnök innen örökre...</p><p>Eléggé megtörtnek látszik ahhoz, hogy trükközzön, és mivel ki is vagy fulladva te is, úgy döntesz, megkíméled az életét. Boti megköszöni, majd közelebb hajol hozzád és suttogva mondja, hogy csak te halld:",
 		fail: 228,
 	},
 	{
@@ -7324,7 +7317,7 @@ window.rooms = [
 		desc: `
 			<p id="modified"></p>
 			<p>
-       - Egy valamit nem árt, ha tudsz, ha átveszed a hatalmat. Szerinted Battle Beatle és a Big Bugok ebből a világból származtak? Nem gyanakodtál arra, hogy földönkívüliek? Battle Beatle az ő ügynökök volt. Most, hogy eltetted őket láb alól, már útban vannak az idegenek. Lehet, hogy holnap ideérkeznek. És akkor itt kő kövön nem marad. 
+       - Egy valamit nem árt, ha tudsz, ha átveszed a hatalmat. Szerinted Battle Beetle és a Big Bugok ebből a világból származtak? Nem gyanakodtál arra, hogy földönkívüliek? Battle Beetle az ő ügynökök volt. Most, hogy eltetted őket láb alól, már útban vannak az idegenek. Lehet, hogy holnap ideérkeznek. És akkor itt kő kövön nem marad. 
       </p>
 			<p>- Kik ezek az idegenek? - teszed fel némi aggodalommal a kérdést. De Boti most távolabb lép, széles mosollyal kezet ráz veled és hangosan így szól:
 			</p>
@@ -7790,7 +7783,7 @@ window.rooms = [
        A nép felé fordulsz és elkezdesz szónokolni:
       </p>
       <p>
-       - Polgártársaim! Én voltam az, aki megszabadított Battle Beatle és a Big Bugok fogságából! De utána sajnos láttam, hogy egy másik zsarnok uralkodik felettetek: Bitang Botond, a polgármester! Rendőröknek nevezett gengszterekkel sanyargatott titeket. <span class="cond" data-cond="E_bizonyítékok">Bizonyítékom van rá, hogy a rendőrfönök valójában egy körözött bűnöző volt és idegen lények ügynöke! Ezeket az idegen lényeket akarták a városra küldeni Battle Beatle megbosszulása miatt! Nálam vannak a bizonyítékok!</span> De ennek a zsarnokságnak most vége! Ha szeretnétek engem polgármesternek, elhozom nektek a szebb jövőt. Én nem ellenetek fogok harcolni, hanem azokkal, akik titeket fenyegetnek! Ahogy eddig is tettem!
+       - Polgártársaim! Én voltam az, aki megszabadított Battle Beetle és a Big Bugok fogságából! De utána sajnos láttam, hogy egy másik zsarnok uralkodik felettetek: Bitang Botond, a polgármester! Rendőröknek nevezett gengszterekkel sanyargatott titeket. <span class="cond" data-cond="E_bizonyítékok">Bizonyítékom van rá, hogy a rendőrfönök valójában egy körözött bűnöző volt és idegen lények ügynöke! Ezeket az idegen lényeket akarták a városra küldeni Battle Beetle megbosszulása miatt! Nálam vannak a bizonyítékok!</span> De ennek a zsarnokságnak most vége! Ha szeretnétek engem polgármesternek, elhozom nektek a szebb jövőt. Én nem ellenetek fogok harcolni, hanem azokkal, akik titeket fenyegetnek! Ahogy eddig is tettem!
       </p>
 			<p>
 				A nép hatalmas üdvrivalgásba tör ki. Mindenhonnan kiáltozzák, hogy téged akarnak polgármesternek, és vesszenek Boti megmaradt emberei! Felemelnek a tömeg felé és megindultok a Városháza felé.
@@ -7845,7 +7838,7 @@ window.rooms = [
          Beleolvasol és egy egyre durvább történet áll össze benne. Számos akta van benne Borbély Béláról, aki Boti rendőrfőnöke volt, de valójában elég hosszú bűnlajstroma van. Tulajdonképpen egy bérgyilkos. De találsz több bizonyítékot is más rendőrök bűntetett előéletéről. Lehet, hogy az egyik rendőrnek feltámadt a lelkiismerete és ő gyűjtötte össze ezeket a bizonyítékokat, csak pechjére éppen kivezényelték az erdőbe, ahol szomorú sorsra jutott?
         </p>
         <p>
-          De olvasol tovább, mert a java még hátra van! Számos email és egyéb dokumentum, feljegyzés van arról, hogyan tárgyalt Borbély Béla vagy Bitang Botond földönkívüli lényekkel. Battle Beatle is egy volt közülük, gyakorlatilag ő is a polgármester embere volt, akit őrült kísérletekkel bízott meg. De még ennél is durvábbak azok a dokumentumok, amik arról szólnak, hogyan készítenek elő egy földönkívüli inváziót a város ellen! Őrület az egész, ezt meg kell tudnia a városnak!
+          De olvasol tovább, mert a java még hátra van! Számos email és egyéb dokumentum, feljegyzés van arról, hogyan tárgyalt Borbély Béla vagy Bitang Botond földönkívüli lényekkel. Battle Beetle is egy volt közülük, gyakorlatilag ő is a polgármester embere volt, akit őrült kísérletekkel bízott meg. De még ennél is durvábbak azok a dokumentumok, amik arról szólnak, hogyan készítenek elő egy földönkívüli inváziót a város ellen! Őrület az egész, ezt meg kell tudnia a városnak!
         </p>
         <p>
 					Összecsomagolod az írásokat, elteszed jó helyre, aztán próbálsz még reggelig aludni ideiglenes szállásodon.
@@ -8282,7 +8275,7 @@ window.rooms = [
 					- Meg. Az egész - mondja McClone, majd leül egy íróasztalhoz, matat egy kicsit (a halk hangokból ítélve egy széfet nyit ki), majd feláll és odavisz Boginak egy aktacsomagot. - Ebben elegendő bizonyíték van ahhoz, hogy az egész bandát felszámoljuk! Csak bennetek bízhatok.
 				</p>
 				<p>
-					Érdeklődve közelebb ülsz Bogihoz és belenéztek a "TOP SECRET" feliratú aktába. Először számos dokumentum van benne Borbély Béláról, aki Boti rendőrfőnöke, de valójában elég hosszú bűnlajstroma van. Tulajdonképpen egy bérgyilkos. De találtok benne több bizonyítékot is más rendőrök bűntetett előéletéről. Ezután számos email és egyéb dokumentum, feljegyzés van arról, hogyan tárgyalt Borbély Béla vagy Bitang Botond földönkívüli lényekkel! Battle Beatle is egy volt közülük, gyakorlatilag ő is a polgármester embere volt, akit őrült kísérletekkel bízott meg. De még ennél is durvábbak azok a dokumentumok, amik arról szólnak, hogyan készítenek elő egy földönkívüli inváziót a város ellen! Őrület az egész, ezt meg kell tudnia a városnak! De már egyre fáradtabb vagy. A hosszú paksaméta végefelé kezd leragadozni a szemed. Házigazdátok így felajánlja, hogy aludjatok nála.
+					Érdeklődve közelebb ülsz Bogihoz és belenéztek a "TOP SECRET" feliratú aktába. Először számos dokumentum van benne Borbély Béláról, aki Boti rendőrfőnöke, de valójában elég hosszú bűnlajstroma van. Tulajdonképpen egy bérgyilkos. De találtok benne több bizonyítékot is más rendőrök bűntetett előéletéről. Ezután számos email és egyéb dokumentum, feljegyzés van arról, hogyan tárgyalt Borbély Béla vagy Bitang Botond földönkívüli lényekkel! Battle Beetle is egy volt közülük, gyakorlatilag ő is a polgármester embere volt, akit őrült kísérletekkel bízott meg. De még ennél is durvábbak azok a dokumentumok, amik arról szólnak, hogyan készítenek elő egy földönkívüli inváziót a város ellen! Őrület az egész, ezt meg kell tudnia a városnak! De már egyre fáradtabb vagy. A hosszú paksaméta végefelé kezd leragadozni a szemed. Házigazdátok így felajánlja, hogy aludjatok nála.
 				</p>
 			`,
 		obj: ["E_bizonyítékok"],
@@ -8409,7 +8402,7 @@ window.rooms = [
 				A nagy bulinak a nap lemenetele kezd lassan véget vetni. Nagyon jól érezted magad, a szívedbve zártad örökre Erdei Zsoltot és a bübüket. Amikor leültök Zsolttal megpihenni, megkérdezi, hogy tehet-e érted még valamit. Elgondolkodsz. Majd lassan így szólsz:
 			</p>
 			<p>
-				- Ha tényleg szövetségesek vagyunk, kérnék valamit. Nem magamnak, hanem az egész városnak és tulajdonképpen nektek is. Régóta élősködik már Bitang Botond polgármester a népen. Én már egyszer megmentettem a várost Battle Beatle zsarnokságától, és most addig nem tudok megnyugodni, amíg nem vetek véget az újabb zsarnokságnak is. Úgy érzem erre születtem. Tudnál, tudnátok segíteni abban, hogy elúzzük a városból a zsarnokot és gengsztereit? Tudom, hogy te is miattuk jöttél az erdőbe, de gondolj azokra az emberekre, akik ott maradtak és tovább szenvednek tőlük.
+				- Ha tényleg szövetségesek vagyunk, kérnék valamit. Nem magamnak, hanem az egész városnak és tulajdonképpen nektek is. Régóta élősködik már Bitang Botond polgármester a népen. Én már egyszer megmentettem a várost Battle Beetle zsarnokságától, és most addig nem tudok megnyugodni, amíg nem vetek véget az újabb zsarnokságnak is. Úgy érzem erre születtem. Tudnál, tudnátok segíteni abban, hogy elúzzük a városból a zsarnokot és gengsztereit? Tudom, hogy te is miattuk jöttél az erdőbe, de gondolj azokra az emberekre, akik ott maradtak és tovább szenvednek tőlük.
 			</p>
 			<p>
 				Zsolt hosszú percekig gondolkodi. Vagy az egyik erjedt ital hatása alatt van, vagy tényleg sokmindent fontolgat válasza előtt. Végül ő is lassan, tagoltan, de határozottan szólal meg:
