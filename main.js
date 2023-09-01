@@ -165,7 +165,7 @@ function _load() {
 		let charString = "<table><tr>";
 		for (let ch of window.chars) {
 			charString += `
-        <td>
+        <td class="cpc">
           <img
             class="charPic"
             id="img-${ch.num}"
@@ -5021,8 +5021,8 @@ function _load() {
 						s.classList.add("darkenFW");
 					});
 					timo = setTimeout(() => {
-						clearTimers(true);
 						char.room = room.fail;
+						clearTimers(true);
 						newRoom();
 					}, 5000 / gspeed);
 					break;
@@ -5030,11 +5030,13 @@ function _load() {
 				case 2:
 					char.room = room.pass;
 					if (room.modi) modi = room.modi;
+					opera = 0;
 					newRoom();
 					break;
 
 				case 3:
 					char.room = room.fail;
+					opera = 0;
 					newRoom();
 					break;
 
