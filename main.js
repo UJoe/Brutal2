@@ -611,6 +611,7 @@ function _load() {
 		//dungeon
 		function dungeonRoom() {
 			dungeon++;
+			if (dungeon === 1 && room.obj) char.objs.push(room.obj);
 			document.getElementById("saveBtn").disabled = true;
 			if (room.help) modi = room.help.split("_")[1];
 			if (dungeon >= room.end * (0.5 + Math.random()) || (room.num === 57 && steps > 50)) {
@@ -937,7 +938,7 @@ function _load() {
 					let pp = char.lel / 14 + char.hat / 10 + char.esz / 12 + char.sup / 5 + prg * 10 + Math.random() * 10 + getObj("S").length * 5 + (getObj("S_Hit")) * 100 + getObj("H").length * 10 - getObj("X").length * 5 + getObj("J").length * 15;
 					changeVal("sup", Math.floor(pp));
 					let pv = char.sup * 10 + Math.floor(Math.random() * 10)
-					let bv = Math.round(4000 + steps * 45 + Math.random() * 5000 + (getObj("!S_Hit")) * 1500 - (getObj("X_Béna Boldizsár")) * 1000 - char.sup / 2);
+					let bv = Math.round(7500 + steps * 100 + Math.random() * 12500 + (!getObj("S_Hit")) * 3000 - (getObj("X_Béna Boldizsár")) * 2000 - char.sup / 3);
 					if (bv === pv) bv -= 1;
 
 					main.innerHTML = `
@@ -1329,7 +1330,7 @@ function _load() {
 				case "treasure":
 					let bl = prg + Math.round(Math.random() * (char.hat + char.sup) / 25);
 					for (let i = 3; i < 6; i++) {
-						bl += Math.round(modi[i] * (i - 2) / 1.5)
+						bl += Math.round(modi[i] * (i - 2) / 1.3)
 					}
 					message("A kincseknek köszönhetően " + bl + " ponttal nőtt a támogatásod!");
 					changeVal("sup", bl);

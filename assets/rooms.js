@@ -3590,34 +3590,46 @@ window.rooms = [
 			{
 				txt: "Elárasztjátok az internetes médiát is a pártprogrammal",
 				new: 142,
+				cond: "!E_kampánymédia"
 			},
 			{
 				txt: "Nyilvános beszédeket mondasz te is",
 				new: 143,
+				cond: "!E_kampánybeszéd"
 			},
 			{
 				txt: "Elkapsz egy hírhedt bűnözőt",
 				new: 146,
+				cond: "!E_Büdös Berci üldözése"
 			},
 			{
 				txt: "Kincseket bányászol a népnek",
 				new: 148,
+				cond: "!E_kampánybányászat"
 			},
 			{
 				txt: "Megkeresed az elkóborolt birkáikat",
 				new: 150,
+				cond: "!E_birkakeresés"
 			},
 			{
 				txt: "Hazakíséred az erdőszélen lakó gyerekeket",
 				new: 151,
+				cond: "!H_Jancsi és Juliska"
 			},
 			{
 				txt: "Segítesz a városszéli lakóknak legyőzni a hegyi óriásokat",
 				new: 208,
+				cond: "!H_Városszéli pórnép"
 			},
 			{
 				txt: "Imádkozol a sikerért",
 				new: 153,
+				cond: "!E_kampányima"
+			},
+			{
+				txt: "Elég volt ennyi, lássuk az eredményeket!",
+				new: 201,
 			},
 		],
 	},
@@ -4532,7 +4544,13 @@ window.rooms = [
       </p>
       `,
 		Xchange: "kampány",
+		obj: ["E_kampánymédia"],
 		buttons: [
+			{
+				txt: "Teszel még valamit a népért!",
+				new: 110,
+				cond: "<_sup_1500"
+			},
 			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
@@ -4578,7 +4596,13 @@ window.rooms = [
 			},
 		],
 		Xchange: "kampány",
+		obj: ["E_kampánybeszéd"],
 		buttons: [
+			{
+				txt: "Teszel még valamit a népért!",
+				new: 110,
+				cond: "<_sup_1500"
+			},
 			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
@@ -4612,7 +4636,13 @@ window.rooms = [
 				rnd: 10,
 			},
 		],
+		obj: ["E_kampánybeszéd"],
 		buttons: [
+			{
+				txt: "Teszel még valamit a népért!",
+				new: 110,
+				cond: "<_sup_1500"
+			},
 			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
@@ -4665,6 +4695,7 @@ window.rooms = [
       </p>
     `,
 		modi: "Berci összeroskad és nem mozdul többet. Csak erre vártál! Szólsz a telefonon a <span class='part'></span> második emberének, hogy a küldetésed sikeresen teljesítve van.</p><p>Egy percet sem kell várni és már jönnek a lelkes párttagok kamerákkal és felveszik, ahogy Bercit berakjátok egy zsákba és elássátok mélyen a földbe. Közben egyre nő körülöttetek a tömeg, embereid lelkesen dicsérnek téged, te pedig szerényen mosolyogva mondod, hogy kötelességednek tekinted elbánni mindenkivel, aki zavarja a város békéjét és fejlődését. A nép a szag megszünésével párhuzamosan egyre lelkesebben gratulál neked és éltet téged és pártodat!",
+		obj: ["E_Büdös Berci üldözése"],
 		buttons: [
 			{
 				txt: "Ütött az órád, te görény!",
@@ -4680,7 +4711,7 @@ window.rooms = [
 		size: 9,
 		level: 5,
 		helper: "Gizike",
-		gems: ["Üzemanyag", "Bronz", "Ezüst", "Arany"],
+		gems: ["Üzemanyag", "Agyag", "Vasérc", "Kőolaj"],
 		music: "epicsearch",
 		pic: "cave.gif",
 		desc: `
@@ -4696,6 +4727,7 @@ window.rooms = [
 				txt: "Köszönjük, Tódor úrfi! Gyere, Gizike!",
 			},
 		],
+		obj: ["E_kampánybányászat"],
 		pass: 149,
 		fail: 200,
 	},
@@ -4712,6 +4744,11 @@ window.rooms = [
 		`,
 		Xchange: "treasure",
 		buttons: [
+			{
+				txt: "Teszel még valamit a népért!",
+				new: 110,
+				cond: "<_sup_1500"
+			},
 			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
@@ -4741,6 +4778,7 @@ window.rooms = [
 				txt: "Hol vagytok, barikák?",
 			},
 		],
+		obj: ["E_birkakeresés"],
 		modi: "Sikerült az összes csörgő-morgó elcsatangolt birkát összeterelned. Boldogan adod át a gazdáiknak, Vidróczki is boldogan pödri meg a bajszát és elismerésképpen átnyújt egy míves markolatú mordályt. Megígéri azt is, hogy az általa ellenőrzött területen mindenki rád fog szavazni.",
 		pass: 198,
 		med: 199,
@@ -4784,6 +4822,7 @@ window.rooms = [
 			"W_PÁLINKÁS FLASKA",
 		],
 		findmany: 10,
+		obj: "H_Jancsi és Juliska"
 	},
 	{
 		num: 152,
@@ -4827,8 +4866,8 @@ window.rooms = [
 		change: [
 			{
 				id: "sup",
-				crease: 100,
-				rnd: 100,
+				crease: 250,
+				rnd: 250,
 			},
 			{
 				id: "hat",
@@ -4841,7 +4880,13 @@ window.rooms = [
 				rnd: 5,
 			},
 		],
+		obj: ["E_kampányima"],
 		buttons: [
+			{
+				txt: "Azért teszel is még valamit a népért.",
+				new: 110,
+				cond: "<_sup_1500"
+			},
 			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
@@ -4862,8 +4907,8 @@ window.rooms = [
 		change: [
 			{
 				id: "sup",
-				crease: -100,
-				rnd: 100,
+				crease: -250,
+				rnd: 250,
 			},
 			{
 				id: "hat",
@@ -4876,6 +4921,7 @@ window.rooms = [
 				rnd: 5,
 			},
 		],
+		obj: ["E_kampányima"],
 		buttons: [
 			{
 				txt: "Lássuk az eredményeket!",
@@ -6215,6 +6261,11 @@ window.rooms = [
 		Xchange: "kampányhelp",
 		buttons: [
 			{
+				txt: "Teszel még valamit a népért!",
+				new: 110,
+				cond: "<_sup_1500"
+			},
+			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
 			},
@@ -6233,6 +6284,11 @@ window.rooms = [
     `,
 		Xchange: "kampány",
 		buttons: [
+			{
+				txt: "Teszel még valamit a népért!",
+				new: 110,
+				cond: "<_sup_1500"
+			},
 			{
 				txt: "Lássuk az eredményeket!",
 				new: 201,
@@ -6533,6 +6589,7 @@ window.rooms = [
 		],
 		pass: 198,
 		fail: 200,
+		obj: ["H_Városszéli pórnép"]
 	},
 	{
 		num: 209,

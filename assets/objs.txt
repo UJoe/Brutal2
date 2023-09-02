@@ -10,7 +10,6 @@ X - megölve
   Béna Boldizsár
   Oshinoko
   Gárda
-  Büdös Berci
   Ügyes Frigyes
   Szenyamuki
   Bogi
@@ -59,6 +58,12 @@ E - egyéb események (events)
   szakítás Bogival
   belépőkártya
   bizonyítékok
+  kampánymédia
+  kampánybeszéd
+  kampánybányászat
+  kampányima
+  birkakeresés
+  Büdös Berci üldözése
   
 H - segítés (help)
   Pirike
@@ -69,4 +74,6 @@ H - segítés (help)
   Brünhilda
   Csongika
   Yendela hercegnő
+  Jancsi és Juliska
+  Városszéli pórnép
 
