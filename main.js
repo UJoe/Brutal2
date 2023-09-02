@@ -2175,7 +2175,7 @@ function _load() {
 					break;
 
 				default:
-					break;
+					return;
 			}
 			discover(aY, aX);
 		}
@@ -3967,11 +3967,13 @@ function _load() {
 			if (friend) {
 				message("Megsemmisült a sereged!");
 				music.volume = 0.2;
+				changeVal("hat", Math.round(Math.random() * -7));
+				changeVal("lel", Math.round(Math.random() * -7));
 				opera = 3;
 			} else {
 				message("Legyőztétek az ellenséget!");
 				changeVal("hat", Math.round(Math.random() * 7));
-				changeVal("lel", Math.round(Math.random() * -7));
+				changeVal("lel", Math.round(Math.random() * 7 - Math.random() * 7));
 				music.volume = 1;
 				opera = 2;
 			}
