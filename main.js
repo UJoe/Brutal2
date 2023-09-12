@@ -3899,7 +3899,7 @@ function _load() {
 				(fu) =>
 					fu.friend !== u.friend &&
 					!fu.dead &&
-					(fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && fu.presentAct.type === "támad"))
+					(fu.spec !== "lopakodás" || (fu.spec === "lopakodás" && (fu.presentAct.type === "támad" || u.spec === "favágás")))
 			);
 
 			if (u.name === "Óriás" && nmes.length > 0 && u.hp > u.ohp / 2) {
@@ -3936,9 +3936,9 @@ function _load() {
 			let nmesinsight = nmes.filter(
 				(nu) =>
 					distance(u, nu) <= u.range * 3 &&
-					(nu.spec !== "lopakodás" || (nu.spec === "lopakodás" && nu.presentAct.type === "támad")) &&
-					clearview(u, nu)
-			);
+					(nu.spec !== "lopakodás" || (nu.spec === "lopakodás" && (nu.presentAct.type === "támad" || u.spec === "favágás")) &&
+						clearview(u, nu)
+					));
 			if (nmesinsight.length > 0 && nmesinsight.length > u.cr - Math.random() * 3) {
 				u.futureAct = {
 					type: "támad",
@@ -4719,27 +4719,29 @@ function _load() {
 					if (nme.id === featuredU) updateFeatured(nme);
 				}
 			}
-			if (nb === null && (u.spec === "halálos csapás" || seb > 15 + Math.random() * 10)) {
+			if (nb === null && (u.spec === "halálos csapás" || seb > 15 + Math.random() * 10 || (u.spec === "favágás" && (nme.name === "Bübük" || nme.name === "Vadfa")))) {
 				let x = Math.random() * 12;
 				switch (true) {
 					case x < 3:
 						nme.att -= Math.floor(1 + (Math.random() * seb) / 1.1);
 						nme.att = nme.att < 0 ? 0 : nme.att;
+						seb += 1;
 						break;
 
 					case x < 6:
 						nme.def -= Math.floor(1 + (Math.random() * seb) / 1.4);
 						nme.def = nme.def < 0 ? 0 : nme.def;
-						break;
-
-					case x < 9:
-						nme.def -= nme.def > 1 ? 2 : nme.def;
-						nme.att -= nme.att > 1 ? 2 : nme.att;
 						seb += 1;
 						break;
 
+					case x < 9:
+						nme.def -= nme.def > 2 ? 3 : nme.def;
+						nme.att -= nme.att > 2 ? 3 : nme.att;
+						seb += 3;
+						break;
+
 					default:
-						seb = seb * 2;
+						seb = Math.round(seb * 2.2);
 						break;
 				}
 			}
