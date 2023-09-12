@@ -1740,7 +1740,7 @@ window.rooms = [
 			{
 				txt: "Ha dolgoztál az épületen, nincs belépőd oda?",
 				new: 81,
-				cond: ">_esz_30"
+				cond: ">_esz_30, E_Boldi elzárása"
 			},
 		],
 	},
