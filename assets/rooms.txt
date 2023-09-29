@@ -266,6 +266,7 @@
 266 - Bogi megment téged
 267 - Megmented Bogit
 268 - Isteni segítséget kapsz
+269 - finalfun
 
 300 - Utolsó pálya (summary, ha nem mész a 3. részhez)
 

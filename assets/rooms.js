@@ -7538,6 +7538,11 @@ window.rooms = [
 				txt: "Jöjjön a Bazibrutál 3. része!",
 				new: 301,
 			},
+			{
+				txt: "Szórakoznék így a végén egy kicsit a stábbal",
+				new: 269,
+				cond: ">_sup_1000"
+			},
 		],
 	},
 	{
@@ -7583,6 +7588,11 @@ window.rooms = [
 			{
 				txt: "Jöjjön a Bazibrutál 3. része!",
 				new: 301,
+			},
+			{
+				txt: "Szórakoznék így a végén egy kicsit a stábbal",
+				new: 269,
+				cond: ">_sup_1000"
 			},
 		],
 	},
@@ -8667,6 +8677,25 @@ window.rooms = [
 				new: 260,
 			},
 		],
+	},
+	{
+		num: 269,
+		title: "Vidámkodás a stábbal",
+		type: "finalfun",
+		pic: "battlepic.jpg",
+		desc: `
+      <p>
+				A díszletek mögül előlép több ismert és ismeretlen alak, statiszta, dublőr, és gratulálnak neked a győzelemhez. Ennek örömére javaslod, hogy vidám barátságos meccsekkel szórakoztassátok egymást. Beleegyeznem, sőt, adnak is neked néhány hasznos kelléket.
+			</p>
+			<p><i>
+				Válaszd ki, hogy melyik szereplőből mennyit akarsz egymásra ereszteni a két oldalon. Legalább 1 és legfeljebb összesen 12 szereplő lehet mindkét oldalon. Jó szórakozást!
+			</i>
+			</p>
+			<table id="armselect"></table>
+			<button class="btn" id="funstart">Induljon a meccs!</button>
+		`,
+		pass: 300,
+		fail: 269,
 	},
 	{
 		num: 300,

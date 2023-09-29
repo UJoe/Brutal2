@@ -85,10 +85,12 @@ function _load() {
 		clearTimeout(timo);
 		clearTimeout(timo1);
 		clearInterval(timo2);
-		if (hard)
+		if (hard) {
 			for (let t of timok) {
-				clearInterval(t);
+				clearTimeout(t);
 			}
+			timok.length = 0;
+		}
 	}
 
 	startGame();
@@ -1062,6 +1064,110 @@ function _load() {
 			});
 		}
 
+		//armselect
+		function armSelectAdd() {
+			let fsb = document.getElementById("funstart");
+			fsb.disabled = true;
+			let selsName = [];
+			let selsFriend = [];
+			let selsNme = [];
+			for (let s of sprites) {
+				selsName.push(s.name);
+			}
+			selsName.sort((a, b) => a.localeCompare(b));
+			for (let s of selsName) {
+				selsFriend.push({
+					num: 0,
+					name: s
+				});
+				selsNme.push({
+					num: 0,
+					name: s
+				});
+			}
+
+			char.objs = [];
+			for (let w of weapons) {
+				if (w.final) char.objs.push("W_" + w.name);
+			}
+
+			function updateFunSelect() {
+				let selString = `
+				<thead>
+					<tr>
+						<th id="fHead" colspan="2">BARÁTOK</th>
+						<th id="nHead" colspan="2">ELLENSÉGEK</th>
+					</tr>
+				</thead>
+				<tbody>
+				`;
+				let maxFriend = 12;
+				let maxNme = 12;
+				for (let s of selsFriend) {
+					maxFriend -= s.num;
+				}
+				for (let s of selsNme) {
+					maxNme -= s.num;
+				}
+				if (maxFriend < 12 && maxNme < 12) {
+					fsb.disabled = false;
+				} else {
+					fsb.disabled = true;
+				}
+				for (let n = 0; n < selsName.length; n++) {
+					selString += `
+						<tr>
+						<td>
+							<input class="armnum fInput" type="number" value="${selsFriend[n].num}" min="0" max="${Number(selsFriend[n].num + maxFriend)}" id="if-${n}">
+						</td>
+						<td>
+							${selsName[n]}
+						</td>
+						<td>
+							<input class="armnum nInput" type="number" value="${selsNme[n].num}" min="0" max="${Number(selsNme[n].num + maxNme)}" id="in-${n}">
+						</td>
+						<td>
+							${selsName[n]}
+						</td>
+						</tr>
+					`
+				}
+				selString += "</tbody>";
+				document.getElementById("armselect").innerHTML = selString;
+				document.querySelectorAll("input").forEach((i) => i.addEventListener("change", funInput));
+			}
+
+			function funInput(e) {
+				let val = parseInt(e.target.value);
+				val = val > e.target.max ? Number(e.target.max) : val;
+				val = val < e.target.min ? 0 : val;
+				let arma = e.target.id.split("-")[0];
+				let numa = Number(e.target.id.split("-")[1]);
+				if (arma === "if") selsFriend[numa].num = val;
+				if (arma === "in") selsNme[numa].num = val;
+				updateFunSelect();
+			}
+
+			updateFunSelect();
+
+			document.getElementById("funstart").addEventListener("click", function () {
+				let pushy = "";
+				for (let sf of selsFriend) {
+					if (sf.num > 0) pushy += sf.num + " " + sf.name + ", ";
+				}
+				pushy = pushy.slice(0, -2);
+				room.friends = pushy;
+				pushy = "";
+				for (let sf of selsNme) {
+					if (sf.num > 0) pushy += sf.num + " " + sf.name + ", ";
+				}
+				pushy = pushy.slice(0, -2);
+				room.enemies = pushy;
+				finalwarAct();
+			});
+		}
+
+
 		//input
 		function inputAdd() {
 			let rip = room.input;
@@ -1383,7 +1489,7 @@ function _load() {
 			XtrialRoom();
 		} else {
 			//other rooms
-			if (curmusic != room.music) {
+			if (curmusic != room.music && room.type !== "finalfun") {
 				if (room.type === "fight") {
 					let fm = "fight" + (1 + Math.floor(9 * Math.random()));
 					music.src = "./audio/" + fm + ".mp3";
@@ -1392,6 +1498,11 @@ function _load() {
 					music.src = "./audio/" + room.music + ".mp3";
 					curmusic = room.music;
 				}
+				if (musicOn) music.play();
+			} else if (room.type === "finalfun") {
+				let radio = rnd(["actionIncrease", "country", "epiclift", "fight7", "fight8", "fight9", "finalwar", "gangwar", "raveaction"]);
+				music.src = "./audio/" + radio + ".mp3";
+				curmusic = radio;
 				if (musicOn) music.play();
 			}
 			music.volume = music.src.includes("think") ? 0.3 : 1;
@@ -1617,6 +1728,10 @@ function _load() {
 
 			if (room.select) {
 				selectAdd();
+			}
+
+			if (room.type === "finalfun") {
+				armSelectAdd();
 			}
 
 			//input
@@ -2686,6 +2801,14 @@ function _load() {
             Sebesség: ${Math.round((5000 - speed) / 500)}
           </td>  
           <td class="rightScore">
+            Sebesség: ${Math.round((5000 - nmeSpeed) / 500)}
+          </td>
+				</tr>
+        <tr>
+          <td class="leftScore">
+            HP: ${char.ero}
+          </td>  
+          <td class="rightScore">
             HP: ${room.hp}
           </td>  
         </tr>
@@ -3054,6 +3177,7 @@ function _load() {
 		let command = {};
 		music.volume = 0.4;
 		let featuredU = -1;
+		timok.length = 0;
 		ffields.length = 0;
 		units.length = 0;
 		let uid = 0;
@@ -3081,7 +3205,7 @@ function _load() {
 		let weaponCountMax =
 			3 +
 			Math.round(
-				(100 - char.ugy + (100 - char.ero) / 2 + (100 - char.esz) / 4 + (100 - char.hat) / 3.5 + char.lel / 2) / 18
+				(100 - char.ugy + (100 - char.ero) / 2 + (100 - char.esz) / 4 + (100 - char.hat) / 3 + char.lel / 2.5) / 15
 			);
 		let weaponCount = 0;
 		let intro = [
@@ -3188,9 +3312,18 @@ function _load() {
 			}
 			document.getElementById("harcter").innerHTML = dirtStr;
 
-			let preFriends = armies[room.friends].split(", ");
-			let preNmes = armies[room.enemies].split(", ");
-			let preOpts = room.opts ? room.opts.split(", ") : false;
+			let preFriends = [];
+			let preNmes = [];
+			let preOpts = false;
+			if (room.type === "finalwar") {
+				preFriends = armies[room.friends].split(", ");
+				preNmes = armies[room.enemies].split(", ");
+				preOpts = room.opts ? room.opts.split(", ") : false;
+			} else {
+				preFriends = room.friends.split(", ");
+				preNmes = room.enemies.split(", ");
+			}
+
 			for (let f of preFriends) {
 				let spc = f.indexOf(" ");
 				let numb = Number(f.substring(0, spc));
@@ -3313,6 +3446,7 @@ function _load() {
 				document.getElementById("unit-" + u.id).style.top = unitPosY(u.y);
 				document.getElementById("bullet-" + u.id).style.left = bulletPosX(u.x);
 				document.getElementById("bullet-" + u.id).style.top = bulletPosY(u.y);
+				document.getElementById("unit-" + u.id).classList.remove("darkenFW");
 
 				ffields[u.y][u.x].empty = false;
 			}
@@ -3955,12 +4089,27 @@ function _load() {
 		}
 
 		function finalend(friend) {
+			units.forEach((uv) => {
+				uv.futureAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1,
+				};
+				uv.presentAct = {
+					type: "áll",
+					victim: -1,
+					x: -1,
+					y: -1,
+				};
+			})
 			clearTimers(true);
+
 			document.querySelectorAll(".bullet").forEach((b) => {
 				b.style.display = "none";
 			});
 			if (fegyObj.length > 0) {
-				if (shootWeapon !== {}) cancelShoot();
+				if (shootWeapon.length > 0) cancelShoot();
 				weaponCount = 0;
 				updateFWeapons();
 			}
@@ -4982,6 +5131,10 @@ function _load() {
 			switch (opera) {
 				case 0:
 					opera = 1;
+					document.getElementById("harcter").classList.remove("darkenFW");
+					document.querySelectorAll(".sprite").forEach((s) => {
+						s.classList.remove("darkenFW");
+					});
 					document.getElementById("vezerBtn").innerHTML = operaBtn[opera];
 					music.volume = 0.7;
 					if (fegyObj.length > 0) {
@@ -5015,7 +5168,7 @@ function _load() {
 					}
 					clearInterval(timo);
 					if (fegyObj.length > 0) {
-						if (shootWeapon !== {}) cancelShoot();
+						if (shootWeapon.length > 0) cancelShoot();
 						weaponCount = 0;
 						updateFWeapons();
 					}
@@ -5374,18 +5527,29 @@ function _load() {
 
 			document.getElementById("ködScores").innerHTML = `
 						<span>
-							<img class="thumb" src="./img/rooms/oshinoko-face.jpg">
+							<img class="thumb" id="t-oshinoko" src="./img/rooms/oshinoko-face.jpg">
 							<span class="fscore lime">${hp.oshinoko}</span> 
 						</span>
 						<span>
-							<img class="thumb" src="./img/rooms/szenyamuki-face.jpg">
+							<img class="thumb" id="t-szenyamuki" src="./img/rooms/szenyamuki-face.jpg">
 							<span class="fscore lime">${hp.szenyamuki}</span> 
 						</span>
 						<span>
-							<img class="thumb" src="./img/rooms/boti.jpg">
+							<img class="thumb" id="t-boti" src="./img/rooms/boti.jpg">
 							<span class="fscore lime">${hp.boti}</span> 
 						</span>
           `;
+
+			if (persona && ch) {
+				if (document.getElementById("t-" + persona)) {
+					document.getElementById("t-" + persona).classList.add("ködHit");
+					setTimeout(() => {
+						if (document.getElementById("t-" + persona)) {
+							document.getElementById("t-" + persona).classList.remove("ködHit");
+						}
+					}, 1001);
+				}
+			}
 
 			if (finish) {
 				let hullanév = persona.charAt(0).toUpperCase() + persona.slice(1);
