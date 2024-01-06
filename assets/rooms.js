@@ -12,7 +12,7 @@ window.rooms = [
        Az állatok sem rejtőznek el, követnek az utca oldalán. Jóleső érzés, hogy tettél valami hasznosat egy egész közösségért.
       </p>
       <p>
-       Besétálsz egészen a főtérig. Ott mindig vannak jó páran, és bármi történik ott, hamar elterjed a híre.
+       Besétálsz egészen a főtérig. Ott mindig vannak jó páran, és bármi történik, hamar elterjed a híre.
        Megállsz középen. Minden szem feléd fordul. Érzik, hogy valami fontosat akarsz nekik mondani.
       </p>
       <p>
@@ -90,7 +90,7 @@ window.rooms = [
         <li>Ugye csak viccelsz?</li>
         <li>Te, Gyuszi, mikor hozod már azt a jó házipálinkát, hogy rohadj meg?!</li>
         <li>Ismerős ez a fazon... tudom már, ez a híres festő, aki lila dinnyéket fest mindenhova!</li>
-        <li>Miről beszél? Ez elfogadásról? Jó ember az ilyen, ne bántsátok...</li>
+        <li>Miről beszél? Az elfogadásról? Jó ember az ilyen, ne bántsátok...</li>
       </ul>
       <p>
         Egyre nagyobb a zűrzavar. Valamit tenned kell.
@@ -122,10 +122,10 @@ window.rooms = [
 		pic: "starttown.jpg",
 		desc: `
       <p>
-       Az emberek elmosolyodnak. Egy idősebb hölgy előrelép és igy szól hozzád:
+       Az emberek elmosolyodnak. Egy középkorú hölgy előrelép és igy szól hozzád:
       </p>
       <p>
-       - Nemrég szabadultunk fel neked köszönhetően Battle Beetle zsarnokságától, és nem akarunk ismét egy zsarnok alatt élni. A mostani polgármesterünk, olyan, amilyen, de azt tudjuk, hogy te jó ember vagy. Inkább éljünk békésen és segítsük egymást.
+       - Nemrég szabadultunk fel neked köszönhetően Battle Beetle zsarnokságától, és nem akarunk ismét egy zsarnok alatt élni. A mostani polgármesterünk olyan, amilyen, de azt tudjuk, hogy te jó ember vagy. Inkább éljünk békésen és segítsük egymást.
       </p>
       <p>
        A nép helyeslően bólogat. Meggondoltad magad. Inkább...
@@ -150,12 +150,12 @@ window.rooms = [
       <p>
         Nyakadba szeded a lábad, de amikor befordulsz a mellékutcába, a csirkefogó már eltűnt. Nem fut annyira gyorsan, de vajon vagy-e elég okos és ügyes, hogy a nyomokból olvasva kellően gyorsan utána eredj és bírod-e szuflával az üldözést?
       </p>
-      <p>
+      <i><p>
         Írd be a megjelenő matematikai műveletek eredményét!
       </p>
       <p>
         Minél gyorsabban válaszolsz, illetve minél több az Eszed és az Ügyességed, annál közelebb kerülsz a csirkefogóhoz. Annyi időd van rá, amennyi az Erődből telik.
-      </p>
+      </p></i>
     `,
 		buttons: [
 			{
@@ -210,10 +210,10 @@ window.rooms = [
 		pic: "syrencars.jpg",
 		desc: `
       <p>
-       Hosszú perceken át farkasszemet nézel a tömeggel. Ők nem tudják, mi lesz most velük, te meg még nem igazán találtad ki, hogy hogyan vedd át a hatalmat. Amikor végre eszedbe jut valami és szólnál, közeledő szirénázás üti meg a füledet.
+       Hosszú perceken át farkasszemet nézel a tömeggel. Ők nem tudják, mi lesz most velük, te meg még nem igazán találtad ki, hogyan vedd át a hatalmat. Amikor végre eszedbe jut valami és szólnál, közeledő szirénázás üti meg a füledet.
       </p>
       <p>
-       Mindenki az erősödő hangok irányába néz. Nemsokára egy rendőrautó-konvoly közepén megjelenik maga a város polgármestere: Bitang Botond. Megállnak a tér közepén és Bitang Botond állig felfegyverzett testőrei gyűrűjében kiszáll a kocsiból. Először végigmér téged. Nehéz megállapítani, mit gondol rólad. Aztán így szól:
+       Mindenki az erősödő hangok irányába néz. Nemsokára egy rendőrautó-konvoly közepén megjelenik maga a város polgármestere: Bitang Botond. Megállnak a tér közepén és Botond állig felfegyverzett testőrei gyűrűjében kiszáll a kocsiból. Először végigmér téged. Nehéz megállapítani, mit gondol rólad. Aztán így szól:
       </p>
       <p>
         - Te vagy az, <span id="fullName"></span>? Hallottam, hogy te mentetted meg a várost Battle Beetle-től és bandájától. Csak azért tetted, hogy te vedd át a hatalmat a békés polgárok felett? Ha ez a terved, lebeszélnélek róla téged én és városunk rendjének őrei.
@@ -240,7 +240,7 @@ window.rooms = [
 			{
 				txt: "Indulsz a következő önkormányzati választáson",
 				new: 12,
-				modi: "- Hmmm, meglátjuk... Sok szerencsét! Szükséged lesz rá - szól kurtán Boti, azzal int a testőreinek és a konvoly szirénázva eltávozik a főtérről. De sejted, hogy nem ennyi lesz a vele való küzdelem.",
+				modi: "- Hmmm, meglátjuk... Sok szerencsét! Szükséged lesz rá - szól kurtán Boti, azzal int a testőreinek és a konvoly szirénázva eltávozik a főtérről. De sejted, hogy nem lesz egyszerű a vele való küzdelem.",
 			},
 		],
 	},
@@ -508,8 +508,8 @@ window.rooms = [
 			},
 			{
 				id: "sup",
-				crease: -1,
-				rnd: 2,
+				crease: 1,
+				rnd: 4,
 			},
 		],
 		buttons: [
@@ -537,9 +537,9 @@ window.rooms = [
       <p>
         Megálltok egymással szemben fogat vicsorgatva egy sötét sikátorban. Meg kell vele küzdened. A futástól láthatóan kicsit kifáradt és lelassult.
       </p>
-      <p>
+      <p><i>
         A támadásod, védelmed és sebességed a pontjaidtól, illetve az aktuálisan használt tárgyadtól függ (ha van), amit egy ideig változtathatsz, de csak egy lehet aktív. Az ellenfél saját sebessége szerint támad rád, te pedig rögtön nyomd meg a Támadás gombot, ha tudod. Mindketten vihettek be kritikusabb támadásokat is, ha elég nagy az aktuális támadás és az ellenfél védelme közti különbség.
-      </p>
+			</i></p>
     `,
 		buttons: [
 			{
@@ -562,7 +562,7 @@ window.rooms = [
         Kérésedre rögtön jelentkezik egy hetyke bajszú, energikus fickó, akinek munkaruhája tele van szerszámokkal. 
       </p>
       <p>
-        - Szolgálatodra: Ügyes Frigyes vagyok, az ezermester. Én elzárom úgy, hogy a kutya sem találja meg ezt a haramiát! - mondja, azzal az ingujjából előhúz egy drótkötelet és azzal pillanatok alatt körbetekeri Boldit. A drót végéből csinál egy foggantyút, a maradékot pedig foggal kettérágja. Mindenki tátott szájjal lesi. Frici ezután nézegeti egy kicsit a riadt Boldit, hümmög egy kicsit, majd az egyik zsebéből elővesz fél pár görkorcsolyát, ráerősíti Boldi összekötözött lábaira, aztán kipróbálja, hogy mennyire tudja húzni-vonni Boldit így a foggantyúval. Végül elégedetten csettint egyet.
+        - Szolgálatodra: Ügyes Frigyes vagyok, az ezermester. Én elzárom úgy, hogy a kutya sem találja meg ezt a haramiát! - mondja, azzal az ingujjából előhúz egy drótkötelet és azzal pillanatok alatt körbetekeri Boldit. A drót végéből csinál egy foggantyút, a maradékot pedig foggal kettérágja. Mindenki tátott szájjal lesi. Frici ezután nézegeti egy kicsit a riadt Boldit, hümmög párat, majd az egyik zsebéből elővesz fél pár görkorcsolyát, ráerősíti Boldi összekötözött lábaira, aztán kipróbálja, hogy mennyire tudja húzni-vonni Boldit így a foggantyúval. Végül elégedetten csettint egyet.
       </p>
       <p>
         - Jó lesz így! Szeretnél velem jönni, kedves <span class="name"></span>, hogy megmutassam, hová viszem?
@@ -730,7 +730,7 @@ window.rooms = [
        Oshinoko tölt neked és magának és csak azután szólal meg, hogy az első kortyot megittátok a testet-lelket melengető teából.
       </p>
       <p>
-       - Bitang Botondnak vesznie kell! Ő és a bandája már évtizedek óta szívják a város lakóinak vérét. Battle Beetle egy szerencselovag varázsló volt, de Bitang Botond sokkal rosszabb: egy maffiózó. Azóta szerettem volna veled találkozni, hogy végeztél Battle Beetle-lel és a Big Bugokkal. Benned látom azt a tüzet, ami csak az igazi hősökben lobog! Ha összefogunk,  legyőzhetjük őt! A kardom téged szolgál.
+       - Bitang Botondnak vesznie kell! Ő és a bandája már évtizedek óta szívják a város lakóinak vérét. Battle Beetle egy szerencselovag varázsló volt, de Bitang Botond sokkal rosszabb: egy maffiózó. Azóta szerettem volna veled találkozni, hogy végeztél Battle Beetle-lel és a Big Bugokkal. Benned látom azt a tüzet, ami csak az igazi hősökben lobog! Ha összefogunk, legyőzhetjük őt! A kardom téged szolgál.
       </p>
       <p>
        Mit felelsz erre?
@@ -783,9 +783,9 @@ window.rooms = [
       <p>
         Megálltok egymással szemben, hogy szabályosan megküzdjetek. A nép érdeklődéssel figyeli párbajotokat.
       </p>
-      <p>
+      <p><i>
         A támadásod, védelmed és sebességed a pontjaidtól, illetve az aktuálisan használt tárgyadtól függ (ha van), amit egy ideig változtathatsz, de csak egy lehet aktív. Az ellenfél saját sebessége szerint támad rád, te pedig rögtön nyomd meg a Támadás gombot, ha tudod. Mindketten vihettek be kritikusabb támadásokat is, ha elég nagy az aktuális támadás és az ellenfél védelme közti különbség.
-      </p>
+				</i></p>
     `,
 		buttons: [
 			{
@@ -983,7 +983,7 @@ window.rooms = [
 		pic: "darkstreet.jpg",
 		desc: `
       <p>
-        Valami ősi barbár ösztönnek engedelmeskedve elkezded enni legyőzött ellenfeled, hogy az ereje beléd szálljon. Közben találsz egy kést is a zsebében, azzal még gyorsabban haladsz, mint foggal és körömmel. Valamennyit talán hatott rád a civilizáció, akármiylen brutális a világ.
+        Valami ősi barbár ösztönnek engedelmeskedve elkezded enni legyőzött ellenfeled, hogy az ereje beléd szálljon. Közben találsz egy kést is a zsebében, azzal még gyorsabban haladsz, mint foggal és körömmel. Valamennyit talán hatott rád a civilizáció, akármilyen brutális a világ.
       </p>
       <p>
         Egy pálinkás flaskát is találsz nála, de rögtön meg is iszod. Végül megtörlöd a kést és a szádat Boldi letépett ruhájában és tovább állsz.
@@ -1071,7 +1071,7 @@ window.rooms = [
 			{
 				id: "sup",
 				crease: 10,
-				rnd: 5,
+				rnd: 10,
 			},
 			{
 				id: "hat",
@@ -1089,7 +1089,7 @@ window.rooms = [
 				new: 12,
 			},
 		],
-	},
+	},//folyt
 	{
 		num: 34,
 		title: "A felsőbbrendű bot megszerzése",
@@ -2871,7 +2871,7 @@ window.rooms = [
 				{ name: "Szuperképesség-fejlesztő tanfolyam", val: 15 },
 				{
 					name: "Törpehörcsög, hóbagoly vagy takarító robotnő",
-					val: 5,
+					val: 12,
 				},
 				{
 					name: "Ingyen bor, búza, békesség",
@@ -6467,7 +6467,7 @@ window.rooms = [
 		num: 206,
 		title: "Fricivel a háztetőn",
 		type: "normal",
-		music: "actionincrease",
+		music: "actionIncrease",
 		pic: "snipers.JPG",
 		desc: `
       <p>
@@ -6519,7 +6519,7 @@ window.rooms = [
 		num: 207,
 		title: "Frici helyetted végzi el a munkát",
 		type: "normal",
-		music: "actionincrease",
+		music: "actionIncrease",
 		pic: "frici.JPG",
 		desc: `
       <p>
