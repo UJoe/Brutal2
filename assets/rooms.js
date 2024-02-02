@@ -1089,7 +1089,7 @@ window.rooms = [
 				new: 12,
 			},
 		],
-	},//folyt
+	},
 	{
 		num: 34,
 		title: "A felsőbbrendű bot megszerzése",
@@ -1117,7 +1117,7 @@ window.rooms = [
 		pic: "kunyho.jpg",
 		desc: `
       <p>
-        - Oké, legalább elütöd az időt valamivel, amíg én elintézem Boldit - kurjant vidáman Frici és egy dugóhúzóta emlékeztető tárgyat dob ki a kunyhóból. Valami jobbra számítottál, de ha megvizsgálod (feléviszed az egeret), akkor azért látszik, hogy egy kicsit odatesz az ellenfélnek. Ne felejts el rákattintani a harcban, ha használni is akarod!
+        - Oké, legalább elütöd az időt valamivel, amíg én elintézem Boldit - kurjant vidáman Frici és egy dugóhúzóra emlékeztető tárgyat dob ki a kunyhóból. Valami jobbra számítottál, de ha megvizsgálod (feléviszed az egeret), akkor azért látszik, hogy egy kicsit odatesz az ellenfélnek. Ne felejts el rákattintani a harcban, ha használni is akarod!
       </p>
       `,
 		obj: ["W_ZSIBBASZTÓ NÁSPÁNG"],
@@ -1142,9 +1142,9 @@ window.rooms = [
       <p>
         Éppen, hogy sikerül felkapnod a tárgyat, máris kiugrik egy szemüveges(!) medve habzó szájjal, morogva a bokorból, és furcsa táncstílusban kerülgetni kezd. Úgy tűnik, meg kell egymással küzdenetek (hacsak nem menekülsz el elítélendő módon rögtön a kapott tárggyal).
       </p>
-      <p>
+      <p><i>
         A támadásod, védelmed és sebességed a pontjaidtól, illetve az aktuálisan használt tárgyadtól függ (ha van), amit egy ideig változtathatsz, de csak egy lehet aktív. Az ellenfél saját sebessége szerint támad rád, te pedig rögtön nyomd meg a Támadás gombot, ha tudod. Mindketten vihettek be kritikusabb támadásokat is, ha elég nagy az aktuális támadás és az ellenfél védelme közti különbség.
-      </p>
+			</i></p>
     `,
 		buttons: [
 			{
@@ -1168,7 +1168,7 @@ window.rooms = [
         - Végeztél, <span class="name"></span>? Jól van, én is. Szép munka! Csinálunk belőle egy jó ebédet! Legalább megmutatom, mi mindenre képes az én Betyármobilom!
       </p>
       <p>
-        Azzal meghúz egy kart a traktoron - amiről megtudtad, hogy Betyármobilnak hívják -, mire kinyílik egy csapóajtó az egyik oldalán. Frici megfogja a böszmedvét, beledobja a keletkezett résbe, aztán rácsukja a csapóajtót. A betyármobil felbőg és nemsokára megnyílik két másik ajtó, az egyiken egy bundakabát, a másikon pedig több aranybarnára sült húspogácsa jön elő és sorakozik fel egy átlátszó csőben. Frici gyengéd szeretettel megpaskolja a járgányt.
+        Azzal meghúz egy kart a traktoron - amiről megtudtad, hogy Betyármobilnak hívják -, mire kinyílik egy csapóajtó az egyik oldalán. Frici megfogja a böszmedvét, belegyömöszöli a keletkezett résbe, aztán rácsukja a csapóajtót. A betyármobil felbőg és nemsokára megnyílik két másik ajtó, az egyiken egy bundakabát, a másikon pedig több aranybarnára sült húspogácsa jön elő és sorakozik fel egy átlátszó csőben. Frici gyengéd szeretettel megpaskolja a járgányt.
       </p>
       <p>
         - Mindig tudja, miből mit lehet hasznosítani. És ez még nem minden! Most figyelj! - kiált büszkén, azzal felpattan a vezetőfülkébe.
@@ -1177,7 +1177,7 @@ window.rooms = [
         A Betyármobil ugrik egyet miközben megprödül a tengelye körül. Ezután Frici odavezeti egy fához, nyomkod pár gombot egy ideig, majd a gépből kijön két kar különféle megmunkáló fejekkel, elkezdik dolgozni a fát, repül a fűrészpor szerteszét, majd a végén megjelenik Dávid király faszobra a fa helyén. A fején még maradt is egy kis levél.
       </p>
       <p>
-        Frici büszkén mosolyog, neked az állad is leesett és elismerően bólogatsz.
+        Frici büszkén mosolyog, neked az állad is leesett és elismerően csettintesz.
       </p>
       <p>
         - Ez csak egy kis bemutató volt, valójában még rengeteg mást is tud az én Betyárom, de most inkább együnk, amíg friss a böszmedvehús!
@@ -1351,7 +1351,7 @@ window.rooms = [
       - Milyen próbát?
     </p>
     <p>
-      - Dédapám vanepuca próbáját. Beállsz shiko-dachiban egy izzó parázs fölé. Egy órán keresztül felváltva ütlek-váglak én, hízeleg az asszonyom és szemtelenkedik veled a gyerekem. Annyi a feladatod, hogy bármi történik, semmi nem billent ki a shiko-dachiból és némán tűrsz mindent. Nagy testi és lelki erő kell, hogy kibírd! Nem először csináljuk ezt. És eddig még nem talált új gazdára a kard. Készen állsz a vanepuca próbára?"
+      - Dédapám vanepuca próbáját. Beállsz shiko-dachiban egy izzó parázs fölé. Fél órán keresztül felváltva ütlek-váglak én, hízeleg az asszonyom és szemtelenkedik veled a gyerekem. Annyi a feladatod, hogy bármi történik, semmi nem billent ki a shiko-dachiból és némán tűrsz mindent. Nagy testi és lelki erő kell, hogy kibírd! Nem először csináljuk ezt. És eddig még nem talált új gazdára a kard. Készen állsz a vanepuca próbára?"
     </p>
     `,
 		buttons: [
@@ -1378,13 +1378,13 @@ window.rooms = [
 		desc: `
       <p id="modified"></p>
       <p>
-        Egész éjjel gyakoroltok. Nemcsak testileg-lelkileg edz meg, hanem megtanítja neked a családja által használt titkos micuki orvgyilkos technikát, amivel képes vagy mások számára alig érzékelhető árnyékká válni, miközben a te érzékeid kiélesednek.
+        Egész éjjel gyakoroltok. Nemcsak testileg-lelkileg edz meg, hanem megtanítja neked a családja által használt titkos micuki orgyilkos technikát, amivel képes vagy mások számára alig érzékelhető árnyékká válni, miközben a te érzékeid kiélesednek.
       </p>
       <p>
         Már közeledik a hajnal, amikor abbahagyjátok. Oshinok felajánlja, hogy pihenj meg nála, aztán ha felébredsz,  megbeszélitek a további haditervet.
       </p>
       <p>
-        Mivel hulla fáradt vagy, megköszönöd a felajánlást. Sakura - akit először géshának néztél, de kiderült, hogy Oshinoko felesége - elkészíti a fekhelyedet, ahol mély, békés álomra szenderülsz...
+        Mivel hulla fáradt vagy, megköszönöd a felajánlást. Sakura - akit először géshának néztél, de kiderült, hogy Oshinoko felesége - elkészíti a fekhelyedet, ahol mély, békés álomba szenderülsz...
       </p>
       `,
 		obj: ["S_micuki", "J_Oshinoko"],
@@ -1467,7 +1467,7 @@ window.rooms = [
 		pic: "kocsma.jpg",
 		desc: `
       <p>
-        Belépsz a legközelebbi zajos, füstös kocsmába, ami a "Kutya Veres Kasza" nevet viseli büszkén. A társadalom szélére csúszott büdös, koszos alakok próbálnak - többnyire sikeresen - eljutni itt az öntudatlanság mámoros ködjébe. A sok üres tekintet között néha látsz egy-két fenyegető vagy kíváncsi tekintetet, de értelmet nem sokat. Igen... ez szülővárosod kellemes, otthonos milliője. Mosolyogva mély lélegzetet veszel, hogy minél jobban magaddba szívd.
+        Belépsz a legközelebbi zajos, füstös kocsmába, ami a "Kutya Veres Kasza" nevet viseli büszkén. A társadalom szélére csúszott büdös, koszos alakok próbálnak - többnyire sikeresen - eljutni itt az öntudatlanság mámoros ködjébe. A sok üres tekintet között néha látsz egy-két fenyegető vagy kíváncsi tekintetet, de értelmet nem sokat. Igen, ez szülővárosod kellemes, otthonos milliője. Mosolyogva mély lélegzetet veszel, hogy minél jobban magadba szívd...
       </p>
       <p>
         Ahogy körüljáratod tekintetedet, egy sarokban lévő asztalnál észreveszel három gnómszerű alakot, akik feléd mutogatnak és láthatóan rólad beszélnek. De mielőtt jobban megfigyelnéd őket, oldalról rádförmed egy búgó basszus hang:
@@ -1483,7 +1483,7 @@ window.rooms = [
 			{
 				txt: "Adj egy grogot vagy én hajítalak ki!",
 				new: 67,
-				modi: "A ragyás képű, 150 kilós kocsmáros fogatlan szája szélesre húzódik.</p><p>- Hehe! Bodri papát akarod kihajítani a saját kocsmájából? Tetszel nekem kölyök! Itt a grogod!",
+				modi: "A ragyás képű, 150 kilós kocsmáros fogatlan szája szélesre húzódik.</p><p>- Hehe! Bodri papát akarod kihajítani a saját kocsmájából? Tetszel nekem, kölyök! Itt a grogod!",
 			},
 			{
 				txt: "Köszönöm, inkább csak ácsorgok.",
@@ -1589,7 +1589,7 @@ window.rooms = [
 		change: [
 			{
 				id: "lel",
-				crease: -5,
+				crease: -7,
 				rnd: 7,
 			},
 		],
@@ -1618,7 +1618,7 @@ window.rooms = [
         Kérésedre rögtön jelentkezik jó pár lelkes ember. Köztük egy marcona japán, akit Oshinokonak hívnak és kiderül róla, hogy ősi jakuza-család sarja. Gyorsan eldöntitek azt is, hogy a csapat neve <span class="name"></span> Gárda lesz.
       </p>
       <p>
-        A hangulat mindenkit magával ragad, mert érzik, hogy rátermett vezetőre találtak benned, aki megdöntheti a zsarnok Boti hatalmát. De kell egy haditerv, hogy biztosabban célt érjetek. Így végül elküldöd a maradék népet és elvonulsz Oshinokoval és a <span class="name"></span> Gárdával megbeszélni a haditervet.
+        A hangulat mindenkit magával ragad, mert érzik, hogy rátermett vezetőre találtak benned, aki megdöntheti a zsarnok Boti hatalmát. De kell egy haditerv, hogy biztosabban célt érjetek. Így végül elküldöd a maradék népet és elvonulsz Oshinokoval és a <span class="name"></span> Gárdával megbeszélni a tervet.
       </p>
       `,
 		obj: ["M_Oshinoko", "J_Gárda"],
@@ -1693,9 +1693,9 @@ window.rooms = [
       <p>
         Megpróbálsz elmenekülni az őrjöngő jakuza elől, de ez nem olyan egyszerű. Nemcsak azért, mert Oshinoko profi bérgyilkos, hanem azért is, mert a birtokán nincs kapu. Semmi nem jelzi, hol jöttetek be, így rohanás közben kell kiagyalnod, hogyan tudnál kijutni az utcára. 
       </p>
-      <p>
+      <p><i>
         Írd be a megjelenő matematikai műveletek eredményét minél gyorsabban, hogy kijuss, mielőtt elfogy az erőd! A haladás mértéke az eszedtől és ügyességedtől is függ.
-      </p>
+			</i></p>
     `,
 		buttons: [
 			{
@@ -1714,7 +1714,7 @@ window.rooms = [
 		pic: "frici.JPG",
 		desc: `
       <p>
-        Frici bemegy a kunyhóba és nemsokára előhoz egy aktatáska-szerű tárgyat. Amint kinyitja, az egy asztallá és két székké alakul át. Büszke mosollyal rádkacsint. Aztán térül-fordul párat a kunyhó mélye és az asztal között és némi csalódással nyugtázod, hogy teljesen normális tárgyakkal tér vissza: egy üveg bor két pohárral, két tányér evőeszközökkel, egy kiló kenyér és egy üveg kovászos uborka kerül az asztalra. Végül kiszedi a Betyár-mobilból a még mindig meleg húspogácsákat és szétosztja kettőtök tányérján. Bort is tölt, megkínál uborkával és kenyérrel, majd elkezdtek falatozni. Nem is rossz a böszmedvehús, a fűszerezése is jól el van találva. Tényleg ügyes ez a Betyár-mobil, minden falat után egyre nagyobb tisztelettel pillantasz rá. Amikor már elmúlt az éhségetek, Frici jelentőségteljesen hátradől, megpödri a bajszát és így szól:
+        Frici bemegy a kunyhóba és nemsokára előhoz egy aktatáska-szerű tárgyat. Amint kinyitja, az egy asztallá és két székké alakul át. Büszke mosollyal rádkacsint. Aztán térül-fordul párat a kunyhó mélye és az asztal között és némi csalódással nyugtázod, hogy teljesen normális tárgyakkal tér vissza: egy üveg bor két pohárral, két tányér evőeszközökkel, egy kiló kenyér és egy üveg kovászos uborka kerül az asztalra. Végül kiszedi Betyármobilból a még mindig meleg húspogácsákat és szétosztja kettőtök tányérján. Bort is tölt, megkínál uborkával és kenyérrel, majd elkezdtek falatozni. Nem is rossz a böszmedvehús, a fűszerezése is jól el van találva. Tényleg ügyes ez a Betyármobil, minden falat után egyre nagyobb tisztelettel pillantasz rá. Amikor már elmúlt az éhségetek, Frici jelentőségteljesen hátradől, megpödri a bajszát és így szól:
       </p>
       <p>
         - Na, <span class="name"></span>! Akkor térjünk rá a fontos teendőinkre! Hogy távolítsuk el ezt a Bitangot? Két lehetőség van elkapni, mivel máshol nem igazán szokott megjelenni. Vagy a városházán, amit egy erőddé alakított át és ott is lakik, vagy amikor a testőrei konvolyában járja az utcát. Ez utóbbiak állig fel vannak fegyverkezve, és bár Betyár sok jó képességgel rendelkezik, azért inkább munkagép, mint harci járgány, nem lenne jó ha kárt tennének benne. A hivatallal talán több szerencsénk lenne, mivel én magam is dolgoztam az épületen és a fejemben van annak a tervrajza. A felszínen nehéz bejutni, mert erős az ellenőrzés, de ha ásnánk egy alagutat Betyárral az épület alá, lenne ötletem, hol tudnánk alulról behatolni. Melyik legyen?
@@ -1856,9 +1856,9 @@ window.rooms = [
         <li>Egyszerűen menjünk a városházára, keressük meg és verjük agyon!</li>
         <li>Nem olyan egyszerű az Trancsír Ábrahám! A városháza egy erőd, oda komoly terv kell!</li>
         <li>Hát találj ki, ha olyan nagy ész vagy, Penge Menyhért!</li>
-        <li>Vagy mi lenne, ha az utcán ütnénk rajta? Tudom, hogy mindenhova követi a konvoly, de talán mégis egyszerűbb, mint az erődbe bejutni.</li>
+        <li>Vagy mi lenne, ha az utcán ütnénk rajta? Tudom, hogy mindenhova követi a konvoly, de talán mégis egyszerűbb, mint abba az erődbe bejutni.</li>
         <li>Amúgy ez a Boti hol lakik?</li>
-        <li>Ezt se tudod, Lüke Ferdinánd? A városházán!</li>
+        <li>Ezt se tudod, Lüke Aladár? A városházán!</li>
         <li>Vagy zsaroljuk meg valamivel, fiúk! Nem jó ötlet?</li>
         <li>Nem emlékszel Szabó Winnetou esetére, Hajtogató Huba? Ő is megzsarolta Botit, már nem emlékszem mivel, de az egész családját kiirtották, a tehenét eladták a cirkusznak, a földjét meg sóval és paprikával szórták fel!</li>
         <li>Ja, én emlékszem, pedig elég agyafúrt volt az a Winnetou.</li>
@@ -1899,9 +1899,9 @@ window.rooms = [
         <li>Egyszerűen menjünk a városházára, keressük meg és verjük agyon!</li>
         <li>Nem olyan egyszerű az Trancsír Ábrahám! A városháza egy erőd, oda komoly terv kell!</li>
         <li>Hát találj ki, ha olyan nagy ész vagy, Penge Menyhért!</li>
-        <li>Vagy mi lenne, ha az utcán ütnénk rajta? Tudom, hogy mindenhova követi a konvoly, de talán mégis egyszerűbb, mint az erődbe bejutni.</li>
+        <li>Vagy mi lenne, ha az utcán ütnénk rajta? Tudom, hogy mindenhova követi a konvoly, de talán mégis egyszerűbb, mint abba az erődbe bejutni.</li>
         <li>Amúgy ez a Boti hol lakik?</li>
-        <li>Ezt se tudod, Lüke Ferdinánd? A városházán!</li>
+        <li>Ezt se tudod, Lüke Aladár? A városházán!</li>
         <li>Vagy zsaroljuk meg valamivel, fiúk! Nem jó ötlet?</li>
         <li>Nem emlékszel Szabó Winnetou esetére, Hajtogató Huba? Ő is megzsarolta Botit, már nem emlékszem mivel, de az egész családját kiirtották, a tehenét eladták a cirkusznak, a földjét meg sóval és paprikával szórták fel!</li>
         <li>Ja, én emlékszem, pedig elég agyafúrt volt az a Winnetou.</li>
@@ -1997,7 +1997,7 @@ window.rooms = [
 		pic: "oshinoko-home.JPG",
 		desc: `
       <p>
-       Keményen beleállsz a shiko-dachiba. Oshinoko ordítozva elkezd csépelni, de te csak állsz, mint egy szikla. Bár altestednél kezd egyre elviselhetetlenebb lenni a hőség. Aztán jön a felesége mindenféle trükkel elterelve a figyelmedet, győzködve, hogy nem kell ezt a próbát csinálnod, inkább játszatok valami vidámabbat. De te csak a katanára gondolsz és méltóságteljesen átnézel a feje felett. Úgyis tudod, hogy nem gondolja komolyan, csak szerepet játszik. Márcsak azért is, mert egyre furcsább szagod lesz, ahogy pörkölődsz, biztos szánalmas látvány lehetsz. Az utolsó harmadban jön a kölyök. Egy tenyérbemászó képű kis taknyos, aki hihetetlen szemtelenül elhord mindenfélének, csúfolja, hogy hogy állsz, hogy elhányja magát a szagodtól és egyébként is látszik, hogy mindjárt összecsinálod magad, de ha koszos lesz a padló, veled nyalatja fel, és azzal le is köp. Ez az utóbbi gesztus az egyre elviselhetetlenebb elgémberedéssel és az égető érzéssel együtt végleg betett nálad. Mégiscsak te vagy a város hőse, nem kell mindent elviselned egy kardért.  A lábad ugyan nem mozog, de a köpés miatt amúgyis közlebb húzódott gyerek pont karnyújtásnyira van tőled, így egy hatalmas pofont keversz le neki. A gyerek edzve lehet ehhez, mert az utolsó pillanatban elhajol, így csak meglegyinted. De ez csak mégjobban felbőszít és - mint Loja, a nagy lajhár harcos, akinek harci technikáját egy 6 órás vágatlan dokumentumfilmben volt szerencsétlenséged megfigyelni - megpróbálod elkapni. De sajnos elmarad a remélt jutalom, mert amint kimozdulsz a shiko-dachiból, Oshinoko rögtön ott terem, elkapja a karod és olyan szigorú tekintettel ordít rád egy japán szótagot, amitől ismét kényelmesebbnek érzed visszamerevedni.
+       Keményen beleállsz a shiko-dachiba. Oshinoko ordítozva elkezd csépelni, de te csak állsz, mint egy szikla. Bár altestednél kezd egyre elviselhetetlenebb lenni a hőség. Aztán jön a felesége mindenféle trükkel elterelve a figyelmedet, győzködve, hogy nem kell ezt a próbát csinálnod, inkább játszatok valami vidámabbat. De te csak a katanára gondolsz és méltóságteljesen átnézel a feje felett. Úgyis tudod, hogy nem gondolja komolyan, csak szerepet játszik. Márcsak azért is, mert egyre furcsább szagod lesz, ahogy pörkölődsz, biztos szánalmas látvány lehetsz. Az utolsó harmadban jön a kölyök. Egy tenyérbemászó képű kis taknyos, aki hihetetlen szemtelenül elhord mindenfélének, csúfolja, hogy hogy állsz, hogy elhányja magát a szagodtól és egyébként is látszik, hogy mindjárt összecsinálod magad, de ha koszos lesz a padló, veled nyalatja fel, és azzal le is köp. Ez az utóbbi gesztus az egyre elviselhetetlenebb elgémberedéssel és az égető érzéssel együtt végleg betett nálad. Mégiscsak te vagy a város hőse, nem kell mindent elviselned egy kardért. A lábad ugyan nem mozog, de a köpés miatt amúgyis közlebb húzódott gyerek pont karnyújtásnyira van tőled, így egy hatalmas pofont keversz le neki. A gyerek edzve lehet ehhez, mert az utolsó pillanatban elhajol, így csak meglegyinted. De ez csak mégjobban felbőszít és - mint Loja, a nagy lajhár harcos, akinek harci technikáját egy 6 órás vágatlan dokumentumfilmben volt szerencsétlenséged megfigyelni - megpróbálod elkapni. De sajnos elmarad a remélt jutalom, mert amint kimozdulsz a shiko-dachiból, Oshinoko rögtön ott terem, elkapja a karod és olyan szigorú tekintettel ordít rád egy japán szótagot, amitől ismét kényelmesebbnek érzed visszamerevedni.
       </p>
       <p>
        - Elbuktad a próbát!
@@ -2064,10 +2064,10 @@ window.rooms = [
       <p>
         Szavaid lángra lobbantanak pár ifjú szívet, akik gazdái készek melléd állni.
       </p>
-        Valaki bedobja rögtön, hogy tartsatok egy alakuló gyűlést nála. El is vonul a lelkes csapat. Útközben több névjavaslat is elhangzik, így amikor megérkeztek és helyet foglaltok egy nagy étkezőasztal körül, elsőkörben a párt nevéről indítotok szavazást. 
-      <p>
+        Valaki bedobja rögtön, hogy tartsatok egy alakuló gyűlést nála. El is vonul a lelkes csapat. Útközben több névjavaslat is elhangzik, így amikor megérkeztek és helyet foglaltok egy nagy étkezőasztal körül, első körben a párt nevéről indítotok szavazást. 
+      <p><i>
         A javaslatokra kattintva válaszd ki, melyik név tetszik a legjobban!
-      </p>
+			</i></p>
       `,
 		obj: ["J_Párt"],
 		change: [
@@ -2092,12 +2092,12 @@ window.rooms = [
 				{ name: "Független", val: 3 },
 				{ name: "Függő", val: -3 },
 				{ name: "Hatalmas", val: 4 },
-				{ name: "Magyar", val: 0 },
+				{ name: "Magyar", val: -1 },
 				{ name: "Globális", val: -2 },
 				{ name: "Kozmikus", val: 5 },
 				{ name: "Misztikus", val: 4 },
 				{ name: "Végtelen", val: 2 },
-				{ name: "Titkos", val: -1 },
+				{ name: "Titkos", val: 1 },
 				{ name: "Becsületes", val: 3 },
 			],
 			[
@@ -2105,7 +2105,7 @@ window.rooms = [
 				{ name: "Böszme", val: 4 },
 				{ name: "Zöld", val: -5 },
 				{ name: "Vörös", val: -4 },
-				{ name: "Antidemokratikus", val: -3 },
+				{ name: "Antidemokratikus", val: -2 },
 				{ name: "Kemény", val: 2 },
 				{ name: "Hős", val: 4 },
 				{ name: "Szelíden Virágzó", val: -5 },
@@ -2114,7 +2114,7 @@ window.rooms = [
 				{ name: "Király", val: 1 },
 				{ name: "Rendcsináló", val: 3 },
 				{ name: "Gitáros", val: 5 },
-				{ name: "Tolvaj", val: -2 },
+				{ name: "Tolvaj", val: -3 },
 				{ name: "name", val: 1 },
 			],
 			[
@@ -2145,7 +2145,7 @@ window.rooms = [
 		desc: `
       <p id="modified"></p>
       <p>
-       Oshinokora és Sakurára a ház bejáratában ülve találsz rá. Olyan élénken beszélgetnek, hogy észre sem vesznek először. Oshinoko megfontoltan, de keményen beszél, ez nála normális. Sakura szavait nem érted, de aggódónak tűnik, bár ő is próbál kemény maradni. De az egész jelenetből érződik  kettőjük szoros, meghitt kapcsolata.
+       Oshinokora és Sakurára a ház bejáratában ülve találsz rá. Olyan élénken beszélgetnek, hogy észre sem vesznek először. Oshinoko megfontoltan, de keményen beszél, ez nála normális. Sakura szavait nem érted, de aggódónak tűnik, bár ő is próbál kemény maradni. De az egész jelenetből érződik kettőjük szoros, meghitt kapcsolata.
       </p>
       <p>
         Hirtelen észrevesznek, felállnak és meghajolva üdvözölnek. Oshinoko megszólal:
@@ -2247,7 +2247,7 @@ window.rooms = [
     `,
 		buttons: [
 			{
-				txt: "Meggyőztél. Fontos az egészség, megyek is.",
+				txt: "Meggyőztél. Fontos az egészség, ezért távozom.",
 				new: 47,
 			},
 			{
@@ -2264,7 +2264,7 @@ window.rooms = [
 		pic: "kocsmatöltelékek.jpg",
 		desc: `
       <p>
-       Ahogy közeledsz feléjük, elhallgatnak és növekvő áhitattal követik lépteidet. Megállsz felettük. Egy ideig némán nézitek egymást, aztán a legidősebbnek tűnő lecsúszott alak - biztos az alfa hím - borízű hangon megszólal:
+       Ahogy közeledsz feléjük, elhallgatnak és növekvő áhitattal követik lépteidet. Megállsz felettük. Egy ideig némán pislogva nézitek egymást, aztán a legidősebbnek tűnő lecsúszott alak - biztos az alfahím - borízű hangon megszólal:
       </p>
       <p>
        - Te vagy á hős, ki legyőszte Bedől... Betlit?
@@ -2273,7 +2273,7 @@ window.rooms = [
        - Ha Battle Beetle-re gondolsz, akkor igen - feleled kapásból. Felesleges lenne titkolni. A legkisebb gnóm rögtön kikerekedett szemmel elkiáltja magát, miközben úgy oldalba löki a harmadik tagot, hogy az kilöttyinti a sörét. De láthatóan nem foglalkozik vele.
       </p>
       <p>
-        - Hű, Frédi! Asztakutya! Látod, megmontam! Húha, most micsinájunk? Rendeljünk neki a legjob sörbű! BODRIII!!! - Ez utóbbit dobhártyátszaggatóan ordítja. Először azt hiszed, a kutyája kapta el közben a tökét az asztal alatt, de nem! A pultos rögtön visszaordít neki.
+        - Hű, Frédi! Asztakutya! Látod, megmontam! Húha, most micsinájunk? Rendeljünk neki a legjob sörbű! BODRIII!!! - Ez utóbbit dobhártyaszaggató hangon ordítja. Először azt hiszed, a kutyája kapta el közben a tökét az asztal alatt, de nem! A pultos rögtön visszaordít neki.
       </p>
       <p>
        - Mi van, Pitypang?!
@@ -2321,7 +2321,7 @@ window.rooms = [
 		pic: "deadbed.JPG",
 		desc: `
       <p>
-       Éjjel, amikor mélyen alszol, Bitang Boti legjobb orvgyilkosa belopózik az otthonodba. Nesztelenül az ágyadhoz lép és leszúr. Belédnyilall a fájdalom, de már nem tudsz az elvérzés ellen semmit tenni, így inkább tovább alszol - örökké...
+       Éjjel, amikor mélyen alszol, Bitang Boti legjobb orgyilkosa belopózik az otthonodba. Nesztelenül az ágyadhoz lép és leszúr. Belédnyilall a fájdalom, de már nem tudsz az elvérzés ellen semmit tenni, így inkább tovább alszol - örökké...
       </p>
       <p>
        Kalandod itt véget ért, de most már tudod, hogy csendben ki kellett volna iktatnod a polgármester besúgóját.
@@ -2330,7 +2330,7 @@ window.rooms = [
 	},
 	{
 		num: 73,
-		title: "Harc Bitang Boti orvgyilkosával",
+		title: "Harc Bitang Boti orgyilkosával",
 		type: "fight",
 		pic: "orvgyilkos.gif",
 		nmepic: "orvgyilkos.gif",
@@ -2340,7 +2340,7 @@ window.rooms = [
 		hp: 50,
 		desc: `
       <p>
-       Éjjel, amikor mélyen alszol, Bitang Boti legjobb orvgyilkosa belopózik az otthonodba. Nesztelenül az ágyad mellé lép, de ekkor valahogy megérzed a jelenlétét. Kinyitod a szemed és a homályban meglátod a vörösen izzó szemű sötét, nőies alakot. Azonnal kiugrasz az ágy másik oldalára. Épp időben, mert a beszűrődő holdfényben megvillan a tőre pengéje, amivel épp lesújtott rád - de már nem talált el.
+       Éjjel, amikor mélyen alszol, Bitang Boti legjobb orgyilkosa belopózik az otthonodba. Nesztelenül az ágyad mellé lép, de ekkor valahogy megérzed a jelenlétét. Kinyitod a szemed és a homályban meglátod a vörösen izzó szemű sötét, nőies alakot. Azonnal kiugrasz az ágy másik oldalára. Épp időben, mert a beszűrődő holdfényben megvillan a tőre pengéje, amivel épp lesújtott rád - de már nem talált el.
       </p>
       <p>
        - Ki vagy te és mit keresel itt?! - ordítasz rá.
@@ -2499,7 +2499,7 @@ window.rooms = [
 		goalpic: "exit.png",
 		desc: `
       <p>
-        A lelkes nép már útközben elkezd különféle szlogeneket kezd ordibálni.
+        A lelkes nép már útközben elkezd különféle szlogeneket ordibálni.
       </p>
       <ul>
         <li>Monnyon le!</li>
@@ -2514,7 +2514,7 @@ window.rooms = [
         Leginkább ezt az utolsó, a költészet szabályaival elég laza kapcsolatban álló alkotást kapta fel a nép. Ennek skandálásával érkeztek meg a Városházára. 
       </p>
       <p>
-        A biztonsági őrök vezetője beszél pár mondatot a gallérmikrofonjába - de nem érted, mert elnyomja az ordító tömeg, majd bólint egyet, mire harci alakzatba rendeződnek az őrök.
+        A biztonsági őrök vezetője beszél pár mondatot a gallérmikrofonjába - de nem érted, mert elnyomja az ordító tömeg hangja, majd bólint egyet, mire harci alakzatba rendeződnek az őrök.
       </p>
       <p>
         - Tünjetek el innen! - mondja hűvösen és minden őr a tömegre szegezi a gépfegyverét. A nép nagyrésze megszeppen, de egy idősödő, sebhelyes képű hulligán méltatlannak találja ezt a bánásmódot és ezt el is ordítja a biztonsági főnöknek, nyomatékul pedig letép egy utcai kukát a helyéről és hozzávágja. Úgy tűnik, ezt a a biztonsági vezér szintén zokon veszi, mert kiadja a tűzparancsot.
@@ -2564,7 +2564,7 @@ window.rooms = [
         Ekkor megjelenik a ház mellett egy kóborkutya és unottan de helyeslően  vakkant egyet. Frici rá vigyorog, mire az eb rémülten nagyot ugrik és vinnyogva eliszkol. Frici folytatja:
       </p>
       <p>
-        -Amíg eljutunk oda, addig is gyűjthetünk a földből pár hasznos anyagot, amiből fegyvereket tud készíteni Betyár. Ásványkicsekben gazdag hely felé építették a Városházát, mindenre gondoltak. A server-szobából nyílik egy vészhelyzeti alagút a biztonsági központba. Ott felmászunk, meglepetésszerűen megjelenünk és kiiktatjuk az őröket, ha vannak. Itt számítok harci képességeidre. Ezután ezen a titkos menekülő-folyosón keresztül tudunk eljutni Boti rezidenciájára. Ott már nem lesz más, csak ő. Ha jól csináljuk, észre sem vesz senki. Miután elintéztük Botit, ugyanitt visszamegyünk Betyárhoz és hazajövünk ünnepelni. Régóta agyalok már ezen a terven, csak eddig még nem találtam olyan útvonalat, ahol nem találkozunk őrökkel. De ezen az útvonalon van a legkevesebb. Csak én egy ezermester-feltaláló vagyok, nem harcos. De ketten meg tudjuk csinálni! Mit szólsz?
+        - Amíg eljutunk oda, addig is gyűjthetünk a földből pár hasznos anyagot, amiből fegyvereket tud készíteni Betyár. Ásványkicsekben gazdag hely felé építették a Városházát, mindenre gondoltak. A server-szobából nyílik egy vészhelyzeti alagút a biztonsági központba. Ott felmászunk, meglepetésszerűen megjelenünk és kiiktatjuk az őröket, ha vannak. Itt számítok harci képességeidre. Ezután ezen a titkos menekülő-folyosón keresztül tudunk eljutni Boti rezidenciájára. Ott már nem lesz más, csak ő. Ha jól csináljuk, észre sem vesz senki. Miután elintéztük Botit, ugyanitt visszamegyünk Betyárhoz és hazajövünk ünnepelni. Régóta agyalok már ezen a terven, csak eddig még nem találtam olyan útvonalat, ahol nem találkozunk őrökkel. De ezen az útvonalon van a legkevesebb. Csak én egy ezermester-feltaláló vagyok, nem harcos. De ketten meg tudjuk csinálni! Mit szólsz?
       </p>
       <p>
         - Tetszik a terv! - mondod lelkesen. 
@@ -2837,7 +2837,7 @@ window.rooms = [
 		pic: "erdei.jpg",
 		desc: `
     <p>
-      Amint teszel pár lépést a lények elkezdenek fura sípoló hangot kiadni. Hirtelen megjelenik melletted egy ismerős alak. Az erdei boxoló! Ja ne...! De már késő! Mielőtt bármit tehetnél, egy iszonyat nagyot bemos neked, amitől messze repülsz a fák között... A fejedben még mindig a lények hangja visszhangzik...
+      Amint teszel pár lépést, a lények elkezdenek fura sípoló hangot kiadni. Hirtelen megjelenik melletted egy ismerős alak. Az erdei boxoló! Jaj, ne...! De már késő! Mielőtt bármit tehetnél, egy iszonyat nagyot bemos neked, amitől messze repülsz a fák között... A fejedben még mindig a lények hangja visszhangzik...
     </p>
     `,
 		change: [
@@ -2862,7 +2862,7 @@ window.rooms = [
 		pic: "gangmeet.jpg",
 		desc: `
       <p>
-      A tásaság nagyot koccint a <span class='part'></span> név elfogadására. Már kissé ittas állapotban láttok hozzá a program kidolgozásához. Elhangzanak azok is, amiket már a főtéren javasoltál és bedobnak újabb ötleteket is. Végül úgy döntötök, három fő területen fogtok egy-egy programmal kampányolni. Mik legyenek ezek?
+      A tásaság nagyot koccint a <span class='part'></span> név elfogadására. Már kissé ittas állapotban láttok hozzá a program kidolgozásához. Elhangzanak azok is, amiket már a Fő-téren javasoltál és bedobnak újabb ötleteket is. Végül úgy döntötök, három fő területen fogtok egy-egy programmal kampányolni. Mik legyenek ezek?
       </p>
     `,
 		select: [
@@ -2885,16 +2885,16 @@ window.rooms = [
 			[
 				{ name: "Reklámmentes internet", val: 20 },
 				{ name: "A járványok szétmorzsolása", val: 15 },
-				{ name: "Az agymosással való leszámolás", val: -5 },
+				{ name: "Az agymosással való leszámolás", val: 5 },
 				{ name: "Világbéke", val: -15 },
-				{ name: "Örök emlék a halottaknak", val: -10 },
+				{ name: "Örök emlék a halottaknak", val: -5 },
 			],
 			[
 				{ name: "Szociális otthon a városházából", val: 10 },
 				{ name: "Bitang Botond és emberei lógni fognak", val: 20 },
 				{ name: "Gizikének mosómedvét", val: 5 },
-				{ name: "Mi a szar legyen még?", val: 25 },
-				{ name: "Aggyá mék sört, Menyus!", val: -15 },
+				{ name: "Mi a szar legyen még?", val: -15 },
+				{ name: "Aggyá mék sört, Menyus!", val: 15 },
 			],
 		],
 		wvar: "progi",
@@ -2976,13 +2976,13 @@ window.rooms = [
     <p>
       Oshinoko elgondolkodik. Közben Sakura észrevétlenül elvonul.
     <p>
-      - Nem lesz könnyű, de megpróbáljuk. Tehát: ma Bitang Botond beszédet mond a Branyiszkó-téren. Ott könnyebb letámadni, mint például a Városháza erődjében. Az emberei a modern fegyvereket könnyen kiszúrják, a legjobb lesz fúvócsővel végezni vele, miután elvegyültünk a tömegben. De számítani kell rá, hogy utána az egész bandája ellenünk fog támadni. Azzal nyerhetünk némi időt, hogy egyszerre öljük meg Botit és a korrupt rendőrfőnököt. A rendőrfőnök gyakran álruhában van, de én jól ismerem, mert már régóta megfigyelem. Én eintézem őt, te pedig intézd el Botit. Viszonylag közel kell menni hozzá, hogy biztos legyen a találat. Utána le fogják zárni a teret és egyenként engednek ki mindenkit. Ha rohannánk, nem jutnánk ki, csak magunkra vonnánk a figyelmet így amint végeztünk velük, ha nem vettek észre, eldobjuk a fúvócsövet és úgy viselkedünk, mint mindenki más a tömegben. Ha viszont észrevesznek, akkor menekülünk és minél több álrendőrt leszedünk. Ha eleget leszedünk, akár be is jelentheted a hatalomátvételt, ezt rád bízom. Téged szeret a nép. De ha sokan maradtak, biztosabb ha egyelőre csak élve kijutunk, aztán meglátjuk a folytatást. Ha Boti és a rendőrfőnők nincs többé, nagy előnyhöz jutunk. Viszont minden fegyveredet itt kell hagynod, ha nem akarod, hogy már az elején lebukjál, csak a fúvócsövet vihetjük.
+      - Nem lesz könnyű, de megpróbáljuk. Tehát: ma Bitang Botond beszédet mond a Branyiszkó-téren. Ott könnyebb letámadni, mint például a Városháza erődjében. Az emberei a modern fegyvereket könnyen kiszúrják, a legjobb lesz fúvócsővel végezni vele, miután elvegyültünk a tömegben. De számítani kell rá, hogy utána az egész bandája ellenünk fog támadni. Azzal nyerhetünk némi időt, hogy egyszerre öljük meg Botit és a korrupt rendőrfőnököt. A rendőrfőnök gyakran álruhában van, de én jól ismerem, mert már régóta megfigyelem. Én elintézem őt, te pedig intézd el Botit. Viszonylag közel kell menni hozzá, hogy biztos legyen a találat. Utána le fogják zárni a teret és egyenként engednek ki mindenkit. Ha rohannánk, nem jutnánk ki, csak magunkra vonnánk a figyelmet így amint végeztünk velük, ha nem vettek észre, eldobjuk a fúvócsövet és úgy viselkedünk, mint mindenki más a tömegben. Ha viszont észrevesznek, akkor menekülünk és minél több álrendőrt leszedünk. Ha eleget leszedünk, akár be is jelentheted a hatalomátvételt, ezt rád bízom. Téged szeret a nép. De ha sokan maradtak, biztosabb ha egyelőre csak élve kijutunk, aztán meglátjuk a folytatást. Ha Boti és a rendőrfőnők nincs többé, nagy előnyhöz jutunk. Viszont minden fegyveredet itt kell hagynod, ha nem akarod, hogy már az elején lebukjál, csak a fúvócsövet vihetjük.
     </p>
     <p>
       - Jó tervnek tűnik, de sokminden múlik azon, hogy észreveszik-e az elején a fúvócső használatát. Ennek esélyét mivel csökkenthetjük?
     </p>
     <p>
-      - Azzal, hogy a fúvőcső így néz ki - mosolyodik el kissé esetlenül Oshinoko, és átnyújt neked egy doboz cigit. Kinyitod, de még mindig csak cigarettaszálakat látsz bennük. Kiveszed az egyiket. Oshinoko elveszi tőled, elővesz egy öngyújtót és a cigi végéhez érinti. Amikor lenyomja az öngyújtó gombját, abból egy kis tüske jön ki, és akkor veszed ászre, hogy a cigi belül üreges, amikor a tüskét egy gyakorlott mozdulattal belejuttatja. - Hagyományos fegyver modern köntösben. Van még időnk, hogy gyakoroljuk a "cigigyújtás" mozdulatát. De vigyázz, mert a tüske tényleg mérgezett, nehogy hozzáérj a végéhez!
+      - Azzal, hogy a fúvőcső így néz ki - mosolyodik el kissé esetlenül Oshinoko, és átnyújt neked egy doboz cigit. Kinyitod, de még mindig csak cigarettaszálakat látsz bennük. Kiveszed az egyiket. Oshinoko elveszi tőled, elővesz egy öngyújtót és a cigi végéhez érinti. Amikor lenyomja az öngyújtó gombját, abból a láng alatt egy kis tüske jön ki, és akkor veszed ászre, hogy a cigi belül üreges, amikor a tüskét egy gyakorlott mozdulattal belejuttatja. - Hagyományos fegyver modern köntösben. Van még időnk, hogy gyakoroljuk a "cigigyújtás" mozdulatát. De vigyázz, mert a tüske tényleg mérgezett, nehogy hozzáérj a végéhez!
     </p>
     <p>
       Egy ideig gyakoroltok még és megbeszéltek néhány további részletet. Aztán eljön az idő az indulásra. A tárgyaidnál kicsit hezitálsz, hogy nem lenne-e jobb mégis magaddal vinni valamilyen fegyvert, hátha mégsem buksz le. Hogy döntesz?
@@ -3021,7 +3021,7 @@ window.rooms = [
       - Szenyamuki vár minket - mondja, aztán vált még pár szót Sakurával, akin látszik, hogy továbbra is aggódik, de próbál erősnek látszani. Végül int neked, hogy induljatok.
     </p>
     <p>
-      Kifordultok a falon keresztül, aztán 2 sarokkal arrébb egy titkos ajtón át egy elhagyatott raktárépületbe értek. Itt egy sötét sarokban van egy alak. Oshinoko mond neki pár mondatot japánul, mire előrelép. A beszűrődő fényben megpillantod az arcát. Hasonlít Oshinokora, de gonoszabb és sötétebb, és egy sebhely is még visszataszítóbbá teszi. Megszólít.
+      Kifordultok a falon keresztül, aztán két sarokkal arrébb egy titkos ajtón át egy elhagyatott raktárépületbe értek. Itt egy sötét sarokban van egy alak. Oshinoko mond neki pár mondatot japánul, mire előrelép. A beszűrődő fényben megpillantod az arcát. Hasonlít Oshinokora, de gonoszabb és sötétebb, és egy sebhely is még visszataszítóbbá teszi. Megszólít.
     </p>
     <p>
       - Battle Beetle legyőzője... Ugyan miért kellene azt hinnem, hogy veled együtt le tudnánk győzni Bitang Botondot?
@@ -3033,7 +3033,7 @@ window.rooms = [
       Szenyamuki megvető pillantást vet rád.
     </p>
     <p>
-      - A fivérem tud egyetsmást a harc terén. Bár nem annyit, mint én. De rólad semmit nem tudok. Ezen pedig csak egyféleképpen segíthetünk - szól, és hirtelen harci állásba vágja magát. Meg kell vele küzdened.
+      - A fivérem tud egyetsmást a harc terén, bár nem annyit, mint én. De rólad semmit nem tudok. Ezen pedig csak egyféleképpen segíthetünk - szól, és hirtelen harci állásba vágja magát. Meg kell vele küzdened.
     </p>
     `,
 		obj: ["M_Szenyamuki"],
@@ -3122,7 +3122,7 @@ window.rooms = [
 		pic: "bogi.JPG",
 		desc: `
       <p>
-       Hirtelen felcsendül egy ének a kocsma oldalából. Mindenki varázsütésre abbahagy mindent, amit eddig csinált, ellhallgat és odanéz. Egy gyönyörű nő áll egy kis színpadon, mikrofonnal a kezében, mellette egy színesbörű fickó fehér frakkban, szintetizátorral. Te sem tudod kivonni magadat a furcsa varázs alól és elkezded hallgatni az éneket.
+       Hirtelen felcsendül egy ének a kocsma oldalából. Mindenki varázsütésre abbahagy mindent, amit eddig csinált, elhallgat és odanéz. Egy gyönyörű nő áll egy kis színpadon, mikrofonnal a kezében, mellette egy színesbörű fickó fehér frakkban, szintetizátorral. Te sem tudod kivonni magadat a furcsa varázs alól és elkezded hallgatni az éneket.
       </p>
       <p>
        Amikor az ének véget ér, mindenki lelkesen tapsol. Ellenállhatatlan kényszert érzel arra, hogy odamenj a nőhöz.
@@ -3155,19 +3155,19 @@ window.rooms = [
         - Na, milyen volt az Ászok Ásza? - kérdezi valamelyik a három közül.
       </p>
       <p>
-        - Bazibrutál... - szalad ki a szádon kedvenc szavad. Jót röhögnek ezen, és te is elkezdesz velük röhögni. Úgy érzed, nagyon megszertetted ezeket a gnómokat, mintha a legjobb barátaid lennének. El is mondod nekik rögtön, annyira túláradnak az érzelmeid:
+        - Bazibrutál... - szalad ki a szádon kedvenc szavad. Jót röhögnek ezen, és te is elkezdesz velük röhögni. Úgy érzed, nagyon megszeretted ezeket a gnómokat, mintha a legjobb barátaid lennének. El is mondod nekik rögtön, annyira túláradnak az érzelmeid:
       </p>
       <p>
         - Úgy szeretlek titeket! - és ők a füstös homályon át is látják a szemed sarkában megcsillanó örömkönnyeket. Már hajolsz is át az asztalon és a kebledre öleled mindhárom gnómot, akik meghatottan szipognak...
       </p>
       <p>
-        Amikor már kezd a derekad sajogni a kissé természetellenes póztól, felegyenesedsz, de rögtön vissza is esel a helyedre. Látod, hogy mindhárom alak könnyekkel küszküdik. Talán soha életükben nem ölelte meg őket olyan nagy ember, mint te. Haverkodóan leveszed Pitypang sapkáját és megpaskolod kopaszodó fejét, amitől kislányos zavarba jön. Lesüti a szemét, pislog jobbra-balra, végül a legidősebbhez fordul:
+        Amikor már kezd a derekad sajogni a kissé természetellenes póztól, felegyenesedsz, de rögtön vissza is esel a helyedre. Látod, hogy mindhárom alak könnyekkel küszködik. Talán soha életükben nem ölelte meg őket olyan nagy ember, mint te. Haverkodóan leveszed Pitypang sapkáját és megpaskolod kopaszodó fejét, amitől kislányos zavarba jön. Lesüti a szemét, pislog jobbra-balra, elpirulva pukedlizik egyet, végül a legidősebb társához fordul:
       </p>
       <p>
         - Mátyus! Te mit szósz ehöz?
       </p>
       <p>
-        - Mit szóljak, Pitypang? - feleli, mire bátorítóan meghúzgálod őszülő bajszát. Ez láthatóan jól esik neki, de nem segít azon, hogy szavakba is öntse érzelmeit. Ezért inkább oldalra fordul: - Szóljon Frédi, még meg sem szólalt!
+        - Mit szóljak, Pitypang? - feleli az, mire bátorítóan meghúzgálod őszülő bajszát és nevetve megfricskázod az orrát. Ez láthatóan jól esik neki, de nem segít azon, hogy szavakba is öntse érzelmeit. Ezért inkább oldalra fordul: - Szóljon Frédi, még meg sem szólalt!
       </p>
       <p>
         A harmadik fickó fúj egy nagyot, ijedten körbenéz és csapkod párat, mint kezdő matróz a süllyedő hajón, aztán egy szarvasbőgéshez hasonló hangot ad ki hosszan elnyújtva. Láthatóan nem a szavak embere, de azért várod, hogy hátha sikerül átalakítania artikulált emberi beszéddé azt, ami a torkán kijön, ám akkor hirtelen történik valami.
@@ -3262,13 +3262,13 @@ window.rooms = [
 	},
 	{
 		num: 101,
-		title: "Az orvgyilkos legyőzése",
+		title: "Az orgyilkos legyőzése",
 		type: "normal",
 		music: "darkbackground",
 		pic: "home.jpg",
 		desc: `
       <p>
-        Sikerül legyőznöd az orvgyilkost. Kifújod magad és átkutatod. Találsz nála egy fejlett katonai kést, egy kézigránátot és két flaskát. Nem tudod hova jó, de elteszed azt is a többivel együtt. Ahogy a feje felé hajolsz, egy nagyon halk hangot hallasz a síri csendben. Amikor közelebb hajolsz, észreveszed a nő füle mögé rejtett apró kommunikációs eszközt. A saját füledhez tartod, hogy jobban halld. Valaki azt kérdezi, hogy mi történt, mivel csökkentek az életfunkciói a nőnek. Mit teszel?
+        Sikerül legyőznöd az orgyilkost. Kifújod magad és átkutatod. Találsz nála egy fejlett katonai kést, egy kézigránátot és két flaskát. Ahogy a feje felé hajolsz, egy nagyon halk hangot hallasz a síri csendben. Amikor közelebb hajolsz, észreveszed a nő füle mögé rejtett apró kommunikációs eszközt. A saját füledhez tartod, hogy jobban halld. Valaki azt kérdezi, hogy mi történt, mivel csökkentek az életfunkciói a nőnek. Mit teszel?
       </p>
     `,
 		obj: ["W_GYILOK", "W_KÉZIGRÁNÁT", "W_DIABOLIKUS SZTEROID", "W_NAGY ERŐITAL"],
@@ -3279,7 +3279,7 @@ window.rooms = [
 				cond: "nő",
 			},
 			{
-				txt: "A saját hangodon válaszolsz, hogy kinyírtad az orvgyilkost és mindenki így jár, aki az utadba áll",
+				txt: "A saját hangodon válaszolsz, hogy kinyírtad az orgyilkost és mindenki így jár, aki az utadba áll",
 				new: 128,
 			},
 			{
@@ -3298,7 +3298,7 @@ window.rooms = [
 		pic: "explosion.gif",
 		desc: `
       <p>
-        Hiába menekülsz, az orvgyilkos azonnal utánad dob egy gránátot és az egész otthonoddal együtt küld át a másvilágra.
+        Hiába menekülsz, az orgyilkos azonnal utánad dob egy gránátot és az egész otthonoddal együtt küld át a másvilágra.
       </p>
       <p>Kalandod itt véget ért, de most már tudod, hogy meg kell védened az otthonodat a betolakodókkal szemben.</p>
     `,
@@ -3407,7 +3407,7 @@ window.rooms = [
 		pic: "nappali.jpg",
 		desc: `
       <p>
-        Eltöltesz egy órát a neten lévő instant szennyben szörfözve és agyrohasztó szerencsén alapuló játékokkal játszva. Még csak számodra hasznos híreket sem olvastál, viszont sikeresen leépítetted magad.
+        Eltöltesz egy órát a neten lévő instant szennyben szörfözve és agyrohasztó, szerencsén alapuló, végtelenített játékokkal játszva. Még csak számodra hasznos híreket sem olvastál, viszont sikeresen leépítetted magad.
       </p>
       `,
 		change: [
@@ -3439,7 +3439,7 @@ window.rooms = [
 		],
 		buttons: [
 			{
-				txt: "Most már harcra kész vagy",
+				txt: "Na jó, valami értelmeset is csinálhatnék...",
 				new: 75,
 			},
 		],
@@ -3490,13 +3490,13 @@ window.rooms = [
 		pic: "gangmeet.jpg",
 		desc: `
       <p>
-        Ismét összeültök a megbeszélt időpontban a Garázsban. Lelkesen üdvözlitek egymást. Oshinoko elővesz egy karton cigit. Egy páran rögtön kérnek is tőle, de ő leinti őket, hogy várjanak. Kivesz egy szálat az egyik dobozból, egy másikból egy öngyújtót. A cigit a szájába veszi és az öngyújtót a végéhez közelíti. Abból azonban nem láng jön ki, hanem egy apró tüske csúszik bele az üreges cigibe. Ebben a pillanatban lép be a szobába Döme, a patkány. Aki tényleg patkány. Egy pillanatra megáll és szaglászni kezd, majd villámgyorsan nyargalni kezd a hűtő felé. Oshinoko felé irányítja a cigit, fúj egyet, mire a tüske láthatatlan gyorsasággal belerepül a cigiből Dömébe. Ő összerándul, lép még kettőt, aztán megmerevedik és felfordul.
+        Ismét összeültök a megbeszélt időpontban a Garázsban. Lelkesen üdvözlitek egymást. Oshinoko elővesz egy karton cigit. Egy páran rögtön kérnek is tőle, de ő leinti őket, hogy várjanak. Kivesz egy szálat az egyik dobozból, egy másikból egy öngyújtót. A cigit a szájába veszi és az öngyújtót a végéhez közelíti. Abból a fellobbanó láng alatt egy apró tüske csúszik bele az üreges cigibe. Ebben a pillanatban lép be a szobába Döme, a patkány. Aki tényleg patkány. Egy pillanatra megáll és szaglászni kezd, majd villámgyorsan nyargalni kezd a hűtő felé. Oshinoko felé irányítja a cigit, fúj egyet, mire a tüske láthatatlan gyorsasággal belerepül a cigiből Dömébe. Ő összerándul, lép még kettőt, aztán megmerevedik és felfordul.
       </p>
       <p>
         A társaság döbbent némaságban figyeli az eseményeket. Végül Oshinoko töri meg a csendet:
       </p>
       <p>
-        - A hagyományos fegyvereket hamar kiszúrnák az őrök, és a tér körül mesterlövészek is vannak. A ciginek álcázott fúvőcsövet viszont nem szúrják ki. Én leszedem a rendőrfőnököt, mert gyakran álruhában van, de én megismerem, <span class="name"></span> sanra bíznám a polgármestert. De nagyon fontos, hogy ha ezzel a kettővel végeztünk és nem vette észre senki, hogy ki fújt rájuk a csőből, akkor viselkedjünk teljesen természetesen, mint a tömeg többi tagja. Ha szerencsénk van, verekedés nélkül megússzuk. De ha mégis lebuknánk, mindenki üsse-vágja a rendőröket, ahogy tudja! Minél jobban elkeveredünk a tömegben, annál kisebb esély van arra, hogy a mesterlövészek leszednek. De még az is lehet, hogy a nép mellénk áll a két főgonosz halálát látván és <span class="name"></span> san bejelentheti, hogy átveszi a hatalmat. Meglátjuk majd, hogy alakul. A lényeg, hogy addig senki ne csináljon semmit, amíg mi ketten nem szedjük le a két főgonoszt. Most pedig megtanítom <span class="name"></span> sannak meg annak, aki még akarja, hogyan kell a legfeltünésmentesebben és leghatásosabban használni a fúvőcsövet.
+        - A hagyományos fegyvereket hamar kiszúrnák az őrök, és a tér körül mesterlövészek is vannak. A ciginek álcázott fúvőcsövet viszont nem szúrják ki. Én leszedem a rendőrfőnököt, mert gyakran álruhában van, de én megismerem, <span class="name"></span> sanra bíznám a polgármestert. De nagyon fontos, hogy ha ezzel a kettővel végeztünk és nem vette észre senki, hogy ki fújt rájuk a csőből, akkor viselkedjünk teljesen természetesen, mint a tömeg többi tagja. Ha szerencsénk van, verekedés nélkül megússzuk. De ha mégis lebuknánk, mindenki üsse-vágja a rendőröket, ahogy tudja! Minél jobban elkeveredünk a tömegben, annál kisebb esély van arra, hogy a mesterlövészek leszednek. De még az is lehet, hogy a nép mellénk áll a két főgonosz halálát látván és <span class="name"></span> san bejelentheti, hogy átveszi a hatalmat. Meglátjuk majd, hogy alakul. A lényeg, hogy addig senki ne csináljon semmit, amíg mi ketten nem szedjük le a két főgonoszt. Most pedig megtanítom <span class="name"></span> sannak meg annak, aki még akarja, hogyan kell a legfeltünésmentesebben és leghatásosabban használni a fúvócsövet.
       </p>
       <p>
         Jó pár ember jelentkezik, hogy ők is akarnak fúvócsövet használni, néhányan pedig bíznak saját erejükben. Egy órán át gyakoroltok, aztán már ideje indulni a Branyiszkó-térre.
@@ -3658,7 +3658,7 @@ window.rooms = [
 			{
 				txt: "Megvárod, mit csinál",
 				new: 159,
-				modi: "Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem, mert ő lát téged, de te nem látod őt!",
+				modi: "Vársz, de semmi nem történik. Aztán a női alak oldalra néz. Talán mond is valamit, de nem hallod ilyen távolságból. Ekkor hirtelen egy sötét alak ugrik rád oldalról. Ez csapda!!! Meg kell vele küzdened életre-halálra, mert nem tudsz innen elmenekülni sem, mivel ő lát téged, de te nem látod őt!",
 			},
 			{
 				txt: "Üdvözlöd, mert ki más lehetne, mint Bogi",
@@ -3726,8 +3726,8 @@ window.rooms = [
 		change: [
 			{
 				id: "sup",
-				crease: -10,
-				rnd: 10,
+				crease: -15,
+				rnd: 15,
 			},
 			{
 				id: "hat",
@@ -3946,7 +3946,7 @@ window.rooms = [
       Amint előrántod a katanát, Szenyamuki szeme elkerekedik.
     </p>
     <p> - Dédapánk katanája! Hogy került ez hozzád?</p>
-    <p> - Te is tudod, hogy csak egyféleképpen kerülhetett ez hozzá! - szól közbe Oshinoko.</p>
+    <p> - Te is tudod, hogy csak egyféleképpen kerülhetett hozzá! - szól közbe Oshinoko.</p>
     <p> - Igen, kiálltam a Vanepuca próbát! Még mindig harcolni akarsz ellenem? - mondod keményen.</p>
     <p>
       Szenyamuki pár pillanatig hezitál, aztán flegmán megvonja a vállát.
@@ -4058,7 +4058,7 @@ window.rooms = [
 	},
 	{
 		num: 128,
-		title: "Az orvgyilkos halálának közlése",
+		title: "Az orgyilkos halálának közlése",
 		type: "normal",
 		music: "darkbackground",
 		pic: "home.jpg",
@@ -4067,10 +4067,10 @@ window.rooms = [
         Gondolod, a mikrofon sem lehet messze, így elkiáltod magad:
       </p>
       <p>
-        - Hogy mi történt? Kinyírtam ezt az amatőr orvgyilkost! Gondolom, a legjobb embered volt. Nyugodtan küldd a többit is, mindenkivel végezni fogok! Így jár az, aki <span id="fullName"></span> útjába kerül!
+        - Hogy mi történt? Kinyírtam ezt az amatőr orgyilkost! Gondolom, a legjobb embered volt. Nyugodtan küldd a többit is, mindenkivel végezni fogok! Így jár az, aki <span id="fullName"></span> útjába kerül!
       </p>
       <p>
-        Hallgatózol, de úgy tűnik, a másik oldalon megszakították a beszélgetést. Mindegy, bárki is volt az, ez nem változtat azon, amit egy téged megöldi küldött bérgyilkos megbízójának mondanál. De minden bizonnyal Boti embere volt. Ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival.
+        Hallgatózol, de úgy tűnik, a másik oldalon megszakították a beszélgetést. Mindegy, bárki is volt az, ez nem változtat azon, amit egy téged megölni küldött bérgyilkos megbízójának mondanál. De minden bizonnyal Boti embere volt. Ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival.
       </p>
     `,
 		obj: ["E_Boti üldöz"],
@@ -4113,7 +4113,7 @@ window.rooms = [
         - Volt egy kis verekedés, de már minden rendben. <span id="fullName"></span> halott.
       </p>
       <p>
-        - Köszönjük. Fizetés a szokásos módon - jön a válasz a kütyüből. Még csak kódolt nyelvet sem használnak, nagyon magabiztosak. De te is örülsz, hogy sikerült őket átverned. Most azt hiszik, halott vagy. Emellett ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival, és megerősítette az önbizalmad.
+        - Köszönjük. Fizetés a szokásos módon - jön a válasz a kütyüből. Még csak kódolt nyelvet sem használnak, nagyon magabiztosak. De te is örülsz, hogy sikerült őket átverned. Most azt hiszik, halott vagy. Emellett ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival, és magabiztosabbá is tett.
       </p>
     `,
 		obj: ["E_Boti halottnak hisz"],
@@ -4157,10 +4157,10 @@ window.rooms = [
       <p>
         Rájössz, hogy úgysem tudod megtéveszteni őket, fölösleges tovább erőlködnöd, így a rendes hangodon elkiáltod magad:
       </p>
-        - Hogy mi történt? Kinyírtam ezt az amatőr orvgyilkost! Gondolom, a legjobb embered volt. Nyugodtan küldd a többit is, mindenkivel végezni fogok! Így jár az, aki <span id="fullName"></span> útjába kerül!
+        - Hogy mi történt? Kinyírtam ezt az amatőr orgyilkost! Gondolom, a legjobb embered volt. Nyugodtan küldd a többit is, mindenkivel végezni fogok! Így jár az, aki <span id="fullName"></span> útjába kerül!
       </p>
       <p>
-        Hallgatózol, de úgy tűnik, a másik oldalon megszakították a beszélgetést. Mindegy, bárki is volt az, ez nem változtat azon, amit egy téged megöldi küldött bérgyilkos megbízójának mondanál. De minden bizonnyal Boti embere volt. Ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival.
+        Hallgatózol, de úgy tűnik, a másik oldalon megszakították a beszélgetést. Mindegy, bárki is volt az, ez nem változtat azon, amit egy téged megölni küldött bérgyilkos megbízójának mondanál. De minden bizonnyal Boti embere volt. Ez az éjjeli kaland csak megerősítette benned, hogy tényleg végezni kell Botival.
       </p>
     `,
 		obj: ["E_Boti üldöz"],
@@ -4185,7 +4185,7 @@ window.rooms = [
 		value: "D_ostrom",
 		pass: 136,
 		fail: 137,
-	},
+	},//folyt.
 	{
 		num: 132,
 		title: "Újra Fricinél",
@@ -8641,7 +8641,7 @@ window.rooms = [
 				- Ez most tényleg komoly?
 			</p>
 			<p>
-				- Rossz válasz! - mondod és agyonlövöd. - Így járnak az udvariatlan bunkók! - mondod, majd az idegen férfi felé fordulsz, és udvarias hangon így szólsz: - Menjen be abba az utcába a szobor mögött, amíg el nem éri a 7-es villamos megállóját. Szálljon fel rá! A Branyiszkó-tér a hatodik megálló.
+				- Rossz válasz! - mondod és agyonlövöd. - Így járnak az udvariatlan bunkók! - mondod, majd az idegen férfi felé fordulsz, és udvarias hangon így szólsz: - Menjen be abba az utcába a szobor mögött, amíg el nem éri a 7-es villamos megállóját. Szálljon fel rá! A Branyiszkó-tér a hmm... három, négy... ötödik megálló.
 			</p>
 			<p>
 				- Köszönöm! - mondja zavartan a férfi és szaporán eliszkol.
