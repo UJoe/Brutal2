@@ -4185,7 +4185,7 @@ window.rooms = [
 		value: "D_ostrom",
 		pass: 136,
 		fail: 137,
-	},//folyt.
+	},
 	{
 		num: 132,
 		title: "Újra Fricinél",
@@ -4197,7 +4197,7 @@ window.rooms = [
         A sárga kikericseket követve visszajutsz Ügyes Frigyes rejtekhelyére. Sok földtúrást látsz a kunyhó körül, Frici pedig éppen Betyárt kalapálgatja. Amint meglát, lelkesen üdvözöl:
       </p>
       <p>
-        - Szevasz <span class="name"></span>! Na, készen állsz a nagy akcióra? Betyárt elláttam földalatti ásó szerkókkal, meg ha valami értékes ásványi anyagot talál, abból készít is nekünk valamit. Nagyon szuper lett! A páncélját is megerősítettem, mert kemény földbe is áshatunk, de szerintem alkalmas lesz a feladat elvégzésére. Előtte viszont együnk egyet!
+        - Szevasz <span class="name"></span>! Na, készen állsz a nagy akcióra? Betyárt elláttam földalatti ásó szerkókkal, meg ha valami értékes ásványi anyagot talál, abból készít is nekünk valamit. Nagyon szuper lett! A páncélját is megerősítettem, mert kemény földbe is áshatunk. Szerintem alkalmas lesz a feladat elvégzésére. Előtte viszont együnk egyet!
       </p>
       <p>
         Azzal megint előhozza az asztalt, székeket és némi ennivalót. Megint fasírt-szerű étel a fő fogás, de világosabb színű, mint múltkor.
@@ -4269,7 +4269,7 @@ window.rooms = [
         Kissé meghökkensz, de aztán vállat vonsz és tovább eszel, mert kell az energia.
       </p>
       <p>
-        Amikor végeztetek, Frici elpakol, ellenőriz még pár dolgot Hugón, aztán beszálltok a Betyármobilba és elindultok a város felé, ahol Boti ma délután  beszédet mond a Branyiszkó-téren.
+        Amikor végeztetek, Frici elpakol, ellenőriz még pár dolgot Hugón, aztán beszálltok a Betyármobilba és elindultok a város felé, ahol Boti ma délután beszédet mond a Branyiszkó-téren.
       </p>
       `,
 		change: [
@@ -4335,7 +4335,7 @@ window.rooms = [
 		pic: "townhall.JPG",
 		desc: `
       <p>
-        Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Városháza felé.
+        Elrakod a két fegyvert, a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Városháza felé.
       </p>
       <p>
         Amikor elérkeztek a Városháza előtti parkhoz, látjátok, hogy az őrök már vártak titeket és felsorakoztak a túloldalon. Nincs mese, meg kell velük küzdenetek!
@@ -4371,7 +4371,7 @@ window.rooms = [
 		obj: ["X_Gárda"],
 		desc: `
       <p>
-        Elrakod a két fegyvert és a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Branyiszkó-tér felé.
+        Elrakod a két fegyvert, a maradékot pedig pillanatok alatt szétkapkodja a többi bandatag. Egy óriási csatakiáltással nyugtázzátok megnövelt tűzerőtöket és elindultok a Branyiszkó-tér felé.
       </p>
       <p>
         Amint befordultok abba az utcába, amelynek a végén a tér van, hirtelen az egyik gárdista felnyög és összeesik. Mindenki ledöbben. Egy másik azonnal felismeri a helyzetet és elordítja magát.
@@ -4410,13 +4410,13 @@ window.rooms = [
 		hp: 50,
 		desc: `
       <p>
-        - Isten nevét hiába ne vedd! - idézed a parancsolatot, és lekeversz a fickónak egy pedagógiai pofont. Az kissé meglepődik, de ez kevés ahhoz, hogy elszálljon a haragja.
+        - Isten nevét hiába ne vedd! - idézed a parancsolatot, és lekeversz a fickónak egy oltári pedagógiai pofont. Az kissé meglepődik, de ez kevés ahhoz, hogy elszálljon a haragja. Sőt, az inkább növekedni látszik.
       </p>
       <p>
         - Ti valami szektások vagytok?! Hát én meg a házmester és nem kérünk ebből a hitből! Takarodjatok innen!
       </p>
       <p>
-        - Felőlem lehetsz a császár is, akkor is feletted áll a valódi Úr, akit tisztelned kell, te gőgös pogány! - vágsz vissza.
+        - Felőlem lehetsz a császár is, akkor is feletted áll a valódi Úr, akit tisztelned kell, te pökhendi pogány! - vágsz vissza.
       </p>
       <p>
         - Ebben a házban senki nem áll felettem! - feleli tajtékzó öntudatossággal. Fricire nézel. Láthatóan tetszik neki a műsor, mert vigyorog, mint a tejbetök.
@@ -4441,19 +4441,19 @@ window.rooms = [
 		pic: "hazmester.jpg",
 		desc: `
       <p>
-        - Az önkormányzattól jöttünk az Ajándék Karbantartás Akció keretében - mondod vidáman hirtelen. - Egyelőre a beszorult tetőajtót javítottuk meg. Meglepetésnek akartuk szánni, de ha már Ön így rajtakapott minket, megondhatja, mit kellene még megjavítanunk.
+        - Az önkormányzattól jöttünk az Közösségi Ajándék Karbantartás Akció, röviden KAKA keretében - mondod vidáman hirtelen. - Egyelőre a beszorult tetőajtót javítottuk meg. Meglepetésnek akartuk szánni, de ha már Ön így rajtakapott minket, megmondhatja, mit kellene még megjavítanunk.
       </p>
       <p>
         A mogorva házmester egy ideig néz, de aztán győz benne az ingyenes karbantartás hasznának értéke.
       </p>
       <p>
-        - Hát, éppenséggel a szennyvízelvezetésünk akadozik, valami dugulás lehet a csőben.
+        - Hát, éppenséggel, ha már a kakát emlegette... a szennyvízelvezetésünk akadozik, valami dugulás lehet a csőben.
       </p>
       <p>
-        - Ne aggódjon, a kollégám semmi perc alatt megoldja! - kurjantasz vidáman és biztatóan hátbaveregeted Fricit. Ő egy ezredmásodperce dühösen megvillantja feléd a szemét, mégiscsak szennyvízről van szó, de aztán belátja, hogy a szerep végigjátszása a legbiztosabb módja annak, hogy ne bukjatok le. Lementek a házmester után a pincébe, ahonnan egy aknatető vezet le a ház vízhálózatának csöveihez. A házmester kinyitja és lemásztok egymás után. Frici a fülét az egyik csőhöz tapasztja, megkopogtatja, aztán egy torz fintorral nyugtázza, hogy tényleg valami baj van. Mászkál egy ideig ide-oda, tekerget különféle elzárókat, majd megáll és fülel egy ideig. A néma csendben halljátok, hogy az egyik lakó fent elordítja magát, hogy "Miért nem jön már megint víz ebből a durva csapból?!" Frici elégedetten bólint és kinyit egy nyílást annak a csőnek az oldalán, amit legelőször meghallgatott. Abból egy kevés koszos víz folyik a padlóra egy nagy adag orrfacsaró bűz kíséretében. Frici ekkor elővesz egy furcsa szerszámot, aminek állítható fejei és karjai vannak és belenyúl vele a csőbe. Pár percig turkál benne dühösen grimaszolva, majd kihúzza a szerszámot, aminek a végén egy döglött papagáj van.
+        - Ne aggódjon, a kollégám semmi perc alatt megoldja! - kurjantasz vidáman és biztatóan hátbaveregeted Fricit. Ő egy ezredmásodperce dühösen megvillantja feléd a szemét, mégiscsak szennyvízről van szó, de aztán belátja, hogy a szerep végigjátszása a legbiztosabb módja annak, hogy ne bukjatok le. Lementek a házmester után a pincébe, ahonnan egy aknatető vezet le a ház vízhálózatának csöveihez. A házmester kinyitja és lemásztok egymás után. Frici a fülét az egyik csőhöz tapasztja, megkopogtatja, aztán egy torz fintorral nyugtázza, hogy tényleg valami baj van. Mászkál egy ideig ide-oda, tekerget különféle elzárókat, majd megáll és fülel egy ideig. A néma csendben halljátok, hogy az egyik lakó fent elordítja magát: "Miért nem jön már megint víz ebből a durva csapból?!" Frici elégedetten bólint és kinyit egy nyílást annak a csőnek az oldalán, amit legelőször meghallgatott. Abból egy kevés koszos víz folyik a padlóra egy nagy adag orrfacsaró bűz kíséretében. Frici ekkor elővesz egy furcsa szerszámot, aminek állítható fejei és karjai vannak és belenyúl vele a csőbe. Pár percig turkál benne dühösen grimaszolva, majd kihúzza a szerszámot, aminek a végén egy döglött papagáj van.
       </p>
       <p>
-        - Valamelyik hülye lehúzta a budin! - vonja le bosszúsan a következtetést, majd a házmester felé nyújtja a tetemet. - Van még valami gond?! 
+        - Valamelyik lehúzta a budin a papagáját! - vonja le bosszúsan a következtetést, majd a házmester felé nyújtja a tetemet. - Van még valami gond?! 
       </p>
       <p>
         - Nem, nem, teljesen rendben vagyunk, köszönöm szépen! - mondja a házmester. Frici elégedetten visszazárja a nyílást, tekerget még egyet a rendszeren, majd mindhárman felmentek. Frici kidobja a kommunális kukába a papagájt, te pedig vidáman kezet nyújtasz a polgármesternek.
@@ -4537,7 +4537,7 @@ window.rooms = [
 		pic: "ecampaign.png",
 		desc: `
       <p>
-        Összedobtok egy jó propagandaanyagot a <span class='part'></span> programjáról és elárasztjátok vele az internetes reklámfelületeket és a médiát. Ez a fent átfutó értékkel növelte tovább a támogatásotokat. 
+        Összedobtok egy jó propagandaanyagot a <span class='part'></span> programjáról és elárasztjátok vele az internetes reklámfelületeket és az egész médiát. Ez a fent átfutó értékkel növelte tovább a támogatásotokat. 
       </p>
       <p>
         De vajon elég lesz-e ez, hogy megnyerjétek az önkormányzati választást és átvehesd az uralmat a város felett?
@@ -4592,7 +4592,7 @@ window.rooms = [
 			{
 				id: "sup",
 				crease: 30,
-				rnd: 30,
+				rnd: 40,
 			},
 		],
 		Xchange: "kampány",
@@ -4633,7 +4633,7 @@ window.rooms = [
 			{
 				id: "sup",
 				crease: -15,
-				rnd: 10,
+				rnd: 20,
 			},
 		],
 		obj: ["E_kampánybeszéd"],
@@ -4691,10 +4691,10 @@ window.rooms = [
         - Most véged van! - kiáltasz rá vészjóslóan, de rögtön meg is szédülsz, mert az enyészet bűzhödt lehellete lengi körül Bercit. - Te tényleg egy szar ember vagy! - állapítod meg elfúló hangon és friss levegő után kapkodsz - hiába. Kétségbeesésed egyre nő, ahogy érzed, hogy kezdesz elgyengülni és a szemedet is könnyek öntik el...
       </p>
       <p>
-        Berci látja, hogy szuperképessége, a szaga most is a segítségére siet. Nem számolt azonban azzal, hogy egy nála nagyobb ősi erő, a szél ezúttal téged támogat ebben az eposzi párbajban. Hirtelen fordul a szél és Berci felé kezd fújni. Nagyot szívsz a friss fuvallatból, a fejed és a látásod ismét kitisztul, és érzed az oxigén szétáradó erejét a tagjaidban.
+        Berci látja, hogy szuperképessége, a szaga most is a segítségére sietett. Nem számolt azonban azzal, hogy egy nála nagyobb ősi erő, a szél ezúttal téged támogat ebben az eposzi párbajban. Hirtelen fordul a szél és Berci felé kezd fújni. Nagyot szívsz a friss fuvallatból, a fejed és a látásod ismét kitisztul, és érzed az oxigén szétáradó erejét a tagjaidban.
       </p>
     `,
-		modi: "Berci összeroskad és nem mozdul többet. Csak erre vártál! Szólsz a telefonon a <span class='part'></span> második emberének, hogy a küldetésed sikeresen teljesítve van.</p><p>Egy percet sem kell várni és már jönnek a lelkes párttagok kamerákkal és felveszik, ahogy Bercit berakjátok egy zsákba és elássátok mélyen a földbe. Közben egyre nő körülöttetek a tömeg, embereid lelkesen dicsérnek téged, te pedig szerényen mosolyogva mondod, hogy kötelességednek tekinted elbánni mindenkivel, aki zavarja a város békéjét és fejlődését. A nép a szag megszünésével párhuzamosan egyre lelkesebben gratulál neked és éltet téged és pártodat!",
+		modi: "Berci összeroskad és nem mozdul többet. Csak erre vártál! Szólsz a telefonon a <span class='part'></span> második emberének, hogy a küldetésed sikeresen teljesítve van.</p><p>Egy percet sem kell várni és már jönnek is a lelkes párttagok kamerákkal és felveszik, ahogy Bercit berakjátok egy zsákba és elássátok mélyen a földbe. Közben egyre nő körülöttetek a tömeg, embereid lelkesen dicsérnek téged, te pedig szerényen mosolyogva mondod, hogy kötelességednek tekinted elbánni mindenkivel, aki zavarja a város békéjét és fejlődését. A nép a bűz megszünésével párhuzamosan egyre lelkesebben gratulál neked és éltet téged és pártodat!",
 		obj: ["E_Büdös Berci üldözése"],
 		buttons: [
 			{
@@ -4724,7 +4724,7 @@ window.rooms = [
     `,
 		buttons: [
 			{
-				txt: "Köszönjük, Tódor úrfi! Gyere, Gizike!",
+				txt: "Köszönjük, Tódor úrfi! Gyere, Gizikém!",
 			},
 		],
 		obj: ["E_kampánybányászat"],
@@ -4739,7 +4739,7 @@ window.rooms = [
 		pic: "gold.gif",
 		desc: `
       <p>
-       A talált kincseket szétszórod a nép között, ami a fent jelzett értékkel növelte a <span class="part"></span> támogatottságát. Úgy érzitek jó úton haladtok.
+       A talált kincseket szétszórod a nép között, ami a fent jelzett értékkel növelte a <span class="part"></span> támogatottságát. Úgy érzitek, jó úton haladtok.
       </p>
 		`,
 		Xchange: "treasure",
@@ -4800,7 +4800,7 @@ window.rooms = [
 			txt: "Jónapot kivánok! Épségben hazahoztam a gyerekeket.",
 			new: 198,
 		},
-		modi: `Nagyon örülnek a szülők! Bár nem túl gazdagok, megvendégelnek mindenféle finom és tápláló étellel, itallal, és megígérik, hogy a róluk szóló mese innentől úgy fog véget érni, hogy "Boldogan éltek, amíg <span id ='fullName'></span> mellé tették az X-et a szavazócédulán".`,
+		modi: `Nagyon örülnek a szülők! Bár nem túl gazdagok, megvendégelnek mindenféle finom és tápláló étellel, itallal, és megígérik, hogy a róluk szóló mese innentől úgy fog véget érni, hogy "Boldogan éltek, amíg a <span id ='fullName'></span> mellé tették az X-et a szavazócédulán".`,
 		passDesc:
 			"<p>Hosszas vándorlás után végül kiértek az erdőből. A gyerekek szülei már vártak rátok. Jancsi és Juliska örömmel rohannak feléjük.</p>",
 		fight: 152,
@@ -5092,7 +5092,7 @@ window.rooms = [
 				 - Tudom, hogy most azt hiszed, mi van, ha az egész csak egy csapda volt és Boti embere vagyok én is. Elárulom neked azt, amit senki sem tud: valójában Wakana Ootaki vagyok, a Kalafina együttes egykori énekesnője, a Bogi csak felvett név - azzal elővesz egy kendőt és elkezdi törölni az arcáról a sminket. Még ebben a félhomályban is látod, milyen döbbenetes változáson megy át. Tényleg Wakana az, gyerekkorod kedvence! Könnyes szemmel, szenvedélyesen folytatja: - Ezt senki nem tudja! A neoszamurájok lázadása után menekültem ide, és mivel nehéz volt új életet kezdeni, örültem, amikor felkarolt Bodri papa, majd Boti. Bodri papa rendes fickó, teljesen korrekt üzleti kapcsolatunk van, de Boti fertelmes! Szabadulni akarok tőle! És... és szeretlek! Téged szeretlek, tiszta szívemből, amióta csak megláttalak! Kérlek, higgyél nekem és ments meg!
 				</p>
 				`,
-		obj: ["W_KIS ERŐITAL", "W_NAGY ERŐITAL", "W_KÉZIGRÁNÁT", "W_GYILOK"],
+		obj: ["W_PÁLINKÁS FLASKA", "W_NAGY ERŐITAL", "W_KÉZIGRÁNÁT", "W_GYILOK"],
 		buttons: [
 			{
 				txt: "Hiszel neki",
@@ -5145,7 +5145,7 @@ window.rooms = [
 		value: "love",
 		pass: 166,
 		fail: 167,
-	},
+	},//folyt.
 	{
 		num: 166,
 		title: "Zsolt beléd zúg",
