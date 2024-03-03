@@ -4342,7 +4342,7 @@ window.rooms = [
       </p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy folytathatod a játékot a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
 				A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki, de aki mellette áll, az iszik belőle és visszanyer egy kevés erőt. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosság azt mutatja, hogy mennyire követi az eredeti parancsot vagy saját döntését az ember a váratlan események ellenére is. Az emberek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
@@ -5726,7 +5726,7 @@ window.rooms = [
         A sok segítséggel nagy népszerűségre tettél szert, és erzed, hogy ennél jóval többet is tehetnél a népért, így bejelented, hogy indulsz az önkormányzati választáson. Tudod, hogy a jelenlegi polgármestert, Bitang Botondot, sokan nem szeretik, mert zsarnokoskodik a népen és a rendőrségből saját maffia-szervezetet hozott létre.
       </p>
       <p>
-        Elkezdesz hát rögtönözni egy beszédet, és ígérgetni nekik mindenfélét: ingyen kakasnyalóka, reklámmentes internet, a járványok szétmorzsolása, "Minden háztartásba törpehörcsög, hóbagoly vagy takarító robotnő!" program, az önkormányzat által finanszírozott szuperképesség-fejlesztő tanfolyam valamint az agymosással való végső leszámolás. Perpill ezek jutottak eszedbe, de érzed, hogy ez még csak a kezdet.
+        Elkezdesz hát rögtönözni egy beszédet, és ígérgetni nekik mindenfélét: ingyen kakasnyalóka, reklámmentes internet, a járványok szétmorzsolása, "Minden háztartásba törpehörcsög, hóbagoly vagy takarító robotnő!" program, az önkormányzat által finanszírozott szuperképesség-fejlesztő tanfolyam valamint az agymosással való végső leszámolás. Perpill ezek jutottak az eszedbe, de érzed, hogy ez még csak a kezdet.
       </p>
       `,
 		change: [
@@ -5921,7 +5921,7 @@ window.rooms = [
 			</p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy folytathatod a játékot a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
 				A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki, de aki mellette áll, az iszik belőle és visszanyer egy kevés erőt. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosság azt mutatja, hogy mennyire követi az eredeti parancsot vagy saját döntését az ember a váratlan események ellenére is. Az emberek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
@@ -5953,7 +5953,7 @@ window.rooms = [
 				- Köszönjük! De tulajdonképpen miért nem ölöd meg te, ha már úgyis velünk vagy? - teszed fel a számodra praktikusnak tűnő kérdést.
 			</p>
 			<p> 
-				- Mert ez nem az én küldetésem! Vagy megbíztok vele, de az nagyon sok pénzbe fog kerülni, vagy legyen elég annyi, hogy segítek nektek ha gond lenne.
+				- Mert ez nem az én küldetésem! Vagy megbíztok vele, de az nagyon sok pénzbe fog kerülni, vagy legyen elég annyi, hogy segítek nektek, ha gond lenne.
 			</p>
 			<p>
 				- Jó lesz így! - szól közbe Oshinoko. Végül is, jobban ismeri a testvérét és anyagi igényeit, így ráhagyod. Szenyamuki biccent egyet és egy szempillantás alatt eltűnik a sötétben.
@@ -5993,7 +5993,7 @@ window.rooms = [
 		pic: "szenyamuki-face.jpg",
 		desc: `
 			<p>
-				Amikor Szenyamuki összeesik, te pedig odaugrasz mellé, hogy végezz vele, hirtelen Oshinoko elkapja a karodat, de olyan erővel, mint ha vasbilincsbe zárnák.
+				Amikor Szenyamuki összeesik, te pedig odaugrasz mellé, hogy végezz vele, hirtelen Oshinoko elkapja a karodat, de olyan erővel, mintha vasbilincsbe zárnák.
 			</p>
 			<p>
 				- Elég! Ha megölöd a fivérem, hogy segít minket?! - majd a földön fekvő alélt testvéréhez fordul: - Szenyamuki! <span class="name"></span> san már bizonyított! Legyen itt vége a harcnak!
@@ -6172,7 +6172,7 @@ window.rooms = [
 		prodtxt: "Betyár felbúg, kattog, majd a végén a következő tárgy jön ki belőle:",
 		desc: `
       <p>
-       - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyáártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. A GYÁRTÁS gomb néha akadozik, ha először nem csinálna semmit, nyomd meg megint!
+       - Na, itt vagyunk a raktárszoba alatt! - kiált lelkesen Frici. - Mielőtt felmegyünk, gyártsunk le néhány cuccot a megszerzett ásványokból! Egy dolog a fontos: nem muszáj egyszerre az összes ásványt belerakni, mert Betyár mindig csak egy dolgot csinál a kapott összes mennyiségből. Ha tudsz néhány receptet, az megkönnyíti a dolgunkat, de ha nem, akkor is valamit csinál belőlük Betyár. Legfeljebb nem tudjuk semmire használni. A GYÁRTÁS gomb néha akadozik, ha először nem csinálna semmit, nyomd meg megint!
       </p>
     `,
 		cont: 197,
@@ -6224,7 +6224,7 @@ window.rooms = [
 		pic: "server.jpg",
 		desc: `
       <p>
-       Frigyes számításai pontosak voltak. A Betyár által ütött lyukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. A server-szoba ajtaja természetesen zárva van. A server konzolja pedig jelszót kér. Mit teszel?
+       Frigyes számításai pontosak voltak. A Betyár által ütött lyukon átmászva a server-szoba melletti raktárban találjátok magatokat. Átgázoltok a poros kábelek, monitorok, nyomtatópatronok és printerek között, majd akadálytalanul beléptek az üres server-szobába. Kicsit hűvös van, de ez nem tántorít el. A szoba ajtaja természetesen zárva van. A server konzolja pedig jelszót kér. Mit teszel?
       </p>
     `,
 		buttons: [
@@ -6242,10 +6242,10 @@ window.rooms = [
 				txt: "Használjátok a Bolditól szerzett belépőkártyát",
 				new: 230,
 				cond: "E_belépőkártya",
-				modi: "Előveszitek a kártyát és a leolvasóhoz érintitek. A led zöldre vált, egy kattintást hallotok és már nyitjátok is az ajtót. Egymásra kacsintotok. Ez könnyű volt! Elindultok megkeresni Botit.",
+				modi: "Előveszitek a kártyát és a leolvasóhoz érintitek. A led zöldre vált, egy kattanást hallotok és már nyitjátok is az ajtót. Egymásra kacsintotok. Ez könnyű volt! Elindultok megkeresni Botit.",
 			},
 		],
-	},
+	},//folyt.
 	{
 		num: 198,
 		title: "Sikeres kampányakció",
@@ -6574,7 +6574,7 @@ window.rooms = [
 			</p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy folytathatod a játékot a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
         A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosság azt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
@@ -6780,7 +6780,7 @@ window.rooms = [
 			</p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy folytathatod a játékot a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
         A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosság azt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
@@ -7449,7 +7449,7 @@ window.rooms = [
 			</p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy folytathatod a játékot a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
         A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosság azt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
@@ -7611,7 +7611,7 @@ window.rooms = [
       </p>
       <i>
       <p>
-        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy továbbléphetsz a következő pályára a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
+        A következő képernyőn felülnézetben láthatod a harcmezőt. Tőle jobbra van a fő irányítógomb, amivel elindíthatod a csatát, elmenekülhetsz vagy folytathatod a játékot a csata végén. Mellette a játék sebességét állíthatod. Ezalatt - ha vannak - a használható fegyvereid vannak. Ezeket akkor használhatod, ha a - képességeid alapján kalkulált - várakozási idő letelt. A kiválasztás után ki kell jelölnöd azt is, hol veted be a terepen. Figyeld az egérmutató formáját!
       </p>
       <p>
         A csata indítása után a harcosok önállóan harcolnak, de saját embereidre kattintva, tudsz nekik parancsot adni. Ha ismét arra az emberre kattintasz, akkor megáll. Ha egy üres mezőre, akkor átmegy oda, ha egy ellenségre vagy fára, akkor letámadja / megpróbálja kivágni. Vízre nem léphet senki. Aki alatt fehér vonal van, az veled van, aki alatt fekete, az ellenség. Ha először ellenfélre kattintasz, csak az adatait láthatod. A speciális képességeket automatikusan használják a harcosok. A céltudatosság azt mutatja, hogy mennyire követi az eredeti parancsot vagy döntését az egység a váratlan események ellenére is. Az egységek feletti zöld csík teljes, a sárga legalább egyharmadnyi, a piros ennél kisebb életerőt jelez. Amelyik szereplő korábban a szövetségesed lett, annak másfélszeres lesz minden kezdő értéke.
