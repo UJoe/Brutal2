@@ -5145,7 +5145,7 @@ window.rooms = [
 		value: "love",
 		pass: 166,
 		fail: 167,
-	},//folyt.
+	},
 	{
 		num: 166,
 		title: "Zsolt beléd zúg",
@@ -5169,7 +5169,7 @@ window.rooms = [
 				Ő megfogja a kezed. Érzed, hogy érdes, kemény kéz, mégis finoman tartja a tiédet. Azon veszed észre magad, hogy neked is egyre jobban tetszik a fickó. Érezhetően eszméletlenül erős, mégis milyen gyengéd veled...
 			</p>
 			<p>
-				- Örülök, hogy találkoztunk! - mondja és hosszasan a szemedbe néz. A kezdet továbbra sem engedi el. Láthatóan teljesen elmerült benned... De aztán hirtelen magához tér, elengedi a kezed, körülnéz és szól a manóknak: - Vendégünk van!
+				- Örülök, hogy találkoztunk! - mondja és hosszasan a szemedbe néz. A kezedet továbbra sem engedi el. Láthatóan teljesen elmerült benned... De aztán hirtelen magához tér, elengedi a kezed, körülnéz és szól a manóknak: - Vendégünk van!
 			</p>
 			<p>
 				A manók ránéznek, majd egymásra, gurguláznak egy kicsit a saját nyelvükön, ami aztán vidám vinnyogásba megy át és szerte-széjjel szaladnak az erdőbe. Megint kibuggyan belőled a nevetés.
@@ -5191,7 +5191,7 @@ window.rooms = [
 		pic: "erdei.jpg",
 		desc: `
       <p>
-       Felismered, hogy az az erdei boxoló a manók vezére, akivel akkor találkoztál, amikor a Brutal Ballt kerested az erdőben! Felkészülsz arra az esetre, ha adna egy akkor pofont, amitől elszállsz, de ő most csak feláll és udvariasan kezet nyújt neked.
+       Felismered, hogy az az erdei boxoló a manók vezére, akivel akkor találkoztál, amikor a Brutal Ballt kerested az erdőben! Felkészülsz arra az esetre, ha adna egy akkora pofont, amitől elszállsz, de ő most csak feláll és udvariasan kezet nyújt neked.
 			</p>
 			<p>
 				- Erdei Zsolt.
@@ -5323,7 +5323,7 @@ window.rooms = [
 		treasure: "glasses.jpg",
 		desc: `
       <p>
-        - Köszönöm szépen, aranyom, maga nagyon rendes ember! - mondja meghatottan Pirike. Olyan hangja van, mint egy kotkodáló tyúknak. Beléd karol és elvisz a házához. Útközben elmeséli, hogy milyen nagy rajongója a szerelmes regényeknek és mennyit sír mindig rajtuk, de mióta elvesztette az olvasó szemüvegét, depressziós lett, mert nem tud sírni rajtuk. Pedig az volt az egyetlen öröme, hogy lucskossá sírta a párnáját.
+        - Köszönöm szépen, aranyom, maga nagyon rendes ember! - mondja meghatottan Pirike. Olyan hangja van, mint egy kotkodáló tyúknak. Beléd karol és elvisz a házához. Útközben elmeséli, hogy milyen nagy rajongója a szerelmes regényeknek és mennyit sír mindig rajtuk, de mióta elvesztette az olvasószemüvegét, depressziós lett, mert nem tud sírni rajtuk. Pedig az volt az egyetlen öröme, hogy lucskossá sírta a párnáját.
       </p>
       <p>
         Megesik rajta a szíved. Amikor megérkeztek, megmutatja a kertjét. Olyan kicsi, hogy még egy vagány óvodásnak is nehezére esne triciklivel megfordulni benne. Gondolod, ez gyerekjáték lesz. Gondolod. Mert aztán kotkodáló hangján Pirike elmondja, hogy az az égetnivaló kisunokája, a Bence két bombát is elásott a szemüveggel együtt a kertben a múlt hétvégén, Pityuka keresztelője után. Azóta nem mer kimenni Pirike a kertbe. De az ásót szívesen neked adja. Nagyon szeretne még sokat sírni a romantikus regényeken, ezért inkább a szemüveget ásd ki, mint a bombákat, ha lehet. Vegyes érzelmekkel veszed át az ásót. De mégis te vagy a helység hőse, ki más tudna Pirikén segíteni?
@@ -5360,7 +5360,7 @@ window.rooms = [
         - Na, angyalom, abban kérném a segítséged, mert már az én derekam nem bírja, de a te fiatal csontjaid... Hej, ha láttál volna lánykoromban... megnyalta mindenki a szája szélét utánam... Volt az Iván, na az nagy frász volt ám! Na de hol is hagytam abba? Ja igen! Kilencszázötvenhétben találtunk egy bombát a kertben. Hogy hogy került oda, azt senki sem tudja. De levitte a Kálmán fél karját! Azóta olyan furán kapálta a retket... Mintha csugulyázna... Na, de miért is mondtam ezt? Ja, tudom. Szóval. A minap, amikor a macska olyan panaszosan nyávogott, kimentem a kertbe, mert már nem bírtam hallgatni, és ahogy sétáltam, egy dög bögöly megcsípte itt a nyakamat, ni! Hirtelen odakapok, hát nem elszakadt a gyöngysorom, amit még a Menyus adott nekem, eszem a lelkét! Úgy szétgurultak a gyöngyök, a Bodri meg, hallod, fogta magát és elkaparta őket! Azt hitte az a lökött jószág, hogy kutyagumi... az én gyöngyeimre! Az a vén eb már nem is lát! Pedig olyan jó volt az a Menyus...! Mindig olyan szépen kanalazta a dödöllét, hogy öröm volt nézni, már attól jóllakott az ember! Hogy mosolygott közben! Na de a gyöngyök. Hajolgatni már nem tudok, hát előhoztam az ásót. Erre átszól a szomszéd, az a szép szemű Árpi, hogy Marikám, te ne ássál, mert megint beleásol egy bombába, aztán mi lesz velem, ha itt felrobbansz nekem? Rögtön a szívemhez kaptam, el is dobtam az ásót! Bodri felnyekkent - azóta sántít. Én meg csak beszaladtam a szépszobába és sírtam-ríttam, hogy nekem már sosem lesz meg a gyöngysor, amit az én Gézukámtól kaptam. Vagy a Menyustól? Ja, lehet, hogy tőle. Kérlek szépen, keresd meg a gyöngyöket. Adok egy ásót. Csak arra vigyázz, hogy nehogy valami bombába ássál nekem! Na itt van, nesze! Addig én megkopasztom a tikot és főzök egy jó levest.
       </p>
       <p><i>
-        A kertben összesen <span id="kincs"></span> gyöngy és <span id="akna"></span> bomba van. Ha üres mezőn ásol, az első szám a szomszédos mezőkön lévő gyöngyök, a második a bombák számát mutatja meg. Próbálj meg minél több gyöngyöt megtalálni és életben maradni!
+        A kertben összesen <span id="kincs"></span> gyöngy és <span id="akna"></span> bomba van. Próbálj meg minél több gyöngyöt megtalálni és életben maradni!
       </i></p>
     `,
 		help: "H_Mari néni",
@@ -5385,12 +5385,12 @@ window.rooms = [
       <p>
         A mogorva, füstös szagú Jóska bá odalép hozzád, és mutat egy képet egy felmosórongyról. Miközben élénken magyaráz arról, hogy Bodri volt a mindene öreg napjaira, mennyit hemperegtek együtt a hóban, sárban, díványon, kergették az egereket és éjszakai pillangókat, rájössz, hogy a képen egy pulikutyát látsz. Megesik az öregen a szíved, elkezded kérdezgetni, mikor és hol látta utoljára, és elkezditek követni a nyomokat. Remélhetőleg a szimatod nem hagy cserben téged sem.
       </p>
-      <p>
+      <p><i>
         Írd be a megjelenő matematikai műveletek eredményét!
       </p>
-      <p><i>
+      <p>
         Minél gyorsabban válaszolsz, illetve minél több az Eszed és az Ügyességed, annál jobban értelmezed a nyomokat és annál közelebb kerülsz Bodri kutya megtalálásához. De csak annyi időd van megtalálni, amennyi az Erődből telik, mivel közben szaladtok is a kutya nyomában.
-      </i></p>
+      </p></i>
     `,
 		help: "H_Jóska bá",
 		buttons: [
@@ -5411,7 +5411,7 @@ window.rooms = [
 		goalpic: "NAV.png",
 		desc: `
       <p>
-        Lóri papa egy fontoskodó, de udvarias, magas, szikár, horgas orrú tata. Elvisz az otthonába, felrakja a kávét főni, aztán elmondja, hogy eléggé meggyűlt a baja az adóbevallással, mert nem tudja, mit kezdjen azzal a jövedelemmel, amit saját festményei eladása után készpénzben odaadott több tucat fiatal nőnek, akiknek még egy rendes ruhájuk sem volt, úgy álltak fagyoskodva minden éjjel a sarkokon meg a tereken, de nem arra fordították az összeget legtöbben, hogy meleg ruhát vásároljanak maguknak, hanem  gyógynövényes cigit meg megfázás elleni orrport vettek belőle maguknak, de közben kiderült, hogy más is adott nekik éjjel pénzt, aminek 50%-át visszaadták cserébe Lóri papának, aki a felét különféle jótékony intézményeknek és szektáknak adta, a másik felét szerencsejátékon vesztette el vagy éppen duplázta meg, majd abból... máűr a fene se tudja követni, de nemcsak az SZJA a kérdéses, hanem hogy akkor most ki hogyan mikor miből fizeti meg azt a rohadt ÁFA-t és ebből mennyi a TB meg a rezsielszámolás és a beadási határidő 1 percen belül lejár!
+        Lóri papa egy fontoskodó, de udvarias, magas, szikár, horgas orrú tata. Elvisz az otthonába, felrakja a kávét főni, aztán elmondja, hogy eléggé meggyűlt a baja az adóbevallással, mert nem tudja, mit kezdjen azzal a jövedelemmel, amit saját festményei eladása után készpénzben odaadott több tucat fiatal nőnek, akiknek még egy rendes ruhájuk sem volt, úgy álltak fagyoskodva minden éjjel a sarkokon meg a tereken, de nem arra fordították az összeget legtöbben, hogy meleg ruhát vásároljanak maguknak, hanem  gyógynövényes cigit meg megfázás elleni orrport vettek belőle maguknak, de közben kiderült, hogy más is adott nekik éjjel pénzt, aminek 50%-át visszaadták cserébe Lóri papának, aki a felét különféle jótékony intézményeknek és szektáknak adta, a másik felét szerencsejátékon vesztette el vagy éppen duplázta meg, majd abból... már a fene se tudja követni, de nemcsak az SZJA a kérdéses, hanem hogy akkor most ki hogyan mikor miből fizeti meg azt a rohadt ÁFA-t, amit valahogy vissza is kellene igényelni, és mennyi a TB meg a rezsielszámolás és a beadási határidő 1 percen belül lejár!
       </p>
       <p>
         Megérted az öreget, ez tényleg nem könnyű. Hozzá is látsz buzgón.
@@ -5472,10 +5472,10 @@ window.rooms = [
 		hp: 70,
 		desc: `
       <p>
-        A tépett vörös hajú, szeplős, zöld szemű Brünhilda szívfacsaró zokogás közepette meséli el, hogy van egy fiúja, aki kidobófiú egy kocsmában, és a sok munkahelyi stresszt mindig rajta vezeti le otthon. Hol a kirángatja a ruháit a szekrényből, leteperi őket és kihajítja az ajtón, hol az anyjától kapott vázát kezdi hörögve fojtogatni, ma reggel pedig, amikor hazajött az esti műszakból, nem engedte meg neki, hogy megigya a kakaóját, hanem leverte az asztalról és közölte, hogy "Eleget ittál! Fizess és húzz el innen!" Ő ezt már nem bírja tovább.
+        A tépett vörös hajú, szeplős, zöld szemű Brünhilda szívfacsaró zokogás közepette meséli el, hogy van egy fiúja, aki kidobófiú egy kocsmában, és a sok munkahelyi stresszt mindig rajta vezeti le otthon. Hol kirángatja a ruháit a szekrényből, leteperi őket és kihajítja az ajtón, hol az anyjától kapott vázát kezdi hörögve fojtogatni, ma reggel pedig, amikor hazajött az esti műszakból, nem engedte meg neki, hogy megigya a kakaóját, hanem leverte az asztalról és közölte, hogy "Eleget ittál! Fizess és húzz el innen!" Ő ezt már nem bírja tovább.
       </p>
       <p>
-        Ez a szívedbe markol! Pontosan tudod, milyen az, amikor már egy kakaót sem lehet nyugodtan meginni. Az végképp betesz az embernek! Megkéred Brünhildát, hogy azonnal vezessen a lakására. Amikor megérkeztek, ott horkol hangosan az ágyon. Megfogod és kidobod az utcára. Hadd tudja meg a kidobófiú, miylen , amikor akasztják a hóhért. Meglepetten tápászkodik fel, de szakmai rutinjának köszönhetően azonnal harcképes lesz.
+        Ez a szívedbe markol! Pontosan tudod, milyen az, amikor már egy kakaót sem lehet nyugodtan meginni. Az végképp betesz az embernek! Megkéred Brünhildát, hogy azonnal vezessen a lakására. Amikor megérkeztek, ott horkol hangosan az ágyon a fickó. Megfogod és kidobod az utcára. Hadd tudja meg a kidobófiú, milyen, amikor akasztják a hóhért. Meglepetten tápászkodik fel, de szakmai rutinjának köszönhetően azonnal harcképes lesz.
       </p>
     `,
 		help: "H_Brünhilda",
@@ -5496,7 +5496,7 @@ window.rooms = [
 		desc: "<p>Vidáman sétálgattok Csongikával az utcán.<p>",
 		contBtn: "Mentek tovább hazafelé",
 		failBtn: {
-			txt: "Menjen most már egyedül haza Csongika",
+			txt: "Menjen most már egyedül haza Csongika!",
 			new: 180,
 		},
 		passBtn: {
