@@ -2279,8 +2279,8 @@ window.rooms = [
        - Mi van, Pitypang?!
       </p>
       <p>
-       - Ászok ászát a hős úrnak! Itt van Bedő Billy legyőzője!
-      </p>
+       - Ászok ászát a <span class="cond" data-cond="nő">hősnőnek</span><span class="cond" data-cond="férfi">hős úrnak</span>! Itt van Bedő Billy legyőzője!
+      </span>
       <p>
         Rögtön elcsendesedik a kocsma és minden szem rád szegeződik. Igen, a hírneved sokszor megelőz. Ezt pedig előnyödre tudod fordítani. Mit teszel?
       </p>
@@ -3876,7 +3876,7 @@ window.rooms = [
 		pic: "forest2.jpg",
 		desc: `
       <p>
-        - Valóban könnyen el lehet itt tévedni! De mondok egy tippet: kövesd a sárgfa kikericseket. Azok visszavezetnek a városba - mondja Frici, azzal megpödri a bajszát.
+        - Valóban könnyen el lehet itt tévedni! De mondok egy tippet: kövesd a sárga kikericseket. Azok visszavezetnek a városba - mondja Frici, azzal megpödri a bajszát.
       </p>
       <p>
         Lehet, hogy még akart volna valami mondani, de neked már annyira eleged lett a kóválygásból, hogy azonnal elrohansz a kikericsek irányába. Ahogy követed őket, tényleg egyre ritkább lesz az erdő és végül megpillantod a várost. Észreveszed, hogy nemcsak te, hanem már a nap is jó nagy utat tett meg.
@@ -6245,7 +6245,7 @@ window.rooms = [
 				modi: "Előveszitek a kártyát és a leolvasóhoz érintitek. A led zöldre vált, egy kattanást hallotok és már nyitjátok is az ajtót. Egymásra kacsintotok. Ez könnyű volt! Elindultok megkeresni Botit.",
 			},
 		],
-	},//folyt.
+	},
 	{
 		num: 198,
 		title: "Sikeres kampányakció",
@@ -6434,7 +6434,7 @@ window.rooms = [
         	Az utcán hatalmas tömeg vár titeket, mindenhol örömmámorban úszó és téged éljenző embereket láttok. Megállsz és a tömegbe dobod a pezsgődet. Mindenki ráveti magát, hogy a kétszeres hősük után igyon belőle. Te pedig ünnepélyes, örömteli arccal belekezdesz a beszédedbe.
       	</p>
 				<p>
-					- Győztünk! - hatalmas őrjöngés, tüzijátékokat lőnek fel. Vársz egy kicsit, hogy kiörüljék magukat, aztán intesz, hogy szeretnéd folytatni.- Nem csak mi, a <span class="part"></span>, hanem mi, az egész város, benne ti is, akiknek köszönhetjük győzelmünket! Köszönjük, hogy támogattatok szavazataitokkal minket, most pedig a <span class="part"></span> hozzáfog, hogy megvalósítsa ígéreteit.
+					- Győztünk! - hatalmas őrjöngés, tüzijátékokat lőnek fel, a férfiak tótágast állnak, a nők riszálják a valagukat. Vársz egy kicsit, hogy kiörüljék magukat, aztán intesz, hogy szeretnéd folytatni.- Nem csak mi, a <span class="part"></span>, hanem mi, az egész város, benne ti is, akiknek köszönhetjük győzelmünket! Köszönjük, hogy támogattatok szavazataitokkal minket, most pedig a <span class="part"></span> hozzáfog, hogy megvalósítsa ígéreteit.
 				</p>
 				<ol id="pp"></ol>
 				<p>
@@ -6564,7 +6564,7 @@ window.rooms = [
 		pic: "giants.jpg",
 		desc: `
       <p>
-				A város széli hegyekben él két félelmetes óriás, aki gyakran terrorizálja az ott élőket, mivel durván visszaélnek erőfölényükkel, ha emberhúst szeretnének enni. Ha legyőznétek őket, nagyon hálás lenne az itt élő nép, és a híred még az egész világon is elterjedne. Az egyetlen probléma az, hogy az itt élő egyszerű parasztoknak és favágóknak nincs túl ütőképes fegyverarzenálja: vasvilla, kasza, botok, íjak, fejszék. Amikor viszont megtudták, hogy hadba viszed a népet, csatlakozott még a szomszéd kerületből Bütyök Mityu, a verőlegény, Hosszúfarkú Gyík, a hagyományörző indián harcos és Skywalker Lukács, a 12-szeres bokorugró bajnok. 
+				A város széli hegyekben él két félelmetes óriás, akik gyakran terrorizálják az ott élőket, mivel durván visszaélnek erőfölényükkel, ha emberhúst szeretnének enni. Ha legyőznétek őket, nagyon hálás lenne az itt élő nép, és a híred még az egész világon is elterjedne. Az egyetlen probléma az, hogy az itt élő egyszerű parasztoknak és favágóknak nincs túl ütőképes fegyverarzenálja: vasvilla, kasza, botok, íjak, fejszék, bőrtarisznya, csizma. Amikor viszont megtudták, hogy hadba viszed a népet, csatlakozott még a szomszéd kerületből Mütyök Bityu, a verőlegény, Hosszúfarkú Gyík, a hagyományörző indián harcos és Skywalker Lukács, a 12-szeres bokorugró bajnok. 
       </p>
 			<p>
 				Amint nézegeteg gyülevész seregedet, és azon gondolkodsz, hogy honnan tudnál egy kommandós osztagot vagy legalább komolyabb fegyvereket szerezni, egy vérfagyasztó ordítást hallasz. A hegy felé nézel, ahol mozogni kezdenek a fák, majd kétoldalra kidőlnek és megjelenik két iszonyatos nagy zord óriás alakja.
@@ -6597,7 +6597,7 @@ window.rooms = [
 		type: "dungeon",
 		pic: "corridor.gif",
 		music: "raveaction",
-		desc: "<p>Járkálsz keresztül-kasul a Városháza elegáns folyosóin és szobáin át. MIndenképpen meg kell találni Bitang Botit!<p>",
+		desc: "<p>Járkálsz keresztül-kasul a Városháza elegáns folyosóin és szobáin át. Mindenképpen meg kell találni Bitang Botit!<p>",
 		contBtn: "Tovább keresel",
 		passBtn: {
 			txt: "Megvagy!",
@@ -6719,7 +6719,7 @@ window.rooms = [
         	Nem tudod honnan, de elindul egy ismert sláger, ami valahogyan érzed, hogy Zsolthoz kötődik. Ő mosolyogva, határozott, döngő léptekkel elindul a város felé. A lények lelkesen követik. Végigmentek az utcákon egyenesen a Városházához. Itt az őrök nektek szegezik a fegyvert, de Zsolt csak nevet egy nagyot, és szól, hogy indul a meccs!
       	</p>
 				<p>
-					Ami ezután történik, azt nehéz felfogni és leírni. Zsolt pillanatok alatt hatalmas ütésekkel szétveri az egész őrséget. Hihetetlenül nagy ívben repkednek szét az emberek, ilyet eddig csak a DC univerzumról szóló filmekben láttál! Az összetört, földet ért emberekre a bübük vetik rá magukat és ágaikkal megfojtják őket vagy egyszerűen eltörik a gerincüket. Félelmetes, mire képesek ezek az aranyos, vidám, mesebeli lények. A távolabb álló őrök első döbbenetükből magukhoz térve tüzet nyitnak Zsoltra és a bübükre, de Zsolt kemény izmairól lapos kis konfettikként pattannak le a golyók. A bübük kemény bőre (kérge?) szintén áthatolhatatlannak tűnik. De nem is vagy benne biztos, hogy eltalálják-e őket, mert nagyon gyorsan mozognak, kicsik és könnyen beolvadnak a környezetbe. Zsolt közben ide-oda szökell és osztja iszonyatos ütéseit. Időd sincs felfogni nagyon, hogy mi történik, mire egyszercsak azt veszed észre, hogy nincs több őr a városháza körül. Zsolt huncutul rád kacsint, majd feltépi a hatalmas kaput és félredobja.
+					Ami ezután történik, azt nehéz felfogni és leírni. Zsolt pillanatok alatt hatalmas ütésekkel szétveri az egész őrséget. Hihetetlenül nagy ívben repkednek szét az emberek, ilyet eddig csak a DC univerzumról szóló filmekben láttál! Az összetört, földet ért emberekre a bübük vetik rá magukat és ágaikkal megfojtják őket vagy egyszerűen eltörik a gerincüket. Félelmetes, mire képesek ezek az aranyos, vidám, mesebeli lények, ha bepipulnak. A távolabb álló őrök első döbbenetükből magukhoz térve tüzet nyitnak Zsoltra és a bübükre, de Zsolt kemény izmairól lapos kis konfettikként pattannak le a golyók. A bübük kemény bőre (kérge?) szintén áthatolhatatlannak tűnik. De nem is vagy benne biztos, hogy eltalálják-e őket, mert nagyon gyorsan mozognak, kicsik és könnyen beleolvadnak a környezetbe. Zsolt közben ide-oda szökell és osztja iszonyatos ütéseit. Időd sincs felfogni nagyon, hogy mi történik, mire egyszercsak azt veszed észre, hogy nincs több őr a városháza körül. Zsolt huncutul rád kacsint, majd feltépi a hatalmas kaput és félredobja.
 				</p>
 				<p>
 					- Keressük meg a Bitangot! - adja ki az utasítást Zsolt, majd mosolyogva feléd fordul: - Várj meg itt, mindjárt hozzuk!
@@ -6728,7 +6728,7 @@ window.rooms = [
 					Ezután mind berohannak a nagy épületbe. Félúton elfojtott kiáltások, nagy puffanások hallatszanak, időnként pedig biztonsági őrök zuhannak ki a bezárt ablakokon keresztül nagy csörömpöléssel. Nem kell sokáig várnod, nemsokára megjelenik ismét Zsolt és mögötte egyre több bübü. Zsolt kezében Bitang Botond van, akit labdaként dobál, dekázik vele vagy súlyzó gyanánt a vállára rak és csinál pár guggolást - miközben folyamatosan közeledik feléd. Végül hanyagul eléd dobja a földre a több testi és lelki sebtől vérző, remegő zsarnokot.
 				</p>
 				<p>
-					- Könyörüljetek rajtam! Minden megadok, amit csak kértek! Nem is értem, mi ez az egész... - hebegi Boti. Zsolt megelőz a válasszal:
+					- Könyörüljetek rajtam! Mindent megadok, amit csak kértek! Nem is értem, mi ez az egész... - hebegi Boti. Zsolt megelőz a válasszal:
 				</p>
 				<p>
 					- Nem érted?! Te és a gengszter bandád évek óta élősködik a városon. Romokban az oktatás, az egészségügy és legális, tiszta boxmeccseket sem lehetett tartani! Hogyan lehetne így utánpótlást nevelni, ha minden meccset megbundáztál, hogy a te embereid nyerjenek! Nincs egy meg nem vett bíró ebben a városban! Az illegális meccseken meg csak a drog és a teljesítményfokozó megy, szabályok nélkül! Ki kellett mennem az erdőbe, hogy farönköket dobálva és köveket ütve fejlesszem az ütőerőmet ekkorára! Csak természetes módon, erdei étrenden élve el lehet érni ilyen erőt, ha elhiszed, hogy képes vagy rá! Na de minek, ha nem tudok tisztességes meccseken további bajnoki öveket szerezni? Hát maradtam az erdőben és védelmeztem azt. Hogy ne jöjjön be legalább oda az a szenny és rothadás, ami belőled árad! A Gyehenna bűzhödt lehelete lehet olyan, mint a tiéd! - mondja egyre jobban átszellemülve, majd rád néz elérzékenyült arccal és folytatja: - De akkor jött <span id="fullName"></span>, egy igazi hős, egy tiszta nő! Ő győzött meg arról, hogy ki kell lépnem az erdő nyújtotta komfortzónából, és meg kell tisztítani tőled és toxikus kipárolgásodtól a várost! Vissza kell hozni a tiszta sportot az emberek életébe, aminél nincs jobb jellemfejlesztő! A sport megtanít győzni és veszíteni, a sport mindenre megtanít!
@@ -6738,7 +6738,7 @@ window.rooms = [
 					- Igen, pontosan így gondolom én is, ahogyan Zsolt kiválóan összefoglalta. Plusz még annyit tennék hozzá, hogy a sporton kívül minden más területet is fejleszteni fogok a magam részéről, hogy az emberek végre méltó körülmények között éljenek itt, és szabadon kibontakozhassanak! Te pedig útban vagy! - kiáltasz fel, azzal lerúgod a nyakáról Boti fejét. Zsolt teljesítménye tényleg motiválóan hatott a tiédre is, remek edző lesz belőle! Ő elismerően csettint egyet.
 				</p>
 				<p>
-					Ekkor mindenki hatalmas örömújjongásba tör ki. Most látod, hogy nagy tömeg gyűlt körétek, és most ők is kitörő lelkesedéssel fogadják a fordulatot és titkeket éljeneznek. Az őrjöngő tömeg meghitt gyűrűjében Zsolt feléd fordul és felteszi a kérdést:
+					Ekkor mindenki hatalmas örömújjongásba tör ki. Most látod, hogy nagy tömeg gyűlt körétek, és most ők is kitörő lelkesedéssel fogadják a fordulatot és titeket éljeneznek. Az őrjöngő tömeg meghitt gyűrűjében Zsolt feléd fordul és felteszi a kérdést:
 				</p>
 				<p>
 					- Leszel a feleségem?
@@ -6806,7 +6806,7 @@ window.rooms = [
 		pic: "erdei.jpg",
 		desc: `
       	<p>
-					Leaíratatlan csatának voltáűl tanúja! Miközben Zsolt hatalmas ütésekkel verte szét az őröket, a bübük tökéletesen rejtőzködve támadtak rájuk. Vagy Zsolt körül repkedtek az emebrek, vagy hirtelen más őrök hullottak el láthatóan a semmitől. Időd sem volt felfogni nagyon, hogy mi történik, mire egyszercsak azt veszed észre, hogy nincs több őr a városháza körül. Zsolt rád kacsint, majd feltépi a hatalmas kaput és félredobja.
+					Leíratatlan csatának voltál tanúja! Miközben Zsolt hatalmas ütésekkel verte szét az őröket, a bübük tökéletesen rejtőzködve támadtak rájuk. Vagy Zsolt körül repkedtek az emberek, vagy hirtelen más őrök hullottak el láthatóan a semmitől. Időd sem volt felfogni nagyon, hogy mi történik, mire egyszercsak azt veszed észre, hogy nincs több őr a városháza körül. Zsolt rád kacsint, majd feltépi a hatalmas kaput és félredobja.
 				</p>
 				<p>
 					- Keressük meg a Bitangot! - adja ki az utasítást, majd feléd fordul: - Várj meg itt, mindjárt hozzuk!
@@ -7020,7 +7020,7 @@ window.rooms = [
 				new: 238,
 			},
 		],
-	},
+	},//folyt.
 	{
 		num: 220,
 		title: "A bübük",
