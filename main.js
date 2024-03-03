@@ -283,8 +283,8 @@ function _load() {
 				sBtn.src = "./img/musicOn.png";
 				musicOn = true;
 				soundOn = true;
-				sound.volume = 0;
-				sound2.volume = 0;
+				sound.volume = 1;
+				sound2.volume = 1;
 				document.querySelectorAll(".sounds").forEach((s) => (s.volume = 1));
 			}
 		}
@@ -4165,7 +4165,7 @@ function _load() {
 			uDom.classList.add("darkenFW");
 			if (u.id === featuredU) {
 				document.getElementById("ustat").style.transition = `filter ${1 / gspeed}s`;
-				document.getElementById("ustat").classList.add("darkenFW");
+				document.getElementById("u0stat").classList.add("darkenFW");
 			}
 			timok[u.id] = setTimeout(() => {
 				if (featuredU === u.id) {
