@@ -7020,7 +7020,7 @@ window.rooms = [
 				new: 238,
 			},
 		],
-	},//folyt.
+	},
 	{
 		num: 220,
 		title: "A bübük",
@@ -7088,7 +7088,7 @@ window.rooms = [
 				Amint kifújod a mérges tüskét, Botond torkán akad a szó, hátra esik és elterül. Sikerült! A zsarnok halott!
 			</p>
       <p>
-       A tömegben kitör a pánik. Különösen azok ijednek meg, akik látták a rendőrfőnököt és Botit is elterülni egymás után. Elkezdenbek sikoltozni és menekülni, bár néhány kemény fickó csak kíváncsian és egykedvűen várja a fejleményeket és az esetleges magyarázatot. Oshinokora nézel, de ő is téged néz. Neked kell döntened, mi legyen.
+       A tömegben kitör a pánik. Különösen azok ijednek meg, akik látták a rendőrfőnököt és Botit is elterülni egymás után. Elkezdenek sikoltozni és menekülni, bár néhány kemény fickó csak kíváncsian és egykedvűen várja a fejleményeket és az esetleges magyarázatot. Oshinokora nézel, de ő is téged néz. Neked kell döntened, mi legyen.
       </p>
     `,
 		obj: ["X_Boti"],
@@ -7133,7 +7133,7 @@ window.rooms = [
        Oshinokoval egymásra néztek. Talán már nem is a téren vagytok, hanem egy mellékutcában, de a füst nagyon sűrű it is. Nemsokára Szenyamuki hangját halljátok egy kissé messzebbről.
       </p>
 			<p>
-				- Jöjjön polgármester úr, kivezetem biztonságban!
+				- Jöjjön, polgármester úr, kivezetem biztonságban!
 			</p>
 			<p>
 				- És eddig hol a francban voltál?! - dörren rá egy mély hang. Nem Botié, hanem valaki másé.
@@ -7154,7 +7154,7 @@ window.rooms = [
 				- Mióta fontos neked a szerződés?
 			</p>
 			<p>
-				- Nem akartalak titeket megfosztani az élvezettől... Na jó, most hogy a rendőrfőnök és a polgármester is halott, javaslom, vonuljunk vissza. Biztonságosabb lenne a ma éjszakát a városon kívül töltenetek. Amit tudok, elrendezek, de biztosan hajtóvadászatot rendez a megmaradt banda a gyilkosok elkapására. Holnap meg átveheted a hatalmat, <span class="name"></span>.
+				- Nem akartalak titeket megfosztani az élvezettől... Na jó, most, hogy a rendőrfőnök és a polgármester is halott, javaslom, vonuljunk vissza. Biztonságosabb lenne a ma éjszakát a városon kívül töltenetek. Amit tudok, elrendezek, de biztosan hajtóvadászatot rendez a megmaradt banda a gyilkosok elkapására. Holnap meg átveheted a hatalmat, <span class="name"></span>.
 			</p>
     `,
 		obj: ["X_Boti"],
@@ -7190,9 +7190,9 @@ window.rooms = [
       <p>
         - Sajnálom, nem harcolok a vesztes oldalon! - mondja pökhendi grimasszal Szenyamuki. Oshinoko ordít egyet japánul és nekiugrik. Mindketten eltűnnek a füstben. Gondolkodsz, mi lenne a legjobb. Talán a füst kapóra jön és meg tudod ölni Botit észrevétlenül benne. Elindulsz, hogy megkeresd.
       </p>
-      <p>
-        A következő képernyőn különféle alakok fognak előbukkanni a ködből. Próbálj meg rájönni, ki Boti, és leginkább őt üsd meg, amíg látod. Ha polgárokat ütsz meg, csökken a támogatásod és a lélek pontod. Szenyamuki és a biztonsági őrök téged ütnek meg, ha nem ütöd meg őket előbb. Szenyamuki sokkal nagyobbat üt. A két testvér egymást is támadja, így próbáld meg Oshinokot életben tartani. A harcnak akkor van vége, ha valamelyik kulcsfigura meghal.
-      </p>
+      <p><i>
+        A következő képernyőn különféle alakok fognak előbukkanni a ködből. Próbálj meg rájönni, ki Boti, és leginkább őt üsd meg, amíg látod. Ha polgárokat ütsz meg, csökken a támogatásod és a lélek pontod. Szenyamuki és a biztonsági őrök téged ütnek meg, ha nem ütöd meg őket előbb. Szenyamuki sokkal nagyobbat üt. A két testvér időnként egymást is támadja, így próbáld meg Oshinokot életben tartani. A harcnak akkor van vége, ha valamelyik kulcsfigura meghal.
+				</i></p>
     `,
 		buttons: [
 			{
@@ -7240,7 +7240,7 @@ window.rooms = [
 			},
 		],
 		pass: 232,
-		modi: "A nyomokat követve sikerül elkapnotok Botit. Mindketten ki vagytok dögölve, de melletted ott állnak az embereid, Boti viszont egy szál egyedül maradt. Lihegve könyörögni kezd:</p><p>- Jól van, te nyertél! Szólok, hogy adják át neked a városházát! Aztán eltűnök innen örökre...</p><p>Eléggé megtörtnek látszik ahhoz, hogy trükközzön, és mivel ki is vagy fulladva te is, úgy döntesz, megkíméled az életét. Boti megköszöni, majd közelebb hajol hozzád és suttogva mondja, hogy csak te halld:",
+		modi: "A nyomokat követve sikerül elkapnotok Botit. Mindketten ki vagytok dögölve, de melletted ott állnak az embereid, Boti viszont egy szál egyedül maradt. Lihegve könyörögni kezd:</p><p>- Jól van, te nyertél! Szólok, hogy adják át neked a Városházát! Aztán eltűnök innen örökre...</p><p>Eléggé megtörtnek látszik ahhoz, hogy trükközzön, és mivel ki is vagy fulladva, te is, úgy döntesz, megkíméled az életét. Boti megköszöni, majd közelebb hajol hozzád és suttogva mondja, hogy csak te halld:",
 		fail: 228,
 	},
 	{
@@ -7445,7 +7445,7 @@ window.rooms = [
 				- Az erdei vadak! - monjda <span class="ally"></span>, majd rögtön egy kiáltást hallasz és - alig hiszed el, hogy jól látod! - az egyik fa az ágával hatalmasat üt az egyik támadóra, aki ettől nagyot repül. Majd megvillan mögötte egy gonosz szempár, egy félelmetres morgást hallasz és kegyetlen bírkózásba kezd az ember valami bestiális lénnyel.
 			</p>
 			<p>
-				- Én segítem őket, te meg ezekkel segíts! - mondja <span class="ally"></span> és ad két gránátot meg egy zacskót furcsa porral.
+				- Én segítem őket, te meg ezekkel segíts! - mondja <span class="ally"></span> és ad két gránátot meg egy furcsa porral teli zacskót.
 			</p>
       <i>
       <p>
@@ -7485,7 +7485,7 @@ window.rooms = [
 				- Jól van, te győztél! Elismerem. Átadom a városháza belépési jogosultságait. Csak kíméld meg az életem! Eltűnök a megmaradt embereimmel együtt. Keresünk egy másik távoli várost. Nem láttok minket többé. Tiéd a győzelem!
 			</p>
 			<p>
-				Úgy érzed, ez is elég. Nem vagy te egy véreskezű gyilkos, elég neked, ha legyőzöd a gonoszt és helyreállítod a rendet. Meg egyébként is már elfáradtál. Meg talán tényleg szükség lesz technikai okokból a jogosultságok átvételére még Botira. Így beleegyezel, hogy nem ölöd meg. Boti felsóhajt és kicsit összeszedi magát. Közben többen is bejöttek a szobába. Ezért odahajol hozzád, és halkan suttogja, hogy csak te halld:
+				Úgy érzed, ez is elég. Nem vagy te egy véreskezű gyilkos, elég neked, ha legyőzöd a gonoszt és helyreállítod a rendet. Meg egyébként is már elfáradtál. Meg talán tényleg szükség lesz technikai okokból a jogosultságok átvételéhez még Botira. Így beleegyezel, hogy nem ölöd meg. Boti felsóhajt és kicsit összeszedi magát. Közben többen is bejöttek a szobába. Ezért odahajol hozzád, és halkan suttogja, hogy csak te halld:
 			</p>
 		`,
 		buttons: [
@@ -7595,7 +7595,7 @@ window.rooms = [
 				cond: ">_sup_1000"
 			},
 		],
-	},
+	},//folyt.
 	{
 		num: 238,
 		title: "A végső felkelés",
