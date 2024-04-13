@@ -7595,7 +7595,7 @@ window.rooms = [
 				cond: ">_sup_1000"
 			},
 		],
-	},//folyt.
+	},
 	{
 		num: 238,
 		title: "A végső felkelés",
@@ -7623,7 +7623,7 @@ window.rooms = [
     `,
 		buttons: [
 			{
-				txt: "Harcra fel, győzni kell",
+				txt: "Harcra fel, győzni kell!",
 			},
 		],
 		pass: 202,
@@ -7663,7 +7663,7 @@ window.rooms = [
 		prodtxt: "Beletöltitek a kincseket a kohóba, amiből alul a következő tárgy jön ki:",
 		desc: `
       <p>
-				Már egy jó ideje mész és berregsz, amikor végre megpillantasz egy nagy kosarat, amit egy vastag kötél tart. Felnézel és tényleg a szabad ég felé vezet. Beszállsz, megrángatod a kötelet és felordítasz, hogy hőzzanak fel.
+				Már egy jó ideje mész és berregsz, amikor végre megpillantasz egy nagy kosarat, amit egy vastag kötél tart. Felnézel és tényleg a szabad ég felé vezet. Beszállsz, megrángatod a kötelet és felordítasz, hogy húzzanak fel.
 			</p>
 			<p>
 				A kosár megmozdul és te elindulsz felfelé. Amikor végre megérkezel a felszínre, látod, hogy bübük lelkes, gurgulázó tömege vesz körül. Zsolt segít kiszállni, elnézést kér, hogy lelökött, nem így akarta, csak legyinteni akart egyet, de örül, hogy épségben, kincsekkel megrakodva visszatértél. Ezután begyűjtik a kincseket, és pár bübü már hoz is egy kerekeken guruló mobilkohót. Zsolt elkezd magyarázni:
@@ -7690,7 +7690,7 @@ window.rooms = [
 		pic: "erdei.jpg",
 		desc: `
       <p>
-       Eleged lesz az egész ásásból, ott hagyod az egész kincset. Megpróbálsz visszajutni oda, ahonnan jöttél, de lehetetlen visszamászni. Elkezdesz kiabálni. Nem kell sokáig várni, Zsolt mintha megérezte volna, hogy baj van, megjelenik felül, aztán egy szökelléssel döngve leugrik melléd.
+       Eleged lesz az egész ásásból, otthagyod az egész kincset. Megpróbálsz visszajutni oda, ahonnan jöttél, de lehetetlen visszamászni. Elkezdesz kiabálni. Nem kell sokáig várni, Zsolt mintha megérezte volna, hogy baj van, megjelenik felül, aztán egy szökelléssel döngve leugrik melléd.
       </p>
       <p>
        - Itt vagyok, ne aggódj! Látom, nem sikerült teljesítened a küldetést, de nem baj. Szerencsére én vagyok itt a főnök. Gyere! - mondja kedves hangon, aztán az egyik karjával átkarol, felemel, a másikkal pedig  elkezd felfelé mászni veled. Teljesen lenyűgöznek a képességei! A szükségesnél talán szorosabban kapaszkodsz belé...
@@ -7734,7 +7734,7 @@ window.rooms = [
 		pic: "erdei.jpg",
 		desc: `
       <p>
-       Eleged lesz az egész ásásból, ott hagyod az egész kincset. Megpróbálsz visszajutni oda, ahonnan jöttél, de lehetetlen visszamászni. Elkezdesz kiabálni. Jó sokára hallanak meg. Zsolt feje jelenik meg felül és ledob neked egy kötélhágcsót. Felmászol rajta.
+       Eleged lesz az egész ásásból, otthagyod az egész kincset. Megpróbálsz visszajutni oda, ahonnan jöttél, de lehetetlen visszamászni. Elkezdesz kiabálni. Jó sokára hallanak meg. Zsolt feje jelenik meg felül és ledob neked egy kötélhágcsót. Felmászol rajta.
       </p>
       <p>
        - Sajnos nem álltad ki a próbát. Csalódtunk benned, <span class="name"></span>. Egy igazi hős nem ilyen! Kérlek, hagyd el a területünket! - mondja Zsolt határozottan. Látod, hogy ő is és az összes bübü ellened fordult. Jobbnak látod távozni...
@@ -7939,7 +7939,7 @@ window.rooms = [
 					- Át kell vennünk a hatalmat! Irány a Fő-tér! - mondod. <span class="ally"></span> némán követ.
 				</p>
 				<p>
-         A városba nem gond bejutni, de kifelé tényleg őrzik még a fő helyeken a kivezető utakat. Az arcotokat igyekeztek eltakarni, amíg be nem értek a Fő-térre. Most is jó pár ember gyülekezik a téren és élénken beszélgetnek arról, mi történhetett Botonddal. <i>Mit teszel?</i>
+         A városba nem gond bejutni, de kifelé tényleg őrzik még a fő helyeken az utakat. Az arcotokat igyekeztek eltakarni, amíg be nem értek a Fő-térre. Most is jó pár ember gyülekezik a téren és élénken beszélgetnek arról, mi történhetett Botonddal. <i>Mit teszel?</i>
         </p>
       `,
 		buttons: [
@@ -8076,7 +8076,7 @@ window.rooms = [
 				- Ezen majd filózunk később! Most az a lényeg, hogy amíg eltakar minket a füst, keressük meg Botit és nyírjuk ki!
 			</p>
 			<p>
-				Oshinoko bólint és elindultok szorosan egymás mellett. Pár civil ember félrelökése után hirtelen a tétován kóválygó, menekülni próbáló Botiba botlotok. Oshinokoval már nem kell egymásnak semmit mondanotok. Teljes összhangban mutattok be egymás után halálos fogásokat a zsarnokon. Pár pillanat múlva már élettelenül fekszik előttetek. Oshinoko egy bólintással konstatálja a helyzetet és feléd fordul:
+				Oshinoko bólint és elindultok szorosan egymás mellett. Pár civil ember félrelökése után hirtelen a tétován kóválygó, menekülni próbáló Botiba botlotok. Oshinokoval már nem kell egymásnak semmit mondanotok. Teljes összhangban mutattok be egymás után halálos fogásokat a zsarnokon. Pár pillanat múlva már élettelenül fekszik előttetek az ex-polgármester. Oshinoko egy bólintással konstatálja a helyzetet és feléd fordul:
 			</p>
 			<p>
 				- Ez is megvan. Mi legyen most, <span class="name"></span> san?
@@ -8244,7 +8244,7 @@ window.rooms = [
 				- Nem tudom, mi történt. Elkezdtem vetkőztetni Botit, mire annyira felizgult, hogy egyszer csak összeesett. Lehet, hogy infarktust kapott! - mondja Bogi a megbeszéltek szerint.
 			</p>
 			<p>
-				A sofőr berúgja az ajtót és Boti felé hajol. Nem vesz észre téged. Te jó nagyot vágsz a tarkójára az evezővel. Összeesik, de aztán lassan megfordul. Kemény fából faragták. A pisztolyáért nyúl, de te rá vágsz a kezére az evezővel. Felnyög, de még mindig nem adja fel. Megpróbálja kirúgni a lábad. Szerencsére időben elugrasz, de már fogytán van a türelmed. Még egy nagyot vágsz a lapáttal a fejére, majd ráborítasz három csónakot a fickóra. Ennyi már csak elég lesz.
+				A sofőr berúgja az ajtót és Boti felé hajol. Nem vesz észre téged. Te jó nagyot vágsz a tarkójára az evezővel. Összeesik, de aztán lassan megfordul. Kemény fából faragták. A pisztolyáért nyúl, de te rá vágsz a kezére az evezővel. Felnyög, de még mindig nem adja fel. Megpróbálja kirúgni a lábad. Szerencsére időben elugrasz, de már fogytán van a türelmed. Még egy nagyot vágsz a lapáttal a fejére, majd ráborítasz három csónakot a fickóra. Ennyi már csak elég lesz. A sofőr végre nem mozdul már többet.
 			</p>
 			<p>
 				- Biztosan balesetnek fogják gondolni - nézed tűnödve a műved. - Ez itt idejött, hogy felakassza magát egy hajókötéllel, a másik viszont le akarta szedni, ezért ráállt a csónakokra, de amikor kiakasztotta a kötelet, megcsúszott, beverte elöl és hátul is a fejét egy-egy evezőbe, aztán véletlenül három csónakot is magára húzott, amikor próbálta állásba kapaszkodni magát. Tiszta sor!
@@ -8468,13 +8468,13 @@ window.rooms = [
 				A nagy bulinak a nap lemenetele kezd lassan véget vetni. Nagyon jól érezted magad, a szívedbve zártad örökre Erdei Zsoltot és a bübüket. Amikor leültök Zsolttal megpihenni, megkérdezi, hogy tehet-e érted még valamit. Elgondolkodsz. Majd lassan így szólsz:
 			</p>
 			<p>
-				- Ha tényleg szövetségesek vagyunk, kérnék valamit. Nem magamnak, hanem az egész városnak és tulajdonképpen nektek is. Régóta élősködik már Bitang Botond polgármester a népen. Én már egyszer megmentettem a várost Battle Beetle zsarnokságától, és most addig nem tudok megnyugodni, amíg nem vetek véget az újabb zsarnokságnak is. Úgy érzem erre születtem. Tudnál, tudnátok segíteni abban, hogy elúzzük a városból a zsarnokot és gengsztereit? Tudom, hogy te is miattuk jöttél az erdőbe, de gondolj azokra az emberekre, akik ott maradtak és tovább szenvednek tőlük.
+				- Ha tényleg szövetségesek vagyunk, kérnék valamit. Nem magamnak, hanem az egész városnak és tulajdonképpen nektek is. Régóta élősködik már Bitang Botond polgármester a népen. Én már egyszer megmentettem a várost Battle Beetle zsarnokságától, és most addig nem tudok megnyugodni, amíg nem vetek véget az újabb zsarnokságnak is. Úgy érzem erre születtem. Tudnál, tudnátok segíteni abban, hogy elűzzük a városból a zsarnokot és gengsztereit? Tudom, hogy te is miattuk jöttél az erdőbe, de gondolj azokra az emberekre, akik ott maradtak és tovább szenvednek tőlük.
 			</p>
 			<p>
-				Zsolt hosszú percekig gondolkodi. Vagy az egyik erjedt ital hatása alatt van, vagy tényleg sokmindent fontolgat válasza előtt. Végül ő is lassan, tagoltan, de határozottan szólal meg:
+				Zsolt hosszú percekig gondolkodik. Vagy az egyik erjedt ital hatása alatt van, vagy tényleg sokmindent fontolgat válasza előtt. Végül ő is lassan, tagoltan, de határozottan szólal meg:
 			</p>
 			<p>
-				- Rendben! Segítünk neked és a városnak. Igazad van. Nem a menekülés a mgoldás, hanem a győzelem. És hidd el, ezek a bübük félelmetes harcosok tudnak lenni, ha akarnak. És azért én is elég kemény vagyok. Megbeszélem velük! Gyere vissza holnap!
+				- Rendben! Segítünk neked és a városnak. Igazad van. Nem a menekülés a megoldás, hanem a győzelem. És hidd el, ezek a bübük félelmetes harcosok tudnak lenni, ha akarnak. És azért én is elég kemény vagyok. Megbeszélem velük! Gyere vissza holnap!
 			</p>
 			<p>
 				Elbúszúzol tőlük. A Bübüszimattal nem gond kijutni az erdőből. Mire beérsz a városba, már késő éjjel van. Úgy döntesz, hazamész.
@@ -8529,7 +8529,7 @@ window.rooms = [
 		pic: "shot.jpg",
 		desc: `
       <p>
-				Sajnos hiába menekülsz, üldözőid gyorsak és jobban is látnak. Folyamatosan lövöldöznek rád, és az egyik végül eltalál. Iszonyű fájdalom hasít a lapockádba. A másik lövés már a tarkódat éri, így többé nem érzel semmit...
+				Sajnos hiába menekülsz, üldözőid gyorsak és jobban is látnak. Folyamatosan lövöldöznek rád, és az egyik végül eltalál. Iszonyú fájdalom hasít a lapockádba. A másik lövés már a tarkódat éri, így többé nem érzel semmit...
 			</p>
     `,
 	},
@@ -8541,10 +8541,10 @@ window.rooms = [
 		pic: "túsz.JPG",
 		desc: `
       <p>
-       - Rendben! - mondja kárörvendőn Boti és rád szegezi a fegyvert. Fontolgatod, hogy próbálkozz most valami trükkel, vagy egyszerűen hozd meg ezt az áldozatot Bogiért, de Bogi rögtön dönt. Bizonyára meghatotta önfeláldozó gesztusod és hirtelen Boti karjába harap. Boti felordít és reflexből ellőki a nőt magától.
+       - Rendben! - mondja kárörvendőn Boti és rád szegezi a fegyvert. Fontolgatod, hogy próbálkozz-e most valami trükkel, vagy egyszerűen hozd meg ezt az áldozatot Bogiért, de Bogi rögtön dönt. Bizonyára meghatotta önfeláldozó gesztusod és hirtelen Boti karjába harap. Boti felordít és reflexből ellőki a nőt magától.
       </p>
 			<p>
-				- Te szuka! Halj meg te is! - ordítja Boti és Bogira emeli a fegyvert. Ez a te harci reflexeidet is aktivizálja. Azonnal oda ugrasz és Botira veted magad. Elég béna harcos a fickó, különösebb erőfeszítés nélkül megszerzed a fegyverét. Úgy döntesz, nem húzod tovább az időt és keresztüllövöd sötét szívét. Itt ért véget a zsarnok élete.
+				- Te szuka! Halj meg te is! - ordítja Boti és Bogira emeli a fegyvert. Ez a te harci reflexeidet is aktivizálja. Azonnal oda ugrasz és Botira veted magad. Elég béna harcos a fickó, különösebb erőfeszítés nélkül megszerzed a fegyverét. Úgy döntesz, nem húzod tovább az időt és keresztüllövöd sötét szívét. Itt ért véget a zsarnok élete...
       </p>
 			<p>
 				Bogi ijedten zihál mögötted, majd amikor felfogta, hogy vége van Botinak, egy hatalmas, sipító "Köszönöm!" tör fel belőle és a nyakadba ugrik. Te is megöleled és nyugtatgatod. Abból látod, hogy valamelyest visszanyerte már önmagát, hogy egyszer csak megszólal:
@@ -8685,7 +8685,7 @@ window.rooms = [
 		pic: "battlepic.jpg",
 		desc: `
       <p>
-				A díszletek mögül előlép több ismert és ismeretlen alak, statiszta, dublőr, és gratulálnak neked a győzelemhez. Ennek örömére javaslod, hogy vidám barátságos meccsekkel szórakoztassátok egymást. Beleegyeznem, sőt, adnak is neked néhány hasznos kelléket.
+				A díszletek mögül előlép több ismert és ismeretlen alak, statiszta, dublőr, és gratulálnak neked a győzelemhez. Ennek örömére javaslod, hogy vidám barátságos meccsekkel szórakoztassátok egymást. Beleegyeznek, sőt, adnak is neked néhány hasznos kelléket.
 			</p>
 			<p><i>
 				Válaszd ki, hogy melyik szereplőből mennyit akarsz egymásra ereszteni a két oldalon. Legalább 1 és legfeljebb összesen 12 szereplő lehet mindkét oldalon. Jó szórakozást!
