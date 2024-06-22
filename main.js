@@ -273,7 +273,7 @@ function _load() {
 		} else {
 			if (soundOn) {
 				sBtn.src = "./img/soundOff.png";
-				soundOn = false;
+				musicOn = false;
 				soundOn = false;
 				sound.volume = 0;
 				sound2.volume = 0;
