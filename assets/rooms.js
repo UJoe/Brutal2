@@ -7536,6 +7536,10 @@ window.rooms = [
 			},
 			{
 				txt: "Jöjjön a Bazibrutál 3. része!",
+				new: 302,
+			},
+			{
+				txt: "Héj, én azért vezetném a várost is!",
 				new: 301,
 			},
 			{
@@ -7587,6 +7591,10 @@ window.rooms = [
 			},
 			{
 				txt: "Jöjjön a Bazibrutál 3. része!",
+				new: 302,
+			},
+			{
+				txt: "Héj, én azért vezetném a várost is!",
 				new: 301,
 			},
 			{
