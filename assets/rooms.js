@@ -1509,7 +1509,7 @@ window.rooms = [
 		num: 46,
 		title: "Este otthon",
 		type: "normal",
-		music: "calmusic",
+		music: "calminglight",
 		pic: "home.jpg",
 		desc: `
       <p>
