@@ -7509,7 +7509,7 @@ window.rooms = [
        Az esküvőt az erdei tisztáson tartjátok meg, a bübük és számos ember kíséretében. Sőt, még pár mozgó fa is rád kacsint. Hogy mik élnek itt az erdőben! De mivel te lettél a város elöljárója, a Városházát is elfoglaljátok. Ott is együtt vagytok. Megtervezitek a sportéletet, csak olyan beruházásokat hagysz jóvá, ami nem árt az erdőnek, de használ az embereknek. Ünnepelt pár vagytok, az egész város szeret titeket. A hősnő és a legyőzhetetlen erdei boxoló!
       </p>
 			<p>
-				Így élitek életeteket - közel fél éven át. Akkor viszont történik valami...
+				Így élitek életeteket - közel egy éven át. Akkor viszont történik valami...
 			</p>
     `,
 		change: [
@@ -7564,7 +7564,7 @@ window.rooms = [
 				Összeházasodtál Bogival is, akit innentől fogva <span class="name"></span>né Wakanának hívnak. A sok közös küzdelem örökre összekovácsolt titeket. Már alig várjátok, hogy gyereketek is szülessen, akiből majd szintén egy igazi hőst faragtok. Vagy akár jöhet egy egész hőscsapat is...
 			</p>
 			<p>
-				Így éled boldog életed - közel fél éven át. Akkor viszont történik valami...
+				Így éled boldog életed - közel egy éven át. Akkor viszont történik valami...
 			</p>
     `,
 		change: [
