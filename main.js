@@ -718,7 +718,7 @@ function _load() {
 			}
 			changeVal(id, crease);
 
-			let tv = mv > 0.25 ? 0.25 : mv > 0 ? 0.5 : 0;
+			let tv = mv > 0.25 ? 0.25 : mv > 0 ? 0.05 : 0;
 			music.volume = tv;
 			message(nameSkill(id) + " próba: <span id='result'>" + result + "</span>");
 			document.getElementById("result").style.color = result === "siker!" ? "green" : "red";
