@@ -6,6 +6,7 @@ function _load() {
 	sound.volume = 1;
 	sound2.volume = 1;
 	music.loop = true;
+	window.mv = 1;
 	let main = document.getElementById("main");
 	main.classList.remove("brighten");
 	let modal = document.getElementById("modal");
@@ -274,6 +275,7 @@ function _load() {
 			if (soundOn) {
 				sBtn.src = "./img/soundOff.png";
 				sBtn.title = "Hangerő: 0%";
+				mv = 0;
 				musicOn = false;
 				soundOn = false;
 				sound.volume = 0;
@@ -283,8 +285,10 @@ function _load() {
 				music.play();
 				sBtn.src = "./img/musicOn.png";
 				sBtn.title = "Hangerő: 100%";
+				mv = 1;
 				musicOn = true;
 				soundOn = true;
+				music.volume = 1;
 				sound.volume = 1;
 				sound2.volume = 1;
 				document.querySelectorAll(".sounds").forEach((s) => (s.volume = 1));
@@ -294,8 +298,8 @@ function _load() {
 
 	function changeVolume(e) {
 		let ch = 0.05 * Math.sign(e.wheelDelta);
-		let mv = musicOn ? music.volume + ch : soundOn ? sound.volume + ch : 0;
-		mv = mv < 0.1 ? 0.1 : mv > 1 ? 1 : mv;
+		mv = musicOn ? music.volume + ch : soundOn ? sound.volume + ch : 0;
+		mv = mv < 0.05 ? 0.05 : mv > 1 ? 1 : mv;
 		if (musicOn) {
 			music.volume = mv;
 		}
@@ -345,10 +349,12 @@ function _load() {
 					changeVal("ero", -1);
 				}, 20000);
 			}
-			if (musicOn) music.volume = 1;
+			if (musicOn) {
+				music.volume = mv;
+			}
 			if (soundOn) {
-				sound.volume = 1;
-				sound2.volume = 1;
+				sound.volume = mv;
+				sound2.volume = mv;
 			}
 			music.loop = true;
 			newRoom();
@@ -379,7 +385,10 @@ function _load() {
 				let musicEnd = music.src.substr(-14);
 				if (musicEnd !== "deathmusic.mp3") {
 					music.src = "./audio/deathmusic.mp3";
-					music.volume = 0.8;
+					if (mv > 0.25) {
+						music.volume -= 0.2;
+						mv -= 0.2;
+					}
 					if (musicOn) music.play();
 				}
 				footer.innerHTML = "";
@@ -606,7 +615,7 @@ function _load() {
 
 		//header
 		let musIcon = musicOn ? "./img/musicOn.png" : soundOn ? "./img/soundOn.png" : "./img/soundOff.png";
-		let mv = musicOn ? music.volume : soundOn ? sound.volume : 0;
+		/* mv = musicOn ? music.volume : soundOn ? sound.volume : 0; */
 		header.innerHTML = `
 		<div id="topMenu">
         <img class="thumb" src="./img/chars/${char.pic}.jpg">
@@ -709,7 +718,8 @@ function _load() {
 			}
 			changeVal(id, crease);
 
-			music.volume = 0.25;
+			let tv = mv > 0.25 ? 0.25 : mv > 0 ? 0.5 : 0;
+			music.volume = tv;
 			message(nameSkill(id) + " próba: <span id='result'>" + result + "</span>");
 			document.getElementById("result").style.color = result === "siker!" ? "green" : "red";
 			setTimeout(() => {
@@ -984,8 +994,8 @@ function _load() {
 			}
 
 			char.room = room[outcome];
-			let vol = outcome === "pass" ? 0.75 : outcome === "fail" ? 0.25 : 0.5;
-			music.volume = vol;
+			let vol = outcome === "pass" ? 0.25 : outcome === "fail" ? 0.75 : 0.5;
+			music.volume = mv > 0.75 ? mv - vol : mv > 0.5 ? mv - (vol - 0.25) : 0.1;
 			message(basemes + "<span id='result'>" + result + "</span>");
 			document.getElementById("result").style.color =
 				outcome === "pass" ? "green" : outcome === "fail" ? "red" : "blue";
@@ -1525,7 +1535,7 @@ function _load() {
 				curmusic = radio;
 				if (musicOn) music.play();
 			}
-			music.volume = music.src.includes("think") ? 0.3 : 1;
+			music.volume = (music.src.includes("think") && mv > 0.3) ? 0.3 : mv;
 
 			let pp = room.pic.split(",");
 			if (pp.length > 1) {
@@ -1939,7 +1949,7 @@ function _load() {
 
 	//aknakereső
 	function mineAct() {
-		music.volume = 0.6;
+		music.volume = mv > 0.6 ? 0.6 : mv;
 		let s = room.size;
 		var field = [];
 		for (let x = 0; x < s; x++) {
@@ -2137,7 +2147,7 @@ function _load() {
 
 	//underground dig
 	function digAct() {
-		music.volume = 0.6;
+		music.volume = mv > 0.6 ? 0.6 : mv;
 		let sz = room.size;
 		let ctr = Math.floor(sz / 2);
 		let fields = [];
@@ -2741,7 +2751,7 @@ function _load() {
 
 	//fight
 	function fightAct() {
-		music.volume = 0.7;
+		music.volume = mv > 0.7 ? 0.7 : mv;
 		let changeMax = 0;
 		let gyilok = false;
 		let gyilokUsed = -1;
@@ -2849,7 +2859,7 @@ function _load() {
 				end = true;
 				clearTimeout(timo1);
 				clearInterval(timo2);
-				music.volume = 0.2;
+				music.volume = mv > 0.2 ? 0.2 : mv;
 				let soundEnd = sound2.src.substr(-7);
 				if (soundEnd !== "die.mp3") {
 					sound2.src = "./audio/die.mp3";
@@ -3195,7 +3205,7 @@ function _load() {
 	function finalwarAct() {
 		modi = [];
 		let command = {};
-		music.volume = 0.4;
+		music.volume = mv > 0.4 ? 0.4 : mv;
 		let featuredU = -1;
 		timok.length = 0;
 		ffields.length = 0;
@@ -3459,7 +3469,7 @@ function _load() {
 				`;
 			}
 			document.getElementById("sprites").innerHTML = spriteStr;
-			document.querySelectorAll(".sounds").forEach((s) => (s.volume = soundOn ? 1 : 0));
+			document.querySelectorAll(".sounds").forEach((s) => (s.volume = soundOn ? mv : 0));
 
 			for (let u of units) {
 				document.getElementById("unit-" + u.id).style.left = unitPosX(u.x);
@@ -3771,7 +3781,7 @@ function _load() {
 						<audio id="voice-${ur.id}" src = "./audio/${ur.sound}.mp3";></audio>
 					`
 					);
-					document.getElementById(`voice-${ur.id}`).volume = soundOn ? 1 : 0;
+					document.getElementById(`voice-${ur.id}`).volume = soundOn ? mv : 0;
 					let ud = document.getElementById(`unit-${ur.id}`);
 					ud.style.left = unitPosX(ur.x);
 					ud.style.top = unitPosY(ur.y);
@@ -4135,7 +4145,7 @@ function _load() {
 			}
 			if (friend) {
 				message("Megsemmisült a sereged!");
-				music.volume = 0.2;
+				music.volume = mv > 0.2 ? 0.2 : mv;
 				changeVal("hat", Math.round(Math.random() * -7));
 				changeVal("lel", Math.round(Math.random() * -7));
 				opera = 3;
@@ -4143,7 +4153,7 @@ function _load() {
 				message("Legyőztétek az ellenséget!");
 				changeVal("hat", Math.round(Math.random() * 7));
 				changeVal("lel", Math.round(Math.random() * 7 - Math.random() * 7));
-				music.volume = 1;
+				music.volume = mv;
 				opera = 2;
 			}
 			document.querySelectorAll(".sprite.nme").forEach((s) => (s.style.cursor = "help"));
@@ -5156,7 +5166,7 @@ function _load() {
 						s.classList.remove("darkenFW");
 					});
 					document.getElementById("vezerBtn").innerHTML = operaBtn[opera];
-					music.volume = 0.7;
+					music.volume = mv > 0.7 ? 0.7 : mv;
 					if (fegyObj.length > 0) {
 						weapontimer();
 					}
@@ -5170,7 +5180,7 @@ function _load() {
 					for (let u of units) {
 						decide(u);
 					}
-					document.querySelectorAll(".sounds").forEach((s) => (s.volume = soundOn ? 1 : 0));
+					document.querySelectorAll(".sounds").forEach((s) => (s.volume = soundOn ? mv : 0));
 					break;
 
 				case 1:
@@ -5372,7 +5382,7 @@ function _load() {
 
 	//köd
 	function fogAct() {
-		music.volume = 0.4;
+		music.volume = mv > 0.4 ? 0.4 : mv;
 		let hp = {
 			oshinoko: 100,
 			szenyamuki: 100,
@@ -5575,7 +5585,7 @@ function _load() {
 				let hullanév = persona.charAt(0).toUpperCase() + persona.slice(1);
 				char.objs.push("X_" + hullanév);
 				message(hullanév + " meghalt!");
-				music.volume = (persona === "oshinoko") ? 0.3 : 1;
+				music.volume = (persona === "oshinoko") && mv > 0.3 ? 0.3 : mv;
 				finish = true;
 				char.room = room[persona];
 				clearTimers();
