@@ -273,6 +273,7 @@ function _load() {
 		} else {
 			if (soundOn) {
 				sBtn.src = "./img/soundOff.png";
+				sBtn.title = "Hangerő: 0%";
 				musicOn = false;
 				soundOn = false;
 				sound.volume = 0;
@@ -281,6 +282,7 @@ function _load() {
 			} else {
 				music.play();
 				sBtn.src = "./img/musicOn.png";
+				sBtn.title = "Hangerő: 100%";
 				musicOn = true;
 				soundOn = true;
 				sound.volume = 1;
@@ -288,6 +290,22 @@ function _load() {
 				document.querySelectorAll(".sounds").forEach((s) => (s.volume = 1));
 			}
 		}
+	}
+
+	function changeVolume(e) {
+		let ch = 0.05 * Math.sign(e.wheelDelta);
+		let mv = musicOn ? music.volume + ch : soundOn ? sound.volume + ch : 0;
+		mv = mv < 0.1 ? 0.1 : mv > 1 ? 1 : mv;
+		if (musicOn) {
+			music.volume = mv;
+		}
+		if (soundOn) {
+			sound.volume = mv;
+			sound2.volume = mv;
+			document.querySelectorAll(".sounds").forEach((s) => (s.volume = mv));
+		}
+		mv = musicOn ? music.volume : soundOn ? sound.volume : 0;
+		document.getElementById("soundBtn").title = `Hangerő: ${Math.round(mv * 100)}%`;
 	}
 
 	function message(text) {
@@ -368,7 +386,7 @@ function _load() {
 				main.classList.remove("darken");
 				footer.classList.remove("darken");
 				main.innerHTML = `
-          <p>Nem bírtad tovább ezt a brutális világot...</p>
+		< p > Nem bírtad tovább ezt a brutális világot...</p >
           <p>Azért nem annyira rossz eredmény ${steps} lépésen belül elérni a fenti pontokat.</p>
           <p id="tárgyak"></p>
           <p id="haverok"></p>
@@ -376,7 +394,7 @@ function _load() {
           <p id="segítség"></p>
           <p id="képesség"></p>
           <p>De ha mégsem vagy elégedett az eredménnyel, az F5 tartogat egy időutazó varázslatot számodra.</p>
-        `;
+	`;
 				if (localStorage.getItem("charName")) {
 					main.innerHTML += "<p>Vagy a LOAD gombbal betöltheted a legutóbb elmentett állást.</p>";
 					document.getElementById("loadBtn").disabled = false;
@@ -517,15 +535,15 @@ function _load() {
 
 	function printVals() {
 		document.getElementById("stats").innerHTML = `
-    <div id="stats">
-          Erő: <span class="stat" id="val_ero">${char.ero} </span>
-          Ügyesség: <span class="stat" id="val_ugy">${char.ugy} </span>
-          Ész: <span class="stat" id="val_esz">${char.esz} </span>
-          Lélek: <span class="stat" id="val_lel">${char.lel} </span>
-          Hatalom: <span class="stat" id="val_hat">${char.hat} </span>
-          Támogatás: <span class="stat" id="val_sup">${char.sup} </span>
-    </div>
-    `;
+		<div id="stats">
+			Erő: <span class="stat" id="val_ero">${char.ero} </span>
+	Ügyesség: <span class="stat" id="val_ugy">${char.ugy} </span>
+	Ész: <span class="stat" id="val_esz">${char.esz} </span>
+	Lélek: <span class="stat" id="val_lel">${char.lel} </span>
+	Hatalom: <span class="stat" id="val_hat">${char.hat} </span>
+	Támogatás: <span class="stat" id="val_sup">${char.sup} </span>
+    </div >
+		`;
 		checkDeath();
 	}
 
@@ -588,18 +606,20 @@ function _load() {
 
 		//header
 		let musIcon = musicOn ? "./img/musicOn.png" : soundOn ? "./img/soundOn.png" : "./img/soundOff.png";
+		let mv = musicOn ? music.volume : soundOn ? sound.volume : 0;
 		header.innerHTML = `
-      <div id="topMenu">
+		<div id="topMenu">
         <img class="thumb" src="./img/chars/${char.pic}.jpg">
         <div id="stats"></div>
         <button class="navBtn" id="saveBtn">SAVE</button>
         <button class="navBtn" id="loadBtn">LOAD</button>
-        <img id='soundBtn' class="topBtns" src=${musIcon} alt="music">
+        <img id='soundBtn' class="topBtns" src=${musIcon} alt="hang" title="Hangerő: ${Math.round(mv * 100)}%">
       </div>
       <div id="message" class="disappear"></div> 
     `;
 		printVals();
 		document.getElementById("soundBtn").addEventListener("click", changeMusic);
+		document.getElementById("soundBtn").addEventListener("wheel", changeVolume);
 		document.getElementById("saveBtn").addEventListener("click", saveGame);
 		document.getElementById("loadBtn").addEventListener("click", loadGame);
 		document.getElementById("loadBtn").disabled = localStorage.getItem("charName") == null;
