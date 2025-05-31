@@ -372,6 +372,14 @@ h2 {
 	max-width: 240px;
 }
 
+a {
+	font-size: 1rem;
+	transform: scale(1.4);
+	color: orangered;
+	background-color: darkblue;
+	text-decoration: none;
+}
+
 .btn:hover {
 	font-size: 1rem;
 	transform: scale(1.5);

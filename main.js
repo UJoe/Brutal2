@@ -592,6 +592,10 @@ function _load() {
 	window.newRoom = () => {
 		clearTimers();
 		room = {};
+		if (char.room === 301) {
+			location.assign('https://ujoe.github.io/brutal25/');
+			return;
+		}
 		let num = rooms.findIndex((r) => r.num === char.room);
 		if (num === -1) {
 			message("Ez még nincs kész, ezért lefagyok.");
@@ -1785,9 +1789,15 @@ function _load() {
 						bcc = checkCond(btn.cond);
 					}
 					if (btn.cond == null || bcc) {
-						btnString += `
-              <button id="btn-${i}" class="btn">${btn.txt}</button>
-            `;
+						if (btn.new === 301) {
+							btnString += `
+              <button id="btn-${i}" class="btn"><a href="https://ujoe.github.io/brutal25/">${btn.txt}</a></button>
+            `
+						} else {
+							btnString += `
+								<button id="btn-${i}" class="btn">${btn.txt}</button>
+							`;
+						}
 					}
 				}
 				document.getElementById("btns").innerHTML = btnString;
@@ -5620,6 +5630,10 @@ function _load() {
 					modi = room.modi
 				} else {
 					modi = false;
+				}
+				if (btn.new === 301) {
+					location.assign('https://ujoe.github.io/brutal25/');
+					return;
 				}
 				let num = rooms.findIndex((r) => r.num === btn.new);
 				if (num === -1) {
