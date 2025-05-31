@@ -135,7 +135,7 @@ window.weapons = [
     sound: "flyhit",
     effect: [
       {
-        val: "att",
+        val: "támadás",
         ch: "+20",
       },
       {
