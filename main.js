@@ -395,7 +395,7 @@ function _load() {
 				main.classList.remove("darken");
 				footer.classList.remove("darken");
 				main.innerHTML = `
-		< p > Nem bírtad tovább ezt a brutális világot...</p >
+					<p> Nem bírtad tovább ezt a brutális világot...</p>
           <p>Azért nem annyira rossz eredmény ${steps} lépésen belül elérni a fenti pontokat.</p>
           <p id="tárgyak"></p>
           <p id="haverok"></p>
@@ -403,7 +403,7 @@ function _load() {
           <p id="segítség"></p>
           <p id="képesség"></p>
           <p>De ha mégsem vagy elégedett az eredménnyel, az F5 tartogat egy időutazó varázslatot számodra.</p>
-	`;
+				`;
 				if (localStorage.getItem("charName")) {
 					main.innerHTML += "<p>Vagy a LOAD gombbal betöltheted a legutóbb elmentett állást.</p>";
 					document.getElementById("loadBtn").disabled = false;
@@ -546,12 +546,12 @@ function _load() {
 		document.getElementById("stats").innerHTML = `
 		<div id="stats">
 			Erő: <span class="stat" id="val_ero">${char.ero} </span>
-	Ügyesség: <span class="stat" id="val_ugy">${char.ugy} </span>
-	Ész: <span class="stat" id="val_esz">${char.esz} </span>
-	Lélek: <span class="stat" id="val_lel">${char.lel} </span>
-	Hatalom: <span class="stat" id="val_hat">${char.hat} </span>
-	Támogatás: <span class="stat" id="val_sup">${char.sup} </span>
-    </div >
+			Ügyesség: <span class="stat" id="val_ugy">${char.ugy} </span>
+			Ész: <span class="stat" id="val_esz">${char.esz} </span>
+			Lélek: <span class="stat" id="val_lel">${char.lel} </span>
+			Hatalom: <span class="stat" id="val_hat">${char.hat} </span>
+			Támogatás: <span class="stat" id="val_sup">${char.sup} </span>
+    </div>
 		`;
 		checkDeath();
 	}
